@@ -179,7 +179,7 @@ to the DOS prompt instead.</string>
                             <tabViewItem label="CPU Inspector" identifier="1" id="1423" userLabel="CPU Panel">
                                 <view key="view" id="1424">
                                     <rect key="frame" x="0.0" y="0.0" width="296" height="432"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <customView id="186">
                                             <rect key="frame" x="0.0" y="0.0" width="296" height="432"/>
@@ -636,12 +636,12 @@ to add them as DOS drives.</string>
                                                         <rect key="frame" x="1" y="1" width="296" height="299"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="2206">
+                                                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="2206">
                                                                 <rect key="frame" x="0.0" y="0.0" width="296" height="299"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="EY8-QE-ZYf">
                                                                     <rect key="frame" x="0.0" y="0.0" width="296" height="299"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <collectionView selectable="YES" maxNumberOfColumns="1" id="2209" customClass="BXDriveList">
                                                                             <rect key="frame" x="0.0" y="0.0" width="296" height="299"/>
@@ -781,7 +781,7 @@ if the joystick drifts or behaves erratically.</string>
                                                                 <rect key="frame" x="0.0" y="0.0" width="298" height="322"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
-                                                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="2309">
+                                                                    <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="2309">
                                                                         <rect key="frame" x="0.0" y="0.0" width="298" height="322"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="E45-jm-IAK">
