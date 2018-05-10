@@ -1192,7 +1192,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
     
     for (NSGraphicsContext *context in contexts)
     {
-        CGContextRef ctx = (CGContextRef)context.graphicsPort;
+        CGContextRef ctx = context.CGContext;
         CGContextSaveGState(ctx);
             CGContextClipToMask(ctx, imageRect, image);
             CGContextSetFillColorWithColor(ctx, color);
@@ -1225,7 +1225,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
     
     for (NSGraphicsContext *context in contexts)
     {
-        CGContextRef ctx = (CGContextRef)context.graphicsPort;
+        CGContextRef ctx = context.CGContext;
         CGContextSaveGState(ctx);
         CGContextSetFillColorWithColor(ctx, color);
     }
@@ -1275,7 +1275,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
                 
                 for (NSGraphicsContext *context in contexts)
                 {
-                    CGContextRef ctx = (CGContextRef)context.graphicsPort;
+                    CGContextRef ctx = context.CGContext;
                     CGContextFillRect(ctx, line);
                 }
                 

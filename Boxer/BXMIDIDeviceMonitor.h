@@ -93,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Creates and returns an input port set up on the specified client,
 /// with a callback that will dispatch received messages to BXMIDIPortListener
-/// objects. Returns NULL and populates outError if the port could not be created.
+/// objects. Returns \c 0 and populates \c outError if the port could not be created.
 /// (This port will be owned by the calling context, and can be disposed of
 /// with \c MIDIPortDispose once it is no longer needed.)
 + (MIDIPortRef) createListeningPortForClient: (MIDIClientRef)client

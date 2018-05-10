@@ -139,19 +139,19 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 };
 
 /// Returned by -offset when the offset cannot be determined or is not applicable.
-#define ADBOffsetUnknown -1
+#define ADBOffsetUnknown -1ll
 
 
 /// Return the handle's current byte offset, or ADBOffsetUnknown if this
 /// could not be determined.
-- (long long) offset;
+@property (readonly) long long offset;
 
 /// Return the maximum addressable offset, i.e. the length of the file.
 /// Return ADBOffsetUnknown if this could not be determined.
-- (long long) maxOffset;
+@property (readonly) long long maxOffset;
 
 /// Returns whether the handle's offset is at or beyond the end of the file.
-- (BOOL) isAtEnd;
+@property (readonly, getter=isAtEnd) BOOL atEnd;
 
 /// Sets the handle's byte offset to the relative to the specified location.
 /// Returns \c YES if the offset was changed, or \c NO and populates \c outError if

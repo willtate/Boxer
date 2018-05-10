@@ -197,8 +197,8 @@ extern "C" {
 	/// Called from messages.cpp: overrides DOSBox's translation system.
 	const char * boxer_localizedStringForKey(char const * key);
     
-    void boxer_log(char const* format,...);
-    void boxer_die(char const *functionName, char const *fileName, int lineNumber, char const* format,...);
+    void boxer_log(char const* format,...) __printflike(1, 2);
+    void boxer_die(char const *functionName, char const *fileName, int lineNumber, char const* format,...) __printflike(4, 5);
     
 #if __cplusplus
 } //Extern C

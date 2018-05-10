@@ -56,7 +56,7 @@ typedef NS_ERROR_ENUM(BXDOSFilesystemErrorDomain, BXDOSFilesystemErrors) {
 
 /// Returns an autoreleased error object preconfigured with
 /// the error code and domain for that error type.
-+ (id) error;
++ (instancetype) error;
 @end
 
 
@@ -68,7 +68,7 @@ typedef NS_ERROR_ENUM(BXDOSFilesystemErrorDomain, BXDOSFilesystemErrors) {
 /// the error code and domain for that error type, and a user
 /// info dictionary with the \c BXDOSFilesystemErrorDriveKey key
 /// referring to the specified drive.
-+ (id) errorWithDrive: (BXDrive *)drive;
++ (instancetype) errorWithDrive: (BXDrive *)drive;
 
 @end
 
