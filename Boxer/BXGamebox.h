@@ -142,7 +142,7 @@ typedef NS_ENUM(NSUInteger, BXGameIdentifierType) {
 @property (readonly, nonatomic) NSURL *configurationFileURL;
 
 /// Returns the URL of the target program saved under Boxer 1.3.x and below.
-@property (readonly, nonatomic) NSURL *legacyTargetURL;
+@property (readonly, nonatomic, nullable) NSURL *legacyTargetURL;
 
 /// Whether the emulation should finish once the default launcher exits,
 /// rather than returning to the DOS prompt. No longer supported.

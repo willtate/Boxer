@@ -9,6 +9,8 @@
 #import "ADBOperation.h"
 #import "ADBFileTransfer.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// The incremented filename format we should use for uniquely naming imported drives.
 /// Equivalent to baseNameForDrive (increment).driveExtension, e.g. "C DriveLabel (2).cdrom".
 /// The incremented number is ignored by BXDrive's label parsing.
@@ -34,18 +36,18 @@ extern NSString * const BXUniqueDriveNameFormat;
 /// This should return the preferred location to which this drive should be imported,
 /// taking into account destinationFolder and nameForDrive: and auto-incrementing as
 /// necessary to ensure uniqueness.
-- (NSURL *) preferredDestinationURL;
+- (nullable NSURL *) preferredDestinationURL;
 
 /// Returns whether this import class is appropriate for importing the specified drive.
 + (BOOL) isSuitableForDrive: (BXDrive *)drive;
 
 /// Returns the name under which the specified drive would be saved.
-+ (NSString *) nameForDrive: (BXDrive *)drive;
++ (nullable NSString *) nameForDrive: (BXDrive *)drive;
 
 /// Returns whether the drive will become inaccessible during this import.
 /// This will cause the drive to be unmounted for the duration of the import,
 /// and then remounted once the import finishes.
-+ (BOOL) driveUnavailableDuringImport;
+@property (class, readonly) BOOL driveUnavailableDuringImport;
 
 
 /// Return a suitably initialized BXOperation subclass for transferring the drive.
@@ -61,12 +63,12 @@ extern NSString * const BXUniqueDriveNameFormat;
 /// This class is not intended to be instantiated or used as a parent class.
 @interface BXDriveImport: NSObject
 
-+ (id <BXDriveImport>) importOperationForDrive: (BXDrive *)drive
++ (nullable id <BXDriveImport>) importOperationForDrive: (BXDrive *)drive
                           destinationFolderURL: (NSURL *)destinationFolder
                                      copyFiles: (BOOL)copyFiles;
 
 /// Returns the most suitable operation class to import the specified drive
-+ (Class) importClassForDrive: (BXDrive *)drive;
++ (nullable Class) importClassForDrive: (BXDrive *)drive;
 
 /// Returns a safe replacement import operation for the specified failed import,
 /// or nil if no fallback was available.
@@ -74,12 +76,12 @@ extern NSString * const BXUniqueDriveNameFormat;
 /// the original import.
 /// Used when e.g. a disc-ripping import fails because of a driver-related issue:
 /// this will fall back on a safer method of importing.
-+ (id <BXDriveImport>) fallbackForFailedImport: (id <BXDriveImport>)failedImport;
++ (nullable id <BXDriveImport>) fallbackForFailedImport: (id <BXDriveImport>)failedImport;
 
 /// Returns the standard filename (sans extension) under which to import the specified drive,
 /// given Boxer's drive-naming conventions. This can be used as a starting-point by specific
 /// drive types.
-+ (NSString *) baseNameForDrive: (BXDrive *)drive;
++ (nullable NSString *) baseNameForDrive: (BXDrive *)drive;
 
 @end
 
@@ -89,3 +91,5 @@ extern NSString * const BXUniqueDriveNameFormat;
 + (NSError*) errorWithDrive: (BXDrive *)drive;
 
 @end
+
+NS_ASSUME_NONNULL_END
