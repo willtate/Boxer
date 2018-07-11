@@ -14,7 +14,7 @@
 
 /// A mapping table of input source IDs to DOS keyboard layout codes.
 /// Loaded from KeyboardLayouts.plist. 
-+ (NSDictionary *) keyboardLayoutMappings;
++ (NSDictionary<NSString*,NSString*> *) keyboardLayoutMappings;
 
 /// Returns the DOS keyboard layout code corresponding to the specified input source ID
 + (NSString *) keyboardLayoutForInputSourceID: (NSString *)inputSourceID;

@@ -72,11 +72,9 @@ enum {
 
 + (NSArray *) matchedIDs
 {
-    return [NSArray arrayWithObjects:
-            [self matchForVendorID: BXG25ControllerVendorID productID: BXG25ControllerProductID],
-            [self matchForVendorID: BXDrivingForceControllerVendorID productID: BXDrivingForceControllerProductID],
-            [self matchForVendorID: BXG27ControllerVendorID productID: BXG27ControllerProductID],
-            nil];
+    return @[[self matchForVendorID: BXG25ControllerVendorID productID: BXG25ControllerProductID],
+             [self matchForVendorID: BXDrivingForceControllerVendorID productID: BXDrivingForceControllerProductID],
+             [self matchForVendorID: BXG27ControllerVendorID productID: BXG27ControllerProductID]];
 }
 
 - (BXControllerStyle) controllerStyle { return BXControllerStyleWheel; }

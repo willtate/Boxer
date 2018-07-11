@@ -66,9 +66,7 @@ enum {
 
 + (NSArray *) matchedIDs
 {
-    return [NSArray arrayWithObjects:
-            [self matchForVendorID: BXSixaxisControllerVendorID productID: BXSixaxisControllerProductID],
-            nil];
+    return @[[self matchForVendorID: BXSixaxisControllerVendorID productID: BXSixaxisControllerProductID]];
 }
 
 - (BXControllerStyle) controllerStyle { return BXControllerStyleGamepad; }

@@ -35,10 +35,8 @@ enum {
 
 + (NSArray *) matchedIDs
 {
-    return [NSArray arrayWithObjects:
-            [self matchForVendorID: BXTFlightControllerVendorID
-                         productID: BXTFlightControllerProductID],
-            nil];
+    return @[[self matchForVendorID: BXTFlightControllerVendorID
+                          productID: BXTFlightControllerProductID]];
 }
 
 - (BXControllerStyle) controllerStyle { return BXControllerStyleFlightstick; }

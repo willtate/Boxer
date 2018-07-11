@@ -59,12 +59,12 @@ typedef NS_OPTIONS(NSUInteger, BXMouseButtonMask) {
 //to ensure that modifier flags we compare against do actually represent a key event of that type:
 //this avoids collisions with other unrelated device-dependent flags.
 enum {
-	BXLeftControlKeyMask	= 0x00000001 | NSControlKeyMask,
-	BXLeftShiftKeyMask		= 0x00000002 | NSShiftKeyMask,
-	BXRightShiftKeyMask		= 0x00000004 | NSShiftKeyMask,
-	BXLeftCommandKeyMask	= 0x00000008 | NSCommandKeyMask,
-	BXRightCommandKeyMask	= 0x00000010 | NSCommandKeyMask,
-	BXLeftAlternateKeyMask	= 0x00000020 | NSAlternateKeyMask,
-	BXRightAlternateKeyMask	= 0x00000040 | NSAlternateKeyMask,
-	BXRightControlKeyMask	= 0x00002000 | NSControlKeyMask
+	BXLeftControlKeyMask	= 0x00000001 | NSEventModifierFlagControl,
+	BXLeftShiftKeyMask		= 0x00000002 | NSEventModifierFlagShift,
+	BXRightShiftKeyMask		= 0x00000004 | NSEventModifierFlagShift,
+	BXLeftCommandKeyMask	= 0x00000008 | NSEventModifierFlagCommand,
+	BXRightCommandKeyMask	= 0x00000010 | NSEventModifierFlagCommand,
+	BXLeftAlternateKeyMask	= 0x00000020 | NSEventModifierFlagOption,
+	BXRightAlternateKeyMask	= 0x00000040 | NSEventModifierFlagOption,
+	BXRightControlKeyMask	= 0x00002000 | NSEventModifierFlagControl
 };

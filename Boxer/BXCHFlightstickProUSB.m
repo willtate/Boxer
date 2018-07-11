@@ -46,13 +46,11 @@ enum {
 
 + (NSArray *) matchedIDs
 {
-    return [NSArray arrayWithObjects:
-            [self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHFlightstickProUSBProductID],
-            [self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHFighterstickUSBProductID],
-            [self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHCombatStickUSBProductID],
-            [self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHFlightSimYokeUSBProductID],
-            [self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHF16CombatStickUSBProductID],
-            nil];
+    return @[[self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHFlightstickProUSBProductID],
+             [self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHFighterstickUSBProductID],
+             [self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHCombatStickUSBProductID],
+             [self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHFlightSimYokeUSBProductID],
+             [self matchForVendorID: BXCHFlightstickProUSBVendorID productID: BXCHF16CombatStickUSBProductID]];
 }
 
 - (BXControllerStyle) controllerStyle { return BXControllerStyleFlightstick; }

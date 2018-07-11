@@ -80,14 +80,12 @@ enum {
 
 + (NSArray *) matchedIDs
 {
-    return [NSArray arrayWithObjects:
-            [self matchForVendorID: BXMOMORacingControllerVendorID      productID: BXMOMORacingControllerProductID],
-            [self matchForVendorID: BXMOMOForceControllerVendorID       productID: BXMOMOForceControllerProductID],
-            [self matchForVendorID: BXFormulaForceGPControllerVendorID  productID: BXFormulaForceGPControllerProductID],
-            [self matchForVendorID: BXFormulaGPControllerVendorID       productID: BXFormulaGPControllerProductID],
-            [self matchForVendorID: BXFormulaForceControllerVendorID    productID: BXFormulaForceControllerProductID],
-            [self matchForVendorID: BXFormulaControllerVendorID         productID: BXFormulaControllerProductID],
-            nil];
+    return @[[self matchForVendorID: BXMOMORacingControllerVendorID      productID: BXMOMORacingControllerProductID],
+             [self matchForVendorID: BXMOMOForceControllerVendorID       productID: BXMOMOForceControllerProductID],
+             [self matchForVendorID: BXFormulaForceGPControllerVendorID  productID: BXFormulaForceGPControllerProductID],
+             [self matchForVendorID: BXFormulaGPControllerVendorID       productID: BXFormulaGPControllerProductID],
+             [self matchForVendorID: BXFormulaForceControllerVendorID    productID: BXFormulaForceControllerProductID],
+             [self matchForVendorID: BXFormulaControllerVendorID         productID: BXFormulaControllerProductID]];
 }
 
 - (BXControllerStyle) controllerStyle { return BXControllerStyleWheel; }

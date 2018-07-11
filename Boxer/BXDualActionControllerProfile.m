@@ -66,11 +66,9 @@ enum {
 
 + (NSArray *) matchedIDs
 {
-    return [NSArray arrayWithObjects:
-            [self matchForVendorID: BXDualActionVendorID productID: BXDualActionProductID],
-            [self matchForVendorID: BXRumblePad2VendorID productID: BXRumblePad2ProductID],
-            [self matchForVendorID: BXCordlessRumblePad2VendorID productID: BXCordlessRumblePad2ProductID],
-            nil];
+    return @[[self matchForVendorID: BXDualActionVendorID productID: BXDualActionProductID],
+             [self matchForVendorID: BXRumblePad2VendorID productID: BXRumblePad2ProductID],
+             [self matchForVendorID: BXCordlessRumblePad2VendorID productID: BXCordlessRumblePad2ProductID]];
 }
 
 - (BXControllerStyle) controllerStyle { return BXControllerStyleGamepad; }

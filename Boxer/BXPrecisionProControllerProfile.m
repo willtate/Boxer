@@ -48,12 +48,10 @@ enum {
 
 + (NSArray *) matchedIDs
 {
-    return [NSArray arrayWithObjects:
-            [self matchForVendorID: BXPrecisionProControllerVendorID productID: BXPrecisionProControllerProductID],
-            [self matchForVendorID: BXForceFeedback2ControllerVendorID productID: BXForceFeedback2ControllerProductID],
-            [self matchForVendorID: BXPrecision2ControllerVendorID productID: BXPrecision2ControllerProductID],
-            [self matchForVendorID: BXSidewinderControllerVendorID productID: BXSidewinderControllerProductID],
-            nil];
+    return @[[self matchForVendorID: BXPrecisionProControllerVendorID productID: BXPrecisionProControllerProductID],
+             [self matchForVendorID: BXForceFeedback2ControllerVendorID productID: BXForceFeedback2ControllerProductID],
+             [self matchForVendorID: BXPrecision2ControllerVendorID productID: BXPrecision2ControllerProductID],
+             [self matchForVendorID: BXSidewinderControllerVendorID productID: BXSidewinderControllerProductID]];
 }
 
 - (BXControllerStyle) controllerStyle { return BXControllerStyleFlightstick; }

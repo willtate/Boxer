@@ -40,13 +40,11 @@ static NSMutableArray *_profileClasses = nil;
     return [NSArray array];
 }
 
-+ (NSDictionary *) matchForVendorID: (long)vendorID
-                          productID: (long)productID
++ (NSDictionary *) matchForVendorID: (uint16_t)vendorID
+                          productID: (uint16_t)productID
 {
-    return [NSDictionary dictionaryWithObjectsAndKeys:
-            [NSNumber numberWithLong: vendorID], @"vendorID",
-            [NSNumber numberWithLong: productID], @"productID",
-    nil];
+    return @{@"vendorID": @(vendorID),
+             @"productID": @(productID)};
 }
 
 + (BOOL) matchesDevice: (DDHidJoystick *)device

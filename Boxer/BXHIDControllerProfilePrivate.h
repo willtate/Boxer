@@ -159,11 +159,11 @@ extern NSString * const BXControllerProfileDPadDown;
 /// Returns an array of NSDictionaries containing vendorID and usageID pairs,
 /// which this profile should match. Used by matchesDevice:.
 /// Returns an empty array by default, and is intended to be overridden by subclasses. 
-+ (NSArray<NSDictionary*> *) matchedIDs;
++ (NSArray<NSDictionary<NSString*,NSNumber*>*> *) matchedIDs;
 
 /// Helper method for generating match definitions. For use by subclasses overriding matchedIDs.
-+ (NSDictionary *) matchForVendorID: (long)vendorID
-                          productID: (long)productID;
++ (NSDictionary<NSString*,NSNumber*> *) matchForVendorID: (uint16_t)vendorID
+                                               productID: (uint16_t)productID;
 
 #pragma mark -
 #pragma mark Event handling

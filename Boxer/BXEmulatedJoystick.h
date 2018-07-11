@@ -81,13 +81,13 @@ NS_ERROR_ENUM(BXEmulatedJoystickErrorDomain) {
 @protocol BXEmulatedJoystickUIDescriptor <NSObject>
 
 /// The localized name of this joystick type, for display in the UI.
-+ (NSString *) localizedName;
+@property (class, readonly) NSString *localizedName;
 
 /// A localized extended description of this joystick type, for display in the UI along with the localized name.
-+ (NSString *) localizedInformativeText;
+@property (class, readonly) NSString *localizedInformativeText;
 
 /// An icon representation of this joystick type, for display in the UI.
-+ (NSImage *) icon;
+@property (class, readonly) NSImage *icon;
 
 @end
 
