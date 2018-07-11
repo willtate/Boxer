@@ -69,12 +69,12 @@ extern NSString * const BXControllerProfileDPadDown;
 
 /// Called by generateBindings to create the bindings for each particular kind of element.
 /// Intended to be overridden by subclasses for handling logic that pertains to sets of inputs.
-- (void) bindAxisElements: (NSArray *)elements;
-- (void) bindButtonElements: (NSArray *)elements;
-- (void) bindPOVElements: (NSArray *)elements;
+- (void) bindAxisElements: (NSArray<DDHidElement *> *)elements;
+- (void) bindButtonElements: (NSArray<DDHidElement *> *)elements;
+- (void) bindPOVElements: (NSArray<DDHidElement *> *)elements;
 
 /// Called by \c bindAxisElements: to separate wheel-binding logic from regular axis binding.
-- (void) bindAxisElementsForWheel: (NSArray *)elements;
+- (void) bindAxisElementsForWheel: (NSArray<DDHidElement *> *)elements;
 
 /// Returns a \c BXHIDInputBinding to bind the specified element on the profile's HID controller
 /// to the profile's emulated joystick. Must return nil if the element should not be bound.
@@ -181,7 +181,7 @@ extern NSString * const BXControllerProfileDPadDown;
 
 /// Returns a dictionary of the button elements making up this controller's D-pad.
 /// Should return nil if the controller has no button-based D-pad.
-- (NSDictionary *) DPadElementsFromButtons: (NSArray *)buttonElements;
+- (NSDictionary *) DPadElementsFromButtons: (NSArray<DDHidElement*> *)buttonElements;
 
 /// Bind the specified set of D-pad buttons to best suit the current joystick type.
 - (void) bindDPadElements: (NSDictionary *)padElements;

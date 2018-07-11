@@ -20,6 +20,7 @@
 //These device IDs were cribbed from Tattiebogle's 360 controller driver 0.1.2:
 //http://tattiebogle.net/index.php/ProjectRoot/Xbox360Controller/OsxDriver#toc1
 
+// TODO: update to use new controllers
 static uint16_t _360ControllerDeviceIDs[][2] = {
     {BXHIDVendorIDMicrosoft, 654},      //Microsoft wired 360 controller
     {BXHIDVendorIDMicrosoft, 657},      //Microsoft wireless 360 controller
