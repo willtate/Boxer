@@ -25,7 +25,7 @@ enum {
 enum {
     BXXBOBTControllerAButton = 0x09 << 16 | kHIDUsage_Button_1,
     BXXBOBTControllerBButton,
-    BXXBOBTControllerXButton = 0x09 << 16 | kHIDUsage_Button_1 + 3,
+    BXXBOBTControllerXButton = 0x09 << 16 | kHIDUsage_Button_4,
     BXXBOBTControllerYButton,
     
     BXXBOBTControllerLeftShoulder = 0x09 << 16 | (kHIDUsage_Button_1 + 6),
@@ -86,6 +86,26 @@ enum {
             
         case BXXBOBTControllerStartButton:
             binding = [self bindingFromButtonElement: element toTarget: nil action: @selector(togglePaused:)];
+            break;
+            
+        case BXXBOBTControllerXButton:
+            binding = [self bindingFromButtonElement: element
+                                            toButton: BXEmulatedJoystickButton3];
+            break;
+
+        case BXXBOBTControllerYButton:
+            binding = [self bindingFromButtonElement: element
+                                            toButton: BXEmulatedJoystickButton4];
+            break;
+
+        case BXXBOBTControllerLeftStickClick:
+            binding = [self bindingFromButtonElement: element
+                                            toButton: BXCHCombatStickButton5];
+            break;
+
+        case BXXBOBTControllerRightStickClick:
+            binding = [self bindingFromButtonElement: element
+                                            toButton: BXCHCombatStickButton6];
             break;
             
         default:
