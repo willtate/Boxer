@@ -572,14 +572,7 @@ NSString * const BXGameImportedNotificationType     = @"BXGameImported";
 - (void) makeWindowControllers
 {
 	BXDOSWindowController *controller;
-	if (isRunningOnLionOrAbove())
-	{
-		controller = [[BXDOSWindowControllerLion alloc] initWithWindowNibName: @"DOSWindow"];
-	}
-	else
-	{
-		controller = [[BXDOSWindowController alloc] initWithWindowNibName: @"DOSWindow"];
-	}
+	controller = [[BXDOSWindowControllerLion alloc] initWithWindowNibName: @"DOSWindow"];
 	
 	[self addWindowController: controller];
 	self.DOSWindowController = controller;

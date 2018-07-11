@@ -135,7 +135,6 @@
 		9F2D2FDC15B8233800FAE848 /* ADBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEAA3EB1204595B0085F008 /* ADBOperation.m */; };
 		9F2D2FDD15B8233800FAE848 /* NSWorkspace+BXExecutableTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53411712059E7900BCBF24 /* NSWorkspace+BXExecutableTypes.m */; };
 		9F2D2FE515B8233800FAE848 /* BXSessionError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F9ED912108A9000ED7A64 /* BXSessionError.m */; };
-		9F2D2FE715B8233800FAE848 /* BXBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD668F01215CDD6009E0118 /* BXBottomBar.m */; };
 		9F2D2FE815B8233800FAE848 /* NSView+ADBDrawingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8B072121807AD004F6DA2 /* NSView+ADBDrawingHelpers.m */; };
 		9F2D2FED15B8233800FAE848 /* ADBPathEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC74820122A7C8B00E86E6A /* ADBPathEnumerator.m */; };
 		9F2D2FF715B8233800FAE848 /* ADBMultiPanelWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF97941232B718009B5EE5 /* ADBMultiPanelWindowController.m */; };
@@ -720,7 +719,6 @@
 		9FD3A1E4139A358C00D0918E /* BX360ControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD3A1E3139A358C00D0918E /* BX360ControllerProfile.m */; };
 		9FD3A27F139A839600D0918E /* BXSixaxisControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD3A27E139A839600D0918E /* BXSixaxisControllerProfile.m */; };
 		9FD5481411047E420041E1E7 /* BXDrivesInUseAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD5481311047E420041E1E7 /* BXDrivesInUseAlert.m */; };
-		9FD668F11215CDD6009E0118 /* BXBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD668F01215CDD6009E0118 /* BXBottomBar.m */; };
 		9FD6AA0E16314A5B002B774E /* directlpt_linux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6AA0016314A5B002B774E /* directlpt_linux.cpp */; };
 		9FD6AA0F16314A5B002B774E /* directlpt_linux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6AA0016314A5B002B774E /* directlpt_linux.cpp */; };
 		9FD6AA1016314A5B002B774E /* directlpt_win32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6AA0216314A5B002B774E /* directlpt_win32.cpp */; };
@@ -1669,7 +1667,7 @@
 		9FBC351B0F56C7B7001811F2 /* ADBGeometry.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = ADBGeometry.h; sourceTree = "<group>"; };
 		9FBC351D0F56C7B7001811F2 /* BXAboutController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BXAboutController.m; sourceTree = "<group>"; };
 		9FBC351E0F56C7B7001811F2 /* BXAppController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BXAppController.m; sourceTree = "<group>"; usesTabs = 1; };
-		9FBC35210F56C7B7001811F2 /* BXSession.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BXSession.m; sourceTree = "<group>"; };
+		9FBC35210F56C7B7001811F2 /* BXSession.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BXSession.m; sourceTree = "<group>"; usesTabs = 1; };
 		9FBC35230F56C7B7001811F2 /* BXEmulator+BXShell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "BXEmulator+BXShell.mm"; sourceTree = "<group>"; };
 		9FBC35240F56C7B7001811F2 /* BXDOSWindow.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BXDOSWindow.m; sourceTree = "<group>"; };
 		9FBC35250F56C7B7001811F2 /* BXDOSWindowController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = BXDOSWindowController.m; sourceTree = "<group>"; };
@@ -1746,8 +1744,6 @@
 		9FD3A27E139A839600D0918E /* BXSixaxisControllerProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXSixaxisControllerProfile.m; sourceTree = "<group>"; };
 		9FD5481211047E420041E1E7 /* BXDrivesInUseAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXDrivesInUseAlert.h; sourceTree = "<group>"; };
 		9FD5481311047E420041E1E7 /* BXDrivesInUseAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXDrivesInUseAlert.m; sourceTree = "<group>"; };
-		9FD668EF1215CDD6009E0118 /* BXBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXBottomBar.h; sourceTree = "<group>"; };
-		9FD668F01215CDD6009E0118 /* BXBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBottomBar.m; sourceTree = "<group>"; };
 		9FD6AA0016314A5B002B774E /* directlpt_linux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = directlpt_linux.cpp; sourceTree = "<group>"; };
 		9FD6AA0116314A5B002B774E /* directlpt_linux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = directlpt_linux.h; sourceTree = "<group>"; };
 		9FD6AA0216314A5B002B774E /* directlpt_win32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = directlpt_win32.cpp; sourceTree = "<group>"; };
@@ -2340,8 +2336,6 @@
 				9F59DAD410AF1042008DBBC1 /* BXProgramPanel.m */,
 				9F59DED810B0159A008DBBC1 /* BXProgramPanelController.h */,
 				9F59DED910B0159A008DBBC1 /* BXProgramPanelController.m */,
-				9FD668EF1215CDD6009E0118 /* BXBottomBar.h */,
-				9FD668F01215CDD6009E0118 /* BXBottomBar.m */,
 				9F42D9DD1172481800AC6F1F /* BXStatusBarController.h */,
 				9F42D9DE1172481800AC6F1F /* BXStatusBarController.m */,
 				9FBC35180F56C7B7001811F2 /* BXDOSWindowController.h */,
@@ -3795,7 +3789,6 @@
 				9FDC544E120EBFE70063B33D /* BXImportDropzonePanelController.m in Sources */,
 				9FDC5476120EC8B40063B33D /* BXImportInstallerPanelController.m in Sources */,
 				9F0F9EDA12108A9000ED7A64 /* BXSessionError.m in Sources */,
-				9FD668F11215CDD6009E0118 /* BXBottomBar.m in Sources */,
 				9FC8B073121807AD004F6DA2 /* NSView+ADBDrawingHelpers.m in Sources */,
 				9FC8B16B12182586004F6DA2 /* BXImportFinalizingPanelController.m in Sources */,
 				9FC8B2E812186171004F6DA2 /* BXImportFinishedPanelController.m in Sources */,
@@ -4113,7 +4106,6 @@
 				9F2D2FDC15B8233800FAE848 /* ADBOperation.m in Sources */,
 				9F2D2FDD15B8233800FAE848 /* NSWorkspace+BXExecutableTypes.m in Sources */,
 				9F2D2FE515B8233800FAE848 /* BXSessionError.m in Sources */,
-				9F2D2FE715B8233800FAE848 /* BXBottomBar.m in Sources */,
 				9F2D2FE815B8233800FAE848 /* NSView+ADBDrawingHelpers.m in Sources */,
 				9F2D2FED15B8233800FAE848 /* ADBPathEnumerator.m in Sources */,
 				9F2D2FF715B8233800FAE848 /* ADBMultiPanelWindowController.m in Sources */,

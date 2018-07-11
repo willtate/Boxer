@@ -285,31 +285,6 @@
     
     NSApplicationPresentationOptions currentOptions = [NSApp presentationOptions], newOptions = currentOptions;
     
-    //On SL, we need to manage the fullscreen application state ourselves.
-    if (isRunningOnSnowLeopard())
-    {
-        if ([NSApp isActive] && [(BXDOSWindow *)currentController.window isFullScreen])
-        {
-            if (currentController.inputController.mouseLocked)
-            {
-                //When the session is fullscreen and mouse-locked, hide all UI components completely.
-                newOptions |= NSApplicationPresentationHideDock | NSApplicationPresentationHideMenuBar | NSApplicationPresentationFullScreen;
-                newOptions &= ~(NSApplicationPresentationAutoHideDock | NSApplicationPresentationAutoHideMenuBar);
-            }
-            else
-            {
-                //When the session is fullscreen but the mouse is unlocked,
-                //show the OS X menu but hide the Dock until it is moused over
-                newOptions |= NSApplicationPresentationAutoHideDock | NSApplicationPresentationFullScreen;
-                newOptions &= ~(NSApplicationPresentationHideDock | NSApplicationPresentationHideMenuBar | NSApplicationPresentationAutoHideMenuBar);
-            }
-        }
-        else
-        {
-            //When there is no fullscreen session, show all UI components normally.
-            newOptions = NSApplicationPresentationDefault;
-        }
-    }
     
     //Disable process-switching while the mouse is locked, and enable it again when unlocked.
     if (suppressProcessSwitching && [NSApp isActive] && currentController.inputController.mouseLocked)

@@ -56,14 +56,4 @@ __deprecated
 @end
 
 
-/// A subclass to fix some hugely annoying redraw bugs
-/// in 10.5's implementation of NSCollectionView
-__deprecated
-@interface BXProgramListView : NSCollectionView
-{
-    @private
-    NSArray *_pendingContent;
-}
-@end
-
 NS_ASSUME_NONNULL_END

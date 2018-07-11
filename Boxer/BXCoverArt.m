@@ -68,17 +68,6 @@
 	NSShadow *dropShadow	= [[self class] dropShadowForSize: iconSize];
 	NSShadow *innerGlow		= [[self class] innerGlowForSize: iconSize];
 	
-	//NOTE: drawInRect:fromRect:operation:fraction: misbehaves on 10.5 in that
-	//it caches what it draws and may use that for future draw operations
-	//instead of other, more suitable representations of that image.
-	//To work around this, we draw a copy of the image instead of the original.
-	//Fuck 10.5.
-	if (isRunningOnLeopard())
-	{
-		image = [image copy];
-		shine = [shine copy];
-	}
-	
 	//Allow enough room around the image for our drop shadow
 	NSSize availableSize	= NSMakeSize(
 		iconSize.width	- [dropShadow shadowBlurRadius] * 2,

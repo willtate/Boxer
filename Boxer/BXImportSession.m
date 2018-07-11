@@ -241,14 +241,7 @@
 - (void) makeWindowControllers
 {
     BXDOSWindowController *controller;
-	if (isRunningOnLionOrAbove())
-	{
-		controller = [[BXDOSWindowControllerLion alloc] initWithWindowNibName: @"DOSImportWindow"];
-	}
-	else
-	{
-		controller = [[BXDOSWindowController alloc] initWithWindowNibName: @"DOSImportWindow"];
-	}
+	controller = [[BXDOSWindowControllerLion alloc] initWithWindowNibName: @"DOSImportWindow"];
 	
 	[self addWindowController: controller];
 	self.DOSWindowController = controller;

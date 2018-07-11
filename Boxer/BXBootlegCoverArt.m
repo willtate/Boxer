@@ -97,14 +97,6 @@
 	
 	if (baseLayer)
 	{
-		//NOTE: drawInRect:fromRect:operation:fraction: misbehaves on 10.5 in that
-		//it caches what it draws and may use that for future draw operations
-		//instead of other, more suitable representations of that image.
-		//To work around this, we draw a copy of the image instead of the original.
-		//Fuck 10.5.
-		if (isRunningOnLeopard())
-			baseLayer = [baseLayer copy];
-		
 		[baseLayer drawInRect: frame
 					 fromRect: NSZeroRect
 					operation: NSCompositeSourceOver
@@ -119,9 +111,6 @@
 
 	if (topLayer)
 	{
-		if (isRunningOnLeopard())
-			topLayer = [topLayer copy];
-		
 		[topLayer drawInRect: frame
 					fromRect: NSZeroRect
 				   operation: NSCompositeSourceOver
