@@ -32,15 +32,17 @@
 
 #import <Cocoa/Cocoa.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 
 #pragma mark - Volume-type constants
 
 //Filesystem types, for use with mountedVolumesOfType:
 typedef NSString *ADBVolumeType NS_STRING_ENUM;
-extern ADBVolumeType const ADBDataCDVolumeType;
-extern ADBVolumeType const ADBAudioCDVolumeType;
-extern ADBVolumeType const ADBFATVolumeType;
-extern ADBVolumeType const ADBHFSVolumeType;
+extern ADBVolumeType const ADBDataCDVolumeType NS_SWIFT_NAME(dataCD);
+extern ADBVolumeType const ADBAudioCDVolumeType NS_SWIFT_NAME(audioCD);
+extern ADBVolumeType const ADBFATVolumeType NS_SWIFT_NAME(FAT);
+extern ADBVolumeType const ADBHFSVolumeType NS_SWIFT_NAME(HFS);
 
 
 #pragma mark - Error constants
@@ -78,7 +80,7 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 
 /// The UTIs of disk image formats that @c mountImageAtURL:options:error:
 /// will automatically treat as raw images.
-+ (NSSet<NSString*> *) rawImageTypes;
+@property (class, readonly) NSSet<NSString*> *rawImageTypes;
 
 #pragma mark - Introspecting mounted volumes
 
@@ -86,7 +88,7 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 /// If @c hidden is YES, this will include invisible volumes.
 /// Note that this will block and can take a significant time to return if a volume has been
 /// disconnected unexpectedly or is not responding.
-- (NSArray<NSURL*> *) mountedVolumeURLsIncludingHidden: (BOOL)hidden;
+- (nullable NSArray<NSURL*> *) mountedVolumeURLsIncludingHidden: (BOOL)hidden;
 
 /// Returns the URLs all mounted filesystems of the specified filesystem type.
 - (NSArray<NSURL*> *) mountedVolumeURLsOfType: (ADBVolumeType)volumeType
@@ -97,7 +99,7 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 - (BOOL) isVisibleVolumeAtURL: (NSURL *)URL;
 
 /// Returns the underlying filesystem type of the specified URL.
-- (ADBVolumeType) typeOfVolumeAtURL: (NSURL *)URL;
+- (nullable ADBVolumeType) typeOfVolumeAtURL: (NSURL *)URL;
 
 
 #pragma mark - Dealing with mounted images
@@ -106,18 +108,18 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 /// On success, returns an array of one or more URLs representing volumes mounted from
 /// the image.
 /// On failure, returns nil and populates outError.
-- (NSArray<NSURL*> *) mountImageAtURL: (NSURL *)URL
-                              options: (ADBImageMountingOptions)options
-                                error: (out NSError **)outError;
+- (nullable NSArray<NSURL*> *) mountImageAtURL: (NSURL *)URL
+                                       options: (ADBImageMountingOptions)options
+                                         error: (out NSError **)outError;
 
 /// Returns structured plist info from hdiutil about mounted images and their volumes.
 /// Returns nil and populates outError if the information could not be retrieved.
-- (NSArray *) mountedImageInfoWithError: (out NSError **)outError;
+- (nullable NSArray *) mountedImageInfoWithError: (out NSError **)outError;
 
 /// Returns the URL of the source disk image from which the specified volume path was mounted.
 /// Returns nil if the source image could not be determined (e.g. if the volume is not mounted
 /// from a disk image.)
-- (NSURL *) sourceImageForVolumeAtURL: (NSURL *)volumeURL;
+- (nullable NSURL *) sourceImageForVolumeAtURL: (NSURL *)volumeURL;
 
 /// Returns all volume URLs mounted from the specified source disk image.
 /// Returns an empty array if the source image is not currently mounted.
@@ -128,11 +130,11 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 
 /// Returns the URL of the data volume associated with the specified CD volume.
 /// Returns @c nil if the CD volume has no corresponding data volume.
-- (NSURL *) dataVolumeOfAudioCDAtURL: (NSURL *)audioCDURL;
+- (nullable NSURL *) dataVolumeOfAudioCDAtURL: (NSURL *)audioCDURL;
 
 /// Returns the URL of the audio CD volume associated with the specified data CD volume.
 /// Returns @c nil if the CD volume has no corresponding audio volume.
-- (NSURL *) audioVolumeOfDataCDAtURL: (NSURL *)dataCDURL;
+- (nullable NSURL *) audioVolumeOfDataCDAtURL: (NSURL *)dataCDURL;
 
 /// Returns @c YES if the specified path points to the HFS volume of a hybrid Mac+PC CD,
 /// @c NO otherwise.
@@ -141,7 +143,7 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 /// When given a path to the HFS volume of a hybrid Mac+PC CD, returns the BSD device name
 /// of the corresponding ISO volume. Returns \c nil if the path was not a hybrid CD or if no
 /// matching device name could be determined.
-- (NSString *) BSDDeviceNameForISOVolumeOfHybridCDAtURL: (NSURL *)volumeURL;
+- (nullable NSString *) BSDDeviceNameForISOVolumeOfHybridCDAtURL: (NSURL *)volumeURL;
 
 
 #pragma mark - Dealing with mounted floppy disks
@@ -154,10 +156,11 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 
 /// Returns the BSD device name (dev/diskXsY) for the specified volume.
 /// Returns @c nil if no matching device name could be determined.
-- (NSString *) BSDDeviceNameForVolumeAtURL: (NSURL *)volumeURL;
+- (nullable NSString *) BSDDeviceNameForVolumeAtURL: (NSURL *)volumeURL;
 
 @end
 
+NS_ASSUME_NONNULL_END
 
 #pragma mark - Creaky old NSString path API
 

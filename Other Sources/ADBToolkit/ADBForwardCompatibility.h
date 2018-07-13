@@ -48,45 +48,6 @@
 @end
 
 
-#pragma mark - NSFileManager
-
-@interface NSFileManager (ADBForwardCompatibility)
-
-//Declared in OS X 10.7
-- (BOOL) createDirectoryAtURL: (NSURL *)URL
-  withIntermediateDirectories: (BOOL)createIntermediates
-                   attributes: (NSDictionary *)attributes
-                        error: (out NSError **)error;
-
-//Declared in OS X 10.7
-- (BOOL) createSymbolicLinkAtURL: (NSURL *)URL
-              withDestinationURL: (NSURL *)destURL
-                           error: (out NSError **)error;
-
-//Declared in OS X 10.8
-- (BOOL) trashItemAtURL: (NSURL *)url
-       resultingItemURL: (out NSURL **)outResultingURL
-                  error: (out NSError **)error;
-
-@end
-
-@interface NSFileManagerProxyCategory: ADBFallbackProxyCategory
-@end
-
-
-#pragma mark - NSURL
-
-@interface NSURL (ADBForwardCompatibility)
-
-//Declared in OS X 10.9
-- (const char *) fileSystemRepresentation;
-
-@end
-
-@interface NSURLProxyCategory: ADBFallbackProxyCategory
-@end
-
-
 #pragma mark - NSView
 @interface NSView (ADBForwardCompatibility)
 
