@@ -28,7 +28,6 @@
 //with file URLs and Uniform Type Identifiers.
 
 #import <Foundation/Foundation.h>
-#import "ADBForwardCompatibility.h" //For NSURL -fileSystemRepresentation
 
 @interface NSURL (ADBFilePaths)
 
@@ -53,7 +52,7 @@
 
 /// An analogue for NSString pathComponents:
 /// Returns an array containing this URL and every parent directory leading back to the root.
-- (NSArray<NSURL*> *) componentURLs;
+@property (readonly) NSArray<NSURL*> *componentURLs;
 
 /// An analogue for NSString stringsByAppendingPaths:
 - (NSArray<NSURL*> *) URLsByAppendingPaths: (NSArray<NSString*> *)paths;

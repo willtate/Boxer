@@ -70,10 +70,10 @@ extern NSString * const ADBHIDDeviceKey;
 #pragma mark Helper class methods
 
 //Descriptors to feed to observeDevicesMatching:
-+ (NSDictionary<NSString*,NSNumber*> *) joystickDescriptor;
-+ (NSDictionary<NSString*,NSNumber*> *) gamepadDescriptor;
-+ (NSDictionary<NSString*,NSNumber*> *) mouseDescriptor;
-+ (NSDictionary<NSString*,NSNumber*> *) keyboardDescriptor;
+@property (class, readonly) NSDictionary<NSString*,NSNumber*> *joystickDescriptor;
+@property (class, readonly) NSDictionary<NSString*,NSNumber*> *gamepadDescriptor;
+@property (class, readonly) NSDictionary<NSString*,NSNumber*> *mouseDescriptor;
+@property (class, readonly) NSDictionary<NSString*,NSNumber*> *keyboardDescriptor;
 
 
 #pragma mark -

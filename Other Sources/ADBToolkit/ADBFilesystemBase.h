@@ -59,7 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray<NSURL*> *mutableRepresentedURLs;
 
 /// Overridden to be read-writable.
-@property (copy, nonatomic, nullable) NSURL *baseURL;
+@property (readwrite, copy, nonatomic, nullable) NSURL *baseURL;
 
 @end
 

@@ -53,7 +53,7 @@ typedef NS_ERROR_ENUM(ADBMountableImageErrorDomain, ADBMountableImageErrors) {
 }
 
 /// Returns a list of all image types mountable by this class.
-+ (NSSet<NSString*> *) supportedImageTypes;
+@property (class, readonly) NSSet<NSString*> *supportedImageTypes;
 
 /// Whether to unmount the volume when this instance goes out of scope.
 /// This will be automatically set to YES whenever the filesystem mounts

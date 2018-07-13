@@ -68,8 +68,8 @@ typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *url, NSError *error);
 
 /// Returns an <code>NSFileManager</code>-like dictionary of the filesystem attributes of the file
 /// at the specified path. Returns \c nil and populates \c outError if the file cannot be accessed.
-- (nullable NSDictionary *) attributesOfFileAtPath: (NSString *)path
-                                             error: (out NSError **)outError;
+- (nullable NSDictionary<NSFileAttributeKey, id> *) attributesOfFileAtPath: (NSString *)path
+                                                                     error: (out NSError **)outError;
 
 /// Returns the raw byte data of the file at the specified path. <br>
 /// Returns \c nil and populates \c outError if the file's contents could not be read.
@@ -155,7 +155,7 @@ typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *url, NSError *error);
 
 /// Return all the unique URLs represented by this filesystem (be they added explicitly
 /// by addRepresentedURL: or implicitly by other properties of the filesystem.)
-- (NSSet<NSURL*> *) representedURLs;
+@property (readonly) NSSet<NSURL*> *representedURLs;
 
 @end
 
@@ -206,7 +206,7 @@ typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *url, NSError *error);
 @protocol ADBFilesystemPathEnumeration <NSObject, ADBStepwiseEnumeration>
 
 /// The filesystem represented by this enumerator.
-- (id <ADBFilesystemPathAccess>) filesystem;
+@property (readonly) id <ADBFilesystemPathAccess> filesystem;
 
 - (NSDictionary<NSFileAttributeKey,id> *) fileAttributes;
 

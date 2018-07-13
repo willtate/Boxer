@@ -27,6 +27,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// The @c ADBFileTypes category extends NSWorkspace's methods for dealing with Uniform Type Identifiers (UTIs).
 @interface NSWorkspace (ADBFileTypes)
 
@@ -37,7 +39,9 @@
 
 /// Returns the nearest ancestor of the specified path/URL that matches any of the specified UTIs,
 /// or nil if no ancestor matched. This may return filePath, if the file itself matches the specified types.
-- (NSURL *) nearestAncestorOfURL: (NSURL *)URL matchingTypes: (NSSet<NSString*> *)acceptedTypes;
-- (NSString *) parentOfFile: (NSString *)filePath matchingTypes: (NSSet<NSString*> *)acceptedTypes;
+- (nullable NSURL *) nearestAncestorOfURL: (NSURL *)URL matchingTypes: (NSSet<NSString*> *)acceptedTypes;
+- (nullable NSString *) parentOfFile: (NSString *)filePath matchingTypes: (NSSet<NSString*> *)acceptedTypes;
 
 @end
+
+NS_ASSUME_NONNULL_END
