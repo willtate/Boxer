@@ -46,9 +46,8 @@ NSString * const BXDOCFileType      = @"com.microsoft.word.doc";
 	static NSSet *types;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        types = [[NSSet alloc] initWithObjects:
-                 BXHardDiskFolderType,
-                 nil];
+        types = [NSSet setWithObject:
+                 BXHardDiskFolderType];
     });
 	return types;
 }
@@ -89,9 +88,8 @@ NSString * const BXDOCFileType      = @"com.microsoft.word.doc";
 	static NSSet *types;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        types = [[NSSet alloc] initWithObjects:
-                 BXMountableFolderType,
-                 nil];
+        types = [NSSet setWithObject:
+                 BXMountableFolderType];
     });
 	return types;
 }
@@ -101,15 +99,9 @@ NSString * const BXDOCFileType      = @"com.microsoft.word.doc";
 	static NSSet *types;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        types = [[NSSet alloc] initWithObjects:
-                 BXDiskBundleType,
-                 BXISOImageType,
-                 BXCDRImageType,
-                 BXCuesheetImageType,
-                 BXRawFloppyImageType,
-                 BXVirtualPCImageType,
-                 BXNDIFImageType,
-                 nil];
+        types = [[self OSXMountableImageTypes] setByAddingObjectsFromArray:
+                 @[BXDiskBundleType,
+                   BXCuesheetImageType]];
     });
 	return types;
 }
@@ -171,17 +163,20 @@ NSString * const BXDOCFileType      = @"com.microsoft.word.doc";
 + (NSSet *) documentationTypes
 {
 	static NSSet *types = nil;
-	if (!types) types = [[NSSet alloc] initWithObjects:
-                         (NSString *)kUTTypeJPEG,
-                         (NSString *)kUTTypePlainText,
-                         (NSString *)kUTTypePNG,
-                         (NSString *)kUTTypeGIF,
-                         (NSString *)kUTTypePDF,
-                         (NSString *)kUTTypeRTF,
-                         (NSString *)kUTTypeBMP,
-                         @"com.microsoft.word.doc",
-                         (NSString *)kUTTypeHTML,
-                         nil];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        types = [[NSSet alloc] initWithObjects:
+                 (NSString *)kUTTypeJPEG,
+                 (NSString *)kUTTypePlainText,
+                 (NSString *)kUTTypePNG,
+                 (NSString *)kUTTypeGIF,
+                 (NSString *)kUTTypePDF,
+                 (NSString *)kUTTypeRTF,
+                 (NSString *)kUTTypeBMP,
+                 BXDOCFileType,
+                 (NSString *)kUTTypeHTML,
+                 nil];
+    });
 	return types;
 }
 
@@ -363,8 +358,8 @@ NSString * const BXExecutableTypesErrorDomain = @"BXExecutableTypesErrorDomain";
     NSUInteger markerLength = sizeof(uint16_t);
     
     BOOL soughtToMarker = [handle seekToOffset: newHeaderAddress
-                            relativeTo: ADBSeekFromStart
-                                 error: &handleError];
+                                    relativeTo: ADBSeekFromStart
+                                         error: &handleError];
     
     NSUInteger markerBytesRead;
     BOOL readMarker = soughtToMarker && [handle readBytes: &newTypeMarker

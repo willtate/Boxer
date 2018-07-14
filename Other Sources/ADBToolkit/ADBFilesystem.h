@@ -108,8 +108,8 @@ typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *url, NSError *error);
 /// responsible for closing the file handle.<br>
 /// Return \c NULL and populates \c outError on failure.
 - (nullable FILE *) openFileAtPath: (NSString *)path
-                   inMode: (const char *)accessMode
-                    error: (out NSError **)outError;
+                            inMode: (const char *)accessMode
+                             error: (out NSError **)outError;
 
 @end
 

@@ -26,7 +26,10 @@
 
 //Contains protected API that should only be used by ADBLocalFilesystem subclasses.
 
+#import <Foundation/Foundation.h>
 #import "ADBLocalFilesystem.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface ADBLocalFilesystem () <NSFileManagerDelegate>
 
@@ -38,7 +41,7 @@
 - (BOOL) _transferItemAtPath: (NSString *)fromPath
                       toPath: (NSString *)toPath
                      copying: (BOOL)copying
-                       error: (out NSError **)outError;
+                       error: (out NSError *_Nullable*_Nullable)outError;
 
 @end
 
@@ -58,10 +61,12 @@
 @property (strong, nonatomic) ADBLocalFilesystem *filesystem;
 
 - (instancetype) initWithURL: (NSURL *)localURL
-       inFilesytem: (ADBLocalFilesystem *)filesystem
-includingPropertiesForKeys: (NSArray<NSString*> *)keys
-           options: (NSDirectoryEnumerationOptions)mask
-        returnURLs: (BOOL)returnURLs
-      errorHandler: (ADBFilesystemFileURLErrorHandler)errorHandler;
+                 inFilesytem: (ADBLocalFilesystem *)filesystem
+  includingPropertiesForKeys: (nullable NSArray<NSURLResourceKey> *)keys
+                     options: (NSDirectoryEnumerationOptions)mask
+                  returnURLs: (BOOL)returnURLs
+                errorHandler: (nullable ADBFilesystemFileURLErrorHandler)errorHandler;
 
 @end
+
+NS_ASSUME_NONNULL_END
