@@ -269,17 +269,17 @@ typedef NS_ENUM(NSInteger, BXSessionProgramCompletionBehavior) {
 #pragma mark - Recent programs
 
 /// Returns an array of dictionaries recording recently launched DOS programs.
-@property (readonly, nonatomic) NSArray *recentPrograms;
+@property (readonly, nonatomic) NSArray<NSDictionary<NSString*,id>*> *recentPrograms;
 
 /// Adds a new program to the recent programs list, specified as a dictionary of keys corresponding
 /// to BXEmulator's process info dictionaries. See BXEmulator.h for available keys.
 /// Changes to the recent program list will be persisted into the game info for this session,
 /// if available.
-- (void) noteRecentProgram: (NSDictionary *)programDetails;
+- (void) noteRecentProgram: (NSDictionary<NSString*,id> *)programDetails;
 
 /// Remove the recent program corresponding to the specified program details.
 /// (This will match on URL and arguments and ignore other fields.)
-- (void) removeRecentProgram: (NSDictionary *)programDetails;
+- (void) removeRecentProgram: (NSDictionary<NSString*,id> *)programDetails;
 
 /// Empty the recent programs list.
 - (void) clearRecentPrograms;
