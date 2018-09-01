@@ -996,6 +996,8 @@ static BOOL _hasStartedEmulator = NO;
         //before it starts will stay alive until it finishes. To mitigate this we wrap the
         //emulator startup sequence in an autorelease block, so that at least those objects
         //will get released before we begin emulating in earnest.
+        //DON'T PUT THIS IN AN AUTORELEASEPOOL BRACKET: It causes Boxer to crash.
+        //This also means this file can't be programmed to use ARC.
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
         
             //Create a new configuration instance and feed it an empty set of parameters.
