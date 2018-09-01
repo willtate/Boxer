@@ -442,7 +442,7 @@ int _ADBHandleClose(void *cookie)
 {
     NSAssert(URL != nil, @"A URL must be provided.");
     
-    const char *rep = URL.path.fileSystemRepresentation;
+    const char *rep = URL.fileSystemRepresentation;
     FILE *handle = fopen(rep, mode);
     
     if (handle)

@@ -1014,7 +1014,7 @@ static BOOL _hasStartedEmulator = NO;
             NSArray *configURLs = [self.delegate configurationURLsForEmulator: self];
             for (NSURL *configURL in configURLs)
             {
-                const char *encodedConfigPath = configURL.path.fileSystemRepresentation;
+                const char *encodedConfigPath = configURL.fileSystemRepresentation;
                 control->ParseConfigFile(encodedConfigPath);
             }
 
