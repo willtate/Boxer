@@ -48,24 +48,24 @@
 
 @interface BXPrintPreview : NSView <CALayerDelegate>
 
-//The preview images for the current and previous page.
+/// The preview images for the current and previous page.
 @property (strong, nonatomic) NSImage *currentPagePreview;
 @property (strong, nonatomic) NSImage *previousPagePreview;
 
-//The X offset of the print head, as a percentage of
-//the total printable page width from 0.0 to 1.0.
+/// The X offset of the print head, as a percentage of
+/// the total printable page width from 0.0 to 1.0.
 @property (assign, nonatomic) CGFloat headOffset;
 
-//The Y offset of the paper head, as a percentage of
-//the total printable page height from 0.0 to 1.0.
+/// The Y offset of the paper head, as a percentage of
+/// the total printable page height from 0.0 to 1.0.
 @property (assign, nonatomic) CGFloat feedOffset;
 
-//Makes the current page into the previous page,
-//makes the current page blank, and moves the head
-//to the top of the current page.
+/// Makes the current page into the previous page,
+/// makes the current page blank, and moves the head
+/// to the top of the current page.
 - (IBAction) startNewPage: (id)sender;
 
-//Move the head or paper to the specified offset with a smooth animation.
+/// Move the head or paper to the specified offset with a smooth animation.
 - (void) animateHeadToOffset: (CGFloat)headOffset;
 - (void) animateFeedToOffset: (CGFloat)feedOffset;
 

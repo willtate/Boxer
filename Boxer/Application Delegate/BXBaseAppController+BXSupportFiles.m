@@ -77,10 +77,10 @@ NSString * const MT32PCMROMFilenamePattern = @"pcm";
     
     if (createIfMissing)
 	{
-		BOOL created = [[NSFileManager defaultManager] createDirectoryAtURL: supportURL
-                                                withIntermediateDirectories: YES
-                                                                 attributes: nil
-                                                                      error: outError];
+		BOOL created = [manager createDirectoryAtURL: supportURL
+                         withIntermediateDirectories: YES
+                                          attributes: nil
+                                               error: outError];
         
         if (!created)
             return nil;

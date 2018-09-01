@@ -22,14 +22,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// Returns \c nil and populates \c outError if \c createIfMissing is \c YES but the folder
 /// could not be created.
 - (nullable NSURL *) supportURLCreatingIfMissing: (BOOL)createIfMissing
-										   error: (out NSError **)outError;
+										   error: (out NSError **)outError
+                                           NS_SWIFT_NAME(supportURL(creatingIfMissing:));
 
 /// Returns Boxer's default location for screenshots and other recordings.
 /// If \c createIfMissing is <code>YES</code>, the folder will be created if it does not exist.
 /// Returns \c nil and populates \c outError if \c createIfMissing is \c YES but the folder
 /// could not be created.
 - (nullable NSURL *) recordingsURLCreatingIfMissing: (BOOL)createIfMissing
-											  error: (out NSError **)outError;
+											  error: (out NSError **)outError
+                                              NS_SWIFT_NAME(recordingsURL(creatingIfMissing:));
 
 /// Returns the path to the application support folder where Boxer should
 /// store state data for the specified gamebox.
@@ -44,7 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// If \c createIfMissing is <code>YES</code>, the folder will be created if it does not exist.
 /// Returns \c nil and populates outError if createIfMissing is YES but the folder
 /// could not be created.
-- (nullable NSURL *) MT32ROMURLCreatingIfMissing: (BOOL)createIfMissing error: (out NSError **)outError;
+- (nullable NSURL *) MT32ROMURLCreatingIfMissing: (BOOL)createIfMissing error: (out NSError **)outError
+NS_SWIFT_NAME(mt32ROMURL(creatingIfMissing:));
 
 
 #pragma mark - MT-32 ROM management

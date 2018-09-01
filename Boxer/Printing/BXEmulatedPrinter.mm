@@ -53,7 +53,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
 #define ESCP2_FLAG 0x200
 #define IBM_FLAG 0x800
 
-//Used to flag ESC2 commands that we don't support but whose parameters we still need to eat from the bytestream
+//! Used to flag ESC2 commands that we don't support but whose parameters we still need to eat from the bytestream
 #define UNSUPPORTED_ESC2_COMMAND 0x101
 
 #define VERTICAL_TABS_UNDEFINED 255
@@ -71,18 +71,18 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
 @property (strong, nonatomic) NSMutableDictionary<NSAttributedStringKey, id> *textAttributes;
 @property (strong, nonatomic) BXPrintSession *currentSession;
 
-//The effective pitch in characters-per-inch, counting the current font settings.
+//! The effective pitch in characters-per-inch, counting the current font settings.
 @property (readonly, nonatomic) double effectivePitch;
 
-//The official width of one monospace character at the current pitch, in inches.
+//! The official width of one monospace character at the current pitch, in inches.
 @property (readonly, nonatomic) double characterWidth;
 
-//The actual width of one monospace character at the current pitch,  in inches.
+//! The actual width of one monospace character at the current pitch,  in inches.
 @property (readonly, nonatomic) double effectiveCharacterWidth;
 
-//The actual extra spacing to insert between characters.
-//This will be the same as letterSpacing unless one of the double-width modes
-//is active, in which case it will be doubled also.
+//! The actual extra spacing to insert between characters.
+//! This will be the same as letterSpacing unless one of the double-width modes
+//! is active, in which case it will be doubled also.
 @property (readonly, nonatomic) double effectiveLetterSpacing;
 
 @property (strong, nonatomic) NSMutableData *bitmapData;
@@ -91,13 +91,13 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
 #pragma mark -
 #pragma mark Helper class methods
 
-//Returns the ASCII->Unicode character mapping to use for the specified codepage.
+//! Returns the ASCII->Unicode character mapping to use for the specified codepage.
 + (const uint16_t * const) _charmapForCodepage: (NSUInteger)codepage;
 
-//Returns a CMYK-gamut NSColor suitable for the specified color code.
+//! Returns a CMYK-gamut NSColor suitable for the specified color code.
 + (NSColor *) _colorForColorCode: (BXESCPColor)colorCode;
 
-//Returns a font descriptor object that can be used to identify a suitable font for the specified typeface.
+//! Returns a font descriptor object that can be used to identify a suitable font for the specified typeface.
 + (NSFontDescriptor *) _fontDescriptorForEmulatedTypeface: (BXESCPTypeface)typeface
                                                      bold: (BOOL)bold
                                                    italic: (BOOL)italic;
@@ -105,41 +105,41 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
 #pragma mark -
 #pragma mark Initialization
 
-//Called when the DOS session first communicates the intent to print.
+//! Called when the DOS session first communicates the intent to print.
 - (void) _prepareForPrinting;
 
-//Called when the DOS session changes parameters for text printing.
+//! Called when the DOS session changes parameters for text printing.
 - (void) _updateTextAttributes;
 
-//Called when the printer first draws to the page, if no print session is currently active.
+//! Called when the printer first draws to the page, if no print session is currently active.
 - (void) _startNewPrintSession;
 
-//Called when the DOS session formfeeds or the print head goes off the extents of the current page.
-//Finishes the current page in the session (if one was present) and advances printing to the next page.
-//If discardPreviousPageIfBlank is YES, and nothing was printed to the previous page, then the previous
-//page will be discarded unused. Otherwise a blank page will be inserted into the session before the new page.
+//! Called when the DOS session formfeeds or the print head goes off the extents of the current page.
+//! Finishes the current page in the session (if one was present) and advances printing to the next page.
+//! If discardPreviousPageIfBlank is YES, and nothing was printed to the previous page, then the previous
+//! page will be discarded unused. Otherwise a blank page will be inserted into the session before the new page.
 - (void) _startNewPageWithCarriageReturn: (BOOL)insertCarriageReturn
                        discardBlankPages: (BOOL)discardPreviousPageIfBlank;
 
-//Called when we first need to draw to the current page.
-//The print session and page canvas are created at this time and the paper size is locked.
+//! Called when we first need to draw to the current page.
+//! The print session and page canvas are created at this time and the paper size is locked.
 - (void) _prepareCanvasForPrinting;
 
-//Called when the DOS session prepares a bitmap drawing context.
+//! Called when the DOS session prepares a bitmap drawing context.
 - (void) _prepareForBitmapWithDensity: (NSUInteger)density columns: (NSUInteger)numColumns;
 
-//Draws the specified bitmap data (expected to be 8-bits-per-pixel black and white) as a bitmap image
-//into the preview and PDF contexts. This gives slightly fuzzier output than the vectorized technique
-//below, but better rendering speeds and smaller PDF filesizes.
+//! Draws the specified bitmap data (expected to be 8-bits-per-pixel black and white) as a bitmap image
+//! into the preview and PDF contexts. This gives slightly fuzzier output than the vectorized technique
+//! below, but better rendering speeds and smaller PDF filesizes.
 - (void) _drawImageWithBitmapData: (NSData *)bitmapData
                             width: (NSUInteger)pixelWidth
                            height: (NSUInteger)pixelHeight
                            inRect: (CGRect)imageRect
                             color: (CGColorRef)color;
 
-//Draws the specified bitmap data (expected to be 8-bits-per-pixel black and white) as a series of
-//horizontal vector lines into the preview and PDF contexts. This is crisper than the bitmap technique
-//above at large magnifications, but slower and produces larger PDF files.
+//! Draws the specified bitmap data (expected to be 8-bits-per-pixel black and white) as a series of
+//! horizontal vector lines into the preview and PDF contexts. This is crisper than the bitmap technique
+//! above at large magnifications, but slower and produces larger PDF files.
 - (void) _drawVectorizedBitmapData: (NSData *)bitmapData
                              width: (NSUInteger)pixelWidth
                             height: (NSUInteger)pixelHeight
@@ -149,14 +149,14 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
 #pragma mark -
 #pragma mark Character mapping functions
 
-//Switch to the specified codepage for ASCII->Unicode mappings.
+//! Switch to the specified codepage for ASCII->Unicode mappings.
 - (void) _selectCodepage: (NSUInteger)codepage;
 
-//Switch to the specified international character set using the current codepage.
+//! Switch to the specified international character set using the current codepage.
 - (void) _selectInternationalCharset: (BXESCPCharset)charsetID;
 
-//Set the specified chartable entry to point to the specified codepage.
-//If this chartable is active, the current ASCII mapping will be updated accordingly.
+//! Set the specified chartable entry to point to the specified codepage.
+//! If this chartable is active, the current ASCII mapping will be updated accordingly.
 - (void) _assignCodepage: (NSUInteger)codepage
              toCharTable: (BXESCPCharTable)charTable;
 
@@ -164,15 +164,15 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
 #pragma mark -
 #pragma mark Input handling
 
-//Returns YES if the specified byte was handled as part of a bitmap,
-//or NO otherwise.
+//! Returns YES if the specified byte was handled as part of a bitmap,
+//! or NO otherwise.
 - (BOOL) _handleBitmapData: (uint8_t)byte;
 
-//Returns YES if the specified byte was handled as part of a control command,
-//or NO if it should be treated as character data to print.
+//! Returns YES if the specified byte was handled as part of a control command,
+//! or NO if it should be treated as character data to print.
 - (BOOL) _handleControlCharacter: (uint8_t)byte;
 
-//Prints the specified character to the page.
+//! Prints the specified character to the page.
 - (void) _printCharacter: (uint8_t)byte;
 
 

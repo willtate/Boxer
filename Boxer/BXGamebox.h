@@ -339,7 +339,7 @@ typedef NS_ENUM(NSInteger, BXGameboxDocumentationConflictBehaviour) {
 @property (copy, nonatomic, null_unspecified) NSString *targetPath __deprecated;
 
 /// Returns whether the specified path is valid to be the default target of this gamebox
-- (BOOL) validateTargetPath: (id __null_unspecified*__null_unspecified)ioValue error: (NSError **)outError;
+- (BOOL) validateTargetPath: (id __null_unspecified*__null_unspecified)ioValue error: (NSError **)outError __deprecated;
 
 @end
 
