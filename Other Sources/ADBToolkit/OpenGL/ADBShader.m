@@ -329,6 +329,14 @@ NSString * const ADBShaderUniformSizeKey = @"Size";
     NSURL *fragmentURL  = [[NSBundle mainBundle] URLForResource: shaderName
                                                   withExtension: @"frag"
                                                    subdirectory: subdirectory];
+    if (!vertexURL || !fragmentURL) {
+        if (outError) {
+            *outError = [NSError errorWithDomain:NSCocoaErrorDomain
+                                            code:NSFileNoSuchFileError
+                                        userInfo:nil];
+        }
+        return nil;
+    }
     
     return [[self alloc] initWithContentsOfVertexShaderURL: vertexURL
                                         fragmentShaderURLs: @[fragmentURL]

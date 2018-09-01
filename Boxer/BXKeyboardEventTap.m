@@ -104,7 +104,7 @@ static CGEventRef _handleEventFromTap(CGEventTapProxy proxy, CGEventType type, C
 
 + (BOOL) canCaptureKeyEvents
 {
-    return AXAPIEnabled() || AXIsProcessTrusted();
+    return AXIsProcessTrustedWithOptions(NULL);
 }
 
 - (BXKeyboardEventTapStatus) _reportedStatusOfEventTap

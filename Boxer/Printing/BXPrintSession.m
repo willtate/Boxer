@@ -135,6 +135,7 @@
     self._mutablePDFData = nil;
     self._mutablePagePreviews = nil;
     self._previewCanvas = nil;
+    self.PDFContext = nil;
     self.previewContext = nil;
     
     [super dealloc];
