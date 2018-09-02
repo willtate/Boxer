@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		501F283B161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */; };
 		501F283C161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */; };
+		55394932213BCD980041EA2F /* ADBCopyFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 55394931213BCD980041EA2F /* ADBCopyFile.m */; };
 		554E2B6D1BFAF6720038C506 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6C1BFAF6720038C506 /* Shared.xcassets */; };
 		554E2B6E1BFAF6B20038C506 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6C1BFAF6720038C506 /* Shared.xcassets */; };
 		554E2B701BFAF6D90038C506 /* Boxer only.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6F1BFAF6D90038C506 /* Boxer only.xcassets */; };
@@ -935,6 +936,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		501F2839161303DA00B1ED53 /* BXBuiltinShaderRenderers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXBuiltinShaderRenderers.h; sourceTree = "<group>"; };
 		501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBuiltinShaderRenderers.m; sourceTree = "<group>"; };
+		55394930213BCD980041EA2F /* ADBCopyFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADBCopyFile.h; sourceTree = "<group>"; usesTabs = 1; };
+		55394931213BCD980041EA2F /* ADBCopyFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADBCopyFile.m; sourceTree = "<group>"; usesTabs = 1; };
 		554E2B6C1BFAF6720038C506 /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shared.xcassets; sourceTree = "<group>"; };
 		554E2B6F1BFAF6D90038C506 /* Boxer only.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Boxer only.xcassets"; sourceTree = "<group>"; };
 		555747F0208FA8030045E635 /* ymf262.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ymf262.cpp; sourceTree = "<group>"; };
@@ -2151,6 +2154,8 @@
 				9F58BB5013DD975F00358512 /* ADBFileScan.m */,
 				9F61F78113EC2D5100505436 /* ADBImageAwareFileScan.h */,
 				9F61F78213EC2D5100505436 /* ADBImageAwareFileScan.m */,
+				55394930213BCD980041EA2F /* ADBCopyFile.h */,
+				55394931213BCD980041EA2F /* ADBCopyFile.m */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -3985,6 +3990,7 @@
 				9F7721A112B38C4400072AE8 /* render.cpp in Sources */,
 				9F7721A212B38C4400072AE8 /* render_scalers.cpp in Sources */,
 				9F7721A612B38C4400072AE8 /* adlib.cpp in Sources */,
+				55394932213BCD980041EA2F /* ADBCopyFile.m in Sources */,
 				9F7721A712B38C4400072AE8 /* cmos.cpp in Sources */,
 				9F7721A812B38C4400072AE8 /* dbopl.cpp in Sources */,
 				9F7721A912B38C4400072AE8 /* disney.cpp in Sources */,

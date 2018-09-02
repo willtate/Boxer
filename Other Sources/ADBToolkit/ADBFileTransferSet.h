@@ -52,12 +52,12 @@
 
 /// Create/initialize a suitable file transfer operation for the specified
 /// source->destination mappings.
-+ (instancetype) transferForPaths: (NSDictionary *)paths
++ (instancetype) transferForPaths: (NSDictionary<NSString*,NSString*> *)paths
                         copyFiles: (BOOL)copy;
 
 /// Create/initialize a suitable file transfer operation for the specified
 /// source->destination mappings.
-- (instancetype) initForPaths: (NSDictionary *)paths
+- (instancetype) initForPaths: (NSDictionary<NSString*,NSString*> *)paths
                     copyFiles: (BOOL)copy;
 
 /// Adds a SingleFileTransfer operation into the set for the specified set of files.
@@ -66,6 +66,6 @@
 
 /// Adds @c ADBSingleFileTransfer operations for each pair of source->destination mappings
 /// in the specified dictionary.
-- (void) addTransfers: (NSDictionary *)paths;
+- (void) addTransfers: (NSDictionary<NSString*,NSString*> *)paths;
 
 @end
