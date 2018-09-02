@@ -46,8 +46,6 @@
 	NSString *_destinationPath;
 	
 	NSFileManager *_manager;
-	FSFileOperationRef _fileOp;
-	FSFileOperationStage _stage;
 	
 	NSUInteger _numFiles;
 	NSUInteger _filesTransferred;
