@@ -13,7 +13,7 @@ static int ADBCopyFileCallback(int what, int stage, copyfile_state_t state,
                                const char * src, const char * dst, void * ctx)
 {
 	ADBCopyFile *nsCtx = (__bridge ADBCopyFile *)(ctx);
-	
+	(void)nsCtx;
 	
 	return COPYFILE_CONTINUE;
 }
