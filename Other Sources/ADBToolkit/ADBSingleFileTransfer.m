@@ -243,6 +243,20 @@ static int ADBSingleFileCallback(int what, int stage, copyfile_state_t state,
 	const char *srcPath = self.sourcePath.fileSystemRepresentation;
 	const char *destPath = self.destinationPath.fileSystemRepresentation;
 	
+	NSArray *contents;
+	NSEnumerator *enumerator;
+	contents = [_manager subpathsAtPath:self.sourcePath];
+	enumerator = [contents objectEnumerator];
+	unsigned long long fileSize = 0;
+	//TODO: More accurate sizing.
+	for (NSString *path in contents) {
+		NSDictionary *fattrib = [_manager attributesOfItemAtPath:[self.sourcePath stringByAppendingPathComponent:path] error:nil];
+		fileSize +=[fattrib fileSize];
+	}
+	self.numBytes = fileSize;
+	//TODO: more accurate counting
+	self.numFiles = contents.count;
+
 	copyfile_flags_t copyFlags = COPYFILE_RECURSIVE;
 	if (self.copyFiles) {
 		copyFlags |= COPYFILE_CLONE;
