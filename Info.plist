@@ -324,13 +324,15 @@
 			<key>UTTypeDescription</key>
 			<string>Microsoft MS-DOS application</string>
 			<key>UTTypeIconFile</key>
-			<string>executable.icns</string>
+			<string>executable</string>
 			<key>UTTypeIdentifier</key>
 			<string>com.microsoft.msdos-executable</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
-				<string>com</string>
+				<array>
+					<string>com</string>
+				</array>
 			</dict>
 		</dict>
 		<dict>
@@ -342,7 +344,7 @@
 			<key>UTTypeDescription</key>
 			<string>Microsoft Windows/MS-DOS batch file</string>
 			<key>UTTypeIconFile</key>
-			<string>executable.icns</string>
+			<string>executable</string>
 			<key>UTTypeIdentifier</key>
 			<string>com.microsoft.batch-file</string>
 			<key>UTTypeTagSpecification</key>
@@ -365,9 +367,13 @@
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>com.apple.ostype</key>
-				<string>DBGc</string>
+				<array>
+					<string>DBGc</string>
+				</array>
 				<key>public.filename-extension</key>
-				<string>conf</string>
+				<array>
+					<string>conf</string>
+				</array>
 			</dict>
 		</dict>
 		<dict>
@@ -388,7 +394,9 @@
 					<string>inst</string>
 				</array>
 				<key>public.mime-type</key>
-				<string>application/x-cue</string>
+				<array>
+					<string>application/x-cue</string>
+				</array>
 			</dict>
 		</dict>
 		<dict>
