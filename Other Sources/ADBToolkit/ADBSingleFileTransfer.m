@@ -89,8 +89,17 @@ static int ADBSingleFileCallback(int what, int stage, copyfile_state_t state,
 				nsCtx->_storedCurrentFile = [nsCtx->_manager stringWithFileSystemRepresentation: src length: strlen(src)];
 				break;
 				
+			case COPYFILE_RECURSE_ERROR:
+				nsCtx.error = [NSError errorWithDomain:NSPOSIXErrorDomain code:errno
+											  userInfo:@{NSFilePathErrorKey: [nsCtx->_manager stringWithFileSystemRepresentation: src length: strlen(src)]}];
+				return COPYFILE_QUIT;
+				break;
+				
 			default:
 				break;
+		}
+		if (stage == COPYFILE_ERR) {
+			return COPYFILE_QUIT;
 		}
     }
     
@@ -234,9 +243,11 @@ static int ADBSingleFileCallback(int what, int stage, copyfile_state_t state,
 	const char *srcPath = self.sourcePath.fileSystemRepresentation;
 	const char *destPath = self.destinationPath.fileSystemRepresentation;
 	
-	copyfile_flags_t copyFlags = COPYFILE_ALL | COPYFILE_RECURSIVE | COPYFILE_CLONE;
-	if (!self.copyFiles) {
-		copyFlags |= COPYFILE_MOVE;
+	copyfile_flags_t copyFlags = COPYFILE_RECURSIVE;
+	if (self.copyFiles) {
+		copyFlags |= COPYFILE_CLONE;
+	} else {
+		copyFlags |= COPYFILE_ALL | COPYFILE_MOVE;
 	}
 	_isDone = NO;
 	dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -279,10 +290,12 @@ static int ADBSingleFileCallback(int what, int stage, copyfile_state_t state,
 	//NSAssert1(!status, @"Could not get file operation status, FSPathFileOperationCopyStatus returned error code: %i", status);
 	if (_storedCurrentFile)
 	{
-		self.currentPath = _storedCurrentFile;
+		@synchronized(self) {
+			self.currentPath = _storedCurrentFile;
+		}
 	}
     
-	if (status != 0 && errno != ECANCELED)
+	if (status != 0 && errno != ECANCELED && _currentPath)
 	{
         NSDictionary *info = (self.currentPath) ? @{ NSFilePathErrorKey: self.currentPath } : nil;
 		self.error = [NSError errorWithDomain: NSOSStatusErrorDomain code: status userInfo: info];
