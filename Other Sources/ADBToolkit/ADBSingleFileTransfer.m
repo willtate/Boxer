@@ -215,10 +215,6 @@ static int ADBSingleFileCallback(int what, int stage, copyfile_state_t state,
 
 - (BOOL) _beginTransfer
 {
-	OSStatus status = noErr;
-	//status = FSFileOperationScheduleWithRunLoop(_fileOp, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
-	NSAssert1(!status, @"Could not schedule file operation in current run loop, FSFileOperationScheduleWithRunLoop returned error code: %li", (long)status);
-	
 	NSString *destinationBase = self.destinationPath.stringByDeletingLastPathComponent;
 	
 	//If the destination base folder does not yet exist, create it and any intermediate directories
@@ -272,14 +268,6 @@ static int ADBSingleFileCallback(int what, int stage, copyfile_state_t state,
 		}
 		self->_isDone = YES;
 	});
-
-	if (status != noErr)
-	{
-		//TODO: use this as the underlying error, wrapped inside a more legible human-friendly error
-		NSError *FSError = [NSError errorWithDomain: NSOSStatusErrorDomain code: status userInfo: nil];
-		[self setError: FSError];
-		return NO;
-	}
 	
 	return YES;
 }
