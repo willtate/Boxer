@@ -38,8 +38,8 @@
 /// up-to-the-minute data is not needed.)
 @property (class, readonly, copy) NSArray<NSString*> *runningHIDRemapperIdentifiers;
 
-//Flushes our cache of known HID remappers. Called whenever Boxer loses then regains
-//the application focus.
+/// Flushes our cache of known HID remappers. Called whenever Boxer loses then regains
+/// the application focus.
 - (void) clearRecentHIDRemappers;
 
 @end
