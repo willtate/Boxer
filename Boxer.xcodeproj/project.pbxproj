@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		501F283B161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */; };
 		501F283C161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */; };
+		5548850E226A501000A879B3 /* drive_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55488508226A501000A879B3 /* drive_overlay.cpp */; };
+		5548850F226A501000A879B3 /* drive_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55488508226A501000A879B3 /* drive_overlay.cpp */; };
 		554E2B6D1BFAF6720038C506 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6C1BFAF6720038C506 /* Shared.xcassets */; };
 		554E2B6E1BFAF6B20038C506 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6C1BFAF6720038C506 /* Shared.xcassets */; };
 		554E2B701BFAF6D90038C506 /* Boxer only.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6F1BFAF6D90038C506 /* Boxer only.xcassets */; };
@@ -935,6 +937,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		501F2839161303DA00B1ED53 /* BXBuiltinShaderRenderers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXBuiltinShaderRenderers.h; sourceTree = "<group>"; };
 		501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBuiltinShaderRenderers.m; sourceTree = "<group>"; };
+		55488508226A501000A879B3 /* drive_overlay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drive_overlay.cpp; sourceTree = "<group>"; };
 		554E2B6C1BFAF6720038C506 /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shared.xcassets; sourceTree = "<group>"; };
 		554E2B6F1BFAF6D90038C506 /* Boxer only.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Boxer only.xcassets"; sourceTree = "<group>"; };
 		555747F0208FA8030045E635 /* ymf262.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ymf262.cpp; sourceTree = "<group>"; };
@@ -2793,6 +2796,7 @@
 				9F7720F712B38C4400072AE8 /* drive_fat.cpp */,
 				9F7720F812B38C4400072AE8 /* drive_iso.cpp */,
 				9F7720F912B38C4400072AE8 /* drive_local.cpp */,
+				55488508226A501000A879B3 /* drive_overlay.cpp */,
 				9F7720FA12B38C4400072AE8 /* drive_physfs.cpp */,
 				9F7720FB12B38C4400072AE8 /* drive_virtual.cpp */,
 				9F7720FC12B38C4400072AE8 /* drives.cpp */,
@@ -3516,7 +3520,7 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Boxer" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				Base,
@@ -3970,6 +3974,7 @@
 				9F77219412B38C4400072AE8 /* dos_mscdex.cpp in Sources */,
 				9F77219512B38C4400072AE8 /* dos_programs.cpp in Sources */,
 				9F77219612B38C4400072AE8 /* dos_tables.cpp in Sources */,
+				5548850E226A501000A879B3 /* drive_overlay.cpp in Sources */,
 				9F77219712B38C4400072AE8 /* drive_cache.cpp in Sources */,
 				55574805208FA8040045E635 /* ymdeltat.cpp in Sources */,
 				9F77219812B38C4400072AE8 /* drive_fat.cpp in Sources */,
@@ -4245,6 +4250,7 @@
 				9F2D308615B8233800FAE848 /* setup.cpp in Sources */,
 				9F2D308715B8233800FAE848 /* support.cpp in Sources */,
 				9F2D308815B8233800FAE848 /* shell.cpp in Sources */,
+				5548850F226A501000A879B3 /* drive_overlay.cpp in Sources */,
 				9F2D308915B8233800FAE848 /* shell_batch.cpp in Sources */,
 				9F2D308A15B8233800FAE848 /* shell_cmds.cpp in Sources */,
 				9F2D308B15B8233800FAE848 /* shell_misc.cpp in Sources */,
