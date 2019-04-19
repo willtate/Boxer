@@ -66,7 +66,7 @@ NS_SWIFT_NAME(mt32ROMURL(creatingIfMissing:));
 - (nullable NSURL *) importMT32ROMAtURL: (NSURL *)URL error: (out NSError **)outError;
 
 /// Validate that the ROM at the specified URL is valid and suitable for use by Boxer.
-- (BOOL) validateMT32ROMAtURL: (inout NSURL **)ioValue error: (out NSError **)outError;
+- (BOOL) validateMT32ROMAtURL: (inout NSURL *_Nullable*_Nullable)ioValue error: (out NSError **)outError;
 
 /// When given an array of file URLs, scans them for valid ROMs and imports
 /// the first pair it finds. Recurses into any folders in the list.
