@@ -24,7 +24,7 @@
 		5557480A208FA8040045E635 /* saa1099.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F8208FA8030045E635 /* saa1099.cpp */; };
 		5557480B208FA8040045E635 /* sn76496.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F9208FA8030045E635 /* sn76496.cpp */; };
 		5557480C208FA8040045E635 /* sn76496.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F9208FA8030045E635 /* sn76496.cpp */; };
-		557A24EC1A1AF167002FE9BD /* Importing-nonLocalizable.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557A24EB1A1AF167002FE9BD /* Importing-nonLocalizable.xcassets */; };
+		557A24EC1A1AF167002FE9BD /* Importing.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557A24EB1A1AF167002FE9BD /* Importing.xcassets */; };
 		558CE44D20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
 		558CE44E20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
 		55B22BA21A1BD9760007665E /* Bundler.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22BA11A1BD9760007665E /* Bundler.xcassets */; };
@@ -688,8 +688,6 @@
 		9FC8F50C10934F3400AD6307 /* NSString+ADBPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8F50B10934F3400AD6307 /* NSString+ADBPaths.m */; };
 		9FC9E4E1136725190095DCDE /* BXEmulatedJoystick.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9E4E0136725190095DCDE /* BXEmulatedJoystick.mm */; };
 		9FC9E58F1367514C0095DCDE /* BXCHFlightstick.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9E58E1367514C0095DCDE /* BXCHFlightstick.mm */; };
-		9FCA1584159729C400C42D10 /* ImportCoverArtTip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCA1580159729C400C42D10 /* ImportCoverArtTip@2x.png */; };
-		9FCA1585159729C400C42D10 /* ImportRenameTip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCA1582159729C400C42D10 /* ImportRenameTip@2x.png */; };
 		9FCA6D9615C85D8500E1650C /* BXLaunchPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA6D9515C85D8500E1650C /* BXLaunchPanelController.m */; };
 		9FCA702213DAE6F5006C5DF8 /* BXCoalfaceDrives.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA702113DAE6F5006C5DF8 /* BXCoalfaceDrives.mm */; };
 		9FCA937D16FF37A000720B81 /* BXDocumentationPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F125C3F16983A9D003B5B2B /* BXDocumentationPanelController.m */; };
@@ -755,8 +753,6 @@
 		9FDFB48215DBC73D004EA615 /* Help.help in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFB48115DBC73D004EA615 /* Help.help */; };
 		9FE1B61313FFBE430001640C /* NSImage+ADBImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B61213FFBE430001640C /* NSImage+ADBImageEffects.m */; };
 		9FE202480F6D749500B3A38C /* Snapshot.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 9FE202470F6D749500B3A38C /* Snapshot.aiff */; };
-		9FE2172E121EED1E001452E3 /* ImportCoverArtTip.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FE2172A121EED1E001452E3 /* ImportCoverArtTip.png */; };
-		9FE2172F121EED1E001452E3 /* ImportRenameTip.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FE2172C121EED1E001452E3 /* ImportRenameTip.png */; };
 		9FE3237E157A42B3004492E8 /* ADBShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3237D157A42B3004492E8 /* ADBShader.m */; };
 		9FE32382157A7498004492E8 /* ADBBSNESShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE32381157A7498004492E8 /* ADBBSNESShader.m */; };
 		9FE32383157A9559004492E8 /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = 9F84C86D157800DD00CCBCA7 /* Shaders */; };
@@ -951,7 +947,7 @@
 		555747F9208FA8030045E635 /* sn76496.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sn76496.cpp; sourceTree = "<group>"; };
 		555747FA208FA8030045E635 /* saa1099.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saa1099.h; sourceTree = "<group>"; };
 		555747FB208FA8030045E635 /* ymf262.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ymf262.h; sourceTree = "<group>"; };
-		557A24EB1A1AF167002FE9BD /* Importing-nonLocalizable.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Importing-nonLocalizable.xcassets"; sourceTree = "<group>"; };
+		557A24EB1A1AF167002FE9BD /* Importing.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Importing.xcassets; sourceTree = "<group>"; };
 		558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXXBOBluetoothControllerProfile.m; sourceTree = "<group>"; };
 		55AEA5CB201F05010000139A /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DocumentationPanel.strings; sourceTree = "<group>"; };
 		55AEA5CC201F05020000139A /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DocumentationBrowser.strings; sourceTree = "<group>"; };
@@ -1006,19 +1002,11 @@
 		55AEA61B201F0A420000139A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LauncherHeading.strings; sourceTree = "<group>"; };
 		55AEA61D201F0A4A0000139A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/ProgramPanel.strings; sourceTree = "<group>"; };
 		55AEA61F201F0A510000139A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/MountPanelOptions.strings; sourceTree = "<group>"; };
-		55AEA620201F0B1B0000139A /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = "es.lproj/ImportCoverArtTip@2x.png"; sourceTree = "<group>"; };
-		55AEA621201F0B200000139A /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = es.lproj/ImportCoverArtTip.png; sourceTree = "<group>"; };
-		55AEA622201F0B250000139A /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = es.lproj/ImportRenameTip.png; sourceTree = "<group>"; };
-		55AEA623201F0B2A0000139A /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = "es.lproj/ImportRenameTip@2x.png"; sourceTree = "<group>"; };
 		55AEA625201F0C0E0000139A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LauncherFavorite.strings; sourceTree = "<group>"; };
 		55AEA627201F0C130000139A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DOSImportWindow.strings; sourceTree = "<group>"; };
 		55AEA629201F0C1B0000139A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/ImportWindow.strings; sourceTree = "<group>"; };
 		55AEA62B201F0C210000139A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Inspector.strings; sourceTree = "<group>"; };
 		55B22BA11A1BD9760007665E /* Bundler.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bundler.xcassets; sourceTree = "<group>"; };
-		55BF6EF720210C6D00F3FE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/ImportCoverArtTip.png; sourceTree = "<group>"; };
-		55BF6EF820210C7900F3FE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/ImportCoverArtTip@2x.png"; sourceTree = "<group>"; };
-		55BF6EF920210CBA00F3FE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/ImportRenameTip.png; sourceTree = "<group>"; };
-		55BF6EFA20210CC300F3FE59 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/ImportRenameTip@2x.png"; sourceTree = "<group>"; };
 		55BF6F0320210F6000F3FE59 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55DEBB1A201E81C200F1092F /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
 		55DEBB20201E81DF00F1092F /* pci_bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pci_bus.h; sourceTree = "<group>"; };
@@ -3076,18 +3064,6 @@
 			name = MIDI;
 			sourceTree = "<group>";
 		};
-		9F9606EC14F65B030072E90C /* Importing */ = {
-			isa = PBXGroup;
-			children = (
-				557A24EB1A1AF167002FE9BD /* Importing-nonLocalizable.xcassets */,
-				9FE2172A121EED1E001452E3 /* ImportCoverArtTip.png */,
-				9FCA1580159729C400C42D10 /* ImportCoverArtTip@2x.png */,
-				9FE2172C121EED1E001452E3 /* ImportRenameTip.png */,
-				9FCA1582159729C400C42D10 /* ImportRenameTip@2x.png */,
-			);
-			name = Importing;
-			sourceTree = "<group>";
-		};
 		9F9840FE15BEE5F700B50CDA /* Filesystem */ = {
 			isa = PBXGroup;
 			children = (
@@ -3210,7 +3186,7 @@
 			children = (
 				554E2B6C1BFAF6720038C506 /* Shared.xcassets */,
 				554E2B6F1BFAF6D90038C506 /* Boxer only.xcassets */,
-				9F9606EC14F65B030072E90C /* Importing */,
+				557A24EB1A1AF167002FE9BD /* Importing.xcassets */,
 				9FFC2ABF12A19CCC008C2B3B /* Sample Game Icons */,
 				9FBD321610E5144C00031CB6 /* Brand.png */,
 			);
@@ -3632,8 +3608,6 @@
 				9FDCDEFD11B5B83B0032DA4E /* dsa_pub.pem in Resources */,
 				9FAE9B8B11F1D7CF000363F7 /* GameDefaults.plist in Resources */,
 				9F4199F81BD416E900A2D165 /* Shell.strings in Resources */,
-				9FE2172E121EED1E001452E3 /* ImportCoverArtTip.png in Resources */,
-				9FE2172F121EED1E001452E3 /* ImportRenameTip.png in Resources */,
 				9F4199E91BD416E400A2D165 /* LauncherHeading.xib in Resources */,
 				9F160DE21236952600F8768E /* Sample Games in Resources */,
 				9F70C19C129036C900A3627F /* Boxer.sdef in Resources */,
@@ -3656,14 +3630,12 @@
 				9F4199F01BD416E400A2D165 /* Preferences.xib in Resources */,
 				9F4199E31BD416E400A2D165 /* PrintStatusPanel.xib in Resources */,
 				9FE32383157A9559004492E8 /* Shaders in Resources */,
-				9FCA1584159729C400C42D10 /* ImportCoverArtTip@2x.png in Resources */,
-				9FCA1585159729C400C42D10 /* ImportRenameTip@2x.png in Resources */,
 				9F4199F51BD416E400A2D165 /* Welcome.xib in Resources */,
 				9F4199F11BD416E400A2D165 /* About.xib in Resources */,
 				9F4199E61BD416E400A2D165 /* DOSWindow.xib in Resources */,
 				9F4199EF1BD416E400A2D165 /* InspectorJoystickItem.xib in Resources */,
 				9F4199F91BD416E900A2D165 /* InfoPlist.strings in Resources */,
-				557A24EC1A1AF167002FE9BD /* Importing-nonLocalizable.xcassets in Resources */,
+				557A24EC1A1AF167002FE9BD /* Importing.xcassets in Resources */,
 				9F4199E51BD416E400A2D165 /* MainMenu.xib in Resources */,
 				9F4199F61BD416E400A2D165 /* Bezel.xib in Resources */,
 				9F4BCCD817E6190A00140390 /* Boxer.help in Resources */,
@@ -4694,24 +4666,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		9FCA1580159729C400C42D10 /* ImportCoverArtTip@2x.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				55AEA620201F0B1B0000139A /* es */,
-				55BF6EF820210C7900F3FE59 /* en */,
-			);
-			name = "ImportCoverArtTip@2x.png";
-			sourceTree = "<group>";
-		};
-		9FCA1582159729C400C42D10 /* ImportRenameTip@2x.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				55AEA623201F0B2A0000139A /* es */,
-				55BF6EFA20210CC300F3FE59 /* en */,
-			);
-			name = "ImportRenameTip@2x.png";
-			sourceTree = "<group>";
-		};
 		9FCB87DC1C026B7800EAFE47 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -4761,24 +4715,6 @@
 				9F7472DA1BE7DA3D00B9C9ED /* cs */,
 			);
 			name = Credits.html;
-			sourceTree = "<group>";
-		};
-		9FE2172A121EED1E001452E3 /* ImportCoverArtTip.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				55AEA621201F0B200000139A /* es */,
-				55BF6EF720210C6D00F3FE59 /* en */,
-			);
-			name = ImportCoverArtTip.png;
-			sourceTree = "<group>";
-		};
-		9FE2172C121EED1E001452E3 /* ImportRenameTip.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				55AEA622201F0B250000139A /* es */,
-				55BF6EF920210CBA00F3FE59 /* en */,
-			);
-			name = ImportRenameTip.png;
 			sourceTree = "<group>";
 		};
 		9FE3BAE617EC9AA100C9BB82 /* LauncherItem.xib */ = {

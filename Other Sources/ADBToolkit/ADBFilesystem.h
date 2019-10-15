@@ -31,8 +31,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef BOOL (^ADBFilesystemPathErrorHandler)(NSString *path, NSError *error);
-typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *url, NSError *error);
+typedef BOOL (^ADBFilesystemPathErrorHandler)(NSString *_Nullable path, NSError *_Nullable error);
+typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *_Nullable url, NSError *_Nullable error);
 
 
 #pragma mark Relative path-based filesystem access
