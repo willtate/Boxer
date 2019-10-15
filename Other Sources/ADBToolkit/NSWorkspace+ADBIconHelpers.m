@@ -35,6 +35,11 @@
     return [self directoryAtURLHasCustomIcon: [NSURL fileURLWithPath: path]];
 }
 
+- (BOOL) URLHasCustomIcon: (NSURL *)URL
+{
+    return [self directoryAtURLHasCustomIcon: URL];
+}
+
 - (BOOL) directoryAtURLHasCustomIcon: (NSURL *)URL
 {
     // IMPLEMENTATION NOTE:

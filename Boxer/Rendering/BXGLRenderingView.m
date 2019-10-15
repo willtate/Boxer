@@ -421,6 +421,7 @@ CVReturn BXDisplayLinkCallback(CVDisplayLinkRef displayLink,
     }
     
     CGLUnlockContext(cgl_ctx);
+    [super prepareOpenGL];
 }
 
 - (void) clearGLContext

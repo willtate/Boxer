@@ -168,50 +168,50 @@ NS_ASSUME_NONNULL_END
 
 /// Returns an array of visible locally mounted volumes.
 /// If @c hidden is YES, or on 10.5, this will also include invisible volumes.
-- (NSArray *) mountedLocalVolumePathsIncludingHidden: (BOOL)hidden __deprecated;
+- (NSArray *_Null_unspecified) mountedLocalVolumePathsIncludingHidden: (BOOL)hidden __deprecated;
 
 /// Returns whether the volume at the specified file path is visible in Finder.
 /// If this is NO, it means the volume has been mounted hidden (and should probably be ignored.)
-- (BOOL) volumeIsVisibleAtPath: (NSString *)path __deprecated;
+- (BOOL) volumeIsVisibleAtPath: (NSString *_Null_unspecified)path __deprecated;
 
 /// Returns all mounted filesystems of the specified filesystem type.
 /// If hidden is YES, or on 10.5, this will also include invisible volumes.
-- (NSArray *) mountedVolumesOfType: (NSString *)volumeType includingHidden: (BOOL)hidden __deprecated;
+- (NSArray *_Null_unspecified) mountedVolumesOfType: (NSString *_Null_unspecified)volumeType includingHidden: (BOOL)hidden __deprecated;
 
 /// Returns the underlying filesystem type of the specified path.
-- (NSString *) volumeTypeForPath: (NSString *)path __deprecated;
+- (NSString *_Null_unspecified) volumeTypeForPath: (NSString *_Null_unspecified)path __deprecated;
 
 /// Return the base volume path upon which the specified path resides.
-- (NSString *) volumeForPath: (NSString *)path __deprecated;
+- (NSString *_Null_unspecified) volumeForPath: (NSString *_Null_unspecified)path __deprecated;
 
 /// Returns the path to the source disk image from which the specified volume path was created.
 /// Returns nil if the source image could not be determined (e.g. if the volume is not mounted from a disk image)
-- (NSString *) sourceImageForVolume: (NSString *)volumePath __deprecated;
+- (NSString *_Null_unspecified) sourceImageForVolume: (NSString *_Null_unspecified)volumePath __deprecated;
 
 /// Returns the first path at which the specified source disk image is mounted.
 /// Returns nil if the source image is not currently mounted.
-- (NSString *) volumeForSourceImage: (NSString *)imagePath __deprecated;
+- (NSString *_Null_unspecified) volumeForSourceImage: (NSString *_Null_unspecified)imagePath __deprecated;
 
 /// Mounts the disk image at the specified path, and returns the path to the newly-mounted volume if successful.
 /// Returns nil and populates error if mounting failed.
 /// If invisible is true, the mounted volume will not appear in Finder.
-- (NSString *) mountImageAtPath: (NSString *)path
+- (NSString *_Null_unspecified) mountImageAtPath: (NSString *_Null_unspecified)path
 					   readOnly: (BOOL)readOnly
 					  invisibly: (BOOL)invisible
-						  error: (NSError **)error __deprecated;
+						  error: (NSError *_Null_unspecified*_Null_unspecified)error __deprecated;
 
 /// Returns the path of the data volume associated with the specified CD volume path.
 /// Returns nil if the CD volume has no corresponding data volume.
-- (NSString *) dataVolumeOfAudioCD: (NSString *)volumePath __deprecated;
+- (NSString *_Null_unspecified) dataVolumeOfAudioCD: (NSString *_Null_unspecified)volumePath __deprecated;
 
 /// Returns the path of the audio CD volume associated with the specified data CD volume path.
 /// Returns nil if the CD volume has no corresponding audio volume.
-- (NSString *) audioVolumeOfDataCD: (NSString *)volumePath __deprecated;
+- (NSString *_Null_unspecified) audioVolumeOfDataCD: (NSString *_Null_unspecified)volumePath __deprecated;
 
 /// Returns whether the specified volume is actually a DOS floppy disk.
-- (BOOL) isFloppyVolumeAtPath: (NSString *)volumePath __deprecated;
+- (BOOL) isFloppyVolumeAtPath: (NSString *_Null_unspecified)volumePath __deprecated;
 
 /// Returns whether the specified volume is the size of a DOS floppy disk.
-- (BOOL) isFloppySizedVolumeAtPath: (NSString *)volumePath __deprecated;
+- (BOOL) isFloppySizedVolumeAtPath: (NSString *_Null_unspecified)volumePath __deprecated;
 
 @end
