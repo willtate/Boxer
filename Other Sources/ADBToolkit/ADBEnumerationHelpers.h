@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// The latest object returned by the enumeration.
 @property (strong, nonatomic) id currentNode;
 
-/// Set to \c YES when the enumeration has run out of objects, or should otherwise stop
+/// Set to @c YES when the enumeration has run out of objects, or should otherwise stop
 /// iterating for any reason (for instance, encountering an error).
 @property (assign, nonatomic, getter=isExhausted) BOOL exhausted;
 
@@ -78,21 +78,21 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype) initWithRootNodes: (NSArray *)rootNodes;
 
 /// Advances enumeration of the current level and returns the next available node.
-/// Returns \c nil once it reaches the end of the current level.
+/// Returns @c nil once it reaches the end of the current level.
 /// Called by nextObject.
 - (nullable id) nextNodeInLevel;
 
-//Adds the specified nodes as a new level onto the level stack.
-//Called by nextObject when traversing a node with children.
+/// Adds the specified nodes as a new level onto the level stack.
+/// Called by nextObject when traversing a node with children.
 - (void) pushLevel: (NSArray *)nodesInLevel;
 
-//Removes the last level from the stack, returning iteration to the previous level.
-//Raises an NSRangeException if the enumerator is at the root level.
-//Called by nextObject once the current level is exhausted.
+/// Removes the last level from the stack, returning iteration to the previous level.
+/// Raises an @c NSRangeException if the enumerator is at the root level.
+/// Called by @c nextObject once the current level is exhausted.
 - (void) popLevel;
 
-//The current level of depth into the tree. The root nodes are at level 1.
-- (NSUInteger) level;
+/// The current level of depth into the tree. The root nodes are at level 1.
+@property (readonly) NSUInteger level;
 
 
 #pragma mark Methods to implement in subclasses
@@ -103,10 +103,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Returns whether enumeration should continue into the specified node's children.
 /// This check will be made (and if successful, child nodes enumerated) even if
-/// \c shouldEnumerateNode: previously returned \c NO for the parent.
+/// @c shouldEnumerateNode: previously returned @c NO for the parent.
 - (BOOL) shouldEnumerateChildrenOfNode: (id)node;
 
-/// Returns the children of the specified node. Return nil if the node is a leaf node.
+/// Returns the children of the specified node. Return @c nil if the node is a leaf node.
 - (nullable NSArray *) childrenForNode: (id)node;
 
 @end
@@ -114,11 +114,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - ADBScanningEnumerator
 
-/// Used by ADBScanningEnumerator's nextObject method to scan forward through each object
+/// Used by ADBScanningEnumerator's @c nextObject method to scan forward through each object
 /// of its inner enumerator. If this block returns an object, enumeration will pause and
 /// <code>ADBScanningEnumerator -nextObject</code> will return that object; if this block returns <code>nil</code>,
 /// enumeration of the inner enumerator will continue.
-/// \c scannedObject is the next object from the inner enumerator; stop is a boolean reference
+/// @c scannedObject is the next object from the inner enumerator; stop is a boolean reference
 /// which, if set to YES, will halt enumeration after the current object.
 typedef id __nullable (^ADBScanCallback)(id scannedObject, BOOL *stop);
 

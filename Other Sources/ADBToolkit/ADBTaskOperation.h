@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// periodically to update our completion status.
 - (void) main;
 
-/// Used by \c -main to monitor the specified task while running the run loop:
+/// Used by @c -main to monitor the specified task while running the run loop:
 /// returns when cancelled, or when the task finishes of its own accord.
 /// The selected callback should have the same signature as checkTaskProgress,
 /// and will be called periodically at the specified polling interval.
@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 withProgressCallback: (SEL)callback
 		  atInterval: (NSTimeInterval)interval;
 
-/// Default callback for \c monitorTask:withProgressCallback:atInterval:.
+/// Default callback for @c monitorTask:withProgressCallback:atInterval:.
 /// By default this does nothing but send ADBOperationInProgress notifications:
 /// intended to be overridden in child classes to provide actual progress calculation.
 - (void) checkTaskProgress: (NSTimer *)timer;

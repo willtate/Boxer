@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Volume-type constants
 
-//Filesystem types, for use with mountedVolumesOfType:
+/// Filesystem types, for use with @c mountedVolumesOfType:
 typedef NSString *ADBVolumeType NS_STRING_ENUM;
 extern ADBVolumeType const ADBDataCDVolumeType NS_SWIFT_NAME(dataCD);
 extern ADBVolumeType const ADBAudioCDVolumeType NS_SWIFT_NAME(audioCD);
@@ -48,7 +48,7 @@ extern ADBVolumeType const ADBHFSVolumeType NS_SWIFT_NAME(HFS);
 #pragma mark - Error constants
 
 
-//Error domains and userInfo keys
+/// Error domains and userInfo keys
 extern NSErrorDomain const ADBMountedVolumesErrorDomain;
 
 //Mount-related error codes
@@ -141,7 +141,7 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 - (BOOL) isHybridCDAtURL: (NSURL *)volumeURL;
 
 /// When given a path to the HFS volume of a hybrid Mac+PC CD, returns the BSD device name
-/// of the corresponding ISO volume. Returns \c nil if the path was not a hybrid CD or if no
+/// of the corresponding ISO volume. Returns @c nil if the path was not a hybrid CD or if no
 /// matching device name could be determined.
 - (nullable NSString *) BSDDeviceNameForISOVolumeOfHybridCDAtURL: (NSURL *)volumeURL;
 
