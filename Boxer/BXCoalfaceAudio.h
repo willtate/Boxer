@@ -16,7 +16,7 @@ typedef enum {
 void boxer_suggestMIDIHandler(const char *handlerName, const char *configParams);
 
 /// Tells DOSBox whether MIDI is currently available or not.
-bool boxer_MIDIAvailable();
+bool boxer_MIDIAvailable(void);
 
 /// Dispatch MIDI messages sent from DOSBox's MPU-401 emulation.
 void boxer_sendMIDIMessage(Bit8u *msg);

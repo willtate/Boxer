@@ -589,7 +589,6 @@ NSString * const BXGamesFolderBookmarkUserDefaultsKey = @"gamesFolderURLBookmark
 {
 	NSURL *libraryURL = [[[NSFileManager defaultManager] URLsForDirectory: NSLibraryDirectory inDomains: NSUserDomainMask] objectAtIndex: 0];
     
-    [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex: 0];
 	NSURL *legacyAliasURL = [libraryURL URLByAppendingPathComponent: @"Preferences/Boxer/Default Folder"];
 	
     NSData *bookmarkData = [NSURL bookmarkDataWithContentsOfURL: legacyAliasURL error: NULL];

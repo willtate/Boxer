@@ -98,7 +98,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// with \c MIDIPortDispose once it is no longer needed.)
 + (MIDIPortRef) createListeningPortForClient: (MIDIClientRef)client
                                     withName: (NSString *)portName
-                                       error: (NSError **)outError;
+                                       error: (NSError **)outError NS_REFINED_FOR_SWIFT;
 
 /// Returns a new listener instance assigned to the specified delegate.
 - (instancetype) initWithDelegate: (id <BXMIDIInputListenerDelegate>)delegate;

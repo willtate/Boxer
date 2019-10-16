@@ -119,10 +119,10 @@ extern NSStringEncoding BXDirectStringEncoding;
     float _masterVolume;
 	
 	NSString *_processName;
-    NSMutableArray *_runningProcesses;
+    NSMutableArray<NSMutableDictionary<NSString*,id>*> *_runningProcesses;
 	
 	NSMutableDictionary *_driveCache;
-    NSDictionary *_lastProcess;
+    NSDictionary<NSString*,id> *_lastProcess;
 	
 	BOOL _cancelled;
 	BOOL _executing;
@@ -229,17 +229,17 @@ extern NSStringEncoding BXDirectStringEncoding;
 
 /// An array of dictionaries of representing the stack of running processes.
 /// Each dictionary contains the keys listed under "Process dictionary keys".
-@property (readonly) NSArray *runningProcesses;
+@property (readonly) NSArray<NSDictionary<NSString*,id>*> *runningProcesses;
 
 /// Returns a dictionary of info representing the current DOSBox process,
 /// containing the keys listed under "Process dictionary keys".
 /// Returns @c nil if no process is running.
-@property (readonly, copy) NSDictionary *currentProcess;
+@property (readonly, copy) NSDictionary<NSString*,id> *currentProcess;
 
 /// Returns a dictionary of info representing either the current DOSBox process
 /// (if one is still running) or the last process that was running.
 /// @see currentProcess, runningProcesses
-@property (readonly, copy) NSDictionary *lastProcess;
+@property (readonly, copy) NSDictionary<NSString*,id> *lastProcess;
 
 
 #pragma mark Controlling emulation

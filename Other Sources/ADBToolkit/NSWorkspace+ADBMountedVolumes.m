@@ -497,12 +497,12 @@ NSString * const ADBMountedVolumesErrorDomain = @"ADBMountedVolumesErrorDomain";
     if (readOnly)   options |= ADBMountReadOnly;
     if (invisible)  options |= ADBMountInvisible;
     
-    NSArray *mountedURLs = [self mountImageAtURL: [NSURL fileURLWithPath: path]
+    NSArray<NSURL*> *mountedURLs = [self mountImageAtURL: [NSURL fileURLWithPath: path]
                                          options: options
                                            error: outError];
 
     if (mountedURLs.count)
-        return [(NSURL *)[mountedURLs objectAtIndex: 0] path];
+        return [[mountedURLs objectAtIndex: 0] path];
     else
         return nil;
 }
@@ -517,9 +517,9 @@ NSString * const ADBMountedVolumesErrorDomain = @"ADBMountedVolumesErrorDomain";
 - (NSString *) volumeForSourceImage: (NSString *)imagePath
 {
     NSURL *imageURL = [NSURL fileURLWithPath: imagePath];
-    NSArray *volumes = [self mountedVolumeURLsForSourceImageAtURL: imageURL];
+    NSArray<NSURL*> *volumes = [self mountedVolumeURLsForSourceImageAtURL: imageURL];
     if (volumes.count)
-        return [(NSURL *)[volumes objectAtIndex: 0] path];
+        return [[volumes objectAtIndex: 0] path];
     else
         return nil;
 }

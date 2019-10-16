@@ -62,9 +62,9 @@ NS_ERROR_ENUM(ADBMountedVolumesErrorDomain)
 };
 
 typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
-    ADBMountReadOnly = 1 << 0,  //!< Mount the image as a read-only volume
-    ADBMountInvisible = 1 << 1, //!< Hide the mounted volume from Finder
-    ADBMountRaw = 1 << 2,       //!< Force the image to be mounted as raw
+    ADBMountReadOnly NS_SWIFT_NAME(readOnly) = 1 << 0,   //!< Mount the image as a read-only volume
+    ADBMountInvisible NS_SWIFT_NAME(invisible) = 1 << 1, //!< Hide the mounted volume from Finder
+    ADBMountRaw NS_SWIFT_NAME(raw) = 1 << 2,             //!< Force the image to be mounted as raw
 };
 
 

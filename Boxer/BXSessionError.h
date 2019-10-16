@@ -11,6 +11,8 @@
 #import <Foundation/Foundation.h>
 #import "NSError+ADBErrorHelpers.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 //Error domains and codes
 extern NSErrorDomain const BXSessionErrorDomain;
 typedef NS_ERROR_ENUM(BXSessionErrorDomain, BXSessionErrorValue)
@@ -39,42 +41,44 @@ typedef NS_ERROR_ENUM(BXSessionErrorDomain, BXSessionErrorValue)
 @end
 
 @interface BXSessionCannotMountSystemFolderError : BXSessionError
-+ (instancetype) errorWithFolderURL: (NSURL *)folderURL userInfo: (NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
++ (instancetype) errorWithFolderURL: (NSURL *)folderURL userInfo: (nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
 @end
 
 @interface BXImportNoExecutablesError : BXImportError
-+ (instancetype) errorWithSourceURL: (NSURL *)sourceURL userInfo: (NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
++ (instancetype) errorWithSourceURL: (NSURL *)sourceURL userInfo: (nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
 @end
 
 @interface BXImportWindowsOnlyError : BXImportError
-+ (instancetype) errorWithSourceURL: (NSURL *)sourceURL userInfo: (NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
++ (instancetype) errorWithSourceURL: (NSURL *)sourceURL userInfo: (nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
 - (NSString *) helpAnchor;
 @end
 
 @interface BXImportHybridCDError : BXImportError
-+ (instancetype) errorWithSourceURL: (NSURL *)sourceURL userInfo: (NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
++ (instancetype) errorWithSourceURL: (NSURL *)sourceURL userInfo: (nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
 @end
 
 @interface BXImportMacAppError : BXImportError
-+ (instancetype) errorWithSourceURL: (NSURL *)sourceURL userInfo: (NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
++ (instancetype) errorWithSourceURL: (NSURL *)sourceURL userInfo: (nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
 @end
 
 @class BXDrive;
 @interface BXImportDriveUnavailableError : BXImportError
-+ (instancetype) errorWithSourceURL: (NSURL *)sourceURL drive: (BXDrive *)drive userInfo: (NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
++ (instancetype) errorWithSourceURL: (NSURL *)sourceURL drive: (BXDrive *)drive userInfo: (nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
 @end
 
 @class BXGamebox;
 @interface BXGameStateGameboxMismatchError : BXSessionError
-+ (instancetype) errorWithStateURL: (NSURL *)stateURL gamebox: (BXGamebox *)gamebox userInfo: (NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
++ (instancetype) errorWithStateURL: (NSURL *)stateURL gamebox: (BXGamebox *)gamebox userInfo: (nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
 @end
 
 @interface BXSessionNotReadyError : BXSessionError
 
-+ (instancetype) errorWithUserInfo: (NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
++ (instancetype) errorWithUserInfo: (nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
 
 @end
 
 @interface BXSessionURLNotReachableError : BXSessionError
-+ (instancetype) errorWithURL: (NSURL *)URL userInfo: (NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
++ (instancetype) errorWithURL: (NSURL *)URL userInfo: (nullable NSDictionary<NSErrorUserInfoKey, id> *)userInfo;
 @end
+
+NS_ASSUME_NONNULL_END

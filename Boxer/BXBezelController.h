@@ -10,6 +10,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 #pragma mark -
 #pragma mark Constants
 
@@ -42,48 +44,48 @@ enum {
 #pragma mark Properties
 
 /// The bezel view used for drive inserted/ejected/imported notifications.
-@property (strong, nonatomic) IBOutlet NSView *driveAddedBezel;
-@property (strong, nonatomic) IBOutlet NSView *driveSwappedBezel;
-@property (strong, nonatomic) IBOutlet NSView *driveRemovedBezel;
-@property (strong, nonatomic) IBOutlet NSView *driveImportedBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *driveAddedBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *driveSwappedBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *driveRemovedBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *driveImportedBezel;
 
 /// The bezel used for fullscreen toggle notifications.
-@property (strong, nonatomic) IBOutlet NSView *fullscreenBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *fullscreenBezel;
 
 /// The bezel used for notifying the user that the joystick is being ignored.
-@property (strong, nonatomic) IBOutlet NSView *joystickIgnoredBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *joystickIgnoredBezel;
 
 /// The bezel view used for CPU speed notifications.
-@property (strong, nonatomic) IBOutlet NSView *CPUSpeedBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *CPUSpeedBezel;
 
 /// The bezel view used for flightstick throttle notifications.
-@property (strong, nonatomic) IBOutlet NSView *throttleBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *throttleBezel;
 
 /// The bezel view used for volume notifications.
-@property (strong, nonatomic) IBOutlet NSView *volumeBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *volumeBezel;
 
 /// The bezel view used for MT-32 LCD messages.
-@property (strong, nonatomic) IBOutlet NSView *MT32MessageBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *MT32MessageBezel;
 /// The bezel view used for notifying the user that they need an MT-32 to hear proper music.
-@property (strong, nonatomic) IBOutlet NSView *MT32MissingBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *MT32MissingBezel;
 
 /// Screenshot bezel views.
-@property (strong, nonatomic) IBOutlet NSView *screenshotBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *screenshotBezel;
 
 /// Pause/play/fast-forward bezel views.
-@property (strong, nonatomic) IBOutlet NSView *pauseBezel;
-@property (strong, nonatomic) IBOutlet NSView *playBezel;
-@property (strong, nonatomic) IBOutlet NSView *fastForwardBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *pauseBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *playBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *fastForwardBezel;
 
 /// Numpad simulation bezels.
-@property (strong, nonatomic) IBOutlet NSView *numpadActiveBezel;
-@property (strong, nonatomic) IBOutlet NSView *numpadInactiveBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *numpadActiveBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *numpadInactiveBezel;
 
 /// Numlock toggle bezels.
-@property (strong, nonatomic) IBOutlet NSView *numlockActiveBezel;
-@property (strong, nonatomic) IBOutlet NSView *numlockInactiveBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *numlockActiveBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *numlockInactiveBezel;
 
-@property (strong, nonatomic) IBOutlet NSView *mouseLockedBezel;
+@property (strong, nonatomic, null_unspecified) IBOutlet NSView *mouseLockedBezel;
 
 /// The last bezel that was displayed.
 @property (readonly, nonatomic, nullable) NSView *currentBezel;
@@ -95,7 +97,7 @@ enum {
 @property (class, readonly, strong) id controller;
 
 /// Returns the icon image to use for representing the specified drive.
-+ (NSImage *) bezelIconForDrive: (BXDrive *)drive;
++ (nullable NSImage *) bezelIconForDrive: (BXDrive *)drive;
 
 #pragma mark -
 #pragma mark Methods
@@ -144,3 +146,5 @@ enum {
 - (void) centerBezel;
 
 @end
+
+NS_ASSUME_NONNULL_END

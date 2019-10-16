@@ -25,10 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, copy, nonatomic) NSURL *soundFontURL;
 
 /// Returns the URL of the default system soundfont.
-+ (NSURL *) defaultSoundFontURL;
+@property (readonly, copy, class) NSURL *defaultSoundFontURL;
 
 /// Returns a fully-initialized synth ready to receive MIDI messages.
-/// Returns nil and populates outError if the synth could not be initialised.
+/// Returns \c nil and populates \c outError if the synth could not be initialised.
 - (nullable id <BXMIDIDevice>) initWithError: (NSError **)outError;
 
 /// Sets the specified soundfont with which MIDI should be played back.
@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// to using the system soundfont.
 /// Returns \c YES if the soundfont was loaded/cleared, or \c NO and populates
 /// \c outError if the soundfont couldn't be loaded for any reason (in which
-/// case soundFontURL will remain unchanged.)
+/// case \c soundFontURL will remain unchanged.)
 - (BOOL) loadSoundFontWithContentsOfURL: (nullable NSURL *)URL error: (NSError **)outError;
 
 @end

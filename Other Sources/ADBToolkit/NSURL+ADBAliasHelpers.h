@@ -38,11 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Returns a URL resolved from the specified Finder alias record.
 /// Directly equivalent to <code>URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:</code>.
-+ (nullable instancetype)URLByResolvingAliasRecord: (NSData *)aliasRecord
-                                           options: (NSURLBookmarkResolutionOptions)options
-                                     relativeToURL: (nullable NSURL *)relativeURL
-                               bookmarkDataIsStale: (out BOOL * _Nullable)isStale
-                                             error: (out NSError *_Nullable*_Nullable)outError;
++ (nullable NSURL*)URLByResolvingAliasRecord: (NSData *)aliasRecord
+                                     options: (NSURLBookmarkResolutionOptions)options
+                               relativeToURL: (nullable NSURL *)relativeURL
+                         bookmarkDataIsStale: (out BOOL * _Nullable)isStale
+                                       error: (out NSError **)outError;
 
 @end
 

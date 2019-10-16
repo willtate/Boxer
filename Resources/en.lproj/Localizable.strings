@@ -77,7 +77,7 @@
 "Add MT-32 ROMs…" = "Add MT-32 ROMs…";
 
 /* Label shown on accept button in mount-a-new-drive panel. */
-"Add drive" = "Přidat disk";
+"Add drive" = "Add drive";
 
 /* Heading for all programs search results in launcher panel. */
 "All Programs" = "All Programs";
