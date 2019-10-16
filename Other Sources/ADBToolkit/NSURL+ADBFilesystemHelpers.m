@@ -119,7 +119,7 @@
             break;
 	}
 	
-    return components;
+    return [components copy];
 }
 
 - (NSArray *) URLsByAppendingPaths: (NSArray *)paths
@@ -132,7 +132,7 @@
         [URLs addObject: URL];
     }
     
-    return URLs;
+    return [URLs copy];
 }
 
 @end

@@ -27,6 +27,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 extern NSString * const ADBDefaultIncrementedFilenameFormat; //Filename (increment).extension
 
 #define ADBLocalizedDefaultIncrementedFilenameFormat NSLocalizedString(ADBDefaultIncrementedFilenameFormat, @"Default filename format for unique auto-incremented filenames. %1$@ is the base name of the filename, %2$@ is the file extension of the filename and %3$lu is the increment.");
@@ -43,9 +45,9 @@ extern NSString * const ADBDefaultIncrementedFilenameFormat; //Filename (increme
 /// %1$@: the base filename (sans extension)
 /// %2$@: the file extension
 /// %3$lu: the increment.
-+ (NSURL *) incrementedURL: (NSURL *)URL
-                withFormat: (NSString *)filenameFormat
-                 increment: (NSUInteger)increment;
++ (nullable NSURL *) incrementedURL: (NSURL *)URL
+                         withFormat: (NSString *)filenameFormat
+                          increment: (NSUInteger)increment;
 
 #pragma mark File operation methods
 
@@ -55,33 +57,35 @@ extern NSString * const ADBDefaultIncrementedFilenameFormat; //Filename (increme
 /// incremented starting from 2.
 /// Note that this can introduce race conditions since a file with that URL may be created between
 /// requesting the URL and actually using the URL.
-- (NSURL *) uniqueURLForURL: (NSURL *)URL filenameFormat: (NSString *)filenameFormat;
+- (nullable NSURL *) uniqueURLForURL: (NSURL *)URL filenameFormat: (NSString *)filenameFormat;
 
 /// Creates a directory with the specified attributes at the specified URL (if no resource already
 /// exists at that URL) or at a version of that URL incremented with the specified format (if a
 /// resource already exists at that URL). Returns the URL that was actually created, or nil and
 /// populates outError if directory creation failed.
-- (NSURL *) createDirectoryAtURL: (NSURL *)URL
-                  filenameFormat: (NSString *)filenameFormat
-                      attributes: (NSDictionary *)attributes
-                           error: (out NSError **)outError;
+- (nullable NSURL *) createDirectoryAtURL: (NSURL *)URL
+                           filenameFormat: (NSString *)filenameFormat
+                               attributes: (nullable NSDictionary<NSFileAttributeKey, id> *)attributes
+                                    error: (out NSError **)outError;
 
 /// Copy the file at the specified source URL to the specified destination URL (if no resource
 /// already exists at that URL) or to a version of the destination URL incremented with the specified
 /// format (if a resource does already exist at that URL). Returns the final destination URL to which
 /// the source was copied, or @c nil and populates @c outError if the copy failed.
-- (NSURL *) copyItemAtURL: (NSURL *)sourceURL
-                    toURL: (NSURL *)destinationURL
-           filenameFormat: (NSString *)filenameFormat
-                    error: (out NSError **)outError;
+- (nullable NSURL *) copyItemAtURL: (NSURL *)sourceURL
+                             toURL: (NSURL *)destinationURL
+                    filenameFormat: (NSString *)filenameFormat
+                             error: (out NSError **)outError;
 
 /// Move the file at the specified source URL to the specified destination URL (if no resource
 /// already exists at that URL) or to a version of the destination URL incremented with the specified
 /// format (if a resource does already exist at that URL). Returns the final destination URL to which
 /// the source was moved, or @c nil and populates @c outError if the copy failed.
-- (NSURL *) moveItemAtURL: (NSURL *)sourceURL
-                    toURL: (NSURL *)destinationURL
-           filenameFormat: (NSString *)filenameFormat
-                    error: (out NSError **)outError;
+- (nullable NSURL *) moveItemAtURL: (NSURL *)sourceURL
+                             toURL: (NSURL *)destinationURL
+                    filenameFormat: (NSString *)filenameFormat
+                             error: (out NSError **)outError;
 
 @end
+
+NS_ASSUME_NONNULL_END

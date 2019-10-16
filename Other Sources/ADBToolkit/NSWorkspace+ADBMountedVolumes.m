@@ -37,6 +37,7 @@ NSString * const ADBDataCDVolumeType	= @"cd9660";
 NSString * const ADBAudioCDVolumeType	= @"cddafs";
 NSString * const ADBFATVolumeType		= @"msdos";
 NSString * const ADBHFSVolumeType		= @"hfs";
+NSString * const ADBAPFSVolumeType      = @"apfs";
 
 //FAT volumes smaller than 2MB will be treated as floppy drives by isFloppyDriveAtPath.
 #define ADBFloppySizeCutoff 2 * 1024 * 1024

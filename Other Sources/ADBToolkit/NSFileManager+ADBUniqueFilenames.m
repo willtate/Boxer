@@ -34,12 +34,12 @@ typedef BOOL(^ADBUniqueFilenameOperation)(NSURL *uniqueURL, NSError **outError);
 
 @interface NSFileManager (ADBUniqueFilenamesPrivate)
 
-//Generic utility method used by the below. This takes a particular file operation
-//and feeds it either the original target URL or an incremented version of same.
-//If the operation returns YES, that URL is returned; if the operation returned
-//NO because the target URL already exists, the target will be incremented and it
-//tries again; otherwise it will return nil and populate outError with any error
-//the operation threw back.
+/// Generic utility method used by the below. This takes a particular file operation
+/// and feeds it either the original target URL or an incremented version of same.
+/// If the operation returns YES, that URL is returned; if the operation returned
+/// @c NO because the target URL already exists, the target will be incremented and it
+/// tries again; otherwise it will return @c nil and populate outError with any error
+/// the operation threw back.
 - (NSURL *) _performFileOperation: (ADBUniqueFilenameOperation)operation
                           withURL: (NSURL *)targetURL
         incrementedFilenameFormat: (NSString *)filenameFormat

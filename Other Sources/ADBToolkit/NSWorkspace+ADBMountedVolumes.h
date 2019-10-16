@@ -43,6 +43,7 @@ extern ADBVolumeType const ADBDataCDVolumeType NS_SWIFT_NAME(dataCD);
 extern ADBVolumeType const ADBAudioCDVolumeType NS_SWIFT_NAME(audioCD);
 extern ADBVolumeType const ADBFATVolumeType NS_SWIFT_NAME(FAT);
 extern ADBVolumeType const ADBHFSVolumeType NS_SWIFT_NAME(HFS);
+extern ADBVolumeType const ADBAPFSVolumeType NS_SWIFT_NAME(APFS);
 
 
 #pragma mark - Error constants
@@ -168,50 +169,50 @@ NS_ASSUME_NONNULL_END
 
 /// Returns an array of visible locally mounted volumes.
 /// If @c hidden is YES, or on 10.5, this will also include invisible volumes.
-- (NSArray *_Null_unspecified) mountedLocalVolumePathsIncludingHidden: (BOOL)hidden __deprecated;
+- (null_unspecified NSArray *) mountedLocalVolumePathsIncludingHidden: (BOOL)hidden __deprecated;
 
 /// Returns whether the volume at the specified file path is visible in Finder.
 /// If this is NO, it means the volume has been mounted hidden (and should probably be ignored.)
-- (BOOL) volumeIsVisibleAtPath: (NSString *_Null_unspecified)path __deprecated;
+- (BOOL) volumeIsVisibleAtPath: (null_unspecified NSString *)path __deprecated;
 
 /// Returns all mounted filesystems of the specified filesystem type.
 /// If hidden is YES, or on 10.5, this will also include invisible volumes.
-- (NSArray *_Null_unspecified) mountedVolumesOfType: (NSString *_Null_unspecified)volumeType includingHidden: (BOOL)hidden __deprecated;
+- (null_unspecified NSArray *) mountedVolumesOfType: (null_unspecified NSString *)volumeType includingHidden: (BOOL)hidden __deprecated;
 
 /// Returns the underlying filesystem type of the specified path.
-- (NSString *_Null_unspecified) volumeTypeForPath: (NSString *_Null_unspecified)path __deprecated;
+- (null_unspecified NSString *) volumeTypeForPath: (null_unspecified NSString *)path __deprecated;
 
 /// Return the base volume path upon which the specified path resides.
-- (NSString *_Null_unspecified) volumeForPath: (NSString *_Null_unspecified)path __deprecated;
+- (null_unspecified NSString *) volumeForPath: (null_unspecified NSString *)path __deprecated;
 
 /// Returns the path to the source disk image from which the specified volume path was created.
 /// Returns nil if the source image could not be determined (e.g. if the volume is not mounted from a disk image)
-- (NSString *_Null_unspecified) sourceImageForVolume: (NSString *_Null_unspecified)volumePath __deprecated;
+- (null_unspecified NSString *) sourceImageForVolume: (null_unspecified NSString *)volumePath __deprecated;
 
 /// Returns the first path at which the specified source disk image is mounted.
 /// Returns nil if the source image is not currently mounted.
-- (NSString *_Null_unspecified) volumeForSourceImage: (NSString *_Null_unspecified)imagePath __deprecated;
+- (null_unspecified NSString *) volumeForSourceImage: (null_unspecified NSString *)imagePath __deprecated;
 
 /// Mounts the disk image at the specified path, and returns the path to the newly-mounted volume if successful.
 /// Returns nil and populates error if mounting failed.
 /// If invisible is true, the mounted volume will not appear in Finder.
-- (NSString *_Null_unspecified) mountImageAtPath: (NSString *_Null_unspecified)path
+- (null_unspecified NSString *) mountImageAtPath: (null_unspecified NSString *)path
 					   readOnly: (BOOL)readOnly
 					  invisibly: (BOOL)invisible
 						  error: (NSError *_Null_unspecified*_Null_unspecified)error __deprecated;
 
 /// Returns the path of the data volume associated with the specified CD volume path.
 /// Returns nil if the CD volume has no corresponding data volume.
-- (NSString *_Null_unspecified) dataVolumeOfAudioCD: (NSString *_Null_unspecified)volumePath __deprecated;
+- (null_unspecified NSString *) dataVolumeOfAudioCD: (null_unspecified NSString *)volumePath __deprecated;
 
 /// Returns the path of the audio CD volume associated with the specified data CD volume path.
 /// Returns nil if the CD volume has no corresponding audio volume.
-- (NSString *_Null_unspecified) audioVolumeOfDataCD: (NSString *_Null_unspecified)volumePath __deprecated;
+- (null_unspecified NSString *) audioVolumeOfDataCD: (null_unspecified NSString *)volumePath __deprecated;
 
 /// Returns whether the specified volume is actually a DOS floppy disk.
-- (BOOL) isFloppyVolumeAtPath: (NSString *_Null_unspecified)volumePath __deprecated;
+- (BOOL) isFloppyVolumeAtPath: (null_unspecified NSString *)volumePath __deprecated;
 
 /// Returns whether the specified volume is the size of a DOS floppy disk.
-- (BOOL) isFloppySizedVolumeAtPath: (NSString *_Null_unspecified)volumePath __deprecated;
+- (BOOL) isFloppySizedVolumeAtPath: (null_unspecified NSString *)volumePath __deprecated;
 
 @end
