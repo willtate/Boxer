@@ -1,3 +1,4 @@
+
 /* Class = "NSTextFieldCell"; title = "[Game name] Documentation"; ObjectID = "20"; */
 "20.title" = "Dokumentace ke hře [název hry]";
 
@@ -21,4 +22,3 @@
 
 /* Class = "NSMenuItem"; title = "Quick Look"; ObjectID = "94"; */
 "94.title" = "Náhled";
-

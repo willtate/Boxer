@@ -28,4 +28,3 @@
 
 /* Warning shown at the DOS prompt after a Windows-only game was launched and exited.\n\nNOTE FOR TRANSLATORS: The key for this string is a reference for a much longer text. See the English version of Shell.strings for the actual text to be translated. */
 "Windows-only game warning" = "Varování ke hře pouze pro Windows";
-
