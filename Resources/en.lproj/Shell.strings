@@ -1,4 +1,4 @@
-﻿/*
+/*
 This translation file contains strings used by Boxer's extensions to the DOS shell.
 These have the same format and usage restrictions as the strings in DOSBox.strings: they can contain DOSBox colour codes and need to be written with a 80-column terminal screen in mind.
 */
