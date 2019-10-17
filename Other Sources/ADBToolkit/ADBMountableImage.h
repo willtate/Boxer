@@ -64,35 +64,35 @@ typedef NS_ERROR_ENUM(ADBMountableImageErrorDomain, ADBMountableImageErrors) {
 #pragma mark - Constructors
 
 /// Returns a new instance using the image at the specified URL.
-/// Returns nil and populates outError if the URL was not a supported image.
+/// Returns @c nil and populates @c outError if the URL was not a supported image.
 + (nullable instancetype) imageWithContentsOfURL: (NSURL *)baseURL error: (out NSError **)outError;
 - (nullable instancetype) initWithContentsOfURL: (NSURL *)baseURL error: (out NSError **)outError;
 
 
 #pragma mark - Internal methods
 
-//Called whenever NSWorkspace notifies that a volume has been unmounted or renamed.
-//If the volume corresponds to our own, this will clear/update our cached records.
+/// Called whenever NSWorkspace notifies that a volume has been unmounted or renamed.
+/// If the volume corresponds to our own, this will clear/update our cached records.
 - (void) volumeDidUnmount: (NSNotification *)notification;
 - (void) volumeDidRename: (NSNotification *)notification;
 
-//Called when the application is about to shut down to unmount the disk image's volume
-//if unmountWhenDone is YES (i.e. if the instance was responsible for mounting the volume.)
-//Although the instance would ordinarily do this anyway when deallocated, it is not
-//guaranteed that dealloc will be called during application shutdown.
+/// Called when the application is about to shut down to unmount the disk image's volume
+/// if @c unmountWhenDone is @c YES (i.e. if the instance was responsible for mounting the volume.)
+/// Although the instance would ordinarily do this anyway when deallocated, it is not
+/// guaranteed that dealloc will be called during application shutdown.
 - (void) applicationWillTerminate: (NSNotification *)notification;
 
-//Returns the filesystem URL of the mounted volume representing the image's contents.
-//If mountIfNeeded is YES, the filesystem will attempt to mount the backing image
-//if it's not already, returning nil and populating outError if the image could
-//not be mounted. If mountIfNeeded is NO and the image is not already mounted,
-//it will return nil and populate outError.
+/// Returns the filesystem URL of the mounted volume representing the image's contents.
+/// If @c mountIfNeeded is YES, the filesystem will attempt to mount the backing image
+/// if it's not already, returning nil and populating outError if the image could
+/// not be mounted. If @c mountIfNeeded is @c NO and the image is not already mounted,
+/// it will return @c nil and populate outError.
 - (nullable NSURL *) volumeURLMountingIfNeeded: (BOOL)mountIfNeeded
                                          error: (out NSError **)outError;
 
-//Unmount the backing volume for the image if it is mounted. Returns YES on success
-//and NO and populates outError upon failure.
-//Called automatically when the filesystem is deallocated, if unmountIsDone is YES.
+/// Unmount the backing volume for the image if it is mounted. Returns @c YES on success
+/// and @c NO and populates outError upon failure.
+/// Called automatically when the filesystem is deallocated, if @c unmountIsDone is YES.
 - (BOOL) unmountVolumeWithError: (out NSError **)outError;
 
 @end

@@ -174,9 +174,9 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 /// of the \c ADBFileHandle instance: i.e. it may be closed when the instance
 /// is deallocated.
 ///
-/// This method should raise an assertion if adopt is \c YES and ownership has
+/// This method should raise an assertion if @c adopt is @c YES and ownership has
 /// already been taken of the file handle.
-/// Calling \c fclose() on the resulting handle should have the same effect as
+/// Calling @c fclose() on the resulting handle should have the same effect as
 /// calling the close method below.
 - (FILE *) fileHandleAdoptingOwnership: (BOOL)adopt;
 
@@ -317,7 +317,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
                         leadOut: (NSUInteger)blockLeadOut;
 
 /// Converts to and from and logical byte offsets, taking block padding into account.
-/// These will return ADBOffsetUnknown if the specified offset is not representable
+/// These will return @c ADBOffsetUnknown if the specified offset is not representable
 /// in the corresponding space.
 - (long long) sourceOffsetForLogicalOffset: (long long)offset;
 - (long long) logicalOffsetForSourceOffset: (long long)offset;

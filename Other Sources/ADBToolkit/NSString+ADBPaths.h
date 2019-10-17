@@ -25,7 +25,9 @@
  */
 
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 /// The @c ADBPaths category extends NSString to add a few helpful path-related methods.
 @interface NSString (ADBPaths)
@@ -56,3 +58,5 @@
 - (NSArray<NSString*> *) pathsFilteredToDepth: (NSUInteger)maxRelativeDepth;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -61,13 +61,13 @@
 /// The path of the last file returned by nextObject, relative to basePath.
 @property (readonly, copy, nonatomic) NSString *relativePath;
 
-/// Whether nextObject should ignore hidden files. Is YES by default.
+/// Whether nextObject should ignore hidden files. Is @c YES by default.
 @property (assign, nonatomic) BOOL skipHiddenFiles;
 
-/// Whether nextObject should only enumerate the base path, skipping all subdirectories. Is NO by default.
+/// Whether nextObject should only enumerate the base path, skipping all subdirectories. Is @c NO by default.
 @property (assign, nonatomic) BOOL skipSubdirectories;
 
-/// Whether nextObject should skip over files located in packages (the packages themselves will still be returned.) Is NO by default.
+/// Whether nextObject should skip over files located in packages (the packages themselves will still be returned.) Is @c NO by default.
 @property (assign, nonatomic) BOOL skipPackageContents;
 
 /// What UTI filetypes nextObject will return. If nil, files of any type will be returned.
@@ -78,8 +78,8 @@
 
 
 /// Passthroughs for NSDirectoryEnumerator methods.
-@property (weak, readonly, nonatomic) NSDictionary<NSFileAttributeKey, id> *fileAttributes;
-@property (weak, readonly, nonatomic) NSDictionary<NSFileAttributeKey, id> *directoryAttributes;
+@property (copy, readonly, nonatomic) NSDictionary<NSFileAttributeKey, id> *fileAttributes;
+@property (copy, readonly, nonatomic) NSDictionary<NSFileAttributeKey, id> *directoryAttributes;
 
 
 #pragma mark -
@@ -91,7 +91,7 @@
 /// Initialise a new emulator for the specified file path.
 - (instancetype) initWithPath: (NSString *)filePath;
 
-/// Passthroughs for NSDirectoryEnumerator methods.
+/// Passthroughs for @c NSDirectoryEnumerator methods.
 - (void) skipDescendants;
 
 @end
