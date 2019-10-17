@@ -83,7 +83,7 @@ NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]
     {
         NSDictionary *description;
         
-        NSArray *captures = [symbol captureComponentsMatchedByRegex: ADBCallstackSymbolPattern];
+        NSArray<NSString*> *captures = [symbol captureComponentsMatchedByRegex: ADBCallstackSymbolPattern];
         if (captures.count == 5)
         {
             //FIXME: reimplement this using NSScanner so that we don't have dependencies

@@ -36,7 +36,7 @@ typedef NS_ERROR_ENUM(BXGameboxErrorDomain, BXLauncherErrors) {
 extern NSString * const BXGameIdentifierGameInfoKey;
 
 /// The gameInfo key under which we store the type of the game's identifier.
-/// Will be an NSNumber of BXGameIdentifierTypes.
+/// Will be an @c NSNumber of @c BXGameIdentifierTypes
 extern NSString * const BXGameIdentifierTypeGameInfoKey;
 
 /// The gameInfo key under which we store the default program path,
@@ -44,11 +44,11 @@ extern NSString * const BXGameIdentifierTypeGameInfoKey;
 extern NSString * const BXTargetProgramGameInfoKey;
 
 /// The gameInfo key under which we store an array of launcher shortcuts.
-/// Each entry in the array is an NSDictionary whose keys are listed under
+/// Each entry in the array is an @c NSDictionary whose keys are listed under
 /// "Launcher dictionary constants".
 extern NSString * const BXLaunchersGameInfoKey;
 
-/// The gameInfo key under which we store the close-on-exit toggle flag as an NSNumber.
+/// The gameInfo key under which we store the close-on-exit toggle flag as an @c NSNumber
 extern NSString * const BXCloseOnExitGameInfoKey;
 
 
@@ -63,6 +63,7 @@ extern NSString * const BXLauncherRelativePathKey;
 
 /// The absolute URL of the program for the launcher, resolved from
 /// @c BXLauncherRelativePathKey at launch time.
+///
 /// Note that in the case of paths located on disk images, this URL may not be
 /// accessible in the DOS filesystem.
 extern NSString * const BXLauncherURLKey;
@@ -209,7 +210,7 @@ typedef NS_ENUM(NSUInteger, BXGameIdentifierType) {
 - (NSArray<NSURL*> *) URLsOfVolumesMatchingTypes: (NSSet<NSString*> *)fileTypes;
 
 /// Returns whether the gamebox's disk representation is currently writable to Boxer:
-/// according to the NSURLFileIsWritableKey resource property of the bundle's URL.
+/// according to the @c NSURLFileIsWritableKey resource property of the bundle's URL.
 /// To avoid hitting the filesystem constantly for checks, the result of the check will
 /// be cached for a number of seconds.
 /// Note that even if this method returns YES, attempts to modify the gamebox's disk state
@@ -239,8 +240,8 @@ typedef NS_ENUM(NSInteger, BXGameboxDocumentationConflictBehaviour) {
 @property (readonly, nonatomic) NSURL *documentationFolderURL;
 
 /// Returns whether the gamebox has a documentation folder of its own.
-/// If not, this can be created with createDocumentationFolderIfMissingWithError:
-/// or populateDocumentationFolderCreatingIfMissing:WithError:.
+/// If not, this can be created with @c createDocumentationFolderIfMissingWithError:
+/// or @c populateDocumentationFolderCreatingIfMissing:WithError:
 @property (readonly, nonatomic) BOOL hasDocumentationFolder;
 
 #pragma mark - Class helper methods
@@ -260,39 +261,39 @@ typedef NS_ENUM(NSInteger, BXGameboxDocumentationConflictBehaviour) {
 /// Empties any documentation cache and forces documentationURLs and hasDocumentationFolder
 /// to be re-evaluated. This will signal changes to those properties over KVO.
 /// This should be called after making changes to the gamebox's documentation folder outside
-/// of the \c BXGamebox API (or e.g. after external filesystem changes to the documentation folder
+/// of the @c BXGamebox API (or e.g. after external filesystem changes to the documentation folder
 /// have been detected) to force those changes to be signalled via the API.
 - (void) refreshDocumentation;
 
 /// Creates a new empty documentation folder inside the gamebox if one doesn't already exist.
-/// This can then be populated with \c populateDocumentationFolderWithError: if desired.
-/// Returns \c YES if the folder was created or already existed, or \c NO and populates \c outError
+/// This can then be populated with @c populateDocumentationFolderWithError: if desired.
+/// Returns @c YES if the folder was created or already existed, or @c NO and populates @c outError
 /// if the folder could not be created (which will be the case if the gamebox is locked.)
 /// This method registers an undo operation if the folder was created successfully.
 - (BOOL) createDocumentationFolderIfMissingWithError: (out NSError **)outError;
 
 /// Moves the documentation folder to the trash along with all its contents.
-/// Returns the URL of the folder in the trash, or \c nil if the folder could not be trashed
+/// Returns the URL of the folder in the trash, or @c nil if the folder could not be trashed
 /// (including if it didn't exist.)
 /// This method registers an undo operation if the folder was successfully moved to the trash.
 - (nullable NSURL *) trashDocumentationFolderWithError: (NSError **)outError;
 
 /// Populates the documentation folder with symlinks to documentation found elsewhere in the gamebox.
-/// If \c createIfMissing is YES, the folder will be created if it doesn't already exist.
+/// If @c createIfMissing is YES, the folder will be created if it doesn't already exist.
 /// Returns an array of populated documentation URLs if the folder was populated successfully,
-/// or \c NO and returns outError if it could not be populated (including if the documentation folder
-/// doesn't exist and createIfMissing was NO.)
+/// or @c NO and returns outError if it could not be populated (including if the documentation folder
+/// doesn't exist and @c createIfMissing was NO.)
 /// This method registers undo operations for creating the folder and populating each documentation file.
 - (nullable NSArray<NSURL*> *) populateDocumentationFolderCreatingIfMissing: (BOOL)createIfMissing error: (out NSError **)outError;
 
 
 /// Copies the file at the specified location into the documentation folder,
 /// creating the folder first if it is missing.
-/// If \c title is specified, it will be used as the filename for the imported file;
+/// If @c title is specified, it will be used as the filename for the imported file;
 /// otherwise, the file's original name will be used.
-/// In the event of a filename collision, \c conflictBehaviour determines whether
+/// In the event of a filename collision, @c conflictBehaviour determines whether
 /// the file will be replaced or renamed (by appending a number to the filename).
-/// Returns the URL of the imported file on success, or \c nil and populates \c outError on failure.
+/// Returns the URL of the imported file on success, or @c nil and populates @c outError on failure.
 /// This method registers an undo operation if the file was successfully added.
 - (nullable NSURL *) addDocumentationFileFromURL: (NSURL *)sourceURL
                                        withTitle: (nullable NSString *)title
@@ -303,9 +304,9 @@ typedef NS_ENUM(NSInteger, BXGameboxDocumentationConflictBehaviour) {
 /// creating the folder first if it is missing.
 /// If \c title is specificied, it will be used as the filename for the imported file;
 /// otherwise, the file's original name will be used.
-/// In the event of a filename collision, \c conflictBehaviour determines whether
+/// In the event of a filename collision, @c conflictBehaviour determines whether
 /// the file will be replaced or renamed (by appending a number to the filename).
-/// Returns the URL of the symlink on success, or \c nil and populates \c outError on failure.
+/// Returns the URL of the symlink on success, or @c nil and populates @c outError on failure.
 /// This method registers an undo operation if the symlink was successfully added.
 - (nullable NSURL *) addDocumentationSymlinkToURL: (NSURL *)sourceURL
                                         withTitle: (nullable NSString *)title
@@ -314,8 +315,8 @@ typedef NS_ENUM(NSInteger, BXGameboxDocumentationConflictBehaviour) {
 
 /// Moves the documentation file at the specified URL to the trash (if it is a regular file)
 /// or deletes it altogether (if it is a symlink).
-/// Returns \c YES on success, and populates \c resultingURL if the file was trashed rather than removed entirely.
-/// Returns \c NO and populates \c outError on failure. This method will fail and do nothing if the specified URL
+/// Returns @c YES on success, and populates @c resultingURL if the file was trashed rather than removed entirely.
+/// Returns @c NO and populates @c outError on failure. This method will fail and do nothing if the specified URL
 /// is not located within the gamebox's documentation folder.
 /// This method registers an undo operation if the file was successfully deleted/moved to the trash.
 - (BOOL) removeDocumentationURL: (NSURL *)documentationURL
@@ -323,11 +324,11 @@ typedef NS_ENUM(NSInteger, BXGameboxDocumentationConflictBehaviour) {
                           error: (out NSError **)outError;
 
 /// Returns whether the specified documentation file can be removed from the gamebox.
-/// Will return NO if the gamebox is locked or the URL is not located within the documentation folder.
+/// Will return @c NO if the gamebox is locked or the URL is not located within the documentation folder.
 - (BOOL) canTrashDocumentationURL: (NSURL *)documentationURL;
 
 /// Returns whether the specified documentation file can be imported into the gamebox.
-/// Will return NO if the gamebox is locked or has no documentation folder into which the file can go.
+/// Will return @c NO if the gamebox is locked or has no documentation folder into which the file can go.
 - (BOOL) canAddDocumentationFromURL: (NSURL *)documentationURL;
 
 @end

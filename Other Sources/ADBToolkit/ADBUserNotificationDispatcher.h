@@ -27,6 +27,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notification);
 
 /// @c ADBUserNotificationDispatcher is a delegate for OS X 10.8+'s @c NSUserNotificationCenter delivery mechanism.
@@ -50,9 +52,9 @@ typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notifica
 /// that was activated. Note that any objects referenced in the handler will be retained until
 /// the notification for the handler has been removed.
 - (void) scheduleNotification: (NSUserNotification *)notification
-                       ofType: (id)typeKey
-                   fromSender: (id)sender
-                 onActivation: (ADBUserNotificationActivationHandler)activationHandler;
+                       ofType: (nullable id)typeKey
+                   fromSender: (nullable id)sender
+                 onActivation: (nullable ADBUserNotificationActivationHandler)activationHandler;
 
 /// Remove the specified notification from the user notification panel.
 - (void) removeNotification: (NSUserNotification *)notification;
@@ -60,9 +62,11 @@ typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notifica
 /// Remove all scheduled and delivered notifications from the specified sender and/or type.
 /// Pass @c nil as the @c type to remove all notifications from that sender regardless of type.
 /// Pass @c nil as the @c sender to remove all notifications of that type regardless of sender.
-- (void) removeAllNotificationsOfType: (id)typeKey fromSender: (id)sender;
+- (void) removeAllNotificationsOfType: (nullable id)typeKey fromSender: (nullable id)sender;
 
 /// Remove all delivered and scheduled notifications for the entire application.
 - (void) removeAllNotifications;
 
 @end
+
+NS_ASSUME_NONNULL_END

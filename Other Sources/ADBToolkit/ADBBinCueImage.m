@@ -51,9 +51,9 @@ NSString * const ADBCueFileDescriptorSyntax = @"FILE\\s+(?:\"(.+)\"|(\\S+))\\s+[
 	NSMutableArray *paths = [NSMutableArray arrayWithCapacity: 1];
 	
 	NSRange usefulComponents = NSMakeRange(1, 2);
-	NSArray *matches = [cueContents arrayOfCaptureComponentsMatchedByRegex: ADBCueFileDescriptorSyntax];
+	NSArray<NSArray<NSString*>*> *matches = [cueContents arrayOfCaptureComponentsMatchedByRegex: ADBCueFileDescriptorSyntax];
 	
-	for (NSArray *components in matches)
+	for (NSArray<NSString*> *components in matches)
 	@autoreleasepool {
 		for (NSString *fileName in [components subarrayWithRange: usefulComponents])
 		{

@@ -424,7 +424,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 				//Otherwise, treat the line as a setting declaration.
 				else
 				{
-					NSArray *settingMatch = [line captureComponentsMatchedByRegex: BXEmulatorConfigurationSettingFormat];
+					NSArray<NSString*> *settingMatch = [line captureComponentsMatchedByRegex: BXEmulatorConfigurationSettingFormat];
 					
 					//We expect two substrings from this match: less or more means a malformed setting line.
 					if (settingMatch.count == 3)
