@@ -232,13 +232,13 @@ con el comando [34;1mimgmount[0m.
 
 "PROGRAM_IMGMOUNT_SPECIFY_DRIVE" = "Prepara el contenido de una imagen de disco ISO/CUE/IMG en una unidad DOS.
 
-Uso:   [34;1mimgmount [letra de unidad DOS] [\"Ruta/a/image.iso\"] -t [hdd/floppy/cdrom][0m
-Ejemplo: [32;1mimgmount d \"/Users/yourname/Desktop/Game.iso\" -t cdrom[0m montará
+Uso:   [34;1mimgmount [letra de unidad DOS] [\"Ruta/a/image.iso\"] -t [hdd/floppy/iso][0m
+Ejemplo: [32;1mimgmount d \"/Users/yourname/Desktop/Game.iso\" -t iso[0m montará
 la imagen de disco Game.iso como la unidad D:.
 
 Puede especificar que tipo de unidad usar al añadir el parámetro [34;1m-t[0m:
 [32;1m-t hdd[0m monta como disco duro.
-[32;1m-t cdrom[0m monta como CD-ROM.
+[32;1m-t iso[0m monta como CD-ROM.
 [32;1m-t floppy[0m monta como disquete.
 ";
 
@@ -249,7 +249,7 @@ Puede especificar que tipo de unidad usar al añadir el parámetro [34;1m-t[0m
 3 = Disco duro 2
 ";
 
-"PROGRAM_IMGMOUNT_SPECIFY_GEOMETRY" = "Para [33mimágenes de CD-ROM:[0m    [34;1mimgmount [letra de unidad DOS] [\"ruta/a/imagen.iso\"] -t cdrom[0m
+"PROGRAM_IMGMOUNT_SPECIFY_GEOMETRY" = "Para [33mimágenes de CD-ROM:[0m    [34;1mimgmount [letra de unidad DOS] [\"ruta/a/imagen.iso\"] -t iso[0m
 
 Para [33mimágenes de disco duro[0m: Especifique la geometría de la unidad como a continuación:
 [34;1mimgmount [letra de unidad DOS] [\"ruta/a/imagen.img\"] -size [bps,spc,hpc,cyl][0m
@@ -272,7 +272,7 @@ cyl = Número de cilindros
 ";
 
 "PROGRAM_IMGMOUNT_TYPE_UNSUPPORTED" = "El tipo de imagen %s no fue reconocido.
-Los tipos soportados son [32;1mhdd[0m, [32;1mfloppy[0m y [32;1mcdrom[0m.
+Los tipos soportados son [32;1mhdd[0m, [32;1mfloppy[0m y [32;1miso[0m.
 ";
 
 "PROGRAM_IMGMOUNT_FORMAT_UNSUPPORTED" = "El formato %s no fue reconocido.
@@ -281,8 +281,8 @@ Los formatos soportados son [32;1mfat[0m, [32;1miso[0m y [32;1mnone[0m.
 
 "PROGRAM_IMGMOUNT_SPECIFY_FILE" = "Por favor especifique el archivo de imagen que desea montar.
 
-Uso:   [34;1mimgmount [letra de unidad DOS] [\"Ruta/a/image.iso\"] -t [hdd/floppy/cdrom][0m
-Ejemplo: [32;1mimgmount d \"/Users/yourname/Game.iso\" -t cdrom[0m montará
+Uso:   [34;1mimgmount [letra de unidad DOS] [\"Ruta/a/image.iso\"] -t [hdd/floppy/iso][0m
+Ejemplo: [32;1mimgmount d \"/Users/yourname/Game.iso\" -t iso[0m montará
 la imagen de disco Game.iso como la unidad D:.
 ";
 
