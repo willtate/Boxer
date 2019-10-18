@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -36,7 +36,7 @@
             <rect key="frame" x="0.0" y="0.0" width="391" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="7" id="5" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="5" customClass="BXHUDLabel">
                     <rect key="frame" x="20" y="23" width="354" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="6">
@@ -53,7 +53,7 @@ Cmd+click to access the menu bar.</string>
             <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="3" id="8" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="8" customClass="BXHUDLabel">
                     <rect key="frame" x="20" y="12" width="260" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="[386 speed (3000 cycles)]" id="9">
@@ -62,19 +62,19 @@ Cmd+click to access the menu bar.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <levelIndicator verticalHuggingPriority="750" tag="2" id="10">
+                <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="10">
                     <rect key="frame" x="41" y="43" width="219" height="20"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <levelIndicatorCell key="cell" alignment="left" maxValue="1" warningValue="4" criticalValue="4" numberOfTickMarks="6" levelIndicatorStyle="continuousCapacity" id="11" customClass="BXHUDLevelIndicatorCell">
                         <font key="font" metaFont="system"/>
                     </levelIndicatorCell>
                 </levelIndicator>
-                <imageView id="15">
+                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                     <rect key="frame" x="16" y="40" width="24" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="TurtleTemplate" id="16" customClass="BXHUDImageCell"/>
                 </imageView>
-                <imageView id="17">
+                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="17">
                     <rect key="frame" x="260" y="41" width="24" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="BunnyTemplate" id="18" customClass="BXHUDImageCell"/>
@@ -85,7 +85,7 @@ Cmd+click to access the menu bar.</string>
             <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="3" id="20" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="20" customClass="BXHUDLabel">
                     <rect key="frame" x="20" y="15" width="200" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="[100% throttle]" id="27">
@@ -94,7 +94,7 @@ Cmd+click to access the menu bar.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <levelIndicator verticalHuggingPriority="750" tag="2" id="21">
+                <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                     <rect key="frame" x="20" y="45" width="200" height="20"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <levelIndicatorCell key="cell" alignment="left" maxValue="100" warningValue="200" criticalValue="200" numberOfTickMarks="3" levelIndicatorStyle="continuousCapacity" id="26" customClass="BXHUDLevelIndicatorCell">
@@ -107,7 +107,7 @@ Cmd+click to access the menu bar.</string>
             <rect key="frame" x="0.0" y="0.0" width="220" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="4" id="30" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="30" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="45" width="186" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="[Drive D added]" id="31">
@@ -116,7 +116,7 @@ Cmd+click to access the menu bar.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" tag="5" id="67" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="67" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="24" width="186" height="18"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" alignment="center" title="[Need For Speed.iso]" id="68">
@@ -125,7 +125,7 @@ Cmd+click to access the menu bar.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView tag="1" id="34">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="34">
                     <rect key="frame" x="59" y="75" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="35" customClass="BXHUDImageCell"/>
@@ -136,7 +136,7 @@ Cmd+click to access the menu bar.</string>
             <rect key="frame" x="0.0" y="0.0" width="220" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="4" id="38" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="38" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="45" width="186" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="[Drive D ejected]" id="43">
@@ -145,12 +145,12 @@ Cmd+click to access the menu bar.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView tag="1" id="39">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="39">
                     <rect key="frame" x="59" y="75" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="EjectTemplate" id="42" customClass="BXHUDImageCell"/>
                 </imageView>
-                <textField verticalHuggingPriority="750" tag="5" id="69" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="69" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="24" width="186" height="18"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" alignment="center" title="[Need For Speed.iso]" id="70">
@@ -165,7 +165,7 @@ Cmd+click to access the menu bar.</string>
             <rect key="frame" x="0.0" y="0.0" width="220" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="4" id="46" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="46" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="45" width="186" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="[Drive D imported]" id="47">
@@ -174,12 +174,12 @@ Cmd+click to access the menu bar.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView tag="1" id="45">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="45">
                     <rect key="frame" x="59" y="75" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="48" customClass="BXHUDImageCell"/>
                 </imageView>
-                <textField verticalHuggingPriority="750" tag="5" id="71" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="71" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="24" width="186" height="18"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" alignment="center" title="[Need For Speed.iso]" id="72">
@@ -194,7 +194,7 @@ Cmd+click to access the menu bar.</string>
             <rect key="frame" x="0.0" y="0.0" width="340" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" id="52" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="64" width="306" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="53">
@@ -205,7 +205,7 @@ to joystick input.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" id="55" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="20" width="306" height="36"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="56">
@@ -222,29 +222,31 @@ joystick control within the game.</string>
             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView tag="1" id="58">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="58">
                     <rect key="frame" x="29" y="29" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="PauseTemplate" id="61" customClass="BXHUDImageCell"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="PauseBezelTemplate" id="61" customClass="BXHUDImageCell"/>
                 </imageView>
             </subviews>
+            <point key="canvasLocation" x="139" y="154"/>
         </customView>
         <customView id="62" userLabel="Play Bezel" customClass="BXBezelView">
             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView tag="1" id="63">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="63">
                     <rect key="frame" x="29" y="29" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="PlayTemplate" id="64" customClass="BXHUDImageCell"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="PlayBezelTemplate" id="64" customClass="BXHUDImageCell"/>
                 </imageView>
             </subviews>
+            <point key="canvasLocation" x="139" y="154"/>
         </customView>
         <customView id="73" userLabel="Drive Swapped Bezel" customClass="BXBezelView">
             <rect key="frame" x="0.0" y="0.0" width="220" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="4" id="75" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="75" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="45" width="186" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="[Drive D swapped]" id="78">
@@ -253,7 +255,7 @@ joystick control within the game.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" tag="5" id="74" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="74" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="24" width="186" height="18"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" alignment="center" title="[Need For Speed.iso]" id="79">
@@ -262,17 +264,17 @@ joystick control within the game.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView tag="1" id="76">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="76">
                     <rect key="frame" x="21" y="92" width="70" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="77" customClass="BXHUDImageCell"/>
                 </imageView>
-                <imageView tag="6" id="80">
+                <imageView fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="80">
                     <rect key="frame" x="129" y="92" width="70" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="81" customClass="BXHUDImageCell"/>
                 </imageView>
-                <imageView id="83">
+                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83">
                     <rect key="frame" x="100" y="115" width="24" height="24"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" image="NSRightFacingTriangleTemplate" id="84" customClass="BXHUDImageCell"/>
@@ -283,7 +285,7 @@ joystick control within the game.</string>
             <rect key="frame" x="0.0" y="0.0" width="423" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="7" id="86" customClass="BXMT32LCDDisplay">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="86" customClass="BXMT32LCDDisplay">
                     <rect key="frame" x="20" y="20" width="380" height="47"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="INSERT BUCKAZOID" id="87">
@@ -298,7 +300,7 @@ joystick control within the game.</string>
             <rect key="frame" x="0.0" y="0.0" width="340" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" id="90" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="42" width="306" height="66"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="MT-32 ROMs are required to play this game’s music correctly." id="93">
@@ -307,7 +309,7 @@ joystick control within the game.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" id="91" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="20" width="306" height="36"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="92">
@@ -324,7 +326,7 @@ in Boxer’s Audio preferences.</string>
             <rect key="frame" x="0.0" y="0.0" width="272" height="172"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="4" id="97" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="97" customClass="BXHUDLabel">
                     <rect key="frame" x="-3" y="20" width="278" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Simulated numpad active" id="100">
@@ -333,7 +335,7 @@ in Boxer’s Audio preferences.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView tag="1" id="98">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="98">
                     <rect key="frame" x="77" y="39" width="118" height="118"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NumpadActiveTemplate" id="99" customClass="BXHUDImageCell"/>
@@ -344,7 +346,7 @@ in Boxer’s Audio preferences.</string>
             <rect key="frame" x="0.0" y="0.0" width="272" height="172"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="4" id="107" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="107" customClass="BXHUDLabel">
                     <rect key="frame" x="-14" y="20" width="299" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Simulated numpad disabled" id="108">
@@ -353,7 +355,7 @@ in Boxer’s Audio preferences.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView tag="1" id="106">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="106">
                     <rect key="frame" x="77" y="39" width="118" height="118"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NumpadInactiveTemplate" id="109" customClass="BXHUDImageCell"/>
@@ -364,7 +366,7 @@ in Boxer’s Audio preferences.</string>
             <rect key="frame" x="0.0" y="0.0" width="220" height="172"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="4" id="115" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="115" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="20" width="186" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Numlock active" id="116">
@@ -373,7 +375,7 @@ in Boxer’s Audio preferences.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView tag="1" id="114">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="114">
                     <rect key="frame" x="59" y="47" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NumlockActiveTemplate" id="117" customClass="BXHUDImageCell"/>
@@ -384,7 +386,7 @@ in Boxer’s Audio preferences.</string>
             <rect key="frame" x="0.0" y="0.0" width="220" height="172"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="4" id="119" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="119" customClass="BXHUDLabel">
                     <rect key="frame" x="17" y="20" width="186" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="center" title="Numlock disabled" id="122">
@@ -393,7 +395,7 @@ in Boxer’s Audio preferences.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView tag="1" id="120">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="120">
                     <rect key="frame" x="59" y="47" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NumlockInactiveTemplate" id="121" customClass="BXHUDImageCell"/>
@@ -404,7 +406,7 @@ in Boxer’s Audio preferences.</string>
             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView tag="1" id="126">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="126">
                     <rect key="frame" x="29" y="29" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="ScreenshotTemplate" id="127" customClass="BXHUDImageCell"/>
@@ -415,25 +417,26 @@ in Boxer’s Audio preferences.</string>
             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView tag="1" id="130">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="130">
                     <rect key="frame" x="29" y="29" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="FastForwardTemplate" id="131" customClass="BXHUDImageCell"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="FastForwardBezelTemplate" id="131" customClass="BXHUDImageCell"/>
                 </imageView>
             </subviews>
+            <point key="canvasLocation" x="139" y="154"/>
         </customView>
         <customView id="133" userLabel="Volume bezel" customClass="BXBezelView">
             <rect key="frame" x="0.0" y="0.0" width="240" height="172"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <levelIndicator verticalHuggingPriority="750" tag="2" id="135">
+                <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="135">
                     <rect key="frame" x="20" y="21" width="200" height="20"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <levelIndicatorCell key="cell" alignment="left" maxValue="1" warningValue="4" criticalValue="4" numberOfTickMarks="7" levelIndicatorStyle="continuousCapacity" id="140" customClass="BXHUDLevelIndicatorCell">
                         <font key="font" metaFont="system"/>
                     </levelIndicatorCell>
                 </levelIndicator>
-                <imageView tag="1" id="142">
+                <imageView fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="142">
                     <rect key="frame" x="69" y="50" width="102" height="102"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Volume0PercentTemplate" id="143" customClass="BXHUDImageCell"/>
@@ -444,7 +447,7 @@ in Boxer’s Audio preferences.</string>
             <rect key="frame" x="0.0" y="0.0" width="434" height="65"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" tag="7" id="146" customClass="BXHUDLabel">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="146" customClass="BXHUDLabel">
                     <rect key="frame" x="49" y="20" width="368" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Cmd+click to release the mouse pointer." id="147">
@@ -453,7 +456,7 @@ in Boxer’s Audio preferences.</string>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <imageView id="148">
+                <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="148">
                     <rect key="frame" x="20" y="21" width="24" height="24"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" image="NSLockLockedTemplate" id="149" customClass="BXHUDImageCell"/>
@@ -464,15 +467,15 @@ in Boxer’s Audio preferences.</string>
     <resources>
         <image name="BunnyTemplate" width="13" height="14"/>
         <image name="EjectTemplate" width="15" height="13"/>
-        <image name="FastForwardTemplate" width="19" height="13"/>
+        <image name="FastForwardBezelTemplate" width="102" height="70"/>
         <image name="NSLockLockedTemplate" width="10" height="14"/>
         <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
         <image name="NumlockActiveTemplate" width="96" height="96"/>
         <image name="NumlockInactiveTemplate" width="96" height="96"/>
         <image name="NumpadActiveTemplate" width="112" height="112"/>
         <image name="NumpadInactiveTemplate" width="112" height="112"/>
-        <image name="PauseTemplate" width="10" height="13"/>
-        <image name="PlayTemplate" width="10" height="13"/>
+        <image name="PauseBezelTemplate" width="79" height="102"/>
+        <image name="PlayBezelTemplate" width="79" height="102"/>
         <image name="ScreenshotTemplate" width="16" height="12"/>
         <image name="TurtleTemplate" width="18" height="10"/>
         <image name="Volume0PercentTemplate" width="17" height="16"/>
