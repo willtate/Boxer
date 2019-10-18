@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, BXDriveConflictBehaviour) {
 };
 
 
-//Bitflag options for mountDrive:ifExists:options:error:.
+/// Bitflag options for @c mountDrive:ifExists:options:error:
 typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
     BXDriveKeepWithSameType             = 1U << 0,  //!< Try to mount the drive at the same letter as an
                                                     //!< existing drive of the same type, if it doesn't
@@ -127,13 +127,13 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 @property (readonly, nonatomic) NSArray *programURLsOnPrincipalDrive;
 
 /// Return whether there are currently any imports/executable scans in progress.
-@property (readonly, nonatomic) BOOL isImportingDrives;
-@property (readonly, nonatomic) BOOL isScanningForExecutables;
+@property (readonly, nonatomic, getter=isImportingDrives) BOOL importingDrives;
+@property (readonly, nonatomic, getter=isScanningForExecutables) BOOL scanningForExecutables;
 
 /// A flat array of all queued and mounted drives, ordered by drive letter and then by queue order.
-@property (readonly, nonatomic) NSArray *allDrives;
+@property (readonly, nonatomic) NSArray<BXDrive*> *allDrives;
 /// An array of all mounted drives, ordered by drive letter.
-@property (readonly, nonatomic) NSArray *mountedDrives;
+@property (readonly, nonatomic) NSArray<BXDrive*> *mountedDrives;
 
 /// Whether this gamebox has more than one drive queued on a single drive letter, requiring UI for swapping drives.
 @property (readonly, nonatomic) BOOL hasDriveQueues;
@@ -149,21 +149,21 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 + (NSURL *) preferredMountPointForURL: (NSURL *)URL;
 
 /// Given an arbitrary target path, returns the most appropriate base location from which to start searching for games:
-/// If path is inside a gamebox or Boxer mountable folder type, that container will be returned (and shouldRecurse will be YES).
-/// If path is on a CD or floppy volume, then the volume will be returned (and \c shouldRecurse will be YES).
-/// Otherwise, the parent folder of the item, or the item itself if it is a folder, will be returned (and shouldRecurse will be NO). 
+/// If path is inside a gamebox or Boxer mountable folder type, that container will be returned (and @c shouldRecurse will be YES).
+/// If path is on a CD or floppy volume, then the volume will be returned (and @c shouldRecurse will be YES).
+/// Otherwise, the parent folder of the item, or the item itself if it is a folder, will be returned (and @c shouldRecurse will be NO).
 + (NSURL *) gameDetectionPointForURL: (NSURL *)URL shouldSearchSubfolders: (BOOL *)shouldRecurse;
 
 
 #pragma mark - Filetype-related class methods
 
 /// Returns a set of filesnames that should be hidden from DOS directory listings.
-/// Used by emulator:shouldShowDOSFile:.
+/// Used by @c emulator:shouldShowDOSFile:
 @property (class, readonly, copy) NSSet<NSString*> *hiddenFilenamePatterns;
 
 /// UTI filetypes of folders that should be used as mount-points for files inside them: if we open a file
 /// inside a folder matching one of these types, it will mount that folder as its drive.
-/// Used by \c preferredMountPointForPath: which will also prefer the root folders of floppy and CD-ROM volumes.
+/// Used by @c preferredMountPointForPath: which will also prefer the root folders of floppy and CD-ROM volumes.
 @property (class, readonly, copy) NSSet<NSString*> *preferredMountPointTypes;
 
 /// The volume formats (as listed in NSWorkspace+ADBMountedVolumes) that will be automatically mounted
@@ -181,11 +181,11 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 /// Open the file at the specified logical URL in DOS with the (optional) specified arguments.
 /// If the URL points to an executable, it will be launched with any specified arguments;
 /// if it's a directory, the current DOS working directory will be changed to it.
-/// If clearScreen is YES, this method will clear any previous DOS prompt output before running the program.
+/// If @c clearScreen is YES, this method will clear any previous DOS prompt output before running the program.
 /// This is primarily intended for launcher items, and only has an effect if the URL is a program.
-/// \c BXSessionProgramCompletionBehavior determines what the session should do after the program exits:
-/// See \c BXSessionProgramCompletionBehavior constant definition for details.
-/// Returns \c YES on success, or \c NO and populates outError if the specified URL could not be launched
+/// @c BXSessionProgramCompletionBehavior determines what the session should do after the program exits:
+/// See @c BXSessionProgramCompletionBehavior constant definition for details.
+/// Returns @c YES on success, or @c NO and populates @c outError if the specified URL could not be launched
 /// (e.g. if it was not accessible in DOS.)
 - (BOOL) openURLInDOS: (NSURL *)URL
         withArguments: (NSString *)arguments
@@ -207,8 +207,8 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 @property (readonly, copy) NSURL *currentGameStateURL;
 
 /// Sets/retrieves the Info.plist metadata for the game state at the specified URL. 
-- (NSDictionary *) infoForGameStateAtURL: (NSURL *)stateURL;
-- (BOOL) setInfo: (NSDictionary *)info forGameStateAtURL: (NSURL *)stateURL;
+- (NSDictionary<NSString*,id> *) infoForGameStateAtURL: (NSURL *)stateURL;
+- (BOOL) setInfo: (NSDictionary<NSString*,id> *)info forGameStateAtURL: (NSURL *)stateURL;
 
 
 /// Returns an appropriate location to which we can shadow write operations for the specified drive.
@@ -217,49 +217,49 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 
 /// Revert the contents of the specified drive/all drives to their original values by deleting
 /// the shadowed data. Reverting will fail if one or more of the drives are currently in use by DOS.
-/// Returns \c YES on success, or \c NO and populates \c outError on failure.
+/// Returns @c YES on success, or @c NO and populates @c outError on failure.
 /// After successfully reverting, the emulation should be restarted.
 - (BOOL) revertChangesForDrive: (BXDrive *)drive error: (NSError **)outError;
 - (BOOL) revertChangesForAllDrivesAndReturnError: (NSError **)outError;
 
 /// Merges any shadowed data for the specified drive/all drives back into the original location.
 /// Merging will fail if one or more of the drives are currently in use by DOS.
-/// Returns \c YES on success, or \c NO and populates outError on failure.
+/// Returns @c YES on success, or @c NO and populates outError on failure.
 /// After successfully merging, the emulation should be restarted.
 - (BOOL) mergeChangesForDrive: (BXDrive *)drive error: (NSError **)outError;
 - (BOOL) mergeChangesForAllDrivesAndReturnError: (NSError **)outError;
 
-/// Returns \c YES if this is a valid state that can be imported for the current gamebox,
-/// or \c NO and populates outError with a reason why the state was invalid.
+/// Returns @c YES if this is a valid state that can be imported for the current gamebox,
+/// or @c NO and populates outError with a reason why the state was invalid.
 - (BOOL) isValidGameStateAtURL: (NSURL *)URL error: (NSError **)outError;
 
 
 /// Saves a copy of the current game state as a boxerstate bundle at the specified location,
 /// which must be a full path including filename.
-/// Returns \c YES on success, or \c NO and populates outError on failure.
+/// Returns @c YES on success, or @c NO and populates @c outError on failure.
 - (BOOL) exportGameStateToURL: (NSURL *)destinationURL error: (NSError **)outError;
 
 /// Replace the current game state with the state from the specified resource,
 /// which must be a valid boxerstate bundle (as created by exportStateFromURL:error:,
 /// which can be verified by isValidStateAtURL:.)
-/// Returns YES on success, or NO and populates outError on failure.
+/// Returns @c YES on success, or @c NO and populates @c outError on failure.
 /// After successfully importing a new state, the emulation should be restarted.
 - (BOOL) importGameStateFromURL: (NSURL *)sourceURL error: (NSError **)outError;
 
 /// Whether the session has shadowed data for any of its drives.
 /// This is used to toggle the availability of the merge/revert options. 
-- (BOOL) hasShadowedChanges;
+@property (readonly) BOOL hasShadowedChanges;
 
 
 #pragma mark - Mounting and queuing drives
 
 /// The window in which we should present drive-related sheets, such as errors and open dialogs.
 /// This will be the Drive Inspector panel if it's visible, otherwise the main DOS window.
-- (NSWindow *) windowForDriveSheet;
+@property (readonly) NSWindow *windowForDriveSheet;
 
 /// Whether we allow drives to be added or removed.
-/// This will return \c YES normally, or \c NO when part of a standalone game bundle.
-- (BOOL) allowsDriveChanges;
+/// This will return @c YES normally, or @c NO when part of a standalone game bundle.
+@property (readonly) BOOL allowsDriveChanges;
 
 
 /// Adds the specified drive into the appropriate drive queue,
@@ -278,11 +278,11 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 - (BOOL) driveIsMounted: (BXDrive *)drive;
 
 /// Returns the first queued drive that represents the specified logical URL,
-/// or \c nil if no such drive is found.
+/// or @c nil if no such drive is found.
 - (BXDrive *) queuedDriveRepresentingURL: (NSURL *)URL;
 
 /// Returns the most appropriate letter at which to mount/queue the specified drive,
-/// based on the specified drive mount options. Used by mountDrive:ifExists:options:error
+/// based on the specified drive mount options. Used by @c mountDrive:ifExists:options:error
 /// to choose a letter when a drive has not been given one already.
 - (NSString *) preferredLetterForDrive: (BXDrive *)drive
                                options: (BXDriveMountOptions)options;
@@ -290,21 +290,21 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 /// Mounts the specified drive, using the specified mounting options. If successful,
 /// returns a drive reflecting the drive actually mounted (this may be different from
 /// the drive that was passed in.)
-/// Returns \c nil and populates outError, if the specified drive could not be mounted.
+/// Returns @c nil and populates @c outError if the specified drive could not be mounted.
 - (BXDrive *) mountDrive: (BXDrive *)drive
                 ifExists: (BXDriveConflictBehaviour)conflictBehaviour
                  options: (BXDriveMountOptions)options
                    error: (NSError **)outError;
 
 /// Unmounts the specified drive, using the specified unmounting options.
-/// Returns \c YES if the drive could be unmounted, \c NO otherwise.
+/// Returns @c YES if the drive could be unmounted, @c NO otherwise.
 - (BOOL) unmountDrive: (BXDrive *)drive
               options: (BXDriveMountOptions)options
                 error: (NSError **)outError;
 
 /// Returns the index of the currently mounted drive in the queue.
 /// Returns the index of the specified drive within its queue.
-/// Returns NSNotFound if the drive is not in a queue.
+/// Returns @c NSNotFound if the drive is not in a queue.
 - (NSUInteger) indexOfQueuedDrive: (BXDrive *)drive;
 
 /// Returns the next/previous drive in the same queue,
@@ -317,7 +317,7 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 /// Will not create new mounts for ones that are already mounted.
 /// Returns an array of all drives mounted, which will be empty if none
 /// were available to mount.
-/// Returns \c nil and populates \c outError if there is an error with mounting
+/// Returns @c nil and populates @c outError if there is an error with mounting
 /// any drive.
 - (NSArray<BXDrive*> *) mountCDVolumesWithError: (NSError **)outError;
 
@@ -325,28 +325,28 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 /// Will not create new mounts for ones that are already mounted.
 /// Returns an array of all drives mounted, which will be empty if none
 /// were available to mount.
-/// Returns \c nil and populates \c outError if there is an error with mounting
+/// Returns @c nil and populates @c outError if there is an error with mounting
 /// any drive. 
 - (NSArray<BXDrive*> *) mountFloppyVolumesWithError: (NSError **)outError;
 
 /// Mount Boxer's internal toolkit drive at the appropriate drive letter.
-/// Returns the mounted drive, or returns \c nil and populates \c outError
+/// Returns the mounted drive, or returns @c nil and populates @c outError
 /// if the drive could not be mounted.
 - (BXDrive *) mountToolkitDriveWithError: (NSError **)outError;
 
 /// Create a temporary folder and mount it at the appropriate drive letter.
-/// Returns the mounted drive, or returns nil and populates outError
+/// Returns the mounted drive, or returns @c nil and populates @c outError
 /// if the drive could not be mounted.
 - (BXDrive *) mountTempDriveWithError: (NSError **)outError;
 
 /// Mounts a dummy CD-ROM drive if no CD drives are already mounted,
 /// to fix games that require a CD in the drive at all times.
-/// Returns the mounted drive, or returns nil and populates outError
+/// Returns the mounted drive, or returns @c nil and populates @c outError
 /// if the drive could not be mounted.
 - (BXDrive *) mountDummyCDROMWithError: (NSError **)outError;
 
-/// Unmount the BXDrives in the specified array. Returns \c YES if all drives
-/// were unmounted, \c NO if there was an error (in which case \c outError will
+/// Unmount the BXDrives in the specified array. Returns @c YES if all drives
+/// were unmounted, @c NO if there was an error (in which case @c outError will
 /// be populated) or if selectedDrives is empty.
 - (BOOL) unmountDrives: (NSArray<BXDrive*> *)drivesToUnmount
                options: (BXDriveMountOptions)options
@@ -354,16 +354,16 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 
 
 /// Returns whether to allow the specified URL to be mounted as a drive:
-/// populating outError with the reason why not, if provided.
+/// populating @c outError with the reason why not, if provided.
 - (BOOL) validateDriveURL: (NSURL **)ioValue
                     error: (NSError **)outError;
 
 /// Returns whether the specified URL should be mounted as a new drive.
-/// Returns \c YES if the URL isn't already DOS-accessible or deserves its
-/// own drive anyway, \c NO otherwise.
+/// Returns @c YES if the URL isn't already DOS-accessible or deserves its
+/// own drive anyway, @c NO otherwise.
 - (BOOL) shouldMountNewDriveForURL: (NSURL *)URL;
 
-/// Adds a new drive to expose the specified URL, using \c preferredMountPointForURL:
+/// Adds a new drive to expose the specified URL, using @c preferredMountPointForURL:
 /// to choose an appropriate base location for the drive.
 - (BXDrive *) mountDriveForURL: (NSURL *)URL
                       ifExists: (BXDriveConflictBehaviour)conflictBehaviour
@@ -392,11 +392,11 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
                          startImmediately: (BOOL)start;
 
 /// Aborts the scan for the specified drive.
-/// Returns \c YES if a scan was aborted, \c NO if no scan was in progress.
+/// Returns @c YES if a scan was aborted, @c NO if no scan was in progress.
 - (BOOL) cancelExecutableScanForDrive: (BXDrive *)drive;
 
 /// Returns any ongoing executable scan for the specified specified drive,
-/// or \c nil if no scan is in progress.
+/// or @c nil if no scan is in progress.
 - (ADBOperation *) activeExecutableScanForDrive: (BXDrive *)drive;
 
 /// Called when an executable scan has finished.
@@ -419,11 +419,11 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 - (BOOL) equivalentDriveIsBundled: (BXDrive *)drive;
 
 /// Returns any ongoing import operation for the specified drive,
-/// or \c nil if no import is in progress.
+/// or @c nil if no import is in progress.
 - (ADBOperation <BXDriveImport> *) activeImportOperationForDrive: (BXDrive *)drive;
 
 /// Returns whether the specified drive can be imported.
-/// Will be \c NO if:
+/// Will be @c NO if:
 /// - there is no gamebox for this session
 /// - the drive is a DOSBox/Boxer-internal drive
 /// - the drive has already been or is currently being imported
@@ -431,17 +431,17 @@ typedef NS_OPTIONS(NSUInteger, BXDriveMountOptions) {
 
 
 /// Returns an import operation that will import the specified drive to a bundled
-/// drive folder in the gamebox. If start is YES, the operation will be started
-/// immediately; otherwise it should be passed to startImportOperation: later
+/// drive folder in the gamebox. If @c start is YES, the operation will be started
+/// immediately; otherwise it should be passed to @c startImportOperation: later
 /// (which performs additional preparations for the import).
 - (ADBOperation <BXDriveImport> *) importOperationForDrive: (BXDrive *)drive
                                           startImmediately: (BOOL)start;
 
-/// Start an import operation previously created by importOperationForDrive:startImmediately:.
+/// Start an import operation previously created by @c importOperationForDrive:startImmediately:
 /// This will unmount any drive that will be unavailable during the operation.
 - (void) startImportOperation: (ADBOperation <BXDriveImport> *)operation;
 
-/// Cancel the in-progress import of the specified drive. Returns \c YES if the import was cancelled,
+/// Cancel the in-progress import of the specified drive. Returns @c YES if the import was cancelled,
 /// \c NO if the import had already finished or the drive was not being imported.
 - (BOOL) cancelImportForDrive: (BXDrive *)drive;
 
