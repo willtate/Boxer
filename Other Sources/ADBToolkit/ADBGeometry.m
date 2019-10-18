@@ -41,7 +41,7 @@ BOOL isPowerOfTwo(NSUInteger value)
 
 CGFloat aspectRatioOfSize(NSSize size)
 {
-	return (size.height) ? (size.width / size.height) : 0.0f;
+	return (size.height != 0) ? (size.width / size.height) : 0.0f;
 }
 
 NSPoint integralPoint(NSPoint point)
