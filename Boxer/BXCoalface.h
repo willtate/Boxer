@@ -46,16 +46,19 @@ extern "C" {
 	void boxer_finishFrame(const uint16_t *dirtyBlocks);
 	Bitu boxer_idealOutputMode(Bitu flags);
 	
-	void boxer_applyRenderingStrategy();
+	void boxer_applyRenderingStrategy(void);
 	Bitu boxer_getRGBPaletteEntry(Bit8u red, Bit8u green, Bit8u blue);
 	void boxer_setPalette(Bitu start,Bitu count,GFX_PalEntry * entries);
 	
     /// Defined in vga_other.cpp to give Boxer access to Hercules and CGA graphics mode options.
-    Bit8u boxer_herculesTintMode();
+    Bit8u boxer_herculesTintMode(void);
     void boxer_setHerculesTintMode(Bit8u tint);
     
-    double boxer_CGACompositeHueOffset();
+    double boxer_CGACompositeHueOffset(void);
     void boxer_setCGACompositeHueOffset(double hue);
+    
+    Bit8u boxer_CGAComponentMode(void);
+    void boxer_setCGAComponentMode(Bit8u newCGA);
     
     
 #pragma mark - Shell
