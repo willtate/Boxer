@@ -28,7 +28,7 @@
 
 NSInteger fitToPowerOfTwo(NSInteger value)
 {
-    int shift = 0;
+    NSInteger shift = 0;
     while ((value >>= 1) != 0) shift++;
     return 2 << shift;
 }

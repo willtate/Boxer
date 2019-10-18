@@ -58,16 +58,16 @@
 #pragma mark Application metadata
 
 /// A human-readable representation of the application version. This is only used for display to the user.
-+ (NSString *) localizedVersion;
+@property (readonly, class, copy) NSString *localizedVersion;
 
 /// The internal build number. This is the version number actually used for version comparison checks and the like.
-+ (NSString *) buildNumber;
+@property (readonly, class, copy) NSString *buildNumber;
 
 /// The localized name of the application.
-+ (NSString *) appName;
+@property (readonly, class, copy) NSString *appName;
 
 /// The bundle identifier of the application.
-+ (NSString *) appIdentifier;
+@property (readonly, class, copy) NSString *appIdentifier;
 
 /// Whether this is a standalone app bundled with a gamebox.
 /// Returns @c NO by default; overridden by @c BXStandaloneAppController.
@@ -82,13 +82,13 @@
 
 /// Returns whether we should play sounds for UI events. This checks OS X's own user defaults
 /// for whether the user has enabled "Play user interface sound effects" in OS X's Sound Preferences.
-- (BOOL) shouldPlayUISounds;
+@property (readonly) BOOL shouldPlayUISounds;
 
 /// If UI sounds are enabled, play the sound matching the specified name  at the specified volume.
 /// @param soundName    The resource name of the sound effect to play.
 /// @param volume       The relative volume at which to play the sound,
 ///                     where 0.0 is silent and 1.0 is full volume.
-- (void) playUISoundWithName: (NSString *)soundName
+- (void) playUISoundWithName: (NSSoundName)soundName
                     atVolume: (float)volume;
 
 /// If UI sounds are enabled, play the sound matching the specified name  at the specified volume at the specified delay.
@@ -96,7 +96,7 @@
 /// @param volume       The relative volume at which to play the sound,
 ///                     where 0.0 is silent and 1.0 is full volume.
 /// @param delay        The delay in seconds before playing the sound.
-- (void) playUISoundWithName: (NSString *)soundName
+- (void) playUISoundWithName: (NSSoundName)soundName
                     atVolume: (float)volume
                   afterDelay: (NSTimeInterval)delay;
 

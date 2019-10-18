@@ -77,7 +77,6 @@
 		9F201E391657DB7F0086F1BB /* ADBUserNotificationDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F201E371657DB7F0086F1BB /* ADBUserNotificationDispatcher.m */; };
 		9F20ADD01702E87B007263C8 /* BXDrive+BXDriveArchiving.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20ADCF1702E87B007263C8 /* BXDrive+BXDriveArchiving.m */; };
 		9F20C28B11E5D848005AF541 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20C28A11E5D848005AF541 /* Sparkle.framework */; };
-		9F20C28E11E5D8B4005AF541 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20C28D11E5D8B4005AF541 /* QTKit.framework */; };
 		9F20C29711E5DA68005AF541 /* Sparkle.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20C28A11E5D848005AF541 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F2120F813015653002AB1B7 /* BXShelfArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2120F713015653002AB1B7 /* BXShelfArt.m */; };
 		9F2120FE1301597E002AB1B7 /* NSImage+ADBSaveImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2120FD1301597E002AB1B7 /* NSImage+ADBSaveImages.m */; };
@@ -348,7 +347,6 @@
 		9F2D315815B8233800FAE848 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2140FE0F59F28000A5A183 /* QuartzCore.framework */; };
 		9F2D315915B8233800FAE848 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4E042B0F67E72300427D50 /* AudioToolbox.framework */; };
 		9F2D315A15B8233800FAE848 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8A975F10E7EDDE00A4B72A /* libicucore.dylib */; };
-		9F2D315C15B8233800FAE848 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20C28D11E5D8B4005AF541 /* QTKit.framework */; };
 		9F2D315D15B8233800FAE848 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F61942312340F5400F35AB4 /* ScriptingBridge.framework */; };
 		9F2D315F15B8233800FAE848 /* SDL_sound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCEDF3212B3DFFC00E856A4 /* SDL_sound.framework */; };
 		9F2D316015B8233800FAE848 /* DiskArbitration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBAA8F3134AFABD0092BF95 /* DiskArbitration.framework */; };
@@ -1075,7 +1073,6 @@
 		9F20ADCF1702E87B007263C8 /* BXDrive+BXDriveArchiving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BXDrive+BXDriveArchiving.m"; sourceTree = "<group>"; };
 		9F20ADD117030CE0007263C8 /* BXDrivePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXDrivePrivate.h; sourceTree = "<group>"; };
 		9F20C28A11E5D848005AF541 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		9F20C28D11E5D8B4005AF541 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		9F2120F613015653002AB1B7 /* BXShelfArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXShelfArt.h; sourceTree = "<group>"; };
 		9F2120F713015653002AB1B7 /* BXShelfArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXShelfArt.m; sourceTree = "<group>"; };
 		9F2120FC1301597E002AB1B7 /* NSImage+ADBSaveImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+ADBSaveImages.h"; sourceTree = "<group>"; };
@@ -1862,7 +1859,6 @@
 				9F4E042C0F67E72300427D50 /* AudioToolbox.framework in Frameworks */,
 				9F8A976010E7EDDE00A4B72A /* libicucore.dylib in Frameworks */,
 				9F20C28B11E5D848005AF541 /* Sparkle.framework in Frameworks */,
-				9F20C28E11E5D8B4005AF541 /* QTKit.framework in Frameworks */,
 				9F61942412340F5400F35AB4 /* ScriptingBridge.framework in Frameworks */,
 				55E6A0BA1C00C86200285593 /* DDHidLib.framework in Frameworks */,
 				9FCEDF3312B3DFFC00E856A4 /* SDL_sound.framework in Frameworks */,
@@ -1890,7 +1886,6 @@
 				9F2D315915B8233800FAE848 /* AudioToolbox.framework in Frameworks */,
 				9F2D315A15B8233800FAE848 /* libicucore.dylib in Frameworks */,
 				55E6A0C21C00C88A00285593 /* MT32Emu.framework in Frameworks */,
-				9F2D315C15B8233800FAE848 /* QTKit.framework in Frameworks */,
 				9F2D315D15B8233800FAE848 /* ScriptingBridge.framework in Frameworks */,
 				9F2D315F15B8233800FAE848 /* SDL_sound.framework in Frameworks */,
 				9F2D316015B8233800FAE848 /* DiskArbitration.framework in Frameworks */,
@@ -1954,7 +1949,6 @@
 				9FB769E2164861D8000644C2 /* Quartz.framework */,
 				9F77EE0015DCC9BF00B75835 /* WebKit.framework */,
 				9FC637FC13C09B10004478A3 /* CoreServices.framework */,
-				9F20C28D11E5D8B4005AF541 /* QTKit.framework */,
 				9F4E042B0F67E72300427D50 /* AudioToolbox.framework */,
 				9F2140FE0F59F28000A5A183 /* QuartzCore.framework */,
 				9FBC3C760F56E0D7001811F2 /* AudioUnit.framework */,
