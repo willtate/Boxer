@@ -13,10 +13,10 @@
 #pragma mark Constants
 
 typedef NS_ENUM(NSInteger, BXReleaseMedium) {
-	BXUnknownMedium = 0,
-	BX525DisketteMedium = 1,
-	BX35DisketteMedium = 2,
-	BXCDROMMedium = 3
+	BXUnknownMedium NS_SWIFT_NAME(unknown) = 0,
+	BX525DisketteMedium NS_SWIFT_NAME(diskette525)= 1,
+	BX35DisketteMedium NS_SWIFT_NAME(diskette35)= 2,
+	BXCDROMMedium NS_SWIFT_NAME(CDROM) = 3
 };
 
 
