@@ -34,6 +34,8 @@ typedef NS_ENUM(OSType, FinderEdfm) {
 	FinderEdfmFTPFormat = 'dfft',
 	FinderEdfmPacketWrittenUDFFormat = 'dfpu',
 	FinderEdfmXsanFormat = 'dfac',
+	FinderEdfmAPFSFormat = 'dfap',
+	FinderEdfmExFATFormat = 'dfxf',
 	FinderEdfmUnknownFormat = 'df\?\?'
 };
 
@@ -114,20 +116,20 @@ typedef NS_ENUM(OSType, FinderLvic) {
 // The Finder
 @interface FinderApplication : SBApplication
 
-- (SBElementArray *) items;
-- (SBElementArray *) containers;
-- (SBElementArray *) disks;
-- (SBElementArray *) folders;
-- (SBElementArray *) files;
-- (SBElementArray *) aliasFiles;
-- (SBElementArray *) applicationFiles;
-- (SBElementArray *) documentFiles;
-- (SBElementArray *) internetLocationFiles;
-- (SBElementArray *) clippings;
-- (SBElementArray *) packages;
-- (SBElementArray *) windows;
-- (SBElementArray *) FinderWindows;
-- (SBElementArray *) clippingWindows;
+- (SBElementArray<FinderItem *> *) items;
+- (SBElementArray<FinderContainer *> *) containers;
+- (SBElementArray<FinderDisk *> *) disks;
+- (SBElementArray<FinderFolder *> *) folders;
+- (SBElementArray<FinderFile *> *) files;
+- (SBElementArray<FinderAliasFile *> *) aliasFiles;
+- (SBElementArray<FinderApplicationFile *> *) applicationFiles;
+- (SBElementArray<FinderDocumentFile *> *) documentFiles;
+- (SBElementArray<FinderInternetLocationFile *> *) internetLocationFiles;
+- (SBElementArray<FinderClipping *> *) clippings;
+- (SBElementArray<FinderPackage *> *) packages;
+- (SBElementArray<FinderWindow *> *) windows;
+- (SBElementArray<FinderFinderWindow *> *) FinderWindows;
+- (SBElementArray<FinderClippingWindow *> *) clippingWindows;
 
 @property (copy, readonly) SBObject *clipboard;  // (NOT AVAILABLE YET) the Finder’s clipboard window
 @property (copy, readonly) NSString *name;  // the Finder’s name
@@ -719,7 +721,7 @@ typedef NS_ENUM(OSType, FinderLvic) {
 // the list view options
 @interface FinderListViewOptions : SBObject
 
-- (SBElementArray *) columns;
+- (SBElementArray<FinderColumn *> *) columns;
 
 @property BOOL calculatesFolderSizes;  // Are folder sizes calculated and displayed in the window?
 @property BOOL showsIconPreview;  // displays a preview of the item in list view
