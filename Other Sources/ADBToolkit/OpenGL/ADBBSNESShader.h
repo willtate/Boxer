@@ -92,10 +92,10 @@ extern const GLcharARB * const ADBBSNESShaderFrameCountUniform;
 #pragma mark -
 #pragma mark Properties
 
-//How many frames have been rendered so far by this shader. Can be used by some shader programs.
+/// How many frames have been rendered so far by this shader. Can be used by some shader programs.
 @property (assign, nonatomic) uint64_t frameCount;
 
-//How the shader will scale horizontally and vertically.
+/// How the shader will scale horizontally and vertically.
 @property (assign, nonatomic) ADBBSNESShaderScalingBehaviour horizontalScalingBehaviour;
 @property (assign, nonatomic) ADBBSNESShaderScalingBehaviour verticalScalingBehaviour;
 @property (assign, nonatomic) CGPoint scalingFactor;

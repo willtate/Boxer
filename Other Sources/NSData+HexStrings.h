@@ -10,8 +10,8 @@
 
 @interface NSData (HexStrings)
 
-//Returns a hexadecimal version of the NSData object.
-//(Similar to the output of description, but without some cruft.)
+/// Returns a hexadecimal version of the NSData object.
+/// (Similar to the output of description, but without some cruft.)
 - (NSString *) stringWithHexBytes;
 
 @end

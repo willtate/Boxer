@@ -34,19 +34,19 @@
 
 NSString * const ADBBSNESShaderErrorDomain = @"ADBBSNESShaderErrorDomain";
 
-//The texture to render from.
+/// The texture to render from.
 #define ADBBSNESShaderTextureUniform "rubyTexture"
-//The dimensions (in texels) of the texture.
 
+/// The dimensions (in texels) of the texture.
 #define ADBBSNESShaderTextureSizeUniform "rubyTextureSize"
 
-//The area (in texels) of the texture from which we want to render.
+/// The area (in texels) of the texture from which we want to render.
 #define ADBBSNESShaderInputSizeUniform "rubyInputSize"
 
-//The area (in pixels) to render to.
+/// The area (in pixels) to render to.
 #define ADBBSNESShaderOutputSizeUniform "rubyOutputSize"
 
-//The number of frames that have been rendered by the shader so far, starting from 0.
+/// The number of frames that have been rendered by the shader so far, starting from 0.
 #define ADBBSNESShaderFrameCountUniform "rubyFrameCount"
 
 
