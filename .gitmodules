@@ -10,3 +10,6 @@
 [submodule "DOSBox"]
 	path = DOSBox
 	url = https://github.com/MaddTheSane/dosbox.git
+[submodule "Vendor/CwlDemangle"]
+	path = Vendor/CwlDemangle
+	url = https://github.com/MaddTheSane/CwlDemangle.git

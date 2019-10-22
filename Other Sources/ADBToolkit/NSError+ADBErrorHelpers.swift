@@ -48,7 +48,9 @@ extension NSException {
     }
     
     @objc class func demangledSwiftFunctionName(_ functionName: String) -> String? {
-        //TODO: implement
-        return nil
+        guard let parsed = try? parseMangledSwiftSymbol(functionName, isType: true) else {
+            return nil
+        }
+        return parsed.description
     }
 }
