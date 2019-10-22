@@ -27,6 +27,8 @@
 		558CE44D20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
 		558CE44E20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
 		55B22BA21A1BD9760007665E /* Bundler.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22BA11A1BD9760007665E /* Bundler.xcassets */; };
+		55BBA4E9235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */; };
+		55BBA4EA235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */; };
 		55DEBB23201E875600F1092F /* pci_bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DEBB21201E875500F1092F /* pci_bus.cpp */; };
 		55E6A0B61C00C86200285593 /* MT32Emu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0B51C00C81E00285593 /* MT32Emu.framework */; };
 		55E6A0B71C00C86200285593 /* MT32Emu.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0B51C00C81E00285593 /* MT32Emu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -786,6 +788,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		55BBA4F1235EE142007AE319 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55871E8E235C3AF700528BDF;
+			remoteInfo = BrowserSwift;
+		};
 		55E6A09B1C00C7F900285593 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */;
@@ -1004,6 +1013,9 @@
 		55AEA629201F0C1B0000139A /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/ImportWindow.strings; sourceTree = "<group>"; };
 		55AEA62B201F0C210000139A /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Inspector.strings; sourceTree = "<group>"; };
 		55B22BA11A1BD9760007665E /* Bundler.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bundler.xcassets; sourceTree = "<group>"; };
+		55BBA4E6235EE141007AE319 /* Boxer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boxer-Bridging-Header.h"; sourceTree = "<group>"; };
+		55BBA4E7235EE141007AE319 /* Boxer Standalone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boxer Standalone-Bridging-Header.h"; sourceTree = "<group>"; };
+		55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+ADBErrorHelpers.swift"; sourceTree = "<group>"; };
 		55BF6F0320210F6000F3FE59 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55DEBB1A201E81C200F1092F /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
 		55DEBB20201E81DF00F1092F /* pci_bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pci_bus.h; sourceTree = "<group>"; };
@@ -1911,6 +1923,7 @@
 				9F5114FF129055DE00BEC0B9 /* Scripting */,
 				9F160E6E1236B28900F8768E /* Application Delegate */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				55BBA4E6235EE141007AE319 /* Boxer-Bridging-Header.h */,
 				9F573D370F8E69AF0089D8B7 /* BXGamebox.h */,
 				9F573D380F8E69AF0089D8B7 /* BXGamebox.m */,
 				9F61FC8310DE3F7F00F3896C /* BXGameProfile.h */,
@@ -2071,6 +2084,7 @@
 				55E6A0A81C00C80A00285593 /* HIDDeviceTest.app */,
 				55E6A0AA1C00C80A00285593 /* libddhid.a */,
 				55E6A0AC1C00C80A00285593 /* DDHidLib.framework */,
+				55BBA4F2235EE142007AE319 /* BrowserSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2393,6 +2407,7 @@
 			children = (
 				9F2D317A15B8240400FAE848 /* Resources */,
 				9F2D317415B8233900FAE848 /* Boxer Standalone-Info.plist */,
+				55BBA4E7235EE141007AE319 /* Boxer Standalone-Bridging-Header.h */,
 				9FCB7B0B15B842E000CC7CC7 /* BXStandaloneAppController.h */,
 				9FCB7B0C15B842E000CC7CC7 /* BXStandaloneAppController.m */,
 				9FDFB46C15DBA38E004EA615 /* BXStandaloneAboutController.h */,
@@ -2997,6 +3012,7 @@
 				9F1DE9B114FB7F3800F9C91E /* NSObject+ADBPerformExtensions.m */,
 				9F5F12C415ADCE74007A070F /* NSKeyedArchiver+ADBArchivingAdditions.h */,
 				9F5F12C515ADCE74007A070F /* NSKeyedArchiver+ADBArchivingAdditions.m */,
+				55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */,
 				9FB60E9015C5643200CD0D63 /* NSError+ADBErrorHelpers.h */,
 				9FB60E9115C5643200CD0D63 /* NSError+ADBErrorHelpers.mm */,
 				9FF5413C169990A100270658 /* ADBUndoExtensions.h */,
@@ -3486,6 +3502,14 @@
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Alun Bestor and contributors";
+				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						LastSwiftMigration = 1110;
+					};
+					9F2D2F9715B8233800FAE848 = {
+						LastSwiftMigration = 1110;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Boxer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3526,6 +3550,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		55BBA4F2235EE142007AE319 /* BrowserSwift.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = BrowserSwift.app;
+			remoteRef = 55BBA4F1235EE142007AE319 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -3854,6 +3885,7 @@
 				9F9AEE8914CB4AEA00728641 /* ADBAppKitVersionHelpers.m in Sources */,
 				9F8F374914F91FEB00E482FB /* BXApplication.m in Sources */,
 				9F8F374F14F9442D00E482FB /* BXBaseAppController+BXHotKeys.m in Sources */,
+				55BBA4E9235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */,
 				9F1DE9B214FB7F3800F9C91E /* NSObject+ADBPerformExtensions.m in Sources */,
 				9FD8BEE414FFF7660073B4EC /* BXExternalMIDIDevice+BXGeneralMIDISysexes.m in Sources */,
 				9F9DF415153B058200233968 /* BXKeyBuffer.mm in Sources */,
@@ -4115,6 +4147,7 @@
 				9F2D302715B8233800FAE848 /* debug_disasm.cpp in Sources */,
 				9F2D302815B8233800FAE848 /* debug_gui.cpp in Sources */,
 				9F2D302915B8233800FAE848 /* debug_win32.cpp in Sources */,
+				55BBA4EA235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */,
 				9F2D302A15B8233800FAE848 /* cdrom.cpp in Sources */,
 				9F2D302B15B8233800FAE848 /* cdrom_aspi_win32.cpp in Sources */,
 				9F2D302C15B8233800FAE848 /* cdrom_image.cpp in Sources */,
@@ -4771,6 +4804,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -4801,6 +4835,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.washboardabs.boxer-standalone";
 				PRODUCT_NAME = "Boxer Standalone";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Standalone/Boxer Standalone-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Boxer-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -4809,6 +4847,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -4835,6 +4874,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.washboardabs.boxer-standalone";
 				PRODUCT_NAME = "Boxer Standalone";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Standalone/Boxer Standalone-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Boxer-Swift.h";
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
@@ -4959,6 +5001,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = boxer;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -4989,6 +5032,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.washboardabs.boxer;
 				PRODUCT_NAME = Boxer;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Boxer/Boxer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -4998,6 +5044,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = boxer;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -5025,6 +5072,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.washboardabs.boxer;
 				PRODUCT_NAME = Boxer;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Boxer/Boxer-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;

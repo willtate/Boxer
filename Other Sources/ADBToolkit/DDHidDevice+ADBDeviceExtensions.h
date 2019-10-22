@@ -37,10 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (Class) classForHIDDeviceRef: (IOHIDDeviceRef)deviceRef;
 
-+ (id) deviceWithHIDDeviceRef: (IOHIDDeviceRef)deviceRef
-						error: (NSError **)outError;
++ (nullable id) deviceWithHIDDeviceRef: (IOHIDDeviceRef)deviceRef
+                                 error: (NSError **)outError;
 
-- (instancetype) initWithHIDDeviceRef: (IOHIDDeviceRef)deviceRef error: (NSError **)error;
+- (nullable instancetype) initWithHIDDeviceRef: (IOHIDDeviceRef)deviceRef error: (NSError **)error;
 
 - (BOOL) isEqualToDevice: (DDHidDevice *)device;
 

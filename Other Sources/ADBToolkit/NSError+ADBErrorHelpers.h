@@ -30,9 +30,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// ADBErrorHelpers adds helper methods to @c NSError to make it nicer to work with.
 @interface NSError (ADBErrorHelpers)
 
-/// Returns @c YES if the error has the specified error domain and code, NO otherwise.
+/// Returns @c YES if the error has the specified error domain and code, @c NO otherwise.
 - (BOOL) matchesDomain: (NSErrorDomain)errorDomain code: (NSInteger)errorCode;
 
 /// Whether this is a standard Cocoa user-cancelled-operation error.
@@ -41,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-//Keys included in callstackDescriptions dictionaries
+/// Keys included in @c callstackDescriptions dictionaries
 typedef NSString *ADBCallstackKeys NS_STRING_ENUM;
 extern ADBCallstackKeys const ADBCallstackRawSymbol;            //!< The raw output of callstack_symbols.
 extern ADBCallstackKeys const ADBCallstackLibraryName;          //!< The name of the binary in which the stack entry is located.
@@ -49,7 +50,7 @@ extern ADBCallstackKeys const ADBCallstackAddress;              //!< The memory 
 extern ADBCallstackKeys const ADBCallstackFunctionName;         //!< The raw function name, mangled in the case of C++ and Swift names.
 extern ADBCallstackKeys const ADBCallstackHumanReadableFunctionName;  //!< For C++ functions, a demangled version of the function name;
                                                                 //!< otherwise identical to ADBCallstackFunctionName.
-extern ADBCallstackKeys const ADBCallstackSymbolOffset;         //!< An NSNumber representing the offset within the function.
+extern ADBCallstackKeys const ADBCallstackSymbolOffset;         //!< An @c NSNumber representing the offset within the function.
 
 @interface NSException (ADBExceptionHelpers)
 

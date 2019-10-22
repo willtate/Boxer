@@ -27,6 +27,7 @@
 #import "NSError+ADBErrorHelpers.h"
 #import "RegexKitLite.h" //FIXME: we shouldn't introduce dependencies on 3rd-party libraries.
 #include <cxxabi.h> //For demangling
+#import "Boxer-Swift.h"
 
 @implementation NSError (ADBErrorHelpers)
 
@@ -101,7 +102,21 @@ NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]
             NSScanner *offsetScanner = [NSScanner scannerWithString: offsetString];
             [offsetScanner scanLongLong: &offset];
             
-            NSString *demangledSymbolName = [self.class demangledFunctionName: rawSymbolName];
+            ADBExceptionMangledFunctionType symbolType = [self.class possibleMangledTypeFromString:rawSymbolName];
+            NSString *demangledSymbolName;
+            switch (symbolType) {
+                case ADBExceptionMangledFunctionTypeNone:
+                    demangledSymbolName = rawSymbolName;
+                    break;
+                    
+                case ADBExceptionMangledFunctionTypeCPlusPlus:
+                    demangledSymbolName = [self.class demangledFunctionName: rawSymbolName];
+                    break;
+                    
+                case ADBExceptionMangledFunctionTypeSwift:
+                    demangledSymbolName = [self.class demangledSwiftFunctionName: rawSymbolName];
+                    break;
+            }
             if (!demangledSymbolName)
                 demangledSymbolName = rawSymbolName;
             
