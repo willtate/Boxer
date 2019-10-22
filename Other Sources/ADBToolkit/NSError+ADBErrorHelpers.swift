@@ -11,11 +11,11 @@ import Foundation
 @objc(ADBExceptionMangledFunctionType)
 enum MangledFunctionType: Int {
     /// No detected mangling
-    case none
+    @objc(ADBExceptionMangledFunctionNone) case none
     /// *C++* mangled function name
-    case cPlusPlus
+    @objc(ADBExceptionMangledFunctionCPlusPlus) case cPlusPlus
     /// *Swift* mangled name
-    case swift
+    @objc(ADBExceptionMangledFunctionSwift)case swift
 }
 
 private let swiftPrefixes = ["_T", "$s", "_$S", "_T0"]

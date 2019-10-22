@@ -105,15 +105,15 @@ NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]
             ADBExceptionMangledFunctionType symbolType = [self.class possibleMangledTypeFromString:rawSymbolName];
             NSString *demangledSymbolName;
             switch (symbolType) {
-                case ADBExceptionMangledFunctionTypeNone:
+                case ADBExceptionMangledFunctionNone:
                     demangledSymbolName = rawSymbolName;
                     break;
                     
-                case ADBExceptionMangledFunctionTypeCPlusPlus:
+                case ADBExceptionMangledFunctionCPlusPlus:
                     demangledSymbolName = [self.class demangledFunctionName: rawSymbolName];
                     break;
                     
-                case ADBExceptionMangledFunctionTypeSwift:
+                case ADBExceptionMangledFunctionSwift:
                     demangledSymbolName = [self.class demangledSwiftFunctionName: rawSymbolName];
                     break;
             }
