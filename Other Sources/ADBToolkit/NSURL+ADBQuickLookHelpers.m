@@ -31,20 +31,12 @@
 
 - (NSImage *) quickLookThumbnailWithMaxSize: (NSSize)pixelSize iconStyle: (BOOL)useIconStyle
 {
-    //Oh my god I hate CF so much
-    CFBooleanRef styleFlag = (useIconStyle) ? kCFBooleanTrue : kCFBooleanFalse;
-    CFDictionaryRef options = CFDictionaryCreate(CFAllocatorGetDefault(),
-                                                 (const void **)&kQLThumbnailOptionIconModeKey,
-                                                 (const void **)&styleFlag,
-                                                 1,
-                                                 &kCFCopyStringDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    NSDictionary *options = @{(NSString*)kQLThumbnailOptionIconModeKey: @(useIconStyle)};
     
     CGImageRef cgThumbnail = QLThumbnailImageCreate(CFAllocatorGetDefault(),
                                                     (__bridge CFURLRef)self,
                                                     NSSizeToCGSize(pixelSize),
-                                                    options);
-    
-    CFRelease(options);
+                                                    (__bridge CFDictionaryRef)(options));
     
     if (cgThumbnail)
     {

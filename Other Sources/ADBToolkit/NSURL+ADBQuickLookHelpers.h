@@ -35,6 +35,6 @@
 /// If useIconStyle is true, the thumbnail will be generated with the shadow and page-curl effects
 /// as seen in Finder.
 /// USAGE NOTE: this method is synchronous and can take a while to complete, so should be performed on a background thread.
-- (NSImage *) quickLookThumbnailWithMaxSize: (NSSize)pixelSize iconStyle: (BOOL)useIconStyle;
+- (nullable NSImage *) quickLookThumbnailWithMaxSize: (NSSize)pixelSize iconStyle: (BOOL)useIconStyle;
 
 @end
