@@ -42,7 +42,7 @@ bool boxer_runLoopShouldContinue()
 }
 
 //Notifies Boxer of changes to title and speed settings
-void boxer_handleDOSBoxTitleChange(Bit32s newCycles, Bits newFrameskip, bool newPaused)
+void boxer_handleDOSBoxTitleChange(Bit32s newCycles, int newFrameskip, bool newPaused)
 {
 	BXEmulator *emulator = [BXEmulator currentEmulator];
 	[emulator _didChangeEmulationState];
