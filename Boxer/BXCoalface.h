@@ -138,7 +138,7 @@ extern "C" {
     
 #pragma mark - Runloop and event loop handling
     
-	void boxer_handleDOSBoxTitleChange(Bit32s cycles, Bits frameskip, bool paused);
+	void boxer_handleDOSBoxTitleChange(Bit32s cycles, int frameskip, bool paused);
 	
 	/// Called from dosbox.cpp to allow control over the emulation loop.
 	void boxer_runLoopWillStartWithContextInfo(void **contextInfo);
