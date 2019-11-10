@@ -102,7 +102,7 @@ typedef NS_OPTIONS(NSUInteger, BXMT32ROMType) {
 #pragma mark Helper class methods
 
 /// Returns the exact type of ROM at the specified URL: PCM/Control, MT32/CM32L.
-/// Returns \c BXMT32ROMTypeUnknown and populates outError if the type of ROM could
+/// Returns \c BXMT32ROMTypeUnknown and populates \c outError if the type of ROM could
 /// not be determined.
 + (BXMT32ROMType) typeOfROMAtURL: (NSURL *)URL error: (out NSError **)outError NS_REFINED_FOR_SWIFT;
 

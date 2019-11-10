@@ -20,10 +20,10 @@
 
 /// The relative paths of all DOS and Windows executables and DOSBox configuration files
 /// discovered during scanning.
-@property (readonly, strong, nonatomic) NSArray<NSString*> *windowsExecutables;
-@property (readonly, strong, nonatomic) NSArray<NSString*> *DOSExecutables;
-@property (readonly, strong, nonatomic) NSArray<NSString*> *macOSApps;
-@property (readonly, strong, nonatomic) NSArray<NSString*> *DOSBoxConfigurations;
+@property (readonly, copy, nonatomic) NSArray<NSString*> *windowsExecutables;
+@property (readonly, copy, nonatomic) NSArray<NSString*> *DOSExecutables;
+@property (readonly, copy, nonatomic) NSArray<NSString*> *macOSApps;
+@property (readonly, copy, nonatomic) NSArray<NSString*> *DOSBoxConfigurations;
 
 /// The path which the scanner recommends as the base path to import from.
 /// This will usually be the same as the base path, but may point to a mounted

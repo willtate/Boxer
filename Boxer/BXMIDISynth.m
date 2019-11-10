@@ -268,8 +268,7 @@
             
             if (outError)
             {
-                NSDictionary *userInfo = [NSDictionary dictionaryWithObject: URL
-                                                                     forKey: NSURLErrorKey];
+                NSDictionary *userInfo = @{NSURLErrorKey: URL};
                 *outError = [NSError errorWithDomain: NSOSStatusErrorDomain
                                                 code: errCode
                                             userInfo: userInfo];

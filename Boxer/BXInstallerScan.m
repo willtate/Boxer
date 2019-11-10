@@ -17,15 +17,15 @@
 
 @interface BXInstallerScan ()
 
-@property (strong, nonatomic) NSArray<NSString*> *windowsExecutables;
-@property (strong, nonatomic) NSArray<NSString*> *DOSExecutables;
-@property (strong, nonatomic) NSArray<NSString*> *DOSBoxConfigurations;
-@property (strong, nonatomic) NSArray<NSString*> *macOSApps;
-@property (strong, nonatomic) BXGameProfile *detectedProfile;
-@property (nonatomic, getter=isAlreadyInstalled) BOOL alreadyInstalled;
+@property (readwrite, copy, nonatomic) NSArray<NSString*> *windowsExecutables;
+@property (readwrite, copy, nonatomic) NSArray<NSString*> *DOSExecutables;
+@property (readwrite, copy, nonatomic) NSArray<NSString*> *DOSBoxConfigurations;
+@property (readwrite, copy, nonatomic) NSArray<NSString*> *macOSApps;
+@property (readwrite, strong, nonatomic) BXGameProfile *detectedProfile;
+@property (readwrite, nonatomic, getter=isAlreadyInstalled) BOOL alreadyInstalled;
 
-//Helper methods for adding executables to their appropriate match arrays,
-//a la addMatchingPath:
+/// Helper methods for adding executables to their appropriate match arrays,
+/// a la addMatchingPath:
 - (void) addWindowsExecutable: (NSString *)relativePath;
 - (void) addDOSExecutable: (NSString *)relativePath;
 - (void) addMacOSApp: (NSString *)relativePath;

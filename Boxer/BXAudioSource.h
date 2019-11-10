@@ -31,7 +31,7 @@ typedef NS_OPTIONS(NSUInteger, BXAudioFormat) {
 @protocol BXAudioSource <NSObject>
 
 /// The sample rate this source expects to produce for a mixer channel.
-- (NSUInteger) sampleRate; 
+@property (readonly) NSUInteger sampleRate; 
 
 /// Renders the next batch of audio into the specified buffer for the specified number of sample
 /// frames, ideally rendered using the specified sample rate and audio format. The audio source

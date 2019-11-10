@@ -100,22 +100,22 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 						NSString *description = [NSString stringWithFormat: descriptionFormat, folderURL.localizedName];
 						return description;
 					} else if ([userInfoKey isEqualToString:NSLocalizedFailureReasonErrorKey]) {
-						return @"A DOSBox configuration file was provided that defines drives with paths that cannot be found.";
+						return NSLocalizedString(@"A DOSBox configuration file was provided that defines drives with paths that cannot be found.", @"A DOSBox configuration file was provided that defines drives with paths that cannot be found.");
 					}
 
 					break;
 					
 				case BXGameStateUnsupported:
 					if ([userInfoKey isEqualToString:NSLocalizedDescriptionKey]) {
-						return @"Unsupported state";
+						return NSLocalizedString(@"Unsupported state", @"Unsupported state");
 					} else if ([userInfoKey isEqualToString:NSLocalizedFailureReasonErrorKey]) {
-						return @"The current session does not support game states. (e.g. no gamebox is present.)";
+						return NSLocalizedString(@"The current session does not support game states. (e.g. no gamebox is present.)", @"Explanatory message when an unsupported state was requested.");
 					}
 					break;
 					
 				case BXSessionNotReady:
 					if ([userInfoKey isEqualToString:NSLocalizedDescriptionKey]) {
-						return @"Session is not ready";
+						return NSLocalizedString(@"Session is not ready", @"Session is not ready");
 					} else if ([userInfoKey isEqualToString:NSLocalizedFailureReasonErrorKey]) {
 						return @"Returned when openURLInDOS:error: is not ready to open a program.";
 					}
@@ -123,7 +123,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 					
 				case BXURLNotReachableInDOS:
 					if ([userInfoKey isEqualToString:NSLocalizedDescriptionKey]) {
-						return @"URL not reachable in DOS";
+						return NSLocalizedString(@"URL not reachable in DOS", @"Localized description for when a requested URL cannot be opened from within DOS.");
 					} else if ([userInfoKey isEqualToString:NSLocalizedFailureReasonErrorKey]) {
 						return @"Returned when openURLInDOS:error: is passed a URL that cannot be mapped to a DOS path.";
 					}

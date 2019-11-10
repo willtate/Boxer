@@ -806,7 +806,19 @@
 "“%@” is a Windows program. Boxer only supports MS-DOS programs." = "“%@” is a Windows program. Boxer only supports MS-DOS programs.";
 
 /* Format for error message when choosing an unrecognised joystick type. %@ is the classname of the chosen joystick type. */
-"“%@” is not a valid joystick type." = "“%@” není platný typ joysticku.";
+"“%@” is not a valid joystick type." = "“%@” is not a valid joystick type.";
 
 /* Explanatory message shown in Keyboard Preferences if Boxer is not able to install its hotkey capture event tap on OS X 10.8 and below. %1$@ is the localized name of the Accessibility preferences pane. */
 "“Enable access for assistive devices” must also\n be enabled in OS X’s %1$@ preferences." = "“Enable access for assistive devices” must also\n be enabled in OS X’s %1$@ preferences.";
+
+/* A DOSBox configuration file was provided that defines drives with paths that cannot be found. */
+"A DOSBox configuration file was provided that defines drives with paths that cannot be found." = "A DOSBox configuration file was provided that defines drives with paths that cannot be found.";
+
+/* Unsupported state */
+"Unsupported state" = "Unsupported state";
+
+/* Explanatory message when an unsupported state was requested. */
+"The current session does not support game states. (e.g. no gamebox is present.)" = "The current session does not support game states. (e.g. no gamebox is present.)";
+
+/* Localized description for when a requested URL cannot be opened from within DOS. */
+"URL not reachable in DOS" = "URL not reachable in DOS";

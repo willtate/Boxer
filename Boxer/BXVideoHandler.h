@@ -64,10 +64,16 @@ typedef struct {
 } BXFilterDefinition;
 
 
-typedef NS_ENUM(NSInteger, BXHerculesTintMode) {
+typedef NS_ENUM(uint8_t, BXHerculesTintMode) {
     BXHerculesWhiteTint = 0,
     BXHerculesAmberTint = 1,
     BXHerculesGreenTint = 2,
+};
+
+typedef NS_ENUM(uint8_t, BXCGACompositeMode) {
+    BXCGACompositeAuto = 0,
+    BXCGACompositeOn = 1,
+    BXCGACompositeOff = 2,
 };
 
 
@@ -87,6 +93,7 @@ typedef NS_ENUM(NSInteger, BXHerculesTintMode) {
 	BOOL _frameInProgress;
     
     BXHerculesTintMode _herculesTint;
+    BXCGACompositeMode _CGAComposite;
     double _CGAHueAdjustment;
 	
 #if __cplusplus
@@ -108,6 +115,7 @@ typedef NS_ENUM(NSInteger, BXHerculesTintMode) {
 @property (assign, nonatomic) BXFilterType filterType;
 
 @property (assign, nonatomic) BXHerculesTintMode herculesTint;
+@property (assign, nonatomic) BXCGACompositeMode CGAComposite;
 @property (assign, nonatomic) double CGAHueAdjustment;
 
 /// The current DOSBox frameskip setting.
@@ -143,7 +151,7 @@ typedef NS_ENUM(NSInteger, BXHerculesTintMode) {
 #pragma mark Almost-private functions
 
 /// Functions in this interface should not be called outside of BXEmulator and BXCoalface.
-@interface BXVideoHandler (BXVideoHandlerInternals)
+@interface BXVideoHandler (/*BXVideoHandlerInternals*/)
 
 /// Called by BXEmulator to prepare the renderer for shutdown.
 - (void) shutdown;

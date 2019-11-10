@@ -19,7 +19,7 @@
 #pragma mark -
 #pragma mark Class constants
 
-//Constants returned by importStage
+/// Constants returned by importStage
 typedef NS_ENUM(NSInteger, BXImportStage) {
 	BXImportSessionWaitingForSource,
 	BXImportSessionLoadingSource,
@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, BXImportStage) {
 	BXImportSessionFinished
 };
 
-//Constants returned by sourceFileImportType
+/// Constants returned by sourceFileImportType
 typedef NS_ENUM(NSInteger, BXSourceFileImportType) {
 	BXImportTypeUnknown,                //!< We haven't decided yet what we're importing from
 	BXImportFromPreInstalledGame,		//!< Bundling a pre-installed game folder into a gamebox

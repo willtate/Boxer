@@ -37,6 +37,7 @@
 
 - (void) _syncHerculesTint;
 - (void) _syncCGAHueAdjustment;
+- (void) _syncCGAComposite;
 
 @end
 
@@ -55,6 +56,7 @@
 	{
 		_currentVideoMode = M_TEXT;
         _herculesTint = BXHerculesWhiteTint;
+        _CGAComposite = BXCGACompositeAuto;
         _CGAHueAdjustment = 0.0;
 	}
 	return self;
@@ -164,6 +166,22 @@
     if (self.emulator.isInitialized)
     {
         boxer_setHerculesTintMode((Bit8u)self.herculesTint);
+    }
+}
+
+@synthesize CGAComposite=_CGAComposite;
+
+- (void)setCGAComposite:(BXCGACompositeMode)composite
+{
+    _CGAComposite = composite;
+    [self _syncCGAComposite];
+}
+
+- (void) _syncCGAComposite
+{
+    if (self.emulator.isInitialized)
+    {
+        boxer_setCGAComponentMode((Bit8u)self.CGAComposite);
     }
 }
 
@@ -427,8 +445,8 @@
 {
 	NSSize maxFrameSize	= [self.emulator.delegate maxFrameSizeForEmulator: self.emulator];
 	//Work out how big a filter operation size we can use, given the maximum output size
-	NSUInteger maxScale	= floorf(MIN(maxFrameSize.width / resolution.width,
-                                     maxFrameSize.height / resolution.height));
+	NSUInteger maxScale	= floor(MIN(maxFrameSize.width / resolution.width,
+                                    maxFrameSize.height / resolution.height));
 	
 	return maxScale;
 }

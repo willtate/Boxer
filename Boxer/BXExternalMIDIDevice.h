@@ -5,8 +5,6 @@
  online at [http://www.gnu.org/licenses/gpl-2.0.txt].
  */
 
-//BXExternalMIDIDevice represents a connection to an external MIDI device (such as a real MT-32.)
-
 #import <Foundation/Foundation.h>
 #import <CoreMIDI/MIDIServices.h>
 #import "BXMIDIDevice.h"
@@ -21,13 +19,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// to avoid rapid volume changes flooding the device with messages.
 #define BXVolumeSyncDelay 0.05
 
+/// BXExternalMIDIDevice represents a connection to an external MIDI device (such as a real MT-32.)
 @interface BXExternalMIDIDevice : NSObject <BXMIDIDevice>
 
 /// The destination this device is connecting to. Set at initialization time.
 @property (readonly, nonatomic) MIDIEndpointRef destination;
 
 /// Declared as settable for the benefit of our subclasses
-@property (copy, nonatomic) NSDate *dateWhenReady;
+@property (copy, readwrite, nonatomic) NSDate *dateWhenReady;
 
 /// The master volume assigned by the application, from 0.0 to 1.0.
 @property (assign, nonatomic) float volume;

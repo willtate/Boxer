@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// The date at which this device will next be able to receive events.
 /// Sending events before this may result in skipped or truncated messages.
-- (NSDate *) dateWhenReady;
+@property (copy, readonly, nonatomic) NSDate *dateWhenReady;
 
 
 #pragma mark -
