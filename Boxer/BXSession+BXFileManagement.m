@@ -739,6 +739,20 @@ NSString * const BXGameStateEmulatorVersionKey = @"BXEmulatorVersion";
     //Release the context dictionary that was previously retained in the beginSheetModalForWindow: call.
 }
 
+static NSArray<NSURL*>* removeUserDirs(NSArray<NSURL*>* oldArrs)
+{
+    NSMutableIndexSet *idxSet = [NSMutableIndexSet indexSet];
+    NSMutableArray *tmp = [oldArrs mutableCopy];
+    for (NSUInteger i = 0; i < oldArrs.count; i++) {
+        if ([oldArrs[i] isBasedInURL: NSFileManager.defaultManager.homeDirectoryForCurrentUser]) {
+            [idxSet addIndex:i];
+        }
+    }
+    
+    [tmp removeObjectsAtIndexes:idxSet];
+    return [tmp copy];
+}
+
 - (BOOL) validateDriveURL: (NSURL **)ioValue
                     error: (NSError **)outError
 {
@@ -771,6 +785,7 @@ NSString * const BXGameStateEmulatorVersionKey = @"BXEmulatorVersion";
         //Restrict all system library folders, but not the user's own library folder.
         NSArray *restrictedURLs = [[NSFileManager defaultManager] URLsForDirectory: NSAllLibrariesDirectory
                                                                          inDomains: NSAllDomainsMask & ~NSUserDomainMask];
+        restrictedURLs = removeUserDirs(restrictedURLs);
         
         for (NSURL *restrictedURL in restrictedURLs)
         {   
