@@ -61,6 +61,7 @@ NS_SWIFT_NAME(mt32ROMURL(creatingIfMissing:));
 /// Copies the specified MT32 PCM or control ROM into the application support folder,
 /// making it accessible via the appropriate URL method above (depending on whether
 /// it was a control or PCM ROM).
+///
 /// Returns the URL of the imported ROM if successful. Returns \c nil and populates \c NSError
 /// if the ROM could not be imported or was invalid.
 - (nullable NSURL *) importMT32ROMAtURL: (NSURL *)URL error: (out NSError **)outError;

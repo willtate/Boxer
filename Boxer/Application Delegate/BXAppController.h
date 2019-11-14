@@ -8,7 +8,7 @@
 
 #import "BXBaseAppController.h"
 
-enum {
+typedef NS_ENUM(NSInteger, BXStartUpWithAction) {
 	BXStartUpWithNothing		= 0,
 	BXStartUpWithWelcomePanel	= 1,
 	BXStartUpWithGamesFolder	= 2,
@@ -25,8 +25,8 @@ enum {
 	NSURL *_gamesFolderURL;
 }
 
-/// Returns YES if there are other Boxer processes currently running, no otherwise.
-+ (BOOL) otherBoxersActive;
+/// Returns @c YES if there are other Boxer processes currently running, @c NO otherwise.
+@property (readonly, class) BOOL otherBoxersActive;
 
 /// A reference to the app's shared inspector panel controller, used for UI bindings.
 @property (weak, readonly, nonatomic) BXInspectorController *inspectorController;

@@ -27,6 +27,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// The @c ADBShadowExtensions category adds helper methods to make NSShadows easier to work with.
 @interface NSShadow (ADBShadowExtensions)
 
@@ -67,3 +69,5 @@
 - (NSRect) rectToCastInnerShadow: (NSRect)origRect flipped: (BOOL)flipped;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -75,6 +75,10 @@
 
 + (NSURL *) URLFromFileSystemRepresentation: (const char *)representation
 {
+    NSURL *theURL = [NSURL fileURLWithFileSystemRepresentation:representation isDirectory:NO relativeToURL:nil];
+    if (theURL) {
+        return theURL;
+    }
     NSFileManager *manager = [[NSFileManager alloc] init];
     NSString *path = [manager stringWithFileSystemRepresentation: representation
                                                           length: strlen(representation)];

@@ -15,14 +15,14 @@
 typedef NS_ENUM(NSInteger, BXShelfAppearance) {
 	BXShelfAuto		= -1,
 	BXShelfNone		= 0,
+    BXShelfWood		= 1,
 	BXShelfDefault	= 1,
-	BXShelfWood		= 1,
 };
 
 /// Constants for errors concerning the games folder
 extern NSErrorDomain const BXGamesFolderErrorDomain;
 
-NS_ERROR_ENUM(BXGamesFolderErrorDomain) {
+typedef NS_ERROR_ENUM(BXGamesFolderErrorDomain, BXGamesFolderErrors) {
 	BXGamesFolderURLInvalid	//!< A chosen path for the DOS Games folder was not appropriate.
 };
 
