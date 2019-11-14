@@ -56,7 +56,7 @@ extern ADBCallstackKeys const ADBCallstackSymbolOffset;         //!< An @c NSNum
 
 /// Takes a mangled C++ function name produced by callstackSymbols or backtrace_symbols and returns a demangled version.
 /// Returns nil if the provided string could not be resolved (which will be the case if it is a C or Objective C symbol name.)
-+ (nullable NSString *) demangledFunctionName: (NSString *)functionName;
++ (nullable NSString *) demangledCPlusPlusFunctionName: (NSString *)functionName;
 
 /// Returns the results of @c -callstackSymbols parsed into NSDictionaries with the attributes listed above.
 - (NSArray<NSDictionary<ADBCallstackKeys, id>*> *) callStackDescriptions;

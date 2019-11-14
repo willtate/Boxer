@@ -55,7 +55,7 @@ NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]
 
 @implementation NSException (ADBExceptionHelpers)
 
-+ (NSString *) demangledFunctionName: (NSString *)functionName
++ (NSString *) demangledCPlusPlusFunctionName: (NSString *)functionName
 {
     int status;
     const char *cSymbol = functionName.UTF8String;
@@ -110,7 +110,7 @@ NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]
                     break;
                     
                 case ADBExceptionMangledFunctionCPlusPlus:
-                    demangledSymbolName = [self.class demangledFunctionName: rawSymbolName];
+                    demangledSymbolName = [self.class demangledCPlusPlusFunctionName: rawSymbolName];
                     break;
                     
                 case ADBExceptionMangledFunctionSwift:
