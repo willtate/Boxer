@@ -118,7 +118,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// of its inner enumerator. If this block returns an object, enumeration will pause and
 /// <code>ADBScanningEnumerator -nextObject</code> will return that object; if this block returns <code>nil</code>,
 /// enumeration of the inner enumerator will continue.
-/// @c scannedObject is the next object from the inner enumerator; stop is a boolean reference
+/// @c scannedObject is the next object from the inner enumerator; @c stop is a boolean reference
 /// which, if set to YES, will halt enumeration after the current object.
 typedef id __nullable (^ADBScanCallback)(id scannedObject, BOOL *stop);
 

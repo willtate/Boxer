@@ -49,7 +49,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 @interface BXEmulatorConfiguration ()
 
 //Our private storage of configuration sections
-@property (strong, nonatomic) NSMutableDictionary *sections;
+@property (strong, nonatomic) NSMutableDictionary<NSString*, id> *sections;
 
 //Parses a DOSBox-formatted configuration string and sets sections and settings from it
 - (void) _parseSettingsFromString: (NSString *)configuration;
@@ -177,7 +177,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	else
 	{
 		//If the section doesn't exist yet, just add a new one
-		[self setSettings: [NSDictionary dictionaryWithObject: settingValue forKey: settingName]
+        [self setSettings: @{settingName: settingValue}
 			   forSection: sectionName];
 	}
 }
@@ -336,7 +336,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 #pragma mark -
 #pragma mark Importing and merging settings
 
-- (void) addSettingsFromDictionary: (NSDictionary *)newSettings
+- (void) addSettingsFromDictionary: (NSDictionary<NSString*,id> *)newSettings
 {
 	for (NSString *sectionName in newSettings.keyEnumerator)
 	{

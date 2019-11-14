@@ -239,10 +239,7 @@ static int ADBSingleFileCallback(int what, int stage, copyfile_state_t state,
 	const char *srcPath = self.sourcePath.fileSystemRepresentation;
 	const char *destPath = self.destinationPath.fileSystemRepresentation;
 	
-	NSArray *contents;
-	NSEnumerator *enumerator;
-	contents = [_manager subpathsAtPath:self.sourcePath];
-	enumerator = [contents objectEnumerator];
+	NSArray *contents = [_manager subpathsAtPath:self.sourcePath];
 	unsigned long long fileSize = 0;
 	//TODO: More accurate sizing.
 	for (NSString *path in contents) {

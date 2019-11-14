@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// \c BXEmulatorConfiguration is a Property List-style parser for configuration files in DOSBox format.
 /// It can read and write conf files, though it is not currently able to preserve layout and comments.
 @interface BXEmulatorConfiguration : NSObject
@@ -16,21 +18,21 @@
 #pragma mark Properties
 
 /// Whether the configuration has any settings or startup commands in it.
-@property (readonly, nonatomic) BOOL isEmpty;
+@property (readonly, nonatomic, getter=isEmpty) BOOL empty;
 
 /// Returns a dictionary of all settings organised by section (not including startup commands.)
-@property (readonly, nonatomic) NSDictionary *settings;
+@property (readonly, nonatomic) NSDictionary<NSString*, id> *settings;
 
 /// Returns an array of all startup commands.
-@property (readonly, nonatomic) NSArray<NSString*> *startupCommands;
+@property (readonly, nonatomic, nullable) NSArray<NSString*> *startupCommands;
 
 /// A string to prepend as a header comment at the start of the configuration file.
 /// Used by description and writeToFile:error:
-@property (copy, nonatomic) NSString *preamble;
+@property (copy, nonatomic, nullable) NSString *preamble;
 
 /// A string to prepend as a section comment to the start of the autoexec block.
 /// Used by description and writeToFile:error:
-@property (copy, nonatomic) NSString *startupCommandsPreamble;
+@property (copy, nonatomic, nullable) NSString *startupCommandsPreamble;
 
 
 #pragma mark -
@@ -38,9 +40,9 @@
 
 /// Returns an instance containing the settings in the file at the specified location.
 /// Will return \c nil and populate \c outError on failure to read the file.
-+ (instancetype) configurationWithContentsOfURL: (NSURL *)URL error: (out NSError **)outError;
-- (instancetype) initWithContentsOfURL: (NSURL *)URL error: (out NSError **)outError;
-+ (instancetype) configurationWithContentsOfFile: (NSString *)filePath error: (out NSError **)outError;
++ (nullable instancetype) configurationWithContentsOfURL: (NSURL *)URL error: (out NSError **)outError;
+- (nullable instancetype) initWithContentsOfURL: (NSURL *)URL error: (out NSError **)outError;
++ (nullable instancetype) configurationWithContentsOfFile: (NSString *)filePath error: (out NSError **)outError;
 
 /// Returns an instance containing the settings parsed from the specified DOSBox-formatted
 /// configuration string.
@@ -48,7 +50,7 @@
 - (instancetype) initWithString: (NSString *)configuration;
 
 /// Returns an instance using the specified heirarchical dictionary of sections and settings.
-- (instancetype) initWithSettings: (NSDictionary *)initialSettings;
+- (instancetype) initWithSettings: (NSDictionary<NSString*,id> *)initialSettings;
 
 /// Returns an autoreleased empty configuration.
 + (instancetype) configuration;
@@ -64,7 +66,7 @@
 
 /// Returns a string representation of the configuration in DOSBox format,
 /// as it would look when written to a file.
-- (NSString *) description;
+@property (readonly, copy) NSString *description;
 
 
 #pragma mark -
@@ -72,8 +74,8 @@
 
 /// Gets the value for the setting with the specified key under the specified section.
 /// Will return nil if the setting is not found.
-- (NSString *) valueForKey: (NSString *)settingName
-				 inSection: (NSString *)sectionName;
+- (nullable NSString *) valueForKey: (NSString *)settingName
+						  inSection: (NSString *)sectionName;
 
 /// Sets the value for the setting with the specified key under the specified section.
 - (void) setValue: (NSString *)settingValue
@@ -92,7 +94,7 @@
 - (void) addStartupCommand: (NSString *)command;
 
 /// Adds all the specified commands onto the end of the startup commands.
-- (void) addStartupCommands: (NSArray *)commands;
+- (void) addStartupCommands: (NSArray<NSString*> *)commands;
 
 /// Removes all occurrences of the specified command.
 /// Only exact matches will be removed.
@@ -109,11 +111,11 @@
 - (NSDictionary *) settingsForSection: (NSString *)sectionName;
 
 /// Replaces the settings for the specified section with the new ones.
-- (void) setSettings: (NSDictionary *)newSettings forSection: (NSString *)sectionName;
+- (void) setSettings: (nullable NSDictionary<NSString*,NSString*> *)newSettings forSection: (NSString *)sectionName;
 
 /// Merges the specfied configuration settings into the specified section.
 /// Duplicate settings will be overridden; otherwise existing sections and settings will be left in place.
-- (void) addSettings: (NSDictionary *)newSettings toSection: (NSString *)sectionName;
+- (void) addSettings: (NSDictionary<NSString*,NSString*> *)newSettings toSection: (NSString *)sectionName;
 
 /// Remove an entire section and all its settings.
 - (void) removeSection: (NSString *)sectionName;
@@ -128,10 +130,12 @@
 
 /// Merges the configuration settings from the specified dictionary into this configuration.
 /// Duplicate settings will be overridden; otherwise existing sections and settings will be left in place.
-- (void) addSettingsFromDictionary: (NSDictionary *)newSettings;
+- (void) addSettingsFromDictionary: (NSDictionary<NSString*,id> *)newSettings;
 
 /// Eliminates all configuration settings that are identical to those in the specified configuration,
 /// leaving only the settings that differ.
 - (void) excludeDuplicateSettingsFromConfiguration: (BXEmulatorConfiguration *)configuration;
 
 @end
+
+NS_ASSUME_NONNULL_END

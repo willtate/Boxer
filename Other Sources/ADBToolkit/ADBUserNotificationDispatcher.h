@@ -40,15 +40,15 @@ typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notifica
     NSMutableDictionary *_activationHandlers;
 }
 
-/// Whether user notifications are supported in this version of OS X. Will return NO on OS X < 10.8.
+/// Whether user notifications are supported in this version of OS X. Will return @c NO on OS X < 10.8.
 @property (class, readonly) BOOL userNotificationsAvailable;
 
 /// Returns the singleton instance of the notification dispatcher.
-@property (class, readonly, strong) ADBUserNotificationDispatcher *dispatcher;
+@property (class, readonly, strong, nullable) ADBUserNotificationDispatcher *dispatcher;
 
 /// Schedules the specified notification for display, giving it the specified type key
 /// (which must be an NSString, NSNumber or other plist type) and sender.
-/// If activationHandler is specified, it will be called on completion and passed the notification
+/// If @c activationHandler is specified, it will be called on completion and passed the notification
 /// that was activated. Note that any objects referenced in the handler will be retained until
 /// the notification for the handler has been removed.
 - (void) scheduleNotification: (NSUserNotification *)notification
