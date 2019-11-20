@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 #pragma mark - Emulator constants
 
 /// The current DOSBox CPU speed mode: either a fixed speed or as fast as it can go.
@@ -161,7 +163,7 @@ extern NSStringEncoding BXDirectStringEncoding;
 #pragma mark - Properties
 
 /// The delegate responsible for this emulator.
-@property (nonatomic, assign) id <BXEmulatorDelegate, BXEmulatorFileSystemDelegate, BXEmulatorAudioDelegate, BXEmulatedPrinterDelegate> delegate;
+@property (nonatomic, assign, nullable) id <BXEmulatorDelegate, BXEmulatorFileSystemDelegate, BXEmulatorAudioDelegate, BXEmulatedPrinterDelegate> delegate;
 
 /// The handler for DOSBox's video emulation and rendering output.
 @property (readonly, retain) BXVideoHandler *videoHandler;
@@ -173,7 +175,7 @@ extern NSStringEncoding BXDirectStringEncoding;
 @property (readonly, retain) BXEmulatedMouse *mouse;
 
 /// The emulated joystick currently attached to this session. Will be @c nil if no joystick is attached.
-@property (retain) id <BXEmulatedJoystick> joystick;
+@property (retain, nullable) id <BXEmulatedJoystick> joystick;
 
 /// The emulated dot-matrix printer for this session.
 @property (retain) BXEmulatedPrinter *printer;
@@ -283,7 +285,7 @@ extern NSStringEncoding BXDirectStringEncoding;
 
 /// The device to which we are currently sending MIDI signals.
 /// One of MT32MIDIDevice, MIDISynth or externalMIDIDevice.
-@property (nonatomic, retain) id <BXMIDIDevice> activeMIDIDevice;
+@property (nonatomic, retain, nullable) id <BXMIDIDevice> activeMIDIDevice;
 
 /// Whether to autodetect when a game is playing MT-32 music.
 /// If YES, the game's MIDI output will be sniffed to see if it is using MT-32 music:
@@ -334,24 +336,24 @@ extern NSStringEncoding BXDirectStringEncoding;
 
 /// Returns whether the specified process info represents an instance of DOSBox's COMMAND.COM.
 /// @param process  A process info dictionary of the kind returned by @c -currentProcess.
-/// @return YES if the process info represents DOSBox's own COMMAND.COM shell, NO otherwise.
-/// @note This will return NO for third-party shell processes, including the official MS-DOS COMMAND.COM.
-- (BOOL) processIsShell: (NSDictionary *)process;
+/// @return @c YES if the process info represents DOSBox's own COMMAND.COM shell, @c NO otherwise.
+/// @note This will return @c NO for third-party shell processes, including the official MS-DOS COMMAND.COM.
+- (BOOL) processIsShell: (NSDictionary<NSString*,id> *)process;
 
 /// Returns whether the specified process info represents an instance of DOSBox's AUTOEXEC.BAT.
-/// @param process  A process info dictionary of the kind returned by @c -currentProcess.
+/// @param process  A process info dictionary of the kind returned by @c -currentProcess
 /// @return YES if the process info represents DOSBox's own AUTOEXEC.BAT startup script, NO otherwise.
-- (BOOL) processIsAutoexec: (NSDictionary *)process;
+- (BOOL) processIsAutoexec: (NSDictionary<NSString*,id> *)process;
 
 /// Returns whether the specified process is one of DOSBox's internal programs.
-/// @param process  A process info dictionary of the kind returned by @c -currentProcess.
-/// @return YES if the process info represents a DOSBox-internal program (as found on drive Z), NO otherwise.
-- (BOOL) processIsInternal: (NSDictionary *)process;
+/// @param process  A process info dictionary of the kind returned by @c -currentProcess
+/// @return @c YES if the process info represents a DOSBox-internal program (as found on drive Z), @c NO otherwise.
+- (BOOL) processIsInternal: (NSDictionary<NSString*,id> *)process;
 
 /// Returns whether the specified process is a batchfile or a regular program.
-/// @param process  A process info dictionary of the kind returned by @c -currentProcess.
-/// @return YES if the process info represents a batch file, NO otherwise.
-- (BOOL) processIsBatchFile: (NSDictionary *)process;
+/// @param process  A process info dictionary of the kind returned by @c -currentProcess
+/// @return @c YES if the process info represents a batch file, @c NO otherwise.
+- (BOOL) processIsBatchFile: (NSDictionary<NSString*,id> *)process;
 
 
 #pragma mark Gameport devices
@@ -363,7 +365,9 @@ extern NSStringEncoding BXDirectStringEncoding;
 /// @param outError[out]    If provided the method returns NO, this will contain an error explaining the reason
 ///                         why the joystick instance was invalid.
 /// @return YES if the specified joystick instance was valid and supported for this session, or NO otherwise.
-- (BOOL) validateJoystick: (inout id <BXEmulatedJoystick> *)ioValue
+- (BOOL) validateJoystick: (inout id <BXEmulatedJoystick> _Nonnull *_Nonnull)ioValue
                     error: (out NSError **)outError;
 
 @end
+
+NS_ASSUME_NONNULL_END

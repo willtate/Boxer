@@ -83,7 +83,10 @@ void CPU_Core_Dynrec_Cache_Init(bool enable_cache);
 @implementation BXEmulator
 @synthesize processName = _processName;
 @synthesize lastProcess = _lastProcess;
-@synthesize runningProcesses = _runningProcesses;
+- (NSArray<NSDictionary<NSString *,id> *> *)runningProcesses
+{
+    return [[[NSArray alloc] initWithArray:_runningProcesses copyItems:YES] autorelease];
+}
 @synthesize delegate = _delegate;
 @synthesize videoHandler = _videoHandler;
 @synthesize mouse = _mouse;
@@ -199,6 +202,8 @@ static BOOL _hasStartedEmulator = NO;
 {
     [self.printer unbind: @"delegate"];
     
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnonnull"
     self.processName = nil;
     self.lastProcess = nil;
     self.activeMIDIDevice = nil;
@@ -217,6 +222,7 @@ static BOOL _hasStartedEmulator = NO;
     [_pendingSysexMessages release]; _pendingSysexMessages = nil;
 	
 	[super dealloc];
+#pragma clang diagnostic pop
 }
 
 
