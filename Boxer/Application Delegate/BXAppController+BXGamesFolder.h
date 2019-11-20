@@ -15,7 +15,7 @@
 typedef NS_ENUM(NSInteger, BXShelfAppearance) {
 	BXShelfAuto		= -1,
 	BXShelfNone		= 0,
-    BXShelfWood		= 1,
+	BXShelfWood		= 1,
 	BXShelfDefault	= 1,
 };
 

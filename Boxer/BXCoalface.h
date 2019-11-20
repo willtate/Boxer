@@ -14,13 +14,14 @@
 #ifndef BOXER
 #define BOXER
 
+#import "config.h"
+#import "video.h"
+
 #if __cplusplus
 extern "C" {
 #endif
 
-#import "config.h"
-#import "video.h"
-#import <stdio.h>
+#include <stdio.h>
 	
 //Remapped replacements for DOSBox's old sdlmain functions
 #define GFX_Events boxer_processEvents

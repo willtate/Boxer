@@ -161,7 +161,7 @@ typedef NS_ENUM(NSUInteger, BXGameIdentifierType) {
 @property (readonly, nonatomic, nullable) NSDictionary<NSString*,id> *defaultLauncher;
 
 /// The index in the launchers array of the default launcher.
-/// Will be NSNotFound if no default launcher has been set.
+/// Will be @c NSNotFound if no default launcher has been set.
 @property (nonatomic) NSUInteger defaultLauncherIndex;
 
 /// The delegate from whom we will request an undo manager for undoable operations.
@@ -201,7 +201,7 @@ typedef NS_ENUM(NSUInteger, BXGameIdentifierType) {
 
 /// Validates that the specified URL is located within the gamebox
 /// and is otherwise suitable as the target of a launcher.
-- (BOOL) validateLauncherURL: (NSURL *__nonnull*__nullable)ioValue error: (NSError **)outError;
+- (BOOL) validateLauncherURL: (NSURL *__nullable*__nonnull)ioValue error: (NSError **)outError;
 
 
 #pragma mark - Filesystem methods
@@ -281,10 +281,10 @@ typedef NS_ENUM(NSInteger, BXGameboxDocumentationConflictBehaviour) {
 /// Populates the documentation folder with symlinks to documentation found elsewhere in the gamebox.
 /// If @c createIfMissing is YES, the folder will be created if it doesn't already exist.
 /// Returns an array of populated documentation URLs if the folder was populated successfully,
-/// or @c NO and returns outError if it could not be populated (including if the documentation folder
+/// or @c NO and returns @c outError if it could not be populated (including if the documentation folder
 /// doesn't exist and @c createIfMissing was NO.)
 /// This method registers undo operations for creating the folder and populating each documentation file.
-- (nullable NSArray<NSURL*> *) populateDocumentationFolderCreatingIfMissing: (BOOL)createIfMissing error: (out NSError **)outError;
+- (nullable NSArray<NSURL*> *) populateDocumentationFolderCreatingIfMissing: (BOOL)createIfMissing error: (out NSError **)outError NS_SWIFT_NAME(populateDocumentationFolder(creatingIfMissing:));
 
 
 /// Copies the file at the specified location into the documentation folder,
@@ -320,7 +320,7 @@ typedef NS_ENUM(NSInteger, BXGameboxDocumentationConflictBehaviour) {
 /// is not located within the gamebox's documentation folder.
 /// This method registers an undo operation if the file was successfully deleted/moved to the trash.
 - (BOOL) removeDocumentationURL: (NSURL *)documentationURL
-                   resultingURL: (out NSURL *__nonnull*__nullable)resultingURL
+                   resultingURL: (out NSURL *__nullable*__nonnull)resultingURL
                           error: (out NSError **)outError;
 
 /// Returns whether the specified documentation file can be removed from the gamebox.

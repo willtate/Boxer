@@ -55,10 +55,10 @@ extern NSErrorDomain const ADBMountedVolumesErrorDomain;
 //Mount-related error codes
 NS_ERROR_ENUM(ADBMountedVolumesErrorDomain)
 {
-	/// Produced when hdiutil cannot mount the image passed to mountImageAtURL:options:error:
+	/// Produced when hdiutil cannot mount the image passed to @c mountImageAtURL:options:error:
 	ADBMountedVolumesHDIUtilAttachFailed,
     
-    /// Produced when hdiutil failed to return volume data. Returned by mountedImageInfoWithError:.
+    /// Produced when hdiutil failed to return volume data. Returned by @c mountedImageInfoWithError:
     ADBMountedVolumesHDIUtilInfoFailed,
 };
 

@@ -1049,7 +1049,7 @@
 		9F13F9CE11F85E6F0069A02E /* NSFileManager+ADBTemporaryFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+ADBTemporaryFiles.h"; sourceTree = "<group>"; };
 		9F13F9CF11F85E6F0069A02E /* NSFileManager+ADBTemporaryFiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ADBTemporaryFiles.m"; sourceTree = "<group>"; };
 		9F160BD91236952400F8768E /* Sample Games */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Sample Games"; sourceTree = "<group>"; };
-		9F160E6F1236B2A600F8768E /* BXAppController+BXGamesFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BXAppController+BXGamesFolder.h"; sourceTree = "<group>"; };
+		9F160E6F1236B2A600F8768E /* BXAppController+BXGamesFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BXAppController+BXGamesFolder.h"; sourceTree = "<group>"; usesTabs = 1; };
 		9F160E701236B2A600F8768E /* BXAppController+BXGamesFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BXAppController+BXGamesFolder.m"; sourceTree = "<group>"; usesTabs = 1; };
 		9F165384142E8AFE00CAADBF /* BXEmulatedMT32Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXEmulatedMT32Delegate.h; sourceTree = "<group>"; };
 		9F1812BC12996337009BC4B2 /* YRKSpinningProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRKSpinningProgressIndicator.h; sourceTree = "<group>"; };
@@ -1825,7 +1825,7 @@
 		9FF175E511B279F500D0FCDC /* BXVideoHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXVideoHandler.h; sourceTree = "<group>"; };
 		9FF175E611B279F500D0FCDC /* BXVideoHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BXVideoHandler.mm; sourceTree = "<group>"; };
 		9FF2E9BB11E6F4950051E485 /* BXEmulatorConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXEmulatorConfiguration.h; sourceTree = "<group>"; usesTabs = 1; };
-		9FF2E9BC11E6F4950051E485 /* BXEmulatorConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXEmulatorConfiguration.m; sourceTree = "<group>"; };
+		9FF2E9BC11E6F4950051E485 /* BXEmulatorConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXEmulatorConfiguration.m; sourceTree = "<group>"; usesTabs = 1; };
 		9FF5413C169990A100270658 /* ADBUndoExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBUndoExtensions.h; sourceTree = "<group>"; };
 		9FF68FF6157B9C6600F8B5BC /* ADBTexture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBTexture2D.h; sourceTree = "<group>"; };
 		9FF68FF7157B9C6600F8B5BC /* ADBTexture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBTexture2D.m; sourceTree = "<group>"; };

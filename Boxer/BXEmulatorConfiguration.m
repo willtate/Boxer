@@ -81,7 +81,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 
 + (id) configurationWithContentsOfFile: (NSString *)filePath error: (out NSError **)outError
 {
-    return [self configurationWithContentsOfURL: [NSURL fileURLWithPath: filePath] error: outError];
+	return [self configurationWithContentsOfURL: [NSURL fileURLWithPath: filePath] error: outError];
 }
 
 + (id) configuration
@@ -93,8 +93,8 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 - (id) initWithContentsOfURL: (NSURL *)URL error: (out NSError **)outError
 {
 	NSString *fileContents = [NSString stringWithContentsOfURL: URL
-                                                  usedEncoding: NULL
-                                                         error: outError];
+												  usedEncoding: NULL
+														 error: outError];
 
 	if (fileContents)
 	{
@@ -106,7 +106,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	{
 		return nil;
 	}
-    return self;
+	return self;
 }
 
 - (id) initWithString: (NSString *)configuration
@@ -126,7 +126,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	}
 	return self;
 }
-		 
+
 - (id) init
 {
 	if ((self = [super init]))
@@ -142,7 +142,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 
 - (BOOL) writeToFile: (NSString *)filePath error: (out NSError **)outError
 {
-    return [self writeToURL: [NSURL fileURLWithPath: filePath] error: outError];
+	return [self writeToURL: [NSURL fileURLWithPath: filePath] error: outError];
 }
 
 - (BOOL) writeToURL: (NSURL *)URL error: (out NSError **)outError
@@ -161,15 +161,15 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 #pragma mark Setting and getting individual settings
 
 - (void) setValue: (NSString *)settingValue
-           forKey: (NSString *)settingName
-        inSection: (NSString *)sectionName
+		   forKey: (NSString *)settingName
+		inSection: (NSString *)sectionName
 {
 	//The autoexec section is an array, not a dictionary, and must be accessed with different methods
 	NSAssert(![sectionName isEqualToString: @"autoexec"],
 			 @"Startup commands should be set with setStartupCommands: or addStartupCommand:");
 	
 	NSMutableDictionary *section = [self.sections objectForKey: sectionName];
-		
+	
 	if (section)
 	{
 		[section setObject: settingValue forKey: settingName];
@@ -177,7 +177,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	else
 	{
 		//If the section doesn't exist yet, just add a new one
-        [self setSettings: @{settingName: settingValue}
+		[self setSettings: @{settingName: settingValue}
 			   forSection: sectionName];
 	}
 }
@@ -211,15 +211,15 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 
 - (void) setStartupCommands: (NSArray *)commands
 {
-    if (commands)
-    {
-        NSMutableArray *mutableCommands = [commands mutableCopy];
-        [self.sections setObject: mutableCommands forKey: @"autoexec"];
-    }
-    else
-    {
-        [self removeStartupCommands];
-    }
+	if (commands)
+	{
+		NSMutableArray *mutableCommands = [commands mutableCopy];
+		[self.sections setObject: mutableCommands forKey: @"autoexec"];
+	}
+	else
+	{
+		[self removeStartupCommands];
+	}
 }
 
 - (void) removeStartupCommands
@@ -237,14 +237,14 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	else
 	{
 		//If we don't have an autoexec section yet, create a new one
-        self.startupCommands = [NSMutableArray arrayWithObject: command];
+		self.startupCommands = [NSMutableArray arrayWithObject: command];
 	}
 }
 
 - (void) addStartupCommands: (NSArray *)newCommands
 {
-    if (!newCommands.count) return;
-    
+	if (!newCommands.count) return;
+	
 	NSMutableArray *commands = [self.sections objectForKey: @"autoexec"];
 	if (commands)
 	{
@@ -253,7 +253,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	else
 	{
 		//If we don't have an autoexec section yet, just create a new one
-        self.startupCommands = commands;
+		self.startupCommands = commands;
 	}
 }
 
@@ -280,8 +280,8 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 {
 	//If any section has any content, we're not empty
 	for (id section in self.sections.objectEnumerator)
-        if ([section count] > 0) return NO;
-    
+		if ([section count] > 0) return NO;
+	
 	return YES;
 }
 
@@ -295,15 +295,15 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 
 - (void) setSettings: (NSDictionary *)newSettings forSection: (NSString *)sectionName
 {
-    if (newSettings)
-    {
-        NSMutableDictionary *section = [newSettings mutableCopy];
-        [self.sections setObject: section forKey: sectionName];
-    }
-    else
-    {
-        [self removeSection: sectionName];
-    }
+	if (newSettings)
+	{
+		NSMutableDictionary *section = [newSettings mutableCopy];
+		[self.sections setObject: section forKey: sectionName];
+	}
+	else
+	{
+		[self removeSection: sectionName];
+	}
 }
 
 - (void) addSettings: (NSDictionary *)newSettings toSection: (NSString *)sectionName
@@ -312,9 +312,9 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	NSAssert(![sectionName isEqualToString: @"autoexec"],
 			 @"Startup commands should be added with [BXEmulatorConfiguration addStartupCommands:].");
 	
-    if (!newSettings.count)
-        return;
-    
+	if (!newSettings.count)
+		return;
+	
 	NSMutableDictionary *section = [self.sections objectForKey: sectionName];
 	if (section)
 	{
@@ -342,10 +342,10 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	{
 		id section = [newSettings objectForKey: sectionName];
 		
-        if ([sectionName isEqualToString: @"autoexec"])
-            [self addStartupCommands: section];
+		if ([sectionName isEqualToString: @"autoexec"])
+			[self addStartupCommands: section];
 		else
-            [self addSettings: section toSection: sectionName];
+			[self addSettings: section toSection: sectionName];
 	}
 }
 
@@ -353,11 +353,11 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 {
 	NSDictionary *settings = configuration.settings;
 	if (settings.count)
-        [self addSettingsFromDictionary: settings];
+		[self addSettingsFromDictionary: settings];
 	
 	NSArray *startupCommands = configuration.startupCommands;
 	if (startupCommands.count)
-        [self addStartupCommands: startupCommands];
+		[self addStartupCommands: startupCommands];
 }
 
 - (void) excludeDuplicateSettingsFromConfiguration: (BXEmulatorConfiguration *)configuration
@@ -366,8 +366,8 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	for (NSString *sectionName in self.settings)
 	{
 		NSDictionary *section = [self settingsForSection: sectionName];
-        //Note that we iterate allKeys rather than keyEnumerator as we will be modifying
-        //the dictionary's keys during iteration, which is not supported by enumerators.
+		//Note that we iterate allKeys rather than keyEnumerator as we will be modifying
+		//the dictionary's keys during iteration, which is not supported by enumerators.
 		for (NSString *settingName in section.allKeys)
 		{
 			NSString *ourValue		= [self valueForKey: settingName inSection: sectionName];
@@ -381,7 +381,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	
 	//Now, eliminate duplicate startup commands too.
 	//IMPLEMENTATION NOTE: for now we leave the startup commands alone unless the two sets
-	//have exactly the same commands in the same order. There's too many risks involved 
+	//have exactly the same commands in the same order. There's too many risks involved
 	//for us to remove partial sets of duplicate startup commands.
 	if ([self.startupCommands isEqualToArray: configuration.startupCommands])
 		[self removeStartupCommands];
@@ -395,14 +395,14 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 {
 	NSString *sectionName = nil;
 	BOOL isInAutoexec = NO;
-		
+	
 	//Walk over every line of the configuration string
 	for (NSString *line in configuration.lineEnumerator)
 	{
 		//Ignore empty and comment lines
 		if (line.length &&
-            ![line isMatchedByRegex: BXEmulatorConfigurationCommentFormat] &&
-            ![line isMatchedByRegex: BXEmulatorConfigurationEmptyFormat])
+			![line isMatchedByRegex: BXEmulatorConfigurationCommentFormat] &&
+			![line isMatchedByRegex: BXEmulatorConfigurationEmptyFormat])
 		{
 			//Check if this line is a section declaration, and change our current section if so.
 			NSString *sectionNameMatch = [line stringByMatching: BXEmulatorConfigurationSectionFormat capture: 1];
@@ -413,7 +413,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 				isInAutoexec = [sectionName isEqualToString: @"autoexec"];
 			}
 			
-            //Otherwise, put this line under the current section.
+			//Otherwise, put this line under the current section.
 			else if (sectionName)
 			{
 				//If we're within an autoexec section block, then treat every line as a command.
@@ -429,20 +429,20 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 					//We expect two substrings from this match: less or more means a malformed setting line.
 					if (settingMatch.count == 3)
 					{
-                        NSString *settingName   = [settingMatch objectAtIndex: 1];
-                        NSString *settingValue  = [settingMatch objectAtIndex: 2];
-                        
+						NSString *settingName   = [settingMatch objectAtIndex: 1];
+						NSString *settingValue  = [settingMatch objectAtIndex: 2];
+						
 						//Always lowercase setting names, even though we can match uppercase versions
 						settingName     = settingName.lowercaseString;
 						settingValue	= [settingValue stringByTrimmingCharactersInSet:
-												   [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                        
+										   [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+						
 						[self setValue: settingValue
-                                forKey: settingName
-                             inSection: sectionName];
-					}	
+								forKey: settingName
+							 inSection: sectionName];
+					}
 				}
-			}			
+			}
 		}
 	}
 }
@@ -455,11 +455,11 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	if (self.preamble.length)
 	{
 		NSString *preambleComment = [self.class _formatAsComment: self.preamble
-                                             wrappedAtLineLength: BXConfigurationWordWrap];
+											 wrappedAtLineLength: BXConfigurationWordWrap];
 		[formattedString appendFormat: @"%@\n", preambleComment, nil];
 	}
 	
-    NSDictionary *settings = self.settings;
+	NSDictionary *settings = self.settings;
 	for (NSString *sectionName in settings.keyEnumerator)
 	{
 		NSDictionary *section = [settings objectForKey: sectionName];
@@ -489,7 +489,7 @@ NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 		if (self.startupCommandsPreamble.length)
 		{
 			NSString *startupPreambleComment = [self.class _formatAsComment: self.startupCommandsPreamble
-                                                        wrappedAtLineLength: BXConfigurationWordWrap];
+														wrappedAtLineLength: BXConfigurationWordWrap];
 			[formattedString appendFormat: @"%@\n", startupPreambleComment, nil];
 		}
 		

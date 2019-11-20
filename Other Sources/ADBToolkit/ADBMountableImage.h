@@ -37,7 +37,7 @@ typedef NS_ERROR_ENUM(ADBMountableImageErrorDomain, ADBMountableImageErrors) {
     /// Returned by if the specified image is not
     ADBMountableImageUnsupportedImageType = 1,
     
-    /// Returned by \c volumeURLMountingIfNeeded:error: when the image is not mounted
+    /// Returned by @c volumeURLMountingIfNeeded:error: when the image is not mounted
     /// and the filesystem has not been given permission to mount it.
     ADBMountableImageVolumeUnavailable = 2,
 };
@@ -56,8 +56,8 @@ typedef NS_ERROR_ENUM(ADBMountableImageErrorDomain, ADBMountableImageErrors) {
 @property (class, readonly) NSSet<NSString*> *supportedImageTypes;
 
 /// Whether to unmount the volume when this instance goes out of scope.
-/// This will be automatically set to YES whenever the filesystem mounts
-/// the image itself, and reset to NO if the filesystem is unmounted.
+/// This will be automatically set to @c YES whenever the filesystem mounts
+/// the image itself, and reset to @c NO if the filesystem is unmounted.
 @property (assign, nonatomic) BOOL unmountWhenDone;
 
 
