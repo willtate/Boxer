@@ -2397,6 +2397,7 @@
 			);
 			name = Artwork;
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		9F2C458315DB7DC3009F4477 /* OpenGL */ = {
 			isa = PBXGroup;

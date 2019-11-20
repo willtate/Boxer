@@ -18,23 +18,23 @@
 {
 	if (iconSize.height < 32) return nil;
 	
-	CGFloat blurRadius	= MAX(1.0f, iconSize.height / 32);
-	CGFloat offset		= MAX(1.0f, iconSize.height / 128);
+	CGFloat blurRadius	= MAX(1.0, iconSize.height / 32);
+	CGFloat offset		= MAX(1.0, iconSize.height / 128);
 	
     return [NSShadow shadowWithBlurRadius: blurRadius
                                    offset: NSMakeSize(0, -offset)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.85f]];
+                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.85]];
 }
 
 //We give gameboxes a soft white glow around the inside edge so that they show up well against dark backgrounds
 + (NSShadow *) innerGlowForSize: (NSSize)iconSize
 {
 	if (iconSize.height < 64) return nil;
-	CGFloat blurRadius = MAX(1.0f, iconSize.height / 64);
+	CGFloat blurRadius = MAX(1.0, iconSize.height / 64);
 	
     return [NSShadow shadowWithBlurRadius: blurRadius
                                    offset: NSZeroSize
-                                    color: [NSColor colorWithCalibratedWhite: 1 alpha: 0.33f]];
+                                    color: [NSColor colorWithCalibratedWhite: 1 alpha: 0.33]];
 }
 
 + (NSImage *) shineForSize: (NSSize)iconSize
@@ -102,12 +102,12 @@
 	[shine drawInRect: artFrame
 			 fromRect: artFrame
 			operation: NSCompositeSourceOver
-			 fraction: 0.25f];
+			 fraction: 0.25];
 	
 	//Finally, outline the box
-	[[NSColor colorWithCalibratedWhite: 0.0f alpha: 0.33f] set];
-	[NSBezierPath setDefaultLineWidth: 1.0f];
-	[NSBezierPath strokeRect: NSInsetRect(artFrame, -0.5f, -0.5f)];
+	[[NSColor colorWithCalibratedWhite: 0.0 alpha: 0.33] set];
+	[NSBezierPath setDefaultLineWidth: 1.0];
+	[NSBezierPath strokeRect: NSInsetRect(artFrame, -0.5, -0.5)];
 	
 	[[NSGraphicsContext currentContext] setImageInterpolation: oldInterpolation];
 }
@@ -117,12 +117,12 @@
 	NSRect frame = NSMakeRect(0, 0, iconSize.width, iconSize.height);
 
 	//Create a new empty canvas to draw into
-	NSImage *canvas = [[NSImage alloc] initWithSize: iconSize];
+	NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:iconSize.width pixelsHigh:iconSize.height bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:32];
 	
-	[canvas lockFocus];
+	[NSGraphicsContext saveGraphicsState];
+	NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:rep];
 		[self drawInRect: frame];
-		NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithFocusedViewRect: frame];
-	[canvas unlockFocus];
+	[NSGraphicsContext restoreGraphicsState];
 	
 	return rep;
 }
@@ -165,10 +165,10 @@
 		//Test 5 pixels in an X pattern: each corner and right in the center of the image.
 		NSPoint testPoints[5] = {
 			NSMakePoint(0,						0),
-			NSMakePoint(imageSize.width - 1.0f,	0),
-			NSMakePoint(0,						imageSize.height - 1.0f),
-			NSMakePoint(imageSize.width - 1.0f,	imageSize.height - 1.0f),
-			NSMakePoint(imageSize.width * 0.5f,	imageSize.height * 0.5f)
+			NSMakePoint(imageSize.width - 1.0,	0),
+			NSMakePoint(0,						imageSize.height - 1.0),
+			NSMakePoint(imageSize.width - 1.0,	imageSize.height - 1.0),
+			NSMakePoint(imageSize.width * 0.5,	imageSize.height * 0.5)
 		};
 		NSInteger i;
 						
