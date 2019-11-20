@@ -320,7 +320,7 @@ typedef NS_ENUM(NSInteger, BXGameboxDocumentationConflictBehaviour) {
 /// is not located within the gamebox's documentation folder.
 /// This method registers an undo operation if the file was successfully deleted/moved to the trash.
 - (BOOL) removeDocumentationURL: (NSURL *)documentationURL
-                   resultingURL: (out NSURL *__nullable*__nonnull)resultingURL
+                   resultingURL: (out NSURL *__nullable*__nullable)resultingURL
                           error: (out NSError **)outError;
 
 /// Returns whether the specified documentation file can be removed from the gamebox.

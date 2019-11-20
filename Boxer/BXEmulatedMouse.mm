@@ -106,7 +106,7 @@
     //cancel any pending button release in response.
     [NSObject cancelPreviousPerformRequestsWithTarget: self
                                              selector: @selector(releaseButton:)
-                                               object: [NSNumber numberWithUnsignedInteger: button]];
+                                               object: @(button)];
     
     //If we do actually need to toggle the button, then update DOSBox's state
 	if ([self buttonIsDown: button] != pressed)
@@ -135,7 +135,7 @@
             if (durationRemaining > 0)
             {
                 [self performSelector: @selector(releaseButton:)
-                           withObject: [NSNumber numberWithUnsignedInteger: button]
+                           withObject: @(button)
                            afterDelay: durationRemaining];
             }
             else
@@ -180,7 +180,7 @@
 	[self buttonDown: button];
 	
 	[self performSelector: @selector(releaseButton:)
-			   withObject: [NSNumber numberWithUnsignedInteger: button]
+			   withObject: @(button)
 			   afterDelay: duration];
 }
 

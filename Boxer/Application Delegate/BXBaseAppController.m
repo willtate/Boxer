@@ -28,6 +28,7 @@
 #import "NSObject+ADBPerformExtensions.h"
 
 #import "ADBUserNotificationDispatcher.h"
+#include <tgmath.h>
 
 /// The number of increments from minimum volume to full volume.
 /// Used by @c -incrementMasterVolume: and @c -decrementMasterVolume:
@@ -676,7 +677,7 @@
     {
         //Round the volume to the nearest increment after incrementing.
         float incrementedVolume = self.masterVolume + BXMasterVolumeIncrement;
-        self.masterVolume = roundf(incrementedVolume * BXMasterVolumeNumIncrements) / BXMasterVolumeNumIncrements;
+        self.masterVolume = round(incrementedVolume * BXMasterVolumeNumIncrements) / BXMasterVolumeNumIncrements;
     }
     [[BXBezelController controller] showVolumeBezelForVolume: self.effectiveVolume];
 }
@@ -687,7 +688,7 @@
     {
         //Round the volume to the nearest increment after decrementing.
         float decrementedVolume = self.masterVolume - BXMasterVolumeIncrement;
-        self.masterVolume = roundf(decrementedVolume * BXMasterVolumeNumIncrements) / BXMasterVolumeNumIncrements;
+        self.masterVolume = round(decrementedVolume * BXMasterVolumeNumIncrements) / BXMasterVolumeNumIncrements;
     }
     self.muted = (self.masterVolume == 0);
     

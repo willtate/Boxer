@@ -10,6 +10,8 @@
 #import "keyboard.h"
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// How long keyPressed: should pretend to hold the specified key down before releasing.
 #define BXKeyPressDurationDefault 0.25
 
@@ -36,7 +38,7 @@ typedef KBD_KEYS BXDOSKeyCode;
 @property (nonatomic) BOOL scrollLockEnabled;
 
 /// The DOS keyboard layout that is currently in use.
-@property (copy, nonatomic) NSString *activeLayout;
+@property (copy, nonatomic, nullable) NSString *activeLayout;
 
 /// Whether to map keyboard input through the active keyboard layout.
 /// If NO, input will be mapped according to a standard US keyboard layout instead.
@@ -44,7 +46,7 @@ typedef KBD_KEYS BXDOSKeyCode;
 
 /// The DOS keyboard layout that will be applied once emulation has started up.
 /// Set whenever activeLayout is changed.
-@property (copy, nonatomic) NSString *preferredLayout;
+@property (copy, nonatomic, nullable) NSString *preferredLayout;
 
 /// Returns \c YES if the emulated keyboard buffer is full, meaning further key events will be ignored.
 @property (readonly, nonatomic) BOOL keyboardBufferFull;
@@ -94,3 +96,5 @@ typedef KBD_KEYS BXDOSKeyCode;
 + (NSString *)defaultKeyboardLayout;
 
 @end
+
+NS_ASSUME_NONNULL_END

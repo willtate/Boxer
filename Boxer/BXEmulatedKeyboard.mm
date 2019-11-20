@@ -191,21 +191,21 @@ const char* DOS_GetLoadedLayout(void);
         //Ensure the shift keys are in the right state before we enter the key itself.
         if (needsShift && !(leftShifted || rightShifted))
         {
-            [keyEvents addObject: [NSNumber numberWithInteger: KBD_leftshift]];
+            [keyEvents addObject: @(KBD_leftshift)];
             leftShifted = YES;
         }
         else if (!needsShift && (leftShifted || rightShifted))
         {   
             if (leftShifted)
-                [keyEvents addObject: [NSNumber numberWithInteger: -KBD_leftshift]];
+                [keyEvents addObject: @(-KBD_leftshift)];
             if (rightShifted)
-                [keyEvents addObject: [NSNumber numberWithInteger: -KBD_rightshift]];
+                [keyEvents addObject: @(-KBD_rightshift)];
             
             leftShifted = rightShifted = NO;
         }
         
-        [keyEvents addObject: [NSNumber numberWithInteger: code]];
-        [keyEvents addObject: [NSNumber numberWithInteger: -code]];
+        [keyEvents addObject: @(code)];
+        [keyEvents addObject: @(-code)];
     }
     
     //If none of the characters could be typed, then bail out now before modifying the keyboard state.
@@ -229,8 +229,8 @@ const char* DOS_GetLoadedLayout(void);
             
             if (_enableCapslockAfterTyping)
             {
-                [keyEvents insertObject: [NSNumber numberWithInteger: KBD_capslock] atIndex: 0];
-                [keyEvents insertObject: [NSNumber numberWithInteger: -KBD_capslock] atIndex: 1];
+                [keyEvents insertObject: @(KBD_capslock) atIndex: 0];
+                [keyEvents insertObject: @(-KBD_capslock) atIndex: 1];
             }
             
             self.pendingKeypresses = [NSTimer scheduledTimerWithTimeInterval: interval
