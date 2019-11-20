@@ -15,10 +15,10 @@
 
 + (NSColor *) textColor
 {
-	return [NSColor colorWithCalibratedRed: 0.0f
-									 green: 0.1f
-									  blue: 0.2f
-									 alpha: 0.9f];
+	return [NSColor colorWithCalibratedRed: 0.0
+									 green: 0.1
+									  blue: 0.2
+									 alpha: 0.9];
 }
 
 + (NSImage *) baseLayerForSize:	(NSSize)size
@@ -35,7 +35,7 @@
 		return nil;
 }
 
-+ (CGFloat) lineHeightForSize:	(NSSize)size	{ return 20.0f * (size.width / 128.0f); }
++ (CGFloat) lineHeightForSize:	(NSSize)size	{ return 20.0 * (size.width / 128.0); }
 + (CGFloat) fontSizeForSize:	(NSSize)size
 {
 	//Use smaller font at sizes > 128 so that we can fit more on the label
@@ -47,11 +47,11 @@
 {	
 	if (frame.size.width >= 128)
 	{
-		CGFloat scale = frame.size.width / 128.0f;
-		return NSMakeRect(22.0f * scale,
-						  32.0f * scale,
-						  92.0f * scale,
-						  60.0f * scale);
+		CGFloat scale = frame.size.width / 128.0;
+		return NSMakeRect(22.0 * scale,
+						  32.0 * scale,
+						  92.0 * scale,
+						  60.0 * scale);
 	}
 	//Do not show text on icon sizes below 128x128.
 	else return NSZeroRect;
@@ -69,12 +69,10 @@
 	[style setMaximumLineHeight: lineHeight];
 	[style setMinimumLineHeight: lineHeight];
 	
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-			style,	NSParagraphStyleAttributeName,
-			font,	NSFontAttributeName,
-			color,	NSForegroundColorAttributeName,
-			[NSNumber numberWithInteger: 2],	NSLigatureAttributeName,
-			nil];
+    return @{NSParagraphStyleAttributeName: style,
+             NSFontAttributeName: font,
+             NSForegroundColorAttributeName: color,
+             NSLigatureAttributeName: @2 };
 }
 
 
@@ -100,7 +98,7 @@
 		[baseLayer drawInRect: frame
 					 fromRect: NSZeroRect
 					operation: NSCompositeSourceOver
-					 fraction: 1.0f];
+					 fraction: 1.0];
 	}
 
 	if (!NSEqualRects(textRegion, NSZeroRect))
@@ -114,22 +112,23 @@
 		[topLayer drawInRect: frame
 					fromRect: NSZeroRect
 				   operation: NSCompositeSourceOver
-					fraction: 1.0f];		
+					fraction: 1.0];
 	}
 
 }
 
 - (NSImageRep *) representationForSize: (NSSize)iconSize
 {
-	NSRect frame = NSMakeRect(0.0f, 0.0f, iconSize.width, iconSize.height);
+	NSRect frame = NSMakeRect(0.0, 0.0, iconSize.width, iconSize.height);
 	
 	//Create a new empty canvas to draw into
-	NSImage *canvas = [[NSImage alloc] initWithSize: iconSize];
+	NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:iconSize.width pixelsHigh:iconSize.height bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:32];
+	//rep.size = iconSize;
 	
-	[canvas lockFocus];
+	[NSGraphicsContext saveGraphicsState];
+	NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:rep];
 		[self drawInRect: frame];
-		NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithFocusedViewRect: frame];
-		[canvas unlockFocus];
+	[NSGraphicsContext restoreGraphicsState];
 	
 	return rep;
 }
@@ -170,18 +169,18 @@
 
 + (CGFloat) lineHeightForSize:	(NSSize)size
 {
-    return 18.0f * (size.width / 128.0f);
+    return 18.0 * (size.width / 128.0);
 }
 
 + (NSRect) textRegionForRect: (NSRect)frame
 {
 	if (frame.size.width >= 128)
 	{
-		CGFloat scale = frame.size.width / 128.0f;
-		return NSMakeRect(24.0f * scale,
-						  56.0f * scale,
-						  80.0f * scale,
-						  56.0f * scale);
+		CGFloat scale = frame.size.width / 128.0;
+		return NSMakeRect(24.0 * scale,
+						  56.0 * scale,
+						  80.0 * scale,
+						  56.0 * scale);
 	}
 	else return NSZeroRect;
 }
@@ -191,18 +190,18 @@
 
 + (NSImage *) baseLayerForSize:	(NSSize)size	{ return [NSImage imageNamed: @"525Diskette"]; }
 + (NSImage *) topLayerForSize:	(NSSize)size	{ return nil; }
-+ (CGFloat) lineHeightForSize:	(NSSize)size	{ return 16.0f * (size.width / 128.0f); }
-+ (CGFloat) fontSizeForSize:	(NSSize)size	{ return 12.0f * (size.width / 128.0f); }
++ (CGFloat) lineHeightForSize:	(NSSize)size	{ return 16.0 * (size.width / 128.0); }
++ (CGFloat) fontSizeForSize:	(NSSize)size	{ return 12.0 * (size.width / 128.0); }
 
 + (NSRect) textRegionForRect: (NSRect)frame
 {
 	if (frame.size.width >= 128)
 	{
-		CGFloat scale = frame.size.width / 128.0f;
-		return NSMakeRect(16.0f * scale,
-						  90.0f * scale,
-						  96.0f * scale,
-						  32.0f * scale);
+		CGFloat scale = frame.size.width / 128.0;
+		return NSMakeRect(16.0 * scale,
+						  90.0 * scale,
+						  96.0 * scale,
+						  32.0 * scale);
 	}
 	else return NSZeroRect;
 }

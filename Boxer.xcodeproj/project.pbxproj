@@ -1105,7 +1105,7 @@
 		9F26A9AB1458678B000184D1 /* BXThemedSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXThemedSliderCell.h; sourceTree = "<group>"; };
 		9F26A9AC1458678B000184D1 /* BXThemedSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXThemedSliderCell.m; sourceTree = "<group>"; };
 		9F2AC6E210EFFE8600CFFF72 /* BXBootlegCoverArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXBootlegCoverArt.h; sourceTree = "<group>"; };
-		9F2AC6E310EFFE8600CFFF72 /* BXBootlegCoverArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBootlegCoverArt.m; sourceTree = "<group>"; };
+		9F2AC6E310EFFE8600CFFF72 /* BXBootlegCoverArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBootlegCoverArt.m; sourceTree = "<group>"; usesTabs = 1; };
 		9F2C458515DB7E77009F4477 /* ADBGLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBGLHelpers.h; sourceTree = "<group>"; };
 		9F2C458615DB7E77009F4477 /* ADBGLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBGLHelpers.m; sourceTree = "<group>"; };
 		9F2D317215B8233800FAE848 /* Boxer Standalone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxer Standalone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
