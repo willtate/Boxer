@@ -10,8 +10,9 @@
 
 /// \c BXDOSWindowLoadingSpinner is a thin white progress spinner with a drop shadow,
 /// intended for use on dark window backgrounds.
+IB_DESIGNABLE
 @interface BXHUDSpinningProgressIndicator : YRKSpinningProgressIndicator
 
-@property (strong, nonatomic) NSShadow *dropShadow;
+@property (strong, nonatomic) IBInspectable NSShadow *dropShadow;
 
 @end

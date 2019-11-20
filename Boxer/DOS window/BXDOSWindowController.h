@@ -122,6 +122,8 @@ extern NSString * const BXViewDidLiveResizeNotification;
 /// The tint (white, amber, green) to use when running in Hercules emulation mode
 @property (assign, nonatomic) BXHerculesTintMode herculesTintMode;
 
+/// The composite emulation (auto, on, off) to use when running in CGA emulation mode
+@property (assign, nonatomic) BXCGACompositeMode CGACompositeMode;
 
 #pragma mark -
 #pragma mark Renderer-related methods

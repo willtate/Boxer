@@ -44,5 +44,7 @@
 	<false/>
 	<key>useMultithreadedEventTap</key>
 	<true/>
+	<key>CGACompositeMode</key>
+	<integer>0</integer>
 </dict>
 </plist>

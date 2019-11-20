@@ -110,6 +110,11 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
    withKeyPath: @"herculesTintMode"
        options: nil];
     
+     [self bind: @"CGACompositeMode"
+       toObject: defaults
+    withKeyPath: @"CGACompositeMode"
+        options: nil];
+
     [self.renderingView bind: @"maxViewportSize"
                     toObject: self
                  withKeyPath: @"maxViewportSizeUIBinding"
@@ -124,6 +129,8 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
     
     [self unbind: @"aspectCorrected"];
     [self unbind: @"renderingStyle"];
+    [self unbind: @"herculesTintMode"];
+    [self unbind: @"CGACompositeMode"];
     [self.renderingView unbind: @"maxViewportSize"];
 }
 
@@ -452,6 +459,13 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
                                                forKey: @"herculesTintMode"];
 }
 
+- (IBAction) toggleCGACompositeMode: (id <NSValidatedUserInterfaceItem>)sender
+{
+    BXCGACompositeMode compMode = (BXCGACompositeMode)sender.tag;
+    [[NSUserDefaults standardUserDefaults] setInteger: compMode
+                                               forKey: @"CGACompositeMode"];
+}
+
 + (NSSize) _nextFullscreenSizeIntervalForSize: (NSSize)currentSize
                            originalResolution: (NSSize)baseResolution
                                     ascending: (BOOL)ascending
@@ -715,6 +729,20 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
     return videoHandler.herculesTint;
 }
 
+- (void) setCGACompositeMode: (BXCGACompositeMode)tint
+{
+    BXSession *session = (BXSession *)self.document;
+    BXVideoHandler *videoHandler = session.emulator.videoHandler;
+    videoHandler.CGAComposite = tint;
+}
+
+- (BXCGACompositeMode) CGACompositeMode
+{
+    BXSession *session = (BXSession *)self.document;
+    BXVideoHandler *videoHandler = session.emulator.videoHandler;
+    return videoHandler.CGAComposite;
+}
+
 - (IBAction) toggleStatusBarShown: (id)sender
 {
     BOOL show = !self.statusBarShown;
@@ -915,6 +943,27 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
         }
 	}
 	
+    else if (theAction == @selector(toggleCGACompositeMode:))
+    {
+        if (session.emulator.videoHandler.isInCGAMode)
+        {
+            BXCGACompositeMode tint = (BXCGACompositeMode)theItem.tag;
+            if (tint == self.CGACompositeMode)
+            {
+                theItem.state = NSOnState;
+            }
+            else
+            {
+                theItem.state = NSOffState;
+            }
+            return YES;
+        }
+        else
+        {
+            return NO;
+        }
+    }
+
     else if (theAction == @selector(toggleLaunchPanel:))
 	{
 		if (self.DOSViewShown)

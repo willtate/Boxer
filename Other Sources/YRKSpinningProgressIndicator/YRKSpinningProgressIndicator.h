@@ -6,7 +6,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-
+IB_DESIGNABLE
 @interface YRKSpinningProgressIndicator : NSView {
     int _position;
     int _numFins;
@@ -34,20 +34,20 @@
 }
 
 //A property for bindings. Calls stopAnimation/startAnimation when set.
-@property (nonatomic, assign, getter=isAnimating) BOOL animating;
+@property (nonatomic, assign, getter=isAnimating) IBInspectable BOOL animating;
 
-@property (nonatomic, assign, getter=isIndeterminate) BOOL indeterminate;
-@property (nonatomic, copy) NSColor *color;
-@property (nonatomic, copy) NSColor *backgroundColor;
-@property (nonatomic, assign) BOOL drawsBackground;
-@property (nonatomic, assign) double doubleValue;
-@property (nonatomic, assign) double maxValue;
+@property (nonatomic, assign, getter=isIndeterminate) IBInspectable BOOL indeterminate;
+@property (nonatomic, copy) IBInspectable NSColor *color;
+@property (nonatomic, copy) IBInspectable NSColor *backgroundColor;
+@property (nonatomic, assign) IBInspectable BOOL drawsBackground;
+@property (nonatomic, assign) IBInspectable double doubleValue;
+@property (nonatomic, assign) IBInspectable double maxValue;
 @property (nonatomic, assign) BOOL usesThreadedAnimation;
-@property (nonatomic, assign) CGFloat lineWidth;
-@property (nonatomic, assign) CGFloat lineStartOffset;
-@property (nonatomic, assign) CGFloat lineEndOffset;
+@property (nonatomic, assign) IBInspectable CGFloat lineWidth;
+@property (nonatomic, assign) IBInspectable CGFloat lineStartOffset;
+@property (nonatomic, assign) IBInspectable CGFloat lineEndOffset;
 
-- (void)stopAnimation: (id)sender;
-- (void)startAnimation: (id)sender;
+- (IBAction)stopAnimation: (id)sender;
+- (IBAction)startAnimation: (id)sender;
 
 @end
