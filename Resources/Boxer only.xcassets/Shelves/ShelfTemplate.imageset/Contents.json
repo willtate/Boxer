@@ -2,13 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "ShelfTemplate.jpg"
+      "filename" : "ShelfTemplate.jpg",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "ShelfTemplate@2x.jpg"
+      "filename" : "ShelfTemplate@2x.jpg",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
@@ -18,5 +18,8 @@
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "template-rendering-intent" : "original"
   }
 }
