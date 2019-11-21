@@ -48,14 +48,14 @@ extern ADBCallstackKeys const ADBCallstackRawSymbol;            //!< The raw out
 extern ADBCallstackKeys const ADBCallstackLibraryName;          //!< The name of the binary in which the stack entry is located.
 extern ADBCallstackKeys const ADBCallstackAddress;              //!< The memory address of the stack entry as a hex string.
 extern ADBCallstackKeys const ADBCallstackFunctionName;         //!< The raw function name, mangled in the case of C++ and Swift names.
-extern ADBCallstackKeys const ADBCallstackHumanReadableFunctionName;  //!< For C++ functions, a demangled version of the function name;
+extern ADBCallstackKeys const ADBCallstackHumanReadableFunctionName;  //!< For C++ and Swift functions, a demangled version of the function name;
                                                                 //!< otherwise identical to ADBCallstackFunctionName.
 extern ADBCallstackKeys const ADBCallstackSymbolOffset;         //!< An @c NSNumber representing the offset within the function.
 
 @interface NSException (ADBExceptionHelpers)
 
-/// Takes a mangled C++ function name produced by callstackSymbols or backtrace_symbols and returns a demangled version.
-/// Returns nil if the provided string could not be resolved (which will be the case if it is a C or Objective C symbol name.)
+/// Takes a mangled C++ function name produced by @c callstackSymbols or @c backtrace_symbols and returns a demangled version.
+/// Returns @c nil if the provided string could not be resolved (which will be the case if it is a C or Objective C symbol name.)
 + (nullable NSString *) demangledCPlusPlusFunctionName: (NSString *)functionName;
 
 /// Returns the results of @c -callstackSymbols parsed into NSDictionaries with the attributes listed above.

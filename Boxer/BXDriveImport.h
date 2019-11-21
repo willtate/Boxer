@@ -64,8 +64,8 @@ extern NSString * const BXUniqueDriveNameFormat;
 @interface BXDriveImport: NSObject
 
 + (nullable id <BXDriveImport>) importOperationForDrive: (BXDrive *)drive
-                          destinationFolderURL: (NSURL *)destinationFolder
-                                     copyFiles: (BOOL)copyFiles;
+                                   destinationFolderURL: (NSURL *)destinationFolder
+                                              copyFiles: (BOOL)copyFiles;
 
 /// Returns the most suitable operation class to import the specified drive
 + (nullable Class) importClassForDrive: (BXDrive *)drive;
