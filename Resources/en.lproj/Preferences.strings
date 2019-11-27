@@ -6,7 +6,7 @@
 "76.title" = "Start up games in Full Screen mode";
 
 /* Class = "NSTextFieldCell"; title = "You can switch to and from Full Screen at any time from the View menu or by pressing Cmd-F."; ObjectID = "77"; */
-"77.title" = "You can switch to and from Full Screen at any time from the View menu or by pressing Cmd-F.";
+"77.title" = "You can switch to and from Full Screen at any time from the View menu or by pressing ⌘-F.";
 
 /* Class = "NSButtonCell"; title = "Always use 4:3 aspect ratio"; ObjectID = "78"; */
 "78.title" = "Always use 4:3 aspect ratio";
@@ -63,10 +63,10 @@
 "225.title" = "Prompt before closing:";
 
 /* Class = "NSToolbarItem"; label = "Audio   "; ObjectID = "266"; */
-"266.label" = "Audio   ";
+"266.label" = "Audio";
 
 /* Class = "NSToolbarItem"; paletteLabel = "Audio   "; ObjectID = "266"; */
-"266.paletteLabel" = "Audio   ";
+"266.paletteLabel" = "Audio";
 
 /* Class = "NSTabViewItem"; label = "Audio Preferences"; ObjectID = "268"; */
 "268.label" = "Audio Preferences";
