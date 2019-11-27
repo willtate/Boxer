@@ -504,6 +504,7 @@ CVReturn BXDisplayLinkCallback(CVDisplayLinkRef displayLink,
 {
     if (![self.renderer canRender])
     {
+        //FIXME: uh, hang when importing game?
         [[NSColor blackColor] set];
         NSRectFill(dirtyRect);
     }

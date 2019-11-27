@@ -113,12 +113,18 @@
 }
 
 - (NSImageRep *) representationForSize: (NSSize)iconSize
+{
+	return [self representationForSize: iconSize scale: 1];
+}
+
+- (NSImageRep *) representationForSize: (NSSize)iconSize scale: (CGFloat)scale
 {	
 	NSRect frame = NSMakeRect(0, 0, iconSize.width, iconSize.height);
 
 	//Create a new empty canvas to draw into
-	NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:iconSize.width pixelsHigh:iconSize.height bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:32];
+	NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:iconSize.width * scale pixelsHigh:iconSize.height * scale bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:32];
 	
+	rep.size = iconSize;
 	[NSGraphicsContext saveGraphicsState];
 	NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:rep];
 		[self drawInRect: frame];
@@ -140,8 +146,11 @@
 	
 	NSImage *coverArt = [[NSImage alloc] init];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(512, 512)]];
+	[coverArt addRepresentation: [self representationForSize: NSMakeSize(256, 256) scale: 3]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(256, 256)]];
+	[coverArt addRepresentation: [self representationForSize: NSMakeSize(128, 128) scale: 2]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(128, 128)]];
+	[coverArt addRepresentation: [self representationForSize: NSMakeSize(32, 32) scale: 2]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(32, 32)]];
 	
 	return coverArt;

@@ -43,6 +43,9 @@
 /// Returns a cover art image representation from the source image rendered at the specified size.
 - (NSImageRep *) representationForSize: (NSSize)iconSize;
 
+/// Returns a cover art image representation from the source image rendered at the specified size and scale.
+- (NSImageRep *) representationForSize: (NSSize)iconSize scale: (CGFloat)scale;
+
 /// Default initializer: returns a BXCoverArt object initialized with the specified original image.
 - (instancetype) initWithSourceImage: (NSImage *)image;
 
