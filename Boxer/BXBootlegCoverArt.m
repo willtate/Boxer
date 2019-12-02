@@ -141,6 +141,7 @@
 - (NSImage *) coverArt
 {
 	NSImage *coverArt = [[NSImage alloc] init];
+	[coverArt addRepresentation: [self representationForSize: NSMakeSize(512, 512) scale: 2]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(512, 512)]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(128, 128) scale: 2]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(128, 128)]];

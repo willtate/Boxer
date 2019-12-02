@@ -145,8 +145,9 @@
 	if ([[self class] imageHasTransparency: image]) return image;
 	
 	NSImage *coverArt = [[NSImage alloc] init];
+	[coverArt addRepresentation: [self representationForSize: NSMakeSize(512, 512) scale: 2]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(512, 512)]];
-	[coverArt addRepresentation: [self representationForSize: NSMakeSize(256, 256) scale: 3]];
+	[coverArt addRepresentation: [self representationForSize: NSMakeSize(256, 256) scale: 2]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(256, 256)]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(128, 128) scale: 2]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(128, 128)]];
