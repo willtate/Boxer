@@ -47,13 +47,3 @@
 
 @end
 
-
-#pragma mark - NSView
-@interface NSView (ADBForwardCompatibility)
-
-//Declared in OS X 10.9. Declared to avoid compilation errors, but not actually implemented by proxy:
-//instead, check for availability with respondsToSelector:.
-- (BOOL) layerUsesCoreImageFilters;
-- (void) setLayerUsesCoreImageFilters: (BOOL)flag;
-
-@end

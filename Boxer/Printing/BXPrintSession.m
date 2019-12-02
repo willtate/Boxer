@@ -83,8 +83,8 @@
     _PDFDataConsumer = CGDataConsumerCreateWithCFData((__bridge CFMutableDataRef)self._mutablePDFData);
     _CGPDFContext = CGPDFContextCreate(_PDFDataConsumer, NULL, (__bridge CFDictionaryRef)[self.class _defaultPDFInfo]);
     
-    self.PDFContext = [NSGraphicsContext graphicsContextWithGraphicsPort: _CGPDFContext
-                                                                 flipped: NO];
+    self.PDFContext = [NSGraphicsContext graphicsContextWithCGContext: _CGPDFContext
+                                                              flipped: NO];
     
     //While we're here, set up some properties of the context.
     //Use multiply blending so that overlapping printed colors will darken each other.
@@ -98,12 +98,12 @@
     
     //While we're here, set some properties of the context.
     //Use multiply blending so that overlapping printed colors will darken each other
-    CGContextSetBlendMode((CGContextRef)(_previewContext.graphicsPort), kCGBlendModeMultiply);
+    CGContextSetBlendMode(_previewContext.CGContext, kCGBlendModeMultiply);
     
     //If previewDPI does not match the default number of points per inch (72x72),
     //scale the context transform to compensate.
     CGPoint scale = CGPointMake(self.previewDPI.width / 72.0, self.previewDPI.height / 72.0);
-    CGContextScaleCTM((CGContextRef)(_previewContext.graphicsPort), scale.x, scale.y);
+    CGContextScaleCTM(_previewContext.CGContext, scale.x, scale.y);
 }
 
 - (void) finishSession
@@ -175,11 +175,12 @@
                                                                  bitsPerPixel: 0] autorelease];
     
     //Wrap this in an NSImage so upstream contexts can display the preview easily.
-    NSImage *preview = [[[NSImage alloc] initWithSize: canvasSize] autorelease];
+    NSImage *preview = [[NSImage alloc] initWithSize: canvasSize];
     [preview addRepresentation: self._previewCanvas];
     
     //Add the new image into our array of page previews.
     [self._mutablePagePreviews addObject: preview];
+    [preview release];
     
     self.pageInProgress = YES;
     self.numPages++;

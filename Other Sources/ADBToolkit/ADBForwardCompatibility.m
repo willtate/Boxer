@@ -27,12 +27,6 @@
 #import "ADBForwardCompatibility.h"
 #import <objc/runtime.h>
 
-NSString * const NSWindowDidChangeBackingPropertiesNotification = @"NSWindowDidChangeBackingPropertiesNotification";
-NSString * const NSWindowWillEnterFullScreenNotification = @"NSWindowWillEnterFullScreenNotification";
-NSString * const NSWindowDidEnterFullScreenNotification = @"NSWindowDidEnterFullScreenNotification";
-NSString * const NSWindowWillExitFullScreenNotification = @"NSWindowWillExitFullScreenNotification";
-NSString * const NSWindowDidExitFullScreenNotification = @"NSWindowDidExitFullScreenNotification";
-
 
 @implementation ADBFallbackProxyCategory
 

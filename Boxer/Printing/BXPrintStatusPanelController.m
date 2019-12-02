@@ -20,15 +20,8 @@
     self.window.frameAutosaveName = @"PrintStatusPanel";
     self.window.level = NSNormalWindowLevel;
     
-    if ([self.window respondsToSelector: @selector(setAnimationBehavior:)])
-    {
-        self.window.animationBehavior = NSWindowAnimationBehaviorUtilityWindow;
-    }
-    
-    if ([self.window respondsToSelector: @selector(setCollectionBehavior:)])
-    {
-        self.window.collectionBehavior |= NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary;
-    }
+    self.window.animationBehavior = NSWindowAnimationBehaviorUtilityWindow;
+    self.window.collectionBehavior |= NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary;
 }
 
 
@@ -256,8 +249,7 @@
     self.wantsLayer = YES;
     
     //For 10.9: fixes crash when using compositing filters.
-    if ([self respondsToSelector: @selector(setLayerUsesCoreImageFilters:)])
-        self.layerUsesCoreImageFilters = YES;
+    self.layerUsesCoreImageFilters = YES;
     
     [self _syncPagePosition];
     [self _syncHeadPosition];
