@@ -14,7 +14,7 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeIconFile</key>
-			<string>package.icns</string>
+			<string>package</string>
 			<key>CFBundleTypeName</key>
 			<string>Gamebox</string>
 			<key>CFBundleTypeRole</key>
@@ -30,7 +30,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFile</key>
-			<string>package.icns</string>
+			<string>package</string>
 			<key>CFBundleTypeName</key>
 			<string>Game state</string>
 			<key>CFBundleTypeRole</key>
@@ -103,7 +103,7 @@
 			<key>UTTypeDescription</key>
 			<string>MS-DOS gamebox</string>
 			<key>UTTypeIconFile</key>
-			<string>package.icns</string>
+			<string>package</string>
 			<key>UTTypeIdentifier</key>
 			<string>net.washboardabs.boxer-game-package</string>
 			<key>UTTypeTagSpecification</key>
@@ -192,7 +192,7 @@
 			<key>UTTypeDescription</key>
 			<string>Boxer game state</string>
 			<key>UTTypeIconFile</key>
-			<string>package.icns</string>
+			<string>package</string>
 			<key>UTTypeIdentifier</key>
 			<string>net.washboardabs.boxer-game-state</string>
 			<key>UTTypeTagSpecification</key>
@@ -215,7 +215,7 @@
 			<key>UTTypeDescription</key>
 			<string>Microsoft MS-DOS application</string>
 			<key>UTTypeIconFile</key>
-			<string>executable.icns</string>
+			<string>executable</string>
 			<key>UTTypeIdentifier</key>
 			<string>com.microsoft.msdos-executable</string>
 			<key>UTTypeTagSpecification</key>
@@ -227,13 +227,14 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
+				<string>public.text</string>
 				<string>public.script</string>
 				<string>public.executable</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Microsoft Windows/MS-DOS batch file</string>
 			<key>UTTypeIconFile</key>
-			<string>executable.icns</string>
+			<string>executable</string>
 			<key>UTTypeIdentifier</key>
 			<string>com.microsoft.batch-file</string>
 			<key>UTTypeTagSpecification</key>
