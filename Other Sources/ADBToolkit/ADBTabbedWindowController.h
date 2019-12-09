@@ -25,10 +25,6 @@
  */
 
 
-//ADBTabbedWindowController manages a window whose primary component is an NSTabView. It resizes
-//its window to accomodate the selected tab, and animates transitions between tabs. It can also
-//use an NSToolbar or NSSegmentedControl in place of the NSTabView's own tab selector.
-
 #import <Cocoa/Cocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -36,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// How long a fade+resize transition will take when switching tabs.
 #define ADBTabbedWindowControllerTransitionDuration 0.25
 
+/// @c ADBTabbedWindowController manages a window whose primary component is an NSTabView. It resizes
+/// its window to accomodate the selected tab, and animates transitions between tabs. It can also
+/// use an @c NSToolbar or @c NSSegmentedControl in place of the NSTabView's own tab selector.
 @interface ADBTabbedWindowController : NSWindowController <NSTabViewDelegate, NSToolbarDelegate>
 {
     NSTabView *_tabView;
@@ -45,24 +44,24 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) IBOutlet NSTabView *tabView;
 @property (strong, nonatomic) IBOutlet NSToolbar *toolbarForTabs;
 
-//Whether to animate the switch between tabs with a fade-out as well as a resize.
-//NO by default, as this does not play nice with layer-backed views.
+/// Whether to animate the switch between tabs with a fade-out as well as a resize.
+/// @c NO by default, as this does not play nice with layer-backed views.
 @property (assign, nonatomic) BOOL animatesTabTransitionsWithFade;
 
-//The index of the current tab view item, mostly for scripting purposes.
+/// The index of the current tab view item, mostly for scripting purposes.
 @property (assign, nonatomic) NSInteger selectedTabViewItemIndex;
 
-//Select the tab whose index corresponds to the tag of the sender.
+/// Select the tab whose index corresponds to the tag of the sender.
 - (IBAction) takeSelectedTabViewItemFromTag: (null_unspecified id <NSValidatedUserInterfaceItem>)sender;
 
-//Select the tab whose index corresponds to the tag of the selected control segment.
+/// Select the tab whose index corresponds to the tag of the selected control segment.
 - (IBAction) takeSelectedTabViewItemFromSegment: (null_unspecified NSSegmentedControl *)sender;
 
-//Whether the controller should set the window title to the specified label
-//(taken from the selected tab.)
-//NO by default: intended to be overridden by subclasses.
-//If YES, then whenever the selected tab changes, the tab's label will be sent
-//to windowTitleForDocumentDisplayName: and the result assigned as the window title.
+/// Whether the controller should set the window title to the specified label
+/// (taken from the selected tab.)
+/// @c NO by default: intended to be overridden by subclasses.
+/// If YES, then whenever the selected tab changes, the tab's label will be sent
+/// to @c windowTitleForDocumentDisplayName: and the result assigned as the window title.
 - (BOOL) shouldSyncWindowTitleToTabLabel: (NSString *)label;
 
 @end

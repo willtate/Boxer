@@ -49,10 +49,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// form they are written.
 + (NSArray<NSString*> *) rawPathsInCueContents: (NSString *)cueContents;
 
-/// Returns @c YES if the specified path contains a parseable cue file, \c NO otherwise.
+/// Returns @c YES if the specified path contains a parseable cue file, @c NO otherwise.
 /// Populates @c outError if there is a problem accessing the file.
-/// FIXME: returning @c NO will make Swift look for the error!
-+ (BOOL) isCueAtURL: (NSURL *)cueURL error: (out NSError **)outError;
++ (BOOL) isCueAtURL: (NSURL *)cueURL error: (out NSError **)outError NS_SWIFT_NOTHROW NS_REFINED_FOR_SWIFT;
 
 @end
 

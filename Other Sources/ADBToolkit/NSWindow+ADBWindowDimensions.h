@@ -24,13 +24,13 @@
  *	POSSIBILITY OF SUCH DAMAGE.
  */
 
-//The ADBWindowDimensions category adds additional window sizing options to NSWindow,
-//to resize relative to the entire screen or to a point on screen.
 
 #import <Cocoa/Cocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// The @c ADBWindowDimensions category adds additional window sizing options to NSWindow,
+/// to resize relative to the entire screen or to a point on screen.
 @interface NSWindow (ADBWindowDimensions)
 
 /// Returns the window at the specified point (in screen coordinates) belonging

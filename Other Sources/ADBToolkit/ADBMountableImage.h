@@ -66,6 +66,8 @@ typedef NS_ERROR_ENUM(ADBMountableImageErrorDomain, ADBMountableImageErrors) {
 /// Returns a new instance using the image at the specified URL.
 /// Returns @c nil and populates @c outError if the URL was not a supported image.
 + (nullable instancetype) imageWithContentsOfURL: (NSURL *)baseURL error: (out NSError **)outError;
+/// Returns a new instance using the image at the specified URL.
+/// Returns @c nil and populates @c outError if the URL was not a supported image.
 - (nullable instancetype) initWithContentsOfURL: (NSURL *)baseURL error: (out NSError **)outError;
 
 

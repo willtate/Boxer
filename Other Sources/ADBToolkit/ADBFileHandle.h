@@ -25,13 +25,14 @@
  */
 
 
-//ADBFileHandle describes an NSFileHandle-like interface for reading and writing
-//data to and from files and file-like resources (i.e. byte streams that allow
-//random access). It differs from NSFileHandle in that it can provide a FILE * handle
-//for use with stdlib IO functions.
-
-//This library also defines general protocols for describing handles that implement
-//one or more aspects of the same API.
+/// @header ADBFileHandle.h
+/// @c ADBFileHandle describes an NSFileHandle-like interface for reading and writing
+/// data to and from files and file-like resources (i.e. byte streams that allow
+/// random access). It differs from \c NSFileHandle in that it can provide a \c FILE* handle
+/// for use with stdlib IO functions.
+///
+/// This library also defines general protocols for describing handles that implement
+/// one or more aspects of the same API.
 
 
 #import <Foundation/Foundation.h>
@@ -110,11 +111,13 @@ typedef NS_OPTIONS(NSUInteger, ADBHandleOptions) {
 
 /// Writes numBytes bytes from the specified buffer at the current offset, overwriting
 /// any existing data at that location and expanding the backing location if necessary.
+///
 /// On success, return \c YES and populate \c bytesWritten (if provided) with the number of
 /// bytes written, which will be equal to the number requested to be written.<br>
 /// On failure, return \c NO and populates \c outError (if provided) with the failure reason.
 /// \c bytesRead should still be populated with the number of bytes that were successfully
-/// written before failure.<br>
+/// written before failure.
+///
 /// This method advances the offset of the file handle by the number of bytes successfully
 /// written, even on failure.
 - (BOOL) writeBytes: (const void *)buffer
@@ -167,21 +170,21 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 
 #pragma mark - FILE handle access
 
-/// Returns an open \c FILE * handle representing this \c ADBFileHandle resource.
-/// If \c adopt is \c YES, the calling context is expected to take control of the
-/// \c FILE * handle and is responsible for closing the handle when it has finished.
-/// If adopt is \c NO, the \c FILE * handle will only be viable for the lifetime
-/// of the \c ADBFileHandle instance: i.e. it may be closed when the instance
+/// Returns an open @c FILE* handle representing this \c ADBFileHandle resource.
+/// If @c adopt is @c YES, the calling context is expected to take control of the
+/// @c FILE * handle and is responsible for closing the handle when it has finished.
+/// If adopt is @c NO, the @c FILE * handle will only be viable for the lifetime
+/// of the @c ADBFileHandle instance: i.e. it may be closed when the instance
 /// is deallocated.
 ///
 /// This method should raise an assertion if @c adopt is @c YES and ownership has
 /// already been taken of the file handle.
 /// Calling @c fclose() on the resulting handle should have the same effect as
 /// calling the close method below.
-- (FILE *) fileHandleAdoptingOwnership: (BOOL)adopt;
+- (FILE *) fileHandleAdoptingOwnership: (BOOL)adopt NS_SWIFT_NAME(fileHandle(adoptingOwnership:));
 
 /// Frees all resources associated with the handle. Should be identical
-/// in behaviour to calling fclose() on the FILE * handle.
+/// in behaviour to calling @c fclose() on the @c FILE* handle.
 /// The handle should be considered unusable after closing, and attempts
 /// to call any of the data access methods above should raise an exception.
 - (void) close;
@@ -191,12 +194,12 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 
 #pragma mark - Abstract interface definitions
 
-/// A base implementation that presents a funopen() wrapper around its own access methods.
+/// A base implementation that presents a @c funopen() wrapper around its own access methods.
 /// This must be subclassed with concrete implementations of all data access methods.
 @interface ADBAbstractHandle : NSObject <ADBFileHandleAccess>
 {
-    /// A funopen() handle constructed the first time a FILE * handle is requested
-    /// from this instance. The funopen() handle wraps the instance's own getBytes:,
+    /// A @c funopen() handle constructed the first time a @c FILE* handle is requested
+    /// from this instance. The @c funopen() handle wraps the instance's own getBytes:,
     /// writeBytes:, seekToOffset: and close: methods.
     FILE * _handle;
     
@@ -210,7 +213,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 
 @end
 
-/// A base implementation of seekToOffset:relativeTo:error for the convenience of
+/// A base implementation of @c seekToOffset:relativeTo:error for the convenience of
 /// file handles that maintain their own offset and can seek without special behaviour.
 @interface ADBSeekableAbstractHandle : ADBAbstractHandle <ADBSeekable>
 {
@@ -223,8 +226,13 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 
 #pragma mark - Concrete file handle implementations
 
-/// A concrete implementation of ADBFileHandle that wraps a standard FILE * handle.
+/// A concrete implementation of @c ADBFileHandle that wraps a standard @c FILE* handle.
 /// Has helper constructor methods for opening a handle for a local filesystem URL.
+///
+/// @c ADBFileHandle describes an NSFileHandle-like interface for reading and writing
+/// data to and from files and file-like resources (i.e. byte streams that allow
+/// random access). It differs from \c NSFileHandle in that it can provide a \c FILE* handle
+/// for use with stdlib IO functions.
 @interface ADBFileHandle : NSObject <ADBReadable, ADBWritable, ADBSeekable, ADBFileHandleAccess>
 {
     FILE * _handle;
@@ -237,7 +245,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 + (ADBHandleOptions) optionsForPOSIXAccessMode: (const char *)mode;
 
 /// Returns a POSIX mode string best representing the given options.
-/// Returns NULL if no suitable POSIX access mode could be determined.
+/// Returns @c NULL if no suitable POSIX access mode could be determined.
 + (nullable const char *) POSIXAccessModeForOptions: (ADBHandleOptions)options;
 
 
@@ -245,11 +253,11 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 /// (or with the specified options bitmask).
 + (nullable instancetype) handleForURL: (NSURL *)URL
                                options: (ADBHandleOptions)options
-                                 error: (out NSError **)outError;
+                                 error: (out NSError **)outError NS_SWIFT_UNAVAILABLE("");
 
 + (nullable instancetype) handleForURL: (NSURL *)URL
                                   mode: (const char *)mode
-                                 error: (out NSError **)outError;
+                                 error: (out NSError **)outError NS_SWIFT_UNAVAILABLE("");
 
 - (nullable instancetype) initWithURL: (NSURL *)URL
                               options: (ADBHandleOptions)options
@@ -273,7 +281,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
     id _data;
 }
 
-+ (instancetype) handleForData: (NSData *)data;
++ (instancetype) handleForData: (NSData *)data NS_SWIFT_UNAVAILABLE("");
 - (instancetype) initWithData: (NSData *)data;
 
 @end
@@ -281,7 +289,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 /// A mutable implementation of the above, allowing writing to NSMutableData instances.
 @interface ADBWritableDataHandle : ADBDataHandle <ADBWritable>
 
-+ (instancetype) handleForData: (NSMutableData *)data;
++ (instancetype) handleForData: (NSMutableData *)data NS_SWIFT_UNAVAILABLE("");
 - (instancetype) initWithData: (NSMutableData *)data;
 
 @end
@@ -291,7 +299,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 
 /// A wrapper for a source handle, which treats the source as if it's
 /// divided into evenly-sized logical blocks with 0 or more bytes of padding
-/// at the start and end of each block. ADBBlockHandle thus allows uninterrupted
+/// at the start and end of each block. @c ADBBlockHandle thus allows uninterrupted
 /// sequential reads across blocks that may be separated by large gaps in the
 /// original handle.
 /// Note that the base class supports reading only. It must be subclassed to
@@ -309,8 +317,10 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 + (instancetype) handleForHandle: (id <ADBReadable, ADBSeekable>)sourceHandle
                 logicalBlockSize: (NSUInteger)blockSize
                           leadIn: (NSUInteger)blockLeadIn
-                         leadOut: (NSUInteger)blockLeadOut;
+                         leadOut: (NSUInteger)blockLeadOut NS_SWIFT_UNAVAILABLE("");
 
+/// Returns a new padded file handle with the specified logical block size, lead-in
+/// and lead-out.
 - (instancetype) initWithHandle: (id <ADBReadable, ADBSeekable>)sourceHandle
                logicalBlockSize: (NSUInteger)blockSize
                          leadIn: (NSUInteger)blockLeadIn
@@ -335,7 +345,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
     NSRange _range;
 }
 
-+ (instancetype) handleForHandle: (id <ADBReadable, ADBSeekable>)sourceHandle range: (NSRange)range;
++ (instancetype) handleForHandle: (id <ADBReadable, ADBSeekable>)sourceHandle range: (NSRange)range NS_SWIFT_UNAVAILABLE("");
 - (instancetype) initWithHandle: (id <ADBReadable, ADBSeekable>)sourceHandle range: (NSRange)range;
 
 /// Convert to/from logical byte offsets. These will return \c ADBOffsetUnknown if the specified

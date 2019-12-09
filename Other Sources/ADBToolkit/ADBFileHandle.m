@@ -118,10 +118,10 @@
 @synthesize handleCookie = _handleCookie;
 
 //Wrapper functions for funopen()
-int _ADBHandleClose(void *cookie);
-int _ADBHandleRead(void *cookie, char *buffer, int length);
-int _ADBHandleWrite(void *cookie, const char *buffer, int length);
-fpos_t _ADBHandleSeek(void *cookie, fpos_t offset, int whence);
+static int _ADBHandleClose(void *cookie);
+static int _ADBHandleRead(void *cookie, char *buffer, int length);
+static int _ADBHandleWrite(void *cookie, const char *buffer, int length);
+static fpos_t _ADBHandleSeek(void *cookie, fpos_t offset, int whence);
 
 - (FILE *) fileHandleAdoptingOwnership: (BOOL)adopt
 {

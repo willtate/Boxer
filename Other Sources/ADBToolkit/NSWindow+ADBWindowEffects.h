@@ -25,11 +25,10 @@
  */
 
 
-//The ADBWindowEffects category adds several Core Graphics-powered transition and filter effects
-//to use on windows.
-
 #import <Cocoa/Cocoa.h>
 
+/// The @c ADBWindowEffects category adds several Core Graphics-powered transition and filter effects
+/// to use on windows.
 @interface NSWindow (ADBWindowEffects)
 
 /// Order the window in/out with a simple non-blocking fade effect.

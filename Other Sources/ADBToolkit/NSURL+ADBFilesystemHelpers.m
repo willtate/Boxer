@@ -175,6 +175,14 @@
     return CFBridgingRelease(extensionForUTI);
 }
 
++ (NSArray<NSString*> *) fileTypesForExtension: (NSString *)UTI;
+{
+    CFArrayRef extensionsForUTI = UTTypeCreateAllIdentifiersForTag(kUTTagClassFilenameExtension,
+                                                                   (__bridge CFStringRef)UTI,
+                                                                   NULL);
+    return CFBridgingRelease(extensionsForUTI);
+}
+
 + (NSString *) fileTypeForExtension: (NSString *)extension
 {
     CFStringRef UTIForExtension = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,

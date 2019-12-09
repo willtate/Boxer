@@ -967,9 +967,7 @@ includingPropertiesForKeys: (NSArray *)keys
         //If the base URL is a directory, merge its contents.
         if (isDirectory.boolValue)
         {   
-            NSArray *properties = [NSArray arrayWithObjects:
-                                   NSURLIsDirectoryKey,
-                                   nil];
+            NSArray *properties = @[NSURLIsDirectoryKey];
             
             NSDirectoryEnumerator *shadowEnumerator = [self.manager enumeratorAtURL: baseShadowedURL
                                                          includingPropertiesForKeys: properties

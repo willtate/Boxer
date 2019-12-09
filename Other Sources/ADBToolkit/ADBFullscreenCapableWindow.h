@@ -25,20 +25,19 @@
  */
 
 
-//ADBFullScreenCapableWindow reimplements a Lion-like fullscreen API for earlier versions of OS X.
-//It also adds helper methods (usable also in Lion) for introspecting fullscreen window state.
-
 #import <Cocoa/Cocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Constants
 
-#define ADBDefaultFullscreenFadeOutDuration	0.2f
-#define ADBDefaultFullscreenFadeInDuration	0.4f
+#define ADBDefaultFullscreenFadeOutDuration	0.2
+#define ADBDefaultFullscreenFadeInDuration	0.4
 
 @protocol ADBFullScreenCapableWindowDelegate;
 
+/// @c ADBFullScreenCapableWindow reimplements a Lion-like fullscreen API for earlier versions of OS X.
+/// It also adds helper methods (usable also in Lion) for introspecting fullscreen window state.
 @interface ADBFullscreenCapableWindow : NSWindow {
 @private
     BOOL _fullScreen;

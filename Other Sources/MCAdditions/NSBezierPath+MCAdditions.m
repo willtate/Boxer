@@ -68,21 +68,21 @@ static void CGPathCallback(void *info, const CGPathElement *element)
 	NSInteger i;
 	for (i = 0; i < elementCount; i++) {
 		switch ([self elementAtIndex:i associatedPoints:controlPoints]) {
-			case NSMoveToBezierPathElement:
+			case NSBezierPathElementMoveTo:
 				CGPathMoveToPoint(thePath, &CGAffineTransformIdentity, 
 								  controlPoints[0].x, controlPoints[0].y);
 				break;
-			case NSLineToBezierPathElement:
+			case NSBezierPathElementLineTo:
 				CGPathAddLineToPoint(thePath, &CGAffineTransformIdentity, 
 									 controlPoints[0].x, controlPoints[0].y);
 				break;
-			case NSCurveToBezierPathElement:
+			case NSBezierPathElementCurveTo:
 				CGPathAddCurveToPoint(thePath, &CGAffineTransformIdentity, 
 									  controlPoints[0].x, controlPoints[0].y,
 									  controlPoints[1].x, controlPoints[1].y,
 									  controlPoints[2].x, controlPoints[2].y);
 				break;
-			case NSClosePathBezierPathElement:
+			case NSBezierPathElementClosePath:
 				CGPathCloseSubpath(thePath);
 				break;
 			default:

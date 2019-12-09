@@ -105,10 +105,10 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 
 #pragma mark - Dealing with mounted images
 
-/// Tells hdiutil to mount the specified disk image with the specified volume options.
+/// Tells @c hdiutil to mount the specified disk image with the specified volume options.
 /// On success, returns an array of one or more URLs representing volumes mounted from
 /// the image.
-/// On failure, returns nil and populates outError.
+/// On failure, returns @c nil and populates outError.
 - (nullable NSArray<NSURL*> *) mountImageAtURL: (NSURL *)URL
                                        options: (ADBImageMountingOptions)options
                                          error: (out NSError **)outError;
@@ -118,7 +118,7 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 - (nullable NSArray *) mountedImageInfoWithError: (out NSError **)outError;
 
 /// Returns the URL of the source disk image from which the specified volume path was mounted.
-/// Returns nil if the source image could not be determined (e.g. if the volume is not mounted
+/// Returns @c nil if the source image could not be determined (e.g. if the volume is not mounted
 /// from a disk image.)
 - (nullable NSURL *) sourceImageForVolumeAtURL: (NSURL *)volumeURL;
 

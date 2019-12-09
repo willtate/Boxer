@@ -27,6 +27,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// The ADBStringFormatting category adds methods for adjusting the formatting of strings
 /// and hard-wrapping NSStrings to a specified column width.
 @interface NSString (ADBStringFormatting)
@@ -49,3 +51,5 @@
 - (NSString *) stringCharacterWrappedAtLineLength: (NSUInteger)maxLength withJoiner: (NSString *)joiner;
 
 @end
+
+NS_ASSUME_NONNULL_END

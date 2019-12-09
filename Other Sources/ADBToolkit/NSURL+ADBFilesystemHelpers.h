@@ -96,6 +96,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Analogous to NSWorkspace preferredExtensionForFileType:.
 + (nullable NSString *) preferredExtensionForFileType: (NSString *)UTI;
 
+/// Returns all of the UTIs that use the specified extension.
++ (nullable NSArray<NSString*> *) fileTypesForExtension: (NSString *)UTI;
+
 /// Returns the UTI most applicable to files with the specified extension.
 + (nullable NSString *) fileTypeForExtension: (NSString *)extension;
 @end

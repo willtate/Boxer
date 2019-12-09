@@ -144,13 +144,12 @@
     
     //Check if we're rendering into a backing intended for retina displays.
     NSSize pointSize = NSMakeSize(1, 1);
-    if ([[NSView focusView] respondsToSelector: @selector(convertSizeToBacking:)])
-         pointSize = [[NSView focusView] convertSizeToBacking: pointSize];
+    pointSize = [[NSView focusView] convertSizeToBacking: pointSize];
     
     NSSize contextSize = [NSView focusView].bounds.size;
     
     NSGraphicsContext *context = [NSGraphicsContext currentContext];
-    CGContextRef cgContext = (CGContextRef)context.graphicsPort;
+    CGContextRef cgContext = context.CGContext;
     
     BOOL drawFlipped = respectContextIsFlipped && context.isFlipped;
     
@@ -224,8 +223,8 @@
         CGContextSaveGState(cgContext);
             if (drawFlipped)
             {
-                CGContextTranslateCTM(cgContext, 0.0f, contextSize.height);
-                CGContextScaleCTM(cgContext, 1.0f, -1.0f);
+                CGContextTranslateCTM(cgContext, 0.0, contextSize.height);
+                CGContextScaleCTM(cgContext, 1.0, -1.0);
             }
         
             //IMPLEMENTATION NOTE: we want to draw the drop shadow but not the image that's 'causing' the shadow.
@@ -256,8 +255,8 @@
         CGContextSaveGState(cgContext);
             if (drawFlipped)
             {
-                CGContextTranslateCTM(cgContext, 0.0f, contextSize.height);
-                CGContextScaleCTM(cgContext, 1.0f, -1.0f);
+                CGContextTranslateCTM(cgContext, 0.0, contextSize.height);
+                CGContextScaleCTM(cgContext, 1.0, -1.0);
             }
             CGContextClipToMask(cgContext, maskRect, imageMask);
         

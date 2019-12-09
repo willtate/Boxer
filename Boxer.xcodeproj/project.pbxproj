@@ -24,6 +24,8 @@
 		5557480A208FA8040045E635 /* saa1099.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F8208FA8030045E635 /* saa1099.cpp */; };
 		5557480B208FA8040045E635 /* sn76496.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F9208FA8030045E635 /* sn76496.cpp */; };
 		5557480C208FA8040045E635 /* sn76496.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F9208FA8030045E635 /* sn76496.cpp */; };
+		5563E57F239EF7CD007A1600 /* ADBSwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563E57E239EF7CD007A1600 /* ADBSwiftHelpers.swift */; };
+		5563E580239EF7CD007A1600 /* ADBSwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563E57E239EF7CD007A1600 /* ADBSwiftHelpers.swift */; };
 		558CE44D20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
 		558CE44E20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
 		55B22BA21A1BD9760007665E /* Bundler.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22BA11A1BD9760007665E /* Bundler.xcassets */; };
@@ -955,6 +957,7 @@
 		555747F9208FA8030045E635 /* sn76496.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sn76496.cpp; sourceTree = "<group>"; };
 		555747FA208FA8030045E635 /* saa1099.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saa1099.h; sourceTree = "<group>"; };
 		555747FB208FA8030045E635 /* ymf262.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ymf262.h; sourceTree = "<group>"; };
+		5563E57E239EF7CD007A1600 /* ADBSwiftHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADBSwiftHelpers.swift; sourceTree = "<group>"; };
 		5565757423568DED003489A6 /* risc_x64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = risc_x64.h; sourceTree = "<group>"; };
 		558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXXBOBluetoothControllerProfile.m; sourceTree = "<group>"; };
 		55AEA5CB201F05010000139A /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DocumentationPanel.strings; sourceTree = "<group>"; };
@@ -3032,6 +3035,7 @@
 				9F201E371657DB7F0086F1BB /* ADBUserNotificationDispatcher.m */,
 				9F693D5C16DD40DD00CCEA7C /* ADBEnumerationHelpers.h */,
 				9F693D5D16DD40DD00CCEA7C /* ADBEnumerationHelpers.m */,
+				5563E57E239EF7CD007A1600 /* ADBSwiftHelpers.swift */,
 			);
 			path = ADBToolkit;
 			sourceTree = "<group>";
@@ -4042,6 +4046,7 @@
 				9F7721CD12B38C4400072AE8 /* vga_s3.cpp in Sources */,
 				9F7721CE12B38C4400072AE8 /* vga_seq.cpp in Sources */,
 				9F7721CF12B38C4400072AE8 /* vga_tseng.cpp in Sources */,
+				5563E57F239EF7CD007A1600 /* ADBSwiftHelpers.swift in Sources */,
 				9F7721D012B38C4400072AE8 /* vga_xga.cpp in Sources */,
 				9F7721D112B38C4400072AE8 /* bios.cpp in Sources */,
 				9F7721D212B38C4400072AE8 /* bios_disk.cpp in Sources */,
@@ -4357,6 +4362,7 @@
 				9FD6AA2116315278002B774E /* BXEmulatedPrinter.mm in Sources */,
 				9F596503163D8D910094FD6B /* BXSession+BXPrinting.m in Sources */,
 				9FF982121646C7640080F763 /* BXPrintSession.m in Sources */,
+				5563E580239EF7CD007A1600 /* ADBSwiftHelpers.swift in Sources */,
 				9F67855D1649A6BC007FE89A /* BXPrintStatusPanelController.m in Sources */,
 				9F201E391657DB7F0086F1BB /* ADBUserNotificationDispatcher.m in Sources */,
 				9F61B94E16625DF700B41546 /* BXInspectorController.m in Sources */,
