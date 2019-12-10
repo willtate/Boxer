@@ -76,12 +76,13 @@ NSString * const ADBFileTransferCurrentPathKey		= @"ADBFileTransferCurrentPathKe
 @synthesize numBytes = _numBytes, bytesTransferred = _bytesTransferred;
 
 static int ADBSingleFileCallback(int what, int stage, copyfile_state_t state,
-                               const char * src, const char * dst, void * ctx)
+								 const char * src, const char * dst, void * ctx)
 {
     ADBSingleFileTransfer *nsCtx = (__bridge ADBSingleFileTransfer *)(ctx);
     @synchronized(nsCtx) {
 		if (nsCtx.cancelled) {
 			return COPYFILE_QUIT;
+			nsCtx->_isDone = YES;
 		}
 		switch (what) {
 			case COPYFILE_RECURSE_FILE:
@@ -297,7 +298,7 @@ static int ADBSingleFileCallback(int what, int stage, copyfile_state_t state,
 	if (status != 0 && errno != ECANCELED && _currentPath)
 	{
         NSDictionary *info = (self.currentPath) ? @{ NSFilePathErrorKey: self.currentPath } : nil;
-		self.error = [NSError errorWithDomain: NSOSStatusErrorDomain code: status userInfo: info];
+		self.error = [NSError errorWithDomain: NSPOSIXErrorDomain code: errno userInfo: info];
 	}
 	
 	//self.numBytes           = bytes.unsignedLongLongValue;

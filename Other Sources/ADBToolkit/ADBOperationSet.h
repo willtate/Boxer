@@ -35,11 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// The standard interval in seconds at which to poll the progress of our dependent operations
 #define ADBOperationSetDefaultPollInterval 0.1
 
-/// ADBOperationSet groups multiple concurrent operations into one operation, whose progress can
+/// @c ADBOperationSet groups multiple concurrent operations into one operation, whose progress can
 /// be tracked as a whole. It wraps an NSOperationQueue.
 @interface ADBOperationSet : ADBOperation
 {
-	NSMutableArray *_operations;
+	NSMutableArray<ADBOperation*> *_operations;
 	NSTimeInterval _pollInterval;
     NSInteger _maxConcurrentOperations;
 }
@@ -57,7 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) NSInteger maxConcurrentOperations;
 
 /// The interval at which to check the progress of our dependent operations and
-/// issue overall progress updates.<br>
+/// issue overall progress updates.
+///
 /// ADBOperationSet's overall running time will be a multiple of this interval.
 @property (assign) NSTimeInterval pollInterval;
 
