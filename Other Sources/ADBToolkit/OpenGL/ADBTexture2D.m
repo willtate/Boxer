@@ -473,40 +473,40 @@
 #pragma mark -
 #pragma mark Drawing
 
-//Inner method for the below, which treats the region as being
-//expressed in the standard coordinate system for our texture type:
-//texels for GL_TEXTURE_RECTANGLE_ARB, normalized coordinates for GL_TEXTURE_2D.
-//No coordinate translation is done.
+//! Inner method for the below, which treats the region as being
+//! expressed in the standard coordinate system for our texture type:
+//! texels for GL_TEXTURE_RECTANGLE_ARB, normalized coordinates for GL_TEXTURE_2D.
+//! No coordinate translation is done.
 - (BOOL) _drawFromNativeRegion: (CGRect)region
                   ontoVertices: (GLfloat *)vertices
                          error: (NSError **)outError
 {
-	GLfloat minX = CGRectGetMinX(region),
+    GLfloat minX = CGRectGetMinX(region),
     minY = CGRectGetMinY(region),
     maxX = CGRectGetMaxX(region),
     maxY = CGRectGetMaxY(region);
-	
+    
     GLfloat texCoords[8] = {
         minX,	minY,
         maxX,	minY,
         maxX,	maxY,
-		minX,	maxY
+        minX,	maxY
     };
-	
+    
     CGLContextObj cgl_ctx = _context;
     
     glEnable(_type);
-	glBindTexture(_type, _texture);
-	
-	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    glBindTexture(_type, _texture);
+    
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glTexCoordPointer(2, GL_FLOAT, 0, texCoords);
-	
+    
     glEnableClientState(GL_VERTEX_ARRAY);
     glVertexPointer(2, GL_FLOAT, 0, vertices);
     
-	glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+    glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
     
-	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisable(_type);
     
