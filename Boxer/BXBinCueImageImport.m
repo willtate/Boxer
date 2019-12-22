@@ -17,13 +17,12 @@
 #pragma mark -
 #pragma mark Private function declarations
 
-enum
+typedef NS_ENUM(NSInteger, BXDADiskOperationStatus)
 {
 	BXDADiskOperationInProgress = -1,
 	BXDADiskOperationFailed = 0,
 	BXDADiskOperationSucceeded = 1
 };
-typedef NSInteger BXDADiskOperationStatus;
 
 BOOL _mountSynchronously(DASessionRef, DADiskRef disk, CFURLRef path, DADiskUnmountOptions options);
 BOOL _unmountSynchronously(DASessionRef session, DADiskRef disk, DADiskMountOptions options);

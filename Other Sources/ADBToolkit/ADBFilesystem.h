@@ -122,7 +122,7 @@ typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *_Nullable url, NSError *
 /// filesystem.
 ///
 /// These URLs do not necessarily exist in the real OS X filesystem and may not be usable by
-/// standard \c NSURL introspection methods or AppKit loading methods. They are intended mainly
+/// standard @c NSURL introspection methods or AppKit loading methods. They are intended mainly
 /// for storing filesystem-unique paths and simplifying lookups across multiple filesystems.<br>
 /// IMPLEMENTATION REQUIREMENTS:
 ///
@@ -150,12 +150,12 @@ typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *_Nullable url, NSError *
 /// resolve logical URLs that are located within that URL.
 - (void) addRepresentedURL: (NSURL *)URL;
 
-/// Remove a URL previously added by addRepresentedURL:.
+/// Remove a URL previously added by \c addRepresentedURL:
 - (void) removeRepresentedURL: (NSURL *)URL;
 
 /// Return all the unique URLs represented by this filesystem (be they added explicitly
-/// by addRepresentedURL: or implicitly by other properties of the filesystem.)
-@property (readonly) NSSet<NSURL*> *representedURLs;
+/// by @c addRepresentedURL: or implicitly by other properties of the filesystem.)
+@property (readonly, copy) NSSet<NSURL*> *representedURLs;
 
 @end
 
@@ -181,7 +181,7 @@ typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *_Nullable url, NSError *
 - (NSURL *) fileURLForPath: (NSString *)path;
 
 /// Return the logical filesystem path corresponding to the specified OS X filesystem URL.
-/// Return \c nil if the specified URL is not accessible within this filesystem.
+/// Return @c nil if the specified URL is not accessible within this filesystem.
 /// Returned paths must be absolute, i.e. with a leading /.
 - (nullable NSString *) pathForFileURL: (NSURL *)URL;
 
