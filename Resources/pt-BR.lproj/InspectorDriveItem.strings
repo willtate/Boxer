@@ -1,0 +1,21 @@
+
+/* Class = "NSButton"; ibShadowedToolTip = "Import into Gamebox"; ObjectID = "6"; */
+"6.ibShadowedToolTip" = "Importar para Gamebox";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Cancel Import"; ObjectID = "9"; */
+"9.ibShadowedToolTip" = "Cancelar importação";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Show in Finder"; ObjectID = "10"; */
+"10.ibShadowedToolTip" = "Exibir no Finder";
+
+/* Class = "NSTextFieldCell"; title = "W"; ObjectID = "13"; */
+"13.title" = "W";
+
+/* Class = "NSTextFieldCell"; title = "[Display name]"; ObjectID = "19"; */
+"19.title" = "[Nome]";
+
+/* Class = "NSTextFieldCell"; title = "[Drive type]"; ObjectID = "20"; */
+"20.title" = "[Tipo de Disco]";
+
+/* Class = "NSTextFieldCell"; title = "100% of 999MB"; ObjectID = "21"; */
+"21.title" = "100% de 999MB";
