@@ -86,11 +86,11 @@ typedef NS_ERROR_ENUM(ADBMountableImageErrorDomain, ADBMountableImageErrors) {
 
 /// Returns the filesystem URL of the mounted volume representing the image's contents.
 /// If @c mountIfNeeded is YES, the filesystem will attempt to mount the backing image
-/// if it's not already, returning nil and populating outError if the image could
+/// if it's not already, returning @c nil and populating @c outError if the image could
 /// not be mounted. If @c mountIfNeeded is @c NO and the image is not already mounted,
-/// it will return @c nil and populate outError.
+/// it will return @c nil and populate @c outError.
 - (nullable NSURL *) volumeURLMountingIfNeeded: (BOOL)mountIfNeeded
-                                         error: (out NSError **)outError;
+                                         error: (out NSError **)outError NS_SWIFT_NAME(volumeURL(mountingIfNeeded:));
 
 /// Unmount the backing volume for the image if it is mounted. Returns @c YES on success
 /// and @c NO and populates outError upon failure.

@@ -141,11 +141,11 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
     ADBSeekFromCurrent  = SEEK_CUR,
 };
 
-/// Returned by -offset when the offset cannot be determined or is not applicable.
+/// Returned by @c -offset when the offset cannot be determined or is not applicable.
 #define ADBOffsetUnknown -1ll
 
 
-/// Return the handle's current byte offset, or ADBOffsetUnknown if this
+/// Return the handle's current byte offset, or @c ADBOffsetUnknown if this
 /// could not be determined.
 @property (readonly) long long offset;
 
@@ -204,9 +204,9 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
     FILE * _handle;
     
     /// The cookie resource pointed to by the funopen handle.
-    /// Set to self whenever a FILE * handle is requested for adoption,
+    /// Set to self whenever a @c FILE* handle is requested for adoption,
     /// and released only when the handle is explicitly closed:
-    /// this ensures that the FILE * handle remains viable even after
+    /// this ensures that the @c FILE* handle remains viable even after
     /// the instance has left scope.
     id _handleCookie;
 }
@@ -231,7 +231,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 ///
 /// @c ADBFileHandle describes an NSFileHandle-like interface for reading and writing
 /// data to and from files and file-like resources (i.e. byte streams that allow
-/// random access). It differs from \c NSFileHandle in that it can provide a \c FILE* handle
+/// random access). It differs from @c NSFileHandle in that it can provide a @c FILE* handle
 /// for use with stdlib IO functions.
 @interface ADBFileHandle : NSObject <ADBReadable, ADBWritable, ADBSeekable, ADBFileHandleAccess>
 {
@@ -274,8 +274,8 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 
 @end
 
-/// A concrete handle implementation that allows the contents of an \c NSData
-/// instance to be read from and seeked within using the \c FILE * API.
+/// A concrete handle implementation that allows the contents of an @c NSData
+/// instance to be read from and seeked within using the @c FILE * API.
 @interface ADBDataHandle : ADBSeekableAbstractHandle <ADBReadable>
 {
     id _data;
@@ -286,7 +286,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 
 @end
 
-/// A mutable implementation of the above, allowing writing to NSMutableData instances.
+/// A mutable implementation of the above, allowing writing to @c NSMutableData instances.
 @interface ADBWritableDataHandle : ADBDataHandle <ADBWritable>
 
 + (instancetype) handleForData: (NSMutableData *)data NS_SWIFT_UNAVAILABLE("");
