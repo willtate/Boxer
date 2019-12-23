@@ -8,8 +8,8 @@
 /* Class = "NSButtonCell"; title = "Boxer Website"; ObjectID = "49"; */
 "49.title" = "Boxer Website";
 
-/* Class = "NSTextFieldCell"; title = "Boxer is designed by\nAlun Bestor & released under the GNU Public License.\n\nBoxer is based on DOSBox 0.74, which is \n© 2002–2010 by the DOSBox Team."; ObjectID = "56"; */
-"56.title" = "Boxer is designed by\nAlun Bestor & released under the GNU Public License.\n\nBoxer is based on DOSBox 0.74, which is \n© 2002–2010 by the DOSBox Team.";
+/* Class = "NSTextFieldCell"; title = "Boxer is designed by\nAlun Bestor & released under the GNU Public License.\n\nBoxer is based on DOSBox 0.74, which is \n© 2002–2019 by the DOSBox Team."; ObjectID = "56"; */
+"56.title" = "Boxer is designed by\nAlun Bestor & released under the GNU Public License.\n\nBoxer is based on DOSBox 0.74, which is \n© 2002–2019 by the DOSBox Team.";
 
 /* Class = "NSTextFieldCell"; title = "[Version 1.2 | build 20111031.1]"; ObjectID = "58"; */
 "58.title" = "[Version 1.2 | build 20111031.1]";
