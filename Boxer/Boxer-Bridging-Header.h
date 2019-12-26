@@ -3,3 +3,4 @@
 //
 
 #import "ADBBinCueImage.h"
+#import "BXFileTypes.h"

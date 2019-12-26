@@ -7,6 +7,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import "ADBFilesystem.h"
 
 //Constants and class methods for file type UTIs that Boxer manages.
 
@@ -93,21 +94,20 @@ typedef NS_ENUM(NSInteger, BXExecutableType) {
 	BXExecutableTypeOS2
 };
 
-@protocol ADBReadable, ADBSeekable, ADBFilesystemPathAccess;
 @interface BXFileTypes (BXExecutableTypes)
 
 /// Returns the executable type of the file at the specified URL or in the specified stream.
 /// If the executable type cannot be determined, these will return \c BXExecutableTypeUnknown
 /// and populate outError with the failure reason.
 + (BXExecutableType) typeOfExecutableAtURL: (NSURL *)URL
-                                     error: (out NSError **)outError;
+                                     error: (out NSError **)outError NS_REFINED_FOR_SWIFT;
 
 + (BXExecutableType) typeOfExecutableInStream: (id <ADBReadable, ADBSeekable>)handle
-                                        error: (out NSError **)outError;
+                                        error: (out NSError **)outError NS_REFINED_FOR_SWIFT;
 
 + (BXExecutableType) typeOfExecutableAtPath: (NSString *)path
                                  filesystem: (id <ADBFilesystemPathAccess>)filesystem
-                                      error: (out NSError **)outError;
+                                      error: (out NSError **)outError NS_REFINED_FOR_SWIFT;
 
 /// Returns whether the file at the specified URL is a DOSBox-compatible executable.
 /// If the file appears to be a .COM or .BAT file, this method will assume it is compatible;
@@ -123,8 +123,6 @@ typedef NS_ENUM(NSInteger, BXExecutableType) {
 
 #pragma mark - Filesystems
 
-@protocol ADBFilesystemPathAccess;
-@protocol ADBFilesystemLogicalURLAccess;
 @interface BXFileTypes (BXFilesystemDetection)
 
 /// Returns a filesystem suitable for traversing the specified URL. This will return an

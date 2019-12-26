@@ -21,3 +21,46 @@ extension ADBBinCueImage {
     }
 
 }
+
+extension BXFileTypes {
+    /// Returns the executable type of the file at the specified URL or in the specified stream.
+    /// If the executable type cannot be determined, these will return `BXExecutableTypeUnknown`
+    /// and populate outError with the failure reason.
+    @nonobjc open class func typeOfExecutable(at URL: URL) throws -> BXExecutableType {
+        var err: NSError?
+        let toRet = __typeOfExecutable(at: URL, error: &err)
+        if toRet == .unknown, let err2 = err {
+            throw err2
+        }
+        return toRet
+    }
+
+    /// Returns the executable type of the file at the specified URL or in the specified stream.
+    /// If the executable type cannot be determined, these will return `BXExecutableTypeUnknown`
+    /// and populate outError with the failure reason.
+    open class func typeOfExecutable(inStream handle: ADBReadable & ADBSeekable) throws -> BXExecutableType {
+        var err: NSError?
+        let toRet = __typeOfExecutable(inStream: handle, error: &err)
+        
+        if toRet == .unknown, let err2 = err {
+            throw err2
+        }
+        return toRet
+    }
+
+    /// Returns the executable type of the file at the specified URL or in the specified stream.
+    /// If the executable type cannot be determined, these will return `BXExecutableTypeUnknown`
+    /// and populate outError with the failure reason.
+    open class func typeOfExecutable(atPath path: String, filesystem: ADBFilesystemPathAccess)  throws -> BXExecutableType {
+        var err: NSError?
+        
+        let toRet = __typeOfExecutable(atPath: path, filesystem: filesystem, error: &err)
+        
+        if toRet == .unknown, let err2 = err {
+            throw err2
+        }
+        return toRet
+
+    }
+
+}
