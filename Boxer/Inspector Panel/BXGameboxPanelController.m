@@ -249,7 +249,7 @@ enum {
 - (NSArray *) _programMenuItems
 {	
 	NSDictionary *allPrograms	= [self.session.executableURLs valueForKey: @"path"];
-    NSString *currentTarget     = self.session.gamebox.targetPath;
+    NSString *currentTarget     = self.session.gamebox.legacyTargetURL.path;
 	NSMutableArray *items		= [NSMutableArray arrayWithCapacity: allPrograms.count];
 	
 	NSArray *driveLetters = [allPrograms.allKeys sortedArrayUsingSelector: @selector(compare:)];
