@@ -26,6 +26,11 @@ varying vec2 cosangle;
 
 uniform vec2 rubyInputSize;
 uniform vec2 rubyTextureSize;
+
+// Cordes: Added functions to fine tune sharpness
+vec2 InputSize = vec2(2.0*rubyInputSize.x, 2.0*rubyInputSize.y);
+vec2 TextureSize = vec2(2.0*rubyTextureSize.x, 2.0*rubyTextureSize.y);
+
 uniform vec2 rubyOutputSize;
 
 varying vec2 texCoord;
@@ -104,7 +109,8 @@ void main()
   //Tweaked 2012-09-27 by Alun Bestor: this was vec2(0.0, -0.0), but this was causing the view to get scaled up weirdly on Radeon HD 6770M.
   const vec2 angle = vec2(0.0,0.001);
   // size of curved corners
-  cornersize = 0.03;
+  // Cordes: Less pronounced corners (orig: 0.03)
+  cornersize = 0.02;
   // border smoothness parameter
   // decrease if borders are too aliased
   cornersmooth = 80.0;
@@ -124,16 +130,16 @@ void main()
   texCoord = gl_MultiTexCoord0.xy;
 
   //Disabled 2012-09-25 by Alun Bestor: this was causing severe degradation at higher scales.
-  //ilfac = vec2(1.0,floor(rubyInputSize.y/200.0));
+  //ilfac = vec2(1.0,floor(InputSize.y/200.0));
   ilfac = vec2(1.0,1.0);
   // The size of one texel, in texture-coordinates.
-  one = ilfac / rubyTextureSize;
+  one = ilfac / TextureSize;
 
   // Resulting X pixel-coordinate of the pixel we're drawing.
-  mod_factor = texCoord.x * rubyTextureSize.x * rubyOutputSize.x / rubyInputSize.x;			
+  mod_factor = texCoord.x * TextureSize.x * rubyOutputSize.x / InputSize.x;
 }
     ]]></vertex>
-    <fragment filter="nearest"><![CDATA[
+    <fragment filter="nearest" outscale_x="1" outscale_y="2"><![CDATA[
 // Comment the next line to disable interpolation in linear gamma (and gain speed).
 //#define LINEAR_PROCESSING
 
@@ -159,6 +165,11 @@ void main()
 uniform sampler2D rubyTexture;
 uniform vec2 rubyInputSize;
 uniform vec2 rubyTextureSize;
+
+// Cordes: Added functions to fine tune sharpness
+vec2 InputSize = vec2(2.0*rubyInputSize.x, 2.0*rubyInputSize.y);
+vec2 TextureSize = vec2(2.0*rubyTextureSize.x, 2.0*rubyTextureSize.y);
+
 uniform int rubyFrameCount;
 
 varying vec2 texCoord;
@@ -209,14 +220,14 @@ vec2 bkwtrans(vec2 xy)
 
 vec2 transform(vec2 coord)
 {
-  coord *= rubyTextureSize / rubyInputSize;
+  coord *= TextureSize / InputSize;
   coord = (coord-vec2(0.5))*aspect*stretch.z+stretch.xy;
-  return (bkwtrans(coord)/overscan/aspect+vec2(0.5)) * rubyInputSize / rubyTextureSize;
+  return (bkwtrans(coord)/overscan/aspect+vec2(0.5)) * InputSize / TextureSize;
 }
 
 float corner(vec2 coord)
 {
-  coord *= rubyTextureSize / rubyInputSize;
+  coord *= TextureSize / InputSize;
   coord = (coord - vec2(0.5)) * overscan + vec2(0.5);
   coord = min(coord, vec2(1.0)-coord) * aspect;
   vec2 cdist = vec2(cornersize);
@@ -249,8 +260,11 @@ vec4 scanlineWeights(float distance, vec4 color)
   return 0.4 * exp(-weights * weights) / wid;
 #else
   vec4 wid = 2.0 + 2.0 * pow(color, vec4(4.0));
+  
+  // Cordes: Divide by 0.38 (instead of 0.3) for brighter scanlines
   vec4 weights = vec4(distance / 0.3);
-  return 1.4 * exp(-pow(weights * inversesqrt(0.5 * wid), wid)) / (0.6 + 0.2 * wid);
+  // Cordes: Increase from 1.4 to compensate for darker picture
+  return 2.4 * exp(-pow(weights * inversesqrt(0.5 * wid), wid)) / (0.6 + 0.2 * wid);
 #endif
 }
 
@@ -288,14 +302,14 @@ void main()
   // Of all the pixels that are mapped onto the texel we are
   // currently rendering, which pixel are we currently rendering?
   vec2 ilvec = vec2(0.0,ilfac.y > 1.5 ? mod(float(rubyFrameCount),2.0) : 0.0);
-  vec2 ratio_scale = (xy * rubyTextureSize - vec2(0.5) + ilvec)/ilfac;
+  vec2 ratio_scale = (xy * TextureSize - vec2(0.5) + ilvec)/ilfac;
 #ifdef OVERSAMPLE
   float filter = fwidth(ratio_scale.y);
 #endif
   vec2 uv_ratio = fract(ratio_scale);
 
   // Snap to the center of the underlying texel.
-  xy = (floor(ratio_scale)*ilfac + vec2(0.5) - ilvec) / rubyTextureSize;
+  xy = (floor(ratio_scale)*ilfac + vec2(0.5) - ilvec) / TextureSize;
 
   // Calculate Lanczos scaling coefficients describing the effect
   // of various neighbour texels in a scanline on the current
@@ -357,7 +371,8 @@ void main()
   mul_res *= dotMaskWeights;
 
   // Convert the image gamma for display on our output device.
-  mul_res = pow(mul_res, vec3(1.0 / monitorgamma));
+  // Cordes: Multiply per 1.1 for simple halation
+  mul_res = pow(mul_res, vec3(1.0 / monitorgamma)) * 1.1;
 
   // Color the texel.
   gl_FragColor = vec4(mul_res, 1.0);
