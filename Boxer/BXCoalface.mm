@@ -57,6 +57,10 @@ void boxer_applyRenderingStrategy()
 	[[emulator videoHandler] applyRenderingStrategy];
 }
 
+void boxer_setShader(const char* src) {
+    //TODO: implement!
+}
+
 Bitu boxer_prepareForFrameSize(Bitu width, Bitu height, Bitu gfx_flags, double scalex, double scaley, GFX_CallBack_t callback)
 {
 	BXEmulator *emulator = [BXEmulator currentEmulator];

@@ -32,6 +32,7 @@ extern "C" {
 #define GFX_SetSize boxer_prepareForFrameSize
 #define GFX_GetRGB boxer_getRGBPaletteEntry
 #define GFX_SetPalette boxer_setPalette
+#define GFX_SetShader boxer_setShader
 #define GFX_GetBestMode boxer_idealOutputMode
 #define GFX_ShowMsg boxer_log
 #define MIDI_Available boxer_MIDIAvailable
@@ -50,6 +51,7 @@ extern "C" {
 	void boxer_applyRenderingStrategy(void);
 	Bitu boxer_getRGBPaletteEntry(Bit8u red, Bit8u green, Bit8u blue);
 	void boxer_setPalette(Bitu start,Bitu count,GFX_PalEntry * entries);
+    void boxer_setShader(const char* src);
 	
     /// Defined in vga_other.cpp to give Boxer access to Hercules and CGA graphics mode options.
     Bit8u boxer_herculesTintMode(void);
