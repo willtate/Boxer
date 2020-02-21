@@ -34,6 +34,7 @@
 		55BBA4F5235FB25F007AE319 /* CwlDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4F4235FB25E007AE319 /* CwlDemangle.swift */; };
 		55BBA4F6235FB25F007AE319 /* CwlDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4F4235FB25E007AE319 /* CwlDemangle.swift */; };
 		55DEBB23201E875600F1092F /* pci_bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DEBB21201E875500F1092F /* pci_bus.cpp */; };
+		55E21B4D23FF50E600D53932 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E21B4C23FF50E500D53932 /* libz.tbd */; };
 		55E6A0B61C00C86200285593 /* MT32Emu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0B51C00C81E00285593 /* MT32Emu.framework */; };
 		55E6A0B71C00C86200285593 /* MT32Emu.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0B51C00C81E00285593 /* MT32Emu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55E6A0BA1C00C86200285593 /* DDHidLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0AC1C00C80A00285593 /* DDHidLib.framework */; };
@@ -588,7 +589,6 @@
 		9F7721EA12B38C4400072AE8 /* shell_cmds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F77217412B38C4400072AE8 /* shell_cmds.cpp */; };
 		9F7721EB12B38C4400072AE8 /* shell_misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F77217512B38C4400072AE8 /* shell_misc.cpp */; };
 		9F77EE0115DCC9BF00B75835 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F77EE0015DCC9BF00B75835 /* WebKit.framework */; };
-		9F77EE0215DCC9DC00B75835 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F77EE0015DCC9BF00B75835 /* WebKit.framework */; };
 		9F794DAF15EA966E00A4CB05 /* DummyCD.iso in Resources */ = {isa = PBXBuildFile; fileRef = 9F12F97B144875F400FC9645 /* DummyCD.iso */; };
 		9F7D9EFF1444BAA800B6AD50 /* BXExternalMT32+BXMT32Sysexes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D9EFE1444BAA800B6AD50 /* BXExternalMT32+BXMT32Sysexes.m */; };
 		9F80E7FF16DA3170001C3162 /* ADBFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80E7FE16DA316F001C3162 /* ADBFileHandle.m */; };
@@ -1027,6 +1027,7 @@
 		55DEBB20201E81DF00F1092F /* pci_bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pci_bus.h; sourceTree = "<group>"; };
 		55DEBB21201E875500F1092F /* pci_bus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pci_bus.cpp; sourceTree = "<group>"; };
 		55DEBB22201E875500F1092F /* pci_devices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pci_devices.h; sourceTree = "<group>"; };
+		55E21B4C23FF50E500D53932 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = Vendor/BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDHidLib.xcodeproj; path = Vendor/DDHidLib/DDHidLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		55E6A0AD1C00C81D00285593 /* Boxer-MT32Emu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Boxer-MT32Emu.xcodeproj"; path = "Vendor/MT32Emu/Boxer-MT32Emu.xcodeproj"; sourceTree = SOURCE_ROOT; };
@@ -1895,13 +1896,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F77EE0215DCC9DC00B75835 /* WebKit.framework in Frameworks */,
+				55E21B4D23FF50E600D53932 /* libz.tbd in Frameworks */,
+				9F731B52136331A9005E564F /* IOKit.framework in Frameworks */,
 				9FC637FD13C09B11004478A3 /* CoreServices.framework in Frameworks */,
 				55E6A0BE1C00C86200285593 /* BGHUDAppKit.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				9FBC32120F56C3E9001811F2 /* Carbon.framework in Frameworks */,
 				9FBC3C160F56D6E8001811F2 /* SDL.framework in Frameworks */,
 				9FBC3C170F56D6E9001811F2 /* SDL_net.framework in Frameworks */,
+				9FCEDF3312B3DFFC00E856A4 /* SDL_sound.framework in Frameworks */,
 				9FBC3C720F56E0AE001811F2 /* OpenGL.framework in Frameworks */,
 				9FBC3C780F56E0D7001811F2 /* AudioUnit.framework in Frameworks */,
 				9FBC3C790F56E0D7001811F2 /* CoreMIDI.framework in Frameworks */,
@@ -1913,9 +1916,7 @@
 				9F20C28B11E5D848005AF541 /* Sparkle.framework in Frameworks */,
 				9F61942412340F5400F35AB4 /* ScriptingBridge.framework in Frameworks */,
 				55E6A0BA1C00C86200285593 /* DDHidLib.framework in Frameworks */,
-				9FCEDF3312B3DFFC00E856A4 /* SDL_sound.framework in Frameworks */,
 				9FBAA8F4134AFABD0092BF95 /* DiskArbitration.framework in Frameworks */,
-				9F731B52136331A9005E564F /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2083,6 +2084,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55E21B4C23FF50E500D53932 /* libz.tbd */,
 				9F8A975F10E7EDDE00A4B72A /* libicucore.dylib */,
 				9FBC3C130F56D6E8001811F2 /* Bundled Frameworks */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
@@ -5103,10 +5105,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
 					BOXER_DEBUG,
 					USE_PRIVATE_APIS,
+					C_SRECORD,
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
@@ -5146,8 +5150,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
+					"$(PROJECT_DIR)/Frameworks",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = C_SRECORD;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
 				HEADER_SEARCH_PATHS = (

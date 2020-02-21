@@ -433,7 +433,7 @@ NSString * const BXGameboxErrorDomain = @"BXGameboxErrorDomain";
 		identifier = [self _generatedIdentifierOfType: &generatedType];
 
 		[(NSMutableDictionary *)self.gameInfo setObject: identifier forKey: BXGameIdentifierGameInfoKey];
-		[(NSMutableDictionary *)self.gameInfo setObject: [NSNumber numberWithUnsignedInteger: generatedType]
+		[(NSMutableDictionary *)self.gameInfo setObject: @(generatedType)
                                                  forKey: BXGameIdentifierTypeGameInfoKey];
         
 		[self _persistGameInfo];
@@ -445,7 +445,7 @@ NSString * const BXGameboxErrorDomain = @"BXGameboxErrorDomain";
 - (void) setGameIdentifier: (NSString *)identifier
 {
 	[(NSMutableDictionary *)self.gameInfo setObject: identifier forKey: BXGameIdentifierGameInfoKey];
-	[(NSMutableDictionary *)self.gameInfo setObject: [NSNumber numberWithUnsignedInteger: BXGameIdentifierUserSpecified]
+	[(NSMutableDictionary *)self.gameInfo setObject: @(BXGameIdentifierUserSpecified)
                                              forKey: BXGameIdentifierTypeGameInfoKey];
 }
 
@@ -607,7 +607,7 @@ NSString * const BXGameboxErrorDomain = @"BXGameboxErrorDomain";
 
 #pragma mark - Private methods
 
-//Write the game info back to the plist file
+/// Write the game info back to the plist file
 - (void) _persistGameInfo
 {
     //TWEAK: standalone games should not modify their plists.
@@ -1361,7 +1361,7 @@ NSString * const BXGameboxErrorDomain = @"BXGameboxErrorDomain";
 									  nil];
 			
 			*outError = [NSError errorWithDomain: BXGameboxErrorDomain
-											code: BXTargetPathOutsideGameboxError
+											code: BXLauncherURLOutsideGameboxError
 										userInfo: userInfo];
 		}
 		return NO;

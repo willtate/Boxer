@@ -23,7 +23,7 @@ private let cxxPrefixes = ["_Z"]
 
 extension NSException {
     @objc(possibleMangledTypeFromString:)
-    class func possibleMangledType(from: String) -> MangledFunctionType {
+    static func possibleMangledType(from: String) -> MangledFunctionType {
         var trimFirst = false
         if from.first == "_" {
             trimFirst = true
@@ -47,7 +47,7 @@ extension NSException {
         return .none
     }
     
-    @objc class func demangledSwiftFunctionName(_ functionName: String) -> String? {
+    @objc static func demangledSwiftFunctionName(_ functionName: String) -> String? {
         guard let parsed = try? parseMangledSwiftSymbol(functionName, isType: true) else {
             return nil
         }

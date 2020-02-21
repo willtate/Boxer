@@ -87,8 +87,7 @@ NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]
         NSArray<NSString*> *captures = [symbol captureComponentsMatchedByRegex: ADBCallstackSymbolPattern];
         if (captures.count == 5)
         {
-            //FIXME: reimplement this using NSScanner so that we don't have dependencies
-            //on RegexKitLite.
+            //FIXME: reimplement this using NSScanner or NSRegularExpression so that we don't have dependencies on RegexKitLite.
             NSString *libraryName   = [captures objectAtIndex: 1];
             NSString *hexAddress    = [captures objectAtIndex: 2];
             NSString *rawSymbolName = [captures objectAtIndex: 3];

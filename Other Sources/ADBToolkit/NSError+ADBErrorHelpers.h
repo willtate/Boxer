@@ -44,13 +44,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Keys included in @c callstackDescriptions dictionaries
 typedef NSString *ADBCallstackKeys NS_STRING_ENUM;
-extern ADBCallstackKeys const ADBCallstackRawSymbol;            //!< The raw output of callstack_symbols.
-extern ADBCallstackKeys const ADBCallstackLibraryName;          //!< The name of the binary in which the stack entry is located.
-extern ADBCallstackKeys const ADBCallstackAddress;              //!< The memory address of the stack entry as a hex string.
-extern ADBCallstackKeys const ADBCallstackFunctionName;         //!< The raw function name, mangled in the case of C++ and Swift names.
-extern ADBCallstackKeys const ADBCallstackHumanReadableFunctionName;  //!< For C++ and Swift functions, a demangled version of the function name;
-                                                                //!< otherwise identical to ADBCallstackFunctionName.
-extern ADBCallstackKeys const ADBCallstackSymbolOffset;         //!< An @c NSNumber representing the offset within the function.
+/// The raw output of callstack_symbols.
+extern ADBCallstackKeys const ADBCallstackRawSymbol;
+/// The name of the binary in which the stack entry is located.
+extern ADBCallstackKeys const ADBCallstackLibraryName;
+/// The memory address of the stack entry as a hex string.
+extern ADBCallstackKeys const ADBCallstackAddress;
+/// The raw function name, mangled in the case of C++ and Swift names.
+extern ADBCallstackKeys const ADBCallstackFunctionName;
+/// For C++ and Swift functions, a demangled version of the function name;
+/// otherwise identical to @c ADBCallstackFunctionName
+extern ADBCallstackKeys const ADBCallstackHumanReadableFunctionName;
+/// An @c NSNumber representing the offset within the function.
+extern ADBCallstackKeys const ADBCallstackSymbolOffset;
 
 @interface NSException (ADBExceptionHelpers)
 
