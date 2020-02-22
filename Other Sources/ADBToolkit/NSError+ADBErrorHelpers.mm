@@ -51,7 +51,7 @@ NSString * const ADBCallstackFunctionName               = @"ADBCallstackFunction
 NSString * const ADBCallstackHumanReadableFunctionName  = @"ADBCallstackHumanReadableFunctionName";
 NSString * const ADBCallstackSymbolOffset               = @"ADBCallstackSymbolOffset";
 
-NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]+)\\s+(.+)\\s+\\+\\s+(\\d+)$";
+static NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]+)\\s+(.+)\\s+\\+\\s+(\\d+)$";
 
 @implementation NSException (ADBExceptionHelpers)
 
