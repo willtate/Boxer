@@ -24,7 +24,7 @@
 #pragma mark Properties
 
 /// The drives currently mounted in DOS. These are not intrinsically ordered.
-@property (readonly, nonatomic) NSArray *mountedDrives;
+@property (readonly, nonatomic) NSArray<BXDrive *> *mountedDrives;
 
 /// The current DOS drive.
 @property (readonly, nonatomic) BXDrive *currentDrive;

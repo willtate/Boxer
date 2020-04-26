@@ -7,7 +7,7 @@
 
 #import "BXEmulator.h"
 
-/// The \c BXPaste category extends BXEmulator to add methods for handling pasted text.
+/// The \c BXPaste category extends \c BXEmulator to add methods for handling pasted text.
 @interface BXEmulator (BXPaste)
 
 /// Returns whether there is any pasted text that hasn't yet been consumed by the DOS process.
@@ -17,10 +17,10 @@
 - (void) cancelPaste;
 
 /// Accepts a string of characters, and deals with how best to paste it into DOS.
-/// Returns \c YES if the string was handled, NO otherwise.
+/// Returns \c YES if the string was handled, \c NO otherwise.
 - (BOOL) handlePastedString: (NSString *)pastedString asCommand: (BOOL)treatAsCommand;
 
-/// Returns \c YES if Boxer can paste the specified string, no otherwise.
+/// Returns \c YES if Boxer can paste the specified string, \c NO otherwise.
 - (BOOL) canAcceptPastedString: (NSString *)pastedString;
 
 @end

@@ -472,7 +472,7 @@ NSString * const BXGameboxErrorDomain = @"BXGameboxErrorDomain";
 
 - (NSArray *) URLsOfVolumesMatchingTypes: (NSSet *)fileTypes
 {
-    NSDirectoryEnumerationOptions options = NSDirectoryEnumerationSkipsSubdirectoryDescendants | NSDirectoryEnumerationSkipsHiddenFiles;
+    const NSDirectoryEnumerationOptions options = NSDirectoryEnumerationSkipsSubdirectoryDescendants | NSDirectoryEnumerationSkipsHiddenFiles;
     NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtURL: self.resourceURL
                                                              includingPropertiesForKeys: @[NSURLTypeIdentifierKey]
                                                                                 options: options
