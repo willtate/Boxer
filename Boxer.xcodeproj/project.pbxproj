@@ -4933,7 +4933,6 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Boxer-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -4971,7 +4970,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Standalone/Boxer Standalone-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Boxer-Swift.h";
 				SWIFT_VERSION = 5.0;
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};
