@@ -1018,6 +1018,7 @@
 		55AEA629201F0C1B0000139A /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/ImportWindow.strings; sourceTree = "<group>"; };
 		55AEA62B201F0C210000139A /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Inspector.strings; sourceTree = "<group>"; };
 		55B22BA11A1BD9760007665E /* Bundler.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bundler.xcassets; sourceTree = "<group>"; };
+		55BA63F124B051C300A53F4C /* risc_armv8le.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = risc_armv8le.h; sourceTree = "<group>"; };
 		55BBA4E6235EE141007AE319 /* Boxer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boxer-Bridging-Header.h"; sourceTree = "<group>"; };
 		55BBA4E7235EE141007AE319 /* Boxer Standalone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boxer Standalone-Bridging-Header.h"; sourceTree = "<group>"; };
 		55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+ADBErrorHelpers.swift"; sourceTree = "<group>"; };
@@ -2765,6 +2766,7 @@
 				9F7720B412B38C4400072AE8 /* risc_armv4le-thumb-niw.h */,
 				9F7720B512B38C4400072AE8 /* risc_armv4le-thumb.h */,
 				9F7720B612B38C4400072AE8 /* risc_armv4le.h */,
+				55BA63F124B051C300A53F4C /* risc_armv8le.h */,
 				9F7720B712B38C4400072AE8 /* risc_mipsel32.h */,
 				9F7720B812B38C4400072AE8 /* risc_x64.h */,
 				9F7720B912B38C4400072AE8 /* risc_x86.h */,
@@ -5129,7 +5131,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Boxer/Boxer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -5169,7 +5170,6 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Boxer/Boxer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};
