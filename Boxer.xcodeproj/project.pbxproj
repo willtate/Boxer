@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05E6BA5924B972C900BAAD2D /* BXMetalRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA5824B972C900BAAD2D /* BXMetalRenderingView.m */; };
+		05E6BA6F24B9FACC00BAAD2D /* BXMetalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA6E24B9FACC00BAAD2D /* BXMetalLayer.m */; };
+		05E6BA7024B9FC2E00BAAD2D /* OpenEmuShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; };
+		05E6BA7124B9FC2E00BAAD2D /* OpenEmuShaders.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05E6BA7424BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA7324BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m */; };
 		501F283B161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */; };
 		501F283C161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */; };
 		5548850E226A501000A879B3 /* drive_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55488508226A501000A879B3 /* drive_overlay.cpp */; };
@@ -792,6 +797,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		05E6BA6724B9FA8D00BAAD2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 05EEE338227CC35D007D011B;
+			remoteInfo = OpenEmuShaders;
+		};
+		05E6BA6924B9FA8D00BAAD2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 05EEE341227CC35D007D011B;
+			remoteInfo = OpenEmuShadersTests;
+		};
+		05E6BA6B24B9FA8D00BAAD2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 05B82298243D877B009909D3;
+			remoteInfo = "Shader Studio";
+		};
 		55BBA4F1235EE142007AE319 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */;
@@ -929,6 +955,7 @@
 				9FBC3D600F56EA82001811F2 /* SDL.framework in Copy Bundled Frameworks */,
 				55E6A0BB1C00C86200285593 /* DDHidLib.framework in Copy Bundled Frameworks */,
 				55E6A0B71C00C86200285593 /* MT32Emu.framework in Copy Bundled Frameworks */,
+				05E6BA7124B9FC2E00BAAD2D /* OpenEmuShaders.framework in Copy Bundled Frameworks */,
 			);
 			name = "Copy Bundled Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -937,6 +964,14 @@
 
 /* Begin PBXFileReference section */
 		0580F26924B0E7F10099CB8E /* Boxer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Boxer.entitlements; sourceTree = "<group>"; };
+		05E6BA5724B972C900BAAD2D /* BXMetalRenderingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BXMetalRenderingView.h; sourceTree = "<group>"; };
+		05E6BA5824B972C900BAAD2D /* BXMetalRenderingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXMetalRenderingView.m; sourceTree = "<group>"; };
+		05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OpenEmuShaders.xcodeproj; path = Vendor/OpenEmuShaders/OpenEmuShaders.xcodeproj; sourceTree = SOURCE_ROOT; };
+		05E6BA6D24B9FACC00BAAD2D /* BXMetalLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BXMetalLayer.h; sourceTree = "<group>"; };
+		05E6BA6E24B9FACC00BAAD2D /* BXMetalLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXMetalLayer.m; sourceTree = "<group>"; };
+		05E6BA7224BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BXMetalRenderingView+BXImageCapture.h"; sourceTree = "<group>"; };
+		05E6BA7324BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BXMetalRenderingView+BXImageCapture.m"; sourceTree = "<group>"; };
+		05E6BA7524BA279000BAAD2D /* BXMetalRenderingView+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BXMetalRenderingView+Private.h"; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1919,6 +1954,7 @@
 				9F61942412340F5400F35AB4 /* ScriptingBridge.framework in Frameworks */,
 				55E6A0BA1C00C86200285593 /* DDHidLib.framework in Frameworks */,
 				9FBAA8F4134AFABD0092BF95 /* DiskArbitration.framework in Frameworks */,
+				05E6BA7024B9FC2E00BAAD2D /* OpenEmuShaders.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1960,6 +1996,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05E6BA4F24B9709200BAAD2D /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		05E6BA5624B971AD00BAAD2D /* Metal Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				05E6BA6D24B9FACC00BAAD2D /* BXMetalLayer.h */,
+				05E6BA6E24B9FACC00BAAD2D /* BXMetalLayer.m */,
+				05E6BA5724B972C900BAAD2D /* BXMetalRenderingView.h */,
+				05E6BA7524BA279000BAAD2D /* BXMetalRenderingView+Private.h */,
+				05E6BA5824B972C900BAAD2D /* BXMetalRenderingView.m */,
+				05E6BA7224BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.h */,
+				05E6BA7324BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m */,
+			);
+			path = "Metal Rendering";
+			sourceTree = "<group>";
+		};
+		05E6BA6124B9FA8D00BAAD2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */,
+				05E6BA6A24B9FA8D00BAAD2D /* OpenEmuShadersTests.xctest */,
+				05E6BA6C24B9FA8D00BAAD2D /* Shader Studio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Boxer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1984,6 +2051,7 @@
 				9F1CBA55120C783800C5E926 /* Game import session */,
 				9FDE33FF1351DA0B000DCE44 /* Drives */,
 				9F23EB0111390A2600DC5AB6 /* Rendering */,
+				05E6BA5624B971AD00BAAD2D /* Metal Rendering */,
 				9FC6381213C0B5C0004478A3 /* Input */,
 				9F27133610C1253E0003CB58 /* DOS window */,
 				9F1CBA94120C7D4300C5E926 /* Game import window */,
@@ -3047,6 +3115,7 @@
 		9F7A8F230F8E705100D1AAD5 /* ADBToolkit */ = {
 			isa = PBXGroup;
 			children = (
+				05E6BA4F24B9709200BAAD2D /* Metal */,
 				9FAB449615DEADE000900A4C /* Drawing */,
 				9F010D1616CEC7C800B9CE0A /* Windows */,
 				9F2C458315DB7DC3009F4477 /* OpenGL */,
@@ -3272,6 +3341,7 @@
 		9FBC3C130F56D6E8001811F2 /* Bundled Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */,
 				55E6A0AD1C00C81D00285593 /* Boxer-MT32Emu.xcodeproj */,
 				55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */,
 				55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */,
@@ -3597,6 +3667,10 @@
 					ProductGroup = 55E6A09E1C00C80A00285593 /* Products */;
 					ProjectRef = 55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */;
 				},
+				{
+					ProductGroup = 05E6BA6124B9FA8D00BAAD2D /* Products */;
+					ProjectRef = 05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -3608,6 +3682,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OpenEmuShaders.framework;
+			remoteRef = 05E6BA6724B9FA8D00BAAD2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		05E6BA6A24B9FA8D00BAAD2D /* OpenEmuShadersTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OpenEmuShadersTests.xctest;
+			remoteRef = 05E6BA6924B9FA8D00BAAD2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		05E6BA6C24B9FA8D00BAAD2D /* Shader Studio.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Shader Studio.app";
+			remoteRef = 05E6BA6B24B9FA8D00BAAD2D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		55BBA4F2235EE142007AE319 /* BrowserSwift.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
@@ -3790,6 +3885,7 @@
 				9F1D50010F5C0966009F0AB9 /* BXEmulator.mm in Sources */,
 				9FC3B2550F62D9CE006DE439 /* BXSession+BXUIControls.m in Sources */,
 				9FB553E10F6EA30900A33017 /* BXCloseAlert.m in Sources */,
+				05E6BA7424BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m in Sources */,
 				9FB554220F6EAC5F00A33017 /* NSAlert+BXAlert.m in Sources */,
 				9F6311090F70F54300AB1155 /* BXHelpMenuController.m in Sources */,
 				9F573C5A0F8E18B10089D8B7 /* NSWorkspace+ADBMountedVolumes.m in Sources */,
@@ -3831,6 +3927,7 @@
 				9FF1756D11B25F4E00D0FCDC /* BXInputView.m in Sources */,
 				9FF175E711B279F500D0FCDC /* BXVideoHandler.mm in Sources */,
 				9FF2E9BD11E6F4950051E485 /* BXEmulatorConfiguration.m in Sources */,
+				05E6BA5924B972C900BAAD2D /* BXMetalRenderingView.m in Sources */,
 				9FAA44A711EB24A90042B986 /* NSString+ADBStringFormatting.m in Sources */,
 				9FA5D68311EB6CCC0012DFA5 /* ADBLineEnumerator.m in Sources */,
 				9FADFE5511EC7E1700990E91 /* ADBDigest.m in Sources */,
@@ -3964,6 +4061,7 @@
 				9F57684915DA27A300B50500 /* BXHUDSpinningProgressIndicator.m in Sources */,
 				9F2C458715DB7E77009F4477 /* ADBGLHelpers.m in Sources */,
 				9F3DD6CC15EE8047003C9A25 /* BXCHFlightstickProUSB.m in Sources */,
+				05E6BA6F24B9FACC00BAAD2D /* BXMetalLayer.m in Sources */,
 				9F872481160F7DF200400D8C /* BXSteppedShaderRenderer.m in Sources */,
 				9F872486160F89C600400D8C /* BXGLRenderingView+BXImageCapture.m in Sources */,
 				501F283B161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */,
@@ -5083,7 +5181,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_NO_PIE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5093,7 +5191,6 @@
 		9FE76B341139A11A005EF7B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = boxer;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -5125,10 +5222,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = "2.0.0-alpha";
+				MTL_LANGUAGE_REVISION = UseDeploymentTarget;
 				OTHER_CFLAGS = "-mstackrealign";
 				PRODUCT_BUNDLE_IDENTIFIER = net.washboardabs.boxer;
 				PRODUCT_NAME = Boxer;
-				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Boxer/Boxer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -5138,7 +5235,6 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = boxer;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -5167,10 +5263,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = "2.0.0-alpha";
+				MTL_LANGUAGE_REVISION = UseDeploymentTarget;
 				OTHER_CFLAGS = "-mstackrealign";
 				PRODUCT_BUNDLE_IDENTIFIER = net.washboardabs.boxer;
 				PRODUCT_NAME = Boxer;
-				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Boxer/Boxer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -5215,7 +5311,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_NO_PIE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};

@@ -13,3 +13,6 @@
 [submodule "Vendor/CwlDemangle"]
 	path = Vendor/CwlDemangle
 	url = https://github.com/MaddTheSane/CwlDemangle.git
+[submodule "Vendor/OpenEmuShaders"]
+	path = Vendor/OpenEmuShaders
+	url = https://github.com/OpenEmu/OpenEmu-Shaders.git
