@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0532FBF824BAA1A4008EAD86 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0532FBF624BAA1A4008EAD86 /* SDL2.framework */; };
 		05E6BA5924B972C900BAAD2D /* BXMetalRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA5824B972C900BAAD2D /* BXMetalRenderingView.m */; };
 		05E6BA6F24B9FACC00BAAD2D /* BXMetalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA6E24B9FACC00BAAD2D /* BXMetalLayer.m */; };
 		05E6BA7024B9FC2E00BAAD2D /* OpenEmuShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; };
 		05E6BA7124B9FC2E00BAAD2D /* OpenEmuShaders.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05E6BA7424BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA7324BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m */; };
-		501F283B161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */; };
-		501F283C161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */ = {isa = PBXBuildFile; fileRef = 501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */; };
+		05F9A20024BAA7AA00969496 /* SDL2_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9A1FE24BAA64100969496 /* SDL2_net.framework */; };
+		05F9A20124BAA7AA00969496 /* SDL2_net.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9A1FE24BAA64100969496 /* SDL2_net.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		05F9A20224BAA7AB00969496 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0532FBF624BAA1A4008EAD86 /* SDL2.framework */; };
+		05F9A20324BAA7AB00969496 /* SDL2.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 0532FBF624BAA1A4008EAD86 /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5548850E226A501000A879B3 /* drive_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55488508226A501000A879B3 /* drive_overlay.cpp */; };
 		5548850F226A501000A879B3 /* drive_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55488508226A501000A879B3 /* drive_overlay.cpp */; };
 		554E2B6D1BFAF6720038C506 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6C1BFAF6720038C506 /* Shared.xcassets */; };
@@ -71,7 +74,6 @@
 		9F1812BF12996340009BC4B2 /* YRKSpinningProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1812BD12996337009BC4B2 /* YRKSpinningProgressIndicator.m */; };
 		9F18133B129990D5009BC4B2 /* BXGamesFolderPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18133A129990D5009BC4B2 /* BXGamesFolderPanelController.m */; };
 		9F18BE9513EB07190047C217 /* BXInstallerScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F18BE9413EB07190047C217 /* BXInstallerScan.m */; };
-		9F19E7E112B3F48200496BCF /* SDL_sound.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCEDF3212B3DFFC00E856A4 /* SDL_sound.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F1CBA58120C796C00C5E926 /* BXImportSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CBA57120C796C00C5E926 /* BXImportSession.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9F1CBA97120C7D9000C5E926 /* BXImportWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CBA96120C7D9000C5E926 /* BXImportWindowController.m */; };
 		9F1CBAAB120C830600C5E926 /* BXImportSession+BXImportPolicies.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CBAAA120C830600C5E926 /* BXImportSession+BXImportPolicies.m */; };
@@ -99,7 +101,6 @@
 		9F24D25012243C9A009C1817 /* BXWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F24D24F12243C9A009C1817 /* BXWelcomeView.m */; };
 		9F26A9AD1458678B000184D1 /* BXThemedSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F26A9AC1458678B000184D1 /* BXThemedSliderCell.m */; };
 		9F2AC6E410EFFE8600CFFF72 /* BXBootlegCoverArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2AC6E310EFFE8600CFFF72 /* BXBootlegCoverArt.m */; };
-		9F2C458715DB7E77009F4477 /* ADBGLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2C458615DB7E77009F4477 /* ADBGLHelpers.m */; };
 		9F2D2F9915B8233800FAE848 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		9F2D2F9C15B8233800FAE848 /* BXSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC35210F56C7B7001811F2 /* BXSession.m */; };
 		9F2D2F9D15B8233800FAE848 /* BXEmulator+BXShell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC35230F56C7B7001811F2 /* BXEmulator+BXShell.mm */; };
@@ -133,8 +134,6 @@
 		9F2D2FCA15B8233800FAE848 /* BXInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F765648119403520082A06A /* BXInputController.m */; };
 		9F2D2FCB15B8233800FAE848 /* BXVideoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB4F9E311957B55006C8AC9 /* BXVideoFrame.m */; };
 		9F2D2FCD15B8233800FAE848 /* BXCursorFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1620D119E9AD700705EA5 /* BXCursorFadeAnimation.m */; };
-		9F2D2FCE15B8233800FAE848 /* BXBasicRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FECE18F11A31B8B00E0EBB6 /* BXBasicRenderer.m */; };
-		9F2D2FCF15B8233800FAE848 /* BXGLRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FECE1C111A3244500E0EBB6 /* BXGLRenderingView.m */; };
 		9F2D2FD015B8233800FAE848 /* BXInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1756C11B25F4E00D0FCDC /* BXInputView.m */; };
 		9F2D2FD115B8233800FAE848 /* BXVideoHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF175E611B279F500D0FCDC /* BXVideoHandler.mm */; };
 		9F2D2FD215B8233800FAE848 /* BXEmulatorConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2E9BC11E6F4950051E485 /* BXEmulatorConfiguration.m */; };
@@ -333,12 +332,6 @@
 		9F2D30CA15B8233800FAE848 /* BXExternalMIDIDevice+BXGeneralMIDISysexes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD8BEE314FFF7660073B4EC /* BXExternalMIDIDevice+BXGeneralMIDISysexes.m */; };
 		9F2D30CB15B8233800FAE848 /* BXKeyBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DF414153B058200233968 /* BXKeyBuffer.mm */; };
 		9F2D30CC15B8233800FAE848 /* BXFileTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F887104156F85F8006CDB5F /* BXFileTypes.m */; };
-		9F2D30CD15B8233800FAE848 /* ADBShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3237D157A42B3004492E8 /* ADBShader.m */; };
-		9F2D30CE15B8233800FAE848 /* ADBBSNESShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE32381157A7498004492E8 /* ADBBSNESShader.m */; };
-		9F2D30CF15B8233800FAE848 /* ADBTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF68FF7157B9C6600F8B5BC /* ADBTexture2D.m */; };
-		9F2D30D015B8233800FAE848 /* BXTexture2D+BXVideoFrameExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF68FFF157BE82B00F8B5BC /* BXTexture2D+BXVideoFrameExtensions.m */; };
-		9F2D30D115B8233800FAE848 /* BXSupersamplingRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4FC1141592508100319428 /* BXSupersamplingRenderer.m */; };
-		9F2D30D215B8233800FAE848 /* BXShaderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4FC117159253DA00319428 /* BXShaderRenderer.m */; };
 		9F2D30D315B8233800FAE848 /* NSKeyedArchiver+ADBArchivingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F12C515ADCE74007A070F /* NSKeyedArchiver+ADBArchivingAdditions.m */; };
 		9F2D30D615B8233800FAE848 /* LockClosing.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 9FBC31DD0F56C383001811F2 /* LockClosing.aiff */; };
 		9F2D30D715B8233800FAE848 /* LockOpening.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 9FBC31DE0F56C383001811F2 /* LockOpening.aiff */; };
@@ -351,21 +344,14 @@
 		9F2D315015B8233800FAE848 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC637FC13C09B10004478A3 /* CoreServices.framework */; };
 		9F2D315115B8233800FAE848 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		9F2D315215B8233800FAE848 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC32110F56C3E9001811F2 /* Carbon.framework */; };
-		9F2D315315B8233800FAE848 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C140F56D6E8001811F2 /* SDL.framework */; };
-		9F2D315415B8233800FAE848 /* SDL_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C150F56D6E8001811F2 /* SDL_net.framework */; };
-		9F2D315515B8233800FAE848 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C710F56E0AE001811F2 /* OpenGL.framework */; };
 		9F2D315615B8233800FAE848 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C760F56E0D7001811F2 /* AudioUnit.framework */; };
 		9F2D315715B8233800FAE848 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C770F56E0D7001811F2 /* CoreMIDI.framework */; };
 		9F2D315815B8233800FAE848 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2140FE0F59F28000A5A183 /* QuartzCore.framework */; };
 		9F2D315915B8233800FAE848 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4E042B0F67E72300427D50 /* AudioToolbox.framework */; };
 		9F2D315A15B8233800FAE848 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8A975F10E7EDDE00A4B72A /* libicucore.dylib */; };
 		9F2D315D15B8233800FAE848 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F61942312340F5400F35AB4 /* ScriptingBridge.framework */; };
-		9F2D315F15B8233800FAE848 /* SDL_sound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCEDF3212B3DFFC00E856A4 /* SDL_sound.framework */; };
 		9F2D316015B8233800FAE848 /* DiskArbitration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBAA8F3134AFABD0092BF95 /* DiskArbitration.framework */; };
 		9F2D316215B8233800FAE848 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F731B51136331A9005E564F /* IOKit.framework */; };
-		9F2D316715B8233800FAE848 /* SDL_sound.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCEDF3212B3DFFC00E856A4 /* SDL_sound.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9F2D316815B8233800FAE848 /* SDL_net.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C150F56D6E8001811F2 /* SDL_net.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9F2D316B15B8233800FAE848 /* SDL.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C140F56D6E8001811F2 /* SDL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F2D318915B826F600FAE848 /* DOSWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2D317E15B826EF00FAE848 /* DOSWindow.xib */; };
 		9F2D318B15B826FE00FAE848 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2D318215B826EF00FAE848 /* MainMenu.xib */; };
 		9F34BE40142B700100A69FAF /* BXCoalfaceAudio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F34BE3E142B700100A69FAF /* BXCoalfaceAudio.mm */; };
@@ -429,8 +415,6 @@
 		9F4BCC1A17E5CFF700140390 /* NSImage+ADBSaveImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2120FD1301597E002AB1B7 /* NSImage+ADBSaveImages.m */; };
 		9F4BCCD817E6190A00140390 /* Boxer.help in Resources */ = {isa = PBXBuildFile; fileRef = 9F4BCCD717E6190A00140390 /* Boxer.help */; };
 		9F4E042C0F67E72300427D50 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4E042B0F67E72300427D50 /* AudioToolbox.framework */; };
-		9F4FC1151592508100319428 /* BXSupersamplingRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4FC1141592508100319428 /* BXSupersamplingRenderer.m */; };
-		9F4FC118159253DA00319428 /* BXShaderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4FC117159253DA00319428 /* BXShaderRenderer.m */; };
 		9F511502129055FE00BEC0B9 /* BXImportCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F511501129055FE00BEC0B9 /* BXImportCommand.m */; };
 		9F53411812059E7900BCBF24 /* NSWorkspace+BXExecutableTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53411712059E7900BCBF24 /* NSWorkspace+BXExecutableTypes.m */; };
 		9F544A8010AB44C40030FED5 /* BXThemes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F544A7F10AB44C40030FED5 /* BXThemes.m */; };
@@ -599,10 +583,6 @@
 		9F80E7FF16DA3170001C3162 /* ADBFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80E7FE16DA316F001C3162 /* ADBFileHandle.m */; };
 		9F80E80016DA3170001C3162 /* ADBFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80E7FE16DA316F001C3162 /* ADBFileHandle.m */; };
 		9F86DB401431EF5F00A2EFB6 /* BXMIDIDeviceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F86DB3F1431EF5F00A2EFB6 /* BXMIDIDeviceMonitor.m */; };
-		9F872481160F7DF200400D8C /* BXSteppedShaderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F872480160F7DF200400D8C /* BXSteppedShaderRenderer.m */; };
-		9F872482160F7DF200400D8C /* BXSteppedShaderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F872480160F7DF200400D8C /* BXSteppedShaderRenderer.m */; };
-		9F872486160F89C600400D8C /* BXGLRenderingView+BXImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F872485160F89C600400D8C /* BXGLRenderingView+BXImageCapture.m */; };
-		9F872487160F89C600400D8C /* BXGLRenderingView+BXImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F872485160F89C600400D8C /* BXGLRenderingView+BXImageCapture.m */; };
 		9F887105156F85F9006CDB5F /* BXFileTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F887104156F85F8006CDB5F /* BXFileTypes.m */; };
 		9F8A976010E7EDDE00A4B72A /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8A975F10E7EDDE00A4B72A /* libicucore.dylib */; };
 		9F8A9CD2143E120B00C37A93 /* MT32ROMTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8A9CD1143E120B00C37A93 /* MT32ROMTypes.plist */; };
@@ -654,10 +634,6 @@
 		9FB60E9315C5643200CD0D63 /* NSError+ADBErrorHelpers.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FB60E9115C5643200CD0D63 /* NSError+ADBErrorHelpers.mm */; };
 		9FB642A313FEB71D00385DD3 /* ADBISOImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F81CFB813EEA3F4008F0265 /* ADBISOImage.m */; };
 		9FB642A413FEB71D00385DD3 /* ADBBinCueImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F98589613EF71F600E66877 /* ADBBinCueImage.m */; };
-		9FB6664B17EF9C95009C0D90 /* BXLayerBackedRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6664A17EF9C95009C0D90 /* BXLayerBackedRenderingView.m */; };
-		9FB6664C17EF9C95009C0D90 /* BXLayerBackedRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6664A17EF9C95009C0D90 /* BXLayerBackedRenderingView.m */; };
-		9FB6664F17EFB748009C0D90 /* BXRenderingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6664E17EFB748009C0D90 /* BXRenderingLayer.m */; };
-		9FB6665017EFB748009C0D90 /* BXRenderingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6664E17EFB748009C0D90 /* BXRenderingLayer.m */; };
 		9FB769E3164861D8000644C2 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB769E2164861D8000644C2 /* Quartz.framework */; };
 		9FB769E5164861E1000644C2 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB769E2164861D8000644C2 /* Quartz.framework */; };
 		9FBAA6BD134A1A430092BF95 /* BXCDImageImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAA6BC134A1A430092BF95 /* BXCDImageImport.m */; };
@@ -675,13 +651,8 @@
 		9FBC35330F56C7B7001811F2 /* BXDOSWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC35250F56C7B7001811F2 /* BXDOSWindowController.m */; };
 		9FBC35340F56C7B7001811F2 /* NSWindow+ADBWindowDimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC35260F56C7B7001811F2 /* NSWindow+ADBWindowDimensions.m */; };
 		9FBC35360F56C7B7001811F2 /* ADBGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC35280F56C7B7001811F2 /* ADBGeometry.m */; };
-		9FBC3C160F56D6E8001811F2 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C140F56D6E8001811F2 /* SDL.framework */; };
-		9FBC3C170F56D6E9001811F2 /* SDL_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C150F56D6E8001811F2 /* SDL_net.framework */; };
-		9FBC3C720F56E0AE001811F2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C710F56E0AE001811F2 /* OpenGL.framework */; };
 		9FBC3C780F56E0D7001811F2 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C760F56E0D7001811F2 /* AudioUnit.framework */; };
 		9FBC3C790F56E0D7001811F2 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C770F56E0D7001811F2 /* CoreMIDI.framework */; };
-		9FBC3D600F56EA82001811F2 /* SDL.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C140F56D6E8001811F2 /* SDL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9FBC3D610F56EA82001811F2 /* SDL_net.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C150F56D6E8001811F2 /* SDL_net.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FBD321710E5144C00031CB6 /* Brand.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FBD321610E5144C00031CB6 /* Brand.png */; };
 		9FBEC4F0142CE8300016964A /* BXMT32LCDDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEC4EF142CE8300016964A /* BXMT32LCDDisplay.m */; };
 		9FBF66AF11F35ADD00DAAB9A /* ADBSingleFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF66AE11F35ADD00DAAB9A /* ADBSingleFileTransfer.m */; };
@@ -719,7 +690,6 @@
 		9FCC2F9A1366EF170013F083 /* BXEmulatedKeyboard.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FCC2F991366EF170013F083 /* BXEmulatedKeyboard.mm */; };
 		9FCC2FF41366FA820013F083 /* BXInputController+BXKeyboardInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCC2FF31366FA820013F083 /* BXInputController+BXKeyboardInput.m */; };
 		9FCC303C13670F680013F083 /* KeyboardLayouts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FCC303B13670F680013F083 /* KeyboardLayouts.plist */; };
-		9FCEDF3312B3DFFC00E856A4 /* SDL_sound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCEDF3212B3DFFC00E856A4 /* SDL_sound.framework */; };
 		9FD011BD10C2A02F00670CE1 /* BXGameboxPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD011BC10C2A02F00670CE1 /* BXGameboxPanelController.m */; };
 		9FD012FB13AB87E500AF6FE8 /* BXThemedImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD012FA13AB87E500AF6FE8 /* BXThemedImageCell.m */; };
 		9FD1D6251364291600792011 /* DDHidDevice+ADBDeviceExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1D6241364291600792011 /* DDHidDevice+ADBDeviceExtensions.m */; };
@@ -757,18 +727,13 @@
 		9FDE34341351DFD4000DCE44 /* BXImportTipsPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE34331351DFD4000DCE44 /* BXImportTipsPanelController.m */; };
 		9FDFB46E15DBA38F004EA615 /* BXStandaloneAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDFB46D15DBA38E004EA615 /* BXStandaloneAboutController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9FDFB47F15DBBABC004EA615 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFB47C15DBBABC004EA615 /* Credits.html */; };
-		9FDFB48015DBC32D004EA615 /* ADBGLHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2C458615DB7E77009F4477 /* ADBGLHelpers.m */; };
 		9FDFB48215DBC73D004EA615 /* Help.help in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFB48115DBC73D004EA615 /* Help.help */; };
 		9FE1B61313FFBE430001640C /* NSImage+ADBImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B61213FFBE430001640C /* NSImage+ADBImageEffects.m */; };
 		9FE202480F6D749500B3A38C /* Snapshot.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 9FE202470F6D749500B3A38C /* Snapshot.aiff */; };
-		9FE3237E157A42B3004492E8 /* ADBShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3237D157A42B3004492E8 /* ADBShader.m */; };
-		9FE32382157A7498004492E8 /* ADBBSNESShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE32381157A7498004492E8 /* ADBBSNESShader.m */; };
 		9FE32383157A9559004492E8 /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = 9F84C86D157800DD00CCBCA7 /* Shaders */; };
 		9FE50B591365845200495EBE /* BXInputController+BXJoystickInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE50B581365845200495EBE /* BXInputController+BXJoystickInput.m */; };
 		9FE90BF711F8D1DC003CFFFF /* ADBDelegatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE90BF611F8D1DC003CFFFF /* ADBDelegatedView.m */; };
 		9FEAA3EC1204595B0085F008 /* ADBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEAA3EB1204595B0085F008 /* ADBOperation.m */; };
-		9FECE19011A31B8B00E0EBB6 /* BXBasicRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FECE18F11A31B8B00E0EBB6 /* BXBasicRenderer.m */; };
-		9FECE1C211A3244500E0EBB6 /* BXGLRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FECE1C111A3244500E0EBB6 /* BXGLRenderingView.m */; };
 		9FEF98011191E1EF002024DF /* BXEmulatedMouse.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF98001191E1EF002024DF /* BXEmulatedMouse.mm */; };
 		9FF1562914506DBA00545317 /* BXThemedProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1562814506DBA00545317 /* BXThemedProgressIndicator.m */; };
 		9FF1562D14506E7200545317 /* BXHUDLevelIndicatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1562C14506E7200545317 /* BXHUDLevelIndicatorCell.m */; };
@@ -776,8 +741,6 @@
 		9FF1756D11B25F4E00D0FCDC /* BXInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1756C11B25F4E00D0FCDC /* BXInputView.m */; };
 		9FF175E711B279F500D0FCDC /* BXVideoHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF175E611B279F500D0FCDC /* BXVideoHandler.mm */; };
 		9FF2E9BD11E6F4950051E485 /* BXEmulatorConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2E9BC11E6F4950051E485 /* BXEmulatorConfiguration.m */; };
-		9FF68FF8157B9C6600F8B5BC /* ADBTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF68FF7157B9C6600F8B5BC /* ADBTexture2D.m */; };
-		9FF69000157BE82C00F8B5BC /* BXTexture2D+BXVideoFrameExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF68FFF157BE82B00F8B5BC /* BXTexture2D+BXVideoFrameExtensions.m */; };
 		9FF865CF134DAB5A001CE857 /* ADBTaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF865CE134DAB5A001CE857 /* ADBTaskOperation.m */; };
 		9FF86678134DCA16001CE857 /* cdrdao in Resources */ = {isa = PBXBuildFile; fileRef = 9FF86676134DCA16001CE857 /* cdrdao */; };
 		9FF86679134DCA16001CE857 /* toc2cue in Resources */ = {isa = PBXBuildFile; fileRef = 9FF86677134DCA16001CE857 /* toc2cue */; };
@@ -932,12 +895,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9F2D316715B8233800FAE848 /* SDL_sound.framework in Copy Bundled Frameworks */,
 				55E6A0C71C00C88A00285593 /* DDHidLib.framework in Copy Bundled Frameworks */,
-				9F2D316815B8233800FAE848 /* SDL_net.framework in Copy Bundled Frameworks */,
 				55E6A0C31C00C88A00285593 /* MT32Emu.framework in Copy Bundled Frameworks */,
 				55E6A0CB1C00C88A00285593 /* BGHUDAppKit.framework in Copy Bundled Frameworks */,
-				9F2D316B15B8233800FAE848 /* SDL.framework in Copy Bundled Frameworks */,
 			);
 			name = "Copy Bundled Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,14 +908,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9F19E7E112B3F48200496BCF /* SDL_sound.framework in Copy Bundled Frameworks */,
-				9FBC3D610F56EA82001811F2 /* SDL_net.framework in Copy Bundled Frameworks */,
 				55E6A0BF1C00C86200285593 /* BGHUDAppKit.framework in Copy Bundled Frameworks */,
 				9F20C29711E5DA68005AF541 /* Sparkle.framework in Copy Bundled Frameworks */,
-				9FBC3D600F56EA82001811F2 /* SDL.framework in Copy Bundled Frameworks */,
 				55E6A0BB1C00C86200285593 /* DDHidLib.framework in Copy Bundled Frameworks */,
 				55E6A0B71C00C86200285593 /* MT32Emu.framework in Copy Bundled Frameworks */,
 				05E6BA7124B9FC2E00BAAD2D /* OpenEmuShaders.framework in Copy Bundled Frameworks */,
+				05F9A20124BAA7AA00969496 /* SDL2_net.framework in Copy Bundled Frameworks */,
+				05F9A20324BAA7AB00969496 /* SDL2.framework in Copy Bundled Frameworks */,
 			);
 			name = "Copy Bundled Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -963,6 +922,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0532FBF624BAA1A4008EAD86 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		0580F26924B0E7F10099CB8E /* Boxer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Boxer.entitlements; sourceTree = "<group>"; };
 		05E6BA5724B972C900BAAD2D /* BXMetalRenderingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BXMetalRenderingView.h; sourceTree = "<group>"; };
 		05E6BA5824B972C900BAAD2D /* BXMetalRenderingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXMetalRenderingView.m; sourceTree = "<group>"; };
@@ -972,13 +932,12 @@
 		05E6BA7224BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BXMetalRenderingView+BXImageCapture.h"; sourceTree = "<group>"; };
 		05E6BA7324BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BXMetalRenderingView+BXImageCapture.m"; sourceTree = "<group>"; };
 		05E6BA7524BA279000BAAD2D /* BXMetalRenderingView+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BXMetalRenderingView+Private.h"; sourceTree = "<group>"; };
+		05F9A1FE24BAA64100969496 /* SDL2_net.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2_net.framework; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		501F2839161303DA00B1ED53 /* BXBuiltinShaderRenderers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXBuiltinShaderRenderers.h; sourceTree = "<group>"; };
-		501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBuiltinShaderRenderers.m; sourceTree = "<group>"; };
 		55488508226A501000A879B3 /* drive_overlay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drive_overlay.cpp; sourceTree = "<group>"; };
 		554E2B6C1BFAF6720038C506 /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shared.xcassets; sourceTree = "<group>"; };
 		554E2B6F1BFAF6D90038C506 /* Boxer only.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Boxer only.xcassets"; sourceTree = "<group>"; };
@@ -1147,8 +1106,6 @@
 		9F26A9AC1458678B000184D1 /* BXThemedSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXThemedSliderCell.m; sourceTree = "<group>"; };
 		9F2AC6E210EFFE8600CFFF72 /* BXBootlegCoverArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXBootlegCoverArt.h; sourceTree = "<group>"; };
 		9F2AC6E310EFFE8600CFFF72 /* BXBootlegCoverArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBootlegCoverArt.m; sourceTree = "<group>"; usesTabs = 1; };
-		9F2C458515DB7E77009F4477 /* ADBGLHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBGLHelpers.h; sourceTree = "<group>"; };
-		9F2C458615DB7E77009F4477 /* ADBGLHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBGLHelpers.m; sourceTree = "<group>"; };
 		9F2D317215B8233800FAE848 /* Boxer Standalone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxer Standalone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2D317415B8233900FAE848 /* Boxer Standalone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Boxer Standalone-Info.plist"; sourceTree = "<group>"; };
 		9F348A9D128F004A0034E780 /* BXWelcomeButtonDraggingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXWelcomeButtonDraggingDelegate.h; sourceTree = "<group>"; };
@@ -1239,11 +1196,6 @@
 		9F4B1AF9165C122F001AE063 /* BXDriveItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXDriveItem.m; sourceTree = "<group>"; };
 		9F4BCCD717E6190A00140390 /* Boxer.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Boxer.help; sourceTree = "<group>"; };
 		9F4E042B0F67E72300427D50 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9F4FC1131592508100319428 /* BXSupersamplingRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXSupersamplingRenderer.h; sourceTree = "<group>"; };
-		9F4FC1141592508100319428 /* BXSupersamplingRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXSupersamplingRenderer.m; sourceTree = "<group>"; };
-		9F4FC116159253DA00319428 /* BXShaderRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXShaderRenderer.h; sourceTree = "<group>"; };
-		9F4FC117159253DA00319428 /* BXShaderRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXShaderRenderer.m; sourceTree = "<group>"; };
-		9F4FC1191592588600319428 /* BXBasicRendererPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BXBasicRendererPrivate.h; sourceTree = "<group>"; };
 		9F511500129055FE00BEC0B9 /* BXImportCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXImportCommand.h; sourceTree = "<group>"; };
 		9F511501129055FE00BEC0B9 /* BXImportCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXImportCommand.m; sourceTree = "<group>"; };
 		9F53411612059E7900BCBF24 /* NSWorkspace+BXExecutableTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWorkspace+BXExecutableTypes.h"; sourceTree = "<group>"; };
@@ -1610,10 +1562,6 @@
 		9F84C86D157800DD00CCBCA7 /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shaders; sourceTree = "<group>"; };
 		9F86DB3E1431EF5F00A2EFB6 /* BXMIDIDeviceMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXMIDIDeviceMonitor.h; sourceTree = "<group>"; };
 		9F86DB3F1431EF5F00A2EFB6 /* BXMIDIDeviceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXMIDIDeviceMonitor.m; sourceTree = "<group>"; };
-		9F87247F160F7DF200400D8C /* BXSteppedShaderRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXSteppedShaderRenderer.h; sourceTree = "<group>"; };
-		9F872480160F7DF200400D8C /* BXSteppedShaderRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXSteppedShaderRenderer.m; sourceTree = "<group>"; };
-		9F872484160F89C600400D8C /* BXGLRenderingView+BXImageCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BXGLRenderingView+BXImageCapture.h"; sourceTree = "<group>"; };
-		9F872485160F89C600400D8C /* BXGLRenderingView+BXImageCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BXGLRenderingView+BXImageCapture.m"; sourceTree = "<group>"; };
 		9F887103156F85F8006CDB5F /* BXFileTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFileTypes.h; sourceTree = "<group>"; };
 		9F887104156F85F8006CDB5F /* BXFileTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFileTypes.m; sourceTree = "<group>"; };
 		9F8A975F10E7EDDE00A4B72A /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -1689,10 +1637,6 @@
 		9FB60E8D15C5552F00CD0D63 /* NSURL+ADBFilesystemHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ADBFilesystemHelpers.m"; sourceTree = "<group>"; };
 		9FB60E9015C5643200CD0D63 /* NSError+ADBErrorHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+ADBErrorHelpers.h"; sourceTree = "<group>"; };
 		9FB60E9115C5643200CD0D63 /* NSError+ADBErrorHelpers.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSError+ADBErrorHelpers.mm"; sourceTree = "<group>"; };
-		9FB6664917EF9C95009C0D90 /* BXLayerBackedRenderingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXLayerBackedRenderingView.h; sourceTree = "<group>"; };
-		9FB6664A17EF9C95009C0D90 /* BXLayerBackedRenderingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXLayerBackedRenderingView.m; sourceTree = "<group>"; };
-		9FB6664D17EFB748009C0D90 /* BXRenderingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXRenderingLayer.h; sourceTree = "<group>"; };
-		9FB6664E17EFB748009C0D90 /* BXRenderingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXRenderingLayer.m; sourceTree = "<group>"; };
 		9FB769E2164861D8000644C2 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		9FBAA6BB134A1A430092BF95 /* BXCDImageImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXCDImageImport.h; sourceTree = "<group>"; };
 		9FBAA6BC134A1A430092BF95 /* BXCDImageImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXCDImageImport.m; sourceTree = "<group>"; };
@@ -1720,8 +1664,6 @@
 		9FBC35260F56C7B7001811F2 /* NSWindow+ADBWindowDimensions.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = "NSWindow+ADBWindowDimensions.m"; sourceTree = "<group>"; };
 		9FBC35280F56C7B7001811F2 /* ADBGeometry.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = ADBGeometry.m; sourceTree = "<group>"; };
 		9FBC3A7F0F56CEA2001811F2 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		9FBC3C140F56D6E8001811F2 /* SDL.framework */ = {isa = PBXFileReference; comments = "This is the stock SDL 1.2.14 framework, downloaded from http://www.libsdl.org/"; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
-		9FBC3C150F56D6E8001811F2 /* SDL_net.framework */ = {isa = PBXFileReference; comments = "This is the stock SDL_Net 1.2.7 framework, downloaded from http://www.libsdl.org/projects/SDL_net/"; lastKnownFileType = wrapper.framework; path = SDL_net.framework; sourceTree = "<group>"; };
 		9FBC3C710F56E0AE001811F2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		9FBC3C760F56E0D7001811F2 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		9FBC3C770F56E0D7001811F2 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
@@ -1772,7 +1714,6 @@
 		9FCC2FF31366FA820013F083 /* BXInputController+BXKeyboardInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BXInputController+BXKeyboardInput.m"; sourceTree = "<group>"; };
 		9FCC2FF81366FB840013F083 /* BXInputControllerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXInputControllerPrivate.h; sourceTree = "<group>"; };
 		9FCC303B13670F680013F083 /* KeyboardLayouts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeyboardLayouts.plist; sourceTree = "<group>"; };
-		9FCEDF3212B3DFFC00E856A4 /* SDL_sound.framework */ = {isa = PBXFileReference; comments = "This is a fork of the standard BGHUDAppkit framework built with CoreAudio and OGG support. The sourcecode for this framework is available at http://bitbucket.org/alunbestor/sdl_sound-boxer/"; lastKnownFileType = wrapper.framework; path = SDL_sound.framework; sourceTree = "<group>"; };
 		9FD011BB10C2A02F00670CE1 /* BXGameboxPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXGameboxPanelController.h; sourceTree = "<group>"; };
 		9FD011BC10C2A02F00670CE1 /* BXGameboxPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXGameboxPanelController.m; sourceTree = "<group>"; };
 		9FD012F913AB87E500AF6FE8 /* BXThemedImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXThemedImageCell.h; sourceTree = "<group>"; };
@@ -1836,10 +1777,6 @@
 		9FE1B61113FFBE430001640C /* NSImage+ADBImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+ADBImageEffects.h"; sourceTree = "<group>"; };
 		9FE1B61213FFBE430001640C /* NSImage+ADBImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+ADBImageEffects.m"; sourceTree = "<group>"; };
 		9FE202470F6D749500B3A38C /* Snapshot.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Snapshot.aiff; sourceTree = "<group>"; };
-		9FE3237C157A42B3004492E8 /* ADBShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBShader.h; sourceTree = "<group>"; };
-		9FE3237D157A42B3004492E8 /* ADBShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBShader.m; sourceTree = "<group>"; };
-		9FE32380157A7498004492E8 /* ADBBSNESShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBBSNESShader.h; sourceTree = "<group>"; };
-		9FE32381157A7498004492E8 /* ADBBSNESShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBBSNESShader.m; sourceTree = "<group>"; };
 		9FE50B571365845200495EBE /* BXInputController+BXJoystickInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BXInputController+BXJoystickInput.h"; sourceTree = "<group>"; };
 		9FE50B581365845200495EBE /* BXInputController+BXJoystickInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BXInputController+BXJoystickInput.m"; sourceTree = "<group>"; };
 		9FE90BF511F8D1DC003CFFFF /* ADBDelegatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBDelegatedView.h; sourceTree = "<group>"; };
@@ -1849,10 +1786,6 @@
 		9FEAA3EA1204595B0085F008 /* ADBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBOperation.h; sourceTree = "<group>"; };
 		9FEAA3EB1204595B0085F008 /* ADBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBOperation.m; sourceTree = "<group>"; };
 		9FEBB70E11DF9BB50055933F /* BXEmulatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXEmulatorDelegate.h; sourceTree = "<group>"; };
-		9FECE18E11A31B8B00E0EBB6 /* BXBasicRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXBasicRenderer.h; sourceTree = "<group>"; };
-		9FECE18F11A31B8B00E0EBB6 /* BXBasicRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBasicRenderer.m; sourceTree = "<group>"; };
-		9FECE1C011A3244500E0EBB6 /* BXGLRenderingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXGLRenderingView.h; sourceTree = "<group>"; };
-		9FECE1C111A3244500E0EBB6 /* BXGLRenderingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXGLRenderingView.m; sourceTree = "<group>"; };
 		9FEF97FF1191E1EF002024DF /* BXEmulatedMouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXEmulatedMouse.h; sourceTree = "<group>"; };
 		9FEF98001191E1EF002024DF /* BXEmulatedMouse.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BXEmulatedMouse.mm; sourceTree = "<group>"; };
 		9FF1562714506DBA00545317 /* BXThemedProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXThemedProgressIndicator.h; sourceTree = "<group>"; };
@@ -1868,10 +1801,6 @@
 		9FF2E9BB11E6F4950051E485 /* BXEmulatorConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXEmulatorConfiguration.h; sourceTree = "<group>"; usesTabs = 1; };
 		9FF2E9BC11E6F4950051E485 /* BXEmulatorConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXEmulatorConfiguration.m; sourceTree = "<group>"; usesTabs = 1; };
 		9FF5413C169990A100270658 /* ADBUndoExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBUndoExtensions.h; sourceTree = "<group>"; };
-		9FF68FF6157B9C6600F8B5BC /* ADBTexture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBTexture2D.h; sourceTree = "<group>"; };
-		9FF68FF7157B9C6600F8B5BC /* ADBTexture2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBTexture2D.m; sourceTree = "<group>"; };
-		9FF68FFE157BE82B00F8B5BC /* BXTexture2D+BXVideoFrameExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BXTexture2D+BXVideoFrameExtensions.h"; sourceTree = "<group>"; };
-		9FF68FFF157BE82B00F8B5BC /* BXTexture2D+BXVideoFrameExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BXTexture2D+BXVideoFrameExtensions.m"; sourceTree = "<group>"; };
 		9FF865CD134DAB5A001CE857 /* ADBTaskOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBTaskOperation.h; sourceTree = "<group>"; };
 		9FF865CE134DAB5A001CE857 /* ADBTaskOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBTaskOperation.m; sourceTree = "<group>"; };
 		9FF86676134DCA16001CE857 /* cdrdao */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = cdrdao; sourceTree = "<group>"; };
@@ -1939,18 +1868,16 @@
 				55E6A0BE1C00C86200285593 /* BGHUDAppKit.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				9FBC32120F56C3E9001811F2 /* Carbon.framework in Frameworks */,
-				9FBC3C160F56D6E8001811F2 /* SDL.framework in Frameworks */,
-				9FBC3C170F56D6E9001811F2 /* SDL_net.framework in Frameworks */,
-				9FCEDF3312B3DFFC00E856A4 /* SDL_sound.framework in Frameworks */,
-				9FBC3C720F56E0AE001811F2 /* OpenGL.framework in Frameworks */,
 				9FBC3C780F56E0D7001811F2 /* AudioUnit.framework in Frameworks */,
 				9FBC3C790F56E0D7001811F2 /* CoreMIDI.framework in Frameworks */,
 				9FB769E3164861D8000644C2 /* Quartz.framework in Frameworks */,
+				05F9A20024BAA7AA00969496 /* SDL2_net.framework in Frameworks */,
 				55E6A0B61C00C86200285593 /* MT32Emu.framework in Frameworks */,
 				9F2140FF0F59F28000A5A183 /* QuartzCore.framework in Frameworks */,
 				9F4E042C0F67E72300427D50 /* AudioToolbox.framework in Frameworks */,
 				9F8A976010E7EDDE00A4B72A /* libicucore.dylib in Frameworks */,
 				9F20C28B11E5D848005AF541 /* Sparkle.framework in Frameworks */,
+				05F9A20224BAA7AB00969496 /* SDL2.framework in Frameworks */,
 				9F61942412340F5400F35AB4 /* ScriptingBridge.framework in Frameworks */,
 				55E6A0BA1C00C86200285593 /* DDHidLib.framework in Frameworks */,
 				9FBAA8F4134AFABD0092BF95 /* DiskArbitration.framework in Frameworks */,
@@ -1966,9 +1893,6 @@
 				9F2D315015B8233800FAE848 /* CoreServices.framework in Frameworks */,
 				9F2D315115B8233800FAE848 /* Cocoa.framework in Frameworks */,
 				9F2D315215B8233800FAE848 /* Carbon.framework in Frameworks */,
-				9F2D315315B8233800FAE848 /* SDL.framework in Frameworks */,
-				9F2D315415B8233800FAE848 /* SDL_net.framework in Frameworks */,
-				9F2D315515B8233800FAE848 /* OpenGL.framework in Frameworks */,
 				9F2D315615B8233800FAE848 /* AudioUnit.framework in Frameworks */,
 				9F2D315715B8233800FAE848 /* CoreMIDI.framework in Frameworks */,
 				9FB769E5164861E1000644C2 /* Quartz.framework in Frameworks */,
@@ -1978,7 +1902,7 @@
 				9F2D315A15B8233800FAE848 /* libicucore.dylib in Frameworks */,
 				55E6A0C21C00C88A00285593 /* MT32Emu.framework in Frameworks */,
 				9F2D315D15B8233800FAE848 /* ScriptingBridge.framework in Frameworks */,
-				9F2D315F15B8233800FAE848 /* SDL_sound.framework in Frameworks */,
+				0532FBF824BAA1A4008EAD86 /* SDL2.framework in Frameworks */,
 				9F2D316015B8233800FAE848 /* DiskArbitration.framework in Frameworks */,
 				55E6A0C61C00C88A00285593 /* DDHidLib.framework in Frameworks */,
 				9F2D316215B8233800FAE848 /* IOKit.framework in Frameworks */,
@@ -1996,13 +1920,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05E6BA4F24B9709200BAAD2D /* Metal */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Metal;
-			sourceTree = "<group>";
-		};
 		05E6BA5624B971AD00BAAD2D /* Metal Rendering */ = {
 			isa = PBXGroup;
 			children = (
@@ -2407,32 +2324,11 @@
 		9F23EB0111390A2600DC5AB6 /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
-				9FECE1C011A3244500E0EBB6 /* BXGLRenderingView.h */,
-				9FECE1C111A3244500E0EBB6 /* BXGLRenderingView.m */,
-				9FB6664917EF9C95009C0D90 /* BXLayerBackedRenderingView.h */,
-				9FB6664A17EF9C95009C0D90 /* BXLayerBackedRenderingView.m */,
-				9FB6664D17EFB748009C0D90 /* BXRenderingLayer.h */,
-				9FB6664E17EFB748009C0D90 /* BXRenderingLayer.m */,
 				9FFBF67011A7F8F4000A1863 /* BXFrameRenderingView.h */,
 				9F4175EF119DCF7E00646B15 /* BXFrameRateCounterLayer.h */,
 				9F4175F0119DCF7E00646B15 /* BXFrameRateCounterLayer.m */,
 				9FB4F9E211957B55006C8AC9 /* BXVideoFrame.h */,
 				9FB4F9E311957B55006C8AC9 /* BXVideoFrame.m */,
-				9FF68FFE157BE82B00F8B5BC /* BXTexture2D+BXVideoFrameExtensions.h */,
-				9FF68FFF157BE82B00F8B5BC /* BXTexture2D+BXVideoFrameExtensions.m */,
-				9FECE18E11A31B8B00E0EBB6 /* BXBasicRenderer.h */,
-				9FECE18F11A31B8B00E0EBB6 /* BXBasicRenderer.m */,
-				9F4FC1191592588600319428 /* BXBasicRendererPrivate.h */,
-				9F4FC1131592508100319428 /* BXSupersamplingRenderer.h */,
-				9F4FC1141592508100319428 /* BXSupersamplingRenderer.m */,
-				9F4FC116159253DA00319428 /* BXShaderRenderer.h */,
-				9F4FC117159253DA00319428 /* BXShaderRenderer.m */,
-				9F87247F160F7DF200400D8C /* BXSteppedShaderRenderer.h */,
-				9F872480160F7DF200400D8C /* BXSteppedShaderRenderer.m */,
-				9F872484160F89C600400D8C /* BXGLRenderingView+BXImageCapture.h */,
-				9F872485160F89C600400D8C /* BXGLRenderingView+BXImageCapture.m */,
-				501F2839161303DA00B1ED53 /* BXBuiltinShaderRenderers.h */,
-				501F283A161303DA00B1ED53 /* BXBuiltinShaderRenderers.m */,
 			);
 			path = Rendering;
 			sourceTree = "<group>";
@@ -2508,21 +2404,6 @@
 			name = Artwork;
 			sourceTree = "<group>";
 			usesTabs = 1;
-		};
-		9F2C458315DB7DC3009F4477 /* OpenGL */ = {
-			isa = PBXGroup;
-			children = (
-				9F2C458515DB7E77009F4477 /* ADBGLHelpers.h */,
-				9F2C458615DB7E77009F4477 /* ADBGLHelpers.m */,
-				9FE3237C157A42B3004492E8 /* ADBShader.h */,
-				9FE3237D157A42B3004492E8 /* ADBShader.m */,
-				9FE32380157A7498004492E8 /* ADBBSNESShader.h */,
-				9FE32381157A7498004492E8 /* ADBBSNESShader.m */,
-				9FF68FF6157B9C6600F8B5BC /* ADBTexture2D.h */,
-				9FF68FF7157B9C6600F8B5BC /* ADBTexture2D.m */,
-			);
-			path = OpenGL;
-			sourceTree = "<group>";
 		};
 		9F2D317915B823D300FAE848 /* Standalone */ = {
 			isa = PBXGroup;
@@ -3115,10 +2996,8 @@
 		9F7A8F230F8E705100D1AAD5 /* ADBToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				05E6BA4F24B9709200BAAD2D /* Metal */,
 				9FAB449615DEADE000900A4C /* Drawing */,
 				9F010D1616CEC7C800B9CE0A /* Windows */,
-				9F2C458315DB7DC3009F4477 /* OpenGL */,
 				9F9840FE15BEE5F700B50CDA /* Filesystem */,
 				9F81CFB613EEA3D7008F0265 /* Disk Images */,
 				9FD1D622136428F800792011 /* HID */,
@@ -3347,9 +3226,8 @@
 				55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */,
 				E5CF183F128F81AF0065844A /* PhysFS.framework */,
 				9F20C28A11E5D848005AF541 /* Sparkle.framework */,
-				9FBC3C140F56D6E8001811F2 /* SDL.framework */,
-				9FBC3C150F56D6E8001811F2 /* SDL_net.framework */,
-				9FCEDF3212B3DFFC00E856A4 /* SDL_sound.framework */,
+				0532FBF624BAA1A4008EAD86 /* SDL2.framework */,
+				05F9A1FE24BAA64100969496 /* SDL2_net.framework */,
 			);
 			name = "Bundled Frameworks";
 			path = Frameworks;
@@ -3878,7 +3756,6 @@
 				9FBC352F0F56C7B7001811F2 /* BXSession.m in Sources */,
 				9FBC35310F56C7B7001811F2 /* BXEmulator+BXShell.mm in Sources */,
 				9FBC35320F56C7B7001811F2 /* BXDOSWindow.m in Sources */,
-				9FB6664F17EFB748009C0D90 /* BXRenderingLayer.m in Sources */,
 				9FBC35330F56C7B7001811F2 /* BXDOSWindowController.m in Sources */,
 				9FBC35340F56C7B7001811F2 /* NSWindow+ADBWindowDimensions.m in Sources */,
 				9FBC35360F56C7B7001811F2 /* ADBGeometry.m in Sources */,
@@ -3922,8 +3799,6 @@
 				9F765649119403520082A06A /* BXInputController.m in Sources */,
 				9FB4F9E411957B55006C8AC9 /* BXVideoFrame.m in Sources */,
 				9FC1620E119E9AD700705EA5 /* BXCursorFadeAnimation.m in Sources */,
-				9FECE19011A31B8B00E0EBB6 /* BXBasicRenderer.m in Sources */,
-				9FECE1C211A3244500E0EBB6 /* BXGLRenderingView.m in Sources */,
 				9FF1756D11B25F4E00D0FCDC /* BXInputView.m in Sources */,
 				9FF175E711B279F500D0FCDC /* BXVideoHandler.mm in Sources */,
 				9FF2E9BD11E6F4950051E485 /* BXEmulatorConfiguration.m in Sources */,
@@ -4045,12 +3920,6 @@
 				9FD8BEE414FFF7660073B4EC /* BXExternalMIDIDevice+BXGeneralMIDISysexes.m in Sources */,
 				9F9DF415153B058200233968 /* BXKeyBuffer.mm in Sources */,
 				9F887105156F85F9006CDB5F /* BXFileTypes.m in Sources */,
-				9FE3237E157A42B3004492E8 /* ADBShader.m in Sources */,
-				9FE32382157A7498004492E8 /* ADBBSNESShader.m in Sources */,
-				9FF68FF8157B9C6600F8B5BC /* ADBTexture2D.m in Sources */,
-				9FF69000157BE82C00F8B5BC /* BXTexture2D+BXVideoFrameExtensions.m in Sources */,
-				9F4FC1151592508100319428 /* BXSupersamplingRenderer.m in Sources */,
-				9F4FC118159253DA00319428 /* BXShaderRenderer.m in Sources */,
 				9F5F12C615ADCE74007A070F /* NSKeyedArchiver+ADBArchivingAdditions.m in Sources */,
 				9FCB7B1015B844AB00CC7CC7 /* BXBaseAppController.m in Sources */,
 				9F98410215BEE64400B50CDA /* ADBShadowedFilesystem.m in Sources */,
@@ -4059,12 +3928,8 @@
 				9FA2C09215C8409000380261 /* BXDOSWindowBackgroundView.m in Sources */,
 				9FCA6D9615C85D8500E1650C /* BXLaunchPanelController.m in Sources */,
 				9F57684915DA27A300B50500 /* BXHUDSpinningProgressIndicator.m in Sources */,
-				9F2C458715DB7E77009F4477 /* ADBGLHelpers.m in Sources */,
 				9F3DD6CC15EE8047003C9A25 /* BXCHFlightstickProUSB.m in Sources */,
 				05E6BA6F24B9FACC00BAAD2D /* BXMetalLayer.m in Sources */,
-				9F872481160F7DF200400D8C /* BXSteppedShaderRenderer.m in Sources */,
-				9F872486160F89C600400D8C /* BXGLRenderingView+BXImageCapture.m in Sources */,
-				501F283B161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */,
 				9FD6AA0E16314A5B002B774E /* directlpt_linux.cpp in Sources */,
 				9FD6AA1016314A5B002B774E /* directlpt_win32.cpp in Sources */,
 				9FD6AA1216314A5B002B774E /* filelpt.cpp in Sources */,
@@ -4170,7 +4035,6 @@
 				9F7721BF12B38C4400072AE8 /* serialport.cpp in Sources */,
 				9F7721C012B38C4400072AE8 /* softmodem.cpp in Sources */,
 				9F7721C112B38C4400072AE8 /* tandy_sound.cpp in Sources */,
-				9FB6664B17EF9C95009C0D90 /* BXLayerBackedRenderingView.m in Sources */,
 				9F7721C212B38C4400072AE8 /* timer.cpp in Sources */,
 				9F7721C312B38C4400072AE8 /* vga.cpp in Sources */,
 				9F7721C412B38C4400072AE8 /* vga_attr.cpp in Sources */,
@@ -4220,7 +4084,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FB6664C17EF9C95009C0D90 /* BXLayerBackedRenderingView.m in Sources */,
 				9F2D2F9915B8233800FAE848 /* main.m in Sources */,
 				9F2D2F9C15B8233800FAE848 /* BXSession.m in Sources */,
 				9F2D2F9D15B8233800FAE848 /* BXEmulator+BXShell.mm in Sources */,
@@ -4254,8 +4117,6 @@
 				9F2D2FCA15B8233800FAE848 /* BXInputController.m in Sources */,
 				9F2D2FCB15B8233800FAE848 /* BXVideoFrame.m in Sources */,
 				9F2D2FCD15B8233800FAE848 /* BXCursorFadeAnimation.m in Sources */,
-				9F2D2FCE15B8233800FAE848 /* BXBasicRenderer.m in Sources */,
-				9F2D2FCF15B8233800FAE848 /* BXGLRenderingView.m in Sources */,
 				9F2D2FD015B8233800FAE848 /* BXInputView.m in Sources */,
 				9F2D2FD115B8233800FAE848 /* BXVideoHandler.mm in Sources */,
 				9F2D2FD215B8233800FAE848 /* BXEmulatorConfiguration.m in Sources */,
@@ -4327,7 +4188,6 @@
 				9F2D303B15B8233800FAE848 /* dos_tables.cpp in Sources */,
 				9F2D303C15B8233800FAE848 /* drive_cache.cpp in Sources */,
 				9F2D303D15B8233800FAE848 /* drive_fat.cpp in Sources */,
-				9FB6665017EFB748009C0D90 /* BXRenderingLayer.m in Sources */,
 				9F2D303E15B8233800FAE848 /* drive_iso.cpp in Sources */,
 				9F2D303F15B8233800FAE848 /* drive_local.cpp in Sources */,
 				9F2D304015B8233800FAE848 /* drive_physfs.cpp in Sources */,
@@ -4463,13 +4323,7 @@
 				9F2D30CA15B8233800FAE848 /* BXExternalMIDIDevice+BXGeneralMIDISysexes.m in Sources */,
 				9F2D30CB15B8233800FAE848 /* BXKeyBuffer.mm in Sources */,
 				9F2D30CC15B8233800FAE848 /* BXFileTypes.m in Sources */,
-				9F2D30CD15B8233800FAE848 /* ADBShader.m in Sources */,
-				9F2D30CE15B8233800FAE848 /* ADBBSNESShader.m in Sources */,
-				9F2D30CF15B8233800FAE848 /* ADBTexture2D.m in Sources */,
-				9F2D30D015B8233800FAE848 /* BXTexture2D+BXVideoFrameExtensions.m in Sources */,
 				558CE44E20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */,
-				9F2D30D115B8233800FAE848 /* BXSupersamplingRenderer.m in Sources */,
-				9F2D30D215B8233800FAE848 /* BXShaderRenderer.m in Sources */,
 				9F2D30D315B8233800FAE848 /* NSKeyedArchiver+ADBArchivingAdditions.m in Sources */,
 				9FCB7B0D15B842E000CC7CC7 /* BXStandaloneAppController.m in Sources */,
 				9FCB7B1115B844AB00CC7CC7 /* BXBaseAppController.m in Sources */,
@@ -4487,10 +4341,6 @@
 				9F458D9E15D83B9000DF9102 /* BXDOSWindowBackgroundView.m in Sources */,
 				9F57684A15DA27A300B50500 /* BXHUDSpinningProgressIndicator.m in Sources */,
 				9FDFB46E15DBA38F004EA615 /* BXStandaloneAboutController.m in Sources */,
-				9FDFB48015DBC32D004EA615 /* ADBGLHelpers.m in Sources */,
-				9F872482160F7DF200400D8C /* BXSteppedShaderRenderer.m in Sources */,
-				9F872487160F89C600400D8C /* BXGLRenderingView+BXImageCapture.m in Sources */,
-				501F283C161303DA00B1ED53 /* BXBuiltinShaderRenderers.m in Sources */,
 				55574806208FA8040045E635 /* ymdeltat.cpp in Sources */,
 				9FD6AA0F16314A5B002B774E /* directlpt_linux.cpp in Sources */,
 				9FD6AA1116314A5B002B774E /* directlpt_win32.cpp in Sources */,
@@ -5009,6 +4859,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
 					BOXER_DEBUG,
@@ -5051,6 +4902,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;

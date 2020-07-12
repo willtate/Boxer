@@ -7,13 +7,15 @@
 //
 
 @import Foundation;
+@import MetalKit;
 
 #import "BXFrameRenderingView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BXMetalRenderingView : NSView<BXFrameRenderingView>
+@interface BXMetalRenderingView : MTKView<BXFrameRenderingView>
 
+@property (readwrite, nonatomic) BXRenderingStyle renderingStyle;
 @property (assign, nonatomic) BOOL managesViewport;
 @property (assign, nonatomic) NSSize maxViewportSize;
 @property (readonly, nonatomic) NSRect viewportRect;

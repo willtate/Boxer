@@ -19,7 +19,6 @@
 #import "BXVideoFrame.h"
 #import "BXVideoHandler.h"
 #import "BXInputView.h"
-#import "BXGLRenderingView.h"
 #import "YRKSpinningProgressIndicator.h"
 #import "NSView+ADBDrawingHelpers.h"
 

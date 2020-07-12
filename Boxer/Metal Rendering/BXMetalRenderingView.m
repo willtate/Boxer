@@ -23,7 +23,7 @@
 
 
 @implementation BXMetalRenderingView {
-    BXMetalLayer  *_videoLayer;
+    CAMetalLayer  *_videoLayer;
     OEFilterChain *_filterChain;
     OEPixelBuffer *_buffer;
     
@@ -39,11 +39,11 @@
     NSSize _maxViewportSize;
     NSRect _viewportRect;
     NSRect _targetViewportRect;
+    BXRenderingStyle _renderingStyle;
 }
 
 @synthesize currentFrame=_currentFrame;
 @synthesize maxFrameSize=_maxFrameSize;
-@synthesize renderingStyle=_renderingStyle;
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
     if (self = [super initWithCoder: coder]) {
@@ -53,14 +53,12 @@
 }
 
 - (instancetype)initWithFrame:(NSRect)frameRect {
-    if (self = [super initWithFrame: frameRect]) {
+    id<MTLDevice> device = MTLCreateSystemDefaultDevice();
+    
+    if (self = [super initWithFrame: frameRect device:device]) {
         [self initDefaults];
     }
     return self;
-}
-
-- (CALayer *)makeBackingLayer {
-    return _videoLayer;
 }
 
 - (OEFilterChain *)filterChain {
@@ -69,26 +67,53 @@
 
 - (void)initDefaults {
     _inflightSemaphore = dispatch_semaphore_create(MAX_INFLIGHT);
-    _device = MTLCreateSystemDefaultDevice();
+    _device = self.device;
+    self.framebufferOnly = YES;
+    self.presentsWithTransaction = NO;
+    self.paused = NO;
+    
     _commandQueue      = [_device newCommandQueue];
     _clearColor        = MTLClearColorMake(0, 0, 0, 1);
     _filterChain = [[OEFilterChain alloc] initWithDevice:_device];
     [_filterChain setDefaultFilteringLinear:NO];
-    _videoLayer = [[BXMetalLayer alloc] init];
-    _videoLayer.device = _device;
-    _videoLayer.opaque = YES;
-    _videoLayer.framebufferOnly = YES;
-    _videoLayer.displaySyncEnabled = YES;
-
+    
+    // some reasonable default
+    [_filterChain setSourceRect:CGRectMake(0, 0, 648, 480) aspect:CGSizeMake(4, 3)];
+    self.renderingStyle = BXRenderingStyleNormal;
+        
     self.wantsLayer = YES;
     
+    _videoLayer = (CAMetalLayer *)self.layer;
+    
     [self updateRenderState];
-
+    
     _maxFrameSize = NSMakeSize(16384, 16384);
 }
 
 - (BOOL)supportsRenderingStyle:(BXRenderingStyle)style {
-    return NO;
+    return YES;
+}
+
+- (void)setRenderingStyle:(BXRenderingStyle)renderingStyle {
+    switch (renderingStyle) {
+    case BXRenderingStyleNormal: {
+        NSString *path = [NSBundle.mainBundle pathForResource:@"Pixellate" ofType:@"slangp" inDirectory:@"Shaders/Pixellate"];
+        [_filterChain setShaderFromURL:[NSURL fileURLWithPath:path] error:nil];
+        break;
+    }
+        
+    case BXRenderingStyleCRT: {
+        NSString *path = [NSBundle.mainBundle pathForResource:@"CRT Geom" ofType:@"slangp" inDirectory:@"Shaders/CRT Geom"];
+        [_filterChain setShaderFromURL:[NSURL fileURLWithPath:path] error:nil];
+        break;
+    }
+
+    case BXRenderingStyleSmoothed: {
+        NSString *path = [NSBundle.mainBundle pathForResource:@"Smooth" ofType:@"slangp" inDirectory:@"Shaders/Smooth"];
+        [_filterChain setShaderFromURL:[NSURL fileURLWithPath:path] error:nil];
+        break;
+    }
+    }
 }
 
 - (void)updateWithFrame:(BXVideoFrame *)frame {
@@ -97,7 +122,7 @@
     
     CGRect sourceRect = CGRectMake(0, 0, frame.size.width, frame.size.height);
     [_filterChain setSourceRect:sourceRect aspect:frame.scaledSize];
-
+    
     if (frame != _currentFrame) {
         if (NSIsEmptyRect(self.viewportRect)) {
             NSRect viewportRect = [self viewportForFrame:frame];
@@ -112,6 +137,20 @@
                                               bytes:frame.mutableBytes];
     }
     
+    
+    
+    [self.layer display];
+    [CATransaction commit];
+    
+    // If the frame changes size or aspect ratio, and we're responsible for the viewport ourselves,
+    // then smoothly animate the transition to the new size.
+    if (self.managesViewport)
+    {
+        [self setViewportRect:[self viewportForFrame:frame] animated:YES];
+    }
+}
+
+- (void)drawRect:(NSRect)dirtyRect {
     @autoreleasepool {
         if (dispatch_semaphore_wait(_inflightSemaphore, DISPATCH_TIME_NOW) != 0) {
             _skippedFrames++;
@@ -135,12 +174,12 @@
                 id<MTLRenderCommandEncoder> rce = [commandBuffer renderCommandEncoderWithDescriptor:rpd];
                 [_filterChain renderFinalPassWithCommandEncoder:rce];
                 [rce endEncoding];
-
+                
                 __block dispatch_semaphore_t inflight = _inflightSemaphore;
                 [commandBuffer addCompletedHandler:^(id<MTLCommandBuffer> _) {
                     dispatch_semaphore_signal(inflight);
                 }];
-
+                
                 [commandBuffer presentDrawable:drawable];
                 [commandBuffer commit];
             } else {
@@ -148,22 +187,14 @@
             }
         }
     }
-    
-    [self.layer display];
-    [CATransaction commit];
-    
-    // If the frame changes size or aspect ratio, and we're responsible for the viewport ourselves,
-    // then smoothly animate the transition to the new size.
-    if (self.managesViewport)
-    {
-        [self setViewportRect:[self viewportForFrame:frame] animated:YES];
-    }
 }
 
 #pragma mark - Viewport / Bounds
 
 - (void)updateRenderState {
     [_videoLayer setBounds:self.bounds];
+    NSRect rect = [self convertRectToBacking:self.bounds];
+    _videoLayer.drawableSize = NSSizeToCGSize(rect.size);
     [_filterChain setDrawableSize:_videoLayer.drawableSize];
     if (self.currentFrame) {
         [self setViewportRect:[self viewportForFrame:self.currentFrame] animated:NO];

@@ -13,7 +13,6 @@
 #import "ADBGeometry.h"
 #import "BXCursorFadeAnimation.h"
 #import "BXDOSWindowController.h"
-#import "BXGLRenderingView.h"
 #import "BXDOSWindow.h"
 #import "ADBForwardCompatibility.h"
 #import "ADBAppKitVersionHelpers.h"

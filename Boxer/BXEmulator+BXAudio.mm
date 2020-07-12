@@ -13,7 +13,7 @@
 #import "BXAudioSource.h"
 #import "BXDrive.h"
 
-#import <SDL/SDL.h>
+#import <SDL2/SDL.h>
 #import "mixer.h"
 
 
@@ -151,9 +151,11 @@ NSString * const BXMIDIExternalDeviceNeedsMT32SysexDelaysKey = @"Needs MT-32 Sys
 {
     SDL_PauseAudio(YES);
     
+#if !defined(C_SDL2)
     _cdromWasPlaying = (SDL_CDStatus(NULL) == CD_PLAYING);
     if (_cdromWasPlaying)
         SDL_CDPause(NULL);
+#endif
     
     [self.activeMIDIDevice pause];
 }
@@ -161,9 +163,11 @@ NSString * const BXMIDIExternalDeviceNeedsMT32SysexDelaysKey = @"Needs MT-32 Sys
 - (void) _resumeAudio
 {
     SDL_PauseAudio(NO);
-    
+
+#if !defined(C_SDL2)
     if (_cdromWasPlaying)
         SDL_CDResume(NULL);
+#endif
     
     [self.activeMIDIDevice resume];
 }

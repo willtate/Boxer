@@ -18,8 +18,9 @@ extern const CGFloat BX4by3AspectRatio;
 /// This is set to the maximum vertical resolution expected from a DOS game.
 #define MAX_DIRTY_REGIONS 1024
 
-/// BXVideoFrame is a renderer-agnostic framebuffer for DOSBox to draw frames into, and for BXRenderer
-/// to draw as an OpenGL texture. It keeps track of the frame's resolution, bit depth and intended
+/// @brief BXVideoFrame is a renderer-agnostic framebuffer for DOSBox to draw frames into.
+///
+/// @discussion It keeps track of the frame's resolution, bit depth and intended
 /// display scale.
 @interface BXVideoFrame : NSObject
 {

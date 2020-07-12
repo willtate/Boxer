@@ -51,8 +51,9 @@ typedef NS_ENUM(NSInteger, BXRenderingStyle) {
 /// Typically the view should mark itself as needing display.
 - (void) updateWithFrame: (BXVideoFrame *)frame;
 
-/// Reports the maximum displayable frame size (which may be limited by e.g. OpenGL
-/// maximum texture dimensions.) Frames larger than this will not be passed to updateWithFrame:.
+/// @brief Reports the maximum displayable frame size.
+///
+/// @discussion Frames larger than this will not be passed to updateWithFrame:.
 @property (readonly) NSSize maxFrameSize;
 
 /// Reports where in the view the current frame will actually be rendered.

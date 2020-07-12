@@ -1125,8 +1125,11 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
                               error: (NSError **)outError
 {
 	BXDriveGeometry geometry = BXCDROMGeometry;
-	 
-	int SDLCDNum = -1;
+    
+    int SDLCDNum = -1;
+
+#if !defined(C_SDL2)
+	
 	
 	//Check that any audio CDs are actually present before enabling CD audio:
 	//this fixes Warcraft II's copy protection, which will fail if audio tracks
@@ -1136,7 +1139,8 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
         //NOTE: SDL's CD audio API for OS X only ever exposes one CD, which will be #0.
         SDLCDNum = 0;
 	}
-	
+#endif
+    
 	//NOTE: ioctl is currently unimplemented for OS X in DOSBox 0.74, so this will always fall back to SDL.
 	MSCDEX_SetCDInterface(CDROM_USE_IOCTL_DIO, SDLCDNum);
 	

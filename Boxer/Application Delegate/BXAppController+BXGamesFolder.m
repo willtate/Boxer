@@ -23,12 +23,6 @@
 #import "NSURL+ADBAliasHelpers.h"
 #import "ADBAppKitVersionHelpers.h"
 
-//For determining maximum Finder folder-background sizes
-#import <OpenGL/OpenGL.h>
-#import <OpenGL/CGLMacro.h>
-#import <OpenGL/glu.h>
-
-
 #pragma mark - Constants
 
 NSString * const BXGamesFolderErrorDomain = @"BXGamesFolderErrorDomain";
@@ -134,57 +128,13 @@ NSString * const BXGamesFolderBookmarkUserDefaultsKey = @"gamesFolderURLBookmark
 
 - (NSSize) _maxArtworkSize
 {
-	//4000 appears to be the upper bound for Finder background images
-	//in 10.6 and above, regardless of OpenGL texture limits; backgrounds
-	//larger than this will be shrunk by Finder to fit within 4000x4000,
-	//with undesirable consequences.
-	
-	return NSMakeSize(4000, 4000);
+	// chosen arbitrarily
+	return NSMakeSize(4096, 4096);
 }
 
 - (NSSize) _shelfArtworkSize
 {
-	NSSize maxArtworkSize = self._maxArtworkSize;
-	
-    //Snow Leopard's and Lion's Finder use OpenGL textures for 
-    //rendering the window background, so we are limited by the
-    //current renderer's maximum texture size.
-    GLint maxTextureSize = 0;
-    
-    CGOpenGLDisplayMask displayMask = CGDisplayIDToOpenGLDisplayMask (CGMainDisplayID());
-    CGLPixelFormatAttribute attrs[] = {kCGLPFADisplayMask, displayMask, 0};
-    
-    CGLPixelFormatObj pixelFormat = NULL;
-    GLint numFormats = 0;
-    CGLChoosePixelFormat(attrs, &pixelFormat, &numFormats);
-    
-    if (pixelFormat)
-    {
-        CGLContextObj testContext = NULL;
-        
-        CGLCreateContext(pixelFormat, NULL, &testContext);
-        CGLDestroyPixelFormat(pixelFormat);
-        
-        if (testContext)
-        {
-            CGLContextObj cgl_ctx = testContext;
-            
-            //Just to be safe, check if rectangle textures are supported,
-            //falling back on the square texture size otherwise
-            const GLubyte *extensions = glGetString(GL_EXTENSIONS);
-            BOOL supportsRectangleTextures = gluCheckExtension((const GLubyte *)"GL_ARB_texture_rectangle", extensions) == GL_TRUE;
-            
-            GLenum textureSizeField = supportsRectangleTextures ? GL_MAX_RECTANGLE_TEXTURE_SIZE_ARB : GL_MAX_TEXTURE_SIZE;
-            glGetIntegerv(textureSizeField, &maxTextureSize);
-            
-            CGLDestroyContext (testContext);
-        }
-    }
-    
-    //Crop the GL size to the maximum Finder background size
-    //(see the note under +_maxArtworkSize for details)
-    return NSMakeSize(MIN((CGFloat)maxTextureSize, maxArtworkSize.width),
-                      MIN((CGFloat)maxTextureSize, maxArtworkSize.height));
+	return self._maxArtworkSize;
 }
 
 
