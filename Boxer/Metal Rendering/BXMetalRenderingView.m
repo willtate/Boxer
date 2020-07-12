@@ -23,16 +23,15 @@
 
 
 @implementation BXMetalRenderingView {
-    CAMetalLayer  *_videoLayer;
-    OEFilterChain *_filterChain;
-    OEPixelBuffer *_buffer;
+    CAMetalLayer    *_videoLayer;
+    OEFilterChain   *_filterChain;
+    id<MTLTexture>  _texture;
     
     dispatch_semaphore_t    _inflightSemaphore;
     NSInteger               _skippedFrames;
     id<MTLDevice>           _device;
     id<MTLCommandQueue>     _commandQueue;
     MTLClearColor           _clearColor;
-    
     
     BOOL _inViewportAnimation;
     BOOL _managesViewport;
@@ -80,7 +79,7 @@
     // some reasonable default
     [_filterChain setSourceRect:CGRectMake(0, 0, 648, 480) aspect:CGSizeMake(4, 3)];
     self.renderingStyle = BXRenderingStyleNormal;
-        
+    
     self.wantsLayer = YES;
     
     _videoLayer = (CAMetalLayer *)self.layer;
@@ -107,7 +106,7 @@
         [_filterChain setShaderFromURL:[NSURL fileURLWithPath:path] error:nil];
         break;
     }
-
+        
     case BXRenderingStyleSmoothed: {
         NSString *path = [NSBundle.mainBundle pathForResource:@"Smooth" ofType:@"slangp" inDirectory:@"Shaders/Smooth"];
         [_filterChain setShaderFromURL:[NSURL fileURLWithPath:path] error:nil];
@@ -117,9 +116,6 @@
 }
 
 - (void)updateWithFrame:(BXVideoFrame *)frame {
-    [CATransaction begin];
-    [CATransaction setDisableActions:YES];
-    
     CGRect sourceRect = CGRectMake(0, 0, frame.size.width, frame.size.height);
     [_filterChain setSourceRect:sourceRect aspect:frame.scaledSize];
     
@@ -131,16 +127,19 @@
         
         // new buffer
         _currentFrame = frame;
-        _buffer = [_filterChain newBufferWithFormat:OEMTLPixelFormatBGRA8Unorm
-                                             height:frame.size.height
-                                        bytesPerRow:frame.pitch
-                                              bytes:frame.mutableBytes];
+        MTLTextureDescriptor *td =
+        [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatBGRA8Unorm
+                                                           width:frame.size.width
+                                                          height:frame.size.height
+                                                       mipmapped:NO];
+        _texture = [_device newTextureWithDescriptor:td];
+        [_filterChain setSourceTexture:_texture];
     }
     
-    
-    
-    [self.layer display];
-    [CATransaction commit];
+    [_texture replaceRegion:MTLRegionMake2D(0, 0, sourceRect.size.width, sourceRect.size.height)
+                mipmapLevel:0
+                  withBytes:frame.bytes
+                bytesPerRow:frame.pitch];
     
     // If the frame changes size or aspect ratio, and we're responsible for the viewport ourselves,
     // then smoothly animate the transition to the new size.
@@ -165,8 +164,9 @@
             if (drawable != nil) {
                 MTLRenderPassDescriptor *rpd = [MTLRenderPassDescriptor new];
                 rpd.colorAttachments[0].clearColor = _clearColor;
-                // TODO: Investigate whether we can avoid the MTLLoadActionClear
-                // Frame buffer should be overwritten completely by final pass.
+                // TODO: Use MTLLoadActionDontCare
+                // We can use MTLLoadActionDontCare when source texture
+                // is same aspect ratio as drawable (i.e. windowed)
                 rpd.colorAttachments[0].loadAction = MTLLoadActionClear;
                 rpd.colorAttachments[0].texture    = drawable.texture;
                 commandBuffer = [_commandQueue commandBuffer];
