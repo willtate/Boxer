@@ -610,7 +610,7 @@
 
 - (NSColor *) textColor
 {
-    return [NSColor blackColor];
+    return [NSColor labelColor];
 }
 
 - (NSShadow *) dropShadow
