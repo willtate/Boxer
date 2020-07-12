@@ -140,7 +140,7 @@
         
         [NSGraphicsContext saveGraphicsState];
             [bottomBevel setFill];
-            NSRectFillUsingOperation(bevelRect, NSCompositeSourceOver);
+            NSRectFillUsingOperation(bevelRect, NSCompositingOperationSourceOver);
         [NSGraphicsContext restoreGraphicsState];
      
         NSGradient *bottomShadow = [[NSGradient alloc] initWithColorsAndLocations:
@@ -174,7 +174,7 @@
             [brandShadow set];
             [brand drawInRect: brandRegion
                      fromRect: NSZeroRect
-                    operation: NSCompositeSourceOver
+                    operation: NSCompositingOperationSourceOver
                      fraction: 0.5f];
         [NSGraphicsContext restoreGraphicsState];
 	}
@@ -228,7 +228,7 @@
         
         [self.snapshot drawInRect: dirtyRect
                          fromRect: dirtyRect
-                        operation: NSCompositeCopy
+                        operation: NSCompositingOperationCopy
                          fraction: 1.0f
                    respectFlipped: YES
                             hints: nil];

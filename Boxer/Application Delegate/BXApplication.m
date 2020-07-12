@@ -13,14 +13,14 @@
 - (void) sendEvent: (NSEvent *)theEvent
 {
     //Dispatch media key events.
-    if (self.delegate && theEvent.type == NSSystemDefined && theEvent.subtype == 8)
+    if (self.delegate && theEvent.type == NSEventTypeSystemDefined && theEvent.subtype == 8)
     {
         [(BXBaseAppController *)self.delegate mediaKeyPressed: theEvent];
         return;
     }
     
     //Fix Cmd-modified key-up events not being dispatched to the key window.
-	else if (self.keyWindow && theEvent.type == NSKeyUp && (theEvent.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask)
+    else if (self.keyWindow && theEvent.type == NSEventTypeKeyUp && (theEvent.modifierFlags & NSEventModifierFlagCommand) == NSEventModifierFlagCommand)
     {
         //NOTE: unlike a regular keyUp, the event will have a nil window.
         //If this becomes an issue, we could recreate the event and dispatch the copy.

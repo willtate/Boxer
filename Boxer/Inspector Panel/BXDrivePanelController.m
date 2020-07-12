@@ -681,7 +681,7 @@ enum {
     {
         NSScreen *screen = self.view.window.screen;
         self.driveRemovalDropzone = [[NSWindow alloc] initWithContentRect: screen.frame
-                                                            styleMask: NSBorderlessWindowMask
+                                                                styleMask: NSWindowStyleMaskBorderless
                                                               backing: NSBackingStoreBuffered
                                                                 defer: YES
                                                                screen: screen];

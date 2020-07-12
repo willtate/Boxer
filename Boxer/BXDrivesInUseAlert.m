@@ -20,7 +20,7 @@
 	if (self)
 	{
 		//Since this may cause dataloss, I think we're justified in using caution alerts
-        self.alertStyle = NSCriticalAlertStyle;
+        self.alertStyle = NSAlertStyleCritical;
         
         //Use the session's own icon for the alert
         NSImage *icon = [session.representedIcon copy];

@@ -76,7 +76,7 @@
     }
     
 	//Tell the view to accept touch events
-    self.view.acceptsTouchEvents = YES;
+    self.view.allowedTouchTypes = NSTouchTypeMaskDirect;
          
 	//Set up a cursor region in the view for mouse handling
 	NSTrackingAreaOptions options = NSTrackingMouseEnteredAndExited | NSTrackingEnabledDuringMouseDrag | NSTrackingCursorUpdate | NSTrackingActiveInKeyWindow | NSTrackingInVisibleRect | NSTrackingAssumeInside;
@@ -582,7 +582,7 @@ void _inputSourceChanged(CFNotificationCenterRef center,
 		NSUInteger modifiers = theEvent.modifierFlags;
 		
         //Cmd-clicking toggles mouse-locking and causes the actual click to be ignored.
-		if ((modifiers & NSCommandKeyMask) == NSCommandKeyMask)
+		if ((modifiers & NSEventModifierFlagCommand) == NSEventModifierFlagCommand)
 		{
 			[self toggleMouseLocked: self];
 		}

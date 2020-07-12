@@ -1062,7 +1062,7 @@
 		9F13F9CF11F85E6F0069A02E /* NSFileManager+ADBTemporaryFiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+ADBTemporaryFiles.m"; sourceTree = "<group>"; };
 		9F160BD91236952400F8768E /* Sample Games */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Sample Games"; sourceTree = "<group>"; };
 		9F160E6F1236B2A600F8768E /* BXAppController+BXGamesFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BXAppController+BXGamesFolder.h"; sourceTree = "<group>"; usesTabs = 1; };
-		9F160E701236B2A600F8768E /* BXAppController+BXGamesFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BXAppController+BXGamesFolder.m"; sourceTree = "<group>"; usesTabs = 1; };
+		9F160E701236B2A600F8768E /* BXAppController+BXGamesFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BXAppController+BXGamesFolder.m"; sourceTree = "<group>"; usesTabs = 0; };
 		9F165384142E8AFE00CAADBF /* BXEmulatedMT32Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXEmulatedMT32Delegate.h; sourceTree = "<group>"; };
 		9F1812BC12996337009BC4B2 /* YRKSpinningProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRKSpinningProgressIndicator.h; sourceTree = "<group>"; };
 		9F1812BD12996337009BC4B2 /* YRKSpinningProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRKSpinningProgressIndicator.m; sourceTree = "<group>"; };
@@ -1602,7 +1602,7 @@
 		9F9A4C9F10F67D2C00E61965 /* BXPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXPreferencesController.h; sourceTree = "<group>"; };
 		9F9A4CA010F67D2C00E61965 /* BXPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXPreferencesController.m; sourceTree = "<group>"; };
 		9F9A4CA710F6824B00E61965 /* BXFilterGallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFilterGallery.h; sourceTree = "<group>"; };
-		9F9A4CA810F6824B00E61965 /* BXFilterGallery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFilterGallery.m; sourceTree = "<group>"; };
+		9F9A4CA810F6824B00E61965 /* BXFilterGallery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFilterGallery.m; sourceTree = "<group>"; usesTabs = 1; };
 		9F9AEE8714CB4AEA00728641 /* ADBAppKitVersionHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBAppKitVersionHelpers.h; sourceTree = "<group>"; };
 		9F9AEE8814CB4AEA00728641 /* ADBAppKitVersionHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBAppKitVersionHelpers.m; sourceTree = "<group>"; };
 		9F9DF413153B058200233968 /* BXKeyBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXKeyBuffer.h; sourceTree = "<group>"; };

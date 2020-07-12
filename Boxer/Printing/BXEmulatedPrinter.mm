@@ -1288,7 +1288,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
     
     for (NSGraphicsContext *context in contexts)
     {
-        CGContextRef ctx = (CGContextRef)context.graphicsPort;
+        CGContextRef ctx = context.CGContext;
         CGContextRestoreGState(ctx);
     }
 }

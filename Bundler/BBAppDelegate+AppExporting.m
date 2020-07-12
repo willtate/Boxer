@@ -520,7 +520,7 @@ NSString * const BBAppExportCodeSigningIdentityKey = @"BBAppExportCodeSigningIde
     
     if (sourceRep)
     {
-        NSData *data = [sourceRep representationUsingType: NSPNGFileType properties: @{}];
+        NSData *data = [sourceRep representationUsingType: NSBitmapImageFileTypePNG properties: @{}];
         BOOL wroteIcon = [data writeToURL: helpbookIconURL options: NSAtomicWrite error: outError];
         if (!wroteIcon)
         {
@@ -530,7 +530,7 @@ NSString * const BBAppExportCodeSigningIdentityKey = @"BBAppExportCodeSigningIde
     
     if (source2xRep)
     {
-        NSData *data = [source2xRep representationUsingType: NSPNGFileType properties: @{}];
+        NSData *data = [source2xRep representationUsingType: NSBitmapImageFileTypePNG properties: @{}];
         BOOL wroteIcon = [data writeToURL: helpbookIcon2xURL options: NSAtomicWrite error: outError];
         if (!wroteIcon)
         {

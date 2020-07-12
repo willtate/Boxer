@@ -749,7 +749,7 @@ NSString * const BXGameImportedNotificationType     = @"BXGameImported";
 				returnCode: (NSModalResponse)returnCode
 			   contextInfo: (NSInvocation *)callback
 {
-	if (alert.showsSuppressionButton && alert.suppressionButton.state == NSOnState)
+	if (alert.showsSuppressionButton && alert.suppressionButton.state == NSControlStateValueOn)
 		[[NSUserDefaults standardUserDefaults] setBool: YES forKey: @"suppressCloseAlert"];
 	
 	BOOL shouldClose = (returnCode == NSAlertFirstButtonReturn);
@@ -1297,7 +1297,7 @@ NSString * const BXGameImportedNotificationType     = @"BXGameImported";
         {
             //If the Option key is held down during the startup process, skip the default program.
             CGEventFlags currentModifiers = CGEventSourceFlagsState(kCGEventSourceStateCombinedSessionState);
-            _userSkippedDefaultProgram = (currentModifiers & NSAlternateKeyMask) == NSAlternateKeyMask;
+            _userSkippedDefaultProgram = (currentModifiers & NSEventModifierFlagOption) == NSEventModifierFlagOption;
         }
         
 		[self _mountDrivesForSession];
@@ -1334,7 +1334,7 @@ NSString * const BXGameImportedNotificationType     = @"BXGameImported";
         if ([self _shouldAllowSkippingStartupProgram] && !_userSkippedDefaultProgram)
         {
             CGEventFlags currentModifiers = CGEventSourceFlagsState(kCGEventSourceStateCombinedSessionState);
-            _userSkippedDefaultProgram = (currentModifiers & NSAlternateKeyMask) == NSAlternateKeyMask;
+            _userSkippedDefaultProgram = (currentModifiers & NSEventModifierFlagOption) == NSEventModifierFlagOption;
         }
         
 		//If the Option key was held down, don't launch the gamebox's target;
@@ -1611,7 +1611,7 @@ NSString * const BXGameImportedNotificationType     = @"BXGameImported";
     
 	NSDate *untilDate = self.isSuspended ? [NSDate distantFuture] : requestedDate;
 	
-	while (!_isClosing && (event = [NSApp nextEventMatchingMask: NSAnyEventMask
+	while (!_isClosing && (event = [NSApp nextEventMatchingMask: NSEventMaskAny
                                                       untilDate: untilDate
                                                          inMode: NSDefaultRunLoopMode
                                                         dequeue: YES]))
@@ -1622,9 +1622,9 @@ NSString * const BXGameImportedNotificationType     = @"BXGameImported";
         //turned inside out, so that the emulation will keep running 'around' our listening.
         if (_waitingForFastForwardRelease)
         {
-            if (event.type == NSKeyUp)
+            if (event.type == NSEventTypeKeyUp)
                 [self releaseFastForward: self];
-            else if (event.type == NSKeyDown)
+            else if (event.type == NSEventTypeKeyDown)
                 event = nil;
         }
         
@@ -1947,7 +1947,7 @@ NSString * const BXGameImportedNotificationType     = @"BXGameImported";
     
     for (NSData *driveInfo in previousDrives)
     {
-        BXDrive *drive = [NSKeyedUnarchiver unarchiveObjectWithData: driveInfo];
+        BXDrive *drive = [NSKeyedUnarchiver unarchivedObjectOfClass:[BXDrive class] fromData:driveInfo error:NULL];
         
         //Skip drives that couldn't be decoded (which will happen if the drive's location
         //can no longer be resolved.)
@@ -2168,7 +2168,7 @@ NSString * const BXGameImportedNotificationType     = @"BXGameImported";
             //inside -emulatorDidBeginRunLoop:, which only processes when
             //there's any events in the queue. We post a dummy event to ensure
             //that the loop ticks over and recognises the pause state.
-            NSEvent *dummyEvent = [NSEvent otherEventWithType: NSApplicationDefined
+            NSEvent *dummyEvent = [NSEvent otherEventWithType: NSEventTypeApplicationDefined
                                                      location: NSZeroPoint
                                                 modifierFlags: 0
                                                     timestamp: CFAbsoluteTimeGetCurrent()

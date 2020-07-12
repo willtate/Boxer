@@ -50,8 +50,8 @@
     
     [background drawInRect: self.bounds
                   fromRect: NSZeroRect
-                 operation: NSCompositeSourceOver
-                  fraction: 1.0f];
+                 operation: NSCompositingOperationSourceOver
+                  fraction: 1.0];
     
     //Render vignetting
     NSGradient *lighting = [[NSGradient alloc] initWithColorsAndLocations:

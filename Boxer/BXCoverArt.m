@@ -91,7 +91,7 @@
 		[dropShadow set];
 		[image drawInRect: artFrame
 				 fromRect: NSZeroRect
-				operation: NSCompositeSourceOver
+				operation: NSCompositingOperationSourceOver
 				 fraction: 1.0f];
 	[NSGraphicsContext restoreGraphicsState];
 	
@@ -101,7 +101,7 @@
 	//Draw our pretty box shine into the box's region
 	[shine drawInRect: artFrame
 			 fromRect: artFrame
-			operation: NSCompositeSourceOver
+			operation: NSCompositingOperationSourceOver
 			 fraction: 0.25];
 	
 	//Finally, outline the box

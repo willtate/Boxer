@@ -670,7 +670,7 @@ NSString * const BXGameStateEmulatorVersionKey = @"BXEmulatorVersion";
                       sender: (id)sender
 {
 	//If the Option key was held down, bypass this check altogether and allow any drive to be unmounted
-	NSUInteger optionKeyDown = ([NSApp currentEvent].modifierFlags & NSAlternateKeyMask) == NSAlternateKeyMask;
+	NSUInteger optionKeyDown = ([NSApp currentEvent].modifierFlags & NSEventModifierFlagOption) == NSEventModifierFlagOption;
 	if (optionKeyDown) return YES;
 
 	NSMutableArray *drivesInUse = [[NSMutableArray alloc] initWithCapacity: selectedDrives.count];

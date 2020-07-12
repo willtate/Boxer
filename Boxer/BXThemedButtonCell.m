@@ -45,19 +45,19 @@
     
     switch (self.controlSize)
     {
-        case NSSmallControlSize:
+        case NSControlSizeSmall:
             checkboxFrame.size.height = 10;
             checkboxFrame.size.width = 11;
             checkboxFrame.origin.y += 3;
             break;
             
-        case NSMiniControlSize:
+        case NSControlSizeMini:
             checkboxFrame.size.height = 8;
             checkboxFrame.size.width = 9;
             checkboxFrame.origin.y += 5;
             break;
             
-        case NSRegularControlSize:
+        case NSControlSizeRegular:
         default:
             checkboxFrame.size.height = 12;
             checkboxFrame.size.width = 13;
@@ -71,13 +71,13 @@
         case NSImageLeft:
             switch (self.controlSize)
             {
-                case NSSmallControlSize:
+                case NSControlSizeSmall:
                     checkboxFrame.origin.x += 3;
                     break;
-                case NSMiniControlSize:
+                case NSControlSizeMini:
                     checkboxFrame.origin.x += 4;
                     break;
-                case NSRegularControlSize:
+                case NSControlSizeRegular:
                 default:
                     checkboxFrame.origin.x += 2;
                     break;
@@ -89,11 +89,11 @@
             break;
             
 		case NSImageOnly:
-			if (self.controlSize == NSRegularControlSize)
+			if (self.controlSize == NSControlSizeRegular)
             {
 				checkboxFrame.origin.x -= .5f;
 			}
-            else if (self.controlSize == NSMiniControlSize)
+            else if (self.controlSize == NSControlSizeMini)
             {
 				checkboxFrame.origin.x += .5f;
 			}
@@ -159,16 +159,16 @@
 		case NSImageLeft:
             switch (self.controlSize)
             {
-                case NSSmallControlSize:
+                case NSControlSizeSmall:
                     textFrame.size.width -= (NSMaxX(checkboxFrame) + 6);
                     textFrame.origin.x = (NSMaxX(checkboxFrame) + 6);
                     textFrame.origin.y -= 1;
                     break;
-                case NSMiniControlSize:
+                case NSControlSizeMini:
                     textFrame.size.width -= (NSMaxX(checkboxFrame) + 4);
                     textFrame.origin.x = (NSMaxX(checkboxFrame) + 4);
                     break;
-                case NSRegularControlSize:
+                case NSControlSizeRegular:
                 default:
                     textFrame.size.width -= (NSMaxX(checkboxFrame) + 5);
                     textFrame.origin.x = (NSMaxX(checkboxFrame) + 5);
@@ -180,16 +180,16 @@
 		case NSImageRight:
 			switch (self.controlSize)
             {
-                case NSSmallControlSize:
+                case NSControlSizeSmall:
                     textFrame.origin.x += 2;
                     textFrame.size.width = (NSMinX(checkboxFrame) - NSMinX(textFrame) - 5);
                     textFrame.origin.y -= 1;
                     break;
-                case NSMiniControlSize:
+                case NSControlSizeMini:
                     textFrame.origin.x += 2;
                     textFrame.size.width = (NSMinX(checkboxFrame) - NSMinX(textFrame) - 5);
                     break;
-                case NSRegularControlSize:
+                case NSControlSizeRegular:
                 default:
                     textFrame.origin.x += 2;
                     textFrame.size.width = (NSMinX(checkboxFrame) - NSMinX(textFrame) - 5);
@@ -223,20 +223,20 @@
 - (NSBezierPath *) radioButtonGlyphForRect: (NSRect)frame
 {
     NSBezierPath *path = nil;
-    if (self.state == NSOnState)
+    if (self.state == NSControlStateValueOn)
     {
         NSRect dotFrame;
         switch (self.controlSize)
         {
-            case NSSmallControlSize:
+            case NSControlSizeSmall:
                 dotFrame = NSInsetRect(frame, 3.5f, 3.5f);
                 break;
                 
-            case NSMiniControlSize:
+            case NSControlSizeMini:
                 dotFrame = NSInsetRect(frame, 3.0f, 3.0f);
                 break;
                 
-            case NSRegularControlSize:
+            case NSControlSizeRegular:
             default:
                 dotFrame = NSInsetRect(frame, 4.0f, 4.0f);
                 break;
@@ -272,7 +272,7 @@
             }
             break;
 			
-		case NSOnState:
+		case NSControlStateValueOn:
             {
                 path = [[NSBezierPath alloc] init];
                 NSPoint points[4];
@@ -284,7 +284,7 @@
                 
                 [path appendBezierPathWithPoints: points count: 4];
                 
-                path.lineWidth = (self.controlSize == NSMiniControlSize) ? 1.5f : 2.0f;
+                path.lineWidth = (self.controlSize == NSControlSizeMini) ? 1.5f : 2.0f;
             }
             break;
             
@@ -371,7 +371,7 @@
 - (void) drawImage: (NSImage *)image withFrame: (NSRect)frame inView: (NSView *)controlView
 {
     //Radio buttons and switch buttons use a different code path which is handled upstream.
-    if (buttonType == NSRadioButton || buttonType == NSSwitchButton)
+    if (buttonType == NSButtonTypeRadio || buttonType == NSButtonTypeSwitch)
     {
         [super drawImage: image withFrame: frame inView: controlView];
         return;
@@ -395,7 +395,7 @@
             [shadow set];
             [tintedImage drawInRect: imageRect
                            fromRect: NSZeroRect
-                          operation: NSCompositeSourceOver
+                          operation: NSCompositingOperationSourceOver
                            fraction: opacity
                      respectFlipped: YES
                               hints: nil];
@@ -405,7 +405,7 @@
     {
         [image drawInRect: imageRect
                  fromRect: NSZeroRect
-                operation: NSCompositeSourceOver
+                operation: NSCompositingOperationSourceOver
                  fraction: opacity
            respectFlipped: YES
                     hints: nil];

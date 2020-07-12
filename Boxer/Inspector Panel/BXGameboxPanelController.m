@@ -156,16 +156,16 @@ enum {
     
     [openPanel beginSheetModalForWindow: self.view.window
                       completionHandler: ^(NSInteger result) {
-                          if (result == NSFileHandlingPanelOKButton)
-                          {
-                              [self chooseDefaultProgramWithURL: openPanel.URL];
-                          }
-                          else if (result == NSFileHandlingPanelCancelButton)
-                          {
-                              //If the user cancelled, revert the menu item selection back to the default program
-                              [self syncSelection];
-                          }
-                      }];
+        if (result == NSModalResponseOK)
+        {
+            [self chooseDefaultProgramWithURL: openPanel.URL];
+        }
+        else if (result == NSModalResponseCancel)
+        {
+            //If the user cancelled, revert the menu item selection back to the default program
+            [self syncSelection];
+        }
+    }];
 }
 
 - (void) chooseDefaultProgramWithURL: (NSURL *)URL

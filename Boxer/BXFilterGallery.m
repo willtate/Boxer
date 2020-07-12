@@ -178,7 +178,7 @@
 	
 	[spotlight drawInRect: frame
 				 fromRect: NSZeroRect
-				operation: NSCompositePlusLighter
+				operation: NSCompositingOperationPlusLighter
 				 fraction: alpha
            respectFlipped: YES
                     hints: nil];
@@ -214,7 +214,7 @@
 		
 		[shadedImage lockFocus];
 			[shade set];
-			NSRectFillUsingOperation(bounds, NSCompositeSourceAtop);
+			NSRectFillUsingOperation(bounds, NSCompositingOperationSourceAtop);
 		[shadedImage unlockFocus];
 		
 		image = shadedImage;

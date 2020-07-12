@@ -380,7 +380,7 @@ enum {
     
     [openPanel beginSheetModalForWindow: self.window
                       completionHandler: ^(NSInteger result) {
-                          if (result == NSFileHandlingPanelOKButton)
+                          if (result == NSModalResponseOK)
                           {
                               [self handleROMImportFromURLs: openPanel.URLs];
                           }
@@ -428,7 +428,7 @@ enum {
 
 - (IBAction) toggleShelfAppearance: (NSButton *)sender
 {
-	BOOL flag = (sender.state == NSOnState);
+	BOOL flag = (sender.state == NSControlStateValueOn);
 	
 	//This will already have been set by the button's own binding,
 	//but it doesn't hurt to do it explicitly here
@@ -483,7 +483,7 @@ enum {
 
 - (void) syncKeyboardInstructions
 {
-    CGFloat extraHelpSize = [NSFont systemFontSizeForControlSize: NSSmallControlSize];
+    CGFloat extraHelpSize = [NSFont systemFontSizeForControlSize: NSControlSizeSmall];
     if ([(BXBaseAppController *)[NSApp delegate] needsRestartForHotkeyCapture])
     {
         self.hotkeyCaptureToggle.enabled = NO;

@@ -105,10 +105,10 @@
 	
     [maskedImage lockFocus];
         [color set];
-        NSRectFillUsingOperation(imageRect, NSCompositeSourceOver);
+        NSRectFillUsingOperation(imageRect, NSCompositingOperationSourceOver);
         [sourceImage drawInRect: imageRect
 					   fromRect: NSZeroRect
-					  operation: NSCompositeDestinationIn 
+					  operation: NSCompositingOperationDestinationIn 
 					   fraction: 1.0f];
     [maskedImage unlockFocus];
 	
@@ -127,7 +127,7 @@
     [maskedImage lockFocus];
         [image drawInRect: imageRect
                  fromRect: NSZeroRect
-                operation: NSCompositeDestinationIn 
+                operation: NSCompositingOperationDestinationIn 
                  fraction: 1.0f];
     [maskedImage unlockFocus];
     

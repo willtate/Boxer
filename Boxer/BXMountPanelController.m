@@ -19,7 +19,7 @@
 
 @implementation BXMountPanelController
 {
-	NSCellStateValue _previousReadOnlyState;
+	NSControlStateValue _previousReadOnlyState;
 	NSMenuItem *_previousDriveTypeSelection;
 }
 
@@ -34,7 +34,7 @@
 {
 	if ((self = [super init]))
 	{
-		_previousReadOnlyState = NSMixedState;
+        _previousReadOnlyState = NSControlStateValueMixed;
 	}
 	return self;
 }
@@ -67,7 +67,7 @@
     
     [openPanel beginSheetModalForWindow: hostingWindow
                       completionHandler: ^(NSInteger result) {
-                          if (result == NSFileHandlingPanelOKButton)
+        if (result == NSModalResponseOK)
                           {
                               NSError *mountError = nil;
                               BOOL succeeded = [self mountChosenURL: openPanel.URL error: &mountError];
@@ -95,7 +95,7 @@
     
     BXDriveType preferredType	= (BXDriveType)self.driveType.selectedItem.tag;
     NSString *preferredLetter	= self.driveLetter.selectedItem.representedObject;
-    BOOL isReadOnly				= (self.readOnlyToggle.state != NSOffState);
+    BOOL isReadOnly				= (self.readOnlyToggle.state != NSControlStateValueOff);
     
     BXDrive *drive = [BXDrive driveWithContentsOfURL: URL letter: preferredLetter type: preferredType];
     drive.readOnly = isReadOnly;
@@ -234,20 +234,20 @@
 		{
 			[self.readOnlyToggle setEnabled: NO];
 			//Back up the previous state and override it
-			if (_previousReadOnlyState == NSMixedState)
+            if (_previousReadOnlyState == NSControlStateValueMixed)
 			{
 				_previousReadOnlyState = self.readOnlyToggle.state;
-				self.readOnlyToggle.state = NSOnState;
+                self.readOnlyToggle.state = NSControlStateValueOn;
 			}
 		}
 		else
 		{
 			[self.readOnlyToggle setEnabled: YES];
         	//Restore the previous state
-			if (_previousReadOnlyState != NSMixedState)
+            if (_previousReadOnlyState != NSControlStateValueMixed)
 			{
-				self.readOnlyToggle.state = NSOffState;
-            	_previousReadOnlyState = NSMixedState;
+                self.readOnlyToggle.state = NSControlStateValueOff;
+                _previousReadOnlyState = NSControlStateValueMixed;
 			}
 		}
 	}

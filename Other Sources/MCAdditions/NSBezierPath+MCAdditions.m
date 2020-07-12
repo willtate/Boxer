@@ -96,7 +96,7 @@ static void CGPathCallback(void *info, const CGPathElement *element)
 - (NSBezierPath *)pathWithStrokeWidth:(CGFloat)strokeWidth
 {
 	NSBezierPath *path = [self copy];
-	CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+	CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
 	CGPathRef pathRef = [path createCGPath];
 	
 	CGContextSaveGState(context);

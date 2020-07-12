@@ -137,7 +137,7 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
 - (void) windowDidLoad
 {
 	//Register for drag-drop file operations (used for mounting folders and such)
-    NSArray *dragTypes = [NSArray arrayWithObjects: NSFilenamesPboardType, NSStringPboardType, nil];
+    NSArray *dragTypes = [NSArray arrayWithObjects: NSFilenamesPboardType, NSPasteboardTypeString, nil];
 	[self.window registerForDraggedTypes: dragTypes];
 	
     //The launch panel controller is responsible for loading its own view, which we add to the hierarchy ourselves.
@@ -912,11 +912,11 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
 		BXRenderingStyle renderingStyle = (BXRenderingStyle)theItem.tag;
 		if (renderingStyle == self.renderingStyle)
         {
-            theItem.state = NSOnState;
+            theItem.state = NSControlStateValueOn;
         }
         else
         {
-            theItem.state = NSOffState;
+            theItem.state = NSControlStateValueOff;
         }
 		return YES;
 	}
@@ -928,11 +928,11 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
             BXHerculesTintMode tint = (BXHerculesTintMode)theItem.tag;
             if (tint == self.herculesTintMode)
             {
-                theItem.state = NSOnState;
+                theItem.state = NSControlStateValueOn;
             }
             else
             {
-                theItem.state = NSOffState;
+                theItem.state = NSControlStateValueOff;
             }
             return YES;
         }
@@ -949,11 +949,11 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
             BXCGACompositeMode tint = (BXCGACompositeMode)theItem.tag;
             if (tint == self.CGACompositeMode)
             {
-                theItem.state = NSOnState;
+                theItem.state = NSControlStateValueOn;
             }
             else
             {
-                theItem.state = NSOffState;
+                theItem.state = NSControlStateValueOff;
             }
             return YES;
         }

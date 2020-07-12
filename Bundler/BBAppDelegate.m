@@ -711,7 +711,7 @@ NSString * const kBBValidationErrorDomain = @"net.washboardabs.boxer-bundler.val
     panel.canSelectHiddenExtension = NO;
     
     [panel beginSheetModalForWindow: self.window completionHandler: ^(NSInteger result) {
-        if (result == NSFileHandlingPanelOKButton)
+        if (result == NSModalResponseOK)
         {
             //Dismiss the sheet before we begin
             [self.window.attachedSheet orderOut: self];
@@ -775,7 +775,7 @@ NSString * const kBBValidationErrorDomain = @"net.washboardabs.boxer-bundler.val
     panel.treatsFilePackagesAsDirectories = YES;
     
     [panel beginSheetModalForWindow: self.window completionHandler: ^(NSInteger result) {
-        if (result == NSFileHandlingPanelOKButton)
+        if (result == NSModalResponseOK)
         {
             self.appIconURL = panel.URL;
             if (self.appIconURL != nil)
@@ -802,7 +802,7 @@ NSString * const kBBValidationErrorDomain = @"net.washboardabs.boxer-bundler.val
     panel.treatsFilePackagesAsDirectories = NO;
     
     [panel beginSheetModalForWindow: self.window completionHandler: ^(NSInteger result) {
-        if (result == NSFileHandlingPanelOKButton)
+        if (result == NSModalResponseOK)
         {
             [self application: NSApp openFile: panel.URL.path];
         }

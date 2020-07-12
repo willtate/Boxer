@@ -62,7 +62,7 @@
 	self.useShelfAppearanceToggle.state = [(BXAppController *)[NSApp delegate] appliesShelfAppearanceToGamesFolder];
 	
     void (^completionHandler)(NSInteger result) = ^(NSInteger result) {
-        if (result == NSFileHandlingPanelOKButton)
+        if (result == NSModalResponseOK)
         {
             NSError *folderError = nil;
             BOOL assigned = [self chooseGamesFolderURL: openPanel.URL error: &folderError];

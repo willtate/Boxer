@@ -32,21 +32,21 @@
     NSRect knobRect = theRect;
     switch (self.controlSize)
     {
-		case NSRegularControlSize:
+		case NSControlSizeRegular:
             knobRect.origin.x += 3;
             knobRect.origin.y += 3;
             knobRect.size.height = 15;
             knobRect.size.width = 15;
 			break;
 			
-		case NSSmallControlSize:
+		case NSControlSizeSmall:
             knobRect.origin.x += 1;
             knobRect.origin.y += 1;
             knobRect.size.height = 13;
             knobRect.size.width = 13;
 			break;
 			
-		case NSMiniControlSize:
+		case NSControlSizeMini:
             knobRect.origin.x += 2;
             knobRect.origin.y += 1;
             knobRect.size.height = 9;
@@ -62,8 +62,8 @@
     NSRect knobRect = theRect;
 	switch (self.controlSize)
     {
-		case NSRegularControlSize:
-            if (tickPosition == NSTickMarkAbove)
+		case NSControlSizeRegular:
+            if (tickPosition == NSTickMarkPositionAbove)
                 knobRect.origin.y += 2;
             
             knobRect.origin.x += 2;
@@ -71,8 +71,8 @@
             knobRect.size.width = 15;
 			break;
 			
-		case NSSmallControlSize:
-            if (tickPosition == NSTickMarkAbove)
+		case NSControlSizeSmall:
+            if (tickPosition == NSTickMarkPositionAbove)
                 knobRect.origin.y += 1;
             
             knobRect.origin.x += 1;
@@ -80,7 +80,7 @@
             knobRect.size.width = 11;
 			break;
 			
-		case NSMiniControlSize:
+		case NSControlSizeMini:
             knobRect.origin.x += 1;
             knobRect.size.height = 11;
             knobRect.size.width = 9;
@@ -111,7 +111,7 @@
     [knob closePath];
     
     //Flip the knob
-    if (tickPosition == NSTickMarkAbove)
+    if (tickPosition == NSTickMarkPositionAbove)
     {
         NSAffineTransform *transform = [NSAffineTransform transform];
         [transform scaleXBy: 1 yBy: -1];
@@ -195,10 +195,10 @@
     NSRect barRect = theRect;
     switch (self.controlSize)
     {
-		case NSRegularControlSize:
+		case NSControlSizeRegular:
 			if (self.numberOfTickMarks > 0)
             {	
-				if (self.tickMarkPosition == NSTickMarkBelow)
+				if (self.tickMarkPosition == NSTickMarkPositionBelow)
 					barRect.origin.y += 4;
                 else
 					barRect.origin.y += barRect.size.height - 10;
@@ -213,10 +213,10 @@
 			barRect.size.height = 5;
 			break;
 			
-		case NSSmallControlSize:
+		case NSControlSizeSmall:
 			if (self.numberOfTickMarks > 0)
             {
-				if (self.tickMarkPosition == NSTickMarkBelow)
+				if (self.tickMarkPosition == NSTickMarkPositionBelow)
 					barRect.origin.y += 2;
                 else
 					barRect.origin.y += barRect.size.height - 8;
@@ -231,10 +231,10 @@
 			barRect.size.height = 5;
 			break;
 			
-		case NSMiniControlSize:
+		case NSControlSizeMini:
 			if (self.numberOfTickMarks > 0)
             {
-				if (self.tickMarkPosition == NSTickMarkBelow)
+				if (self.tickMarkPosition == NSTickMarkPositionBelow)
 					barRect.origin.y += 2;
                 else
 					barRect.origin.y += barRect.size.height - 6;

@@ -232,7 +232,7 @@
     
         if (self.isEnabled)
         {
-            [NSGraphicsContext currentContext].compositingOperation = NSCompositeXOR;
+            [NSGraphicsContext currentContext].compositingOperation = NSCompositingOperationXOR;
             [backgroundPill fill];
         }
         else
@@ -286,7 +286,7 @@
 - (void) mouseDown: (NSEvent *)theEvent
 {
     //Fall back on the standard show-menu behaviour if the user control-clicks.
-    if (theEvent.modifierFlags & NSControlKeyMask)
+    if (theEvent.modifierFlags & NSEventModifierFlagControl)
     {
         [self rightMouseDown: theEvent];
     }
@@ -300,13 +300,13 @@
         //here in mouseDown and break out of it for mouseUp and mouseDragged.
         while (self.selectionIndexes.count)
         {
-            NSEvent *eventInDrag = [self.window nextEventMatchingMask: NSLeftMouseUpMask | NSLeftMouseDraggedMask];
+            NSEvent *eventInDrag = [self.window nextEventMatchingMask: NSEventMaskLeftMouseUp | NSEventMaskLeftMouseDragged];
             switch (eventInDrag.type)
             {
-                case NSLeftMouseDragged:
+                case NSEventTypeLeftMouseDragged:
                     [self _beginDragOperationWithEvent: eventInDrag];
                     return;
-                case NSLeftMouseUp:
+                case NSEventTypeLeftMouseUp:
                     [self mouseUp: eventInDrag];
                     return;
             }
@@ -322,7 +322,7 @@
 	if (theEvent.clickCount > 1)
 	{
         SEL action;
-        if (theEvent.modifierFlags & NSCommandKeyMask)
+        if (theEvent.modifierFlags & NSEventModifierFlagCommand)
             action = @selector(revealSelectedDrivesInFinder:);
         else
             action = @selector(mountSelectedDrives:);
@@ -347,7 +347,7 @@
     }
     //Remove the selected drive(s) from the drive list when the user presses Cmd+Backspace.
     else if ([theEvent.charactersIgnoringModifiers isEqualToString: @"\x7f"] &&
-             (theEvent.modifierFlags & NSCommandKeyMask))
+             (theEvent.modifierFlags & NSEventModifierFlagCommand))
     {
         [NSApp sendAction: @selector(removeSelectedDrives:) to: self.delegate from: self];
     }
@@ -387,7 +387,7 @@
     if (!self.selectionIndexes.count) return;
     
     //Make a new pasteboard and get our delegate to set it up for us
-	NSPasteboard *pasteboard = [NSPasteboard pasteboardWithName: NSDragPboard];
+    NSPasteboard *pasteboard = [NSPasteboard pasteboardWithName: NSPasteboardNameDrag];
     
     BOOL continueDrag = [self.delegate collectionView: self
                                   writeItemsAtIndexes: self.selectionIndexes

@@ -306,7 +306,7 @@
             
             [image drawInRect: imageRect
                      fromRect: NSZeroRect
-                    operation: NSCompositeSourceAtop
+                    operation: NSCompositingOperationSourceAtop
                      fraction: imageAlpha
                respectFlipped: YES
                         hints: nil];

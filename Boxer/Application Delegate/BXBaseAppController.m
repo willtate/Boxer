@@ -441,7 +441,7 @@
 	NSString *siteString = [[NSBundle mainBundle] objectForInfoDictionaryKey: infoKey];
     NSAssert(siteString.length, @"No search URL found in Info.plist for key %@", infoKey);
     
-    NSString *encodedSearch = [search stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+    NSString *encodedSearch = [search stringByAddingPercentEncodingWithAllowedCharacters: NSCharacterSet.URLQueryAllowedCharacterSet];
     NSString *URLString		= [NSString stringWithFormat: siteString, encodedSearch];
     [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: URLString]];
 }
@@ -452,7 +452,7 @@
     NSAssert(address.length, @"No email address found in Info.plist for key %@", infoKey);
 	if (address.length)
 	{
-		NSString *encodedSubject	= [subject stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+		NSString *encodedSubject	= [subject stringByAddingPercentEncodingWithAllowedCharacters: NSCharacterSet.URLQueryAllowedCharacterSet];
 		NSString *mailtoURLString	= [NSString stringWithFormat: @"mailto:%@?subject=%@", address, encodedSubject];
 		[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: mailtoURLString]];
 	}
@@ -707,8 +707,8 @@
     
     if (issueURLString.length)
     {
-        NSString *encodedTitle  = (title) ? [title stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding] : @"";
-        NSString *encodedBody   = (body) ? [body stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding] : @"";
+        NSString *encodedTitle  = (title) ? [title stringByAddingPercentEncodingWithAllowedCharacters: NSCharacterSet.URLQueryAllowedCharacterSet] : @"";
+        NSString *encodedBody   = (body) ? [body stringByAddingPercentEncodingWithAllowedCharacters: NSCharacterSet.URLQueryAllowedCharacterSet] : @"";
         
         NSString *completeURLString = [NSString stringWithFormat: @"%@?title=%@&body=%@", issueURLString, encodedTitle, encodedBody];
 		[[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString: completeURLString]];

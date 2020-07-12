@@ -180,7 +180,7 @@ NSString * const BXGamesFolderBookmarkUserDefaultsKey = @"gamesFolderURLBookmark
 		
 		
         BOOL imageSaved = [tiledShelf saveToURL: artworkURL
-                                       withType: NSJPEGFileType
+                                       withType: NSBitmapImageFileTypeJPEG
                                      properties: @{ NSImageCompressionFactor: @(1.0)}
                                           error: NULL];
 		

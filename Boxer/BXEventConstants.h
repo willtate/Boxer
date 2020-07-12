@@ -58,7 +58,7 @@ typedef NS_OPTIONS(NSUInteger, BXMouseButtonMask) {
 //IMPLEMENTATION NOTE: these are combined with their respective device-independent modifier masks,
 //to ensure that modifier flags we compare against do actually represent a key event of that type:
 //this avoids collisions with other unrelated device-dependent flags.
-enum {
+NS_ENUM(NSUInteger) {
 	BXLeftControlKeyMask	= 0x00000001 | NSEventModifierFlagControl,
 	BXLeftShiftKeyMask		= 0x00000002 | NSEventModifierFlagShift,
 	BXRightShiftKeyMask		= 0x00000004 | NSEventModifierFlagShift,

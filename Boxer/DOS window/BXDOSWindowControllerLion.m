@@ -40,7 +40,7 @@
     //Turning off touch events just before window close seems to prevent this
     //from happening, though the underlying bug is likely to get fixed in
     //a later Lion update.
-    self.inputView.acceptsTouchEvents = NO;
+    self.inputView.allowedTouchTypes = 0;
 }
 
 #pragma mark -

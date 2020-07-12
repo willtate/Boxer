@@ -342,7 +342,7 @@
 				returnCode: (NSModalResponse)returnCode
 			   contextInfo: (NSInvocation *)callback
 {
-	if (alert.showsSuppressionButton && alert.suppressionButton.state == NSOnState)
+	if (alert.showsSuppressionButton && alert.suppressionButton.state == NSControlStateValueOn)
 		[[NSUserDefaults standardUserDefaults] setBool: YES forKey: @"suppressCloseAlert"];
 	
     //Hide the alert before we go any further, so that it has time to get out of the way

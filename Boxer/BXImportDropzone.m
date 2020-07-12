@@ -54,7 +54,7 @@
 		
 		[icon lockFocus];
 		[tint set];
-		NSRectFillUsingOperation(bounds, NSCompositeSourceAtop);
+		NSRectFillUsingOperation(bounds, NSCompositingOperationSourceAtop);
 		[icon unlockFocus];
 	}
 	return icon;
@@ -211,7 +211,7 @@
 		{
 			[icon drawInRect: imageFrame
 					fromRect: NSZeroRect 
-				   operation: NSCompositeSourceOver
+				   operation: NSCompositingOperationSourceOver
 					fraction: 1.0
 			  respectFlipped: YES
 					   hints: nil];

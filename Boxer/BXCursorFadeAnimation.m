@@ -36,7 +36,7 @@
 	if (opacity > 0.0f)
 	{
 		[fadedImage lockFocus];
-		[[cursor image] drawAtPoint: NSZeroPoint fromRect: NSZeroRect operation: NSCompositeSourceOver fraction: opacity];
+        [[cursor image] drawAtPoint: NSZeroPoint fromRect: NSZeroRect operation: NSCompositingOperationSourceOver fraction: opacity];
 		[fadedImage unlockFocus];
 	}
 	

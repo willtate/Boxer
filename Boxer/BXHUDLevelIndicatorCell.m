@@ -16,13 +16,13 @@
 {
     switch (size)
     {
-        case NSMiniControlSize:
+        case NSControlSizeMini:
             return 10.0f;
             
-        case NSSmallControlSize:
+        case NSControlSizeSmall:
             return 12.0f;
             
-        case NSRegularControlSize:
+        case NSControlSizeRegular:
         default:
             return 14.0f;
     }

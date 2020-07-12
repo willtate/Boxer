@@ -53,7 +53,7 @@
     
     [openPanel beginSheetModalForWindow: self.view.window
                       completionHandler: ^(NSInteger result) {
-                          if (result == NSFileHandlingPanelOKButton)
+                          if (result == NSModalResponseOK)
                           {
                               //Ensure the open panel is closed before we continue,
                               //in case importFromSourcePath: decides to display errors.

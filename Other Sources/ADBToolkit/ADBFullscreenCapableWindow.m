@@ -148,8 +148,8 @@
     if (![NSWindow instancesRespondToSelector: @selector(setStyleMask:)]) return;
     
     //Test whether we're transitioning to/from fullscreen based on Lion's fullscreen mask.
-    BOOL wasInFullScreen    = (self.styleMask & NSFullScreenWindowMask) == NSFullScreenWindowMask;
-    BOOL willBeInFullScreen = (styleMask & NSFullScreenWindowMask) == NSFullScreenWindowMask;
+    BOOL wasInFullScreen    = (self.styleMask & NSWindowStyleMaskFullScreen) == NSWindowStyleMaskFullScreen;
+    BOOL willBeInFullScreen = (styleMask & NSWindowStyleMaskFullScreen) == NSWindowStyleMaskFullScreen;
     
     BOOL togglingFullScreen = (wasInFullScreen != willBeInFullScreen);
     
@@ -241,7 +241,7 @@
             _windowedStyleMask = self.styleMask;
             
             //Disable window resizing while in fullscreen mode
-            self.styleMask = _windowedStyleMask & ~NSResizableWindowMask;
+            self.styleMask = _windowedStyleMask & ~NSWindowStyleMaskResizable;
              
             NSRect contentFrame = self.screen.frame;
             
@@ -298,7 +298,7 @@
 {
 	//Create the chromeless window we'll use for the fade effect
 	NSPanel *blankingWindow = [[NSPanel alloc] initWithContentRect: NSZeroRect
-														 styleMask: NSBorderlessWindowMask
+                                                         styleMask: NSWindowStyleMaskBorderless
 														   backing: NSBackingStoreBuffered
 															 defer: YES];
 	

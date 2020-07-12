@@ -78,7 +78,7 @@
     
     //Tweak: let Cmd-modified keys fall through, so that key-repeat events
     //for key equivalents are handled properly.
-    if ((event.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask)
+    if ((event.modifierFlags & NSEventModifierFlagCommand) == NSEventModifierFlagCommand)
         return NO;
     
     //Only capture if the current session is key and is running a program.

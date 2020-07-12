@@ -115,7 +115,7 @@
 		if ([self isHighlighted]) [[self highlightGlow] set];
 		[image	drawInRect: imageFrame
 				fromRect: NSZeroRect
-				operation: NSCompositeSourceOver
+                operation: NSCompositingOperationSourceOver
 				fraction: 1.0];
 	[NSGraphicsContext restoreGraphicsState];	
 }
@@ -134,7 +134,7 @@
 
 	//Isolate the current context on a transparent layer of its own,
 	//so that our compositing operation won't pick up the containing view's background
-	CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
+    CGContextRef context = [[NSGraphicsContext currentContext] CGContext];
 	CGContextBeginTransparencyLayerWithRect(context, NSRectToCGRect(frame), NULL);
 		
 	[NSGraphicsContext saveGraphicsState];
@@ -148,7 +148,7 @@
 	[NSGraphicsContext restoreGraphicsState];
 	
 	//Add our own box shine to the rendered dropzone (this is the part that requires the transparency layer)
-	[shine drawInRect: frame fromRect: NSZeroRect operation: NSCompositeSourceAtop fraction: 0.25];
+    [shine drawInRect: frame fromRect: NSZeroRect operation: NSCompositingOperationSourceAtop fraction: 0.25];
 	
 	CGContextEndTransparencyLayer(context);
 }

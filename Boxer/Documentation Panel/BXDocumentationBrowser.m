@@ -992,7 +992,7 @@ enum {
     }
     //Delete the selected items when the user presses Cmd+Backspace.
     else if ([theEvent.charactersIgnoringModifiers isEqualToString: @"\x7f"] &&
-             (theEvent.modifierFlags & NSCommandKeyMask))
+             (theEvent.modifierFlags & NSEventModifierFlagCommand))
     {
         [NSApp sendAction: @selector(trashSelectedDocumentationItems:) to: nil from: self];
     }

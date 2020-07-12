@@ -975,10 +975,10 @@
         
         //Enter an event loop listening for the mouse-up event.
         //If we don't do this, the collection view will swallow the mouse-up and we'll never see it.
-        NSEvent *eventInDrag = [self.window nextEventMatchingMask: NSLeftMouseUpMask];
+        NSEvent *eventInDrag = [self.window nextEventMatchingMask: NSEventMaskLeftMouseUp];
         switch (eventInDrag.type)
         {
-            case NSLeftMouseUp:
+            case NSEventTypeLeftMouseUp:
                 [self mouseUp: eventInDrag];
                 return;
         }
@@ -1020,7 +1020,7 @@
             
             [NSGraphicsContext saveGraphicsState];
                 [fillColor set];
-                [[NSGraphicsContext currentContext] setCompositingOperation: NSCompositePlusDarker];
+                [[NSGraphicsContext currentContext] setCompositingOperation: NSCompositingOperationPlusDarker];
                 [fillPath fill];
                 [fillPath fillWithInnerShadow: innerShadow];
             [NSGraphicsContext restoreGraphicsState];
@@ -1065,20 +1065,20 @@
     NSRect bevelShadowRect = NSOffsetRect(bevelHighlightRect, 0, 1);
     
     [backgroundColor set];
-    NSRectFillUsingOperation(dirtyRect, NSCompositeSourceOver);
+    NSRectFillUsingOperation(dirtyRect, NSCompositingOperationSourceOver);
     
     if ([self needsToDrawRect: bevelHighlightRect])
     {
         NSColor *bevelHighlight = [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.1];
         [bevelHighlight set];
-        NSRectFillUsingOperation(bevelHighlightRect, NSCompositeSourceOver);
+        NSRectFillUsingOperation(bevelHighlightRect, NSCompositingOperationSourceOver);
     }
     
     if ([self needsToDrawRect: bevelShadowRect])
     {
         NSColor *bevelShadow = [NSColor colorWithCalibratedWhite: 0.0 alpha: 0.1];
         [bevelShadow set];
-        NSRectFillUsingOperation(bevelShadowRect, NSCompositeSourceOver);
+        NSRectFillUsingOperation(bevelShadowRect, NSCompositingOperationSourceOver);
     }
 }
 @end

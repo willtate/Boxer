@@ -39,7 +39,7 @@
 	{
 		[brand drawInRect: brandRegion
 				 fromRect: NSZeroRect
-				operation: NSCompositeSourceOver
+				operation: NSCompositingOperationSourceOver
 				 fraction: 1.0f];	
 	}
 }

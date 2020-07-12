@@ -69,7 +69,7 @@ typedef NS_ENUM(NSInteger, BXKeyboardEventTapStatus) {
 /// Called when a BXKeyboardEventTap instance receives a keyup or keydown event,
 /// before the event reaches the default OS X handler for dispatch.
 /// @param tap      The BXKeyboardEventTap instance that received the key event.
-/// @param event    The NSKeyUp/NSKeyDown event received by the tap.
+/// @param event    The NSEventTypeKeyUp/NSEventTypeKeyDown event received by the tap.
 /// @return YES if the event tap should swallow the without passing it on to the system.
 /// @return NO if the event tap should let the event reach the system unmolested.
 /// @note This may be called on a thread other than the main thread.

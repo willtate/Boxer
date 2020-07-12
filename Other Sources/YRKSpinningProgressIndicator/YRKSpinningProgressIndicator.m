@@ -74,7 +74,7 @@
         [NSBezierPath fillRect:[self bounds]];
     }
 
-    CGContextRef currentContext = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
+	CGContextRef currentContext = [[NSGraphicsContext currentContext] CGContext];
     [NSGraphicsContext saveGraphicsState];
 
     // Move the CTM so 0,0 is at the center of our bounds
@@ -255,7 +255,7 @@
 
 - (void) setStyle: (NSProgressIndicatorStyle)style
 {
-    if (NSProgressIndicatorSpinningStyle != style)
+	if (NSProgressIndicatorStyleSpinning != style)
 	{
         NSAssert(NO, @"Non-spinning styles not available.");
     }

@@ -51,7 +51,7 @@
 {
     if ((self = [super initWithCoder: aDecoder]))
     {
-        [self setButtonType: NSSwitchButton];
+        [self setButtonType: NSButtonTypeSwitch];
     }
     return self;
 }
@@ -66,7 +66,7 @@
 {
     if ((self = [super initWithCoder: aDecoder]))
     {
-        [self setButtonType: NSRadioButton];
+        [self setButtonType: NSButtonTypeRadio];
     }
     return self;
 }

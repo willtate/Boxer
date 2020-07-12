@@ -71,7 +71,7 @@
 	//If the keypress was command-modified, don't pass it on to the emulator as it indicates
 	//a failed key equivalent.
 	//(This is consistent with how other OS X apps with textinput handle Cmd-keypresses.)
-	if ((theEvent.modifierFlags & NSCommandKeyMask) == NSCommandKeyMask)
+    if ((theEvent.modifierFlags & NSEventModifierFlagCommand) == NSEventModifierFlagCommand)
 	{
         [super keyDown: theEvent];
         return;
@@ -108,7 +108,7 @@
         //if the numpad simulation toggle is on XOR the user is holding down the Fn key.
         //Why XOR? Then, with the simulation toggle on, the original keys "below" the
         //numpad simulation can be accessed by holding the Fn key. (!= is logical XOR)
-        BOOL fnModified = (theEvent.modifierFlags & NSFunctionKeyMask) == NSFunctionKeyMask;
+        BOOL fnModified = (theEvent.modifierFlags & NSEventModifierFlagFunction) == NSEventModifierFlagFunction;
         BOOL simulateNumpad = self.simulatedNumpadActive != fnModified;
         
         CGKeyCode OSXKeyCode = theEvent.keyCode;
@@ -163,7 +163,7 @@
     //When the Cmd key is pressed, release all active keys and don't trigger key events for the flag change.
     //This way we avoid Cmd key shortcuts interfering with (or inadvertently triggering) the game's own functions.
     NSUInteger currentModifiers = theEvent.modifierFlags;
-    if ((currentModifiers & NSCommandKeyMask) == NSCommandKeyMask)
+    if ((currentModifiers & NSEventModifierFlagCommand) == NSEventModifierFlagCommand)
     {
         [self.emulatedKeyboard clearInput];
         _lastModifiers = currentModifiers;
@@ -259,7 +259,7 @@
 			{ BXRightControlKeyMask,    KBD_rightctrl },
 			{ BXRightAlternateKeyMask,  KBD_rightalt },
 			{ BXRightShiftKeyMask,      KBD_rightshift },
-			{ NSAlphaShiftKeyMask,      KBD_capslock },
+            { NSEventModifierFlagCapsLock,      KBD_capslock },
 		};
 		
 		NSUInteger i;
@@ -280,7 +280,7 @@
 				//Special handling for capslock key: whenever the flag is toggled,
 				//act like the key was pressed and then released shortly after.
 				//(We never receive actual keyup events for this key.)
-				if (flag == NSAlphaShiftKeyMask)
+                if (flag == NSEventModifierFlagCapsLock)
 				{
                     //TWEAK: only toggle capslock if DOS’s capslock state doesn't already match
                     //the keyboard’s state. This ensures that we don’t get out of sync if we ever

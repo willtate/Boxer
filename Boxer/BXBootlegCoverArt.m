@@ -65,7 +65,7 @@
 	NSFont *font		= [NSFont fontWithName: [self fontName] size: fontSize];
 	
 	NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-	[style setAlignment: NSCenterTextAlignment];
+	[style setAlignment: NSTextAlignmentCenter];
 	[style setMaximumLineHeight: lineHeight];
 	[style setMinimumLineHeight: lineHeight];
 	
@@ -97,7 +97,7 @@
 	{
 		[baseLayer drawInRect: frame
 					 fromRect: NSZeroRect
-					operation: NSCompositeSourceOver
+					operation: NSCompositingOperationSourceOver
 					 fraction: 1.0];
 	}
 
@@ -111,7 +111,7 @@
 	{
 		[topLayer drawInRect: frame
 					fromRect: NSZeroRect
-				   operation: NSCompositeSourceOver
+				   operation: NSCompositingOperationSourceOver
 					fraction: 1.0];
 	}
 

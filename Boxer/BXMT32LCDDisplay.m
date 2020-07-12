@@ -127,7 +127,7 @@
         //First, draw the background grid for this character
         [grid drawInRect: characterRect
                 fromRect: NSZeroRect
-               operation: NSCompositeSourceOver
+               operation: NSCompositingOperationSourceOver
                 fraction: 1.0f
           respectFlipped: YES
                    hints: nil];
@@ -152,7 +152,7 @@
                 [[NSGraphicsContext currentContext] setImageInterpolation: NSImageInterpolationNone];
                 [fontTemplate drawInRect: gridTemplateRect
                                 fromRect: glyphRect
-                               operation: NSCompositeDestinationIn
+                               operation: NSCompositingOperationDestinationIn
                                 fraction: 1.0f
                           respectFlipped: YES
                                    hints: nil];
@@ -164,7 +164,7 @@
             
             [tintedGlyph drawInRect: characterRect
                            fromRect: NSZeroRect
-                          operation: NSCompositeSourceOver
+                          operation: NSCompositingOperationSourceOver
                            fraction: 1.0f
                      respectFlipped: YES
                               hints: nil];
