@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0532FBF824BAA1A4008EAD86 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0532FBF624BAA1A4008EAD86 /* SDL2.framework */; };
 		05E6BA5924B972C900BAAD2D /* BXMetalRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA5824B972C900BAAD2D /* BXMetalRenderingView.m */; };
 		05E6BA6F24B9FACC00BAAD2D /* BXMetalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA6E24B9FACC00BAAD2D /* BXMetalLayer.m */; };
 		05E6BA7024B9FC2E00BAAD2D /* OpenEmuShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; };
@@ -34,6 +33,14 @@
 		5557480C208FA8040045E635 /* sn76496.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F9208FA8030045E635 /* sn76496.cpp */; };
 		5563E57F239EF7CD007A1600 /* ADBSwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563E57E239EF7CD007A1600 /* ADBSwiftHelpers.swift */; };
 		5563E580239EF7CD007A1600 /* ADBSwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563E57E239EF7CD007A1600 /* ADBSwiftHelpers.swift */; };
+		5585CEB124BB8342008121D9 /* SDL2_sound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5585CEAE24BB8316008121D9 /* SDL2_sound.framework */; };
+		5585CEB224BB8342008121D9 /* SDL2_sound.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 5585CEAE24BB8316008121D9 /* SDL2_sound.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5585CEB324BB834D008121D9 /* SDL2_sound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5585CEAE24BB8316008121D9 /* SDL2_sound.framework */; };
+		5585CEB424BB834D008121D9 /* SDL2_sound.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 5585CEAE24BB8316008121D9 /* SDL2_sound.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5585CEB524BB834F008121D9 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0532FBF624BAA1A4008EAD86 /* SDL2.framework */; };
+		5585CEB624BB834F008121D9 /* SDL2.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 0532FBF624BAA1A4008EAD86 /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5585CEB824BB835F008121D9 /* SDL2_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9A1FE24BAA64100969496 /* SDL2_net.framework */; };
+		5585CEB924BB8360008121D9 /* SDL2_net.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9A1FE24BAA64100969496 /* SDL2_net.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		558CE44D20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
 		558CE44E20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
 		55B22BA21A1BD9760007665E /* Bundler.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22BA11A1BD9760007665E /* Bundler.xcassets */; };
@@ -895,9 +902,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5585CEB624BB834F008121D9 /* SDL2.framework in Copy Bundled Frameworks */,
 				55E6A0C71C00C88A00285593 /* DDHidLib.framework in Copy Bundled Frameworks */,
+				5585CEB424BB834D008121D9 /* SDL2_sound.framework in Copy Bundled Frameworks */,
 				55E6A0C31C00C88A00285593 /* MT32Emu.framework in Copy Bundled Frameworks */,
 				55E6A0CB1C00C88A00285593 /* BGHUDAppKit.framework in Copy Bundled Frameworks */,
+				5585CEB924BB8360008121D9 /* SDL2_net.framework in Copy Bundled Frameworks */,
 			);
 			name = "Copy Bundled Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -913,6 +923,7 @@
 				55E6A0BB1C00C86200285593 /* DDHidLib.framework in Copy Bundled Frameworks */,
 				55E6A0B71C00C86200285593 /* MT32Emu.framework in Copy Bundled Frameworks */,
 				05E6BA7124B9FC2E00BAAD2D /* OpenEmuShaders.framework in Copy Bundled Frameworks */,
+				5585CEB224BB8342008121D9 /* SDL2_sound.framework in Copy Bundled Frameworks */,
 				05F9A20124BAA7AA00969496 /* SDL2_net.framework in Copy Bundled Frameworks */,
 				05F9A20324BAA7AB00969496 /* SDL2.framework in Copy Bundled Frameworks */,
 			);
@@ -954,6 +965,7 @@
 		555747FB208FA8030045E635 /* ymf262.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ymf262.h; sourceTree = "<group>"; };
 		5563E57E239EF7CD007A1600 /* ADBSwiftHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADBSwiftHelpers.swift; sourceTree = "<group>"; };
 		5565757423568DED003489A6 /* risc_x64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = risc_x64.h; sourceTree = "<group>"; };
+		5585CEAE24BB8316008121D9 /* SDL2_sound.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2_sound.framework; sourceTree = "<group>"; };
 		558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXXBOBluetoothControllerProfile.m; sourceTree = "<group>"; };
 		55AEA5CB201F05010000139A /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DocumentationPanel.strings; sourceTree = "<group>"; };
 		55AEA5CC201F05020000139A /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DocumentationBrowser.strings; sourceTree = "<group>"; };
@@ -1880,6 +1892,7 @@
 				05F9A20224BAA7AB00969496 /* SDL2.framework in Frameworks */,
 				9F61942412340F5400F35AB4 /* ScriptingBridge.framework in Frameworks */,
 				55E6A0BA1C00C86200285593 /* DDHidLib.framework in Frameworks */,
+				5585CEB124BB8342008121D9 /* SDL2_sound.framework in Frameworks */,
 				9FBAA8F4134AFABD0092BF95 /* DiskArbitration.framework in Frameworks */,
 				05E6BA7024B9FC2E00BAAD2D /* OpenEmuShaders.framework in Frameworks */,
 			);
@@ -1898,12 +1911,14 @@
 				9FB769E5164861E1000644C2 /* Quartz.framework in Frameworks */,
 				9F2D315815B8233800FAE848 /* QuartzCore.framework in Frameworks */,
 				55E6A0CA1C00C88A00285593 /* BGHUDAppKit.framework in Frameworks */,
+				5585CEB524BB834F008121D9 /* SDL2.framework in Frameworks */,
 				9F2D315915B8233800FAE848 /* AudioToolbox.framework in Frameworks */,
 				9F2D315A15B8233800FAE848 /* libicucore.dylib in Frameworks */,
+				5585CEB824BB835F008121D9 /* SDL2_net.framework in Frameworks */,
 				55E6A0C21C00C88A00285593 /* MT32Emu.framework in Frameworks */,
 				9F2D315D15B8233800FAE848 /* ScriptingBridge.framework in Frameworks */,
-				0532FBF824BAA1A4008EAD86 /* SDL2.framework in Frameworks */,
 				9F2D316015B8233800FAE848 /* DiskArbitration.framework in Frameworks */,
+				5585CEB324BB834D008121D9 /* SDL2_sound.framework in Frameworks */,
 				55E6A0C61C00C88A00285593 /* DDHidLib.framework in Frameworks */,
 				9F2D316215B8233800FAE848 /* IOKit.framework in Frameworks */,
 			);
@@ -3228,6 +3243,7 @@
 				9F20C28A11E5D848005AF541 /* Sparkle.framework */,
 				0532FBF624BAA1A4008EAD86 /* SDL2.framework */,
 				05F9A1FE24BAA64100969496 /* SDL2_net.framework */,
+				5585CEAE24BB8316008121D9 /* SDL2_sound.framework */,
 			);
 			name = "Bundled Frameworks";
 			path = Frameworks;
