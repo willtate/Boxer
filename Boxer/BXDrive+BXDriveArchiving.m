@@ -37,6 +37,11 @@
 
 @implementation BXDrive (BXDriveArchiving)
 
++ (BOOL)supportsSecureCoding
+{
+    return YES;
+}
+
 - (id) initWithCoder: (NSCoder *)aDecoder
 {
     if ((self = [self init]))
@@ -48,7 +53,7 @@
         {
 #define URL_FROM_BOOKMARK(bookmark) ((NSURL *)[NSURL URLByResolvingBookmarkData: bookmark options: NSURLBookmarkResolutionWithoutUI relativeToURL: nil bookmarkDataIsStale: NULL error: NULL])
             
-            NSData *sourceBookmarkData = [aDecoder decodeObjectForKey: @"sourceURLBookmark"];
+            NSData *sourceBookmarkData = [aDecoder decodeObjectOfClass: [NSData class] forKey: @"sourceURLBookmark"];
             if (sourceBookmarkData)
             {
                 self.sourceURL = URL_FROM_BOOKMARK(sourceBookmarkData);
@@ -60,19 +65,19 @@
                 return nil;
             }
             
-            NSData *shadowBookmarkData = [aDecoder decodeObjectForKey: @"shadowURLBookmark"];
+            NSData *shadowBookmarkData = [aDecoder decodeObjectOfClass: [NSData class] forKey: @"shadowURLBookmark"];
             if (shadowBookmarkData)
             {
                 self.shadowURL = URL_FROM_BOOKMARK(shadowBookmarkData);
             }
             
-            NSData *mountPointBookmarkData = [aDecoder decodeObjectForKey: @"mountPointURLBookmark"];
+            NSData *mountPointBookmarkData = [aDecoder decodeObjectOfClass: [NSData class] forKey: @"mountPointURLBookmark"];
             if (mountPointBookmarkData)
             {
                 self.mountPointURL = URL_FROM_BOOKMARK(mountPointBookmarkData);
             }
             
-            NSSet *equivalentURLBookmarks = [aDecoder decodeObjectForKey: @"equivalentURLBookmarks"];
+            NSSet *equivalentURLBookmarks = [aDecoder decodeObjectOfClasses: [NSSet setWithObjects: [NSData class], [NSSet class], nil] forKey: @"equivalentURLBookmarks"];
             if (equivalentURLBookmarks)
             {
                 for (NSData *bookmarkData in equivalentURLBookmarks)
@@ -96,7 +101,7 @@
                 [(NSKeyedUnarchiver *)aDecoder setClass: [__NDAliasDecoder class]
                                            forClassName: @"NDAlias"];
             
-            NSData *sourceAliasData = [aDecoder decodeObjectForKey: @"path"];
+            NSData *sourceAliasData = [aDecoder decodeObjectOfClasses: [NSSet setWithObjects: [__NDAliasDecoder class], [NSData class], nil] forKey: @"path"];
             if (sourceAliasData)
             {
                 self.sourceURL = URL_FROM_ALIAS(sourceAliasData);
@@ -107,15 +112,15 @@
                 return nil;
             }
             
-            NSData *shadowAliasData = [aDecoder decodeObjectForKey: @"shadowPath"];
+            NSData *shadowAliasData = [aDecoder decodeObjectOfClasses:[NSSet setWithObjects: [__NDAliasDecoder class], [NSData class], nil] forKey: @"shadowPath"];
             if (shadowAliasData)
                 self.shadowURL = URL_FROM_ALIAS(shadowAliasData);
             
-            NSData *mountPointAliasData = [aDecoder decodeObjectForKey: @"mountPoint"];
+            NSData *mountPointAliasData = [aDecoder decodeObjectOfClasses:[NSSet setWithObjects: [__NDAliasDecoder class], [NSData class], nil] forKey: @"mountPoint"];
             if (mountPointAliasData)
                 self.mountPointURL = URL_FROM_ALIAS(mountPointAliasData);
             
-            NSSet *pathAliases = [aDecoder decodeObjectForKey: @"pathAliases"];
+            NSSet *pathAliases = [aDecoder decodeObjectOfClasses:[NSSet setWithObjects: [NSSet class], [__NDAliasDecoder class], [NSData class], nil] forKey: @"pathAliases"];
             for (NSData *aliasData in pathAliases)
             {
                 NSURL *equivalentURL = URL_FROM_ALIAS(aliasData);
@@ -126,13 +131,13 @@
         
         self.type = [aDecoder decodeIntegerForKey: @"type"];
         
-        NSString *letter = [aDecoder decodeObjectForKey: @"letter"];
+        NSString *letter = [aDecoder decodeObjectOfClass: [NSString class] forKey: @"letter"];
         if (letter) self.letter = letter;
         
-        NSString *title = [aDecoder decodeObjectForKey: @"title"];
+        NSString *title = [aDecoder decodeObjectOfClass: [NSString class] forKey: @"title"];
         if (title) self.title = title;
         
-        NSString *volumeLabel = [aDecoder decodeObjectForKey: @"volumeLabel"];
+        NSString *volumeLabel = [aDecoder decodeObjectOfClass: [NSString class] forKey: @"volumeLabel"];
         if (volumeLabel) self.volumeLabel = volumeLabel;
         
         if ([aDecoder containsValueForKey: @"freeSpace"])

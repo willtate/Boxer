@@ -855,7 +855,7 @@ NSString * const BXGameImportedNotificationType     = @"BXGameImported";
                 if (drive.isHidden || drive.isVirtual || [self driveIsBundled: drive])
                     continue;
                 
-                NSData *driveInfo = [NSKeyedArchiver archivedDataWithRootObject: drive];
+                NSData *driveInfo = [NSKeyedArchiver archivedDataWithRootObject: drive requiringSecureCoding: YES error: NULL];
                 
                 [queuedDrives addObject: driveInfo];
             }
