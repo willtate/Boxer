@@ -74,7 +74,7 @@ enum {
     
     
 	//Register the entire drive panel as a drag-drop target.
-	[self.view registerForDraggedTypes: @[NSFilenamesPboardType]];
+	[self.view registerForDraggedTypes: @[NSPasteboardTypeFileURL]];
     
 	//Assign the appropriate menu to the drive-actions button segment.
 	[self.driveControls setMenu: self.driveActionsMenu forSegment: BXDriveActionsMenuSegment];
@@ -695,7 +695,7 @@ enum {
         self.driveRemovalDropzone.collectionBehavior = NSWindowCollectionBehaviorCanJoinAllSpaces;
         self.driveRemovalDropzone.delegate = self;
         
-        [self.driveRemovalDropzone registerForDraggedTypes: @[NSFilenamesPboardType]];
+        [self.driveRemovalDropzone registerForDraggedTypes: @[NSPasteboardTypeFileURL]];
     }
     
     //Place the dropzone behind all of Boxer's windows, but on top of windows in other applications.

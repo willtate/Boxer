@@ -258,7 +258,7 @@
     
     switch (self.state)
     {
-		case NSMixedState:
+		case NSControlStateValueMixed:
             {
                 path = [[NSBezierPath alloc] init];
                 NSPoint pointsMixed[2];

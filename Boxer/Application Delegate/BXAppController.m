@@ -200,7 +200,7 @@ NSString * const BXActivateOnLaunchParam = @"--activateOnLaunch";
     openPanel.message = NSLocalizedString(@"Choose a gamebox, folder or DOS program to open in DOS.",
                                           @"Help text shown at the top of the open panel.");
 	
-	//Todo: add an accessory view and delegate to handle special-case requirements.
+	//TODO: add an accessory view and delegate to handle special-case requirements.
 	//(like installation, or choosing which drive to mount a folder as.) 
 	
 	return [super runModalOpenPanel: openPanel forTypes: extensions];

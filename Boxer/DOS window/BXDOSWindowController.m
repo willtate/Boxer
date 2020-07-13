@@ -137,7 +137,7 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
 - (void) windowDidLoad
 {
 	//Register for drag-drop file operations (used for mounting folders and such)
-    NSArray *dragTypes = [NSArray arrayWithObjects: NSFilenamesPboardType, NSPasteboardTypeString, nil];
+    NSArray *dragTypes = [NSArray arrayWithObjects: NSPasteboardTypeFileURL, NSPasteboardTypeString, nil];
 	[self.window registerForDraggedTypes: dragTypes];
 	
     //The launch panel controller is responsible for loading its own view, which we add to the hierarchy ourselves.
@@ -1073,7 +1073,7 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
             (self.currentPanel == BXDOSWindowLaunchPanel && newPanel == BXDOSWindowDOSView)))
         {
             //Disable window flushes to prevent partial redraws while we're setting up the views.
-            [self.window disableFlushWindow];
+            [NSAnimationContext beginGrouping];
             
             //We reveal the launcher by sliding the parent view along horizontally:
             //So we resize the wrapper to accommodate both views side-by-side.
@@ -1112,7 +1112,7 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
             self.launchPanel.hidden = NO;
             self.inputView.hidden = NO;
             
-            [self.window enableFlushWindow];
+            [NSAnimationContext endGrouping];
             [wrapperView display];
             
     
@@ -1138,15 +1138,15 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
                 [self.renderingView viewAnimationDidEnd: animation];
             
             //Once we're done sliding, restore the frames to what they were.
-            [self.window disableFlushWindow];
-            
+            [NSAnimationContext beginGrouping];
+
             self.launchPanel.frame = originalBounds;
             self.inputView.frame = originalBounds;
             
             wrapperView.frame = originalFrame;
             wrapperView.autoresizesSubviews = YES;
             
-            [self.window enableFlushWindow];
+            [NSAnimationContext endGrouping];
         }
         //For all other transitions, crossfade the current panel and the new panel.
         else

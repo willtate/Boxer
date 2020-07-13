@@ -54,7 +54,7 @@
 - (void) _postDidExitFullScreenNotification;
 
 //Posts a notification for toggling to/from fullscreen to the delegate and the standard notification center
-- (void) _postFullScreenNotificationWithName: (NSString *)notificationName
+- (void) _postFullScreenNotificationWithName: (NSNotificationName)notificationName
                               delegateMethod: (SEL)delegateMethod;
 
 //Listen for Lion's yes-we're-finally-finished-toggling-fullscreen notifications,
@@ -395,7 +395,7 @@
 #pragma mark -
 #pragma mark Notifications
 
-- (void) _postFullScreenNotificationWithName: (NSString *)notificationName
+- (void) _postFullScreenNotificationWithName: (NSNotificationName)notificationName
                               delegateMethod: (SEL)delegateMethod
 {
     NSNotification *notification = [NSNotification notificationWithName: notificationName

@@ -59,7 +59,7 @@
 - (void) windowDidLoad
 {	
 	//Set up drag-drop events for the buttons
-	NSArray *types = [NSArray arrayWithObject: NSFilenamesPboardType];
+	NSArray *types = [NSArray arrayWithObject: NSPasteboardTypeFileURL];
 	[self.importGameButton registerForDraggedTypes: types];
 	[self.openPromptButton registerForDraggedTypes: types];
 }

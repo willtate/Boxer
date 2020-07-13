@@ -93,7 +93,7 @@ enum {
     if ([self.documentationScrollView respondsToSelector: @selector(setHorizontalScrollElasticity:)])
         self.documentationScrollView.horizontalScrollElasticity = NSScrollElasticityNone;
     
-	[self.view registerForDraggedTypes: @[NSFilenamesPboardType]];
+	[self.view registerForDraggedTypes: @[NSPasteboardTypeFileURL]];
     //Allow documentation files to be dragged out of the documentation list to other applications,
     //but not be dragged anywhere within Boxer.
     [self.documentationList setDraggingSourceOperationMask: NSDragOperationCopy | NSDragOperationLink forLocal: NO];
@@ -1002,6 +1002,7 @@ enum {
     }
 }
 
+// TODO: re-write to use NSCollectionViewGridLayout for NSCollectionView.
 - (NSSize) minContentSizeForNumberOfItems: (NSUInteger)numItems
 {
     //IMPLEMENTATION NOTE: we could (and should) defer to our assigned minItemSize instead.

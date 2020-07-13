@@ -3187,6 +3187,7 @@
 			);
 			path = Bundler;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		9FB4539116442CDD00BCF63B /* Supporting Files */ = {
 			isa = PBXGroup;

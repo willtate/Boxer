@@ -22,7 +22,7 @@
 - (void) awakeFromNib
 {
 	//Set up the dropzone panel to support drag-drop operations
-	[self.view registerForDraggedTypes: @[NSFilenamesPboardType]];
+	[self.view registerForDraggedTypes: @[NSPasteboardTypeFileURL]];
     
     //Disabled as this was causing CATransaction errors.
     //self.spinner.usesThreadedAnimation = YES;

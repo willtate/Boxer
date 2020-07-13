@@ -123,7 +123,7 @@ enum {
     
     //Set up the audio preferences panel as a drag target for file drops.
     NSView *audioPrefsView = [self.tabView tabViewItemAtIndex: BXAudioPreferencesPanelIndex].view;
-	[audioPrefsView registerForDraggedTypes: [NSArray arrayWithObject: NSFilenamesPboardType]];
+	[audioPrefsView registerForDraggedTypes: [NSArray arrayWithObject: NSPasteboardTypeFileURL]];
 	
     
 	//Select the tab that the user had open last time.

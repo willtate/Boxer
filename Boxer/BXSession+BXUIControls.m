@@ -659,15 +659,15 @@
     {
         NSPasteboard *pboard = [NSPasteboard generalPasteboard];
 
-        NSArray *acceptedPasteTypes = @[NSFilenamesPboardType, NSPasteboardTypeString];
+        NSArray *acceptedPasteTypes = @[NSPasteboardTypeFileURL, NSPasteboardTypeString];
         NSString *bestType = [pboard availableTypeFromArray: acceptedPasteTypes];
         NSString *pastedString;
         
         if (!bestType) return;
-        if ([bestType isEqualToString: NSFilenamesPboardType])
+        if ([bestType isEqualToString: NSPasteboardTypeFileURL])
         {
-            NSArray *filePaths = [pboard propertyListForType: NSFilenamesPboardType];
-            pastedString = filePaths.lastObject;
+            NSArray<NSURL*> *filePaths = [pboard readObjectsForClasses:@[[NSURL class]] options:@{NSPasteboardURLReadingFileURLsOnlyKey: @YES}];
+            pastedString = filePaths.lastObject.path;
         }
         else pastedString = [pboard stringForType: NSPasteboardTypeString];
         
@@ -680,15 +680,15 @@
 
 - (BOOL) canPasteFromPasteboard: (NSPasteboard *)pboard 
 {
-	NSArray *acceptedPasteTypes = @[NSFilenamesPboardType, NSPasteboardTypeString];
+	NSArray *acceptedPasteTypes = @[NSPasteboardTypeFileURL, NSPasteboardTypeString];
 	NSString *bestType = [pboard availableTypeFromArray: acceptedPasteTypes];
 	NSString *pastedString;
 	
 	if (!bestType) return NO;
-	if ([bestType isEqualToString: NSFilenamesPboardType])
+	if ([bestType isEqualToString: NSPasteboardTypeFileURL])
 	{
-		NSArray *filePaths = [pboard propertyListForType: NSFilenamesPboardType];
-		pastedString = filePaths.lastObject;
+        NSArray<NSURL*> *filePaths = [pboard readObjectsForClasses:@[[NSURL class]] options:@{NSPasteboardURLReadingFileURLsOnlyKey: @YES}];
+		pastedString = filePaths.lastObject.path;
 	}
 	else pastedString = [pboard stringForType: NSPasteboardTypeString];
 	return [self.emulator canAcceptPastedString: pastedString];
