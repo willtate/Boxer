@@ -29,6 +29,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NSString *ADBUserNotificationType NS_EXTENSIBLE_STRING_ENUM;
 typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notification);
 
 /// @c ADBUserNotificationDispatcher is a delegate for OS X 10.8+'s @c NSUserNotificationCenter delivery mechanism.
@@ -37,7 +38,7 @@ typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notifica
 /// notifications.
 @interface ADBUserNotificationDispatcher : NSObject <NSUserNotificationCenterDelegate>
 {
-    NSMutableDictionary *_activationHandlers;
+    NSMutableDictionary<NSNumber*,ADBUserNotificationActivationHandler> *_activationHandlers;
 }
 
 /// Whether user notifications are supported in this version of OS X. Will return @c NO on OS X < 10.8.
@@ -52,7 +53,7 @@ typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notifica
 /// that was activated. Note that any objects referenced in the handler will be retained until
 /// the notification for the handler has been removed.
 - (void) scheduleNotification: (NSUserNotification *)notification
-                       ofType: (nullable id)typeKey
+                       ofType: (nullable ADBUserNotificationType)typeKey
                    fromSender: (nullable id)sender
                  onActivation: (nullable ADBUserNotificationActivationHandler)activationHandler;
 
@@ -62,7 +63,7 @@ typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notifica
 /// Remove all scheduled and delivered notifications from the specified sender and/or type.
 /// Pass @c nil as the @c type to remove all notifications from that sender regardless of type.
 /// Pass @c nil as the @c sender to remove all notifications of that type regardless of sender.
-- (void) removeAllNotificationsOfType: (nullable id)typeKey fromSender: (nullable id)sender;
+- (void) removeAllNotificationsOfType: (nullable ADBUserNotificationType)typeKey fromSender: (nullable id)sender;
 
 /// Remove all delivered and scheduled notifications for the entire application.
 - (void) removeAllNotifications;

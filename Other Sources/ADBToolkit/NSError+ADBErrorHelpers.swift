@@ -15,7 +15,7 @@ enum MangledFunctionType: Int {
     /// *C++* mangled function name
     @objc(ADBExceptionMangledFunctionCPlusPlus) case cPlusPlus
     /// *Swift* mangled name
-    @objc(ADBExceptionMangledFunctionSwift)case swift
+    @objc(ADBExceptionMangledFunctionSwift) case swift
 }
 
 private let swiftPrefixes = ["_T", "$s", "_$S", "_T0"]

@@ -32,7 +32,7 @@ NSString * const ADBUserNotificationTypeKey = @"ADBUserNotificationType";
 
 @interface ADBUserNotificationDispatcher ()
 
-@property (strong, nonatomic) NSMutableDictionary *activationHandlers;
+@property (strong, nonatomic) NSMutableDictionary<NSNumber*,ADBUserNotificationActivationHandler> *activationHandlers;
 
 //Called to remove an activation handler for the specified notification, usually because
 //the notification itself is being removed.
@@ -79,33 +79,33 @@ NSString * const ADBUserNotificationTypeKey = @"ADBUserNotificationType";
 }
 
 - (void) scheduleNotification: (NSUserNotification *)notification
-                       ofType: (id)typeKey
+                       ofType: (ADBUserNotificationType)typeKey
                    fromSender: (id)sender
                  onActivation: (ADBUserNotificationActivationHandler)activationHandler;
 {
-    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSString*,id> *userInfo = [NSMutableDictionary dictionary];
     if (notification.userInfo)
         [userInfo addEntriesFromDictionary: notification.userInfo];
     
     if (activationHandler != nil)
     {
         activationHandler = [activationHandler copy];
-        id handlerKey = @([activationHandler hash]);
+        NSNumber *handlerKey = @([activationHandler hash]);
         
-        [self.activationHandlers setObject: activationHandler forKey: handlerKey];
+        self.activationHandlers[handlerKey] = activationHandler;
         
-        [userInfo setObject: handlerKey forKey: ADBUserNotificationHandlerKey];
+        userInfo[ADBUserNotificationHandlerKey] = handlerKey;
     }
     
     if (typeKey != nil)
     {
-        [userInfo setObject: typeKey forKey: ADBUserNotificationTypeKey];
+        userInfo[ADBUserNotificationTypeKey] = typeKey;
     }
     
     if (sender != nil)
     {
         NSNumber *senderHash = @([sender hash]);
-        [userInfo setObject: senderHash forKey: ADBUserNotificationSenderKey];
+        userInfo[ADBUserNotificationSenderKey] = senderHash;
     }
     
     notification.userInfo = userInfo;

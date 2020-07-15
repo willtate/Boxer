@@ -14,13 +14,14 @@
 #import "BXSession+BXFileManagement.h"
 #import "BXSession+BXPrinting.h"
 #import "BXSessionError.h"
+#import "ADBUserNotificationDispatcher.h"
 
 
 #pragma mark - Private constants
 
-extern NSString * const BXPagesReadyNotificationType;
-extern NSString * const BXDriveImportedNotificationType;
-extern NSString * const BXGameImportedNotificationType;
+extern ADBUserNotificationType const BXPagesReadyNotificationType NS_SWIFT_NAME(ADBUserNotificationType.pagesReady);
+extern ADBUserNotificationType const BXDriveImportedNotificationType NS_SWIFT_NAME(ADBUserNotificationType.driveImported);
+extern ADBUserNotificationType const BXGameImportedNotificationType NS_SWIFT_NAME(ADBUserNotificationType.gameImported);
 
 
 
