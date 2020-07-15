@@ -11,7 +11,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "BXCollectionItemView.h"
-#import "BXThemedControls.h"
+#import "BXThemedButtonCell.h"
 #import "YRKSpinningProgressIndicator.h"
 
 NS_ASSUME_NONNULL_BEGIN

@@ -69,12 +69,23 @@
     }
 }
 
+- (NSColor *) textColor
+{
+    return [NSColor controlTextColor];
+}
+
+- (NSColor *) disabledTextColor
+{
+    return [NSColor disabledControlTextColor];
+}
+
+- (NSShadow *) textShadow { return nil; }
 
 - (NSGradient *) imageFill
 {
     return [[NSGradient alloc] initWithStartingColor: self.textColor endingColor: self.textColor];
 }
-- (NSShadow *) imageDropShadow  { return self.dropShadow; }
+- (NSShadow *) imageDropShadow  { return self.textShadow; }
 - (NSShadow *) imageInnerShadow { return nil; }
 
 - (NSGradient *) selectedImageFill      { return self.imageFill; }
@@ -113,14 +124,14 @@
 
 - (NSShadow *) textShadow
 {
-    return [NSShadow shadowWithBlurRadius: 3.0f
+    return [NSShadow shadowWithBlurRadius: 3.0
                                    offset: NSZeroSize
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.75f]];
+                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.75]];
 }
 
 - (NSColor *) textColor
 {
-	return [NSColor whiteColor];
+    return [NSColor whiteColor];
 }
 
 @end
@@ -134,10 +145,9 @@
 
 - (NSColor *) textColor
 {
-	return [NSColor colorWithCalibratedRed: 0.67f green: 0.86f blue: 0.93f alpha: 1.0f];
+    return [NSColor colorWithCalibratedRed: 0.67 green: 0.86 blue: 0.93 alpha: 1.0];
 }
 @end
-
 
 
 @implementation BXHUDTheme
@@ -147,17 +157,18 @@
     [self registerWithName: nil];
 }
 
-- (NSShadow *) dropShadow
+- (NSShadow *) imageDropShadow
 {
     return [NSShadow shadowWithBlurRadius: 2
                                    offset: NSMakeSize(0, -1)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.75f]];
+                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.75]];
 }
+
 - (NSShadow *) textShadow
 {
     return [NSShadow shadowWithBlurRadius: 2
                                    offset: NSMakeSize(0, -1)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.66f]];
+                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.66]];
 }
 
 - (NSColor *) textColor
@@ -167,7 +178,7 @@
 
 - (NSColor *) disabledTextColor
 {
-    return [NSColor colorWithCalibratedWhite: 1.0f alpha: 0.5f];
+    return [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.5];
 }
 
 @end
@@ -180,18 +191,16 @@
     [self registerWithName: nil];
 }
 
-- (NSShadow *) textShadow	{ return self.dropShadow; }
-
-- (NSShadow *) dropShadow
+- (NSShadow *) textShadow
 {
-    return [NSShadow shadowWithBlurRadius: 1.0f
-                                   offset: NSMakeSize(0, -1.0f)
-                                    color: [NSColor colorWithCalibratedWhite: 1 alpha: 1.0f]];
+    return [NSShadow shadowWithBlurRadius: 1.0
+                                   offset: NSMakeSize(0, -1.0)
+                                    color: [NSColor colorWithCalibratedWhite: 1 alpha: 1.0]];
 }
 
 - (NSColor *) textColor
 {
-    return [NSColor colorWithCalibratedWhite: 0.25f alpha: 1];
+    return [NSColor colorWithCalibratedWhite: 0.25 alpha: 1];
 }
 
 - (NSColor *) disabledTextColor
@@ -199,14 +208,10 @@
     return [NSColor grayColor];
 }
 
-
-
-
-
 - (NSGradient *) imageFill
 {
     return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedWhite: 0 alpha: 0.33]
-                                          endingColor: [NSColor colorWithCalibratedWhite: 0 alpha: 0.10]];
+                                         endingColor: [NSColor colorWithCalibratedWhite: 0 alpha: 0.10]];
 }
 
 - (NSShadow *) imageDropShadow
@@ -225,7 +230,7 @@
 - (NSGradient *) disabledImageFill
 {
     return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedWhite: 0 alpha: 0.10]
-                                          endingColor: [NSColor colorWithCalibratedWhite: 0 alpha: 0.05]];
+                                         endingColor: [NSColor colorWithCalibratedWhite: 0 alpha: 0.05]];
 }
 - (NSShadow *) disabledImageInnerShadow
 {
@@ -237,7 +242,7 @@
 - (NSGradient *) highlightedImageFill
 {
     return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedWhite: 0 alpha: 0.5]
-                                          endingColor: [NSColor colorWithCalibratedWhite: 0 alpha: 0.15]];
+                                         endingColor: [NSColor colorWithCalibratedWhite: 0 alpha: 0.15]];
 }
 - (NSShadow *) highlightedImageInnerShadow
 {
@@ -248,31 +253,7 @@
 
 @end
 
-@implementation BXIndentedHelpTextTheme
-
-+ (void) load
-{
-    [self registerWithName: nil];
-}
-
-- (NSColor *) textColor
-{
-    return [NSColor darkGrayColor];
-}
-
-@end
-
-
 @implementation BXInspectorListControlTheme
-
-+ (void) load
-{
-    [self registerWithName: nil];
-}
-
-@end
-
-@implementation BXInspectorListControlSelectionTheme
 
 + (void) load
 {
@@ -282,31 +263,28 @@
 - (NSGradient *) imageFill
 {
     return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.75]
-                                          endingColor: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.50]];
-}
-
-- (NSShadow *) imageDropShadow
-{
-    return nil;
+                                         endingColor: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.50]];
 }
 
 - (NSGradient *) highlightedImageFill
 {
     return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.90]
-                                          endingColor: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.80]];
-}
-
-- (NSShadow *) highlightedImageDropShadow
-{
-    return [NSShadow shadowWithBlurRadius: 1.0
-                                   offset: NSMakeSize(0, -1)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.5]];
+                                         endingColor: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.80]];
 }
 
 - (NSGradient *) pushedImageFill
 {
     return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedWhite: 1.0 alpha: 1.00]
-                                          endingColor: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.90]];
+                                         endingColor: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.90]];
+}
+
+@end
+
+@implementation BXInspectorListControlSelectionTheme
+
++ (void) load
+{
+    [self registerWithName: nil];
 }
 
 @end
@@ -323,14 +301,14 @@
     return [NSColor labelColor];
 }
 
-- (NSShadow *) dropShadow
+//drive icon/letter
+- (NSGradient *) imageFill
 {
-    return nil;
+    return [[NSGradient alloc] initWithStartingColor: [NSColor whiteColor]
+                                         endingColor: [NSColor whiteColor]];
 }
 
 @end
-
-
 
 @implementation BXInspectorListSelectionTheme
 
@@ -341,47 +319,10 @@
 
 - (NSColor *) textColor
 {
-    return [NSColor whiteColor];
-}
-
-- (NSColor *) disabledTextColor
-{
-    return [NSColor colorWithCalibratedWhite: 1 alpha: 0.66];
-}
-
-- (NSShadow *) dropShadow
-{
-    return [NSShadow shadowWithBlurRadius: 2.0f
-                                   offset: NSMakeSize(0, -1.0f)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.75f]];
-}
-
-- (NSShadow *) textShadow
-{
-    return [NSShadow shadowWithBlurRadius: 2.0f
-                                   offset: NSMakeSize(0, -1.0f)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.5f]];
-}
-
-- (NSShadow *) disabledImageDropShadow
-{
-    return [NSShadow shadowWithBlurRadius: 2.0f
-                                   offset: NSMakeSize(0, -1.0f)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.5f]];
+    return [NSColor textBackgroundColor];
 }
 
 @end
-
-
-@implementation BXInspectorListHelpTextTheme
-
-+ (void) load
-{
-    [self registerWithName: nil];
-}
-
-@end
-
 
 
 @implementation BXLauncherTheme
@@ -396,14 +337,12 @@
     return [NSColor whiteColor];
 }
 
-- (NSShadow *) dropShadow
+- (NSShadow *) textShadow
 {
-    return [NSShadow shadowWithBlurRadius: 2.0f
-                                   offset: NSMakeSize(0, -1.0f)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.5f]];
+    return [NSShadow shadowWithBlurRadius: 2.0
+                                   offset: NSMakeSize(0, -1.0)
+                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.5]];
 }
-
-- (NSShadow *) textShadow	{ return self.dropShadow; }
 
 @end
 
@@ -434,22 +373,22 @@
     return [NSColor colorWithCalibratedWhite: 0.0 alpha: 0.5];
 }
 
-- (NSShadow *) dropShadow
+- (NSShadow *) textShadow
 {
-    return [NSShadow shadowWithBlurRadius: 1.0f
-                                   offset: NSMakeSize(0, -1.0f)
-                                    color: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.25f]];
+    return [NSShadow shadowWithBlurRadius: 1.0
+                                   offset: NSMakeSize(0, -1.0)
+                                    color: [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.25]];
 }
 
 - (NSGradient *) imageFill
 {
     return [[NSGradient alloc] initWithStartingColor: [NSColor colorWithCalibratedWhite: 0.0 alpha: 0.25]
-                                          endingColor: [NSColor colorWithCalibratedWhite: 0.0 alpha: 0.33]];
+                                         endingColor: [NSColor colorWithCalibratedWhite: 0.0 alpha: 0.33]];
 }
 
 - (NSShadow *) imageDropShadow
 {
-    return self.dropShadow;
+    return self.textShadow;
 }
 
 - (NSShadow *) imageInnerShadow
@@ -469,22 +408,19 @@
     [self registerWithName: nil];
 }
 
-- (NSShadow *) textShadow	{ return self.dropShadow; }
-
-- (NSShadow *) dropShadow
+- (NSShadow *) textShadow
 {
-    return [NSShadow shadowWithBlurRadius: 1.0f
-                                   offset: NSMakeSize(0, 1.0f)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 1.0f]];
+    return [NSShadow shadowWithBlurRadius: 1.0
+                                   offset: NSMakeSize(0, 1.0)
+                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 1.0]];
 }
 
 - (NSColor *) textColor
 {
-    return [NSColor colorWithCalibratedWhite: 1 alpha: 0.66f];
+    return [NSColor colorWithCalibratedWhite: 1 alpha: 0.66];
 }
 
 @end
-
 
 @implementation BXAboutDarkTheme
 
@@ -493,16 +429,16 @@
     [self registerWithName: nil];
 }
 
-- (NSShadow *) dropShadow
+- (NSShadow *) textShadow
 {
-    return [NSShadow shadowWithBlurRadius: 1.0f
-                                   offset: NSMakeSize(0, -1.0f)
-                                    color: [NSColor colorWithCalibratedWhite: 1 alpha: 0.4f]];
+    return [NSShadow shadowWithBlurRadius: 1.0
+                                   offset: NSMakeSize(0, -1.0)
+                                    color: [NSColor colorWithCalibratedWhite: 1 alpha: 0.4]];
 }
 
 - (NSColor *) textColor
 {
-    return [NSColor colorWithCalibratedWhite: 0 alpha: 0.9f];
+    return [NSColor colorWithCalibratedWhite: 0 alpha: 0.9];
 }
 
 @end
@@ -516,7 +452,7 @@
 
 - (NSColor *) textColor
 {
-    return [NSColor colorWithCalibratedWhite: 1 alpha: 0.8f];
+    return [NSColor colorWithCalibratedWhite: 1 alpha: 0.8];
 }
 
 @end

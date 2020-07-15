@@ -8,9 +8,6 @@
       location = "group:Vendor/OpenEmuShaders/OpenEmuShaders.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Vendor/BGHUDAppKit/BGHUDAppKit.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Vendor/DDHidLib/DDHidLib.xcodeproj">
    </FileRef>
    <FileRef

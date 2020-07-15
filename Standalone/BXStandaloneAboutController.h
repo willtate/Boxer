@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 #import "BXDOSWindowBackgroundView.h"
-#import "BXThemedControls.h"
+#import "BXThemedLabel.h"
 #import "BXThemes.h"
 
 /// BXStandaloneAboutController styles and configures an about window suitable for standalone game apps.

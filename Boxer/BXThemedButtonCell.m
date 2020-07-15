@@ -141,7 +141,7 @@
     NSRect imageRect = [self imageRectForImage: image
                                      forBounds: frame];
     
-    CGFloat opacity = (self.isEnabled) ? theme.alphaValue : theme.disabledAlphaValue;
+    CGFloat opacity = (self.isEnabled) ? 0.6 : 0.2;
 
     if (image.isTemplate)
     {       

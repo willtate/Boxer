@@ -10,7 +10,7 @@
 //These are used in Boxer's inspector panel and elsewhere.
 
 #import <Cocoa/Cocoa.h>
-#import <BGHUDAppKit/BGHUDAppKit.h>
+#import "BGThemeManager.h"
 
 /// Extends BGTheme with more specific overrides.
 @interface BGTheme (BXThemeExtensions)
@@ -20,6 +20,9 @@
 /// If name is nil, the classname will be used.
 + (void) registerWithName: (NSString *)name;
 
+- (NSColor *) textColor;
+- (NSColor *) disabledTextColor;
+- (NSShadow *) textShadow;
 
 - (NSGradient *) imageFill;
 - (NSShadow *) imageInnerShadow;
@@ -51,13 +54,10 @@
 
 /// Adds a soft shadow around text.
 @interface BXBlueprintTheme : BXBaseTheme
-- (NSShadow *) textShadow;
-- (NSColor *) textColor;
 @end
 
 /// Same as above, but paler text.
 @interface BXBlueprintHelpTextTheme : BXBlueprintTheme
-- (NSColor *) textColor;
 @end
 
 /// White text, blue highlights and subtle text shadows
@@ -69,25 +69,19 @@
 @interface BXIndentedTheme : BXBaseTheme
 @end
 
-/// Same as above, but paler text.
-@interface BXIndentedHelpTextTheme : BXIndentedTheme
-@end
 
 /// Style used for list items in inspector.
-@interface BXInspectorListTheme : BXIndentedTheme
+@interface BXInspectorListTheme : BXBaseTheme
 @end
 
 /// Style used for selected list items in inspector.
-@interface BXInspectorListSelectionTheme : BXBaseTheme
+@interface BXInspectorListSelectionTheme : BXInspectorListTheme
 @end
 
-@interface BXInspectorListHelpTextTheme : BXIndentedHelpTextTheme
+@interface BXInspectorListControlTheme : BXBaseTheme
 @end
 
-@interface BXInspectorListControlTheme : BXIndentedTheme
-@end
-
-@interface BXInspectorListControlSelectionTheme : BXInspectorListSelectionTheme
+@interface BXInspectorListControlSelectionTheme : BXInspectorListControlTheme
 @end
 
 

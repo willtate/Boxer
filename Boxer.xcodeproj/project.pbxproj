@@ -95,14 +95,10 @@
 		55E6A0B71C00C86200285593 /* MT32Emu.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0B51C00C81E00285593 /* MT32Emu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55E6A0BA1C00C86200285593 /* DDHidLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0AC1C00C80A00285593 /* DDHidLib.framework */; };
 		55E6A0BB1C00C86200285593 /* DDHidLib.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0AC1C00C80A00285593 /* DDHidLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55E6A0BE1C00C86200285593 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */; };
-		55E6A0BF1C00C86200285593 /* BGHUDAppKit.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55E6A0C21C00C88A00285593 /* MT32Emu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0B51C00C81E00285593 /* MT32Emu.framework */; };
 		55E6A0C31C00C88A00285593 /* MT32Emu.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0B51C00C81E00285593 /* MT32Emu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55E6A0C61C00C88A00285593 /* DDHidLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0AC1C00C80A00285593 /* DDHidLib.framework */; };
 		55E6A0C71C00C88A00285593 /* DDHidLib.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0AC1C00C80A00285593 /* DDHidLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55E6A0CA1C00C88A00285593 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */; };
-		55E6A0CB1C00C88A00285593 /* BGHUDAppKit.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55EA6CF625D4919E00945236 /* BXMIDIConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55EA6CF425D4919E00945236 /* BXMIDIConfig.cpp */; };
 		55EA6CF725D4919E00945236 /* BXMIDIConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55EA6CF425D4919E00945236 /* BXMIDIConfig.cpp */; };
 		55F0B73226ABFD9C0077E58C /* ps1audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B72926ABFD9B0077E58C /* ps1audio.cpp */; };
@@ -161,6 +157,8 @@
 		8F97922924C0E31E0054F84D /* BXMetalRenderingView+BXImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA7324BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m */; };
 		8F97922A24C0E32A0054F84D /* OpenEmuShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; };
 		8F97922B24C0E32F0054F84D /* OpenEmuShaders.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F97935824C1359B0054F84D /* BGThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F97935224C1359A0054F84D /* BGThemeManager.m */; };
+		8F97935924C1359B0054F84D /* BGThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F97935224C1359A0054F84D /* BGThemeManager.m */; };
 		9F0497C01334C5970001FEE4 /* ADBForwardCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0497BF1334C5970001FEE4 /* ADBForwardCompatibility.m */; };
 		9F06C6D313992E1F00B19DF1 /* BXHIDControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C6D213992E1F00B19DF1 /* BXHIDControllerProfile.m */; };
 		9F06C6E113993FB100B19DF1 /* BXHIDInputBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C6E013993FB100B19DF1 /* BXHIDInputBinding.m */; };
@@ -386,7 +384,7 @@
 		9F2D309C15B8233800FAE848 /* DDHidUsage+ADBUsageExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA0C9E213D24FF3000F6FCB /* DDHidUsage+ADBUsageExtensions.m */; };
 		9F2D309D15B8233800FAE848 /* BXDualActionControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2F83F13D60FBD00BD4F6B /* BXDualActionControllerProfile.m */; };
 		9F2D309E15B8233800FAE848 /* BXBezelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F70277A13D706CC00606B4C /* BXBezelController.m */; };
-		9F2D309F15B8233800FAE848 /* BXThemedControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F70278313D72D8100606B4C /* BXThemedControls.m */; };
+		9F2D309F15B8233800FAE848 /* BXThemedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F70278313D72D8100606B4C /* BXThemedLabel.m */; };
 		9F2D30A115B8233800FAE848 /* NSShadow+ADBShadowExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8F482413DC74CA00C7E022 /* NSShadow+ADBShadowExtensions.m */; };
 		9F2D30A215B8233800FAE848 /* ADBFileScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F58BB5013DD975F00358512 /* ADBFileScan.m */; };
 		9F2D30A415B8233800FAE848 /* BXDOSWindowControllerLion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0C0BD613E1751E0039C081 /* BXDOSWindowControllerLion.m */; };
@@ -547,7 +545,7 @@
 		9F693D5F16DD40DD00CCEA7C /* ADBEnumerationHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F693D5D16DD40DD00CCEA7C /* ADBEnumerationHelpers.m */; };
 		9F6C1CDA14373AF600601ACB /* BXDummyMIDIDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C1CD914373AF600601ACB /* BXDummyMIDIDevice.m */; };
 		9F70277B13D706CC00606B4C /* BXBezelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F70277A13D706CC00606B4C /* BXBezelController.m */; };
-		9F70278413D72D8100606B4C /* BXThemedControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F70278313D72D8100606B4C /* BXThemedControls.m */; };
+		9F70278413D72D8100606B4C /* BXThemedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F70278313D72D8100606B4C /* BXThemedLabel.m */; };
 		9F70C19C129036C900A3627F /* Boxer.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 9F70C19B129036C900A3627F /* Boxer.sdef */; };
 		9F731B2E136323D2005E564F /* ADBHIDMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F731B2D136323D2005E564F /* ADBHIDMonitor.m */; };
 		9F731B52136331A9005E564F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F731B51136331A9005E564F /* IOKit.framework */; };
@@ -878,13 +876,6 @@
 			remoteGlobalIDString = 05EEE337227CC35C007D011B;
 			remoteInfo = OpenEmuShaders;
 		};
-		55E6A09B1C00C7F900285593 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 53DF68FD067E5B5A0090B5B0;
-			remoteInfo = BGHUDAppKit;
-		};
 		55E6A0A51C00C80A00285593 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */;
@@ -941,13 +932,6 @@
 			remoteGlobalIDString = 55193E4F0B93F2EE004C0C98;
 			remoteInfo = DDHidLib;
 		};
-		55E6A0C01C00C86200285593 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 53DF68FC067E5B5A0090B5B0;
-			remoteInfo = BGHUDAppKit;
-		};
 		55E6A0C41C00C88A00285593 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 55E6A0AD1C00C81D00285593 /* Boxer-MT32Emu.xcodeproj */;
@@ -961,13 +945,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 55193E4F0B93F2EE004C0C98;
 			remoteInfo = DDHidLib;
-		};
-		55E6A0CC1C00C88A00285593 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 53DF68FC067E5B5A0090B5B0;
-			remoteInfo = BGHUDAppKit;
 		};
 		9FB453B516442DA200BCF63B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1001,7 +978,6 @@
 				5585CEB624BB834F008121D9 /* SDL2.framework in Copy Bundled Frameworks */,
 				55E6A0C71C00C88A00285593 /* DDHidLib.framework in Copy Bundled Frameworks */,
 				55E6A0C31C00C88A00285593 /* MT32Emu.framework in Copy Bundled Frameworks */,
-				55E6A0CB1C00C88A00285593 /* BGHUDAppKit.framework in Copy Bundled Frameworks */,
 				5585CEB924BB8360008121D9 /* SDL2_net.framework in Copy Bundled Frameworks */,
 			);
 			name = "Copy Bundled Frameworks";
@@ -1013,7 +989,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				55E6A0BF1C00C86200285593 /* BGHUDAppKit.framework in Copy Bundled Frameworks */,
 				9F20C29711E5DA68005AF541 /* Sparkle.framework in Copy Bundled Frameworks */,
 				55E6A0BB1C00C86200285593 /* DDHidLib.framework in Copy Bundled Frameworks */,
 				55E6A0B71C00C86200285593 /* MT32Emu.framework in Copy Bundled Frameworks */,
@@ -1189,7 +1164,6 @@
 		55DEBB21201E875500F1092F /* pci_bus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pci_bus.cpp; sourceTree = "<group>"; };
 		55DEBB22201E875500F1092F /* pci_devices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pci_devices.h; sourceTree = "<group>"; };
 		55E21B4C23FF50E500D53932 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = Vendor/BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDHidLib.xcodeproj; path = Vendor/DDHidLib/DDHidLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		55E6A0AD1C00C81D00285593 /* Boxer-MT32Emu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Boxer-MT32Emu.xcodeproj"; path = "Vendor/MT32Emu/Boxer-MT32Emu.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		55EA6CF425D4919E00945236 /* BXMIDIConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BXMIDIConfig.cpp; sourceTree = "<group>"; };
@@ -1254,6 +1228,8 @@
 		55F643F825F41DF5009E1800 /* soft_limiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = soft_limiter.cpp; sourceTree = "<group>"; };
 		55F643FE25F41E18009E1800 /* rwqueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rwqueue.h; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Boxer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boxer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F97935224C1359A0054F84D /* BGThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGThemeManager.m; path = "Other Sources/BGHUDAppKit/BGThemeManager.m"; sourceTree = SOURCE_ROOT; };
+		8F97935324C1359A0054F84D /* BGThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGThemeManager.h; path = "Other Sources/BGHUDAppKit/BGThemeManager.h"; sourceTree = SOURCE_ROOT; };
 		9F0497BE1334C5970001FEE4 /* ADBForwardCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBForwardCompatibility.h; sourceTree = "<group>"; };
 		9F0497BF1334C5970001FEE4 /* ADBForwardCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBForwardCompatibility.m; sourceTree = "<group>"; };
 		9F06C6D113992E1F00B19DF1 /* BXHIDControllerProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXHIDControllerProfile.h; sourceTree = "<group>"; };
@@ -1486,8 +1462,8 @@
 		9F6C1CD914373AF600601ACB /* BXDummyMIDIDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXDummyMIDIDevice.m; sourceTree = "<group>"; };
 		9F70277913D706CC00606B4C /* BXBezelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXBezelController.h; sourceTree = "<group>"; };
 		9F70277A13D706CC00606B4C /* BXBezelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBezelController.m; sourceTree = "<group>"; };
-		9F70278213D72D8100606B4C /* BXThemedControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXThemedControls.h; sourceTree = "<group>"; };
-		9F70278313D72D8100606B4C /* BXThemedControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXThemedControls.m; sourceTree = "<group>"; };
+		9F70278213D72D8100606B4C /* BXThemedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXThemedLabel.h; sourceTree = "<group>"; };
+		9F70278313D72D8100606B4C /* BXThemedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXThemedLabel.m; sourceTree = "<group>"; };
 		9F70C19B129036C900A3627F /* Boxer.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Boxer.sdef; sourceTree = "<group>"; };
 		9F731B2C136323D2005E564F /* ADBHIDMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBHIDMonitor.h; sourceTree = "<group>"; };
 		9F731B2D136323D2005E564F /* ADBHIDMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBHIDMonitor.m; sourceTree = "<group>"; };
@@ -2060,7 +2036,6 @@
 				55E21B4D23FF50E600D53932 /* libz.tbd in Frameworks */,
 				9F731B52136331A9005E564F /* IOKit.framework in Frameworks */,
 				9FC637FD13C09B11004478A3 /* CoreServices.framework in Frameworks */,
-				55E6A0BE1C00C86200285593 /* BGHUDAppKit.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				9FBC32120F56C3E9001811F2 /* Carbon.framework in Frameworks */,
 				9FBC3C780F56E0D7001811F2 /* AudioUnit.framework in Frameworks */,
@@ -2095,7 +2070,6 @@
 				9F2D315715B8233800FAE848 /* CoreMIDI.framework in Frameworks */,
 				9FB769E5164861E1000644C2 /* Quartz.framework in Frameworks */,
 				9F2D315815B8233800FAE848 /* QuartzCore.framework in Frameworks */,
-				55E6A0CA1C00C88A00285593 /* BGHUDAppKit.framework in Frameworks */,
 				8F97922A24C0E32A0054F84D /* OpenEmuShaders.framework in Frameworks */,
 				55540E6E2546B87D00B88BE3 /* CwlDemangle in Frameworks */,
 				5585CEB524BB834F008121D9 /* SDL2.framework in Frameworks */,
@@ -2380,14 +2354,6 @@
 				555747FB208FA8030045E635 /* ymf262.h */,
 			);
 			path = mame;
-			sourceTree = "<group>";
-		};
-		55E6A0981C00C7F900285593 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		55E6A09E1C00C80A00285593 /* Products */ = {
@@ -3579,7 +3545,6 @@
 				05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */,
 				55E6A0AD1C00C81D00285593 /* Boxer-MT32Emu.xcodeproj */,
 				55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */,
-				55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */,
 				9F20C28A11E5D848005AF541 /* Sparkle.framework */,
 				0532FBF624BAA1A4008EAD86 /* SDL2.framework */,
 				05F9A1FE24BAA64100969496 /* SDL2_net.framework */,
@@ -3717,10 +3682,12 @@
 		9FD7B6AC1457459D00565CEB /* Themes */ = {
 			isa = PBXGroup;
 			children = (
+				8F97935324C1359A0054F84D /* BGThemeManager.h */,
+				8F97935224C1359A0054F84D /* BGThemeManager.m */,
 				9F544A7E10AB44C40030FED5 /* BXThemes.h */,
 				9F544A7F10AB44C40030FED5 /* BXThemes.m */,
-				9F70278213D72D8100606B4C /* BXThemedControls.h */,
-				9F70278313D72D8100606B4C /* BXThemedControls.m */,
+				9F70278213D72D8100606B4C /* BXThemedLabel.h */,
+				9F70278313D72D8100606B4C /* BXThemedLabel.m */,
 				9FD7B6B1145746CC00565CEB /* BXThemedButtonCell.h */,
 				9FD7B6B2145746CC00565CEB /* BXThemedButtonCell.m */,
 				9FD012F913AB87E500AF6FE8 /* BXThemedImageCell.h */,
@@ -3798,7 +3765,6 @@
 				55D431F625044D50008515E1 /* PBXTargetDependency */,
 				55E6A0B91C00C86200285593 /* PBXTargetDependency */,
 				55E6A0BD1C00C86200285593 /* PBXTargetDependency */,
-				55E6A0C11C00C86200285593 /* PBXTargetDependency */,
 			);
 			name = Boxer;
 			packageProductDependencies = (
@@ -3825,7 +3791,6 @@
 				55D431F825044D56008515E1 /* PBXTargetDependency */,
 				55E6A0C51C00C88A00285593 /* PBXTargetDependency */,
 				55E6A0C91C00C88A00285593 /* PBXTargetDependency */,
-				55E6A0CD1C00C88A00285593 /* PBXTargetDependency */,
 			);
 			name = "Boxer Standalone";
 			packageProductDependencies = (
@@ -3893,10 +3858,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 55E6A0981C00C7F900285593 /* Products */;
-					ProjectRef = 55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */;
-				},
-				{
 					ProductGroup = 55E6A0AE1C00C81D00285593 /* Products */;
 					ProjectRef = 55E6A0AD1C00C81D00285593 /* Boxer-MT32Emu.xcodeproj */;
 				},
@@ -3938,13 +3899,6 @@
 			fileType = wrapper.application;
 			path = BrowserSwift.app;
 			remoteRef = 55BBA4F1235EE142007AE319 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BGHUDAppKit.framework;
-			remoteRef = 55E6A09B1C00C7F900285593 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		55E6A0A61C00C80A00285593 /* HIDBrowser.app */ = {
@@ -4159,6 +4113,7 @@
 				9F9A4CA110F67D2C00E61965 /* BXPreferencesController.m in Sources */,
 				9F9A4CA910F6824B00E61965 /* BXFilterGallery.m in Sources */,
 				9FD5481411047E420041E1E7 /* BXDrivesInUseAlert.m in Sources */,
+				8F97935824C1359B0054F84D /* BGThemeManager.m in Sources */,
 				9F42D9DF1172481800AC6F1F /* BXStatusBarController.m in Sources */,
 				55F643F925F41DF5009E1800 /* rwqueue.cpp in Sources */,
 				9FDCA790118F2B7900E2FD74 /* BXCoalface.mm in Sources */,
@@ -4250,7 +4205,7 @@
 				9FA0C9E313D24FF3000F6FCB /* DDHidUsage+ADBUsageExtensions.m in Sources */,
 				9FC2F84013D60FBD00BD4F6B /* BXDualActionControllerProfile.m in Sources */,
 				9F70277B13D706CC00606B4C /* BXBezelController.m in Sources */,
-				9F70278413D72D8100606B4C /* BXThemedControls.m in Sources */,
+				9F70278413D72D8100606B4C /* BXThemedLabel.m in Sources */,
 				9F8F482513DC74CA00C7E022 /* NSShadow+ADBShadowExtensions.m in Sources */,
 				9F58BB5113DD975F00358512 /* ADBFileScan.m in Sources */,
 				9F0C0BD713E1751E0039C081 /* BXDOSWindowControllerLion.m in Sources */,
@@ -4586,6 +4541,7 @@
 				9F2D303A15B8233800FAE848 /* dos_programs.cpp in Sources */,
 				9F2D303B15B8233800FAE848 /* dos_tables.cpp in Sources */,
 				9F2D303C15B8233800FAE848 /* drive_cache.cpp in Sources */,
+				8F97935924C1359B0054F84D /* BGThemeManager.m in Sources */,
 				9F2D303D15B8233800FAE848 /* drive_fat.cpp in Sources */,
 				9F2D303E15B8233800FAE848 /* drive_iso.cpp in Sources */,
 				9F2D303F15B8233800FAE848 /* drive_local.cpp in Sources */,
@@ -4695,7 +4651,7 @@
 				55F0B78726ABFEE80077E58C /* FilterModelConfig6581.cpp in Sources */,
 				9F2D309D15B8233800FAE848 /* BXDualActionControllerProfile.m in Sources */,
 				9F2D309E15B8233800FAE848 /* BXBezelController.m in Sources */,
-				9F2D309F15B8233800FAE848 /* BXThemedControls.m in Sources */,
+				9F2D309F15B8233800FAE848 /* BXThemedLabel.m in Sources */,
 				9F2D30A115B8233800FAE848 /* NSShadow+ADBShadowExtensions.m in Sources */,
 				9F2D30A215B8233800FAE848 /* ADBFileScan.m in Sources */,
 				9F2D30A415B8233800FAE848 /* BXDOSWindowControllerLion.m in Sources */,
@@ -4834,11 +4790,6 @@
 			name = DDHidLib;
 			targetProxy = 55E6A0BC1C00C86200285593 /* PBXContainerItemProxy */;
 		};
-		55E6A0C11C00C86200285593 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BGHUDAppKit;
-			targetProxy = 55E6A0C01C00C86200285593 /* PBXContainerItemProxy */;
-		};
 		55E6A0C51C00C88A00285593 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Framework;
@@ -4848,11 +4799,6 @@
 			isa = PBXTargetDependency;
 			name = DDHidLib;
 			targetProxy = 55E6A0C81C00C88A00285593 /* PBXContainerItemProxy */;
-		};
-		55E6A0CD1C00C88A00285593 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BGHUDAppKit;
-			targetProxy = 55E6A0CC1C00C88A00285593 /* PBXContainerItemProxy */;
 		};
 		9FB453B616442DA200BCF63B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
