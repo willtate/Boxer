@@ -34,10 +34,6 @@
 		5514502324BE81E00002CE28 /* ppscale.c in Sources */ = {isa = PBXBuildFile; fileRef = 5514500724BE81E00002CE28 /* ppscale.c */; };
 		5514502D24BE8BCC0002CE28 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514502624BE8BCC0002CE28 /* midi.cpp */; };
 		5514502E24BE8BCC0002CE28 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514502624BE8BCC0002CE28 /* midi.cpp */; };
-		5514502F24BE8BCC0002CE28 /* Makefile.am in Resources */ = {isa = PBXBuildFile; fileRef = 5514502924BE8BCC0002CE28 /* Makefile.am */; };
-		5514503024BE8BCC0002CE28 /* Makefile.am in Resources */ = {isa = PBXBuildFile; fileRef = 5514502924BE8BCC0002CE28 /* Makefile.am */; };
-		5514503124BE8BCC0002CE28 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5514502B24BE8BCC0002CE28 /* .gitignore */; };
-		5514503224BE8BCC0002CE28 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5514502B24BE8BCC0002CE28 /* .gitignore */; };
 		5514503624BE8DB10002CE28 /* dc_silencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514503424BE8DB00002CE28 /* dc_silencer.cpp */; };
 		5514503724BE8DB10002CE28 /* dc_silencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514503424BE8DB00002CE28 /* dc_silencer.cpp */; };
 		5514503924BE8DE60002CE28 /* envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514503824BE8DE50002CE28 /* envelope.cpp */; };
@@ -992,9 +988,7 @@
 		5514502624BE8BCC0002CE28 /* midi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi.cpp; sourceTree = "<group>"; };
 		5514502724BE8BCC0002CE28 /* midi_oss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi_oss.h; sourceTree = "<group>"; };
 		5514502824BE8BCC0002CE28 /* midi_coremidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi_coremidi.h; sourceTree = "<group>"; };
-		5514502924BE8BCC0002CE28 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		5514502A24BE8BCC0002CE28 /* midi_coreaudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi_coreaudio.h; sourceTree = "<group>"; };
-		5514502B24BE8BCC0002CE28 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5514502C24BE8BCC0002CE28 /* midi_win32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi_win32.h; sourceTree = "<group>"; };
 		5514503324BE8CE10002CE28 /* render_glsl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = render_glsl.h; sourceTree = "<group>"; };
 		5514503424BE8DB00002CE28 /* dc_silencer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dc_silencer.cpp; sourceTree = "<group>"; };
@@ -2180,9 +2174,7 @@
 				5514502624BE8BCC0002CE28 /* midi.cpp */,
 				5514502724BE8BCC0002CE28 /* midi_oss.h */,
 				5514502824BE8BCC0002CE28 /* midi_coremidi.h */,
-				5514502924BE8BCC0002CE28 /* Makefile.am */,
 				5514502A24BE8BCC0002CE28 /* midi_coreaudio.h */,
-				5514502B24BE8BCC0002CE28 /* .gitignore */,
 				5514502C24BE8BCC0002CE28 /* midi_win32.h */,
 			);
 			path = midi;
@@ -3758,7 +3750,6 @@
 				9FBC31E00F56C383001811F2 /* LockClosing.aiff in Resources */,
 				9FBC31E10F56C383001811F2 /* LockOpening.aiff in Resources */,
 				9FE202480F6D749500B3A38C /* Snapshot.aiff in Resources */,
-				5514503124BE8BCC0002CE28 /* .gitignore in Resources */,
 				9FCBB6F310A6DDBD00C28B09 /* DOS Toolkit in Resources */,
 				9F4199E11BD416E400A2D165 /* DocumentationPanel.xib in Resources */,
 				9FFAFE2D10DE33FB00728BAC /* GameProfiles.plist in Resources */,
@@ -3782,7 +3773,6 @@
 				9FF86679134DCA16001CE857 /* toc2cue in Resources */,
 				9FCC303C13670F680013F083 /* KeyboardLayouts.plist in Resources */,
 				9F4199EA1BD416E400A2D165 /* LauncherFavorite.xib in Resources */,
-				5514502F24BE8BCC0002CE28 /* Makefile.am in Resources */,
 				9F4199ED1BD416E400A2D165 /* Inspector.xib in Resources */,
 				9F8A9CD2143E120B00C37A93 /* MT32ROMTypes.plist in Resources */,
 				554E2B6D1BFAF6720038C506 /* Shared.xcassets in Resources */,
@@ -3814,7 +3804,6 @@
 			files = (
 				9F2D30D615B8233800FAE848 /* LockClosing.aiff in Resources */,
 				9FAA7EB01BE698ED00F4FCA6 /* Localizable.strings in Resources */,
-				5514503024BE8BCC0002CE28 /* Makefile.am in Resources */,
 				9F2D30D715B8233800FAE848 /* LockOpening.aiff in Resources */,
 				9F2D30DB15B8233800FAE848 /* Snapshot.aiff in Resources */,
 				9F2D30E815B8233800FAE848 /* GameProfiles.plist in Resources */,
@@ -3822,7 +3811,6 @@
 				9F7472FE1BE7DCF200B9C9ED /* InfoPlist.strings in Resources */,
 				9F2D311515B8233800FAE848 /* KeyboardLayouts.plist in Resources */,
 				9FAA7EB21BE6996B00F4FCA6 /* Shell.strings in Resources */,
-				5514503224BE8BCC0002CE28 /* .gitignore in Resources */,
 				9F2D312B15B8233800FAE848 /* MT32ROMTypes.plist in Resources */,
 				9F2D313F15B8233800FAE848 /* Shaders in Resources */,
 				9F2D318915B826F600FAE848 /* DOSWindow.xib in Resources */,
