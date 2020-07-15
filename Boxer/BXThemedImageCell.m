@@ -136,14 +136,3 @@
 }
 
 @end
-
-
-
-@implementation BXIndentedImageCell
-
-+ (NSString *) defaultThemeKey
-{
-    return @"BXIndentedTheme";
-}
-
-@end

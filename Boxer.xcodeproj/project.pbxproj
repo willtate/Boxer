@@ -202,7 +202,6 @@
 		9F2140FF0F59F28000A5A183 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2140FE0F59F28000A5A183 /* QuartzCore.framework */; };
 		9F24D24D122439E0009C1817 /* BXWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F24D24C122439E0009C1817 /* BXWelcomeWindowController.m */; };
 		9F24D25012243C9A009C1817 /* BXWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F24D24F12243C9A009C1817 /* BXWelcomeView.m */; };
-		9F26A9AD1458678B000184D1 /* BXThemedSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F26A9AC1458678B000184D1 /* BXThemedSliderCell.m */; };
 		9F2AC6E410EFFE8600CFFF72 /* BXBootlegCoverArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2AC6E310EFFE8600CFFF72 /* BXBootlegCoverArt.m */; };
 		9F2D2F9915B8233800FAE848 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		9F2D2F9C15B8233800FAE848 /* BXSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBC35210F56C7B7001811F2 /* BXSession.m */; };
@@ -246,7 +245,6 @@
 		9F2D2FD615B8233800FAE848 /* NSData+HexStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADFE9611EC932800990E91 /* NSData+HexStrings.m */; };
 		9F2D2FD715B8233800FAE848 /* ADBSingleFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF66AE11F35ADD00DAAB9A /* ADBSingleFileTransfer.m */; };
 		9F2D2FD815B8233800FAE848 /* NSFileManager+ADBTemporaryFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F13F9CF11F85E6F0069A02E /* NSFileManager+ADBTemporaryFiles.m */; };
-		9F2D2FD915B8233800FAE848 /* BXThemedSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9E27C411F8C003003EE8F3 /* BXThemedSegmentedCell.m */; };
 		9F2D2FDB15B8233800FAE848 /* ADBDelegatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE90BF611F8D1DC003CFFFF /* ADBDelegatedView.m */; };
 		9F2D2FDC15B8233800FAE848 /* ADBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEAA3EB1204595B0085F008 /* ADBOperation.m */; };
 		9F2D2FDD15B8233800FAE848 /* NSWorkspace+BXExecutableTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53411712059E7900BCBF24 /* NSWorkspace+BXExecutableTypes.m */; };
@@ -416,9 +414,7 @@
 		9F2D30BE15B8233800FAE848 /* BXHUDLevelIndicatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1562C14506E7200545317 /* BXHUDLevelIndicatorCell.m */; };
 		9F2D30BF15B8233800FAE848 /* BXKeyboardEventTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF1562F14506F5C00545317 /* BXKeyboardEventTap.m */; };
 		9F2D30C015B8233800FAE848 /* BXBezelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F39A43A1452CE9100942D0F /* BXBezelView.m */; };
-		9F2D30C115B8233800FAE848 /* BXThemedPopUpButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7B6AF145745D800565CEB /* BXThemedPopUpButtonCell.m */; };
 		9F2D30C215B8233800FAE848 /* BXThemedButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7B6B2145746CC00565CEB /* BXThemedButtonCell.m */; };
-		9F2D30C315B8233800FAE848 /* BXThemedSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F26A9AC1458678B000184D1 /* BXThemedSliderCell.m */; };
 		9F2D30C415B8233800FAE848 /* ADBContinuousThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAD1DFC14641ECD00C3074E /* ADBContinuousThread.m */; };
 		9F2D30C515B8233800FAE848 /* BXTFlightControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F68919F14B0F6D800641C62 /* BXTFlightControllerProfile.m */; };
 		9F2D30C615B8233800FAE848 /* ADBAppKitVersionHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AEE8814CB4AEA00728641 /* ADBAppKitVersionHelpers.m */; };
@@ -690,7 +686,6 @@
 		9F9A4CA910F6824B00E61965 /* BXFilterGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A4CA810F6824B00E61965 /* BXFilterGallery.m */; };
 		9F9AEE8914CB4AEA00728641 /* ADBAppKitVersionHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AEE8814CB4AEA00728641 /* ADBAppKitVersionHelpers.m */; };
 		9F9DF415153B058200233968 /* BXKeyBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F9DF414153B058200233968 /* BXKeyBuffer.mm */; };
-		9F9E27C511F8C003003EE8F3 /* BXThemedSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9E27C411F8C003003EE8F3 /* BXThemedSegmentedCell.m */; };
 		9F9E27D611F8C173003EE8F3 /* BXDrivePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9E27D511F8C173003EE8F3 /* BXDrivePanelController.m */; };
 		9FA0C9E313D24FF3000F6FCB /* DDHidUsage+ADBUsageExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA0C9E213D24FF3000F6FCB /* DDHidUsage+ADBUsageExtensions.m */; };
 		9FA0D0CC1694D62100CEF2EA /* NSURL+ADBQuickLookHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA0D0CB1694D62100CEF2EA /* NSURL+ADBQuickLookHelpers.m */; };
@@ -802,7 +797,6 @@
 		9FD6AA1B16314A5B002B774E /* printer_redir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6AA0C16314A5B002B774E /* printer_redir.cpp */; };
 		9FD6AA2016315278002B774E /* BXEmulatedPrinter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6AA1F16315278002B774E /* BXEmulatedPrinter.mm */; };
 		9FD6AA2116315278002B774E /* BXEmulatedPrinter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6AA1F16315278002B774E /* BXEmulatedPrinter.mm */; };
-		9FD7B6B0145745D800565CEB /* BXThemedPopUpButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7B6AF145745D800565CEB /* BXThemedPopUpButtonCell.m */; };
 		9FD7B6B3145746CC00565CEB /* BXThemedButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7B6B2145746CC00565CEB /* BXThemedButtonCell.m */; };
 		9FD8BEE414FFF7660073B4EC /* BXExternalMIDIDevice+BXGeneralMIDISysexes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD8BEE314FFF7660073B4EC /* BXExternalMIDIDevice+BXGeneralMIDISysexes.m */; };
 		9FD95D6A13E2A45C005EF2C0 /* ADBFullscreenCapableWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD95D6913E2A45C005EF2C0 /* ADBFullscreenCapableWindow.m */; };
@@ -1332,8 +1326,6 @@
 		9F24D24E12243C9A009C1817 /* BXWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXWelcomeView.h; sourceTree = "<group>"; };
 		9F24D24F12243C9A009C1817 /* BXWelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXWelcomeView.m; sourceTree = "<group>"; };
 		9F25C1FD1212BB450025CB2C /* BXSessionPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXSessionPrivate.h; sourceTree = "<group>"; };
-		9F26A9AB1458678B000184D1 /* BXThemedSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXThemedSliderCell.h; sourceTree = "<group>"; };
-		9F26A9AC1458678B000184D1 /* BXThemedSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXThemedSliderCell.m; sourceTree = "<group>"; };
 		9F2AC6E210EFFE8600CFFF72 /* BXBootlegCoverArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXBootlegCoverArt.h; sourceTree = "<group>"; };
 		9F2AC6E310EFFE8600CFFF72 /* BXBootlegCoverArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXBootlegCoverArt.m; sourceTree = "<group>"; usesTabs = 1; };
 		9F2D317215B8233800FAE848 /* Boxer Standalone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxer Standalone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1805,8 +1797,6 @@
 		9F9AEE8814CB4AEA00728641 /* ADBAppKitVersionHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBAppKitVersionHelpers.m; sourceTree = "<group>"; };
 		9F9DF413153B058200233968 /* BXKeyBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXKeyBuffer.h; sourceTree = "<group>"; };
 		9F9DF414153B058200233968 /* BXKeyBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BXKeyBuffer.mm; sourceTree = "<group>"; };
-		9F9E27C311F8C003003EE8F3 /* BXThemedSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXThemedSegmentedCell.h; sourceTree = "<group>"; };
-		9F9E27C411F8C003003EE8F3 /* BXThemedSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXThemedSegmentedCell.m; sourceTree = "<group>"; };
 		9F9E27D411F8C173003EE8F3 /* BXDrivePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXDrivePanelController.h; sourceTree = "<group>"; };
 		9F9E27D511F8C173003EE8F3 /* BXDrivePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXDrivePanelController.m; sourceTree = "<group>"; };
 		9FA0C9E113D24FF3000F6FCB /* DDHidUsage+ADBUsageExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDHidUsage+ADBUsageExtensions.h"; sourceTree = "<group>"; };
@@ -1956,8 +1946,6 @@
 		9FD6AA1D16314AC6002B774E /* parport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parport.h; sourceTree = "<group>"; };
 		9FD6AA1E16315278002B774E /* BXEmulatedPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXEmulatedPrinter.h; sourceTree = "<group>"; };
 		9FD6AA1F16315278002B774E /* BXEmulatedPrinter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BXEmulatedPrinter.mm; sourceTree = "<group>"; };
-		9FD7B6AE145745D800565CEB /* BXThemedPopUpButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXThemedPopUpButtonCell.h; sourceTree = "<group>"; };
-		9FD7B6AF145745D800565CEB /* BXThemedPopUpButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXThemedPopUpButtonCell.m; sourceTree = "<group>"; };
 		9FD7B6B1145746CC00565CEB /* BXThemedButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXThemedButtonCell.h; sourceTree = "<group>"; };
 		9FD7B6B2145746CC00565CEB /* BXThemedButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXThemedButtonCell.m; sourceTree = "<group>"; };
 		9FD8BEE214FFF7660073B4EC /* BXExternalMIDIDevice+BXGeneralMIDISysexes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BXExternalMIDIDevice+BXGeneralMIDISysexes.h"; sourceTree = "<group>"; };
@@ -3733,14 +3721,8 @@
 				9F544A7F10AB44C40030FED5 /* BXThemes.m */,
 				9F70278213D72D8100606B4C /* BXThemedControls.h */,
 				9F70278313D72D8100606B4C /* BXThemedControls.m */,
-				9F9E27C311F8C003003EE8F3 /* BXThemedSegmentedCell.h */,
-				9F9E27C411F8C003003EE8F3 /* BXThemedSegmentedCell.m */,
-				9FD7B6AE145745D800565CEB /* BXThemedPopUpButtonCell.h */,
-				9FD7B6AF145745D800565CEB /* BXThemedPopUpButtonCell.m */,
 				9FD7B6B1145746CC00565CEB /* BXThemedButtonCell.h */,
 				9FD7B6B2145746CC00565CEB /* BXThemedButtonCell.m */,
-				9F26A9AB1458678B000184D1 /* BXThemedSliderCell.h */,
-				9F26A9AC1458678B000184D1 /* BXThemedSliderCell.m */,
 				9FD012F913AB87E500AF6FE8 /* BXThemedImageCell.h */,
 				9FD012FA13AB87E500AF6FE8 /* BXThemedImageCell.m */,
 			);
@@ -4197,7 +4179,6 @@
 				9FBF66AF11F35ADD00DAAB9A /* ADBSingleFileTransfer.m in Sources */,
 				55F0B78426ABFEE80077E58C /* Filter6581.cpp in Sources */,
 				9F13F9D011F85E6F0069A02E /* NSFileManager+ADBTemporaryFiles.m in Sources */,
-				9F9E27C511F8C003003EE8F3 /* BXThemedSegmentedCell.m in Sources */,
 				9F9E27D611F8C173003EE8F3 /* BXDrivePanelController.m in Sources */,
 				9FE90BF711F8D1DC003CFFFF /* ADBDelegatedView.m in Sources */,
 				9FEAA3EC1204595B0085F008 /* ADBOperation.m in Sources */,
@@ -4302,9 +4283,7 @@
 				55F0B79C26ABFF680077E58C /* program_choice.cpp in Sources */,
 				9FF1563014506F5C00545317 /* BXKeyboardEventTap.m in Sources */,
 				9F39A43B1452CE9100942D0F /* BXBezelView.m in Sources */,
-				9FD7B6B0145745D800565CEB /* BXThemedPopUpButtonCell.m in Sources */,
 				9FD7B6B3145746CC00565CEB /* BXThemedButtonCell.m in Sources */,
-				9F26A9AD1458678B000184D1 /* BXThemedSliderCell.m in Sources */,
 				9FAD1DFD14641ECD00C3074E /* ADBContinuousThread.m in Sources */,
 				9F6891A014B0F6D800641C62 /* BXTFlightControllerProfile.m in Sources */,
 				9F9AEE8914CB4AEA00728641 /* ADBAppKitVersionHelpers.m in Sources */,
@@ -4540,7 +4519,6 @@
 				9F2D2FD615B8233800FAE848 /* NSData+HexStrings.m in Sources */,
 				9F2D2FD715B8233800FAE848 /* ADBSingleFileTransfer.m in Sources */,
 				9F2D2FD815B8233800FAE848 /* NSFileManager+ADBTemporaryFiles.m in Sources */,
-				9F2D2FD915B8233800FAE848 /* BXThemedSegmentedCell.m in Sources */,
 				9F2D2FDB15B8233800FAE848 /* ADBDelegatedView.m in Sources */,
 				9F2D2FDC15B8233800FAE848 /* ADBOperation.m in Sources */,
 				9F2D2FDD15B8233800FAE848 /* NSWorkspace+BXExecutableTypes.m in Sources */,
@@ -4746,10 +4724,8 @@
 				9F2D30BE15B8233800FAE848 /* BXHUDLevelIndicatorCell.m in Sources */,
 				9F2D30BF15B8233800FAE848 /* BXKeyboardEventTap.m in Sources */,
 				9F2D30C015B8233800FAE848 /* BXBezelView.m in Sources */,
-				9F2D30C115B8233800FAE848 /* BXThemedPopUpButtonCell.m in Sources */,
 				9F2D30C215B8233800FAE848 /* BXThemedButtonCell.m in Sources */,
 				55F0B76F26ABFEE80077E58C /* SincResampler.cpp in Sources */,
-				9F2D30C315B8233800FAE848 /* BXThemedSliderCell.m in Sources */,
 				9F2D30C415B8233800FAE848 /* ADBContinuousThread.m in Sources */,
 				9F2D30C515B8233800FAE848 /* BXTFlightControllerProfile.m in Sources */,
 				9F2D30C615B8233800FAE848 /* ADBAppKitVersionHelpers.m in Sources */,

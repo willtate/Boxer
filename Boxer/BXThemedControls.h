@@ -10,10 +10,7 @@
 //which does not support the IB plugin BGHUDAppKit relies on for assigning themes.
 
 #import <BGHUDAppKit/BGHUDAppKit.h>
-#import "BXThemedSegmentedCell.h"
-#import "BXThemedPopUpButtonCell.h"
 #import "BXThemedButtonCell.h"
-#import "BXThemedSliderCell.h"
 #import "BXThemedImageCell.h"
 #import "BXThemes.h"
 
@@ -22,32 +19,12 @@
 @interface BXThemedLabel : BGHUDLabel <BXThemable>
 @end
 
-@interface BXThemedCheckboxCell : BXThemedButtonCell
-@end
-
-@interface BXThemedRadioCell : BXThemedButtonCell
-@end
-
 
 //BGHUDAppKit control subclasses hardcoded to use BXHUDTheme.
 
 @interface BXHUDLabel : BXThemedLabel
 @end
 
-@interface BXHUDButtonCell : BXThemedButtonCell
-@end
-
-@interface BXHUDCheckboxCell : BXThemedCheckboxCell
-@end
-
-@interface BXHUDSliderCell : BXThemedSliderCell
-@end
-
-@interface BXHUDSegmentedCell : BXThemedSegmentedCell
-@end
-
-@interface BXHUDPopUpButtonCell : BXThemedPopUpButtonCell
-@end
 
 //BGHUDAppKit control subclasses hardcoded to use BXBlueprintTheme
 //and BXBlueprintHelpTextTheme.
@@ -58,20 +35,6 @@
 @interface BXBlueprintHelpTextLabel : BXThemedLabel
 @end
 
-//BGHUDAppKit control subclasses hardcoded to use BXIndentedTheme
-//and BXIndentedHelpTextTheme.
-
-@interface BXIndentedLabel : BXThemedLabel
-@end
-
-@interface BXIndentedHelpTextLabel : BXIndentedLabel
-@end
-
-@interface BXIndentedCheckboxCell : BXThemedCheckboxCell
-@end
-
-@interface BXIndentedSliderCell : BXThemedSliderCell
-@end
 
 //BGHUDAppKit control subclasses hardcoded to use BXAboutTheme,
 //BXAboutDarkTheme and BXAboutLightTheme.

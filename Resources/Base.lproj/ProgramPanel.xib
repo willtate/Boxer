@@ -58,7 +58,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" arrowsPosition="none" horizontal="YES" id="223" customClass="BXScroller">
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="223">
                         <rect key="frame" x="1" y="144" width="233" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -67,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <textField verticalHuggingPriority="750" tag="1" id="468" customClass="BXIndentedLabel">
+                <textField verticalHuggingPriority="750" tag="1" id="468">
                     <rect key="frame" x="210" y="43" width="220" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Click a program to launch:" id="469">
@@ -86,7 +86,7 @@
                     <rect key="frame" x="111" y="0.0" width="439" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField verticalHuggingPriority="750" id="474" customClass="BXIndentedHelpTextLabel">
+                        <textField verticalHuggingPriority="750" id="474">
                             <rect key="frame" x="36" y="11" width="386" height="14"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hold down Option during startup to get the DOS prompt instead." id="475">
@@ -98,7 +98,7 @@
                         <button id="476">
                             <rect key="frame" x="18" y="28" width="403" height="18"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="check" title="Launch wwwwwww.exe every time I start this gamebox." bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="477" customClass="BXIndentedCheckboxCell">
+                            <buttonCell key="cell" type="check" title="Launch wwwwwww.exe every time I start this gamebox." bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="477">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -141,7 +141,7 @@
                                 <action selector="toggleProgramPanelShown:" target="-1" id="423"/>
                             </connections>
                         </button>
-                        <textField verticalHuggingPriority="750" id="482" customClass="BXIndentedLabel">
+                        <textField verticalHuggingPriority="750" id="482">
                             <rect key="frame" x="17" y="31" width="336" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Launch wwwwwwww.exe every time?" id="483">
@@ -153,7 +153,7 @@
                                 <binding destination="-2" name="value" keyPath="labelForInitialDefaultProgramToggle" id="485"/>
                             </connections>
                         </textField>
-                        <textField verticalHuggingPriority="750" id="486" customClass="BXIndentedHelpTextLabel">
+                        <textField verticalHuggingPriority="750" id="486">
                             <rect key="frame" x="17" y="15" width="336" height="14"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You can change your choice later from the Inspector Panel." id="487">
@@ -183,7 +183,7 @@
             <rect key="frame" x="0.0" y="0.0" width="640" height="64"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" id="488" customClass="BXIndentedLabel">
+                <textField verticalHuggingPriority="750" id="488">
                     <rect key="frame" x="17" y="30" width="606" height="17"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="There are no programs in this gamebox." id="489">
@@ -192,7 +192,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" id="490" customClass="BXIndentedHelpTextLabel">
+                <textField verticalHuggingPriority="750" id="490">
                     <rect key="frame" x="17" y="13" width="606" height="14"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Once you’ve installed some programs, they will be listed here." id="491">

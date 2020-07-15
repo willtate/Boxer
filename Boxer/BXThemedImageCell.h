@@ -22,7 +22,3 @@
 /// A subclass of \c BXTemplateImageCell intended for HUD windows, that defaults to white with a soft black shadow.
 @interface BXHUDImageCell : BXThemedImageCell
 @end
-
-/// A subclass of \c BXTemplateImageCell using the indented appearance.
-@interface BXIndentedImageCell : BXThemedImageCell
-@end

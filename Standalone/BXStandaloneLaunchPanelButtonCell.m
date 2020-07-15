@@ -49,8 +49,6 @@
 @implementation BXStandaloneLaunchPanelButtonCell
 @synthesize mouseIsInside = _mouseIsInside;
 
-+ (NSString *) defaultThemeKey { return @"BXIndentedTheme"; }
-
 //This has been overridden solely so that we will actually receive mouseEntered:
 //and mouseExited: events, since AppKit only sends those messages for buttons that
 //claim this. We do actually draw the button border regardless.

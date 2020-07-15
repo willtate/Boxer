@@ -20,28 +20,6 @@
 /// If name is nil, the classname will be used.
 + (void) registerWithName: (NSString *)name;
 
-/// The shadow to draw inside the slider track, on top of the background color.
-/// Defaults to nil.
-- (NSShadow *) sliderTrackInnerShadow;
-
-/// The shadow to draw beneath the slider track. Defaults to nil.
-- (NSShadow *) sliderTrackShadow;
-
-/// The color with which to stroke the slider track. Defaults to strokeColor.
-- (NSColor *) sliderTrackStrokeColor;
-
-/// The color with which to stroke the disabled slider track. Defaults to disabledStrokeColor.
-- (NSColor *) disabledSliderTrackStrokeColor;
-
-/// The shadow to draw beneath slider knobs. Defaults to the value of dropShadow.
-- (NSShadow *) sliderKnobShadow;
-
-/// The color with which to stroke the slider knob. Defaults to strokeColor.
-- (NSColor *) sliderKnobStrokeColor;
-
-/// The color with which to stroke the slider knob. Defaults to disabledStrokeColor.
-- (NSColor *) disabledSliderKnobStrokeColor;
-
 
 - (NSGradient *) imageFill;
 - (NSShadow *) imageInnerShadow;
@@ -68,7 +46,7 @@
 
 
 /// Base class used by all Boxer themes. Currently empty.
-@interface BXBaseTheme : BGGradientTheme
+@interface BXBaseTheme : BGTheme
 @end
 
 /// Adds a soft shadow around text.
@@ -85,12 +63,6 @@
 /// White text, blue highlights and subtle text shadows
 /// for HUD and bezel panels.
 @interface BXHUDTheme : BXBaseTheme
-- (NSGradient *) highlightGradient;
-- (NSGradient *) pushedGradient;
-- (NSGradient *) highlightComplexGradient;
-- (NSGradient *) pushedComplexGradient;
-- (NSGradient *) highlightKnobColor;
-- (NSShadow *) focusRing;
 @end
 
 /// Lightly indented text for program panels and inspector.

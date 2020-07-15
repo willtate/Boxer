@@ -44,35 +44,6 @@
 
 @end
 
-@implementation BXThemedCheckboxCell
-
-//Fix for setButtonType: no longer getting called for checkboxes in XIBs (jesus christ)
-- (id) initWithCoder: (NSCoder *)aDecoder
-{
-    if ((self = [super initWithCoder: aDecoder]))
-    {
-        [self setButtonType: NSButtonTypeSwitch];
-    }
-    return self;
-}
-
-@end
-
-
-@implementation BXThemedRadioCell
-
-//See note above for BXThemedCheckboxCell.
-- (id) initWithCoder: (NSCoder *)aDecoder
-{
-    if ((self = [super initWithCoder: aDecoder]))
-    {
-        [self setButtonType: NSButtonTypeRadio];
-    }
-    return self;
-}
-
-@end
-
 
 #pragma mark -
 #pragma mark Themed versions
@@ -83,35 +54,6 @@
 
 @end
 
-@implementation BXHUDButtonCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
-
-@implementation BXHUDCheckboxCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
-
-@implementation BXHUDSliderCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
-
-@implementation BXHUDPopUpButtonCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
-
-@implementation BXHUDSegmentedCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
 
 
 @implementation BXBlueprintLabel
@@ -123,31 +65,6 @@
 @implementation BXBlueprintHelpTextLabel
 
 + (NSString *) defaultThemeKey { return @"BXBlueprintHelpTextTheme"; }
-
-@end
-
-
-@implementation BXIndentedLabel
-
-+ (NSString *) defaultThemeKey { return @"BXIndentedTheme"; }
-
-@end
-
-@implementation BXIndentedHelpTextLabel
-
-+ (NSString *) defaultThemeKey { return @"BXIndentedHelpTextTheme"; }
-
-@end
-
-@implementation BXIndentedCheckboxCell
-
-+ (NSString *) defaultThemeKey { return @"BXIndentedTheme"; }
-
-@end
-
-@implementation BXIndentedSliderCell
-
-+ (NSString *) defaultThemeKey { return @"BXIndentedTheme"; }
 
 @end
 
