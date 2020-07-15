@@ -1020,7 +1020,7 @@ enum {
     if (self.maxNumberOfColumns > 0)
     {
         numColumns = MIN(self.maxNumberOfColumns, numItems);
-        numRows = ceilf((float)numItems / (float)numColumns);
+        numRows = ceil((CGFloat)numItems / (CGFloat)numColumns);
     }
     //Otherwise, we'll display all our items in a single row.
     else
@@ -1046,7 +1046,7 @@ enum {
         if (targetWidth >= maxWidth) return targetWidth;
     }
     
-    CGFloat roundedWidth = ceilf(targetWidth / itemWidth) * itemWidth;
+    CGFloat roundedWidth = ceil(targetWidth / itemWidth) * itemWidth;
     
     return roundedWidth;
 }

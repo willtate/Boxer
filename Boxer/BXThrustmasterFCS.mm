@@ -28,11 +28,8 @@
 //Used by BXThrustmasterFCS -directionOfPOV:
 #define BXThrustmasterFCSPOVThreshold 0.25f
 
-enum
-{
-    BXThrustmasterFCSRudderAxis = BXGameportX2Axis,
-    BXThrustmasterFCSHatAxis = BXGameportY2Axis
-};
+static const BXGameportAxis BXThrustmasterFCSRudderAxis = BXGameportX2Axis;
+static const BXGameportAxis BXThrustmasterFCSHatAxis = BXGameportY2Axis;
 
 
 #pragma mark -

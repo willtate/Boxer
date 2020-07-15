@@ -49,7 +49,7 @@ NSString * const BXMIDIExternalDeviceNeedsMT32SysexDelaysKey = @"Needs MT-32 Sys
 
 - (BXMIDIMusicType) musicType
 {
-    return [[self.requestedMIDIDeviceDescription objectForKey: BXMIDIMusicTypeKey] integerValue];
+    return BXMIDIMusicType([[self.requestedMIDIDeviceDescription objectForKey: BXMIDIMusicTypeKey] integerValue]);
 }
 
 - (id <BXMIDIDevice>) attachMIDIDeviceForDescription: (NSDictionary *)description

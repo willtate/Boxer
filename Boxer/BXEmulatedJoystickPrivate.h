@@ -10,6 +10,7 @@
 #import "BXEmulatedJoystick.h"
 #import "ADBHIDEvent.h"
 #import "config.h"
+#import "types.h"
 #import "joystick.h"
 
 

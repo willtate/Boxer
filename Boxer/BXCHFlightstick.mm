@@ -25,10 +25,8 @@ enum {
 	BXCHCombatStickButton6Mask = BXGameportButton1Mask | BXGameportButton4Mask
 };
 
-enum {
-    BXCHFlightstickProRudderAxis    = BXGameportX2Axis,
-    BXCHFlightstickProThrottleAxis  = BXGameportY2Axis
-};
+static const BXGameportAxis BXCHFlightstickProRudderAxis    = BXGameportX2Axis;
+static const BXGameportAxis BXCHFlightstickProThrottleAxis  = BXGameportY2Axis;
 
 enum {
     BXCHFlightstickPrimaryPOV = 0,

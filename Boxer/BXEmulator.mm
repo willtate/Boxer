@@ -278,7 +278,7 @@ static BOOL _hasStartedEmulator = NO;
         
             //Tells DOSBox to close the current shell at the end of the commandline input loop
             DOS_Shell *shell = self._currentShell;
-            if (shell) shell->exit = YES;
+            if (shell) shell->exit_flag = YES;
         }
 
         self.cancelled = YES;
@@ -779,7 +779,7 @@ static BOOL _hasStartedEmulator = NO;
         _requestedMIDIDeviceDescription = [newDescription retain];
 
         //Enable MT-32 autodetection if the description doesn't have a specific music type in mind.
-        BXMIDIMusicType musicType = [[newDescription objectForKey: BXMIDIMusicTypeKey] integerValue];
+        BXMIDIMusicType musicType = BXMIDIMusicType([[newDescription objectForKey: BXMIDIMusicTypeKey] integerValue]);
         self.autodetectsMT32 = (musicType == BXMIDIMusicAutodetect);
     }
 }

@@ -1046,7 +1046,7 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
                                   forIndex: (NSUInteger)index
                                      error: (NSError **)outError
 {
-	MSCDEX_SetCDInterface(CDROM_USE_SDL, -1);
+	//MSCDEX_SetCDInterface(CDROM_USE_SDL, -1);
 	
 	char driveLetter		= index + 'A';
 	const char *drivePath	= [path cStringUsingEncoding: BXDirectStringEncoding];
@@ -1142,7 +1142,7 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
 #endif
     
 	//NOTE: ioctl is currently unimplemented for OS X in DOSBox 0.74, so this will always fall back to SDL.
-	MSCDEX_SetCDInterface(CDROM_USE_IOCTL_DIO, SDLCDNum);
+	//MSCDEX_SetCDInterface(CDROM_USE_IOCTL_DIO, SDLCDNum);
 	
 	char driveLetter		= index + 'A';
 	const char *drivePath	= [path cStringUsingEncoding: BXDirectStringEncoding];

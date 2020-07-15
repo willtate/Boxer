@@ -61,7 +61,7 @@ void boxer_setShader(const char* src) {
     //TODO: implement!
 }
 
-Bitu boxer_prepareForFrameSize(Bitu width, Bitu height, Bitu gfx_flags, double scalex, double scaley, GFX_CallBack_t callback)
+Bitu boxer_prepareForFrameSize(Bitu width, Bitu height, Bitu gfx_flags, double scalex, double scaley, GFX_CallBack_t callback, double pixel_aspect)
 {
 	BXEmulator *emulator = [BXEmulator currentEmulator];
 	
@@ -80,7 +80,7 @@ Bitu boxer_idealOutputMode(Bitu flags)
 	return GFX_CAN_32 | GFX_SCALING;
 }
 
-bool boxer_startFrame(Bit8u * &frameBuffer, Bitu & pitch)
+bool boxer_startFrame(Bit8u * &frameBuffer, int & pitch)
 {
 	BXEmulator *emulator = [BXEmulator currentEmulator];
 	return [[emulator videoHandler] startFrameWithBuffer: (void **)&frameBuffer pitch: (NSUInteger *)&pitch];
@@ -96,15 +96,6 @@ Bitu boxer_getRGBPaletteEntry(Bit8u red, Bit8u green, Bit8u blue)
 {
 	BXEmulator *emulator = [BXEmulator currentEmulator];
 	return [[emulator videoHandler] paletteEntryWithRed: red green: green blue: blue];
-}
-
-void boxer_setPalette(Bitu start,Bitu count,GFX_PalEntry * entries)
-{
-	//This replacement DOSBox function does nothing, as the original was intended only for SDL
-	//surface palettes which are irrelevant to OpenGL.
-	//Furthermore it should never be called: if it does, that means DOSBox thinks it's using
-	//surface output and this is a bug.
-	NSCAssert(NO, @"boxer_setPalette called. This is a bug and should never happen.");
 }
 
 
@@ -576,3 +567,7 @@ void MAPPER_StartUp(Section * sec) {}
 void MAPPER_Run(bool pressed) {}
 void MAPPER_RunInternal() {}
 void MAPPER_LosingFocus(void) {}
+void MAPPER_AutoType(std::vector<std::string> &sequence,
+                     const uint32_t wait_ms,
+                     const uint32_t pacing_ms) {}
+std::vector<std::string> MAPPER_GetEventNames(const std::string &prefix) {return std::vector<std::string>();}
