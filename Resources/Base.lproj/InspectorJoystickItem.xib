@@ -41,7 +41,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="themeKey" value="BXInspectorListHelpTextTheme"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="themeKey" value="BXInspectorListTheme"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <binding destination="-2" name="value" keyPath="representedObject.localizedInformativeText" id="27"/>

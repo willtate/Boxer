@@ -39,7 +39,7 @@
     else
     {
         self.titleLabel.themeKey = @"BXInspectorListTheme";
-        self.descriptionLabel.themeKey = @"BXInspectorListHelpTextTheme";
+        self.descriptionLabel.themeKey = @"BXInspectorListTheme";
         self.icon.themeKey = @"BXInspectorListTheme";
     }
 }
