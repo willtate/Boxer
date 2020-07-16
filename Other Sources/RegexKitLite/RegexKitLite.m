@@ -208,7 +208,7 @@ typedef uint32_t RKLLookasideCache_t;
 // We need to safely unlock before throwing any of these exceptions.
 // @try {} @finally {} significantly slows things down so it's not used.
 
-#define RKLCHardAbortAssert(c) do { int _c=(c); if(RKL_EXPECTED(!_c, 0L)) { NSLog(@"%@:%ld: Invalid parameter not satisfying: %s\n", [NSString stringWithUTF8String:__FILE__], (long)__LINE__, #c); abort(); } } while(0)
+#define RKLCHardAbortAssert(c) do { int _c=(c); if(RKL_EXPECTED(!_c, 0L)) { NSLog(@"%@:%ld: Invalid parameter not satisfying: %s\n", @(__FILE__), (long)__LINE__, #c); abort(); } } while(0)
 #define RKLCAssertDictionary(d, ...) rkl_makeAssertDictionary(__PRETTY_FUNCTION__, __FILE__, __LINE__, (d), ##__VA_ARGS__)
 #define RKLCDelayedHardAssert(c, e, g) do { id *_e=(e); int _c=(c); if(RKL_EXPECTED(_e == NULL, 0L) || RKL_EXPECTED(*_e != NULL, 0L)) { goto g; } if(RKL_EXPECTED(!_c, 0L)) { *_e = RKLCAssertDictionary(@"Invalid parameter not satisfying: %s", #c); goto g; } } while(0)
 
@@ -395,7 +395,7 @@ static const CFDictionaryValueCallBacks rkl_transferOwnershipDictionaryValueCall
 // The basic premiss is that under GC we use a trampoline function pointer which is set to a _start function to catch the first invocation.
 // The _start function checks if GC is running and then overwrites the function pointer with the appropriate routine.  Think of it as 'lazy linking'.
 
-enum { RKLScannedOption = NSScannedOption };
+NS_ENUM(NSUInteger) { RKLScannedOption = NSScannedOption };
 
 // rkl_collectingEnabled uses objc_getClass() to get the NSGarbageCollector class, which doesn't exist on earlier systems.
 // This allows for graceful failure should we find ourselves running on an earlier version of the OS without NSGarbageCollector.
@@ -474,7 +474,7 @@ static id  rkl_CreateAutoreleasedArray_first (void **objects, NSUInteger count) 
 #pragma mark -
 #pragma mark Low-level explicit memory/resource allocation utilities
 
-enum { RKLScannedOption = 0 };
+NS_ENUM(NSUInteger) { RKLScannedOption = 0 };
 
 #define rkl_collectingEnabled() (NO)
 
@@ -488,7 +488,7 @@ RKL_STATIC_INLINE id    rkl_ReleaseObject             (id obj NS_RELEASES_ARGUME
 
 RKL_STATIC_INLINE void *rkl_realloc                   (void **ptr, size_t size, NSUInteger flags RKL_UNUSED_ARG) { return((*ptr = reallocf(*ptr, size))); }
 RKL_STATIC_INLINE void *rkl_free                      (void **ptr)                                               { if(*ptr != NULL) { free(*ptr); *ptr = NULL; } return(NULL); }
-RKL_STATIC_INLINE id    rkl_CFAutorelease             (CFTypeRef obj)                                            { return([(id)obj autorelease]); }
+RKL_STATIC_INLINE id    rkl_CFAutorelease             (CFTypeRef obj)                                            { return(CFAutorelease(obj)); }
 RKL_STATIC_INLINE id    rkl_CreateArrayWithObjects    (void **objects, NSUInteger count)                         { return((id)CFArrayCreate(NULL, (const void **)objects, (CFIndex)count, &rkl_transferOwnershipArrayCallBacks)); }
 RKL_STATIC_INLINE id    rkl_CreateAutoreleasedArray   (void **objects, NSUInteger count)                         { return(rkl_CFAutorelease(rkl_CreateArrayWithObjects(objects, count))); }
 RKL_STATIC_INLINE id    rkl_CreateStringWithSubstring (id string, NSRange range)                                 { return((id)CFStringCreateWithSubstring(NULL, (CFStringRef)string, CFMakeRange((CFIndex)range.location, (CFIndex)range.length))); }
@@ -563,8 +563,8 @@ static NSDictionary   *rkl_userInfoDictionary        (RKLUserInfoOptions userInf
 static NSError        *rkl_makeNSError               (RKLUserInfoOptions userInfoOptions, NSString *regexString, RKLRegexOptions options, const UParseError *parseError, int32_t status, NSString *matchString, NSRange matchRange, NSString *replacementString, NSString *replacedString, NSInteger replacedCount, RKLRegexEnumerationOptions enumerationOptions, NSString *errorDescription) RKL_WARN_UNUSED;
 
 static NSException    *rkl_NSExceptionForRegex       (NSString *regexString, RKLRegexOptions options, const UParseError *parseError, int32_t status) RKL_WARN_UNUSED_NONNULL_ARGS(1);
-static NSDictionary   *rkl_makeAssertDictionary      (const char *function, const char *file, int line, NSString *format, ...)                       RKL_WARN_UNUSED_NONNULL_ARGS(1,2,4);
-static NSString       *rkl_stringFromClassAndMethod  (id object, SEL selector, NSString *format, ...)                                                RKL_WARN_UNUSED_NONNULL_ARGS(3);
+static NSDictionary   *rkl_makeAssertDictionary      (const char *function, const char *file, int line, NSString *format, ...)                       RKL_WARN_UNUSED_NONNULL_ARGS(1,2,4) NS_FORMAT_FUNCTION(4,5);
+static NSString       *rkl_stringFromClassAndMethod  (id object, SEL selector, NSString *format, ...)                                                RKL_WARN_UNUSED_NONNULL_ARGS(3) NS_FORMAT_FUNCTION(3,4);
 
 RKL_STATIC_INLINE int32_t rkl_getRangeForCapture(RKLCachedRegex *cr, int32_t *s, int32_t c, NSRange *r) RKL_WARN_UNUSED_NONNULL_ARGS(1,2,4);
 RKL_STATIC_INLINE int32_t rkl_getRangeForCapture(RKLCachedRegex *cr, int32_t *s, int32_t c, NSRange *r) { uregex *re = cr->icu_regex; int32_t start = RKL_ICU_FUNCTION_APPEND(uregex_start)(re, c, s); if(RKL_EXPECTED((*s > U_ZERO_ERROR), 0L) || (start == -1)) { *r = NSNotFoundRange; } else { r->location = (NSUInteger)start; r->length = (NSUInteger)RKL_ICU_FUNCTION_APPEND(uregex_end)(re, c, s) - r->location; r->location += cr->setToRange.location; } return(*s); }
@@ -668,7 +668,7 @@ extern int  __dtrace_isenabled$RegexKitLite$utf16ConversionCache$v1(void);
 
 ////////////////////////////
 
-enum {
+typedef NS_OPTIONS(unsigned int, RKLLookupFlag) {
   RKLCacheHitLookupFlag           = 1 << 0,
   RKLConversionRequiredLookupFlag = 1 << 1,
   RKLSetTextLookupFlag            = 1 << 2,
@@ -1189,7 +1189,7 @@ exitNow:
 
 static void rkl_handleDelayedAssert(id self, SEL _cmd, id exception) {
   if(RKL_EXPECTED(exception != NULL, 1L)) {
-    if([exception isKindOfClass:[NSException class]]) { [[NSException exceptionWithName:[exception name] reason:rkl_stringFromClassAndMethod(self, _cmd, [exception reason]) userInfo:[exception userInfo]] raise]; }
+    if([exception isKindOfClass:[NSException class]]) { [[NSException exceptionWithName:[exception name] reason:rkl_stringFromClassAndMethod(self, _cmd, @"%@", [exception reason]) userInfo:[exception userInfo]] raise]; }
     else {
       id functionString = [exception objectForKey:@"function"], fileString = [exception objectForKey:@"file"], descriptionString = [exception objectForKey:@"description"], lineNumber = [exception objectForKey:@"line"];
       RKLCHardAbortAssert((functionString != NULL) && (fileString != NULL) && (descriptionString != NULL) && (lineNumber != NULL));
