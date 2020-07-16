@@ -85,6 +85,11 @@
 		55F8BC23201F9940004057D2 /* pci_bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DEBB21201E875500F1092F /* pci_bus.cpp */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		8F97922724C0E31E0054F84D /* BXMetalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA6E24B9FACC00BAAD2D /* BXMetalLayer.m */; };
+		8F97922824C0E31E0054F84D /* BXMetalRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA5824B972C900BAAD2D /* BXMetalRenderingView.m */; };
+		8F97922924C0E31E0054F84D /* BXMetalRenderingView+BXImageCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA7324BA26FD00BAAD2D /* BXMetalRenderingView+BXImageCapture.m */; };
+		8F97922A24C0E32A0054F84D /* OpenEmuShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; };
+		8F97922B24C0E32F0054F84D /* OpenEmuShaders.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F0497C01334C5970001FEE4 /* ADBForwardCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0497BF1334C5970001FEE4 /* ADBForwardCompatibility.m */; };
 		9F06C6D313992E1F00B19DF1 /* BXHIDControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C6D213992E1F00B19DF1 /* BXHIDControllerProfile.m */; };
 		9F06C6E113993FB100B19DF1 /* BXHIDInputBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F06C6E013993FB100B19DF1 /* BXHIDInputBinding.m */; };
@@ -910,6 +915,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8F97922B24C0E32F0054F84D /* OpenEmuShaders.framework in Copy Bundled Frameworks */,
 				5585CEB624BB834F008121D9 /* SDL2.framework in Copy Bundled Frameworks */,
 				55E6A0C71C00C88A00285593 /* DDHidLib.framework in Copy Bundled Frameworks */,
 				55E6A0C31C00C88A00285593 /* MT32Emu.framework in Copy Bundled Frameworks */,
@@ -1940,6 +1946,7 @@
 				9FB769E5164861E1000644C2 /* Quartz.framework in Frameworks */,
 				9F2D315815B8233800FAE848 /* QuartzCore.framework in Frameworks */,
 				55E6A0CA1C00C88A00285593 /* BGHUDAppKit.framework in Frameworks */,
+				8F97922A24C0E32A0054F84D /* OpenEmuShaders.framework in Frameworks */,
 				5585CEB524BB834F008121D9 /* SDL2.framework in Frameworks */,
 				9F2D315915B8233800FAE848 /* AudioToolbox.framework in Frameworks */,
 				9F2D315A15B8233800FAE848 /* libicucore.dylib in Frameworks */,
@@ -4247,6 +4254,7 @@
 				9F2D2FF815B8233800FAE848 /* ADBTabbedWindowController.m in Sources */,
 				9F2D2FFB15B8233800FAE848 /* YRKSpinningProgressIndicator.m in Sources */,
 				9F2D2FFD15B8233800FAE848 /* NSWindow+ADBWindowEffects.m in Sources */,
+				8F97922824C0E31E0054F84D /* BXMetalRenderingView.m in Sources */,
 				9F2D2FFF15B8233800FAE848 /* ADBFileTransferSet.m in Sources */,
 				9F2D300015B8233800FAE848 /* ADBOperationSet.m in Sources */,
 				9F2D300515B8233800FAE848 /* NSImage+ADBSaveImages.m in Sources */,
@@ -4267,6 +4275,7 @@
 				9F2D301B15B8233800FAE848 /* callback.cpp in Sources */,
 				9F2D301C15B8233800FAE848 /* core_dyn_x86.cpp in Sources */,
 				9F2D301D15B8233800FAE848 /* core_dynrec.cpp in Sources */,
+				8F97922724C0E31E0054F84D /* BXMetalLayer.m in Sources */,
 				9F2D301E15B8233800FAE848 /* core_full.cpp in Sources */,
 				9F2D301F15B8233800FAE848 /* core_normal.cpp in Sources */,
 				9F2D302015B8233800FAE848 /* core_prefetch.cpp in Sources */,
@@ -4386,6 +4395,7 @@
 				9F2D308F15B8233800FAE848 /* BX360ControllerProfile.m in Sources */,
 				9F2D309015B8233800FAE848 /* BXSixaxisControllerProfile.m in Sources */,
 				9F2D309115B8233800FAE848 /* BXCollectionItemView.m in Sources */,
+				8F97922924C0E31E0054F84D /* BXMetalRenderingView+BXImageCapture.m in Sources */,
 				9F2D309215B8233800FAE848 /* BXThemedImageCell.m in Sources */,
 				9F2D309B15B8233800FAE848 /* BXG25ControllerProfile.m in Sources */,
 				9F2D309C15B8233800FAE848 /* DDHidUsage+ADBUsageExtensions.m in Sources */,
@@ -5148,7 +5158,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_NO_PIE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5279,7 +5289,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_NO_PIE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
