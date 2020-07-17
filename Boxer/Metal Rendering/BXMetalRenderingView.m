@@ -116,6 +116,12 @@
 }
 
 - (void)updateWithFrame:(BXVideoFrame *)frame {
+    if (frame == nil) {
+        _currentFrame = nil;
+        _texture      = nil;
+        return;
+    }
+    
     CGRect sourceRect = CGRectMake(0, 0, frame.size.width, frame.size.height);
     [_filterChain setSourceRect:sourceRect aspect:frame.scaledSize];
     
@@ -150,6 +156,10 @@
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
+    if (_texture == nil) {
+        return;
+    }
+    
     @autoreleasepool {
         if (dispatch_semaphore_wait(_inflightSemaphore, DISPATCH_TIME_NOW) != 0) {
             _skippedFrames++;
