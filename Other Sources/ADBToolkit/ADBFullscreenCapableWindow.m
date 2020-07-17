@@ -302,7 +302,6 @@
 														   backing: NSBackingStoreBuffered
 															 defer: YES];
 	
-    blankingWindow.oneShot = YES;
     blankingWindow.releasedWhenClosed = YES;
     blankingWindow.backgroundColor = [NSColor blackColor];
     blankingWindow.alphaValue = (flag) ? 0.0f : 1.0f;
