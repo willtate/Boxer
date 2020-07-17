@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// for filtering out unwanted files.
 @interface ADBPathEnumerator : NSEnumerator<NSString*>
 {
-	NSDirectoryEnumerator *_enumerator;
+	NSDirectoryEnumerator<NSString*> *_enumerator;
 	BOOL _skipHiddenFiles;
 	BOOL _skipSubdirectories;
 	BOOL _skipPackageContents;
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Properties
 
 /// The enumerator we use internally for iterating the directory contents.
-@property (readonly, strong, nonatomic, nullable) NSDirectoryEnumerator *enumerator;
+@property (readonly, strong, nonatomic, nullable) NSDirectoryEnumerator<NSString*> *enumerator;
 
 /// The base path to iterate. Should not be modified during iteration.
 @property (copy, nonatomic, nullable) NSString *basePath;

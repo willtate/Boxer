@@ -329,7 +329,7 @@
 		9F2D30AB15B8233800FAE848 /* ADBISOImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F81CFB813EEA3F4008F0265 /* ADBISOImage.m */; };
 		9F2D30AC15B8233800FAE848 /* ADBBinCueImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F98589613EF71F600E66877 /* ADBBinCueImage.m */; };
 		9F2D30AD15B8233800FAE848 /* NSImage+ADBImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B61213FFBE430001640C /* NSImage+ADBImageEffects.m */; };
-		9F2D30AE15B8233800FAE848 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F740BDD142A24A400BA66B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9F2D30AE15B8233800FAE848 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F740BDD142A24A400BA66B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -DOSSPINLOCK_USE_INLINED=1"; }; };
 		9F2D30AF15B8233800FAE848 /* BXCoalfaceAudio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F34BE3E142B700100A69FAF /* BXCoalfaceAudio.mm */; };
 		9F2D30B015B8233800FAE848 /* BXEmulator+BXAudio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F34BE5E142B851700A69FAF /* BXEmulator+BXAudio.mm */; };
 		9F2D30B115B8233800FAE848 /* BXBaseAppController+BXSupportFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34BE61142B917100A69FAF /* BXBaseAppController+BXSupportFiles.m */; };
