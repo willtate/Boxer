@@ -673,16 +673,7 @@ NSString * const BXGameboxErrorDomain = @"BXGameboxErrorDomain";
 	//Otherwise, generate a UUID.
 	if (!identifier)
 	{
-		CFUUIDRef     UUID;
-		CFStringRef   UUIDString;
-		
-		UUID = CFUUIDCreate(kCFAllocatorDefault);
-		UUIDString = CFUUIDCreateString(kCFAllocatorDefault, UUID);
-		
-		NSString *identifierWithUUID = [NSString stringWithString: (__bridge NSString *)UUIDString];
-		
-		CFRelease(UUID);
-		CFRelease(UUIDString);
+		NSString *identifierWithUUID = [NSUUID UUID].UUIDString;
 		
 		*type = BXGameIdentifierUUID;
 		identifier = identifierWithUUID;
