@@ -1394,7 +1394,6 @@
 		9F77208712B38C4400072AE8 /* mapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapper.h; sourceTree = "<group>"; };
 		9F77208812B38C4400072AE8 /* mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mem.h; sourceTree = "<group>"; };
 		9F77208912B38C4400072AE8 /* mixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mixer.h; sourceTree = "<group>"; };
-		9F77208A12B38C4400072AE8 /* modules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modules.h; sourceTree = "<group>"; };
 		9F77208B12B38C4400072AE8 /* mouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mouse.h; sourceTree = "<group>"; };
 		9F77208C12B38C4400072AE8 /* paging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = paging.h; sourceTree = "<group>"; };
 		9F77208D12B38C4400072AE8 /* pic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pic.h; sourceTree = "<group>"; };
@@ -1469,7 +1468,6 @@
 		9F7720DB12B38C4400072AE8 /* debug_gui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = debug_gui.cpp; sourceTree = "<group>"; };
 		9F7720DC12B38C4400072AE8 /* debug_inc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug_inc.h; sourceTree = "<group>"; };
 		9F7720DD12B38C4400072AE8 /* debug_win32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = debug_win32.cpp; sourceTree = "<group>"; };
-		9F7720DE12B38C4400072AE8 /* disasm_tables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = disasm_tables.h; sourceTree = "<group>"; };
 		9F7720E012B38C4400072AE8 /* cdrom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cdrom.cpp; sourceTree = "<group>"; };
 		9F7720E112B38C4400072AE8 /* cdrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdrom.h; sourceTree = "<group>"; };
 		9F7720E312B38C4400072AE8 /* cdrom_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cdrom_image.cpp; sourceTree = "<group>"; };
@@ -2719,7 +2717,6 @@
 				9F77208812B38C4400072AE8 /* mem.h */,
 				55DEBB1A201E81C200F1092F /* midi.h */,
 				9F77208912B38C4400072AE8 /* mixer.h */,
-				9F77208A12B38C4400072AE8 /* modules.h */,
 				9F77208B12B38C4400072AE8 /* mouse.h */,
 				9F77208C12B38C4400072AE8 /* paging.h */,
 				9FD6AA1D16314AC6002B774E /* parport.h */,
@@ -2748,7 +2745,6 @@
 		9F77209D12B38C4400072AE8 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				5514502424BE8BCC0002CE28 /* midi */,
 				9F77209E12B38C4400072AE8 /* cpu */,
 				9F7720D812B38C4400072AE8 /* debug */,
 				9F7720DF12B38C4400072AE8 /* dos */,
@@ -2757,6 +2753,7 @@
 				9F77210512B38C4400072AE8 /* gui */,
 				9F77211B12B38C4400072AE8 /* hardware */,
 				9F77216412B38C4400072AE8 /* libs */,
+				5514502424BE8BCC0002CE28 /* midi */,
 				9F77216B12B38C4400072AE8 /* misc */,
 				9F77217112B38C4400072AE8 /* shell */,
 			);
@@ -2865,7 +2862,6 @@
 				9F7720DB12B38C4400072AE8 /* debug_gui.cpp */,
 				9F7720DC12B38C4400072AE8 /* debug_inc.h */,
 				9F7720DD12B38C4400072AE8 /* debug_win32.cpp */,
-				9F7720DE12B38C4400072AE8 /* disasm_tables.h */,
 			);
 			path = debug;
 			sourceTree = "<group>";
@@ -2942,15 +2938,13 @@
 				555747EF208FA8030045E635 /* mame */,
 				9FD6A9FF16314A5B002B774E /* parport */,
 				9F77213312B38C4400072AE8 /* serialport */,
-				55DEBB21201E875500F1092F /* pci_bus.cpp */,
-				5514503424BE8DB00002CE28 /* dc_silencer.cpp */,
-				5514503524BE8DB00002CE28 /* dc_silencer.h */,
-				55DEBB22201E875500F1092F /* pci_devices.h */,
 				9F77211C12B38C4400072AE8 /* adlib.cpp */,
 				9F77211D12B38C4400072AE8 /* adlib.h */,
 				9F77211E12B38C4400072AE8 /* cmos.cpp */,
 				9F77211F12B38C4400072AE8 /* dbopl.cpp */,
 				9F77212012B38C4400072AE8 /* dbopl.h */,
+				5514503424BE8DB00002CE28 /* dc_silencer.cpp */,
+				5514503524BE8DB00002CE28 /* dc_silencer.h */,
 				9F77212112B38C4400072AE8 /* disney.cpp */,
 				9F77212212B38C4400072AE8 /* dma.cpp */,
 				5514503824BE8DE50002CE28 /* envelope.cpp */,
@@ -2967,12 +2961,13 @@
 				9F77212D12B38C4400072AE8 /* mpu401.cpp */,
 				9F77212E12B38C4400072AE8 /* opl.cpp */,
 				9F77212F12B38C4400072AE8 /* opl.h */,
+				55DEBB21201E875500F1092F /* pci_bus.cpp */,
+				55DEBB22201E875500F1092F /* pci_devices.h */,
 				9F77213012B38C4400072AE8 /* pcspeaker.cpp */,
 				9F77213112B38C4400072AE8 /* pic.cpp */,
 				9F77213212B38C4400072AE8 /* sblaster.cpp */,
 				9F77214112B38C4400072AE8 /* tandy_sound.cpp */,
 				9F77214212B38C4400072AE8 /* timer.cpp */,
-				9F77214312B38C4400072AE8 /* vga.cpp */,
 				9F77214412B38C4400072AE8 /* vga_attr.cpp */,
 				9F77214512B38C4400072AE8 /* vga_crtc.cpp */,
 				9F77214612B38C4400072AE8 /* vga_dac.cpp */,
@@ -2986,6 +2981,7 @@
 				9F77214E12B38C4400072AE8 /* vga_seq.cpp */,
 				9F77214F12B38C4400072AE8 /* vga_tseng.cpp */,
 				9F77215012B38C4400072AE8 /* vga_xga.cpp */,
+				9F77214312B38C4400072AE8 /* vga.cpp */,
 			);
 			path = hardware;
 			sourceTree = "<group>";
