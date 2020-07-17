@@ -80,21 +80,24 @@
     //If the target path is on a disk image, then mount the image for scanning
     if ([_workspace file: self.basePath matchesTypes: [NSSet setWithObject: @"public.disk-image"]])
     {
+        NSURL *baseURL = [NSURL fileURLWithPath: self.basePath];
+        
         //First, check if the image is already mounted
-        volumePath = [_workspace volumeForSourceImage: self.basePath];
+        volumePath = [[[_workspace mountedVolumeURLsForSourceImageAtURL: baseURL] firstObject] path];
         
         //If it's not mounted yet, mount it ourselves
         if (!volumePath)
         {
             NSError *mountError = nil;
-            volumePath = [_workspace mountImageAtPath: self.basePath
-                                             readOnly: YES
-                                            invisibly: YES
-                                                error: &mountError];
+            ADBImageMountingOptions options = ADBMountReadOnly | ADBMountInvisible;
+            NSArray<NSURL *> *images = [_workspace mountImageAtURL: baseURL
+                                                           options: options
+                                                             error: &mountError];
             
-            if (volumePath)
+            if (images.count > 0)
             {
                 _didMountVolume = YES;
+                volumePath = [images.firstObject path];
             }
             //If we couldn't mount the image, give up in failure
             else
