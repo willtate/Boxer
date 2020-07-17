@@ -1120,8 +1120,6 @@
 		9F1812BD12996337009BC4B2 /* YRKSpinningProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRKSpinningProgressIndicator.m; sourceTree = "<group>"; };
 		9F181339129990D5009BC4B2 /* BXGamesFolderPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXGamesFolderPanelController.h; sourceTree = "<group>"; };
 		9F18133A129990D5009BC4B2 /* BXGamesFolderPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXGamesFolderPanelController.m; sourceTree = "<group>"; };
-		9F18B7C2169DE6E500101848 /* VDKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDKQueue.h; sourceTree = "<group>"; };
-		9F18B7C3169DE6E500101848 /* VDKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDKQueue.m; sourceTree = "<group>"; };
 		9F18BE9313EB07190047C217 /* BXInstallerScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXInstallerScan.h; sourceTree = "<group>"; };
 		9F18BE9413EB07190047C217 /* BXInstallerScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXInstallerScan.m; sourceTree = "<group>"; };
 		9F18E28516E2763F002D4198 /* ADBLocalFilesystemPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBLocalFilesystemPrivate.h; sourceTree = "<group>"; };
@@ -2342,15 +2340,6 @@
 			path = YRKSpinningProgressIndicator;
 			sourceTree = "<group>";
 		};
-		9F18B7C0169DE6E500101848 /* VDKQueue */ = {
-			isa = PBXGroup;
-			children = (
-				9F18B7C2169DE6E500101848 /* VDKQueue.h */,
-				9F18B7C3169DE6E500101848 /* VDKQueue.m */,
-			);
-			path = VDKQueue;
-			sourceTree = "<group>";
-		};
 		9F1CBA55120C783800C5E926 /* Game import session */ = {
 			isa = PBXGroup;
 			children = (
@@ -3533,7 +3522,6 @@
 				9FADFE9611EC932800990E91 /* NSData+HexStrings.m */,
 				9F7A8F230F8E705100D1AAD5 /* ADBToolkit */,
 				9F59DA1410AE22B9008DBBC1 /* MCAdditions */,
-				9F18B7C0169DE6E500101848 /* VDKQueue */,
 				9F8A974710E7DEF500A4B72A /* RegexKitLite */,
 				9F1812B812996308009BC4B2 /* YRKSpinningProgressIndicator */,
 			);
