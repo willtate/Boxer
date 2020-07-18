@@ -192,8 +192,12 @@
         //choose which installer to use.
 		if (!scan.isAlreadyInstalled && self.installerURLs.count)
         {
+            #ifdef BOXER_DEBUG
 			self.importStage = BXImportSessionWaitingForInstaller;
             [NSApp requestUserAttention: NSInformationalRequest];
+			#else
+			[self skipInstaller];
+            #endif
         }
         //Otherwise, we'll get on with finalizing the import directly.
 		else
