@@ -20,8 +20,7 @@ typedef NS_ENUM(NSInteger, BXRenderingStyle) {
     BXNumRenderingStyles
 };
 
-
-@class BXVideoFrame;
+@class BXVideoFrame, OEShaderParamGroup;
 
 /// \c BXFrameRenderingView is a protocol for views that perform drawing of \c BXEmulator frames.
 /// It provides a consistent interface for \c BXDOSWindowController to communicate with
@@ -31,6 +30,8 @@ typedef NS_ENUM(NSInteger, BXRenderingStyle) {
 /// Return the current frame being rendered - i.e. the last frame that was passed
 /// to the view via updateWithFrame:. This property must be KVO-compliant.
 @property (readonly, nonatomic) BXVideoFrame *currentFrame;
+
+@property (readonly, nonatomic) NSArray<OEShaderParamGroup *> *parameterGroups;
 
 /// Set/get the current rendering style of the view.
 @property (readwrite, nonatomic) BXRenderingStyle renderingStyle;

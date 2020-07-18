@@ -33,6 +33,8 @@
 #import "NSWindow+ADBWindowDimensions.h"
 #import "ADBGeometry.h"
 
+#import "BXShaderParametersWindowController.h"
+
 
 #pragma mark - Constants
 
@@ -63,6 +65,7 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
 		self.programPanelController.representedObject = nil;
     	self.inputController.representedObject = nil;
         self.launchPanelController.representedObject = nil;
+        [self.shaderParametersController unbind:@"parameterGroups"];
     }
 
 	[super setDocument: document];
@@ -72,6 +75,10 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
 		self.programPanelController.representedObject = document;
     	self.inputController.representedObject = document;
         self.launchPanelController.representedObject = document;
+        [self.shaderParametersController bind:@"groups"
+                                     toObject:self.renderingView
+                                  withKeyPath:@"parameterGroups"
+                                      options:nil];
     }
 }
 
@@ -444,6 +451,11 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
 #pragma mark -
 #pragma mark UI actions
 
+- (IBAction) toggleShaderParametersWindow: (id)sender
+{
+    [self.shaderParametersController showWindow:self];
+}
+
 - (IBAction) toggleRenderingStyle: (id <NSValidatedUserInterfaceItem>)sender
 {
 	BXRenderingStyle style = (BXRenderingStyle)sender.tag;
@@ -682,7 +694,12 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
 {
     if (self.renderingStyle != style)
     {
+        [self willChangeValueForKey:@"renderingStyle"];
+        
         _renderingStyle = style;
+        
+        [self didChangeValueForKey:@"renderingStyle"];
+        
         BXSession *session = (BXSession *)self.document;
         BXVideoHandler *videoHandler = session.emulator.videoHandler;
         

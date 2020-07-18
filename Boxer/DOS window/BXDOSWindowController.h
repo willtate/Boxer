@@ -40,6 +40,7 @@ typedef NS_ENUM(NSInteger, BXDOSWindowPanel) {
 @class BXVideoFrame;
 @class BXInputView;
 @class YRKSpinningProgressIndicator;
+@class BXShaderParametersWindowController;
 
 @protocol BXFrameRenderingView;
 
@@ -61,6 +62,7 @@ extern NSString * const BXViewDidLiveResizeNotification;
 @property (strong, nonatomic) IBOutlet BXInputController *inputController;
 @property (strong, nonatomic) IBOutlet BXStatusBarController *statusBarController;
 @property (strong, nonatomic) IBOutlet BXLaunchPanelController *launchPanelController;
+@property (strong, nonatomic) IBOutlet BXShaderParametersWindowController *shaderParametersController;
 @property (strong, nonatomic) IBOutlet NSToolbarItem *documentationButton;
 
 #pragma mark Views
@@ -139,6 +141,10 @@ extern NSString * const BXViewDidLiveResizeNotification;
 
 #pragma mark -
 #pragma mark Interface actions
+
+/// Toggle the shader parameters window
+
+- (IBAction) toggleShaderParametersWindow: (id)sender;
 
 /// Toggle the status bar and program panel components on and off.
 - (IBAction) toggleStatusBarShown:		(id)sender;

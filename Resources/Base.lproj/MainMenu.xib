@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17132.0.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17132.0.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -552,6 +552,12 @@
                                     <binding destination="1841" name="value" keyPath="values.aspectCorrected" id="1852"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Shader Properties…" id="Wks-tC-vJz">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="toggleShaderParametersWindow:" target="-1" id="sdz-Q1-SRH"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="2187"/>
                             <menuItem title="Save Screenshot" keyEquivalent="S" id="2190">
                                 <connections>
@@ -929,6 +935,7 @@
                     </connections>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="30" y="-50"/>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="1841"/>
         <objectController objectClassName="BXSession" editable="NO" id="2207" userLabel="Session mediator">
@@ -958,7 +965,7 @@
             <rect key="frame" x="0.0" y="0.0" width="204" height="20"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <slider verticalHuggingPriority="750" id="2201">
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2201">
                     <rect key="frame" x="22" y="-1" width="152" height="21"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="2202"/>
@@ -966,7 +973,7 @@
                         <binding destination="401" name="value" keyPath="effectiveVolume" id="2229"/>
                     </connections>
                 </slider>
-                <button verticalHuggingPriority="750" id="2230">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2230">
                     <rect key="frame" x="3" y="1" width="19" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="recessed" bezelStyle="recessed" image="Volume0PercentCroppedTemplate" imagePosition="only" alignment="center" controlSize="small" state="on" borderStyle="border" inset="2" id="2233">
@@ -977,7 +984,7 @@
                         <action selector="minimizeVolume:" target="-1" id="2237"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="2231">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2231">
                     <rect key="frame" x="174" y="0.0" width="27" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="recessed" bezelStyle="recessed" image="Volume100PercentTemplate" imagePosition="only" alignment="center" controlSize="small" state="on" borderStyle="border" inset="2" id="2232">

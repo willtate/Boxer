@@ -76,7 +76,7 @@ layout(std140, set = 0, binding = 0) uniform UBO
 #define USEGAUSSIAN
   
 // Use interlacing detection; may interfere with other shaders if combined
-#define INTERLACED
+//#define INTERLACED
 
 // Macros.
 #define FIX(c) max(abs(c), 1e-5);

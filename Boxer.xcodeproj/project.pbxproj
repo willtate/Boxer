@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		058BC51224C27B480078C244 /* ShaderParameters.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC51124C27B480078C244 /* ShaderParameters.xib */; };
+		058BC52824C27BA10078C244 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC52524C27BA10078C244 /* GroupCell.xib */; };
+		058BC52924C27BA10078C244 /* CheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC52624C27BA10078C244 /* CheckboxCell.xib */; };
+		058BC52A24C27BA10078C244 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC52724C27BA10078C244 /* SliderCell.xib */; };
+		058BC52B24C27CAD0078C244 /* BXShadersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058BC51F24C27B770078C244 /* BXShadersModel.swift */; };
+		058BC52C24C27CB00078C244 /* BXShadersModel+OpenEmu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058BC52124C27B780078C244 /* BXShadersModel+OpenEmu.swift */; };
+		058BC52E24C27CB50078C244 /* BXShaderParametersWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058BC52324C27B790078C244 /* BXShaderParametersWindowController.m */; };
 		05E6BA5924B972C900BAAD2D /* BXMetalRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA5824B972C900BAAD2D /* BXMetalRenderingView.m */; };
 		05E6BA6F24B9FACC00BAAD2D /* BXMetalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E6BA6E24B9FACC00BAAD2D /* BXMetalLayer.m */; };
 		05E6BA7024B9FC2E00BAAD2D /* OpenEmuShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */; };
@@ -947,6 +954,14 @@
 /* Begin PBXFileReference section */
 		0532FBF624BAA1A4008EAD86 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		0580F26924B0E7F10099CB8E /* Boxer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Boxer.entitlements; sourceTree = "<group>"; };
+		058BC51124C27B480078C244 /* ShaderParameters.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShaderParameters.xib; sourceTree = "<group>"; };
+		058BC51E24C27B770078C244 /* BXShaderParametersWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BXShaderParametersWindowController.h; sourceTree = "<group>"; };
+		058BC51F24C27B770078C244 /* BXShadersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXShadersModel.swift; sourceTree = "<group>"; };
+		058BC52124C27B780078C244 /* BXShadersModel+OpenEmu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BXShadersModel+OpenEmu.swift"; sourceTree = "<group>"; };
+		058BC52324C27B790078C244 /* BXShaderParametersWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXShaderParametersWindowController.m; sourceTree = "<group>"; };
+		058BC52524C27BA10078C244 /* GroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
+		058BC52624C27BA10078C244 /* CheckboxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckboxCell.xib; sourceTree = "<group>"; };
+		058BC52724C27BA10078C244 /* SliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		05E6BA5724B972C900BAAD2D /* BXMetalRenderingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BXMetalRenderingView.h; sourceTree = "<group>"; };
 		05E6BA5824B972C900BAAD2D /* BXMetalRenderingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXMetalRenderingView.m; sourceTree = "<group>"; };
 		05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OpenEmuShaders.xcodeproj; path = Vendor/OpenEmuShaders/OpenEmuShaders.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -1965,6 +1980,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		058BC51D24C27B610078C244 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				058BC51E24C27B770078C244 /* BXShaderParametersWindowController.h */,
+				058BC52324C27B790078C244 /* BXShaderParametersWindowController.m */,
+				058BC51F24C27B770078C244 /* BXShadersModel.swift */,
+				058BC52124C27B780078C244 /* BXShadersModel+OpenEmu.swift */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		058BC52424C27B890078C244 /* Cell Views */ = {
+			isa = PBXGroup;
+			children = (
+				058BC52624C27BA10078C244 /* CheckboxCell.xib */,
+				058BC52524C27BA10078C244 /* GroupCell.xib */,
+				058BC52724C27BA10078C244 /* SliderCell.xib */,
+			);
+			name = "Cell Views";
+			sourceTree = "<group>";
+		};
 		05E6BA5624B971AD00BAAD2D /* Metal Rendering */ = {
 			isa = PBXGroup;
 			children = (
@@ -2014,6 +2050,7 @@
 				9FDE33FF1351DA0B000DCE44 /* Drives */,
 				9F23EB0111390A2600DC5AB6 /* Rendering */,
 				05E6BA5624B971AD00BAAD2D /* Metal Rendering */,
+				058BC51D24C27B610078C244 /* Shaders */,
 				9FC6381213C0B5C0004478A3 /* Input */,
 				9F27133610C1253E0003CB58 /* DOS window */,
 				9F1CBA94120C7D4300C5E926 /* Game import window */,
@@ -2635,6 +2672,8 @@
 				9F45A46A109C9A0400593456 /* MountPanelOptions.xib */,
 				9FDE34361351E0F5000DCE44 /* Welcome.xib */,
 				9F886FDD144CB6C30033CCD3 /* Bezel.xib */,
+				058BC51124C27B480078C244 /* ShaderParameters.xib */,
+				058BC52424C27B890078C244 /* Cell Views */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -3742,6 +3781,7 @@
 				9FCBB6F310A6DDBD00C28B09 /* DOS Toolkit in Resources */,
 				9F4199E11BD416E400A2D165 /* DocumentationPanel.xib in Resources */,
 				9FFAFE2D10DE33FB00728BAC /* GameProfiles.plist in Resources */,
+				058BC52824C27BA10078C244 /* GroupCell.xib in Resources */,
 				9FFAFE4310DE343F00728BAC /* Configurations in Resources */,
 				9FBD321710E5144C00031CB6 /* Brand.png in Resources */,
 				9F4199FA1BD416E900A2D165 /* Configuration.strings in Resources */,
@@ -3770,9 +3810,12 @@
 				9F4199F21BD416E400A2D165 /* ProgramPanel.xib in Resources */,
 				9F12F97C144875F400FC9645 /* DummyCD.iso in Resources */,
 				9F4199F31BD416E400A2D165 /* ImportTipsPanel.xib in Resources */,
+				058BC52924C27BA10078C244 /* CheckboxCell.xib in Resources */,
 				9F4199E21BD416E400A2D165 /* DocumentationBrowser.xib in Resources */,
+				058BC51224C27B480078C244 /* ShaderParameters.xib in Resources */,
 				9F4199E71BD416E400A2D165 /* LaunchPanel.xib in Resources */,
 				9F4199EE1BD416E400A2D165 /* InspectorDriveItem.xib in Resources */,
+				058BC52A24C27BA10078C244 /* SliderCell.xib in Resources */,
 				9F4199F01BD416E400A2D165 /* Preferences.xib in Resources */,
 				9F4199E31BD416E400A2D165 /* PrintStatusPanel.xib in Resources */,
 				9FE32383157A9559004492E8 /* Shaders in Resources */,
@@ -3858,6 +3901,7 @@
 				9F6311090F70F54300AB1155 /* BXHelpMenuController.m in Sources */,
 				9F573C5A0F8E18B10089D8B7 /* NSWorkspace+ADBMountedVolumes.m in Sources */,
 				9F573D390F8E69AF0089D8B7 /* BXGamebox.m in Sources */,
+				058BC52E24C27CB50078C244 /* BXShaderParametersWindowController.m in Sources */,
 				9F4971BB108EF02F00282261 /* BXEmulator+BXDOSFileSystem.mm in Sources */,
 				9FC8F50C10934F3400AD6307 /* NSString+ADBPaths.m in Sources */,
 				9F45A424109C867E00593456 /* BXMountPanelController.m in Sources */,
@@ -4021,6 +4065,7 @@
 				9F5F12C615ADCE74007A070F /* NSKeyedArchiver+ADBArchivingAdditions.m in Sources */,
 				9FCB7B1015B844AB00CC7CC7 /* BXBaseAppController.m in Sources */,
 				9F98410215BEE64400B50CDA /* ADBShadowedFilesystem.m in Sources */,
+				058BC52B24C27CAD0078C244 /* BXShadersModel.swift in Sources */,
 				9FB60E8E15C5552F00CD0D63 /* NSURL+ADBFilesystemHelpers.m in Sources */,
 				9FB60E9215C5643200CD0D63 /* NSError+ADBErrorHelpers.mm in Sources */,
 				9FA2C09215C8409000380261 /* BXDOSWindowBackgroundView.m in Sources */,
@@ -4087,6 +4132,7 @@
 				9F77219512B38C4400072AE8 /* dos_programs.cpp in Sources */,
 				9F77219612B38C4400072AE8 /* dos_tables.cpp in Sources */,
 				5548850E226A501000A879B3 /* drive_overlay.cpp in Sources */,
+				058BC52C24C27CB00078C244 /* BXShadersModel+OpenEmu.swift in Sources */,
 				9F77219712B38C4400072AE8 /* drive_cache.cpp in Sources */,
 				55574805208FA8040045E635 /* ymdeltat.cpp in Sources */,
 				9F77219812B38C4400072AE8 /* drive_fat.cpp in Sources */,

@@ -6,6 +6,8 @@
 //  Copyright © 2020 Alun Bestor and contributors. All rights reserved.
 //
 
+#include "BXMetalRenderingView.h"
+
 @class OEFilterChain;
 
 @interface BXMetalRenderingView (Private)

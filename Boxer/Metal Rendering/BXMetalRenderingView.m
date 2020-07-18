@@ -10,7 +10,7 @@
 @import OpenEmuShaders;
 
 #import "ADBGeometry.h"
-#import "BXMetalRenderingView.h"
+#import "BXMetalRenderingView+Private.h"
 #import "BXVideoFrame.h"
 #import "BXMetalLayer.h"
 
@@ -21,6 +21,13 @@
 /// TODO(sgc): implement triple buffering
 #define MAX_INFLIGHT 1
 
+@interface BXMetalRenderingView() {
+    
+}
+
+@property (nonatomic, readwrite) NSArray<OEShaderParamGroup *> *parameterGroups;
+
+@end
 
 @implementation BXMetalRenderingView {
     CAMetalLayer    *_videoLayer;
@@ -94,6 +101,15 @@
 }
 
 - (void)setRenderingStyle:(BXRenderingStyle)renderingStyle {
+    if (renderingStyle == _renderingStyle)
+    {
+        return;
+    }
+    
+    [self willChangeValueForKey:@"renderingStyle"];
+    
+    _renderingStyle = renderingStyle;
+    
     switch (renderingStyle) {
     case BXRenderingStyleNormal: {
         NSString *path = [NSBundle.mainBundle pathForResource:@"Pixellate" ofType:@"slangp" inDirectory:@"Shaders/Pixellate"];
@@ -113,6 +129,10 @@
         break;
     }
     }
+    
+    [self didChangeValueForKey:@"renderingStyle"];
+    
+    self.parameterGroups = _filterChain.shader.parameterGroups;
 }
 
 - (void)updateWithFrame:(BXVideoFrame *)frame {

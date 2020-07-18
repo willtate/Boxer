@@ -16,6 +16,7 @@
                 <outlet property="loadingSpinner" destination="1253" id="1254"/>
                 <outlet property="panelWrapper" destination="1244" id="SKg-qj-KNn"/>
                 <outlet property="renderingView" destination="UZp-TA-dmD" id="ygx-Ud-GCZ"/>
+                <outlet property="shaderParametersController" destination="49q-3x-2NI" id="hQ5-Su-6Nv"/>
                 <outlet property="statusBar" destination="3" id="918"/>
                 <outlet property="statusBarController" destination="926" id="983"/>
                 <outlet property="window" destination="1" id="169"/>
@@ -26,7 +27,7 @@
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="1" customClass="BXDOSWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="400" y="240" width="640" height="506"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="640" height="506"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -359,6 +360,7 @@
             </connections>
         </viewController>
         <viewController nibName="LaunchPanel" id="1056" userLabel="Launch Panel Controller" customClass="BXLaunchPanelController"/>
+        <customObject id="49q-3x-2NI" customClass="BXShaderParametersWindowController"/>
         <menu id="1389">
             <items>
                 <menuItem title="Pause" id="1390">
@@ -380,6 +382,7 @@
                     </connections>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="-103" y="-295"/>
         </menu>
     </objects>
     <resources>
@@ -388,10 +391,10 @@
         <image name="DocumentationTemplate" width="16" height="16"/>
         <image name="FastForwardTemplate" width="19" height="13"/>
         <image name="LauncherListTemplate" width="16" height="13"/>
-        <image name="NSLockLockedTemplate" width="15" height="13"/>
-        <image name="NSLockUnlockedTemplate" width="18" height="13"/>
-        <image name="NSRefreshTemplate" width="14" height="14"/>
-        <image name="NSRevealFreestandingTemplate" width="15" height="13"/>
+        <image name="NSLockLockedTemplate" width="10" height="14"/>
+        <image name="NSLockUnlockedTemplate" width="10" height="14"/>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
+        <image name="NSRevealFreestandingTemplate" width="14" height="14"/>
         <image name="PauseTemplate" width="10" height="13"/>
         <image name="PlayTemplate" width="10" height="13"/>
         <image name="ScreenshotTemplate" width="16" height="12"/>
