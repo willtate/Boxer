@@ -43,32 +43,32 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Constants
 
 typedef NS_OPTIONS(NSUInteger, ADBHandleOptions) {
-    ADBOpenForReading   = 1 << 0,
-    ADBOpenForWriting   = 1 << 1,
+    ADBHandleOpenForReading   = 1 << 0,
+    ADBHandleOpenForWriting   = 1 << 1,
     
     //Mutually exclusive
-    ADBCreateIfMissing  = 1 << 2,
-    ADBCreateAlways     = 1 << 3,
+    ADBHandleCreateIfMissing  = 1 << 2,
+    ADBHandleCreateAlways     = 1 << 3,
     
     //Mutually exclusive
-    ADBTruncate         = 1 << 4,
-    ADBAppend           = 1 << 5,
+    ADBHandleTruncate         = 1 << 4,
+    ADBHandleAppend           = 1 << 5,
     
     //Equivalents to fopen() access modes
-    ADBPOSIXModeR      = ADBOpenForReading,
-    ADBPOSIXModeRPlus  = ADBPOSIXModeR | ADBOpenForWriting,
+    ADBHandlePOSIXModeR      = ADBHandleOpenForReading,
+    ADBHandlePOSIXModeRPlus  = ADBHandlePOSIXModeR | ADBHandleOpenForWriting,
     
-    ADBPOSIXModeW      = ADBOpenForWriting | ADBTruncate | ADBCreateIfMissing,
-    ADBPOSIXModeWPlus  = ADBPOSIXModeW | ADBOpenForReading,
+    ADBHandlePOSIXModeW      = ADBHandleOpenForWriting | ADBHandleTruncate | ADBHandleCreateIfMissing,
+    ADBHandlePOSIXModeWPlus  = ADBHandlePOSIXModeW | ADBHandleOpenForReading,
     
-    ADBPOSIXModeA      = ADBOpenForWriting | ADBAppend | ADBCreateIfMissing,
-    ADBPOSIXModeAPlus  = ADBPOSIXModeA | ADBOpenForReading,
+    ADBHandlePOSIXModeA      = ADBHandleOpenForWriting | ADBHandleAppend | ADBHandleCreateIfMissing,
+    ADBHandlePOSIXModeAPlus  = ADBHandlePOSIXModeA | ADBHandleOpenForReading,
     
-    ADBPOSIXModeWX     = ADBOpenForWriting | ADBTruncate | ADBCreateAlways,
-    ADBPOSIXModeWPlusX = ADBPOSIXModeWX | ADBOpenForReading,
+    ADBHandlePOSIXModeWX     = ADBHandleOpenForWriting | ADBHandleTruncate | ADBHandleCreateAlways,
+    ADBHandlePOSIXModeWPlusX = ADBHandlePOSIXModeWX | ADBHandleOpenForReading,
     
-    ADBPOSIXModeAX     = ADBOpenForWriting | ADBAppend | ADBCreateAlways,
-    ADBPOSIXModeAPlusX = ADBPOSIXModeAX | ADBOpenForReading,
+    ADBHandlePOSIXModeAX     = ADBHandleOpenForWriting | ADBHandleAppend | ADBHandleCreateAlways,
+    ADBHandlePOSIXModeAPlusX = ADBHandlePOSIXModeAX | ADBHandleOpenForReading,
 };
 
 
@@ -354,5 +354,23 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 - (long long) localOffsetForSourceOffset: (long long)offset;
 
 @end
+
+static const ADBHandleOptions ADBOpenForReading NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandleOpenForReading", 10.5, 10.14) = ADBHandleOpenForReading;
+static const ADBHandleOptions ADBOpenForWriting NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandleOpenForWriting", 10.5, 10.14) = ADBHandleOpenForWriting;
+static const ADBHandleOptions ADBCreateIfMissing NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandleCreateIfMissing", 10.5, 10.14) = ADBHandleCreateIfMissing;
+static const ADBHandleOptions ADBCreateAlways NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandleCreateAlways", 10.5, 10.14) = ADBHandleCreateAlways;
+static const ADBHandleOptions ADBTruncate NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandleTruncate", 10.5, 10.14) = ADBHandleTruncate;
+static const ADBHandleOptions ADBAppend NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandleAppend", 10.5, 10.14) = ADBHandleAppend;
+static const ADBHandleOptions ADBPOSIXModeR NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeR", 10.5, 10.14) = ADBHandlePOSIXModeR;
+static const ADBHandleOptions ADBPOSIXModeRPlus NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeRPlus", 10.5, 10.14) = ADBHandlePOSIXModeRPlus;
+static const ADBHandleOptions ADBPOSIXModeW NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeW", 10.5, 10.14) = ADBHandlePOSIXModeW;
+static const ADBHandleOptions ADBPOSIXModeWPlus NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeWPlus", 10.5, 10.14) = ADBHandlePOSIXModeWPlus;
+static const ADBHandleOptions ADBPOSIXModeA NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeA", 10.5, 10.14) = ADBHandlePOSIXModeA;
+static const ADBHandleOptions ADBPOSIXModeAPlus NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeAPlus", 10.5, 10.14) = ADBHandlePOSIXModeAPlus;
+static const ADBHandleOptions ADBPOSIXModeWX NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeWX", 10.5, 10.14) = ADBHandlePOSIXModeWX;
+static const ADBHandleOptions ADBPOSIXModeWPlusX NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeWPlusX", 10.5, 10.14) = ADBHandlePOSIXModeWPlusX;
+static const ADBHandleOptions ADBPOSIXModeAX NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeAX", 10.5, 10.14) = ADBHandlePOSIXModeAX;
+static const ADBHandleOptions ADBPOSIXModeAPlusX NS_DEPRECATED_WITH_REPLACEMENT_MAC("ADBHandlePOSIXModeAPlusX", 10.5, 10.14) = ADBHandlePOSIXModeAPlusX;
+
 
 NS_ASSUME_NONNULL_END
