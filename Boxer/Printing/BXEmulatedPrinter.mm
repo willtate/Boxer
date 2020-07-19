@@ -624,7 +624,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
                            nil];
     
     //Apply underlining and strikethroughing
-    NSUInteger strikeStyle = NSUnderlineStyleNone;
+    NSUnderlineStyle strikeStyle = NSUnderlineStyleNone;
     switch (self.lineStyle)
     {
         case BXESCPLineStyleSingle:
@@ -634,22 +634,22 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
             strikeStyle |= NSUnderlineStyleDouble;
             break;
         case BXESCPLineStyleBroken:
-            strikeStyle |= NSUnderlineStyleSingle | NSUnderlinePatternDash;
+            strikeStyle |= NSUnderlineStyleSingle | NSUnderlineStylePatternDash;
             break;
         case BXESCPLineStyleDoubleBroken:
-            strikeStyle |= NSUnderlineStyleDouble | NSUnderlinePatternDash;
+            strikeStyle |= NSUnderlineStyleDouble | NSUnderlineStylePatternDash;
             break;
     }
     
     if (self.underlined)
     {
-        [self.textAttributes setObject: [NSNumber numberWithUnsignedInteger: strikeStyle]
+        [self.textAttributes setObject: @(strikeStyle)
                                 forKey: NSUnderlineStyleAttributeName];
     }
     
     if (self.linethroughed)
     {
-        [self.textAttributes setObject: [NSNumber numberWithUnsignedInteger: strikeStyle]
+        [self.textAttributes setObject: @(strikeStyle)
                                 forKey: NSStrikethroughStyleAttributeName];
     }
     
@@ -662,7 +662,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
     if (self.superscript || self.subscript)
     {
         CGFloat offset = (self.superscript) ? -1 : 1;
-        [self.textAttributes setObject: [NSNumber numberWithFloat: offset]
+        [self.textAttributes setObject: @(offset)
                                 forKey: NSSuperscriptAttributeName];
     }
     
@@ -673,9 +673,9 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
                                                      bold: (BOOL)bold
                                                    italic: (BOOL)italic
 {
-    NSFontSymbolicTraits traits = 0;
-    if (bold) traits |= NSFontBoldTrait;
-    if (italic) traits |= NSFontItalicTrait;
+    NSFontDescriptorSymbolicTraits traits = 0;
+    if (bold) traits |= NSFontDescriptorTraitBold;
+    if (italic) traits |= NSFontDescriptorTraitItalic;
     
     NSString *familyName = nil;
     switch (typeface)
@@ -706,7 +706,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
             break;
     }
     
-    NSDictionary *traitDict = [NSDictionary dictionaryWithObject: [NSNumber numberWithUnsignedInteger: traits]
+    NSDictionary *traitDict = [NSDictionary dictionaryWithObject: @(traits)
                                                           forKey: NSFontSymbolicTrait];
     
     NSMutableDictionary *attribs = [NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -761,9 +761,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
     
     //Copy the bytes from the charmap we're using, rather than just using a pointer
     //to that charmap. This is because certain ESC/P commands will overwrite charmap data.
-    NSUInteger i;
-	for (i=0; i<256; i++)
-		_charMap[i] = mapToUse[i];
+    memcpy(_charMap, mapToUse, sizeof(unichar)*256);
 }
 
 - (void) setActiveCharTable: (BXESCPCharTable)charTable

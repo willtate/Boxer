@@ -32,10 +32,10 @@ typedef NS_ENUM(NSInteger, BXEmulatedPrinterPort) {
     BXPrinterPortLPT3 = 3
 };
 
-typedef enum {
+typedef NS_ENUM(uint8_t, BXESCPQuality) {
     BXESCPQualityDraft = 1,
     BXESCPQualityLQ = 2,
-} BXESCPQuality;
+};
 
 typedef enum {
     BXNoMSBControl = -1,
@@ -51,7 +51,7 @@ typedef enum {
     BXFontPitchDefault = BXFontPitch10CPI
 } BXESCPFontPitch;
 
-typedef enum {
+typedef NS_ENUM(uint8_t, BXESCPTypeface) {
     BXESCPTypefaceRoman = 0,
     BXESCPTypefaceSansSerif,
     BXESCPTypefaceCourier,
@@ -68,9 +68,9 @@ typedef enum {
     BXESCPTypefaceSVJittra = 31,
     
     BXESCPTypefaceDefault = BXESCPTypefaceRoman,
-} BXESCPTypeface;
+};
 
-typedef enum {
+typedef NS_ENUM(uint8_t, BXESCPColor) {
     BXESCPColorBlack = 0,
     BXESCPColorMagenta,
     BXESCPColorCyan,
@@ -78,17 +78,17 @@ typedef enum {
     BXESCPColorYellow,
     BXESCPColorRed,
     BXESCPColorGreen,
-} BXESCPColor;
+};
 
-typedef enum {
+typedef NS_ENUM(uint8_t, BXESCPCharTable) {
     BXESCPCharTable0,
     BXESCPCharTable1,
     BXESCPCharTable2,
     BXESCPCharTable3,
     BXESCPCharTableMax
-} BXESCPCharTable;
+};
 
-typedef enum {
+typedef NS_ENUM(uint8_t, BXESCPCharset) {
     BXESCPCharsetUSA,
     BXESCPCharsetFrance,
     BXESCPCharsetGermany,
@@ -105,7 +105,7 @@ typedef enum {
     BXESCPCharsetKorea,
     
     BXESCPCharsetLegal = 64
-} BXESCPCharset;
+};
 
 /// The base font size in points for fixed and multipoint fonts.
 #define BXESCPBaseFontSize 10.5
@@ -404,8 +404,9 @@ typedef enum {
 /// Called when the printer finishes printing the current page in the specified session.
 - (void) printer: (BXEmulatedPrinter *)printer didFinishPageInSession: (BXPrintSession *)session;
 
-/// Called when the printer moves the print head to the specified X and Y position on the current page.
+/// Called when the printer moves the print head to the specified X position on the current page.
 - (void) printer: (BXEmulatedPrinter *)printer didMoveHeadToX: (CGFloat)xOffset;
+/// Called when the printer moves the print head to the specified Y position on the current page.
 - (void) printer: (BXEmulatedPrinter *)printer didMoveHeadToY: (CGFloat)yOffset;
 
 @end
