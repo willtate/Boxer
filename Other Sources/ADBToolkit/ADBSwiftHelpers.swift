@@ -23,9 +23,8 @@ extension ADBBinCueImage {
 }
 
 extension BXFileTypes {
-    /// Returns the executable type of the file at the specified URL or in the specified stream.
-    /// If the executable type cannot be determined, these will return `BXExecutableTypeUnknown`
-    /// and populate outError with the failure reason.
+    /// Returns the executable type of the file at the specified URL.
+    /// If the executable type cannot be determined, this method will throw.
     @nonobjc open class func typeOfExecutable(at URL: URL) throws -> BXExecutableType {
         var err: NSError?
         let toRet = __typeOfExecutable(at: URL, error: &err)
@@ -35,9 +34,8 @@ extension BXFileTypes {
         return toRet
     }
 
-    /// Returns the executable type of the file at the specified URL or in the specified stream.
-    /// If the executable type cannot be determined, these will return `BXExecutableTypeUnknown`
-    /// and populate outError with the failure reason.
+    /// Returns the executable type of the file in the specified stream.
+    /// If the executable type cannot be determined, this method will throw.
     open class func typeOfExecutable(inStream handle: ADBReadable & ADBSeekable) throws -> BXExecutableType {
         var err: NSError?
         let toRet = __typeOfExecutable(inStream: handle, error: &err)
@@ -48,10 +46,9 @@ extension BXFileTypes {
         return toRet
     }
 
-    /// Returns the executable type of the file at the specified URL or in the specified stream.
-    /// If the executable type cannot be determined, these will return `BXExecutableTypeUnknown`
-    /// and populate outError with the failure reason.
-    open class func typeOfExecutable(atPath path: String, filesystem: ADBFilesystemPathAccess)  throws -> BXExecutableType {
+    /// Returns the executable type of the file at the specified path.
+    /// If the executable type cannot be determined, this method will throw.
+    open class func typeOfExecutable(atPath path: String, filesystem: ADBFilesystemPathAccess) throws -> BXExecutableType {
         var err: NSError?
         
         let toRet = __typeOfExecutable(atPath: path, filesystem: filesystem, error: &err)
@@ -60,7 +57,5 @@ extension BXFileTypes {
             throw err2
         }
         return toRet
-
     }
-
 }
