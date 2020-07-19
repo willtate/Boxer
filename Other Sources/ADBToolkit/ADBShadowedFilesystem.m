@@ -400,7 +400,7 @@ includingPropertiesForKeys: (NSArray *)keys
                                                                              options: (ADBHandleOptions)options
                                                                                error: (out NSError **)outError
 {
-    NSAssert((options & ADBCreateAlways) == 0, @"ADBCreateAlways is not currently supported.");
+    NSAssert((options & ADBHandleCreateAlways) == 0, @"ADBCreateAlways is not currently supported.");
     
     if (self.shadowURL)
     {
@@ -409,7 +409,7 @@ includingPropertiesForKeys: (NSArray *)keys
         
         NSURL *deletionMarkerURL = [shadowedURL URLByAppendingPathExtension: ADBShadowedDeletionMarkerExtension];
         
-        BOOL createIfMissing = (options & ADBCreateIfMissing) == ADBCreateIfMissing;
+        BOOL createIfMissing = (options & ADBHandleCreateIfMissing) == ADBHandleCreateIfMissing;
         
         BOOL deletionMarkerExists = [deletionMarkerURL checkResourceIsReachableAndReturnError: NULL];
         BOOL shadowExists = [shadowedURL checkResourceIsReachableAndReturnError: NULL];
@@ -453,7 +453,7 @@ includingPropertiesForKeys: (NSArray *)keys
         //If we're opening the file for writing and we don't have a shadowed version of it,
         //copy any original version to the shadowed location first (creating any necessary
         //directories along the way) and then open the newly-shadowed copy.
-        else if ((options & ADBOpenForWriting) != 0)
+        else if ((options & ADBHandleOpenForWriting) != 0)
         {
             //Ensure the necessary path exists for the shadow file to be stored in.
             //IMPLEMENTATION NOTE: this ignores failure because the directories may already
@@ -465,7 +465,7 @@ includingPropertiesForKeys: (NSArray *)keys
                                          error: NULL];
             
             //If we'll be truncating the file anyway, don't bother copying the original.
-            BOOL truncateExistingFile = (options & ADBTruncate) == ADBTruncate;
+            BOOL truncateExistingFile = (options & ADBHandleTruncate) == ADBHandleTruncate;
             if (!truncateExistingFile)
             {
                 NSError *copyError = nil;

@@ -343,22 +343,22 @@ int _ADBHandleClose(void *cookie)
         switch (c)
         {
             case 'r':
-                options = ADBOpenForReading;
+                options = ADBHandleOpenForReading;
                 break;
             case 'w':
-                options = ADBOpenForWriting | ADBCreateIfMissing | ADBTruncate;
+                options = ADBHandleOpenForWriting | ADBHandleCreateIfMissing | ADBHandleTruncate;
                 break;
             case 'a':
-                options = ADBOpenForWriting | ADBCreateIfMissing | ADBAppend;
+                options = ADBHandleOpenForWriting | ADBHandleCreateIfMissing | ADBHandleAppend;
                 break;
             case '+':
-                options |= (ADBOpenForReading | ADBOpenForWriting);
+                options |= (ADBHandleOpenForReading | ADBHandleOpenForWriting);
                 break;
             case 'x':
-                if (options & (ADBOpenForWriting | ADBCreateIfMissing))
+                if (options & (ADBHandleOpenForWriting | ADBHandleCreateIfMissing))
                 {
-                    options &= ~ADBCreateIfMissing;
-                    options |= ADBCreateAlways;
+                    options &= ~ADBHandleCreateIfMissing;
+                    options |= ADBHandleCreateAlways;
                 }
                 break;
         }
@@ -370,29 +370,29 @@ int _ADBHandleClose(void *cookie)
 + (const char *) POSIXAccessModeForOptions: (ADBHandleOptions)options
 {
     //Complain about required and mutually exclusive options.
-    NSAssert((options & (ADBOpenForReading | ADBOpenForWriting)) > 0,
+    NSAssert((options & (ADBHandleOpenForReading | ADBHandleOpenForWriting)) > 0,
              @"At least one of ADBOpenForReading and ADBOpenForWriting must be specified.");
     
-    NSAssert((options & ADBTruncate) == 0 || (options & ADBAppend) == 0,
+    NSAssert((options & ADBHandleTruncate) == 0 || (options & ADBHandleAppend) == 0,
              @"ADBTruncate and ADBAppend cannot be specified together.");
     
-    NSAssert((options & ADBCreateIfMissing) == 0 || (options & ADBCreateAlways) == 0,
+    NSAssert((options & ADBHandleCreateIfMissing) == 0 || (options & ADBHandleCreateAlways) == 0,
              @"ADBCreateIfMissing and ADBCreateAlways cannot be specified together.");
     
     
     //Known POSIX access modes arranged in descending order of specificity.
     //This lets us do a best fit for options that may not exactly match one of our known modes.
     ADBHandleOptions optionMasks[10] = {
-        ADBPOSIXModeAPlusX,
-        ADBPOSIXModeAX,
-        ADBPOSIXModeAPlus,
-        ADBPOSIXModeA,
-        ADBPOSIXModeWPlusX,
-        ADBPOSIXModeWX,
-        ADBPOSIXModeWPlus,
-        ADBPOSIXModeRPlus,
-        ADBPOSIXModeW,
-        ADBPOSIXModeR,
+        ADBHandlePOSIXModeAPlusX,
+        ADBHandlePOSIXModeAX,
+        ADBHandlePOSIXModeAPlus,
+        ADBHandlePOSIXModeA,
+        ADBHandlePOSIXModeWPlusX,
+        ADBHandlePOSIXModeWX,
+        ADBHandlePOSIXModeWPlus,
+        ADBHandlePOSIXModeRPlus,
+        ADBHandlePOSIXModeW,
+        ADBHandlePOSIXModeR,
     };
     const char * modes[10] = {
         "a+x",

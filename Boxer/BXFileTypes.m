@@ -232,7 +232,7 @@ NSString * const BXExecutableTypesErrorDomain = @"BXExecutableTypesErrorDomain";
     NSAssert(URL != nil, @"No URL specified!");
     
     NSError *openError;
-    ADBFileHandle *handle = [ADBFileHandle handleForURL: URL options: ADBOpenForReading error: &openError];
+    ADBFileHandle *handle = [ADBFileHandle handleForURL: URL options: ADBHandleOpenForReading error: &openError];
     if (handle)
     {
         BXExecutableType type = [BXFileTypes typeOfExecutableInStream: handle error: outError];
@@ -262,7 +262,7 @@ NSString * const BXExecutableTypesErrorDomain = @"BXExecutableTypesErrorDomain";
     NSAssert(filesystem != nil, @"No filesystem specified!");
     
     NSError *openError = nil;
-    id <ADBReadable, ADBSeekable> handle = [filesystem fileHandleAtPath: path options: ADBOpenForReading error: &openError];
+    id <ADBReadable, ADBSeekable> handle = [filesystem fileHandleAtPath: path options: ADBHandleOpenForReading error: &openError];
     if (handle)
     {
         BXExecutableType type = [BXFileTypes typeOfExecutableInStream: handle error: outError];

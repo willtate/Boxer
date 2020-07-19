@@ -99,7 +99,7 @@ int extdate_to_int(uint8_t *digits, int length)
 
 + (ADBISOFormat) _formatOfISOAtURL: (NSURL *)URL error: (out NSError **)outError
 {
-    ADBFileHandle *handle = [ADBFileHandle handleForURL: URL options: ADBOpenForReading error: outError];
+    ADBFileHandle *handle = [ADBFileHandle handleForURL: URL options: ADBHandleOpenForReading error: outError];
     if (handle)
     {
         ADBISOFormat format = [self _formatOfISOInHandle: handle error: outError];
@@ -287,8 +287,14 @@ int extdate_to_int(uint8_t *digits, int length)
                                                                 options: (ADBHandleOptions)options
                                                                   error: (out NSError **)outError;
 {
-    //TODO: make this an error instead?
-    NSAssert(options == ADBOpenForReading, @"The only supported file mode for ISO filesystems is ADBOpenForReading.");
+    if (options != ADBHandleOpenForReading)
+    {
+        if (outError)
+        {
+            *outError = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFileWriteNoPermissionError userInfo:@{NSLocalizedDescriptionKey: @"The only supported file mode for ISO filesystems is ADBHandleOpenForReading."}];
+        }
+        return nil;
+    }
     
     ADBISOFileEntry *entry = [self _fileEntryAtPath: path error: outError];
     if (entry)
