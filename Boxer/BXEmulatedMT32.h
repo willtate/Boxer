@@ -17,6 +17,8 @@
 #ifdef __cplusplus
     #import "MT32Emu/mt32emu.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class BXEmulatedMT32;
 /// MT32Emu has a C++ callback class for handling emulated synth notifications.
 /// We implement a thin C++ wrapper that sends messages back to BXEmulatedMT32 for handling.
@@ -33,8 +35,14 @@
     private:
         BXEmulatedMT32 *_delegate;
     };
+
+NS_ASSUME_NONNULL_END
+
+extern "C" {
 #endif
 
+
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark Constants
@@ -87,15 +95,15 @@ typedef NS_OPTIONS(NSUInteger, BXMT32ROMType) {
 /// DOSBox's own mixer.
 @interface BXEmulatedMT32 : NSObject <BXMIDIDevice, BXAudioSource>
 
-@property (copy, nonatomic) NSURL *PCMROMURL;
+@property (copy, nonatomic) NSURL *PCMROMURL NS_SWIFT_NAME(pcmROMURL);
 @property (copy, nonatomic) NSURL *controlROMURL;
 @property (weak, nonatomic) id <BXEmulatedMT32Delegate> delegate;
 @property (assign, nonatomic) unsigned int sampleRate;
 
-- (id <BXMIDIDevice>) initWithPCMROM: (NSURL *)PCMROMURL
-                          controlROM: (NSURL *)controlROMURL
-                            delegate: (id <BXEmulatedMT32Delegate>)delegate
-                               error: (NSError **)outError;
+- (nullable instancetype) initWithPCMROM: (NSURL *)PCMROMURL
+                              controlROM: (NSURL *)controlROMURL
+                                delegate: (nullable id <BXEmulatedMT32Delegate>)delegate
+                                   error: (NSError **)outError;
 
 
 #pragma mark -
@@ -113,3 +121,9 @@ typedef NS_OPTIONS(NSUInteger, BXMT32ROMType) {
                                        PCMROMURL: (NSURL *)PCMROMURL
                                            error: (out NSError **)outError NS_REFINED_FOR_SWIFT;
 @end
+
+NS_ASSUME_NONNULL_END
+
+#ifdef __cplusplus
+}
+#endif

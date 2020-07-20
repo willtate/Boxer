@@ -26,43 +26,37 @@
 
 - (NSColor *) screenColor
 {   
-    return [NSColor colorWithCalibratedHue: 0.144f
-                                saturation: 0.7f
-                                brightness: 0.200f
-                                     alpha: 1.000f];
+    return [NSColor colorNamed: @"MT32ScreenDisplay/screenColor"];
 }
 
 - (NSColor *) frameColor
 {
-    return [NSColor colorWithCalibratedWhite: 0 alpha: 0.1f];
+    return [NSColor colorNamed: @"MT32ScreenDisplay/frameColor"];
 }
 
 - (NSColor *) gridColor
 {
-    return [NSColor colorWithCalibratedWhite: 1.0f alpha: 0.1f];
+    return [NSColor colorNamed: @"MT32ScreenDisplay/gridColor"];
 }
 
 - (NSColor *) pixelColor
 {
-    return [NSColor colorWithCalibratedHue: 0.144f
-                                saturation: 0.737f
-                                brightness: 0.923f
-                                     alpha: 1.000f];
+    return [NSColor colorNamed: @"MT32ScreenDisplay/pixelColor"];
 }
 
 - (NSShadow *) innerShadow
 {
-    return [NSShadow shadowWithBlurRadius: 10.0f
-                                   offset: NSMakeSize(0, -2.0f)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.66f]]; 
+    return [NSShadow shadowWithBlurRadius: 10.0
+                                   offset: NSMakeSize(0, -2.0)
+                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.66]];
 }
 
 - (NSGradient *) screenLighting
 {
     NSGradient *lighting = [[NSGradient alloc] initWithColorsAndLocations:
-                            [NSColor colorWithCalibratedWhite: 1.0f alpha: 0.10f], 0.0f,
-                            [NSColor colorWithCalibratedWhite: 1.0f alpha: 0.07f], 0.5f,
-                            [NSColor clearColor], 0.55f,
+                            [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.10], 0.0,
+                            [NSColor colorWithCalibratedWhite: 1.0 alpha: 0.07], 0.5,
+                            [NSColor clearColor], 0.55,
                             nil];
     return lighting;
 }
