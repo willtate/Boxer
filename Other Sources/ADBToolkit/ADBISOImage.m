@@ -41,9 +41,9 @@ const ADBISOFormat ADBISOFormatXAMode2Form2   = { 2324, 24, 4 };
 
 #pragma mark - Date helpers
 
-//Converts the digits of an ISO extended date format (e.g. {'1','9','9','0'})
-//into a proper integer (e.g. 1990).
-int extdate_to_int(uint8_t *digits, int length)
+//! Converts the digits of an ISO extended date format (e.g. {'1','9','9','0'})
+//! into a proper integer (e.g. 1990).
+static int extdate_to_int(uint8_t *digits, int length)
 {
     //Convert the unterminated char array to a str
     char buf[5];
@@ -67,34 +67,60 @@ int extdate_to_int(uint8_t *digits, int length)
 
 + (NSDate *) _dateFromDateTime: (ADBISODateTime)dateTime
 {
-    struct tm timeStruct;
-    timeStruct.tm_year     = dateTime.year;
-    timeStruct.tm_mon      = dateTime.month - 1;
-    timeStruct.tm_mday     = dateTime.day;
-    timeStruct.tm_hour     = dateTime.hour;
-    timeStruct.tm_min      = dateTime.minute;
-    timeStruct.tm_sec      = dateTime.second;
-    timeStruct.tm_gmtoff   = dateTime.gmtOffset * 15 * 60;
-    
-    time_t epochtime = mktime(&timeStruct);
-    
-    return [NSDate dateWithTimeIntervalSince1970: epochtime];
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    comps.year = 1900 + dateTime.year;
+    comps.month = dateTime.month - 1;
+    comps.day = dateTime.day;
+    comps.hour = dateTime.hour;
+    comps.minute = dateTime.minute;
+    comps.second = dateTime.second;
+    comps.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:dateTime.gmtOffset * 15 * 60];
+    NSDate *toRet = [[NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian] dateFromComponents:comps];
+
+    if (!toRet) {
+        struct tm timeStruct;
+        timeStruct.tm_year     = dateTime.year;
+        timeStruct.tm_mon      = dateTime.month - 1;
+        timeStruct.tm_mday     = dateTime.day;
+        timeStruct.tm_hour     = dateTime.hour;
+        timeStruct.tm_min      = dateTime.minute;
+        timeStruct.tm_sec      = dateTime.second;
+        timeStruct.tm_gmtoff   = dateTime.gmtOffset * 15 * 60;
+        
+        time_t epochtime = mktime(&timeStruct);
+        
+        return [NSDate dateWithTimeIntervalSince1970: epochtime];
+    }
+    return toRet;
 }
 
 + (NSDate *) _dateFromExtendedDateTime: (ADBISOExtendedDateTime)dateTime
 {
-    struct tm timeStruct;
-    timeStruct.tm_year     = extdate_to_int(dateTime.year, 4);
-    timeStruct.tm_mon      = extdate_to_int(dateTime.month, 2) - 1;
-    timeStruct.tm_mday     = extdate_to_int(dateTime.day, 2);
-    timeStruct.tm_hour     = extdate_to_int(dateTime.hour, 2);
-    timeStruct.tm_min      = extdate_to_int(dateTime.minute, 2);
-    timeStruct.tm_sec      = extdate_to_int(dateTime.second, 2);
-    timeStruct.tm_gmtoff   = dateTime.gmtOffset * 15 * 60;
-    
-    time_t epochtime = mktime(&timeStruct);
-    
-    return [NSDate dateWithTimeIntervalSince1970: epochtime];
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    comps.year = extdate_to_int(dateTime.year, 4);
+    comps.month = extdate_to_int(dateTime.month, 2) - 1;
+    comps.day = extdate_to_int(dateTime.day, 2);
+    comps.hour = extdate_to_int(dateTime.hour, 2);
+    comps.minute = extdate_to_int(dateTime.minute, 2);
+    comps.second = extdate_to_int(dateTime.second, 2);
+    comps.nanosecond = extdate_to_int(dateTime.hsecond, 2);
+    comps.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:dateTime.gmtOffset * 15 * 60];
+    NSDate *toRet = [[NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian] dateFromComponents:comps];
+    if (!toRet) {
+        struct tm timeStruct;
+        timeStruct.tm_year     = extdate_to_int(dateTime.year, 4);
+        timeStruct.tm_mon      = extdate_to_int(dateTime.month, 2) - 1;
+        timeStruct.tm_mday     = extdate_to_int(dateTime.day, 2);
+        timeStruct.tm_hour     = extdate_to_int(dateTime.hour, 2);
+        timeStruct.tm_min      = extdate_to_int(dateTime.minute, 2);
+        timeStruct.tm_sec      = extdate_to_int(dateTime.second, 2);
+        timeStruct.tm_gmtoff   = dateTime.gmtOffset * 15 * 60;
+        
+        time_t epochtime = mktime(&timeStruct);
+        
+        return [NSDate dateWithTimeIntervalSince1970: epochtime];
+    }
+    return toRet;
 }
 
 + (ADBISOFormat) _formatOfISOAtURL: (NSURL *)URL error: (out NSError **)outError
