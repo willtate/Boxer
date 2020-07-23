@@ -60,7 +60,8 @@ NS_ASSUME_NONNULL_BEGIN
        withGradient: (nullable NSGradient *)fillGradient
          dropShadow: (nullable NSShadow *)dropShadow
         innerShadow: (nullable NSShadow *)innerShadow
-     respectFlipped: (BOOL)respectContextIsFlipped;
+     respectFlipped: (BOOL)respectContextIsFlipped
+NS_SWIFT_NAME(draw(in:with:dropShadow:innerShadow:respectFlipped:));
 
 @end
 
