@@ -841,7 +841,7 @@ static RKLCachedRegex *rkl_getCachedRegex(NSString *regexString, RKLRegexOptions
   
 exitNow:
   if(RKL_EXPECTED(rkl_scratchBuffer[0] != NULL,         0L)) { rkl_scratchBuffer[0] = rkl_free(&rkl_scratchBuffer[0]); }
-  if(RKL_EXPECTED(status                > U_ZERO_ERROR, 0L)) { rkl_clearCachedRegex(cachedRegex); cachedRegex = rkl_lastCachedRegex = NULL; if(error != NULL) { *error = rkl_makeNSError((RKLUserInfoOptions)RKLUserInfoNone, regexString, options, &parseError, status, NULL, NSNotFoundRange, NULL, NULL, 0L, (RKLRegexEnumerationOptions)RKLRegexEnumerationNoOptions, @"There was an error compiling the regular expression."); } }
+  if(RKL_EXPECTED(status                > U_ZERO_ERROR, 0L)) { rkl_clearCachedRegex(cachedRegex); cachedRegex = rkl_lastCachedRegex = NULL; if(error != NULL) { *error = rkl_makeNSError((RKLUserInfoOptions)RKLUserInfoNone, regexString, options, &parseError, status, NULL, NSNotFoundRange, NULL, NULL, 0L, RKLRegexEnumerationNoOptions, @"There was an error compiling the regular expression."); } }
   
 #ifdef    _RKL_DTRACE_ENABLED
   if(RKL_EXPECTED(cachedRegex == NULL, 1L)) { char regexUTF8[_RKL_DTRACE_REGEXUTF8_SIZE]; const char *err = NULL; if(status != U_ZERO_ERROR) { err = RKL_ICU_FUNCTION_APPEND(u_errorName)(status); } rkl_dtrace_getRegexUTF8((CFStringRef)regexString, regexUTF8); rkl_dtrace_compiledRegexCache(regexUTF8, options, -1, -1, status, err); }
@@ -1182,7 +1182,7 @@ exitNow:
     RKLUserInfoOptions userInfoOptions = RKLUserInfoNone;
     if((maskedRegexOp == RKLReplaceOp) && (result != NULL)) { userInfoOptions |= RKLUserInfoReplacedCount; replacedString = resultObject; replacedCount = *((NSInteger *)result); }
     if(matchRange != NULL) { userInfoOptions |= RKLUserInfoSubjectRange; }
-    *error = rkl_makeNSError(userInfoOptions, regexString, options, NULL, status, matchString, (matchRange != NULL) ? *matchRange : NSNotFoundRange, replacementString, replacedString, replacedCount, (RKLRegexEnumerationOptions)RKLRegexEnumerationNoOptions, @"The ICU library returned an unexpected error.");
+    *error = rkl_makeNSError(userInfoOptions, regexString, options, NULL, status, matchString, (matchRange != NULL) ? *matchRange : NSNotFoundRange, replacementString, replacedString, replacedCount, RKLRegexEnumerationNoOptions, @"The ICU library returned an unexpected error.");
   }
   return(resultObject);
 }
@@ -1751,7 +1751,7 @@ static NSError *rkl_makeNSError(RKLUserInfoOptions userInfoOptions, NSString *re
 }
 
 static NSException *rkl_NSExceptionForRegex(NSString *regexString, RKLRegexOptions options, const UParseError *parseError, int32_t status) {
-  return([NSException exceptionWithName:RKLICURegexException reason:[NSString stringWithFormat:@"ICU regular expression error #%d, %s.", status, RKL_ICU_FUNCTION_APPEND(u_errorName)(status)] userInfo:rkl_userInfoDictionary((RKLUserInfoOptions)RKLUserInfoNone, regexString, options, parseError, status, NULL, NSNotFoundRange, NULL, NULL, 0L, (RKLRegexEnumerationOptions)RKLRegexEnumerationNoOptions, NULL)]);
+  return([NSException exceptionWithName:RKLICURegexException reason:[NSString stringWithFormat:@"ICU regular expression error #%d, %s.", status, RKL_ICU_FUNCTION_APPEND(u_errorName)(status)] userInfo:rkl_userInfoDictionary((RKLUserInfoOptions)RKLUserInfoNone, regexString, options, parseError, status, NULL, NSNotFoundRange, NULL, NULL, 0L, RKLRegexEnumerationNoOptions, NULL)]);
 }
 
 static NSDictionary *rkl_makeAssertDictionary(const char *function, const char *file, int line, NSString *format, ...) {
@@ -1884,7 +1884,7 @@ exitNow:
 errorExit:
   if(RKL_EXPECTED(self      != NULL,         1L))                                        {  [self autorelease]; }
   if(RKL_EXPECTED(status     > U_ZERO_ERROR, 0L) && RKL_EXPECTED(exception == NULL, 0L)) {  exception = rkl_NSExceptionForRegex(initRegexString, initOptions, NULL, status); } // If we had a problem, prepare an exception to be thrown.
-  if(RKL_EXPECTED(status     < U_ZERO_ERROR, 0L) && (initError != NULL))                 { *initError = rkl_makeNSError((RKLUserInfoOptions)RKLUserInfoNone, initRegexString, initOptions, NULL, status, initString, initRange, NULL, NULL, 0L, (RKLRegexEnumerationOptions)RKLRegexEnumerationNoOptions, @"The ICU library returned an unexpected error."); }
+  if(RKL_EXPECTED(status     < U_ZERO_ERROR, 0L) && (initError != NULL))                 { *initError = rkl_makeNSError((RKLUserInfoOptions)RKLUserInfoNone, initRegexString, initOptions, NULL, status, initString, initRange, NULL, NULL, 0L, RKLRegexEnumerationNoOptions, @"The ICU library returned an unexpected error."); }
   if(RKL_EXPECTED(exception != NULL,         0L))                                        {  rkl_handleDelayedAssert(self, _cmd, exception); }
 
   return(NULL);
@@ -1994,7 +1994,7 @@ static id rkl_performEnumerationUsingBlock(id self, SEL _cmd,
 
   if((((enumerationOptions & RKLRegexEnumerationCapturedStringsNotRequired)              != 0UL) && ((enumerationOptions & RKLRegexEnumerationFastCapturedStringsXXX) != 0UL)) ||
      (((enumerationOptions & RKLRegexEnumerationReleaseStringReturnedByReplacementBlock) != 0UL) && (blockEnumerationOp != RKLBlockEnumerationReplaceOp)) ||
-     ((enumerationOptions & (~((RKLRegexEnumerationOptions)(RKLRegexEnumerationCapturedStringsNotRequired | RKLRegexEnumerationReleaseStringReturnedByReplacementBlock | RKLRegexEnumerationFastCapturedStringsXXX)))) != 0UL)) {
+     ((enumerationOptions & (~((RKLRegexEnumerationCapturedStringsNotRequired | RKLRegexEnumerationReleaseStringReturnedByReplacementBlock | RKLRegexEnumerationFastCapturedStringsXXX)))) != 0UL)) {
     exception = (id)RKL_EXCEPTION(NSInvalidArgumentException, @"The RKLRegexEnumerationOptions argument is not valid.");
     goto exitNow;
   }

@@ -25,8 +25,8 @@
  */
 
 
-//This header defines constants and structures used internally by ADBISOImage
-//and its subclasses. They are not exposed by ADBISOImage's public API.
+//! @header This header defines constants and structures used internally by @c ADBISOImage
+//! and its subclasses. They are not exposed by ADBISOImage's public API.
 
 
 #define ADBISOVolumeDescriptorSectorOffset 0x10
@@ -61,7 +61,9 @@ typedef NS_ENUM(uint8_t, ADBISOVolumeDescriptorType) {
 #pragma mark -
 #pragma mark ISO file structure definitions
 
-typedef struct {
+#pragma pack(push, 1)
+
+typedef struct ADBISODateTime {
 	uint8_t year;       //!< From 0-99: add 1900 to get full year
 	uint8_t month;      //!< From 1-12
 	uint8_t day;        //!< From 1-31
@@ -69,12 +71,12 @@ typedef struct {
 	uint8_t minute;     //!< From 0-59
 	uint8_t second;     //!< From 0-59
 	int8_t gmtOffset;   //!< From -48 to +52 in 15-minute intervals
-} __attribute__ ((packed)) ADBISODateTime;
+} ADBISODateTime;
 
 
 /// Note that unlike ADBISODateTime, these fields are stored as char
 /// arrays without null terminators.
-typedef struct {
+typedef struct ADBISOExtendedDateTime {
 	uint8_t year[4];        //!< e.g. {'1','9','0','0')
 	uint8_t month[2];       //!< e.g. {'1','2'}
 	uint8_t day[2];         //!< e.g. {'3','1'}
@@ -83,10 +85,10 @@ typedef struct {
 	uint8_t second[2];      //!< e.g. {'5','9'}
 	uint8_t hsecond[2];     //!< e.g. {'9','9'}
 	int8_t gmtOffset;       //!< From -48 to +52 in 15-minute intervals
-} __attribute__ ((packed)) ADBISOExtendedDateTime;
+} ADBISOExtendedDateTime;
 
 
-typedef struct {
+typedef struct ADBISOPrimaryVolumeDescriptor {
 	uint8_t type;           //!< Always 0x01.
 	uint8_t identifier[5];  //!< Always 'CD001'.
 	uint8_t version;        //!< Always 0x01.
@@ -98,8 +100,8 @@ typedef struct {
     
 	uint8_t unused2[8];
     
-	//Specified as the number of logical blocks in the volume:
-    //see logicalBlockSize below.
+	//! Specified as the number of logical blocks in the volume:
+    //! see logicalBlockSize below.
 	uint32_t volumeSpaceSizeLittleEndian;   
     uint32_t volumeSpaceSizeBigEndian;
     
@@ -138,14 +140,14 @@ typedef struct {
     ADBISOExtendedDateTime expirationTime;
     ADBISOExtendedDateTime effectiveTime;
     
-    uint8_t fileStructureVersion;   //Always 0x01.
+    uint8_t fileStructureVersion;   //!< Always 0x01.
     uint8_t unused4[1];
     uint8_t applicationData[512];
     uint8_t unused5[653];
-} __attribute__ ((packed)) ADBISOPrimaryVolumeDescriptor;
+} ADBISOPrimaryVolumeDescriptor;
 
 
-typedef struct {
+typedef struct ADBISODirectoryRecord {
 	uint8_t recordLength;
 	uint8_t extendedAttributeLength;
 	uint32_t extentLBALocationLittleEndian;
@@ -166,10 +168,11 @@ typedef struct {
 	
     uint8_t identifier[222];
     
-} __attribute__ ((packed)) ADBISODirectoryRecord;
+} ADBISODirectoryRecord;
 
+#pragma pack(pop)
 
-typedef struct {
+typedef struct ADBISOFormat {
     NSUInteger sectorSize;
     NSUInteger sectorLeadIn;
     NSUInteger sectorLeadOut;
