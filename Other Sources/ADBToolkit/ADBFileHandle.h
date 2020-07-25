@@ -82,12 +82,15 @@ typedef NS_OPTIONS(NSUInteger, ADBHandleOptions) {
 
 /// Given a buffer and a pointer to a number of bytes, fill the buffer with
 /// <b>at most</b> that many bytes, starting from the current position of the handle.
-/// On success, return \c YES and populate \c bytesRead (a required parameter) with
+///
+/// On success, return @c YES and populate @c bytesRead (a required parameter) with
 /// the number of bytes that were read into the buffer: which may be less than
 /// the number requested, or zero if the handle's position is at the end of the file.
-/// On failure, return \c NO and populate \c outError (if provided) with the failure reason.
-/// \c bytesRead should still be populated with the number of bytes that were
-/// successfully read before reading failed.<br>
+/// On failure, return @c NO and populate @c outError (if provided) with the failure reason.
+///
+/// @c bytesRead should still be populated with the number of bytes that were
+/// successfully read before reading failed.
+///
 /// This method should advance the offset of the file handle by the number of bytes
 /// successfully read, even on failure.
 - (BOOL) readBytes: (void *)buffer
@@ -95,13 +98,13 @@ typedef NS_OPTIONS(NSUInteger, ADBHandleOptions) {
          bytesRead: (out NSUInteger *)bytesRead
              error: (out NSError **)outError;
 
-/// Return an \c NSData instance populated with at most \c numBytes bytes (or until the end
+/// Return an @c NSData instance populated with at most @c numBytes bytes (or until the end
 /// of the file, whichever comes first) starting from the current position of the handle.
-/// Return \c nil and populate \c outError if the read failed at any point.
+/// Return @c nil and populate @c outError if the read failed at any point.
 - (nullable NSData *) dataWithMaxLength: (NSUInteger)numBytes error: (out NSError **)outError;
 
-/// Return an \c NSData instance populated with all the bytes available from the handle,
-/// starting from the current position of the handle. Return \c nil and populate \c outError
+/// Return an @c NSData instance populated with all the bytes available from the handle,
+/// starting from the current position of the handle. Return \c nil and populate @c outError
 /// if the read failed at any point.
 - (nullable NSData *) availableDataWithError: (out NSError **)outError;
 
@@ -109,13 +112,14 @@ typedef NS_OPTIONS(NSUInteger, ADBHandleOptions) {
 
 @protocol ADBWritable <NSObject>
 
-/// Writes numBytes bytes from the specified buffer at the current offset, overwriting
+/// Writes @c numBytes bytes from the specified @c buffer at the current offset, overwriting
 /// any existing data at that location and expanding the backing location if necessary.
 ///
-/// On success, return \c YES and populate \c bytesWritten (if provided) with the number of
-/// bytes written, which will be equal to the number requested to be written.<br>
-/// On failure, return \c NO and populates \c outError (if provided) with the failure reason.
-/// \c bytesRead should still be populated with the number of bytes that were successfully
+/// On success, return @c YES and populate @c bytesWritten (if provided) with the number of
+/// bytes written, which will be equal to the number requested to be written.
+///
+/// On failure, return @c NO and populates @c outError (if provided) with the failure reason.
+/// @c bytesRead should still be populated with the number of bytes that were successfully
 /// written before failure.
 ///
 /// This method advances the offset of the file handle by the number of bytes successfully
@@ -157,7 +161,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 @property (readonly, getter=isAtEnd) BOOL atEnd;
 
 /// Sets the handle's byte offset to the relative to the specified location.
-/// Returns \c YES if the offset was changed, or \c NO and populates \c outError if
+/// Returns @c YES if the offset was changed, or @c NO and populates @c outError if
 /// an illegal offset was specified.
 /// (Note that it is legal to seek beyond the end of the file.)
 - (BOOL) seekToOffset: (long long)offset
@@ -171,6 +175,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 #pragma mark - FILE handle access
 
 /// Returns an open @c FILE* handle representing this \c ADBFileHandle resource.
+///
 /// If @c adopt is @c YES, the calling context is expected to take control of the
 /// @c FILE * handle and is responsible for closing the handle when it has finished.
 /// If adopt is @c NO, the @c FILE * handle will only be viable for the lifetime
@@ -240,7 +245,8 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 }
 
 /// Convert an <code>fopen()</code>-style mode string (e.g. "r", "w+", "a+x") to our own logical flags.
-/// The implementation of this makes no attempt to validate the string and will blithely
+///
+/// @discussion The implementation of this makes no attempt to validate the string and will blithely
 /// accept malformed modes (e.g. whose tokens are out of order or include conflicting tokens).
 + (ADBHandleOptions) optionsForPOSIXAccessMode: (const char *)mode;
 
@@ -326,10 +332,13 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
                          leadIn: (NSUInteger)blockLeadIn
                         leadOut: (NSUInteger)blockLeadOut;
 
-/// Converts to and from and logical byte offsets, taking block padding into account.
-/// These will return @c ADBOffsetUnknown if the specified offset is not representable
+/// Converts to logical byte offsets, taking block padding into account.
+/// This will return @c ADBOffsetUnknown if the specified offset is not representable
 /// in the corresponding space.
 - (long long) sourceOffsetForLogicalOffset: (long long)offset;
+/// Converts from logical byte offsets, taking block padding into account.
+/// This will return @c ADBOffsetUnknown if the specified offset is not representable
+/// in the corresponding space.
 - (long long) logicalOffsetForSourceOffset: (long long)offset;
 
 @end
@@ -337,6 +346,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 
 /// A wrapper for a source handle, which restricts access to a subregion of the
 /// original handle's data. All offsets and data access are relative to that subregion.
+///
 /// Note that the base class supports reading only, since truncation and expansion of
 /// the subregion are not solvable in a generic way.
 @interface ADBSubrangeHandle : ADBSeekableAbstractHandle <ADBReadable>
@@ -348,9 +358,11 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 + (instancetype) handleForHandle: (id <ADBReadable, ADBSeekable>)sourceHandle range: (NSRange)range NS_SWIFT_UNAVAILABLE("");
 - (instancetype) initWithHandle: (id <ADBReadable, ADBSeekable>)sourceHandle range: (NSRange)range;
 
-/// Convert to/from logical byte offsets. These will return \c ADBOffsetUnknown if the specified
+/// Convert to logical byte offsets. This will return \c ADBOffsetUnknown if the specified
 /// offset is not representable in the corresponding space.
 - (long long) sourceOffsetForLocalOffset: (long long)offset;
+/// Convert from logical byte offsets. This will return \c ADBOffsetUnknown if the specified
+/// offset is not representable in the corresponding space.
 - (long long) localOffsetForSourceOffset: (long long)offset;
 
 @end

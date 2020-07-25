@@ -79,7 +79,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, nullable) NSPredicate *predicate;
 
 
-/// Passthroughs for NSDirectoryEnumerator methods.
+/// Passthroughs for @c NSDirectoryEnumerator methods.
 @property (copy, readonly, nonatomic, nullable) NSDictionary<NSFileAttributeKey, id> *fileAttributes;
 @property (copy, readonly, nonatomic, nullable) NSDictionary<NSFileAttributeKey, id> *directoryAttributes;
 
@@ -88,7 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Methods
 
 /// Return a new autoreleased enumerator for the specified file path.
-+ (instancetype) enumeratorAtPath: (NSString *)filePath;
++ (instancetype) enumeratorAtPath: (NSString *)filePath NS_SWIFT_UNAVAILABLE("");
 
 /// Initialise a new emulator for the specified file path.
 - (instancetype) initWithPath: (NSString *)filePath;
