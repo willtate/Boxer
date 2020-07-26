@@ -16,19 +16,19 @@
 @property (retain, nonatomic) NSGraphicsContext *previewContext;
 @property (retain, nonatomic) NSGraphicsContext *PDFContext;
 
-//Mutable internal versions of the readonly accessors we've exposed in the public API.
+/// Mutable internal versions of the readonly accessors we've exposed in the public API.
 @property (retain, nonatomic) NSMutableData *_mutablePDFData;
 @property (retain, nonatomic) NSMutableArray *_mutablePagePreviews;
 
-//The bitmap canvas into which to draw the current page preview.
+/// The bitmap canvas into which to draw the current page preview.
 @property (retain, nonatomic) NSBitmapImageRep *_previewCanvas;
 
 
-//Called when the session is created to create a PDF context and data backing.
+/// Called when the session is created to create a PDF context and data backing.
 - (void) _preparePDFContext;
 
-//Called when the preview context is first accessed or the preview backing has changed,
-//to create a new bitmap context that will write to the backing.
+/// Called when the preview context is first accessed or the preview backing has changed,
+/// to create a new bitmap context that will write to the backing.
 - (void) _preparePreviewContext;
 
 @end

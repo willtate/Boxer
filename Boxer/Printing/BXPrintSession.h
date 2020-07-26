@@ -34,7 +34,7 @@
 /// A preview of the current page. Will be nil if no page is in progress.
 @property (readonly, nonatomic, nullable) NSImage *currentPagePreview;
 
-/// An NSData object representing a PDF of the session.
+/// An @c NSData object representing a PDF of the session.
 /// Not usable until finishSession is called.
 @property (readonly, nonatomic, nullable) NSData *PDFData;
 

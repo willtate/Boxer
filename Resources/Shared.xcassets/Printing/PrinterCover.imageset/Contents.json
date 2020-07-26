@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "PrinterCover.png"
+      "filename" : "PrinterCover.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

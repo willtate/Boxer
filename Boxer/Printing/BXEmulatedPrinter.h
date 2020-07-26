@@ -37,19 +37,19 @@ typedef NS_ENUM(uint8_t, BXESCPQuality) {
     BXESCPQualityLQ = 2,
 };
 
-typedef enum {
-    BXNoMSBControl = -1,
-    BXMSB0 = 0,
-    BXMSB1 = 1,
-} BXESCPMSBControl;
+typedef NS_ENUM(int8_t, BXESCPMSBControl) {
+    BXNoMSBControl NS_SWIFT_NAME(noMSBControl) = -1,
+    BXMSB0 NS_SWIFT_NAME(msb0) = 0,
+    BXMSB1 NS_SWIFT_NAME(msb1) = 1,
+};
 
-typedef enum {
-    BXFontPitch10CPI = 10,
-    BXFontPitch12CPI = 12,
-    BXFontPitch15CPI = 15,
+typedef NS_ENUM(uint8_t, BXESCPFontPitch) {
+    BXFontPitch10CPI NS_SWIFT_NAME(pitch10CPI) = 10,
+    BXFontPitch12CPI NS_SWIFT_NAME(pitch12CPI) = 12,
+    BXFontPitch15CPI NS_SWIFT_NAME(pitch15CPI) = 15,
     
-    BXFontPitchDefault = BXFontPitch10CPI
-} BXESCPFontPitch;
+    BXFontPitchDefault NS_SWIFT_NAME(pitchDefault) = BXFontPitch10CPI
+};
 
 typedef NS_ENUM(uint8_t, BXESCPTypeface) {
     BXESCPTypefaceRoman = 0,
@@ -128,8 +128,8 @@ typedef NS_ENUM(uint8_t, BXESCPCharset) {
 /// The text baseline is positioned this many inches below the current vertical head position.
 #define BXESCPBaselineOffset (20 / 180.0)
 
-//Passed to characterAdvance to reset the character advance back
-//to the autocalculated width of a character in the current pitch.
+/// Passed to characterAdvance to reset the character advance back
+/// to the autocalculated width of a character in the current pitch.
 #define BXCharacterAdvanceAuto -1
 
 #define BXEmulatedPrinterMaxVerticalTabs 16
@@ -377,6 +377,7 @@ typedef NS_ENUM(uint8_t, BXESCPCharset) {
 #pragma mark -
 #pragma mark Delegate protocol declaration
 
+/// Boxer virtual printer delegate.
 @protocol BXEmulatedPrinterDelegate <NSObject>
 
 @optional
