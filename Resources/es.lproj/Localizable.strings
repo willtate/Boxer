@@ -235,7 +235,7 @@ en ejes separados.";
 "Drive %1$@ swapped" = "Unidad %1$@ intercambiada";
 
 /* Label for drive-imported bezel notification. %1$@ is the drive letter. */
-"Drive %2$@ imported" = "Unidad %2$@ importada";
+"Drive %1$@ imported" = "Unidad %1$@ importada";
 
 /* Subtitle of notification shown when a drive has finished importing. %@ is the letter of the drive. */
 "Drive %@ imported" = "Unidad %@ importada";

@@ -233,7 +233,7 @@
 "Drive %1$@ swapped" = "Drive %1$@ swapped";
 
 /* Label for drive-imported bezel notification. %1$@ is the drive letter. */
-"Drive %2$@ imported" = "Drive %2$@ imported";
+"Drive %1$@ imported" = "Drive %1$@ imported";
 
 /* Subtitle of notification shown when a drive has finished importing. %@ is the letter of the drive. */
 "Drive %@ imported" = "Drive %@ imported";

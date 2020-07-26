@@ -472,7 +472,7 @@
     NSTextField *actionLabel    = [bezel viewWithTag: BXBezelDriveAction];
     NSTextField *titleLabel     = [bezel viewWithTag: BXBezelDriveTitle];
     
-    NSString *actionFormat = NSLocalizedString(@"Drive %2$@ imported", @"Label for drive-imported bezel notification. %1$@ is the drive letter.");
+    NSString *actionFormat = NSLocalizedString(@"Drive %1$@ imported", @"Label for drive-imported bezel notification. %1$@ is the drive letter.");
     
     actionLabel.stringValue = [NSString stringWithFormat: actionFormat, drive.letter];
     titleLabel.stringValue = drive.title;

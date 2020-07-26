@@ -235,7 +235,7 @@ na vlastních osách.";
 "Drive %1$@ swapped" = "Disk %1$@ vyměněn";
 
 /* Label for drive-imported bezel notification. %1$@ is the drive letter. */
-"Drive %2$@ imported" = "Disk %2$@ naimportován";
+"Drive %1$@ imported" = "Disk %1$@ naimportován";
 
 /* Subtitle of notification shown when a drive has finished importing. %@ is the letter of the drive. */
 "Drive %@ imported" = "Disk %@ naimportován";

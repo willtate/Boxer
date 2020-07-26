@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, BXBezelPriority) {
 };
 
 //XIB view flags for indicating different view roles within a bezel
-enum {
+NS_ENUM(NSInteger) {
     BXBezelMessage          = 7,    //!< Message imparted by the bezel
     BXBezelIcon             = 1,    //!< Decorative icon for the bezel
     BXBezelLevel            = 2,    //!< Level indicator
