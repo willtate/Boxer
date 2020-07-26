@@ -213,7 +213,7 @@
 
 - (void) observeValueForKeyPath: (NSString *)keyPath
 					   ofObject: (id)object
-						 change: (NSDictionary *)change
+						 change: (NSDictionary<NSKeyValueChangeKey, id> *)change
 						context: (void *)context
 {
 	//Ignore mouse position updates if we know we were the ones that moved the mouse

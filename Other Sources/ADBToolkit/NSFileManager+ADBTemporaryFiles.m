@@ -68,8 +68,7 @@
 	}
 	
     //Otherwise, return the final generated URL
-	NSString *finalPath = [[NSFileManager defaultManager] stringWithFileSystemRepresentation: template length: strlen(template)];
-	return [NSURL fileURLWithPath: finalPath isDirectory: YES];
+	return [NSURL fileURLWithFileSystemRepresentation: template isDirectory: YES relativeToURL: nil];
 }
 
 @end
