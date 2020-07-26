@@ -19,6 +19,7 @@
 
 /// Used for decoding NDAlias-encoded paths from previous Boxer versions.
 @interface __NDAliasDecoder : NSObject
+@property (copy) NSData *aliasData;
 @end
 
 @implementation __NDAliasDecoder
@@ -29,7 +30,15 @@
 /// during decoding and returns the decoded NSData object directly.
 - (id) initWithCoder: (NSCoder *)aDecoder
 {
-    return (id)[aDecoder decodeDataObject];
+    if (self = [super init]) {
+        self.aliasData = [aDecoder decodeDataObject];
+    }
+    return self;
+}
+
++ (BOOL)supportsSecureCoding
+{
+    return YES;
 }
 
 @end
@@ -46,12 +55,13 @@
 {
     if ((self = [self init]))
     {
+        NSError *err;
         NSInteger encodingVersion = [aDecoder decodeIntegerForKey: @"encodingVersion"];
         
         //Paths were encoded as OS X 10.6+ bookmark data
         if (encodingVersion >= BXFirstBookmarkSupportingVersion)
         {
-#define URL_FROM_BOOKMARK(bookmark) ((NSURL *)[NSURL URLByResolvingBookmarkData: bookmark options: NSURLBookmarkResolutionWithoutUI relativeToURL: nil bookmarkDataIsStale: NULL error: NULL])
+#define URL_FROM_BOOKMARK(bookmark) ((NSURL *)[NSURL URLByResolvingBookmarkData: bookmark options: NSURLBookmarkResolutionWithoutUI relativeToURL: nil bookmarkDataIsStale: NULL error: &err])
             
             NSData *sourceBookmarkData = [aDecoder decodeObjectOfClass: [NSData class] forKey: @"sourceURLBookmark"];
             if (sourceBookmarkData)
@@ -62,6 +72,7 @@
             //and we shouldn't bother continuing.
             if (self.sourceURL == nil)
             {
+                [aDecoder failWithError:err];
                 return nil;
             }
             
@@ -92,7 +103,7 @@
         //Paths were encoded as legacy alias data
         else
         {
-#define URL_FROM_ALIAS(alias) ((NSURL *)[NSURL URLByResolvingAliasRecord: alias options: NSURLBookmarkResolutionWithoutUI relativeToURL: nil bookmarkDataIsStale: NULL error: NULL])
+#define URL_FROM_ALIAS(alias) ((NSURL *)[NSURL URLByResolvingAliasRecord: [alias aliasData] options: NSURLBookmarkResolutionWithoutUI relativeToURL: nil bookmarkDataIsStale: NULL error: &err])
             
             //IMPLEMENTATION NOTE: previous Boxer versions encoded paths as NDAlias instances.
             //We no longer use NDAlias in favour of NSURL bookmarks, but we can still resolve encoded
@@ -101,7 +112,7 @@
                 [(NSKeyedUnarchiver *)aDecoder setClass: [__NDAliasDecoder class]
                                            forClassName: @"NDAlias"];
             
-            NSData *sourceAliasData = [aDecoder decodeObjectOfClasses: [NSSet setWithObjects: [__NDAliasDecoder class], [NSData class], nil] forKey: @"path"];
+            __NDAliasDecoder *sourceAliasData = [aDecoder decodeObjectOfClass: [__NDAliasDecoder class] forKey: @"path"];
             if (sourceAliasData)
             {
                 self.sourceURL = URL_FROM_ALIAS(sourceAliasData);
@@ -109,19 +120,20 @@
             
             if (self.sourceURL == nil)
             {
+                [aDecoder failWithError:err];
                 return nil;
             }
             
-            NSData *shadowAliasData = [aDecoder decodeObjectOfClasses:[NSSet setWithObjects: [__NDAliasDecoder class], [NSData class], nil] forKey: @"shadowPath"];
+            __NDAliasDecoder *shadowAliasData = [aDecoder decodeObjectOfClass: [__NDAliasDecoder class] forKey: @"shadowPath"];
             if (shadowAliasData)
                 self.shadowURL = URL_FROM_ALIAS(shadowAliasData);
             
-            NSData *mountPointAliasData = [aDecoder decodeObjectOfClasses:[NSSet setWithObjects: [__NDAliasDecoder class], [NSData class], nil] forKey: @"mountPoint"];
+            __NDAliasDecoder *mountPointAliasData = [aDecoder decodeObjectOfClass: [__NDAliasDecoder class] forKey: @"mountPoint"];
             if (mountPointAliasData)
                 self.mountPointURL = URL_FROM_ALIAS(mountPointAliasData);
             
-            NSSet *pathAliases = [aDecoder decodeObjectOfClasses:[NSSet setWithObjects: [NSSet class], [__NDAliasDecoder class], [NSData class], nil] forKey: @"pathAliases"];
-            for (NSData *aliasData in pathAliases)
+            NSSet<__NDAliasDecoder*> *pathAliases = [aDecoder decodeObjectOfClasses: [NSSet setWithObjects: [NSSet class], [__NDAliasDecoder class], nil] forKey: @"pathAliases"];
+            for (__NDAliasDecoder *aliasData in pathAliases)
             {
                 NSURL *equivalentURL = URL_FROM_ALIAS(aliasData);
                 if (equivalentURL)
