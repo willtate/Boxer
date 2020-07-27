@@ -168,7 +168,7 @@ typedef NS_ENUM(uint8_t, BXCGACompositeMode) {
 					  atScale: (NSSize)scale
 				 withCallback: (GFX_CallBack_t)newCallback;
 
-- (BOOL) startFrameWithBuffer: (void **)frameBuffer pitch: (NSUInteger *)pitch;
+- (BOOL) startFrameWithBuffer: (void **)frameBuffer pitch: (int *)pitch;
 - (void) finishFrameWithChanges: (const uint16_t *)dirtyBlocks;
 
 @end

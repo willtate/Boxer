@@ -274,7 +274,7 @@
                                     userInfo: nil];
 }
 
-- (BOOL) startFrameWithBuffer: (void **)buffer pitch: (NSUInteger *)pitch
+- (BOOL) startFrameWithBuffer: (void **)buffer pitch: (int *)pitch
 {
 	if (_frameInProgress) 
 	{
@@ -289,7 +289,7 @@
 	}
 	
 	*buffer	= self.currentFrame.mutableBytes;
-    *pitch	= self.currentFrame.pitch;
+    *pitch	= (int)self.currentFrame.pitch;
     
     [self.currentFrame clearDirtyRegions];
 	
