@@ -463,10 +463,7 @@ static BOOL _hasStartedEmulator = NO;
 	}
 }
 
-- (BOOL) isTurboSpeed
-{
-    return ticksLocked;
-}
+@synthesize turboSpeed=ticksLocked;
 
 - (void) setTurboSpeed: (BOOL)turboSpeed
 {

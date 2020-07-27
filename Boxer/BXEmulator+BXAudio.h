@@ -14,7 +14,7 @@
 
 //Keys and constants used in the dictionary for requestedMIDIDeviceDescription.
 
-/// Possible values for the BXMIDIMusicTypeKey of MIDI device description dictionaries.
+/// Possible values for the @c BXMIDIMusicTypeKey of MIDI device description dictionaries.
 /// Set by the game configuration's @c mididevice setting to determine what kind of MIDI
 /// device the emulator should request.
 typedef NS_ENUM(NSInteger, BXMIDIMusicType) {

@@ -61,8 +61,7 @@ void boxer_suggestMIDIHandler(const char *handlerName, const char *configParams)
     }
     else if ([name isEqualToString: @"coremidi"])
     {
-        [description setObject: [NSNumber numberWithBool: YES]
-                        forKey: BXMIDIPreferExternalKey];
+        description[BXMIDIPreferExternalKey] = @YES;
         
         //If the configuration parameter string starts with a number,
         //grab that as the destination index.
@@ -71,20 +70,18 @@ void boxer_suggestMIDIHandler(const char *handlerName, const char *configParams)
             NSString *indexString = [[params componentsMatchedByRegex: @"^(\\d+)" capture: 1] objectAtIndex: 0];
             NSInteger destinationIndex = [indexString integerValue];
             
-            [description setObject: [NSNumber numberWithInteger: destinationIndex]
-                            forKey: BXMIDIExternalDeviceIndexKey];
+            description[BXMIDIExternalDeviceIndexKey] = @(destinationIndex);
         }
         
         //Check for the delaysysex flag, which indicates we need to use
         //sysex delays suitable for older MT-32s when talking to the device.
         if ([params isMatchedByRegex: @"delaysysex"])
         {
-            [description setObject: [NSNumber numberWithBool: YES]
-                            forKey: BXMIDIExternalDeviceNeedsMT32SysexDelaysKey];
+            description[BXMIDIExternalDeviceNeedsMT32SysexDelaysKey] = @YES;
         }
     }
     
-    [description setObject: [NSNumber numberWithInteger: musicType] forKey: BXMIDIMusicTypeKey];
+    description[BXMIDIMusicTypeKey] = @(musicType);
     
     [[BXEmulator currentEmulator] setRequestedMIDIDeviceDescription: description];
 }

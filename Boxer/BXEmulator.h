@@ -100,6 +100,7 @@ extern NSStringEncoding BXDirectStringEncoding;
 @protocol BXMIDIDevice;
 
 /// @c BXEmulator is our many-tentacled Cocoa wrapper for DOSBox's low-level emulation functions.
+///
 /// @c BXEmulator itself exposes an API for managing emulator startup, shutdown and general state.
 /// It is extended by more specific categories for managing more other aspects of emulator functionality.
 /// Because they talk directly to DOSBox, @c BXEmulator and its categories are Objective C++. All calls
@@ -144,14 +145,14 @@ extern NSStringEncoding BXDirectStringEncoding;
 	
 	//The queue of commands we are waiting to execute at the DOS prompt.
     //Managed by BXShell.
-	NSMutableArray *_commandQueue;
+	NSMutableArray<NSString*> *_commandQueue;
     BXKeyBuffer *_keyBuffer;
     NSTimeInterval _keyBufferLastCheckTime;
     NSTimeInterval _lastRunLoopTime;
     
     //Managed by BXAudio.
     id <BXMIDIDevice> _activeMIDIDevice;
-    NSDictionary *_requestedMIDIDeviceDescription;
+    NSDictionary<NSString *,id> *_requestedMIDIDeviceDescription;
     NSMutableArray *_pendingSysexMessages;
     BOOL _autodetectsMT32;
     
@@ -212,6 +213,7 @@ extern NSStringEncoding BXDirectStringEncoding;
 
 /// Whether DOSBox has finished initializing. At this point it is safe to modify DOSBox settings,
 /// but not to execute programs.
+///
 /// Set to @c YES after all modules have been initialized but before the DOS machine
 /// is started and the autoexec is executed.
 @property (readonly, getter=isInitialized) BOOL initialized;
@@ -253,7 +255,7 @@ extern NSStringEncoding BXDirectStringEncoding;
 @property (assign, getter=isAutoSpeed) BOOL autoSpeed;
 
 /// Whether we are running in turbo mode (emulating as fast as possible.)
-@property (assign, getter=isTurboSpeed) BOOL turboSpeed;
+@property (assign, nonatomic, getter=isTurboSpeed) BOOL turboSpeed;
 
 /// The current CPU core mode.
 @property (assign) BXCoreMode coreMode;
@@ -272,7 +274,7 @@ extern NSStringEncoding BXDirectStringEncoding;
 @property (readonly) BOOL joystickActive;
 
 /// An array of queued command strings to execute on the DOS command line.
-@property (readonly) NSMutableArray *commandQueue;
+@property (readonly) NSMutableArray<NSString*> *commandQueue;
 
 /// Whether the emulator will clear the screen before executing a command
 /// with the executeCommand: and executeProgram: methods.
@@ -281,7 +283,7 @@ extern NSStringEncoding BXDirectStringEncoding;
 /// The properties requested by the game for what kind of MIDI playback
 /// device we should use.
 /// @see BXEmulator+BXAudio for keys and constants.
-@property (nonatomic, retain) NSDictionary * requestedMIDIDeviceDescription;
+@property (nonatomic, retain) NSDictionary<NSString*,id> * requestedMIDIDeviceDescription;
 
 /// The device to which we are currently sending MIDI signals.
 /// One of MT32MIDIDevice, MIDISynth or externalMIDIDevice.
@@ -301,11 +303,11 @@ extern NSStringEncoding BXDirectStringEncoding;
 #pragma mark Class methods
 
 /// Returns the currently active DOS session.
-+ (BXEmulator *) currentEmulator;
+@property (readonly, retain, class, nullable) BXEmulator *currentEmulator;
 
-/// Whether it is safe to launch a new emulator instance. Will be NO after an emulator has been opened
+/// Whether it is safe to launch a new emulator instance. Will be @c NO after an emulator has been opened
 /// (and the memory state is too polluted to reuse.)
-+ (BOOL) canLaunchEmulator;
+@property (readonly, class) BOOL canLaunchEmulator;
 
 /// Returns the correct DOSBox configuration string for the "cycles" setting given the specified values.
 + (NSString *) configStringForFixedSpeed: (NSInteger)speed isAuto: (BOOL)isAutoSpeed;
