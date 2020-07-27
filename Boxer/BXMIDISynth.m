@@ -163,7 +163,7 @@
     NSAssert(_synthUnit != NULL, @"handleSysEx: called before successful initialization.");
     NSAssert(message.length > 0, @"0-length message received by handleSysex:");
     
-    MusicDeviceSysEx(_synthUnit, (UInt8 *)message.bytes, (UInt32)message.length);
+    MusicDeviceSysEx(_synthUnit, (const UInt8 *)message.bytes, (UInt32)message.length);
 }
 
 - (void) pause
@@ -222,7 +222,7 @@
             {
                 *outError = [NSError errorWithDomain: NSCocoaErrorDomain
                                                 code: NSFileReadNoSuchFileError
-                                            userInfo: nil];
+                                            userInfo: @{NSURLErrorKey: URL}];
             }
             return NO;
         }

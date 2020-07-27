@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Returns a fully-initialized synth ready to receive MIDI messages.
 /// Returns \c nil and populates \c outError if the synth could not be initialised.
-- (nullable id <BXMIDIDevice>) initWithError: (NSError **)outError;
+- (nullable instancetype) initWithError: (NSError **)outError;
 
 /// Sets the specified soundfont with which MIDI should be played back.
 /// \c soundFontURL will be updated with the specified URL.
