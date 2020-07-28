@@ -325,7 +325,6 @@
 		9F2D309D15B8233800FAE848 /* BXDualActionControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2F83F13D60FBD00BD4F6B /* BXDualActionControllerProfile.m */; };
 		9F2D309E15B8233800FAE848 /* BXBezelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F70277A13D706CC00606B4C /* BXBezelController.m */; };
 		9F2D309F15B8233800FAE848 /* BXThemedControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F70278313D72D8100606B4C /* BXThemedControls.m */; };
-		9F2D30A015B8233800FAE848 /* BXCoalfaceDrives.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA702113DAE6F5006C5DF8 /* BXCoalfaceDrives.mm */; };
 		9F2D30A115B8233800FAE848 /* NSShadow+ADBShadowExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8F482413DC74CA00C7E022 /* NSShadow+ADBShadowExtensions.m */; };
 		9F2D30A215B8233800FAE848 /* ADBFileScan.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F58BB5013DD975F00358512 /* ADBFileScan.m */; };
 		9F2D30A415B8233800FAE848 /* BXDOSWindowControllerLion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0C0BD613E1751E0039C081 /* BXDOSWindowControllerLion.m */; };
@@ -695,7 +694,6 @@
 		9FC9E4E1136725190095DCDE /* BXEmulatedJoystick.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9E4E0136725190095DCDE /* BXEmulatedJoystick.mm */; };
 		9FC9E58F1367514C0095DCDE /* BXCHFlightstick.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9E58E1367514C0095DCDE /* BXCHFlightstick.mm */; };
 		9FCA6D9615C85D8500E1650C /* BXLaunchPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA6D9515C85D8500E1650C /* BXLaunchPanelController.m */; };
-		9FCA702213DAE6F5006C5DF8 /* BXCoalfaceDrives.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA702113DAE6F5006C5DF8 /* BXCoalfaceDrives.mm */; };
 		9FCA937D16FF37A000720B81 /* BXDocumentationPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F125C3F16983A9D003B5B2B /* BXDocumentationPanelController.m */; };
 		9FCA937E16FF38E700720B81 /* BXDocumentationBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F631D7B16947AE900AD06C4 /* BXDocumentationBrowser.m */; };
 		9FCA937F16FF38EC00720B81 /* DocumentationBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F631D8016947B2C00AD06C4 /* DocumentationBrowser.xib */; };
@@ -1755,8 +1753,6 @@
 		9FC9E59B13675A8B0095DCDE /* BXEmulatedJoystickPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXEmulatedJoystickPrivate.h; sourceTree = "<group>"; };
 		9FCA6D9415C85D8500E1650C /* BXLaunchPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXLaunchPanelController.h; sourceTree = "<group>"; };
 		9FCA6D9515C85D8500E1650C /* BXLaunchPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXLaunchPanelController.m; sourceTree = "<group>"; };
-		9FCA702013DAE6B1006C5DF8 /* BXCoalfaceDrives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXCoalfaceDrives.h; sourceTree = "<group>"; };
-		9FCA702113DAE6F5006C5DF8 /* BXCoalfaceDrives.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BXCoalfaceDrives.mm; sourceTree = "<group>"; };
 		9FCB6EB616DBED960089E14E /* BXExecutableConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BXExecutableConstants.h; sourceTree = "<group>"; };
 		9FCB7B0915B8422000CC7CC7 /* DOS Toolkit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "DOS Toolkit"; sourceTree = "<group>"; };
 		9FCB7B0B15B842E000CC7CC7 /* BXStandaloneAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXStandaloneAppController.h; sourceTree = "<group>"; };
@@ -2437,8 +2433,6 @@
 				9FF2E9BC11E6F4950051E485 /* BXEmulatorConfiguration.m */,
 				9FDCA78E118F2B7900E2FD74 /* BXCoalface.h */,
 				9FDCA78F118F2B7900E2FD74 /* BXCoalface.mm */,
-				9FCA702013DAE6B1006C5DF8 /* BXCoalfaceDrives.h */,
-				9FCA702113DAE6F5006C5DF8 /* BXCoalfaceDrives.mm */,
 				9F34BE3F142B700100A69FAF /* BXCoalfaceAudio.h */,
 				9F34BE3E142B700100A69FAF /* BXCoalfaceAudio.mm */,
 				9F3E57A313F694B40070A14D /* BXEmulatorErrors.h */,
@@ -4017,7 +4011,6 @@
 				9FC2F84013D60FBD00BD4F6B /* BXDualActionControllerProfile.m in Sources */,
 				9F70277B13D706CC00606B4C /* BXBezelController.m in Sources */,
 				9F70278413D72D8100606B4C /* BXThemedControls.m in Sources */,
-				9FCA702213DAE6F5006C5DF8 /* BXCoalfaceDrives.mm in Sources */,
 				9F8F482513DC74CA00C7E022 /* NSShadow+ADBShadowExtensions.m in Sources */,
 				9F58BB5113DD975F00358512 /* ADBFileScan.m in Sources */,
 				9F0C0BD713E1751E0039C081 /* BXDOSWindowControllerLion.m in Sources */,
@@ -4430,7 +4423,6 @@
 				9F2D309D15B8233800FAE848 /* BXDualActionControllerProfile.m in Sources */,
 				9F2D309E15B8233800FAE848 /* BXBezelController.m in Sources */,
 				9F2D309F15B8233800FAE848 /* BXThemedControls.m in Sources */,
-				9F2D30A015B8233800FAE848 /* BXCoalfaceDrives.mm in Sources */,
 				9F2D30A115B8233800FAE848 /* NSShadow+ADBShadowExtensions.m in Sources */,
 				9F2D30A215B8233800FAE848 /* ADBFileScan.m in Sources */,
 				9F2D30A415B8233800FAE848 /* BXDOSWindowControllerLion.m in Sources */,
