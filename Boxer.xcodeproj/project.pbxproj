@@ -47,6 +47,13 @@
 		5514503A24BE8DE60002CE28 /* envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514503824BE8DE50002CE28 /* envelope.cpp */; };
 		5514503D24BE8FB90002CE28 /* program_autotype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514503B24BE8FB90002CE28 /* program_autotype.cpp */; };
 		5514503E24BE8FB90002CE28 /* program_autotype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514503B24BE8FB90002CE28 /* program_autotype.cpp */; };
+		55220E3824CFFF8C00A6736A /* BXShaderParametersWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058BC52324C27B790078C244 /* BXShaderParametersWindowController.m */; };
+		55220E3924CFFF8C00A6736A /* BXShadersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058BC51F24C27B770078C244 /* BXShadersModel.swift */; };
+		55220E3A24CFFF8C00A6736A /* BXShadersModel+OpenEmu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058BC52124C27B780078C244 /* BXShadersModel+OpenEmu.swift */; };
+		55220E4524CFFFC900A6736A /* ShaderParameters.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC51124C27B480078C244 /* ShaderParameters.xib */; };
+		55220E4624CFFFC900A6736A /* CheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC52624C27BA10078C244 /* CheckboxCell.xib */; };
+		55220E4724CFFFC900A6736A /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC52524C27BA10078C244 /* GroupCell.xib */; };
+		55220E4824CFFFC900A6736A /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC52724C27BA10078C244 /* SliderCell.xib */; };
 		5548850E226A501000A879B3 /* drive_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55488508226A501000A879B3 /* drive_overlay.cpp */; };
 		5548850F226A501000A879B3 /* drive_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55488508226A501000A879B3 /* drive_overlay.cpp */; };
 		554E2B6D1BFAF6720038C506 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6C1BFAF6720038C506 /* Shared.xcassets */; };
@@ -3830,6 +3837,7 @@
 			files = (
 				9F2D30D615B8233800FAE848 /* LockClosing.aiff in Resources */,
 				9FAA7EB01BE698ED00F4FCA6 /* Localizable.strings in Resources */,
+				55220E4824CFFFC900A6736A /* SliderCell.xib in Resources */,
 				9F2D30D715B8233800FAE848 /* LockOpening.aiff in Resources */,
 				9F2D30DB15B8233800FAE848 /* Snapshot.aiff in Resources */,
 				9F2D30E815B8233800FAE848 /* GameProfiles.plist in Resources */,
@@ -3844,8 +3852,10 @@
 				9FCB7B2715B877E500CC7CC7 /* DOS Toolkit in Resources */,
 				9FCB7B2815B8782800CC7CC7 /* Bezel.xib in Resources */,
 				9F1E959A15BD88D700C3C6A0 /* UserDefaults.plist in Resources */,
+				55220E4624CFFFC900A6736A /* CheckboxCell.xib in Resources */,
 				9F1E959C15BD899500C3C6A0 /* GameDefaults.plist in Resources */,
 				9F7472D61BE7D96E00B9C9ED /* StandaloneAbout.xib in Resources */,
+				55220E4724CFFFC900A6736A /* GroupCell.xib in Resources */,
 				9FAA7EB31BE6996E00F4FCA6 /* DOSBox.strings in Resources */,
 				9F57685B15DA3DFC00B50500 /* StandaloneLogo.png in Resources */,
 				9F57685C15DA3DFC00B50500 /* StandaloneLogo@2x.png in Resources */,
@@ -3853,6 +3863,7 @@
 				9FDFB48215DBC73D004EA615 /* Help.help in Resources */,
 				554E2B6E1BFAF6B20038C506 /* Shared.xcassets in Resources */,
 				9F794DAF15EA966E00A4CB05 /* DummyCD.iso in Resources */,
+				55220E4524CFFFC900A6736A /* ShaderParameters.xib in Resources */,
 				9FAA7EB11BE6996800F4FCA6 /* Configuration.strings in Resources */,
 				9FCA937F16FF38EC00720B81 /* DocumentationBrowser.xib in Resources */,
 				9FCA938016FF38F800720B81 /* DocumentationPanel.xib in Resources */,
@@ -4285,6 +4296,7 @@
 				9F2D301215B8233800FAE848 /* ADBHIDMonitor.m in Sources */,
 				9F2D301315B8233800FAE848 /* DDHidDevice+ADBDeviceExtensions.m in Sources */,
 				9F2D301415B8233800FAE848 /* BXJoystickController.m in Sources */,
+				55220E3824CFFF8C00A6736A /* BXShaderParametersWindowController.m in Sources */,
 				5514500F24BE81E00002CE28 /* mp3.cpp in Sources */,
 				9F2D301515B8233800FAE848 /* ADBHIDEvent.m in Sources */,
 				9F2D301615B8233800FAE848 /* BXInputController+BXJoystickInput.m in Sources */,
@@ -4419,6 +4431,7 @@
 				8F97922924C0E31E0054F84D /* BXMetalRenderingView+BXImageCapture.m in Sources */,
 				9F2D309215B8233800FAE848 /* BXThemedImageCell.m in Sources */,
 				9F2D309B15B8233800FAE848 /* BXG25ControllerProfile.m in Sources */,
+				55220E3A24CFFF8C00A6736A /* BXShadersModel+OpenEmu.swift in Sources */,
 				9F2D309C15B8233800FAE848 /* DDHidUsage+ADBUsageExtensions.m in Sources */,
 				9F2D309D15B8233800FAE848 /* BXDualActionControllerProfile.m in Sources */,
 				9F2D309E15B8233800FAE848 /* BXBezelController.m in Sources */,
@@ -4497,6 +4510,7 @@
 				9F67855D1649A6BC007FE89A /* BXPrintStatusPanelController.m in Sources */,
 				9F201E391657DB7F0086F1BB /* ADBUserNotificationDispatcher.m in Sources */,
 				5514503A24BE8DE60002CE28 /* envelope.cpp in Sources */,
+				55220E3924CFFF8C00A6736A /* BXShadersModel.swift in Sources */,
 				9F61B94E16625DF700B41546 /* BXInspectorController.m in Sources */,
 				9F6463F816C67415008B65BF /* BXOutputBinding.m in Sources */,
 				55574804208FA8040045E635 /* fmopl.cpp in Sources */,
