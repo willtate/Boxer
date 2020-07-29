@@ -236,8 +236,7 @@ NSString * const BXExecutableTypesErrorDomain = @"BXExecutableTypesErrorDomain";
     if (handle)
     {
         BXExecutableType type = [BXFileTypes typeOfExecutableInStream: handle error: outError];
-        if ([handle conformsToProtocol: @protocol(ADBFileHandleAccess)])
-            [(id <ADBFileHandleAccess>)handle close];
+        [handle close];
         return type;
     }
     else
@@ -245,7 +244,8 @@ NSString * const BXExecutableTypesErrorDomain = @"BXExecutableTypesErrorDomain";
         if (outError)
         {
             NSAssert(openError != nil, @"No error returned on failure condition!");
-            NSDictionary *info = @{ NSUnderlyingErrorKey: openError };
+            NSDictionary *info = @{ NSUnderlyingErrorKey: openError,
+                                    NSURLErrorKey: URL };
             *outError = [NSError errorWithDomain: BXExecutableTypesErrorDomain
                                             code: BXCouldNotReadExecutable
                                         userInfo: info];
