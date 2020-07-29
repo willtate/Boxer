@@ -69,7 +69,7 @@ extern NSString * const BXBatchProgramType;     //!< .bat
 @property (class, readonly, copy) NSDictionary<NSString*,NSString*> *fileHandlerOverrides;
 
 /// Returns a specific bundle identifier that we want to use to open the specified URL,
-/// or \c nil if OS X's default handler should be used. This uses \c fileHandlerOverrides to
+/// or @c nil if OS X's default handler should be used. This uses @c fileHandlerOverrides to
 /// selectively override the default for files with particular extensions.
 + (nullable NSString *) bundleIdentifierForApplicationToOpenURL: (NSURL *)URL;
 
@@ -96,15 +96,21 @@ typedef NS_ENUM(NSInteger, BXExecutableType) {
 
 @interface BXFileTypes (BXExecutableTypes)
 
-/// Returns the executable type of the file at the specified URL or in the specified stream.
-/// If the executable type cannot be determined, these will return \c BXExecutableTypeUnknown
-/// and populate outError with the failure reason.
+/// Returns the executable type of the file at the specified URL.
+/// If the executable type cannot be determined, these will return @c BXExecutableTypeUnknown
+/// and populate @c outError with the failure reason.
 + (BXExecutableType) typeOfExecutableAtURL: (NSURL *)URL
                                      error: (out NSError **)outError NS_REFINED_FOR_SWIFT;
 
+/// Returns the executable type of the file in the specified stream.
+/// If the executable type cannot be determined, these will return @c BXExecutableTypeUnknown
+/// and populate @c outError with the failure reason.
 + (BXExecutableType) typeOfExecutableInStream: (id <ADBReadable, ADBSeekable>)handle
                                         error: (out NSError **)outError NS_REFINED_FOR_SWIFT;
 
+/// Returns the executable type of the file at the specified path in the specified file system.
+/// If the executable type cannot be determined, these will return @c BXExecutableTypeUnknown
+/// and populate @c outError with the failure reason.
 + (BXExecutableType) typeOfExecutableAtPath: (NSString *)path
                                  filesystem: (id <ADBFilesystemPathAccess>)filesystem
                                       error: (out NSError **)outError NS_REFINED_FOR_SWIFT;
@@ -114,6 +120,9 @@ typedef NS_ENUM(NSInteger, BXExecutableType) {
 /// If the file is an .EXE file, \c typeOfExecutableAtURL:error: will be used to determine the type.
 + (BOOL) isCompatibleExecutableAtURL: (NSURL *)URL error: (out NSError **)outError;
 
+/// Returns whether the file at the specified URL is a DOSBox-compatible executable.
+/// If the file appears to be a .COM or .BAT file, this method will assume it is compatible;
+/// If the file is an .EXE file, \c typeOfExecutableAtPath:filesystem:error: will be used to determine the type.
 + (BOOL) isCompatibleExecutableAtPath: (NSString *)path
                            filesystem: (id <ADBFilesystemPathAccess>)filesystem
                                 error: (out NSError **)outError;

@@ -11,7 +11,7 @@ import Foundation
 extension ADBBinCueImage {
     /// Returns `true` if the specified path contains a parseable cue file, `false` otherwise.
     /// Throws an error if there is a problem accessing the file.
-    open class func isCue(at cueURL: URL) throws -> Bool {
+    static func isCue(at cueURL: URL) throws -> Bool {
         var outError: NSError? = nil
         let isACue = __isCue(at: cueURL, error: &outError)
         if !isACue, let err = outError {
@@ -25,18 +25,22 @@ extension ADBBinCueImage {
 extension BXFileTypes {
     /// Returns the executable type of the file at the specified URL.
     /// If the executable type cannot be determined, this method will throw.
-    @nonobjc open class func typeOfExecutable(at URL: URL) throws -> BXExecutableType {
-        var err: NSError?
-        let toRet = __typeOfExecutable(at: URL, error: &err)
-        if toRet == .unknown, let err2 = err {
-            throw err2
+    static func typeOfExecutable(at URL: URL) throws -> BXExecutableType {
+        let handle: ADBFileHandle
+        do {
+            handle = try ADBFileHandle(url: URL, options: .openForReading)
+        } catch {
+            throw BXExecutableTypesErrors(.couldNotReadExecutable, userInfo: [ NSUnderlyingErrorKey: error])
         }
-        return toRet
+        defer {
+            handle.close()
+        }
+        return try typeOfExecutable(inStream: handle)
     }
 
     /// Returns the executable type of the file in the specified stream.
     /// If the executable type cannot be determined, this method will throw.
-    open class func typeOfExecutable(inStream handle: ADBReadable & ADBSeekable) throws -> BXExecutableType {
+    static func typeOfExecutable(inStream handle: ADBReadable & ADBSeekable) throws -> BXExecutableType {
         var err: NSError?
         let toRet = __typeOfExecutable(inStream: handle, error: &err)
         
@@ -48,14 +52,18 @@ extension BXFileTypes {
 
     /// Returns the executable type of the file at the specified path.
     /// If the executable type cannot be determined, this method will throw.
-    open class func typeOfExecutable(atPath path: String, filesystem: ADBFilesystemPathAccess) throws -> BXExecutableType {
-        var err: NSError?
-        
-        let toRet = __typeOfExecutable(atPath: path, filesystem: filesystem, error: &err)
-        
-        if toRet == .unknown, let err2 = err {
-            throw err2
+    static func typeOfExecutable(atPath path: String, filesystem: ADBFilesystemPathAccess) throws -> BXExecutableType {
+        let handle: ADBReadable & ADBSeekable
+        do {
+            handle = (try filesystem.fileHandle(atPath: path, options: .openForReading)) as! (ADBReadable & ADBSeekable)
+        } catch {
+            throw BXExecutableTypesErrors(.couldNotReadExecutable, userInfo: [ NSUnderlyingErrorKey: error])
         }
-        return toRet
+        defer {
+            if let hand2 = handle as? ADBFileHandleAccess {
+                hand2.close()
+            }
+        }
+        return try typeOfExecutable(inStream: handle)
     }
 }
