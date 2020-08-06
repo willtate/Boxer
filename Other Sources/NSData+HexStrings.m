@@ -15,7 +15,8 @@
 	NSUInteger numBytes = [self length];
 	const unsigned char* bytes = [self bytes];
 	
-	char *strbuf = (char *)malloc(numBytes * 2 + 1);
+	NSMutableData *strDat = [NSMutableData dataWithLength:numBytes * 2 + 1];
+	char *strbuf = (char *)strDat.mutableBytes;
 	char *hex = strbuf;
 	NSString *hexBytes = nil;
 	
@@ -26,8 +27,7 @@
 		*hex++ = hexdigits[(c ) & 0xF];
 	}
 	*hex = 0;
-	hexBytes = [NSString stringWithUTF8String: strbuf];
-	free(strbuf);
+	hexBytes = [[NSString alloc] initWithData:strDat encoding:NSASCIIStringEncoding];
 	return hexBytes;
 }
 
