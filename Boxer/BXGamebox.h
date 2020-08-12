@@ -11,8 +11,7 @@
 //require that Boxer gameboxes use any standard OS X bundle folder structure.
 //(and indeed, gameboxes with an OS X bundle structure haven't been tested.)
 
-//TODO: it is inappropriate to subclass NSBundle for representing a modifiable file package,
-//and we should instead be using an NSFileWrapper directory wrapper.
+//TODO: it is inappropriate to subclass NSBundle for representing a modifiable file package, and we should instead be using an NSFileWrapper directory wrapper.
 
 #import <Cocoa/Cocoa.h>
 #import "ADBUndoExtensions.h"
@@ -115,8 +114,7 @@ typedef NS_ENUM(NSUInteger, BXGameIdentifierType) {
 /// require that Boxer gameboxes use any standard OS X bundle folder structure.
 /// (and indeed, gameboxes with an OS X bundle structure haven't been tested.)
 ///
-/// TODO: it is inappropriate to subclass NSBundle for representing a modifiable file package,
-/// and we should instead be using an NSFileWrapper directory wrapper.
+/// TODO: it is inappropriate to subclass NSBundle for representing a modifiable file package, and we should instead be using an NSFileWrapper directory wrapper.
 @interface BXGamebox : NSBundle <ADBUndoable>
 
 #pragma mark - Properties

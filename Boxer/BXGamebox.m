@@ -49,11 +49,11 @@ NSString * const BXLauncherDefaultKey       = @"BXLauncherIsDefault";
 
 NSString * const BXGameboxErrorDomain = @"BXGameboxErrorDomain";
 
-//When calculating a digest from the gamebox's EXEs, read only the first 64kb of each EXE.
+/// When calculating a digest from the gamebox's EXEs, read only the first 64kb of each EXE.
 #define BXGameIdentifierEXEDigestStubLength 65536
 
-//The gamebox will cache the results of an isWritable check for this many seconds
-//to prevent repeated hits to the filesystem.
+/// The gamebox will cache the results of an isWritable check for this many seconds
+/// to prevent repeated hits to the filesystem.
 #define BXGameboxWritableCheckCacheDuration 3.0
 
 
@@ -62,22 +62,22 @@ NSString * const BXGameboxErrorDomain = @"BXGameboxErrorDomain";
 @interface BXGamebox ()
 @property (readwrite, strong, nonatomic) NSDictionary *gameInfo;
 
-+ (NSSet *) executableExclusions;
-+ (NSArray *) URLsForMeaningfulExecutablesInLocation: (NSURL *)baseURL
-                                searchSubdirectories: (BOOL)searchSubdirs;
++ (NSSet<NSString*> *) executableExclusions;
++ (NSArray<NSURL*> *) URLsForMeaningfulExecutablesInLocation: (NSURL *)baseURL
+                                        searchSubdirectories: (BOOL)searchSubdirs;
 
-//Returns a new auto-generated identifier based on the meaningful
-//executbales found inside the gamebox (if any are present), or a random UUID.
-//On return, type will be the type of identifier generated.
+/// Returns a new auto-generated identifier based on the meaningful
+/// executables found inside the gamebox (if any are present), or a random UUID.
+/// On return, @c type will be the type of identifier generated.
 - (NSString *) _generatedIdentifierOfType: (BXGameIdentifierType *)type;
 
-//Lazily populates the launchers array from the game info the first time the array is accessed.
+/// Lazily populates the launchers array from the game info the first time the array is accessed.
 - (void) _populateLaunchers;
 
-//Rewrite the launchers array in the game info.
+/// Rewrite the launchers array in the game info.
 - (void) _persistLaunchers;
 
-//Save the game info back to the gamebox.
+/// Save the game info back to the gamebox.
 - (void) _persistGameInfo;
 
 @end
@@ -90,7 +90,7 @@ NSString * const BXGameboxErrorDomain = @"BXGameboxErrorDomain";
 	CFAbsoluteTime _nextWriteableCheckTime;
 }
 
-//We ignore files with these names when considering which programs are important enough to list
+/// We ignore files with these names when considering which programs are important enough to list
 //TODO: read this data from a configuration plist instead
 + (NSSet *) executableExclusions
 {
