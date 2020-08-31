@@ -36,9 +36,9 @@ Bit8u BXMIDIMessageLength[256] = {
     1,2,3,2, 0,0,1,1, 1,0,1,1, 1,0,1,1   // 0xf0
 };
 
-void boxer_suggestMIDIHandler(const char *handlerName, const char *configParams)
+void boxer_suggestMIDIHandler(std::string const &handlerName, const char *configParams)
 {
-    NSString *name = [[[NSString stringWithCString: handlerName encoding: BXDirectStringEncoding]
+    NSString *name = [[[NSString stringWithCString: handlerName.c_str() encoding: BXDirectStringEncoding]
                        stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]] lowercaseString];
     NSString *params = [[NSString stringWithCString: configParams encoding: BXDirectStringEncoding]
                         stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
