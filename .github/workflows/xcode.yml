@@ -20,9 +20,9 @@ jobs:
         env:
           platform: ${{ 'Mac OS X' }}
         run: |
-          xcodebuild -target "Boxer" -configuration "Release"
+          xcodebuild -derivedDataPath ./build -workspace Boxer.xcworkspace -scheme "Boxer CI" -configuration "Release"
       - name: Build Boxer Bundler
         env:
           platform: ${{ 'Mac OS X' }}
         run: |
-          xcodebuild -target "Boxer Bundler" -configuration "Release"
+          xcodebuild -derivedDataPath ./build -workspace Boxer.xcworkspace -scheme "Boxer Bundler CI" -configuration "Release"
