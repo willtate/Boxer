@@ -820,6 +820,20 @@
 			remoteGlobalIDString = 55871E8E235C3AF700528BDF;
 			remoteInfo = BrowserSwift;
 		};
+		55D431F525044D50008515E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 05EEE337227CC35C007D011B;
+			remoteInfo = OpenEmuShaders;
+		};
+		55D431F725044D56008515E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 05EEE337227CC35C007D011B;
+			remoteInfo = OpenEmuShaders;
+		};
 		55E6A09B1C00C7F900285593 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */;
@@ -3578,6 +3592,7 @@
 			);
 			comments = "REGARDING --mstackrealign\nBoxer will crash with a dyld_misaligned_stack_error if dynamic core mode is on when the session starts.\n\ndyld is the dynamic linker, so this may be some peculiar interaction of threading and dynamically-loaded frameworks: the crash also happens in our non-XCode, SDL-framework-using build, and it *doesn't* happen if a sleep() delay is introduced before DOSBox_main is called, which implies a race condition.\n\nAdding -mstackrealign to the C flags for Intel seems to have made the problem go away. Which doesn't explain why it's happening in the first place.";
 			dependencies = (
+				55D431F625044D50008515E1 /* PBXTargetDependency */,
 				55E6A0B91C00C86200285593 /* PBXTargetDependency */,
 				55E6A0BD1C00C86200285593 /* PBXTargetDependency */,
 				55E6A0C11C00C86200285593 /* PBXTargetDependency */,
@@ -3601,6 +3616,7 @@
 			);
 			comments = "REGARDING --mstackrealign\nBoxer will crash with a dyld_misaligned_stack_error if dynamic core mode is on when the session starts.\n\ndyld is the dynamic linker, so this may be some peculiar interaction of threading and dynamically-loaded frameworks: the crash also happens in our non-XCode, SDL-framework-using build, and it *doesn't* happen if a sleep() delay is introduced before DOSBox_main is called, which implies a race condition.\n\nAdding -mstackrealign to the C flags for Intel seems to have made the problem go away. Which doesn't explain why it's happening in the first place.";
 			dependencies = (
+				55D431F825044D56008515E1 /* PBXTargetDependency */,
 				55E6A0C51C00C88A00285593 /* PBXTargetDependency */,
 				55E6A0C91C00C88A00285593 /* PBXTargetDependency */,
 				55E6A0CD1C00C88A00285593 /* PBXTargetDependency */,
@@ -4548,6 +4564,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		55D431F625044D50008515E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenEmuShaders;
+			targetProxy = 55D431F525044D50008515E1 /* PBXContainerItemProxy */;
+		};
+		55D431F825044D56008515E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenEmuShaders;
+			targetProxy = 55D431F725044D56008515E1 /* PBXContainerItemProxy */;
+		};
 		55E6A0B91C00C86200285593 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Framework;
