@@ -6,6 +6,7 @@
  */
 
 #import "BXCoalface.h"
+#include <string>
 
 typedef enum {
     BXLeftChannel,
@@ -13,7 +14,7 @@ typedef enum {
 } BXAudioChannel;
 
 /// Tell BXEmulator the preferred MIDI handler according to the DOSBox configuration.
-void boxer_suggestMIDIHandler(const char *handlerName, const char *configParams);
+void boxer_suggestMIDIHandler(std::string const &handlerName, const char *configParams);
 
 /// Tells DOSBox whether MIDI is currently available or not.
 bool boxer_MIDIAvailable(void);
