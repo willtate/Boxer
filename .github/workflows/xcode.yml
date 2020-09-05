@@ -8,21 +8,19 @@ on:
 
 jobs:
   build:
-    name: Build and Test default scheme using any available iPhone simulator
+    name: Build using Xcode
     runs-on: macos-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Set Default Scheme
-        run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-          echo $default | cat >default
-          echo Using default scheme: $default
-      - name: Build
+      - name: Build Boxer
         env:
-          scheme: ${{ 'default' }}
           platform: ${{ 'Mac OS X' }}
         run: |
-          xcodebuild -scheme "$scheme"
+          xcodebuild -target "Boxer"
+      - name: Build Boxer Bundler
+        env:
+          platform: ${{ 'Mac OS X' }}
+        run: |
+          xcodebuild -target "Boxer Bundler"
