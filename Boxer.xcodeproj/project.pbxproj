@@ -80,7 +80,6 @@
 		55B22BA21A1BD9760007665E /* Bundler.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22BA11A1BD9760007665E /* Bundler.xcassets */; };
 		55BBA4E9235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */; };
 		55BBA4EA235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */; };
-		55D432032504BB65008515E1 /* CwlDemangle in Frameworks */ = {isa = PBXBuildFile; productRef = 55D432022504BB65008515E1 /* CwlDemangle */; };
 		55D4320E2504BC5B008515E1 /* CwlDemangle in Frameworks */ = {isa = PBXBuildFile; productRef = 55D4320D2504BC5B008515E1 /* CwlDemangle */; };
 		55DEBB23201E875600F1092F /* pci_bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DEBB21201E875500F1092F /* pci_bus.cpp */; };
 		55E21B4D23FF50E600D53932 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E21B4C23FF50E500D53932 /* libz.tbd */; };
@@ -1944,7 +1943,6 @@
 				9FBC32120F56C3E9001811F2 /* Carbon.framework in Frameworks */,
 				9FBC3C780F56E0D7001811F2 /* AudioUnit.framework in Frameworks */,
 				9FBC3C790F56E0D7001811F2 /* CoreMIDI.framework in Frameworks */,
-				55D432032504BB65008515E1 /* CwlDemangle in Frameworks */,
 				9FB769E3164861D8000644C2 /* Quartz.framework in Frameworks */,
 				05F9A20024BAA7AA00969496 /* SDL2_net.framework in Frameworks */,
 				55E6A0B61C00C86200285593 /* MT32Emu.framework in Frameworks */,
@@ -3591,7 +3589,6 @@
 			);
 			name = Boxer;
 			packageProductDependencies = (
-				55D432022504BB65008515E1 /* CwlDemangle */,
 			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = Boxer;
@@ -5411,11 +5408,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		55D432022504BB65008515E1 /* CwlDemangle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */;
-			productName = CwlDemangle;
-		};
 		55D4320D2504BC5B008515E1 /* CwlDemangle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */;
