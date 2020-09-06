@@ -6,7 +6,7 @@ The Boxer Xcode project is designed to be a painless one-click build. Here's a q
 
 #### Build requirements
 
-To build the Boxer project you will need OS X 10.8 or higher and XCode 4.5 or higher.
+To build the Boxer project you will need macOS 10.14 or higher and XCode 11.3 or higher.
 
 All necessary frameworks and other dependencies are included in the Boxer repo, or as git submodules, so the project itself is all you'll need.
 
@@ -28,13 +28,11 @@ The Boxer project has three targets:
 
 #### Build Configurations
 
-The Boxer target has 2 build configurations: Release and Debug. Both of them compile fully optimized 32-bit binaries using the LLVM compiler. Debug works almost exactly the same as Release but turns on console debug messages and additional OpenGL error-checking.
-
-Boxer currently does not compile for 64-bit because DOSBox is not fully 64-bit compatible. Boxer's bundled frameworks have been stripped down to 32-bit-only to save space.
+The Boxer target has 2 build configurations: Release and Debug. Both of them compile fully optimized 64-bit binaries using the LLVM compiler. Debug works almost exactly the same as Release but turns on console debug messages and additional error-checking.
 
 #### App requirements
 
-Boxer and Boxer Standalone both run on OS X 10.6 and above, while Boxer Bundler runs on OS X 10.8 and above.
+Boxer and Boxer Standalone both run on macOS 10.14.4 and above, while Boxer Bundler runs on OS X 10.8 and above.
 
 OSX 10.5 and PowerPC support has been removed from the Boxer master branch: if you need these, use the older "leopard_legacy" maintenance branch from http://github.com/alunbestor/Boxer/tree/leopard_legacy/.
 
