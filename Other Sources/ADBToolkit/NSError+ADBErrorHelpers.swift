@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CwlDemangle
 
 @objc(ADBExceptionMangledFunctionType)
 enum MangledFunctionType: Int {

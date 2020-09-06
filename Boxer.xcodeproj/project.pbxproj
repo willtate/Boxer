@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -80,8 +80,8 @@
 		55B22BA21A1BD9760007665E /* Bundler.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22BA11A1BD9760007665E /* Bundler.xcassets */; };
 		55BBA4E9235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */; };
 		55BBA4EA235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */; };
-		55BBA4F5235FB25F007AE319 /* CwlDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4F4235FB25E007AE319 /* CwlDemangle.swift */; };
-		55BBA4F6235FB25F007AE319 /* CwlDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4F4235FB25E007AE319 /* CwlDemangle.swift */; };
+		55D432032504BB65008515E1 /* CwlDemangle in Frameworks */ = {isa = PBXBuildFile; productRef = 55D432022504BB65008515E1 /* CwlDemangle */; };
+		55D4320E2504BC5B008515E1 /* CwlDemangle in Frameworks */ = {isa = PBXBuildFile; productRef = 55D4320D2504BC5B008515E1 /* CwlDemangle */; };
 		55DEBB23201E875600F1092F /* pci_bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DEBB21201E875500F1092F /* pci_bus.cpp */; };
 		55E21B4D23FF50E600D53932 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E21B4C23FF50E500D53932 /* libz.tbd */; };
 		55E6A0B61C00C86200285593 /* MT32Emu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0B51C00C81E00285593 /* MT32Emu.framework */; };
@@ -1115,7 +1115,6 @@
 		55BBA4E6235EE141007AE319 /* Boxer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boxer-Bridging-Header.h"; sourceTree = "<group>"; };
 		55BBA4E7235EE141007AE319 /* Boxer Standalone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boxer Standalone-Bridging-Header.h"; sourceTree = "<group>"; };
 		55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+ADBErrorHelpers.swift"; sourceTree = "<group>"; };
-		55BBA4F4235FB25E007AE319 /* CwlDemangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CwlDemangle.swift; path = Vendor/CwlDemangle/CwlDemangle/CwlDemangle.swift; sourceTree = SOURCE_ROOT; };
 		55BF6F0320210F6000F3FE59 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55DEBB1A201E81C200F1092F /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
 		55DEBB20201E81DF00F1092F /* pci_bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pci_bus.h; sourceTree = "<group>"; };
@@ -1945,6 +1944,7 @@
 				9FBC32120F56C3E9001811F2 /* Carbon.framework in Frameworks */,
 				9FBC3C780F56E0D7001811F2 /* AudioUnit.framework in Frameworks */,
 				9FBC3C790F56E0D7001811F2 /* CoreMIDI.framework in Frameworks */,
+				55D432032504BB65008515E1 /* CwlDemangle in Frameworks */,
 				9FB769E3164861D8000644C2 /* Quartz.framework in Frameworks */,
 				05F9A20024BAA7AA00969496 /* SDL2_net.framework in Frameworks */,
 				55E6A0B61C00C86200285593 /* MT32Emu.framework in Frameworks */,
@@ -1974,6 +1974,7 @@
 				9F2D315815B8233800FAE848 /* QuartzCore.framework in Frameworks */,
 				55E6A0CA1C00C88A00285593 /* BGHUDAppKit.framework in Frameworks */,
 				8F97922A24C0E32A0054F84D /* OpenEmuShaders.framework in Frameworks */,
+				55D4320E2504BC5B008515E1 /* CwlDemangle in Frameworks */,
 				5585CEB524BB834F008121D9 /* SDL2.framework in Frameworks */,
 				9F2D315915B8233800FAE848 /* AudioToolbox.framework in Frameworks */,
 				9F2D315A15B8233800FAE848 /* libicucore.dylib in Frameworks */,
@@ -2252,14 +2253,6 @@
 				555747FB208FA8030045E635 /* ymf262.h */,
 			);
 			path = mame;
-			sourceTree = "<group>";
-		};
-		55BBA4F3235FB240007AE319 /* CwlDemangle */ = {
-			isa = PBXGroup;
-			children = (
-				55BBA4F4235FB25E007AE319 /* CwlDemangle.swift */,
-			);
-			name = CwlDemangle;
 			sourceTree = "<group>";
 		};
 		55E6A0981C00C7F900285593 /* Products */ = {
@@ -3564,7 +3557,6 @@
 		9FFF978412327D58009B5EE5 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				55BBA4F3235FB240007AE319 /* CwlDemangle */,
 				9F991BDE1800395900E2C0FE /* Scripting Bridge */,
 				9FADFE9511EC932800990E91 /* NSData+HexStrings.h */,
 				9FADFE9611EC932800990E91 /* NSData+HexStrings.m */,
@@ -3598,6 +3590,9 @@
 				55E6A0C11C00C86200285593 /* PBXTargetDependency */,
 			);
 			name = Boxer;
+			packageProductDependencies = (
+				55D432022504BB65008515E1 /* CwlDemangle */,
+			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = Boxer;
 			productReference = 8D1107320486CEB800E47090 /* Boxer.app */;
@@ -3622,6 +3617,9 @@
 				55E6A0CD1C00C88A00285593 /* PBXTargetDependency */,
 			);
 			name = "Boxer Standalone";
+			packageProductDependencies = (
+				55D4320D2504BC5B008515E1 /* CwlDemangle */,
+			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = Boxer;
 			productReference = 9F2D317215B8233800FAE848 /* Boxer Standalone.app */;
@@ -3678,6 +3676,9 @@
 				"pt-BR",
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Boxer */;
+			packageReferences = (
+				55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */,
+			);
 			projectDirPath = "";
 			projectReferences = (
 				{
@@ -4188,7 +4189,6 @@
 				9F7721BA12B38C4400072AE8 /* directserial.cpp in Sources */,
 				9F7721BB12B38C4400072AE8 /* libserial.cpp in Sources */,
 				55574809208FA8040045E635 /* saa1099.cpp in Sources */,
-				55BBA4F5235FB25F007AE319 /* CwlDemangle.swift in Sources */,
 				9F7721BC12B38C4400072AE8 /* misc_util.cpp in Sources */,
 				9F7721BD12B38C4400072AE8 /* nullmodem.cpp in Sources */,
 				9F7721BE12B38C4400072AE8 /* serialdummy.cpp in Sources */,
@@ -4351,7 +4351,6 @@
 				9F2D303615B8233800FAE848 /* dos_keyboard_layout.cpp in Sources */,
 				9F2D303715B8233800FAE848 /* dos_memory.cpp in Sources */,
 				9F2D303815B8233800FAE848 /* dos_misc.cpp in Sources */,
-				55BBA4F6235FB25F007AE319 /* CwlDemangle.swift in Sources */,
 				9F2D303915B8233800FAE848 /* dos_mscdex.cpp in Sources */,
 				9F2D303A15B8233800FAE848 /* dos_programs.cpp in Sources */,
 				9F2D303B15B8233800FAE848 /* dos_tables.cpp in Sources */,
@@ -5136,7 +5135,10 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Bundler/Boxer Bundler-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"$(inherited)",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.washboardabs.boxer-standalone-bundler";
@@ -5167,7 +5169,10 @@
 				GCC_PREFIX_HEADER = "Bundler/Boxer Bundler-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Bundler/Boxer Bundler-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks $(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"$(inherited)",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.washboardabs.boxer-standalone-bundler";
@@ -5348,7 +5353,8 @@
 				LD_NO_PIE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.14.4;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -5392,6 +5398,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MaddTheSane/CwlDemangle.git";
+			requirement = {
+				branch = swift5Compat;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55D432022504BB65008515E1 /* CwlDemangle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */;
+			productName = CwlDemangle;
+		};
+		55D4320D2504BC5B008515E1 /* CwlDemangle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */;
+			productName = CwlDemangle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }
