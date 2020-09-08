@@ -777,8 +777,8 @@
 		9FF91EB616CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF91EB516CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m */; };
 		9FF91EB716CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF91EB516CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m */; };
 		9FF91EB816CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF91EB516CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m */; };
-		9FF982111646C7640080F763 /* BXPrintSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF982101646C7640080F763 /* BXPrintSession.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9FF982121646C7640080F763 /* BXPrintSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF982101646C7640080F763 /* BXPrintSession.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9FF982111646C7640080F763 /* BXPrintSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF982101646C7640080F763 /* BXPrintSession.m */; };
+		9FF982121646C7640080F763 /* BXPrintSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF982101646C7640080F763 /* BXPrintSession.m */; };
 		9FFAFE2D10DE33FB00728BAC /* GameProfiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAFE2C10DE33FB00728BAC /* GameProfiles.plist */; };
 		9FFAFE4310DE343F00728BAC /* Configurations in Resources */ = {isa = PBXBuildFile; fileRef = 9FFAFE2E10DE343F00728BAC /* Configurations */; };
 		9FFC2AC012A19CCC008C2B3B /* Sample Game Icons in Resources */ = {isa = PBXBuildFile; fileRef = 9FFC2ABF12A19CCC008C2B3B /* Sample Game Icons */; };

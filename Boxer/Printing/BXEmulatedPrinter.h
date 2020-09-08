@@ -123,7 +123,7 @@ typedef NS_ENUM(uint8_t, BXESCPCharset) {
 #define BXESCPUnitSizeDefault 60.0
 
 /// The Default line height of 1/6th of an inch, i.e. 12pt
-#define BXESCPLineSpacingDefault 1 / 6.0
+#define BXESCPLineSpacingDefault (1 / 6.0)
 
 /// The text baseline is positioned this many inches below the current vertical head position.
 #define BXESCPBaselineOffset (20 / 180.0)
@@ -302,7 +302,7 @@ typedef NS_ENUM(uint8_t, BXESCPCharset) {
 /// The standard page size in inches. Defaults to US Letter (8.5 x 11").
 @property (assign, nonatomic) NSSize defaultPageSize;
 
-/// The size of the current page in inches. This may differ from defaultPageSize
+/// The size of the current page in inches. This may differ from \c defaultPageSize
 /// if the DOS session has configured a different size itself.
 @property (assign, nonatomic) NSSize pageSize;
 

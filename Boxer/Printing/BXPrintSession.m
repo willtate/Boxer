@@ -13,15 +13,15 @@
 @property (assign, nonatomic) BOOL pageInProgress;
 @property (assign, nonatomic, getter=isFinished) BOOL finished;
 @property (assign, nonatomic) NSUInteger numPages;
-@property (retain, nonatomic) NSGraphicsContext *previewContext;
-@property (retain, nonatomic) NSGraphicsContext *PDFContext;
+@property (strong, nonatomic) NSGraphicsContext *previewContext;
+@property (strong, nonatomic) NSGraphicsContext *PDFContext;
 
 /// Mutable internal versions of the readonly accessors we've exposed in the public API.
-@property (retain, nonatomic) NSMutableData *_mutablePDFData;
-@property (retain, nonatomic) NSMutableArray *_mutablePagePreviews;
+@property (strong, nonatomic) NSMutableData *_mutablePDFData;
+@property (strong, nonatomic) NSMutableArray<NSImage*> *_mutablePagePreviews;
 
 /// The bitmap canvas into which to draw the current page preview.
-@property (retain, nonatomic) NSBitmapImageRep *_previewCanvas;
+@property (strong, nonatomic) NSBitmapImageRep *_previewCanvas;
 
 
 /// Called when the session is created to create a PDF context and data backing.
@@ -40,7 +40,7 @@
 	CGDataConsumerRef _PDFDataConsumer;
 	NSMutableData *_PDFData;
 	
-	NSMutableArray *_pagePreviews;
+	NSMutableArray<NSImage*> *_pagePreviews;
 	void *_previewCanvasBacking;
 }
 
@@ -131,14 +131,6 @@
 {
     if (!self.isFinished)
         [self finishSession];
-    
-    self._mutablePDFData = nil;
-    self._mutablePagePreviews = nil;
-    self._previewCanvas = nil;
-    self.PDFContext = nil;
-    self.previewContext = nil;
-    
-    [super dealloc];
 }
 
 #pragma mark -
@@ -163,7 +155,7 @@
     NSSize canvasSize = NSMakeSize(ceil(size.width * self.previewDPI.width),
                                    ceil(size.height * self.previewDPI.height));
     
-    self._previewCanvas = [[[NSBitmapImageRep alloc] initWithBitmapDataPlanes: NULL
+    self._previewCanvas = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes: NULL
                                                                    pixelsWide: canvasSize.width
                                                                    pixelsHigh: canvasSize.height
                                                                 bitsPerSample: 8
@@ -172,7 +164,7 @@
                                                                      isPlanar: NO
                                                                colorSpaceName: NSDeviceRGBColorSpace
                                                                   bytesPerRow: 0
-                                                                 bitsPerPixel: 0] autorelease];
+                                                                 bitsPerPixel: 0];
     
     //Wrap this in an NSImage so upstream contexts can display the preview easily.
     NSImage *preview = [[NSImage alloc] initWithSize: canvasSize];
@@ -180,7 +172,6 @@
     
     //Add the new image into our array of page previews.
     [self._mutablePagePreviews addObject: preview];
-    [preview release];
     
     self.pageInProgress = YES;
     self.numPages++;
@@ -241,7 +232,7 @@
         [self _preparePreviewContext];
     }
     
-    return [[_previewContext retain] autorelease];
+    return _previewContext;
 }
 
 - (NSImage *) currentPagePreview

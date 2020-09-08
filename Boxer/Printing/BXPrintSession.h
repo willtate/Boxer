@@ -40,11 +40,11 @@
 
 /// The graphics context into which page content should be drawn for page preview images.
 /// Should only be used between calls to beginPage and finishPage.
-@property (readonly, retain, nonatomic, nullable) NSGraphicsContext *previewContext;
+@property (readonly, strong, nonatomic, nullable) NSGraphicsContext *previewContext;
 
 /// The graphics context into which page content should be drawn for PDF data.
 /// Should only be used between calls to beginPage and finishPage.
-@property (readonly, retain, nonatomic, nullable) NSGraphicsContext *PDFContext;
+@property (readonly, strong, nonatomic, nullable) NSGraphicsContext *PDFContext;
 
 
 #pragma mark -
