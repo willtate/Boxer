@@ -1126,9 +1126,8 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
 {
 	BXDriveGeometry geometry = BXCDROMGeometry;
     
-    int SDLCDNum = -1;
-
 #if !defined(C_SDL2)
+    int SDLCDNum = -1;
 	
 	
 	//Check that any audio CDs are actually present before enabling CD audio:

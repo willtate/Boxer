@@ -1019,7 +1019,7 @@
 		5514500024BE81E00002CE28 /* xxh3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxh3.h; sourceTree = "<group>"; };
 		5514500124BE81E00002CE28 /* wav.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wav.c; sourceTree = "<group>"; };
 		5514500224BE81E00002CE28 /* flac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = flac.c; sourceTree = "<group>"; };
-		5514500324BE81E00002CE28 /* stb_vorbis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_vorbis.h; sourceTree = "<group>"; };
+		5514500324BE81E00002CE28 /* stb_vorbis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_vorbis.h; sourceTree = "<group>"; usesTabs = 0; };
 		5514500524BE81E00002CE28 /* ppscale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppscale.h; sourceTree = "<group>"; };
 		5514500724BE81E00002CE28 /* ppscale.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ppscale.c; sourceTree = "<group>"; };
 		5514502524BE8BCC0002CE28 /* midi_alsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi_alsa.h; sourceTree = "<group>"; };
