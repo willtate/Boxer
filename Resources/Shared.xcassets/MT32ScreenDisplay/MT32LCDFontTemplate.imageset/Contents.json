@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "MT32LCDGridTemplate.png"
+      "filename" : "MT32LCDFontTemplate.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

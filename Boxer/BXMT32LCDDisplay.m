@@ -16,12 +16,12 @@
 
 - (NSImage *) pixelFont
 {
-    return [NSImage imageNamed: @"MT32LCDFontTemplate"];
+    return [NSImage imageNamed: @"MT32ScreenDisplay/MT32LCDFontTemplate"];
 }
 
 - (NSImage *) pixelGrid
 {
-    return [NSImage imageNamed: @"MT32LCDGridTemplate"];
+    return [NSImage imageNamed: @"MT32ScreenDisplay/MT32LCDGridTemplate"];
 }
 
 - (NSColor *) screenColor
@@ -48,7 +48,7 @@
 {
     return [NSShadow shadowWithBlurRadius: 10.0
                                    offset: NSMakeSize(0, -2.0)
-                                    color: [NSColor colorWithCalibratedWhite: 0 alpha: 0.66]];
+                                    color: [NSColor colorNamed: @"MT32ScreenDisplay/innerShadowColor"]];
 }
 
 - (NSGradient *) screenLighting
