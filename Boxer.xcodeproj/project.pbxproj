@@ -1443,7 +1443,6 @@
 		9F77209B12B38C4400072AE8 /* vga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vga.h; sourceTree = "<group>"; };
 		9F77209C12B38C4400072AE8 /* video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video.h; sourceTree = "<group>"; };
 		9F77209F12B38C4400072AE8 /* callback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = callback.cpp; sourceTree = "<group>"; };
-		9F7720A112B38C4400072AE8 /* cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cache.h; sourceTree = "<group>"; };
 		9F7720A212B38C4400072AE8 /* decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoder.h; sourceTree = "<group>"; };
 		9F7720A312B38C4400072AE8 /* dyn_fpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dyn_fpu.h; sourceTree = "<group>"; };
 		9F7720A412B38C4400072AE8 /* dyn_fpu_dh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dyn_fpu_dh.h; sourceTree = "<group>"; };
@@ -1451,7 +1450,6 @@
 		9F7720A612B38C4400072AE8 /* risc_x86.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = risc_x86.h; sourceTree = "<group>"; };
 		9F7720A712B38C4400072AE8 /* string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = string.h; sourceTree = "<group>"; };
 		9F7720A812B38C4400072AE8 /* core_dyn_x86.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = core_dyn_x86.cpp; sourceTree = "<group>"; };
-		9F7720AA12B38C4400072AE8 /* cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cache.h; sourceTree = "<group>"; };
 		9F7720AB12B38C4400072AE8 /* decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoder.h; sourceTree = "<group>"; };
 		9F7720AC12B38C4400072AE8 /* decoder_basic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoder_basic.h; sourceTree = "<group>"; };
 		9F7720AD12B38C4400072AE8 /* decoder_opcodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoder_opcodes.h; sourceTree = "<group>"; };
@@ -2831,7 +2829,6 @@
 		9F7720A012B38C4400072AE8 /* core_dyn_x86 */ = {
 			isa = PBXGroup;
 			children = (
-				9F7720A112B38C4400072AE8 /* cache.h */,
 				9F7720A212B38C4400072AE8 /* decoder.h */,
 				9F7720A312B38C4400072AE8 /* dyn_fpu.h */,
 				9F7720A412B38C4400072AE8 /* dyn_fpu_dh.h */,
@@ -2846,7 +2843,6 @@
 		9F7720A912B38C4400072AE8 /* core_dynrec */ = {
 			isa = PBXGroup;
 			children = (
-				9F7720AA12B38C4400072AE8 /* cache.h */,
 				9F7720AB12B38C4400072AE8 /* decoder.h */,
 				9F7720AC12B38C4400072AE8 /* decoder_basic.h */,
 				9F7720AD12B38C4400072AE8 /* decoder_opcodes.h */,

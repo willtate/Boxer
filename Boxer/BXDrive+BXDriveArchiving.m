@@ -41,6 +41,19 @@
     return YES;
 }
 
+- (NSUInteger)hash
+{
+    return _aliasData.hash;
+}
+
+- (BOOL)isEqual:(id)object
+{
+    if ([object isKindOfClass:[__NDAliasDecoder class]]) {
+        return [_aliasData isEqualToData:[(__NDAliasDecoder*)object aliasData]];
+    }
+    return NO;
+}
+
 @end
 
 
