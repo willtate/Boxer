@@ -115,7 +115,7 @@ typedef NS_OPTIONS(NSUInteger, BXMT32ROMType) {
 + (BXMT32ROMType) typeOfROMAtURL: (NSURL *)URL error: (out NSError **)outError NS_REFINED_FOR_SWIFT;
 
 /// Returns whether the specified pair of ROMs is MT32 or CM32L.
-/// Returns \c BXMT32ROMTypeUnknown and populates outError if there was an error
+/// Returns \c BXMT32ROMTypeUnknown and populates \c outError if there was an error
 /// determining the types of the ROMs or if they are mismatched.
 + (BXMT32ROMType) typeOfROMPairWithControlROMURL: (NSURL *)controlROMURL
                                        PCMROMURL: (NSURL *)PCMROMURL

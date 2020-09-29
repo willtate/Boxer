@@ -38,7 +38,7 @@
 /// This was observed in OS X 10.7.3 with 63 file transfers.
 #define ADBDefaultMaxConcurrentFileTransfers 10
 
-/// ADBFileTransferSet manages a set of individual file transfer operations and reports on their
+/// @c ADBFileTransferSet manages a set of individual file transfer operations and reports on their
 /// progress as a whole. The actual transfer operations can be anything, as long as they conform
 /// to ADBFileTransfer.
 @interface ADBFileTransferSet : ADBOperationSet <ADBFileTransfer>

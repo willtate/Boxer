@@ -105,7 +105,8 @@ typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *_Nullable url, NSError *
 
 /// Return an open stdlib \c FILE handle for the resource represented by the specified path,
 /// using the specified access mode (in the standard fopen format). The calling context is
-/// responsible for closing the file handle.<br>
+/// responsible for closing the file handle.
+///
 /// Return \c NULL and populates \c outError on failure.
 - (nullable FILE *) openFileAtPath: (NSString *)path
                             inMode: (const char *)accessMode
@@ -123,7 +124,8 @@ typedef BOOL (^ADBFilesystemFileURLErrorHandler)(NSURL *_Nullable url, NSError *
 ///
 /// These URLs do not necessarily exist in the real OS X filesystem and may not be usable by
 /// standard @c NSURL introspection methods or AppKit loading methods. They are intended mainly
-/// for storing filesystem-unique paths and simplifying lookups across multiple filesystems.<br>
+/// for storing filesystem-unique paths and simplifying lookups across multiple filesystems.
+///
 /// IMPLEMENTATION REQUIREMENTS:
 ///
 /// - URLs converted to logical filesystem paths must be absolute, i.e. begin with @"/".

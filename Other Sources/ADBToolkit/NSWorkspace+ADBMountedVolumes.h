@@ -81,7 +81,7 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
 
 /// The UTIs of disk image formats that @c mountImageAtURL:options:error:
 /// will automatically treat as raw images.
-@property (class, readonly) NSSet<NSString*> *rawImageTypes;
+@property (class, strong, readonly) NSSet<NSString*> *rawImageTypes;
 
 #pragma mark - Introspecting mounted volumes
 
@@ -114,7 +114,7 @@ typedef NS_OPTIONS(NSUInteger, ADBImageMountingOptions) {
                                          error: (out NSError **)outError;
 
 /// Returns structured plist info from hdiutil about mounted images and their volumes.
-/// Returns nil and populates outError if the information could not be retrieved.
+/// Returns @c nil and populates @c outError if the information could not be retrieved.
 - (nullable NSArray *) mountedImageInfoWithError: (out NSError **)outError;
 
 /// Returns the URL of the source disk image from which the specified volume path was mounted.
