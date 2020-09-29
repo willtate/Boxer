@@ -222,7 +222,7 @@
             {
                 *outError = [NSError errorWithDomain: NSCocoaErrorDomain
                                                 code: NSFileReadNoSuchFileError
-                                            userInfo: @{NSURLErrorKey: URL}];
+                                            userInfo: nil];
             }
             return NO;
         }

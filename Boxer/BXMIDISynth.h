@@ -33,8 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Sets the specified soundfont with which MIDI should be played back.
 /// \c soundFontURL will be updated with the specified URL.
+///
 /// Pass \c nil as the path to clear a previous custom soundfont and revert
 /// to using the system soundfont.
+///
 /// Returns \c YES if the soundfont was loaded/cleared, or \c NO and populates
 /// \c outError if the soundfont couldn't be loaded for any reason (in which
 /// case \c soundFontURL will remain unchanged.)
