@@ -1034,6 +1034,7 @@
 		5514503824BE8DE50002CE28 /* envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = envelope.cpp; sourceTree = "<group>"; };
 		5514503B24BE8FB90002CE28 /* program_autotype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = program_autotype.cpp; sourceTree = "<group>"; };
 		5514503C24BE8FB90002CE28 /* program_autotype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program_autotype.h; sourceTree = "<group>"; };
+		5529311E252AF0DA0069EB35 /* soft_limiter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = soft_limiter.h; sourceTree = "<group>"; };
 		55488508226A501000A879B3 /* drive_overlay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drive_overlay.cpp; sourceTree = "<group>"; };
 		554E2B6C1BFAF6720038C506 /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shared.xcassets; sourceTree = "<group>"; };
 		554E2B6F1BFAF6D90038C506 /* Boxer only.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Boxer only.xcassets"; sourceTree = "<group>"; };
@@ -2772,6 +2773,7 @@
 				9F77209612B38C4400072AE8 /* serialport.h */,
 				9F77209712B38C4400072AE8 /* setup.h */,
 				9F77209812B38C4400072AE8 /* shell.h */,
+				5529311E252AF0DA0069EB35 /* soft_limiter.h */,
 				9F77209912B38C4400072AE8 /* support.h */,
 				9F77209A12B38C4400072AE8 /* timer.h */,
 				55144FE824BE7FDF0002CE28 /* types.h */,
