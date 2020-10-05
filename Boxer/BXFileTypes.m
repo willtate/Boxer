@@ -477,8 +477,21 @@ NSString * const BXExecutableTypesErrorDomain = @"BXExecutableTypesErrorDomain";
     }
     else if ([URL matchingFileType: [NSSet setWithObjects: BXISOImageType, BXCDRImageType, nil]])
     {
-        //TODO: if parsing of the image fails, fall back on ADBMountableImage
-        return [ADBISOImage imageWithContentsOfURL: URL error: outError];
+        NSError *ourError = nil;
+        ADBISOImage *isoImg = [ADBISOImage imageWithContentsOfURL: URL error: &ourError];
+        if (!isoImg) {
+            ADBMountableImage *mountable = [ADBMountableImage imageWithContentsOfURL: URL error: outError];
+            if (!mountable) {
+                if (outError) {
+                    *outError = ourError;
+                }
+                return nil;
+            } else {
+                return mountable;
+            }
+        } else {
+            return isoImg;
+        }
     }
     else if ([URL matchingFileType: [ADBMountableImage supportedImageTypes]])
     {
