@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// Source paths whose filesize is larger than this in bytes will be treated
-/// as CD-sized by isCDROMSizedGameAtPath: and shouldImportSourceFilesFromPath:
+/// as CD-sized by \c isCDROMSizedGameAtPath: and \c shouldImportSourceFilesFromPath:
 static const NSUInteger BXCDROMSizeThreshold  = 100 * 1024 * 1024;
 
 /// The free disk space in MB to allow on drive C when installing games from CD-ROM.

@@ -38,7 +38,7 @@ typedef NS_ENUM(uint8_t, BXESCPQuality) {
 };
 
 typedef NS_ENUM(int8_t, BXESCPMSBControl) {
-    BXNoMSBControl NS_SWIFT_NAME(noMSBControl) = -1,
+    BXNoMSBControl NS_SWIFT_NAME(none) = -1,
     BXMSB0 NS_SWIFT_NAME(msb0) = 0,
     BXMSB1 NS_SWIFT_NAME(msb1) = 1,
 };
@@ -270,7 +270,9 @@ typedef NS_ENUM(uint8_t, BXESCPCharset) {
 
 /// Enables multipoint mode, allowing the use of an arbitrary pitch and font size.
 @property (assign, nonatomic) BOOL multipointEnabled;
+/// The horizontal font pitch in characters per inch
 @property (assign, nonatomic) double multipointFontPitch;
+/// The vertical font size in points
 @property (assign, nonatomic) double multipointFontSize;
 
 @property (assign, nonatomic) BXESCPCharTable activeCharTable;
@@ -317,7 +319,8 @@ typedef NS_ENUM(uint8_t, BXESCPCharset) {
 @property (readonly, nonatomic) NSPoint headPosition;
 
 /// The horizontal distance the head will advance when printing a character in the current pitch.
-/// Setting a value other than BXCharacterAdvanceAuto will override the calculated character advance.
+///
+/// Setting a value other than \c BXCharacterAdvanceAuto will override the calculated character advance.
 /// Unused when in proportional mode, in which case the actual width of the character is used.
 /// Changing most font properties will reset the character advance.
 @property (assign, nonatomic) double characterAdvance;

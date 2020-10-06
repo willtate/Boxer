@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 #pragma mark -
 #pragma mark Constants
 
@@ -20,7 +22,7 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 	BXDriveVirtual		= 3
 };
 
-/// Setting freeSpace to BXDefaultFreeSpace indicates that the drive should use whatever free space DOSBox thinks is best.
+/// Setting freeSpace to @c BXDefaultFreeSpace indicates that the drive should use whatever free space DOSBox thinks is best.
 #define BXDefaultFreeSpace -1
 
 
@@ -30,7 +32,7 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 @protocol ADBFilesystemPathAccess, ADBFilesystemLogicalURLAccess;
 
 /// \c BXDrive represents a single DOS drive and encapsulates all the data needed to mount the drive
-/// and locate it on the OS X filesystem. BXDrives are mounted via ADBFilesystem's mountDrive: method.
+/// and locate it on the OS X filesystem. BXDrives are mounted via ADBFilesystem's @c mountDrive: method.
 @interface BXDrive : NSObject
 
 #pragma mark - Properties
@@ -38,42 +40,42 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 /// The location on the OS X filesystem of this drive's contents.
 /// This is the canonical location of the drive and is used when resolving absolute
 /// URLs to DOS filesystem paths. It may or may not be the same as the location that
-/// actually gets mounted in DOSBox: see mountPointURL below.
+/// actually gets mounted in DOSBox: see @c mountPointURL below.
 ///
 /// Several properties are derived automatically from the source URL: Changing the
 /// source URL will recalculate mountPointURL, letter, title, volumeLabel and type
 /// unless these have been explicitly overridden.
-@property (copy, nonatomic) NSURL *sourceURL;
+@property (copy, nonatomic, nullable) NSURL *sourceURL;
 
 /// The OS X filesystem location that will be mounted in DOSBox.
 /// Usually this is the same as the source URL, but differs for e.g. CD-ROM bundles.
-@property (copy, nonatomic) NSURL *mountPointURL;
+@property (copy, nonatomic, nullable) NSURL *mountPointURL;
 
 /// An optional location on the OS X filesystem to which we will perform
 /// shadow write operations for this drive. That is, any files that are
 /// opened for modification on this drive will be silently written to this
 /// location instead of creating/modifying files in the original location.
-@property (copy, nonatomic) NSURL *shadowURL;
+@property (copy, nonatomic, nullable) NSURL *shadowURL;
 
 
 /// The DOS drive letter under which this drive will be mounted.
-/// If nil, \c BXEmulator will choose an appropriate drive letter at mount time
+/// If nil, @c BXEmulator will choose an appropriate drive letter at mount time
 /// (and update this property with the chosen letter).
-@property (copy, nonatomic) NSString *letter;
+@property (copy, nonatomic, nullable) NSString *letter;
 
 /// The display title to show for this drive in drive lists. Automatically derived
 /// from the filename of the source URL, but can be modified.
-@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic, nullable) NSString *title;
 
 /// The volume label to use for this drive in DOS. Automatically derived from the filename
 /// of the source URL, but can be modified. For image-based drives this value is ignored,
 /// since the volume label is stored inside the image itself.
-@property (copy, nonatomic) NSString *volumeLabel;
+@property (copy, nonatomic, nullable) NSString *volumeLabel;
 
 /// The volume label that the drive ended up with after mounting in DOS.
 /// This is populated by BXEmulator when the drive is first mounted and will be a munged
 /// version of the above: cropped to 11 characters and uppercased for most drive types.
-@property (copy, nonatomic) NSString *DOSVolumeLabel;
+@property (copy, nonatomic, nullable) NSString *DOSVolumeLabel;
 
 /// The amount of free disk space to report for the drive, in bytes. Defaults to
 /// BXDefaultFreeSpace: which is ~250MB for hard disks, 1.44MB for floppies and 0B for CDROMs.
@@ -99,7 +101,7 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 @property (nonatomic, getter=isHidden) BOOL hidden;
 
 /// Whether this drive is currently mounted in an emulation session.
-/// This is merely a flag to make displaying the state of a drive easier; setting it to YES
+/// This is merely a flag to make displaying the state of a drive easier; setting it to @c YES
 /// will not actually mount the drive, just indicate that it is mounted somewhere.
 @property (nonatomic, getter=isMounted) BOOL mounted;
 
@@ -131,6 +133,7 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 + (NSString *) localizedDescriptionForType: (BXDriveType)driveType;
 
 /// Determines the most appropriate drive type for the specified file or folder. This is based on:
+///
 /// 1. the file's type identifier: e.g. disk images will be treated as CD-ROM or floppy drives;
 /// 2. the filesystem of the URL's volume: e.g. folders located on a CD-ROM volume will be detected as CD-ROMs.
 + (BXDriveType) preferredTypeForContentsOfURL: (NSURL *)URL;
@@ -139,7 +142,7 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 ///
 /// For regular folders and CD-ROM volumes, this will be their filename;
 /// For .floppy, .cdrom, .cdmedia and .harddisk folders, this will be their filename
-/// minus extension and parsed drive letter (see preferredDriveLetterForContentsOfURL: below.)
+/// minus extension and parsed drive letter (see @c preferredDriveLetterForContentsOfURL: below.)
 + (NSString *) preferredVolumeLabelForContentsOfURL: (NSURL *)URL;
 
 /// Determines a suitable display title for the specified location.
@@ -147,11 +150,11 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 + (NSString *) preferredTitleForContentsOfURL: (NSURL *)URL;
 
 /// Determines a recommended drive letter from the specified location,
-/// or \c nil if no specific drive letter is appropriate.
+/// or @c nil if no specific drive letter is appropriate.
 ///
 /// If the location is a disk image or a Boxer mountable folder, and the filename starts with a single
 /// letter followed by a space, this will be parsed out and used as the drive letter.
-+ (NSString *) preferredDriveLetterForContentsOfURL: (NSURL *)URL;
++ (nullable NSString *) preferredDriveLetterForContentsOfURL: (NSURL *)URL;
 
 /// Returns the location that would actually be mounted when creating a drive with the specified source URL.
 /// This is usually the same as the source URL itself, but will differ for e.g. CD-ROM bundles.
@@ -165,12 +168,12 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 /// letter will be determined when the drive is first mounted.
 /// If driveType is specified, a drive of that type will be created; if it is BXDriveTypeAuto,
 /// the most appropriate type will be determined from the contents of the URL.
-- (instancetype) initWithContentsOfURL: (NSURL *)sourceURL
-                                letter: (NSString *)driveLetter
+- (instancetype) initWithContentsOfURL: (nullable NSURL *)sourceURL
+                                letter: (nullable NSString *)driveLetter
                                   type: (BXDriveType)driveType;
 
-+ (instancetype) driveWithContentsOfURL: (NSURL *)sourceURL
-                                 letter: (NSString *)driveLetter
++ (instancetype) driveWithContentsOfURL: (nullable NSURL *)sourceURL
+                                 letter: (nullable NSString *)driveLetter
                                    type: (BXDriveType)driveType;
 
 /// Returns a marker for a DOSBox internal virtual drive.
@@ -188,13 +191,13 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 - (BOOL) exposesLogicalURL: (NSURL *)URL;
 
 /// Returns the location of the specified logical URL relative to the filesystem of the drive:
-/// or \c nil if the specified location is not contained on this drive.
-/// Used by BXDOSFileSystem for matching OS X filesystem paths with DOS filesystem paths.
-- (NSString *) relativeLocationOfLogicalURL: (NSURL *)URL;
+/// or @c nil if the specified location is not contained on this drive.
+/// Used by @c BXDOSFileSystem for matching OS X filesystem paths with DOS filesystem paths.
+- (nullable NSString *) relativeLocationOfLogicalURL: (NSURL *)URL;
 
 /// Returns a logical URL representing the specified DOS path, as constructed by the drive's filesystem.
 /// Note that this is not the same as a local filesystem path.
-- (NSURL *) logicalURLForDOSPath: (NSString *)dosPath;
+- (nullable NSURL *) logicalURLForDOSPath: (NSString *)dosPath;
 
 /// Indicates that the specified URL represents the same resource as the contents of this drive.
 /// This is used by the drive's filesystem to correctly resolve URLs to resources in different apparent locations.
@@ -217,3 +220,5 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 - (NSComparisonResult) letterCompare: (BXDrive *)comparison;
 
 @end
+
+NS_ASSUME_NONNULL_END
