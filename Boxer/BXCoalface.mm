@@ -535,7 +535,7 @@ void boxer_log(char const* format,...)
 	char buf[512];
 	va_list msg;
 	va_start(msg,format);
-	vsprintf(buf,format,msg);
+	vsnprintf(buf,sizeof(buf)-1,format,msg);
 	strcat(buf,"\n");
 	va_end(msg);
 	printf("%s",buf);
