@@ -25,13 +25,13 @@ typedef NS_ENUM(NSInteger, BXControllerStyle) {
 };
 
 
-/// \c BXControllerProfile is paired with a \c DDHidDevice and maps actual HID events from that 
+/// @c BXControllerProfile is paired with a @c DDHidDevice and maps actual HID events from that 
 /// device into inputs on emulated input devices.
 /// The class can programmatically design a suitable control mapping for a specified HID device
 /// based on the device's elements; it is also intended to be subclassed for devices that require
 /// more specific translation.
 
-/// \c BXControllerProfile is controller- and joystick-specific and each emulation session maintains
+/// @c BXControllerProfile is controller- and joystick-specific and each emulation session maintains
 /// its own set of active controller profiles.
 @interface BXHIDControllerProfile : NSObject
 
@@ -42,24 +42,27 @@ typedef NS_ENUM(NSInteger, BXControllerStyle) {
 @property (strong, nonatomic) id <BXEmulatedJoystick> emulatedJoystick;
 @property (strong, nonatomic) BXEmulatedKeyboard *emulatedKeyboard;
 
-/// A dictionary of DDHidUsage -> BXHIDInputBinding mappings.
+/// A dictionary of @c DDHidUsage -> @c BXHIDInputBinding mappings.
 @property (readonly, strong, nonatomic) NSMutableDictionary *bindings;
 
 /// The style of this controller. Used for tweaking certain mapping behaviours.
 @property (readonly, nonatomic) BXControllerStyle controllerStyle;
 
-/// Returns a BXControllerProfile that maps the specified HID controller
+/// Returns a @c BXControllerProfile that maps the specified HID controller
 /// to the specified emulated joystick.
-+ (id) profileForHIDDevice: (DDHidJoystick *)device
-          emulatedJoystick: (id <BXEmulatedJoystick>)joystick
-                  keyboard: (BXEmulatedKeyboard *)keyboard;
++ (instancetype) profileForHIDDevice: (DDHidJoystick *)device
+                    emulatedJoystick: (id <BXEmulatedJoystick>)joystick
+                            keyboard: (BXEmulatedKeyboard *)keyboard;
 
-- (id) initWithHIDDevice: (DDHidJoystick *)device
-        emulatedJoystick: (id <BXEmulatedJoystick>)joystick
-                keyboard: (BXEmulatedKeyboard *)keyboard;
+/// Returns a @c BXControllerProfile that maps the specified HID controller
+/// to the specified emulated joystick.
+- (instancetype) initWithHIDDevice: (DDHidJoystick *)device
+                  emulatedJoystick: (id <BXEmulatedJoystick>)joystick
+                          keyboard: (BXEmulatedKeyboard *)keyboard;
 
-/// Set/get the specified input binding for the specified element usage
+/// Get the specified input binding for the specified element usage
 - (id <BXHIDInputBinding>) bindingForElement: (DDHidElement *)element;
+/// Set the specified input binding for the specified element usage
 - (void) setBinding: (id <BXHIDInputBinding>)binding
          forElement: (DDHidElement *)element;
 

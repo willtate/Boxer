@@ -61,6 +61,7 @@
 		554E2B701BFAF6D90038C506 /* Boxer only.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6F1BFAF6D90038C506 /* Boxer only.xcassets */; };
 		55540E262545604500B88BE3 /* fs_utils_posix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55540E252545604400B88BE3 /* fs_utils_posix.cpp */; };
 		55540E272545604500B88BE3 /* fs_utils_posix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55540E252545604400B88BE3 /* fs_utils_posix.cpp */; };
+		55540E432545704700B88BE3 /* BXCHFlightstickProUSB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DD6CB15EE8047003C9A25 /* BXCHFlightstickProUSB.m */; };
 		55574801208FA8040045E635 /* ymf262.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F0208FA8030045E635 /* ymf262.cpp */; };
 		55574802208FA8040045E635 /* ymf262.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F0208FA8030045E635 /* ymf262.cpp */; };
 		55574803208FA8040045E635 /* fmopl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F2208FA8030045E635 /* fmopl.cpp */; };
@@ -387,7 +388,7 @@
 		9F2D315715B8233800FAE848 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBC3C770F56E0D7001811F2 /* CoreMIDI.framework */; };
 		9F2D315815B8233800FAE848 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2140FE0F59F28000A5A183 /* QuartzCore.framework */; };
 		9F2D315915B8233800FAE848 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4E042B0F67E72300427D50 /* AudioToolbox.framework */; };
-		9F2D315A15B8233800FAE848 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8A975F10E7EDDE00A4B72A /* libicucore.dylib */; };
+		9F2D315A15B8233800FAE848 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8A975F10E7EDDE00A4B72A /* libicucore.tbd */; };
 		9F2D315D15B8233800FAE848 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F61942312340F5400F35AB4 /* ScriptingBridge.framework */; };
 		9F2D316015B8233800FAE848 /* DiskArbitration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBAA8F3134AFABD0092BF95 /* DiskArbitration.framework */; };
 		9F2D316215B8233800FAE848 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F731B51136331A9005E564F /* IOKit.framework */; };
@@ -617,7 +618,7 @@
 		9F80E80016DA3170001C3162 /* ADBFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80E7FE16DA316F001C3162 /* ADBFileHandle.m */; };
 		9F86DB401431EF5F00A2EFB6 /* BXMIDIDeviceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F86DB3F1431EF5F00A2EFB6 /* BXMIDIDeviceMonitor.m */; };
 		9F887105156F85F9006CDB5F /* BXFileTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F887104156F85F8006CDB5F /* BXFileTypes.m */; };
-		9F8A976010E7EDDE00A4B72A /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8A975F10E7EDDE00A4B72A /* libicucore.dylib */; };
+		9F8A976010E7EDDE00A4B72A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8A975F10E7EDDE00A4B72A /* libicucore.tbd */; };
 		9F8A9CD2143E120B00C37A93 /* MT32ROMTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F8A9CD1143E120B00C37A93 /* MT32ROMTypes.plist */; };
 		9F8B282A1709C4A100B31A14 /* ADBFilesystemBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B28291709C4A100B31A14 /* ADBFilesystemBase.m */; };
 		9F8B282B1709C4A100B31A14 /* ADBFilesystemBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B28291709C4A100B31A14 /* ADBFilesystemBase.m */; };
@@ -1642,7 +1643,7 @@
 		9F86DB3F1431EF5F00A2EFB6 /* BXMIDIDeviceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXMIDIDeviceMonitor.m; sourceTree = "<group>"; };
 		9F887103156F85F8006CDB5F /* BXFileTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXFileTypes.h; sourceTree = "<group>"; };
 		9F887104156F85F8006CDB5F /* BXFileTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXFileTypes.m; sourceTree = "<group>"; };
-		9F8A975F10E7EDDE00A4B72A /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		9F8A975F10E7EDDE00A4B72A /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		9F8A9CD1143E120B00C37A93 /* MT32ROMTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MT32ROMTypes.plist; sourceTree = "<group>"; };
 		9F8B28281709C4A100B31A14 /* ADBFilesystemBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBFilesystemBase.h; sourceTree = "<group>"; };
 		9F8B28291709C4A100B31A14 /* ADBFilesystemBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBFilesystemBase.m; sourceTree = "<group>"; };
@@ -1950,7 +1951,7 @@
 				55E6A0B61C00C86200285593 /* MT32Emu.framework in Frameworks */,
 				9F2140FF0F59F28000A5A183 /* QuartzCore.framework in Frameworks */,
 				9F4E042C0F67E72300427D50 /* AudioToolbox.framework in Frameworks */,
-				9F8A976010E7EDDE00A4B72A /* libicucore.dylib in Frameworks */,
+				9F8A976010E7EDDE00A4B72A /* libicucore.tbd in Frameworks */,
 				9F20C28B11E5D848005AF541 /* Sparkle.framework in Frameworks */,
 				05F9A20224BAA7AB00969496 /* SDL2.framework in Frameworks */,
 				9F61942412340F5400F35AB4 /* ScriptingBridge.framework in Frameworks */,
@@ -1976,7 +1977,7 @@
 				8F97922A24C0E32A0054F84D /* OpenEmuShaders.framework in Frameworks */,
 				5585CEB524BB834F008121D9 /* SDL2.framework in Frameworks */,
 				9F2D315915B8233800FAE848 /* AudioToolbox.framework in Frameworks */,
-				9F2D315A15B8233800FAE848 /* libicucore.dylib in Frameworks */,
+				9F2D315A15B8233800FAE848 /* libicucore.tbd in Frameworks */,
 				5585CEB824BB835F008121D9 /* SDL2_net.framework in Frameworks */,
 				55E6A0C21C00C88A00285593 /* MT32Emu.framework in Frameworks */,
 				9F2D315D15B8233800FAE848 /* ScriptingBridge.framework in Frameworks */,
@@ -2172,7 +2173,7 @@
 			isa = PBXGroup;
 			children = (
 				55E21B4C23FF50E500D53932 /* libz.tbd */,
-				9F8A975F10E7EDDE00A4B72A /* libicucore.dylib */,
+				9F8A975F10E7EDDE00A4B72A /* libicucore.tbd */,
 				9FBC3C130F56D6E8001811F2 /* Bundled Frameworks */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
@@ -4348,6 +4349,7 @@
 				9F2D303315B8233800FAE848 /* dos_execute.cpp in Sources */,
 				9F2D303415B8233800FAE848 /* dos_files.cpp in Sources */,
 				9F2D303515B8233800FAE848 /* dos_ioctl.cpp in Sources */,
+				55540E432545704700B88BE3 /* BXCHFlightstickProUSB.m in Sources */,
 				9F2D303615B8233800FAE848 /* dos_keyboard_layout.cpp in Sources */,
 				9F2D303715B8233800FAE848 /* dos_memory.cpp in Sources */,
 				9F2D303815B8233800FAE848 /* dos_misc.cpp in Sources */,
