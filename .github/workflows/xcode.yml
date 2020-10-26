@@ -1,4 +1,4 @@
-name: Xcode starter workflow
+name: Xcode basic workflow
 
 on:
   push:
@@ -20,6 +20,7 @@ jobs:
         env:
           platform: ${{ 'Mac OS X' }}
         run: |
+          xcodebuild -derivedDataPath ./build -workspace Boxer.xcworkspace -scheme "Boxer CI" -configuration "Release" clean
           xcodebuild -derivedDataPath ./build -workspace Boxer.xcworkspace -scheme "Boxer CI" -configuration "Release"
       - name: Build Boxer Bundler
         env:
