@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import CwlDemangle
+import CwlDemangle
 
 @objc(ADBExceptionMangledFunctionType)
 enum MangledFunctionType: Int {
@@ -49,12 +49,9 @@ extension NSException {
     }
     
     @objc static func demangledSwiftFunctionName(_ functionName: String) -> String? {
-        return nil // CwlDemangle is having problems with CI.
-        /*
         guard let parsed = try? parseMangledSwiftSymbol(functionName, isType: true) else {
             return nil
         }
         return parsed.description
-         */
     }
 }

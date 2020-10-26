@@ -62,6 +62,8 @@
 		55540E262545604500B88BE3 /* fs_utils_posix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55540E252545604400B88BE3 /* fs_utils_posix.cpp */; };
 		55540E272545604500B88BE3 /* fs_utils_posix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55540E252545604400B88BE3 /* fs_utils_posix.cpp */; };
 		55540E432545704700B88BE3 /* BXCHFlightstickProUSB.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DD6CB15EE8047003C9A25 /* BXCHFlightstickProUSB.m */; };
+		55540E632546B87200B88BE3 /* CwlDemangle in Frameworks */ = {isa = PBXBuildFile; productRef = 55540E622546B87200B88BE3 /* CwlDemangle */; };
+		55540E6E2546B87D00B88BE3 /* CwlDemangle in Frameworks */ = {isa = PBXBuildFile; productRef = 55540E6D2546B87D00B88BE3 /* CwlDemangle */; };
 		55574801208FA8040045E635 /* ymf262.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F0208FA8030045E635 /* ymf262.cpp */; };
 		55574802208FA8040045E635 /* ymf262.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F0208FA8030045E635 /* ymf262.cpp */; };
 		55574803208FA8040045E635 /* fmopl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 555747F2208FA8030045E635 /* fmopl.cpp */; };
@@ -1946,6 +1948,7 @@
 				9FBC32120F56C3E9001811F2 /* Carbon.framework in Frameworks */,
 				9FBC3C780F56E0D7001811F2 /* AudioUnit.framework in Frameworks */,
 				9FBC3C790F56E0D7001811F2 /* CoreMIDI.framework in Frameworks */,
+				55540E632546B87200B88BE3 /* CwlDemangle in Frameworks */,
 				9FB769E3164861D8000644C2 /* Quartz.framework in Frameworks */,
 				05F9A20024BAA7AA00969496 /* SDL2_net.framework in Frameworks */,
 				55E6A0B61C00C86200285593 /* MT32Emu.framework in Frameworks */,
@@ -1975,6 +1978,7 @@
 				9F2D315815B8233800FAE848 /* QuartzCore.framework in Frameworks */,
 				55E6A0CA1C00C88A00285593 /* BGHUDAppKit.framework in Frameworks */,
 				8F97922A24C0E32A0054F84D /* OpenEmuShaders.framework in Frameworks */,
+				55540E6E2546B87D00B88BE3 /* CwlDemangle in Frameworks */,
 				5585CEB524BB834F008121D9 /* SDL2.framework in Frameworks */,
 				9F2D315915B8233800FAE848 /* AudioToolbox.framework in Frameworks */,
 				9F2D315A15B8233800FAE848 /* libicucore.tbd in Frameworks */,
@@ -3592,6 +3596,7 @@
 			);
 			name = Boxer;
 			packageProductDependencies = (
+				55540E622546B87200B88BE3 /* CwlDemangle */,
 			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = Boxer;
@@ -3618,6 +3623,7 @@
 			);
 			name = "Boxer Standalone";
 			packageProductDependencies = (
+				55540E6D2546B87D00B88BE3 /* CwlDemangle */,
 			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = Boxer;
@@ -5407,6 +5413,19 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55540E622546B87200B88BE3 /* CwlDemangle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */;
+			productName = CwlDemangle;
+		};
+		55540E6D2546B87D00B88BE3 /* CwlDemangle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */;
+			productName = CwlDemangle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }
