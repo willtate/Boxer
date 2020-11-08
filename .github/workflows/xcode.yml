@@ -20,9 +20,6 @@ jobs:
         env:
           platform: ${{ 'Mac OS X' }}
         run: |
-          cd Vendor/OpenEmuShaders/3rdparty
-          make clean
-          cd ../../..
           xcodebuild -derivedDataPath ./build -workspace Boxer.xcworkspace -scheme "Boxer CI" -configuration "Release"
       - name: Build Boxer Bundler
         env:
