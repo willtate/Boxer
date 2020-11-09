@@ -13,7 +13,7 @@
 /// \c BXWelcomeButtonDraggingDelegate is a basic protocol to let us pass the work of handling
 /// welcome button drag-drop events off to an arbitrary delegate (in practice, the window controller.)
 /// These methods take an additional button: parameter to let the delegate know which button is
-/// receiving the drag operation (since the NSDraggingInfo protocol offers no way to determine this.)
+/// receiving the drag operation (since the \c NSDraggingInfo protocol offers no way to determine this.)
 @protocol BXWelcomeButtonDraggingDelegate <NSObject>
 
 - (NSDragOperation) button: (BXWelcomeButton *)button draggingEntered: (id <NSDraggingInfo>)sender;

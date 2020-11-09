@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, BXAxisPolarity) {
 
 #pragma mark - Protocols
 
-/// BXOutputBindings take a scalar input value from 0.0 to 1.0 and trigger a signal on an emulated input device:
+/// @c BXOutputBindings take a scalar input value from 0.0 to 1.0 and trigger a signal on an emulated input device:
 /// e.g. an emulated joystick or keyboard.
 @protocol BXOutputBinding <NSObject>
 

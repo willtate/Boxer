@@ -13,7 +13,7 @@
 @interface BXXBOBluetoothControllerProfile: BXHIDControllerProfile
 @end
 
-enum {
+NS_ENUM(unsigned int) {
     BXXBOBTControllerLeftStickX       = 0x01 << 16 | kHIDUsage_GD_X,
     BXXBOBTControllerLeftStickY       = 0x01 << 16 | kHIDUsage_GD_Y,
     BXXBOBTControllerRightStickX      = 0x01 << 16 | kHIDUsage_GD_Z,
@@ -22,7 +22,7 @@ enum {
     BXXBOBTControllerRightTrigger     = 0x02 << 16 | kHIDUsage_Sim_Accelerator
 };
 
-enum {
+NS_ENUM(unsigned int) {
     BXXBOBTControllerAButton = 0x09 << 16 | kHIDUsage_Button_1,
     BXXBOBTControllerBButton,
     BXXBOBTControllerXButton = 0x09 << 16 | kHIDUsage_Button_4,
