@@ -13,19 +13,20 @@
 
 #pragma mark - Properties
 
-//The popover for this documentation panel. Created the first time it is needed.
-//Unused on 10.6, which does not support popovers.
+/// The popover for this documentation panel. Created the first time it is needed.
+/// Unused on 10.6, which does not support popovers.
 @property (strong, nonatomic) NSPopover *popover;
 
-//The documentation browsers for our popover and window respectively.
-//Populated the first time the documentation list is displayed in either mode.
-//(These cannot be shared, as the two may be displayed at the same time.)
+/// The documentation browsers for our popover and window respectively.
+/// Populated the first time the documentation list is displayed in either mode.
+/// (These cannot be shared, as the two may be displayed at the same time.)
 @property (strong, nonatomic) BXDocumentationBrowser *popoverBrowser;
 @property (strong, nonatomic) BXDocumentationBrowser *windowBrowser;
 
 
-//Resize the window/popover to accommodate the specified number of documentation items.
+/// Resize the window to accommodate the specified number of documentation items.
 - (void) _sizeWindowToFitNumberOfItems: (NSUInteger)numItems;
+/// Resize the popover to accommodate the specified number of documentation items.
 - (void) _sizePopoverToFitNumberOfItems: (NSUInteger)numItems;
 
 @end

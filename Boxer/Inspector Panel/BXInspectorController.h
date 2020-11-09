@@ -8,7 +8,7 @@
 
 #import "ADBTabbedWindowController.h"
 
-enum {
+NS_ENUM(NSInteger) {
 	BXGameInspectorPanelIndex		= 0,
 	BXCPUInspectorPanelIndex        = 1,
 	BXMouseInspectorPanelIndex      = 2,
@@ -31,7 +31,7 @@ enum {
 
 /// A singleton instance of the inspector controller, which is shared by all session windows.
 /// The controller should always be accessed through this method.
-+ (BXInspectorController *) controller;
+@property (class, readonly) BXInspectorController *controller;
 
 /// Select the specified panel and reveal the window.
 - (IBAction) showGamePanel:		(id)sender;

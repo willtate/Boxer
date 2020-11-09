@@ -28,10 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// Returns the dropzone shadow with which to render the border and icon of the dropzone
-+ (NSShadow *) dropzoneShadow;
+@property (class, readonly, copy) NSShadow *dropzoneShadow;
 
 /// Returns the glow with which to render the dropzone when we're highlighted
-+ (NSShadow *) dropzoneHighlight;
+@property (class, readonly, copy) NSShadow *dropzoneHighlight;
 
 /// Returns a rounded dashed border suitable for display in the specified frame
 + (NSBezierPath *) borderForFrame: (NSRect)frame withPhase: (CGFloat)phase;

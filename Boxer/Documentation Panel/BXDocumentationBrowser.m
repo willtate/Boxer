@@ -15,18 +15,18 @@
 #import "NSError+ADBErrorHelpers.h"
 #import "NSBezierPath+MCAdditions.h"
 
-enum {
+NS_ENUM(NSInteger) {
     BXDocumentationItemIcon = 1,
     BXDocumentationItemLabel = 2,
 };
 
 @interface BXDocumentationBrowser ()
 
-//A copy of the gamebox's reported documentation.
-//Repopulated whenever the gamebox announces that it has been updated.
+/// A copy of the gamebox's reported documentation.
+/// Repopulated whenever the gamebox announces that it has been updated.
 @property (readwrite, copy, nonatomic) NSArray *documentationURLs;
 
-//Called to repopulate and re-sort our local copy of the documentation URLs.
+/// Called to repopulate and re-sort our local copy of the documentation URLs.
 - (void) _syncDocumentationURLs;
 
 @end

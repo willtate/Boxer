@@ -70,7 +70,7 @@
 		[dropzoneShadow setShadowBlurRadius: 3.0f];
 		[dropzoneShadow setShadowColor: [[NSColor blackColor] colorWithAlphaComponent: 0.5f]];
 	}
-	return dropzoneShadow;
+	return [dropzoneShadow copy];
 }
 
 
@@ -84,7 +84,7 @@
 		[dropzoneHighlight setShadowBlurRadius: 3.0f];
 		[dropzoneHighlight setShadowColor: [[NSColor whiteColor] colorWithAlphaComponent: 0.5f]];
 	}
-	return dropzoneHighlight;
+	return [dropzoneHighlight copy];
 }
 
 + (NSBezierPath *) borderForFrame: (NSRect)frame withPhase: (CGFloat)phase
