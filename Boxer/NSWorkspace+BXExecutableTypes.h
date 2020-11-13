@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSWorkspace (BXExecutableTypes)
 
 /// Returns whether the file at the specified path is an executable that can be run by DOSBox.
-/// Returns \c NO and populates outError if the executable type could not be determined.
+/// Returns \c NO and populates \c outError if the executable type could not be determined.
 - (BOOL) isCompatibleExecutableAtPath: (NSString *)filePath error: (out NSError **)outError;
 
 /// Returns the executable type of the file at the specified path.

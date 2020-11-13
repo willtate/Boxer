@@ -13,17 +13,17 @@
 
 NSString * const BXGenericProfileIdentifier = @"net.washboardabs.generic";
 
-//Directories larger than this size (in bytes) will be treated as CD-era games by eraOfGameAtPath:
-const NSUInteger BXDisketteGameSizeThreshold = 30 * 1024 * 1024;
+/// Directories larger than this size (in bytes) will be treated as CD-era games by \c eraOfGameAtPath:
+static const NSUInteger BXDisketteGameSizeThreshold = 30 * 1024 * 1024;
 
-//Directories with any files older than this will be treated as 3.5 diskette-era games by eraOfGameAtPath:
-NSString * const BX35DisketteGameDateThreshold = @"1994-01-01 00:00:00 +0000";
+/// Directories with any files older than this will be treated as 3.5 diskette-era games by \c eraOfGameAtPath:
+static NSString * const BX35DisketteGameDateThreshold = @"1994-01-01 00:00:00 +0000";
 
-//Directories with any files older than this will be treated as 5.25 diskette-era games by eraOfGameAtPath:
-NSString * const BX525DisketteGameDateThreshold = @"1988-01-01 00:00:00 +0000";
+/// Directories with any files older than this will be treated as 5.25 diskette-era games by \c eraOfGameAtPath:
+static NSString * const BX525DisketteGameDateThreshold = @"1988-01-01 00:00:00 +0000";
 
-//File timestamps older than this will be ignored as invalid.
-NSString * const BXInvalidGameDateThreshold = @"1981-01-01 00:00:00 +0000";
+/// File timestamps older than this will be ignored as invalid.
+static NSString * const BXInvalidGameDateThreshold = @"1981-01-01 00:00:00 +0000";
 
 
 
@@ -34,20 +34,20 @@ NSString * const BXInvalidGameDateThreshold = @"1981-01-01 00:00:00 +0000";
 @property (strong, nonatomic) NSArray *ignoredInstallerPatterns;
 @property (strong, nonatomic) NSDictionary *driveLabelMappings;
 
-//Loads, caches and returns the contents of GameProfiles.plist to avoid multiple hits to the filesystem.
-+ (NSDictionary *) _gameProfileData;
+/// Loads, caches and returns the contents of GameProfiles.plist to avoid multiple hits to the filesystem.
++ (NSDictionary<NSString*,id> *) _gameProfileData;
 
-//Generates, caches and returns a dictionary of identifier -> profile lookups.
-//Used by profileWithIdentifier:
-+ (NSDictionary *) _identifierIndex;
+/// Generates, caches and returns a dictionary of identifier -> profile lookups.
+/// Used by \c profileWithIdentifier:
++ (NSDictionary<NSString*,NSDictionary<NSString*,id>*> *) _identifierIndex;
 
-//Generates, caches and returns an array of lookup tables in order of priority.
-//Used by detectedProfileForPath: to perform detection in multiple passes of the file hierarchy.
-+ (NSArray *) _lookupTables;
+/// Generates, caches and returns an array of lookup tables in order of priority.
+/// Used by \c detectedProfileForPath: to perform detection in multiple passes of the file hierarchy.
++ (NSArray<NSDictionary*> *) _lookupTables;
 
-//Generates and returns a lookup table of filename->profile mappings for the specified set of profiles.
-//Used by _lookupTables.
-+ (NSDictionary *) _lookupTableForProfiles: (NSArray *)profiles;
+/// Generates and returns a lookup table of filename->profile mappings for the specified set of profiles.
+/// Used by \c _lookupTables.
++ (NSDictionary *) _lookupTableForProfiles: (NSArray<NSDictionary*> *)profiles;
 
 @end
 

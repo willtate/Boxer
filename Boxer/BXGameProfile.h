@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "BXDrive.h"
+#import "ADBFilesystem.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark Constants
@@ -44,18 +47,19 @@ extern NSString * const BXGenericProfileIdentifier;
 
 /// The human-readable name of the game this profile represents.
 /// Will be \c nil for shared profiles (in which case profileDescription will be available.)
-@property (copy, nonatomic) NSString *gameName;
+@property (copy, nonatomic, nullable) NSString *gameName;
 
 /// The configuration file(s) to use for this game (sans path and .conf extension),
 /// as stored in Resources/Configurations
-@property (copy, nonatomic) NSArray<NSString*> *configurations;
+@property (copy, nonatomic, nullable) NSArray<NSString*> *configurations;
 
 /// The description of what kind of games this game profile covers.
 /// Will be nil for game-specific profiles (in which case gameName will be available.)
-@property (copy, nonatomic) NSString *profileDescription;
+@property (copy, nonatomic, nullable) NSString *profileDescription;
 
 /// Whether this game needs to be installed from a particular kind of drive
 /// (e.g. floppy-disk or CD-ROM).
+///
 /// If the game has no special requirements, this will be BXDriveAutodetect.
 @property (assign, nonatomic) BXDriveType sourceDriveType;
 
@@ -69,13 +73,13 @@ extern NSString * const BXGenericProfileIdentifier;
 /// Defaults to <code>NO</code>.
 @property (assign, nonatomic) BOOL requiresCDROM;
 
-/// Whether to mount the X and Y helper drives while importing this game.
+/// Whether to mount the \b X and \b Y helper drives while importing this game.
 /// These drives can confuse the installers for some games,
 /// e.g. making them offer the wrong default destination drive.
 /// Defaults to <code>YES</code>.
 @property (assign, nonatomic) BOOL shouldMountHelperDrivesDuringImport;
 
-/// Whether to mount the X drive at all when running this game.
+/// Whether to mount the \b X drive at all when running this game.
 /// Certain games misinterpret the TMP and TEMP variables and need this disabled.
 /// Defaults to <code>YES</code>.
 @property (assign, nonatomic) BOOL shouldMountTempDrive;
@@ -84,7 +88,7 @@ extern NSString * const BXGenericProfileIdentifier;
 /// when importing an already-installed copy of this game.
 /// Will be @"" if the root folder should be used, or nil if no particular path
 /// is recommended.
-@property (copy, nonatomic) NSString *preferredInstallationFolderPath;
+@property (copy, nonatomic, nullable) NSString *preferredInstallationFolderPath;
 
 /// The type of media upon which this game was likely released: currently this
 /// is used only for deciding on cover art, not for emulation decisions.
@@ -110,11 +114,11 @@ extern NSString * const BXGenericProfileIdentifier;
 
 /// Returns an array of generic profiles that match multiple games.
 /// This corresponds the contents of the BXGenericProfiles key in GameProfiles.plist.
-@property (class, readonly, copy) NSArray<BXGameProfile*> *genericProfiles;
+@property (class, readonly, copy) NSArray<NSDictionary<NSString*,id>*> *genericProfiles;
 
 /// Returns an array of game profiles identifying specific games.
 /// This corresponds the contents of the BXSpecificGameProfiles key in GameProfiles.plist.
-@property (class, readonly, copy) NSArray<BXGameProfile*> *specificGameProfiles;
+@property (class, readonly, copy) NSArray<NSDictionary<NSString*,id>*> *specificGameProfiles;
 
 /// Returns the kind of distribution medium (CD-ROM, floppy) that the contents of the specified
 /// file URL probably used, based on filesize and age of files. Among other things, this is used
@@ -128,9 +132,12 @@ extern NSString * const BXGenericProfileIdentifier;
 /// Returns a generic profile with no special configuration or game data.
 + (instancetype) genericProfile;
 
+/// Creates a generic profile with no special configuration or game data.
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+
 /// Returns the game profile matching the specified identifier,
 /// or \c nil if no such profile was found.
-+ (instancetype) profileWithIdentifier: (NSString *)identifier;
++ (nullable instancetype) profileWithIdentifier: (NSString *)identifier;
 
 /// Creates a new profile from the specified GameProfiles.plist-format dictionary.
 - (instancetype) initWithDictionary: (NSDictionary<NSString*,id> *)profileDictionary;
@@ -141,14 +148,14 @@ extern NSString * const BXGenericProfileIdentifier;
 /// Will return nil if no profile could be found.
 /// If \c searchSubfolders is <code>NO</code>, only the base path will be scanned without
 /// recursing into subfolders.
-+ (instancetype) detectedProfileForPath: (NSString *)basePath
-                       searchSubfolders: (BOOL) searchSubfolders;
++ (nullable instancetype) detectedProfileForPath: (NSString *)basePath
+                                searchSubfolders: (BOOL) searchSubfolders;
 
 /// Returns the profile whose telltales match the specified path, or nil if no matching profile
 /// is found. This checks only the specified path and does not perform any recursion of directories.
 /// Used internally by \c profilesDetectedInContentsOfEnumerator: and <code>profileScanWithEnumerator:</code>.
-+ (instancetype) profileMatchingPath: (NSString *)basePath
-                        inFilesystem: (id <ADBFilesystemPathAccess>)filesystem;
++ (nullable instancetype) profileMatchingPath: (NSString *)basePath
+                                 inFilesystem: (id <ADBFilesystemPathAccess>)filesystem;
 
 /// Returns an enumerator of all game profiles detected by traversing the specified enumerator.
 /// (As a convenience this returns an enumerator instead of an array, so that scanning can be
@@ -173,3 +180,5 @@ extern NSString * const BXGenericProfileIdentifier;
 - (BOOL) isIgnoredInstallerAtPath: (NSString *)path;
 
 @end
+
+NS_ASSUME_NONNULL_END
