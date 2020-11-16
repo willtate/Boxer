@@ -561,7 +561,8 @@ void restart_program(std::vector<std::string> & parameters) {
 #pragma mark - No-ops
 
 //These used to be defined in sdl_mapper.cpp, which we no longer include in Boxer.
-void MAPPER_AddHandler(MAPPER_Handler * handler,MapKeys key,Bitu mods,char const * const eventname,char const * const buttonname) {}
+void MAPPER_AddHandler(MAPPER_Handler *handler, SDL_Scancode key, uint32_t mods,
+                       const char *event_name, const char *button_name) {}
 void MAPPER_Init(void) {}
 void MAPPER_StartUp(Section * sec) {}
 void MAPPER_Run(bool pressed) {}

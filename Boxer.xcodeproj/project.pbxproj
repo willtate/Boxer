@@ -99,6 +99,8 @@
 		55E6A0C71C00C88A00285593 /* DDHidLib.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0AC1C00C80A00285593 /* DDHidLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55E6A0CA1C00C88A00285593 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */; };
 		55E6A0CB1C00C88A00285593 /* BGHUDAppKit.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55F4A93D256315FD00410099 /* program_ls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F4A93B256315FD00410099 /* program_ls.cpp */; };
+		55F4A93E256315FD00410099 /* program_ls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F4A93B256315FD00410099 /* program_ls.cpp */; };
 		55F8BC23201F9940004057D2 /* pci_bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DEBB21201E875500F1092F /* pci_bus.cpp */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -1130,6 +1132,10 @@
 		55E6A0971C00C7F900285593 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = Vendor/BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DDHidLib.xcodeproj; path = Vendor/DDHidLib/DDHidLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		55E6A0AD1C00C81D00285593 /* Boxer-MT32Emu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Boxer-MT32Emu.xcodeproj"; path = "Vendor/MT32Emu/Boxer-MT32Emu.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		55F4A9302563157300410099 /* gui_msgs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gui_msgs.h; sourceTree = "<group>"; };
+		55F4A93A2563159F00410099 /* string_utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_utils.h; sourceTree = "<group>"; };
+		55F4A93B256315FD00410099 /* program_ls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = program_ls.cpp; sourceTree = "<group>"; };
+		55F4A93C256315FD00410099 /* program_ls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program_ls.h; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Boxer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boxer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0497BE1334C5970001FEE4 /* ADBForwardCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBForwardCompatibility.h; sourceTree = "<group>"; };
 		9F0497BF1334C5970001FEE4 /* ADBForwardCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBForwardCompatibility.m; sourceTree = "<group>"; };
@@ -2784,6 +2790,7 @@
 				9F77209712B38C4400072AE8 /* setup.h */,
 				9F77209812B38C4400072AE8 /* shell.h */,
 				5529311E252AF0DA0069EB35 /* soft_limiter.h */,
+				55F4A93A2563159F00410099 /* string_utils.h */,
 				9F77209912B38C4400072AE8 /* support.h */,
 				9F77209A12B38C4400072AE8 /* timer.h */,
 				55144FE824BE7FDF0002CE28 /* types.h */,
@@ -2946,6 +2953,8 @@
 				9F7720FC12B38C4400072AE8 /* drives.cpp */,
 				5514503B24BE8FB90002CE28 /* program_autotype.cpp */,
 				5514503C24BE8FB90002CE28 /* program_autotype.h */,
+				55F4A93B256315FD00410099 /* program_ls.cpp */,
+				55F4A93C256315FD00410099 /* program_ls.h */,
 			);
 			path = dos;
 			sourceTree = "<group>";
@@ -2964,6 +2973,7 @@
 			isa = PBXGroup;
 			children = (
 				9F77210612B38C4400072AE8 /* dosbox_logo.h */,
+				55F4A9302563157300410099 /* gui_msgs.h */,
 				5514503324BE8CE10002CE28 /* render_glsl.h */,
 				9F77210F12B38C4400072AE8 /* render_loops.h */,
 				9F77211012B38C4400072AE8 /* render_scalers.cpp */,
@@ -3930,6 +3940,7 @@
 				9F573D390F8E69AF0089D8B7 /* BXGamebox.m in Sources */,
 				058BC52E24C27CB50078C244 /* BXShaderParametersWindowController.m in Sources */,
 				9F4971BB108EF02F00282261 /* BXEmulator+BXDOSFileSystem.mm in Sources */,
+				55F4A93D256315FD00410099 /* program_ls.cpp in Sources */,
 				9FC8F50C10934F3400AD6307 /* NSString+ADBPaths.m in Sources */,
 				9F45A424109C867E00593456 /* BXMountPanelController.m in Sources */,
 				9F424207109D03F500111D28 /* BXInspectorController.m in Sources */,
@@ -4530,6 +4541,7 @@
 				9F596503163D8D910094FD6B /* BXSession+BXPrinting.m in Sources */,
 				9FF982121646C7640080F763 /* BXPrintSession.m in Sources */,
 				5563E580239EF7CD007A1600 /* ADBSwiftHelpers.swift in Sources */,
+				55F4A93E256315FD00410099 /* program_ls.cpp in Sources */,
 				9F67855D1649A6BC007FE89A /* BXPrintStatusPanelController.m in Sources */,
 				9F201E391657DB7F0086F1BB /* ADBUserNotificationDispatcher.m in Sources */,
 				5514503A24BE8DE60002CE28 /* envelope.cpp in Sources */,
@@ -5061,7 +5073,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks/SDL.framework/Headers\"",
+					"\"$(SRCROOT)/Frameworks/SDL2.framework/Headers\"",
 				);
 				INFOPLIST_FILE = "Standalone/Boxer Standalone-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
@@ -5099,7 +5111,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks/SDL.framework/Headers\"",
+					"\"$(SRCROOT)/Frameworks/SDL2.framework/Headers\"",
 				);
 				INFOPLIST_FILE = "Standalone/Boxer Standalone-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
@@ -5261,7 +5273,7 @@
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks/SDL.framework/Headers\"",
+					"\"$(SRCROOT)/Frameworks/SDL2.framework/Headers\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
@@ -5300,7 +5312,7 @@
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks/SDL.framework/Headers\"",
+					"\"$(SRCROOT)/Frameworks/SDL2.framework/Headers\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
