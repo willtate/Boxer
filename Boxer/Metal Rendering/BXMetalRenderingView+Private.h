@@ -10,7 +10,7 @@
 
 @class OEFilterChain;
 
-@interface BXMetalRenderingView (Private)
+@interface BXMetalRenderingView ()
 
 @property (nonatomic, readonly) OEFilterChain *filterChain;
 

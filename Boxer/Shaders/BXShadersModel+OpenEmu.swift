@@ -36,7 +36,7 @@ extension BXShadersModel {
 }
 
 extension BXShadersModel.BXShaderModel {
-    @objc
+    @objc(writeParameters:forIdentifier:)
     public func write(parameters params: [ShaderParameter], identifier: String) {
         var state = [String]()
         
