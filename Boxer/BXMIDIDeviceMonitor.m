@@ -407,7 +407,7 @@ void _didReceiveMIDINotification(const MIDINotification *message, void *context)
 #pragma mark -
 #pragma mark Class helpers
 
-void _didReceiveMIDIInput(const MIDIPacketList *packets, void *portContext, void *connectionContext)
+static void _didReceiveMIDIInput(const MIDIPacketList *packets, void *portContext, void *connectionContext)
 {
     [(__bridge BXMIDIInputListener *)connectionContext receivePackets: packets];
 }
