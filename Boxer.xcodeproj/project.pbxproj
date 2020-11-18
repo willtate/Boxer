@@ -47,6 +47,8 @@
 		5514503A24BE8DE60002CE28 /* envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514503824BE8DE50002CE28 /* envelope.cpp */; };
 		5514503D24BE8FB90002CE28 /* program_autotype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514503B24BE8FB90002CE28 /* program_autotype.cpp */; };
 		5514503E24BE8FB90002CE28 /* program_autotype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5514503B24BE8FB90002CE28 /* program_autotype.cpp */; };
+		551B793725593573006C57CE /* URL+ADBFilesystemHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B793625593573006C57CE /* URL+ADBFilesystemHelpers.swift */; };
+		551B793825593573006C57CE /* URL+ADBFilesystemHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B793625593573006C57CE /* URL+ADBFilesystemHelpers.swift */; };
 		55220E3824CFFF8C00A6736A /* BXShaderParametersWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058BC52324C27B790078C244 /* BXShaderParametersWindowController.m */; };
 		55220E3924CFFF8C00A6736A /* BXShadersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058BC51F24C27B770078C244 /* BXShadersModel.swift */; };
 		55220E3A24CFFF8C00A6736A /* BXShadersModel+OpenEmu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058BC52124C27B780078C244 /* BXShadersModel+OpenEmu.swift */; };
@@ -54,6 +56,10 @@
 		55220E4624CFFFC900A6736A /* CheckboxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC52624C27BA10078C244 /* CheckboxCell.xib */; };
 		55220E4724CFFFC900A6736A /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC52524C27BA10078C244 /* GroupCell.xib */; };
 		55220E4824CFFFC900A6736A /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 058BC52724C27BA10078C244 /* SliderCell.xib */; };
+		55419B68255A2F1400A779B2 /* URL+ADBQuickLookHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55419B67255A2F1400A779B2 /* URL+ADBQuickLookHelpers.swift */; };
+		55419B69255A2F1400A779B2 /* URL+ADBQuickLookHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55419B67255A2F1400A779B2 /* URL+ADBQuickLookHelpers.swift */; };
+		55419B74255A7FFA00A779B2 /* URL+ADBAliasHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55419B73255A7FFA00A779B2 /* URL+ADBAliasHelpers.swift */; };
+		55419B75255A7FFA00A779B2 /* URL+ADBAliasHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55419B73255A7FFA00A779B2 /* URL+ADBAliasHelpers.swift */; };
 		5548850E226A501000A879B3 /* drive_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55488508226A501000A879B3 /* drive_overlay.cpp */; };
 		5548850F226A501000A879B3 /* drive_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55488508226A501000A879B3 /* drive_overlay.cpp */; };
 		554E2B6D1BFAF6720038C506 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554E2B6C1BFAF6720038C506 /* Shared.xcassets */; };
@@ -1041,7 +1047,10 @@
 		5514503824BE8DE50002CE28 /* envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = envelope.cpp; sourceTree = "<group>"; };
 		5514503B24BE8FB90002CE28 /* program_autotype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = program_autotype.cpp; sourceTree = "<group>"; };
 		5514503C24BE8FB90002CE28 /* program_autotype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program_autotype.h; sourceTree = "<group>"; };
+		551B793625593573006C57CE /* URL+ADBFilesystemHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+ADBFilesystemHelpers.swift"; sourceTree = "<group>"; };
 		5529311E252AF0DA0069EB35 /* soft_limiter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = soft_limiter.h; sourceTree = "<group>"; };
+		55419B67255A2F1400A779B2 /* URL+ADBQuickLookHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+ADBQuickLookHelpers.swift"; sourceTree = "<group>"; };
+		55419B73255A7FFA00A779B2 /* URL+ADBAliasHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+ADBAliasHelpers.swift"; sourceTree = "<group>"; };
 		55488508226A501000A879B3 /* drive_overlay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drive_overlay.cpp; sourceTree = "<group>"; };
 		554E2B6C1BFAF6720038C506 /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shared.xcassets; sourceTree = "<group>"; };
 		554E2B6F1BFAF6D90038C506 /* Boxer only.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Boxer only.xcassets"; sourceTree = "<group>"; };
@@ -3266,6 +3275,9 @@
 				9F13F9CF11F85E6F0069A02E /* NSFileManager+ADBTemporaryFiles.m */,
 				9F35F3E716CFBB700093CF45 /* NSFileManager+ADBUniqueFilenames.h */,
 				9F35F3E816CFBB700093CF45 /* NSFileManager+ADBUniqueFilenames.m */,
+				551B793625593573006C57CE /* URL+ADBFilesystemHelpers.swift */,
+				55419B67255A2F1400A779B2 /* URL+ADBQuickLookHelpers.swift */,
+				55419B73255A7FFA00A779B2 /* URL+ADBAliasHelpers.swift */,
 			);
 			name = Filesystem;
 			sourceTree = "<group>";
@@ -4052,6 +4064,7 @@
 				5514502D24BE8BCC0002CE28 /* midi.cpp in Sources */,
 				9FB446EB13D23BD900E69AF5 /* BXG25ControllerProfile.m in Sources */,
 				9FA0C9E313D24FF3000F6FCB /* DDHidUsage+ADBUsageExtensions.m in Sources */,
+				55419B74255A7FFA00A779B2 /* URL+ADBAliasHelpers.swift in Sources */,
 				9FC2F84013D60FBD00BD4F6B /* BXDualActionControllerProfile.m in Sources */,
 				9F70277B13D706CC00606B4C /* BXBezelController.m in Sources */,
 				9F70278413D72D8100606B4C /* BXThemedControls.m in Sources */,
@@ -4115,6 +4128,7 @@
 				9FD6AA0E16314A5B002B774E /* directlpt_linux.cpp in Sources */,
 				9FD6AA1016314A5B002B774E /* directlpt_win32.cpp in Sources */,
 				9FD6AA1216314A5B002B774E /* filelpt.cpp in Sources */,
+				551B793725593573006C57CE /* URL+ADBFilesystemHelpers.swift in Sources */,
 				9FD6AA1416314A5B002B774E /* parport.cpp in Sources */,
 				9FD6AA1816314A5B002B774E /* printer_charmaps.cpp in Sources */,
 				558CE44D20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */,
@@ -4212,6 +4226,7 @@
 				9F7721BF12B38C4400072AE8 /* serialport.cpp in Sources */,
 				9F7721C012B38C4400072AE8 /* softmodem.cpp in Sources */,
 				9F7721C112B38C4400072AE8 /* tandy_sound.cpp in Sources */,
+				55419B68255A2F1400A779B2 /* URL+ADBQuickLookHelpers.swift in Sources */,
 				9F7721C212B38C4400072AE8 /* timer.cpp in Sources */,
 				9F7721C312B38C4400072AE8 /* vga.cpp in Sources */,
 				9F7721C412B38C4400072AE8 /* vga_attr.cpp in Sources */,
@@ -4272,6 +4287,7 @@
 				9F2D2FA115B8233800FAE848 /* ADBGeometry.m in Sources */,
 				9F2D2FA215B8233800FAE848 /* BXEmulator.mm in Sources */,
 				9F2D2FA315B8233800FAE848 /* BXSession+BXUIControls.m in Sources */,
+				55419B75255A7FFA00A779B2 /* URL+ADBAliasHelpers.swift in Sources */,
 				5514502324BE81E00002CE28 /* ppscale.c in Sources */,
 				9F2D2FA415B8233800FAE848 /* BXCloseAlert.m in Sources */,
 				9F2D2FA515B8233800FAE848 /* NSAlert+BXAlert.m in Sources */,
@@ -4474,6 +4490,7 @@
 				9F2D30A215B8233800FAE848 /* ADBFileScan.m in Sources */,
 				9F2D30A415B8233800FAE848 /* BXDOSWindowControllerLion.m in Sources */,
 				9F2D30A515B8233800FAE848 /* ADBFullscreenCapableWindow.m in Sources */,
+				55419B69255A2F1400A779B2 /* URL+ADBQuickLookHelpers.swift in Sources */,
 				9F2D30A615B8233800FAE848 /* BXPrecisionProControllerProfile.m in Sources */,
 				9F2D30A715B8233800FAE848 /* BXMOMORacingControllerProfile.m in Sources */,
 				9F2D30AA15B8233800FAE848 /* BXEmulatorErrors.mm in Sources */,
@@ -4540,6 +4557,7 @@
 				9FD6AA2116315278002B774E /* BXEmulatedPrinter.mm in Sources */,
 				9F596503163D8D910094FD6B /* BXSession+BXPrinting.m in Sources */,
 				9FF982121646C7640080F763 /* BXPrintSession.m in Sources */,
+				551B793825593573006C57CE /* URL+ADBFilesystemHelpers.swift in Sources */,
 				5563E580239EF7CD007A1600 /* ADBSwiftHelpers.swift in Sources */,
 				55F4A93E256315FD00410099 /* program_ls.cpp in Sources */,
 				9F67855D1649A6BC007FE89A /* BXPrintStatusPanelController.m in Sources */,
