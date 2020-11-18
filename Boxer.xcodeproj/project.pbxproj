@@ -817,13 +817,6 @@
 			remoteGlobalIDString = 05EEE341227CC35D007D011B;
 			remoteInfo = OpenEmuShadersTests;
 		};
-		05E6BA6B24B9FA8D00BAAD2D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 05B82298243D877B009909D3;
-			remoteInfo = "Shader Studio";
-		};
 		55BBA4F1235EE142007AE319 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */;
@@ -2057,7 +2050,6 @@
 			children = (
 				05E6BA6824B9FA8D00BAAD2D /* OpenEmuShaders.framework */,
 				05E6BA6A24B9FA8D00BAAD2D /* OpenEmuShadersTests.xctest */,
-				05E6BA6C24B9FA8D00BAAD2D /* Shader Studio.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3747,13 +3739,6 @@
 			fileType = wrapper.cfbundle;
 			path = OpenEmuShadersTests.xctest;
 			remoteRef = 05E6BA6924B9FA8D00BAAD2D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		05E6BA6C24B9FA8D00BAAD2D /* Shader Studio.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "Shader Studio.app";
-			remoteRef = 05E6BA6B24B9FA8D00BAAD2D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		55BBA4F2235EE142007AE319 /* BrowserSwift.app */ = {
