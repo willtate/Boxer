@@ -211,9 +211,9 @@
                                                                    xRadius: cornerRadius
                                                                    yRadius: cornerRadius];
     
-    NSBezierPath *borderPill = [NSBezierPath bezierPathWithRoundedRect: NSInsetRect(pillFrame, 0.5f, 0.5f)
-                                                               xRadius: cornerRadius - 0.5f
-                                                               yRadius: cornerRadius - 0.5f];
+    NSBezierPath *borderPill = [NSBezierPath bezierPathWithRoundedRect: NSInsetRect(pillFrame, 0.5, 0.5)
+                                                               xRadius: cornerRadius - 0.5
+                                                               yRadius: cornerRadius - 0.5];
     
     //When active, we display the drive letter knocked out on a solid background.
     //To do this, we first render the regular text to a temporary image, and then

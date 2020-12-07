@@ -23,8 +23,8 @@
 		05F9A20124BAA7AA00969496 /* SDL2_net.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9A1FE24BAA64100969496 /* SDL2_net.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05F9A20224BAA7AB00969496 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0532FBF624BAA1A4008EAD86 /* SDL2.framework */; };
 		05F9A20324BAA7AB00969496 /* SDL2.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 0532FBF624BAA1A4008EAD86 /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5514500A24BE81E00002CE28 /* nukedopl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55144FEC24BE81DF0002CE28 /* nukedopl.cpp */; };
-		5514500B24BE81E00002CE28 /* nukedopl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55144FEC24BE81DF0002CE28 /* nukedopl.cpp */; };
+		5514500A24BE81E00002CE28 /* opl3.c in Sources */ = {isa = PBXBuildFile; fileRef = 55144FEC24BE81DF0002CE28 /* opl3.c */; };
+		5514500B24BE81E00002CE28 /* opl3.c in Sources */ = {isa = PBXBuildFile; fileRef = 55144FEC24BE81DF0002CE28 /* opl3.c */; };
 		5514500C24BE81E00002CE28 /* vorbis.c in Sources */ = {isa = PBXBuildFile; fileRef = 55144FEE24BE81E00002CE28 /* vorbis.c */; };
 		5514500D24BE81E00002CE28 /* vorbis.c in Sources */ = {isa = PBXBuildFile; fileRef = 55144FEE24BE81E00002CE28 /* vorbis.c */; };
 		5514500E24BE81E00002CE28 /* mp3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55144FF124BE81E00002CE28 /* mp3.cpp */; };
@@ -1006,8 +1006,8 @@
 		55144FE624BE7F910002CE28 /* mem_unaligned.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mem_unaligned.h; sourceTree = "<group>"; };
 		55144FE724BE7F910002CE28 /* envelope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = envelope.h; sourceTree = "<group>"; };
 		55144FE824BE7FDF0002CE28 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
-		55144FEA24BE81DF0002CE28 /* nukedopl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nukedopl.h; sourceTree = "<group>"; };
-		55144FEC24BE81DF0002CE28 /* nukedopl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nukedopl.cpp; sourceTree = "<group>"; };
+		55144FEA24BE81DF0002CE28 /* opl3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opl3.h; sourceTree = "<group>"; };
+		55144FEC24BE81DF0002CE28 /* opl3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = opl3.c; sourceTree = "<group>"; };
 		55144FEE24BE81E00002CE28 /* vorbis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vorbis.c; sourceTree = "<group>"; };
 		55144FEF24BE81E00002CE28 /* archive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = archive.h; sourceTree = "<group>"; };
 		55144FF024BE81E00002CE28 /* xxhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xxhash.h; sourceTree = "<group>"; };
@@ -2195,8 +2195,8 @@
 		55144FE924BE81DF0002CE28 /* nuked */ = {
 			isa = PBXGroup;
 			children = (
-				55144FEA24BE81DF0002CE28 /* nukedopl.h */,
-				55144FEC24BE81DF0002CE28 /* nukedopl.cpp */,
+				55144FEA24BE81DF0002CE28 /* opl3.h */,
+				55144FEC24BE81DF0002CE28 /* opl3.c */,
 			);
 			path = nuked;
 			sourceTree = "<group>";
@@ -3941,7 +3941,7 @@
 				9FC8F50C10934F3400AD6307 /* NSString+ADBPaths.m in Sources */,
 				9F45A424109C867E00593456 /* BXMountPanelController.m in Sources */,
 				9F424207109D03F500111D28 /* BXInspectorController.m in Sources */,
-				5514500A24BE81E00002CE28 /* nukedopl.cpp in Sources */,
+				5514500A24BE81E00002CE28 /* opl3.c in Sources */,
 				9F687004109F83ED003C26E4 /* BXDriveList.m in Sources */,
 				9F69128C10A2DF8D00EA78CD /* BXValueTransformers.m in Sources */,
 				9F69133310A2F62A00EA78CD /* BXDrive.m in Sources */,
@@ -4563,7 +4563,7 @@
 				9FCA937D16FF37A000720B81 /* BXDocumentationPanelController.m in Sources */,
 				9FCA937E16FF38E700720B81 /* BXDocumentationBrowser.m in Sources */,
 				9F8B282B1709C4A100B31A14 /* ADBFilesystemBase.m in Sources */,
-				5514500B24BE81E00002CE28 /* nukedopl.cpp in Sources */,
+				5514500B24BE81E00002CE28 /* opl3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
