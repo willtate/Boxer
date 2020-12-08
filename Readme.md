@@ -39,3 +39,8 @@ OSX 10.5 and PowerPC support has been removed from the Boxer master branch: if y
 #### Having trouble?
 
 If you have any problems building the Boxer project, or questions about Boxer's code, please get in touch with me at abestor@boxerapp.com and I'll help out as best I can.
+
+#### License
+
+The project is licensed using [GPLv2](./LICENSE). Originally developed
+by Alun Bestor and other contributors.
