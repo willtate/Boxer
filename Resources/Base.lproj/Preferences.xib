@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,11 +26,11 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Boxer Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="1">
+        <window title="Boxer Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" toolbarStyle="preference" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="160" y="250" width="532" height="396"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="532" height="396"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,22 +482,22 @@ be enabled in the Universal Access preferences.</string>
             </view>
             <toolbar key="toolbar" implicitIdentifier="76B0F17F-D318-49FE-A082-D1A4344E7B4A" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="100">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="026541C2-2C3C-4F9A-9DB5-C724C89DD986" label="General   " paletteLabel="General   " image="NSPreferencesGeneral" autovalidates="NO" selectable="YES" id="108">
+                    <toolbarItem implicitItemIdentifier="026541C2-2C3C-4F9A-9DB5-C724C89DD986" label="General   " paletteLabel="General   " image="NSPreferencesGeneral" sizingBehavior="auto" autovalidates="NO" selectable="YES" id="108">
                         <connections>
                             <action selector="takeSelectedTabViewItemFromTag:" target="-2" id="191"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="05D98923-A078-4A7C-80E2-356FA397ED33" label="Display   " paletteLabel="Display   " tag="1" image="Display" autovalidates="NO" selectable="YES" id="109">
+                    <toolbarItem implicitItemIdentifier="05D98923-A078-4A7C-80E2-356FA397ED33" label="Display   " paletteLabel="Display   " tag="1" image="Display" sizingBehavior="auto" autovalidates="NO" selectable="YES" id="109">
                         <connections>
                             <action selector="takeSelectedTabViewItemFromTag:" target="-2" id="192"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="1FA3ECA1-7D08-4DF4-B0E8-C072D7997C95" label="Audio   " paletteLabel="Audio   " tag="2" image="Audio" autovalidates="NO" selectable="YES" id="266">
+                    <toolbarItem implicitItemIdentifier="1FA3ECA1-7D08-4DF4-B0E8-C072D7997C95" label="Audio   " paletteLabel="Audio   " tag="2" image="Audio" sizingBehavior="auto" autovalidates="NO" selectable="YES" id="266">
                         <connections>
                             <action selector="takeSelectedTabViewItemFromTag:" target="-2" id="267"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="BC04B8C7-9C68-48A6-B9B3-6E61135E7C22" label="Keyboard" paletteLabel="Keyboard" tag="3" image="Keyboard" autovalidates="NO" selectable="YES" id="396">
+                    <toolbarItem implicitItemIdentifier="BC04B8C7-9C68-48A6-B9B3-6E61135E7C22" label="Keyboard" paletteLabel="Keyboard" tag="3" image="Keyboard" sizingBehavior="auto" autovalidates="NO" selectable="YES" id="396">
                         <connections>
                             <action selector="takeSelectedTabViewItemFromTag:" target="-2" id="397"/>
                         </connections>

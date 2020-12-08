@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17132.0.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17132.0.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,7 +27,7 @@
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="1" customClass="BXDOSWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="400" y="240" width="640" height="506"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="640" height="506"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,9 +96,7 @@
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="1358"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="1272"/>
-                    <toolbarItem implicitItemIdentifier="540E2882-15E5-4FCD-8C52-8FA004C0A9D6" label="Programs" paletteLabel="Programs" toolTip="Show or hide the game’s launch options" image="LauncherListTemplate" id="1285">
-                        <size key="minSize" width="40" height="25"/>
-                        <size key="maxSize" width="40" height="25"/>
+                    <toolbarItem implicitItemIdentifier="540E2882-15E5-4FCD-8C52-8FA004C0A9D6" label="Programs" paletteLabel="Programs" toolTip="Show or hide the game’s launch options" image="LauncherListTemplate" sizingBehavior="auto" id="1285">
                         <button key="view" verticalHuggingPriority="750" id="1283">
                             <rect key="frame" x="9" y="14" width="40" height="25"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -115,9 +113,7 @@
                             <binding destination="-2" name="enabled" keyPath="canToggleLaunchPanel" id="1350"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="185DE03D-DF27-49BC-BF8F-E23D90836DB1" label="Manuals" paletteLabel="Manuals" toolTip="Show the documentation bundled with this game" image="DocumentationTemplate" id="1348">
-                        <size key="minSize" width="40" height="25"/>
-                        <size key="maxSize" width="40" height="25"/>
+                    <toolbarItem implicitItemIdentifier="185DE03D-DF27-49BC-BF8F-E23D90836DB1" label="Manuals" paletteLabel="Manuals" toolTip="Show the documentation bundled with this game" image="DocumentationTemplate" sizingBehavior="auto" id="1348">
                         <button key="view" verticalHuggingPriority="750" id="1346">
                             <rect key="frame" x="6" y="14" width="40" height="25"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -131,9 +127,7 @@
                             <binding destination="-2" name="enabled" keyPath="document.hasGamebox" id="1352"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="4672537F-2C7C-4BDA-A2AF-F120A743EE98" label="Inspector" paletteLabel="Inspector" toolTip="Show or hide the inspector panel" image="NSRevealFreestandingTemplate" id="1279">
-                        <size key="minSize" width="40" height="25"/>
-                        <size key="maxSize" width="40" height="32"/>
+                    <toolbarItem implicitItemIdentifier="4672537F-2C7C-4BDA-A2AF-F120A743EE98" label="Inspector" paletteLabel="Inspector" toolTip="Show or hide the inspector panel" image="NSRevealFreestandingTemplate" sizingBehavior="auto" id="1279">
                         <button key="view" verticalHuggingPriority="750" id="1277">
                             <rect key="frame" x="9" y="14" width="40" height="25"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -146,10 +140,8 @@
                             <action selector="toggleInspectorPanel:" target="-1" id="1302"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="FF0BB3DF-8893-46B4-8923-56115B684F1B" label="Volume" paletteLabel="Volume" tag="-1" id="d9v-Ij-ljW">
+                    <toolbarItem implicitItemIdentifier="FF0BB3DF-8893-46B4-8923-56115B684F1B" label="Volume" paletteLabel="Volume" tag="-1" sizingBehavior="auto" id="d9v-Ij-ljW">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="128" height="20"/>
-                        <size key="maxSize" width="192" height="26"/>
                         <box key="view" autoresizesSubviews="NO" boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" transparent="YES" id="MWA-k3-MA8">
                             <rect key="frame" x="0.0" y="14" width="130" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -160,7 +152,7 @@
                                     <slider toolTip="Adjust the volume" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2UX-hR-kRW">
                                         <rect key="frame" x="29" y="7" width="72" height="15"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <sliderCell key="cell" controlSize="small" continuous="YES" state="on" focusRingType="none" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="eHh-bb-mnd"/>
+                                        <sliderCell key="cell" controlSize="mini" continuous="YES" state="on" focusRingType="none" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="eHh-bb-mnd"/>
                                         <connections>
                                             <binding destination="-3" name="value" keyPath="delegate.effectiveVolume" id="qO5-w1-mUY">
                                                 <dictionary key="options">
@@ -196,10 +188,8 @@
                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </box>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="98C1A095-12D7-4DB7-B467-7F426362CCE6" label="CPU Speed" paletteLabel="CPU Speed" tag="-1" id="1416">
+                    <toolbarItem implicitItemIdentifier="98C1A095-12D7-4DB7-B467-7F426362CCE6" label="CPU Speed" paletteLabel="CPU Speed" tag="-1" sizingBehavior="auto" id="1416">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="128" height="20"/>
-                        <size key="maxSize" width="192" height="26"/>
                         <box key="view" autoresizesSubviews="NO" boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" transparent="YES" id="1417">
                             <rect key="frame" x="0.0" y="14" width="130" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -249,9 +239,7 @@
                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </box>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="D375FB40-9A93-4A78-8CD9-124F3047BB9B" label="Playback" paletteLabel="Playback" toolTip="Pause, resume or fast-forward the game" id="1345">
-                        <size key="minSize" width="104" height="25"/>
-                        <size key="maxSize" width="104" height="25"/>
+                    <toolbarItem implicitItemIdentifier="D375FB40-9A93-4A78-8CD9-124F3047BB9B" label="Playback" paletteLabel="Playback" toolTip="Pause, resume or fast-forward the game" sizingBehavior="auto" id="1345">
                         <segmentedControl key="view" verticalHuggingPriority="750" id="1343">
                             <rect key="frame" x="0.0" y="14" width="104" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -279,12 +267,10 @@
                             </connections>
                         </segmentedControl>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="80692E84-A4DD-40BE-A1AA-F76F98262117" label="Restart" paletteLabel="Restart" image="NSRefreshTemplate" id="1355">
+                    <toolbarItem implicitItemIdentifier="80692E84-A4DD-40BE-A1AA-F76F98262117" label="Restart" paletteLabel="Restart" image="NSRefreshTemplate" sizingBehavior="auto" id="1355">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="40" height="25"/>
-                        <size key="maxSize" width="40" height="32"/>
                         <button key="view" verticalHuggingPriority="750" id="1353">
-                            <rect key="frame" x="2" y="14" width="40" height="25"/>
+                            <rect key="frame" x="3" y="14" width="40" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1354">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -295,12 +281,10 @@
                             <action selector="performRestart:" target="-1" id="1357"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="48349D51-8E91-43B9-9559-1D80B7BFAF7E" label="Screenshot" paletteLabel="Screenshot" image="ScreenshotTemplate" id="1379">
+                    <toolbarItem implicitItemIdentifier="48349D51-8E91-43B9-9559-1D80B7BFAF7E" label="Screenshot" paletteLabel="Screenshot" image="ScreenshotTemplate" sizingBehavior="auto" id="1379">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="40" height="25"/>
-                        <size key="maxSize" width="40" height="25"/>
                         <button key="view" verticalHuggingPriority="750" id="1377">
-                            <rect key="frame" x="13" y="14" width="40" height="25"/>
+                            <rect key="frame" x="14" y="14" width="40" height="25"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="ScreenshotTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1378">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -312,10 +296,8 @@
                             <binding destination="-2" name="enabled" keyPath="DOSViewShown" id="1383"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="09AC3A20-E5A3-450E-B97C-B30E2F9938C9" label="Change Discs" paletteLabel="Change Discs" image="DiscSwapTemplate" id="1402">
+                    <toolbarItem implicitItemIdentifier="09AC3A20-E5A3-450E-B97C-B30E2F9938C9" label="Change Discs" paletteLabel="Change Discs" image="DiscSwapTemplate" sizingBehavior="auto" id="1402">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="40" height="25"/>
-                        <size key="maxSize" width="40" height="25"/>
                         <button key="view" verticalHuggingPriority="750" id="1400">
                             <rect key="frame" x="20" y="14" width="40" height="25"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -391,10 +373,10 @@
         <image name="DocumentationTemplate" width="16" height="16"/>
         <image name="FastForwardTemplate" width="19" height="13"/>
         <image name="LauncherListTemplate" width="16" height="13"/>
-        <image name="NSLockLockedTemplate" width="10" height="14"/>
-        <image name="NSLockUnlockedTemplate" width="10" height="14"/>
-        <image name="NSRefreshTemplate" width="11" height="15"/>
-        <image name="NSRevealFreestandingTemplate" width="14" height="14"/>
+        <image name="NSLockLockedTemplate" width="14" height="15"/>
+        <image name="NSLockUnlockedTemplate" width="17" height="15"/>
+        <image name="NSRefreshTemplate" width="14" height="16"/>
+        <image name="NSRevealFreestandingTemplate" width="15" height="15"/>
         <image name="PauseTemplate" width="10" height="13"/>
         <image name="PlayTemplate" width="10" height="13"/>
         <image name="ScreenshotTemplate" width="16" height="12"/>
