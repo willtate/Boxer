@@ -52,7 +52,7 @@ NSString * const ADBMountedVolumesErrorDomain = @"ADBMountedVolumesErrorDomain";
 @end
 
 @interface ADBCouldNotMountImageError : ADBMountedVolumesError
-+ (id) errorWithImageURL: (NSURL *)imageURL userInfo: (NSDictionary *)userInfo;
++ (instancetype) errorWithImageURL: (NSURL *)imageURL userInfo: (NSDictionary *)userInfo;
 
 @end
 
@@ -564,10 +564,6 @@ NSString * const ADBMountedVolumesErrorDomain = @"ADBMountedVolumesErrorDomain";
 + (id) errorWithImageURL: (NSURL *)imageURL
                 userInfo: (NSDictionary *)userInfo
 {
-	NSString *descriptionFormat = NSLocalizedString(@"The disk image “%@” could not be opened.",
-                                                    @"Error message shown after failing to mount an image. %@ is the display name of the disk image."
-                                                    );
-	
 	NSString *explanation = NSLocalizedString(@"The disk image file may be corrupted or incomplete.",
                                               @"Explanatory text for error message shown after failing to mount an image."
                                               );
@@ -577,7 +573,9 @@ NSString * const ADBMountedVolumesErrorDomain = @"ADBMountedVolumesErrorDomain";
     if (!gotDisplayName)
         displayName = imageURL.lastPathComponent;
 	
-	NSString *description = [NSString stringWithFormat: descriptionFormat, displayName];
+	NSString *description = [NSString stringWithFormat:
+                             NSLocalizedString(@"The disk image “%@” could not be opened.",
+                                               @"Error message shown after failing to mount an image. %@ is the display name of the disk image."), displayName];
 	
 	NSMutableDictionary *defaultInfo = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 										description,	NSLocalizedDescriptionKey,

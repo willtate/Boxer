@@ -53,7 +53,7 @@ extern ADBVolumeType const ADBAPFSVolumeType NS_SWIFT_NAME(APFS);
 extern NSErrorDomain const ADBMountedVolumesErrorDomain;
 
 //Mount-related error codes
-NS_ERROR_ENUM(ADBMountedVolumesErrorDomain)
+typedef NS_ERROR_ENUM(ADBMountedVolumesErrorDomain, ADBMountedVolumesErrors)
 {
 	/// Produced when hdiutil cannot mount the image passed to @c mountImageAtURL:options:error:
 	ADBMountedVolumesHDIUtilAttachFailed,
