@@ -70,6 +70,10 @@
     {
         NSError *err;
         NSInteger encodingVersion = [aDecoder decodeIntegerForKey: @"encodingVersion"];
+        if (encodingVersion > BXCurrentDriveEncodingVersion) {
+            [aDecoder failWithError:[NSError errorWithDomain:NSCocoaErrorDomain code:NSCoderReadCorruptError userInfo:@{NSLocalizedDescriptionKey: [NSString localizedStringWithFormat:@"Unable to decode drive: encoding version %ld is higher than supported version %ld.", (long)encodingVersion, (long)BXCurrentDriveEncodingVersion]}]];
+            return nil;
+        }
         
         //Paths were encoded as OS X 10.6+ bookmark data
         if (encodingVersion >= BXFirstBookmarkSupportingVersion)
@@ -80,6 +84,9 @@
             if (sourceBookmarkData)
             {
                 self.sourceURL = URL_FROM_BOOKMARK(sourceBookmarkData);
+            }
+            else {
+                err = [NSError errorWithDomain:NSCocoaErrorDomain code:NSCoderValueNotFoundError userInfo:nil];
             }
             //If we couldn't resolve the bookmark to this drive's path, this drive is useless
             //and we shouldn't bother continuing.
@@ -129,6 +136,9 @@
             if (sourceAliasData)
             {
                 self.sourceURL = URL_FROM_ALIAS(sourceAliasData);
+            }
+            else {
+                err = [NSError errorWithDomain:NSCocoaErrorDomain code:NSCoderValueNotFoundError userInfo:nil];
             }
             
             if (self.sourceURL == nil)
