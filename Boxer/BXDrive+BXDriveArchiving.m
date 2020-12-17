@@ -27,7 +27,7 @@
 /// NDAlias encoded its internal alias record as an NSData object;
 /// we no longer use NDAlias, but we can convert its alias record
 /// into modern bookmark data. This class is substituted for NDAlias
-/// during decoding and returns the decoded NSData object directly.
+/// during decoding.
 - (id) initWithCoder: (NSCoder *)aDecoder
 {
     if (self = [super init]) {
