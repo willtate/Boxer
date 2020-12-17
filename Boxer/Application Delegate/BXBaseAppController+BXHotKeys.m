@@ -73,8 +73,16 @@
 
 - (BOOL) eventTap: (BXKeyboardEventTap *)tap shouldCaptureKeyEvent: (NSEvent *)event
 {
+    __block BOOL shouldReturn = NO;
     //Don't capture any keys when we're not the active application
-    if (![NSApp isActive]) return NO;
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        if (![NSApp isActive]) {
+            shouldReturn = YES;
+        }
+    });
+    if (shouldReturn) {
+        return NO;
+    }
     
     //Tweak: let Cmd-modified keys fall through, so that key-repeat events
     //for key equivalents are handled properly.
@@ -83,7 +91,14 @@
     
     //Only capture if the current session is key and is running a program.
     if (!self.currentSession.programIsActive) return NO;
-    if ([self documentForWindow: [NSApp keyWindow]] != self.currentSession) return NO;
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        if ([self documentForWindow: [NSApp keyWindow]] != self.currentSession) {
+            shouldReturn = YES;
+        }
+    });
+    if (shouldReturn) {
+        return NO;
+    }
     
     switch (event.keyCode)
     {
