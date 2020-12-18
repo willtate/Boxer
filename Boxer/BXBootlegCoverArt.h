@@ -40,13 +40,14 @@
 @property (copy, nonatomic) NSString *title;
 
 /// Returns the font family name used for printing the title.
-+ (NSString *) fontName;
+@property (class, readonly, copy) NSString *fontName;
 
 /// Returns the color used for printing the title.
-+ (NSColor *) textColor;
+@property (class, readonly, copy) NSColor *textColor;
 
-/// Returns the line height and font size used for printing the title.
+/// Returns the line height used for printing the title.
 + (CGFloat) lineHeightForSize:	(NSSize)size;
+/// Returns the font size used for printing the title.
 + (CGFloat) fontSizeForSize:	(NSSize)size;
 
 /// Returns a dictionary of \c NSAttributedString text attributes used for printing the title.
