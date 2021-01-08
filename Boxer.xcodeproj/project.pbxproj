@@ -1126,6 +1126,7 @@
 		55BBA4E7235EE141007AE319 /* Boxer Standalone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boxer Standalone-Bridging-Header.h"; sourceTree = "<group>"; };
 		55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+ADBErrorHelpers.swift"; sourceTree = "<group>"; };
 		55BF6F0320210F6000F3FE59 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		55C3B28D25A808D8001EE655 /* midi_handler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = midi_handler.h; sourceTree = "<group>"; };
 		55DEBB1A201E81C200F1092F /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
 		55DEBB20201E81DF00F1092F /* pci_bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pci_bus.h; sourceTree = "<group>"; };
 		55DEBB21201E875500F1092F /* pci_bus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pci_bus.cpp; sourceTree = "<group>"; };
@@ -2238,6 +2239,7 @@
 		5514502424BE8BCC0002CE28 /* midi */ = {
 			isa = PBXGroup;
 			children = (
+				55C3B28D25A808D8001EE655 /* midi_handler.h */,
 				5514502524BE8BCC0002CE28 /* midi_alsa.h */,
 				5514502624BE8BCC0002CE28 /* midi.cpp */,
 				5514502724BE8BCC0002CE28 /* midi_oss.h */,
