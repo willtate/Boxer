@@ -16,14 +16,15 @@
 
 #pragma mark - Runloop state functions
 
-//This is called in place of DOSBox's GFX_Events to allow us to process events when the DOSBox
-//core runloop gives us time.
-void boxer_processEvents()
+/// This is called in place of DOSBox's GFX_Events to allow us to process events when the DOSBox
+/// core runloop gives us time.
+bool boxer_processEvents()
 {
 	[[BXEmulator currentEmulator] _processEvents];
+    return !exit_requested || !boxer_runLoopShouldContinue();
 }
 
-//Called at the start and end of every iteration of DOSBOX_RunMachine.
+/// Called at the start and end of every iteration of DOSBOX_RunMachine.
 void boxer_runLoopWillStartWithContextInfo(void **contextInfo)
 {
 	[[BXEmulator currentEmulator] _runLoopWillStartWithContextInfo: contextInfo];
@@ -34,14 +35,14 @@ void boxer_runLoopDidFinishWithContextInfo(void *contextInfo)
 	[[BXEmulator currentEmulator] _runLoopDidFinishWithContextInfo: contextInfo];
 }
 
-//This is called at the start of DOSBox_NormalLoop, and
-///allows us to short-circuit the current run loop if needed.
+/// This is called at the start of DOSBox_NormalLoop, and
+/// allows us to short-circuit the current run loop if needed.
 bool boxer_runLoopShouldContinue()
 {
 	return [[BXEmulator currentEmulator] _runLoopShouldContinue];
 }
 
-//Notifies Boxer of changes to title and speed settings
+/// Notifies Boxer of changes to title and speed settings
 void boxer_handleDOSBoxTitleChange(Bit32s newCycles, int newFrameskip, bool newPaused)
 {
 	BXEmulator *emulator = [BXEmulator currentEmulator];

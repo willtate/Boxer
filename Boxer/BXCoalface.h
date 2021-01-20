@@ -145,7 +145,7 @@ extern "C" {
 	void boxer_runLoopWillStartWithContextInfo(void **contextInfo);
 	void boxer_runLoopDidFinishWithContextInfo(void *contextInfo);
 	bool boxer_runLoopShouldContinue();
-	void boxer_processEvents();
+	bool boxer_processEvents();
 	
     
 #pragma mark - Input

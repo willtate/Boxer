@@ -278,7 +278,7 @@ static BOOL _hasStartedEmulator = NO;
         
             //Tells DOSBox to close the current shell at the end of the commandline input loop
             DOS_Shell *shell = self._currentShell;
-            if (shell) shell->exit_flag = YES;
+            if (shell) exit_requested = YES;
         }
 
         self.cancelled = YES;
