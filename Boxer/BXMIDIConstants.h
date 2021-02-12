@@ -47,14 +47,13 @@ NS_ENUM(uint8_t) {
 #define BXRolandSysexAddressLength 3l
 //! High byte, middle byte, low byte
 #define BXRolandSysexRequestSizeLength 3l
-//!cChecksum, end byte
+//! Checksum, end byte
 #define BXRolandSysexTailLength 2l
 
 
 #define BXRolandSysexChecksumModulus 128
 
 NS_ENUM(uint8_t) {
-
     BXRolandSysexModelIDMT32 = 0x16,
     BXRolandSysexModelIDD50 = 0x14,
 
