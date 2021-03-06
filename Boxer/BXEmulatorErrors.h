@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark Constants
@@ -41,6 +42,7 @@ typedef NS_ERROR_ENUM(BXDOSFilesystemErrorDomain, BXDOSFilesystemErrors) {
     
     BXDOSFilesystemMSCDEXNonContiguousDrives,   //!< Attempting to mount a CD drive at a letter not directly
                                                 //!< before or after a previous CD drive (MSCDEX limitation.)
+    
     BXDOSFilesystemMSCDEXOutOfCDROMDrives,      //!< Exceeded the maximum number of CD drives supported (MSCDEX limitation.)
     
     BXDOSFilesystemDriveLocked,         //!< A drive could not be ejected because it was a required internal drive.
@@ -96,3 +98,5 @@ typedef NS_ERROR_ENUM(BXDOSFilesystemErrorDomain, BXDOSFilesystemErrors) {
 
 @interface BXEmulatorDriveInUseError : NSError <BXDriveError>
 @end
+
+NS_ASSUME_NONNULL_END

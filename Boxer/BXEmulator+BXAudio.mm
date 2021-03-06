@@ -255,8 +255,8 @@ void _renderMIDIOutput(Bitu numFrames)
                 format: (BXAudioFormat)format
 {
     NSUInteger size = format & BXAudioFormatSizeMask;
-    NSUInteger isSigned = (format & BXAudioFormatSigned);
-    NSUInteger isStereo = (format & BXAudioFormatStereo);
+    BOOL isSigned = !!(format & BXAudioFormatSigned);
+    BOOL isStereo = !!(format & BXAudioFormatStereo);
     
     switch (size)
     {
@@ -306,7 +306,7 @@ void _renderMIDIOutput(Bitu numFrames)
 - (void) _queueSysexMessage: (NSData *)message
 {
     //Copy the message before queuing, as it may be backed by a buffer we don't own.
-    [_pendingSysexMessages addObject: [NSData dataWithData: message]];
+    [_pendingSysexMessages addObject: [message copy]];
 }
 
 - (void) _flushPendingSysexMessages

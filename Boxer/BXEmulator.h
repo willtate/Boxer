@@ -153,7 +153,7 @@ extern NSStringEncoding BXDirectStringEncoding;
     //Managed by BXAudio.
     id <BXMIDIDevice> _activeMIDIDevice;
     NSDictionary<NSString *,id> *_requestedMIDIDeviceDescription;
-    NSMutableArray *_pendingSysexMessages;
+    NSMutableArray<NSData*> *_pendingSysexMessages;
     BOOL _autodetectsMT32;
     
     //Used by BXDOSFilesystem to track drives while they're being mounted.

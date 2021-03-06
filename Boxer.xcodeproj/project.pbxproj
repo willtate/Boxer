@@ -1139,6 +1139,10 @@
 		55E6A0AD1C00C81D00285593 /* Boxer-MT32Emu.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Boxer-MT32Emu.xcodeproj"; path = "Vendor/MT32Emu/Boxer-MT32Emu.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		55EA6CF425D4919E00945236 /* BXMIDIConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BXMIDIConfig.cpp; sourceTree = "<group>"; };
 		55EA6CF525D4919E00945236 /* BXMIDIConfig.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BXMIDIConfig.hpp; sourceTree = "<group>"; };
+		55EA6D7E25D7A23400945236 /* midi_fluidsynth.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = midi_fluidsynth.cpp; sourceTree = "<group>"; };
+		55EA6D7F25D7A23400945236 /* midi_mt32.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = midi_mt32.cpp; sourceTree = "<group>"; };
+		55EA6D8025D7A23400945236 /* midi_fluidsynth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = midi_fluidsynth.h; sourceTree = "<group>"; };
+		55EA6D8125D7A23400945236 /* midi_mt32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = midi_mt32.h; sourceTree = "<group>"; };
 		55F4A9302563157300410099 /* gui_msgs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gui_msgs.h; sourceTree = "<group>"; };
 		55F4A93A2563159F00410099 /* string_utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_utils.h; sourceTree = "<group>"; };
 		55F4A93B256315FD00410099 /* program_ls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = program_ls.cpp; sourceTree = "<group>"; };
@@ -2243,13 +2247,17 @@
 		5514502424BE8BCC0002CE28 /* midi */ = {
 			isa = PBXGroup;
 			children = (
-				55C3B28D25A808D8001EE655 /* midi_handler.h */,
 				5514502524BE8BCC0002CE28 /* midi_alsa.h */,
-				5514502624BE8BCC0002CE28 /* midi.cpp */,
-				5514502724BE8BCC0002CE28 /* midi_oss.h */,
-				5514502824BE8BCC0002CE28 /* midi_coremidi.h */,
 				5514502A24BE8BCC0002CE28 /* midi_coreaudio.h */,
+				5514502824BE8BCC0002CE28 /* midi_coremidi.h */,
+				55EA6D7E25D7A23400945236 /* midi_fluidsynth.cpp */,
+				55EA6D8025D7A23400945236 /* midi_fluidsynth.h */,
+				55C3B28D25A808D8001EE655 /* midi_handler.h */,
+				55EA6D7F25D7A23400945236 /* midi_mt32.cpp */,
+				55EA6D8125D7A23400945236 /* midi_mt32.h */,
+				5514502724BE8BCC0002CE28 /* midi_oss.h */,
 				5514502C24BE8BCC0002CE28 /* midi_win32.h */,
+				5514502624BE8BCC0002CE28 /* midi.cpp */,
 			);
 			path = midi;
 			sourceTree = "<group>";

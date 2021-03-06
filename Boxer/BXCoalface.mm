@@ -556,7 +556,7 @@ void boxer_die(const char *functionName, const char *fileName, int lineNumber, c
 
 void restart_program(std::vector<std::string> & parameters) {
     // TODO: re-write?
-    E_Exit("Restarting failed");
+    E_Exit("Restarting not implemented!");
 }
 
 #pragma mark - No-ops

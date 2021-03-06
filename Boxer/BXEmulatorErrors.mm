@@ -39,7 +39,10 @@ NSString * const BXEmulatorUnrecoverableException = @"BXEmulatorUnrecoverableExc
 						return description;
 					} else if ([userInfoKey isEqualToString:NSLocalizedRecoverySuggestionErrorKey]) {
 						return NSLocalizedString(@"The disk image file may be corrupted or incomplete.", @"Recovery suggestion shown when a drive's source image could not be loaded by DOSBox.");
-					}
+                    } else if([userInfoKey isEqualToString:NSDebugDescriptionErrorKey]) {
+                        NSString *displayName = drive.sourceURL.lastPathComponent;
+                        return [NSString stringWithFormat:@"The disk image “%1$@” could not be opened.", displayName];
+                    }
 					break;
 					
 				case BXDOSFilesystemCouldNotReadDrive:
@@ -52,6 +55,9 @@ NSString * const BXEmulatorUnrecoverableException = @"BXEmulatorUnrecoverableExc
 						return description;
 					} else if ([userInfoKey isEqualToString:NSLocalizedRecoverySuggestionErrorKey]) {
 						return NSLocalizedString(@"Ensure that you have permission to access this file and that the volume containing it is still available.", @"Recovery suggestion shown when a drive's source does not exist or could not be accessed.");
+                    } else if([userInfoKey isEqualToString:NSDebugDescriptionErrorKey]) {
+                        NSString *displayName = drive.sourceURL.lastPathComponent;
+                        return [NSString stringWithFormat:@"The file “%1$@” could not be read.", displayName];
 					}
 					break;
 
@@ -64,6 +70,8 @@ NSString * const BXEmulatorUnrecoverableException = @"BXEmulatorUnrecoverableExc
 						return description;
 					} else if ([userInfoKey isEqualToString:NSLocalizedRecoverySuggestionErrorKey]) {
 						return NSLocalizedString(@"Eject the existing drive and try again.", @"Recovery suggestion shown when a drive's letter is already occupied.");
+                    } else if([userInfoKey isEqualToString:NSDebugDescriptionErrorKey]) {
+                        return [NSString stringWithFormat:@"There is already another drive at the DOS drive letter %1$@.", drive.letter];
 					}
 					break;
 
@@ -73,6 +81,8 @@ NSString * const BXEmulatorUnrecoverableException = @"BXEmulatorUnrecoverableExc
 												 @"Error shown when all drive letters are already occupied.");
 					} else if ([userInfoKey isEqualToString:NSLocalizedRecoverySuggestionErrorKey]) {
 						return NSLocalizedString(@"Eject one or more existing drives and try again.", @"Recovery suggestion shown when all drive letters are already occupied.");
+                    } else if([userInfoKey isEqualToString:NSDebugDescriptionErrorKey]) {
+                        return @"There are no free DOS drive letters remaining.";
 					}
 					break;
 					
@@ -82,6 +92,8 @@ NSString * const BXEmulatorUnrecoverableException = @"BXEmulatorUnrecoverableExc
 												 @"Error shown when the chosen drive letter for a CD-ROM drive would be non-contiguous.");
 					} else if ([userInfoKey isEqualToString:NSLocalizedRecoverySuggestionErrorKey]) {
 						return NSLocalizedString(@"Try removing later drives before adding or removing any other CD-ROM drives.", @"Recovery suggestion shown when the chosen drive letter for a CD-ROM drive would be non-contiguous.");
+                    } else if([userInfoKey isEqualToString:NSDebugDescriptionErrorKey]) {
+                        return @"CD-ROM drives must be on sequential drive letters, with no gaps between them.";
 					}
 					break;
 					
@@ -94,6 +106,8 @@ NSString * const BXEmulatorUnrecoverableException = @"BXEmulatorUnrecoverableExc
 						return description;
 					} else if ([userInfoKey isEqualToString:NSLocalizedRecoverySuggestionErrorKey]) {
 						return NSLocalizedString(@"Eject one or more existing drives and try again.", @"Recovery suggestion shown when the user tries to add more than the maximum number of CD-ROM drives.");
+                    } else if([userInfoKey isEqualToString:NSDebugDescriptionErrorKey]) {
+                        return [NSString stringWithFormat:@"MS-DOS is limited to a maximum of %1$d CD-ROM drives.", BXMaxCDROMDrives];
 					}
 					break;
 					
@@ -104,6 +118,8 @@ NSString * const BXEmulatorUnrecoverableException = @"BXEmulatorUnrecoverableExc
 						
 						NSString *description	= [NSString stringWithFormat: descriptionFormat, drive.letter];
 						return description;
+                    } else if([userInfoKey isEqualToString:NSDebugDescriptionErrorKey]) {
+                        return [NSString stringWithFormat:@"Drive %1$@ is required by Boxer and cannot be ejected.", drive.letter];
 					}
 
 					break;

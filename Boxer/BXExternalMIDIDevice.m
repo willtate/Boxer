@@ -312,12 +312,17 @@
     NSAssert(message.length > 0, @"0-length message received by handleMessage:");
 
     UInt8 buffer[MAX_SYSEX_PACKET_SIZE];
+//    if (@available(macOS 11.0, *)) {
+//        MIDIEventList list1;
+//        TODO: use MIDIEventListInit(&list1, kMIDIProtocol_1_0);
+//    } else {
     MIDIPacketList *packetList = (MIDIPacketList *)buffer;
 	MIDIPacket *currentPacket = MIDIPacketListInit(packetList);
     
     MIDIPacketListAdd(packetList, sizeof(buffer), currentPacket, (MIDITimeStamp)0, message.length, (UInt8 *)message.bytes);
     
     MIDISend(_port, _destination, packetList);
+//    }
     
     //Now, calculate how long it should take the device to process all that
     NSTimeInterval processingDelay = [self processingDelayForSysex: message];
