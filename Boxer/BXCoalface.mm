@@ -559,6 +559,11 @@ void restart_program(std::vector<std::string> & parameters) {
     E_Exit("Restarting not implemented!");
 }
 
+const char *DOSBOX_GetDetailedVersion() noexcept
+{
+    return "Boxer-build";
+}
+
 #pragma mark - No-ops
 
 //These used to be defined in sdl_mapper.cpp, which we no longer include in Boxer.
