@@ -257,9 +257,25 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
                 break;
                 
             case BXDriveHardDisk:
+            if (drive.shadowURL) {
+                NSNumber *isDirFlag;
+                NSURL *shadowURL = drive.shadowURL;
+                BOOL checkedDir = [shadowURL getResourceValue: &isDirFlag forKey: NSURLIsDirectoryKey error: NULL];
+                BOOL isDir = checkedDir && isDirFlag.boolValue;
+                NSString *shadowPath = shadowURL.path;
+                //Ensure that folder paths have a trailing slash, otherwise DOSBox will get shirty
+                if (isDir && ![shadowPath hasSuffix: @"/"])
+                    shadowPath = [shadowPath stringByAppendingString: @"/"];
+
+                DOSBoxDrive = [self _hardDriveFromPath: mountPath
+                                       overlayedByPath: shadowPath
+                                             freeSpace: drive.freeSpace
+                                                 error: &mountError];
+            } else {
                 DOSBoxDrive = [self _hardDriveFromPath: mountPath
                                              freeSpace: drive.freeSpace
                                                  error: &mountError];
+            }
                 break;
                 
             case BXDriveFloppyDisk:
@@ -1184,6 +1200,19 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
 							freeSpace: freeSpace
 							 geometry: BXHardDiskGeometry
 							  mediaID: BXHardDiskMediaID
+                                error: outError];
+}
+
+- (DOS_Drive *) _hardDriveFromPath: (NSString *)path
+                   overlayedByPath: (NSString *)shadowedPath
+                         freeSpace: (NSInteger)freeSpace
+                             error: (NSError **)outError
+{
+    return [self _DOSBoxDriveFromPath: path
+                      overlayedByPath: shadowedPath
+                            freeSpace: freeSpace
+                             geometry: BXHardDiskGeometry
+                              mediaID: BXHardDiskMediaID
                                 error: outError];
 }
 
