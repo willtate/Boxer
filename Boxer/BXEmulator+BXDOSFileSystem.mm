@@ -1075,7 +1075,7 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
             
             *outError = [NSError errorWithDomain: BXDOSBoxMountErrorDomain
                                             code: errorCode
-                                        userInfo: nil];
+                                        userInfo: @{NSFilePathErrorKey: path}];
         }
         
         return nil;
@@ -1099,7 +1099,7 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
         //Assume this is always a corrupted-image problem
         if (outError) *outError = [NSError errorWithDomain: BXDOSBoxMountErrorDomain
                                                       code: BXDOSBoxMountInvalidImageFormat
-                                                  userInfo: nil];
+                                                  userInfo: @{NSFilePathErrorKey: path}];
         
         return nil;
     }
@@ -1224,7 +1224,41 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
 						  mediaID);
 }
 
+- (DOS_Drive *) _DOSBoxDriveFromPath: (NSString *)path
+                     overlayedByPath: (NSString *)shadowedPath
+                           freeSpace: (NSInteger)freeSpace
+                            geometry: (BXDriveGeometry)geometry
+                             mediaID: (NSUInteger)mediaID
+                               error: (NSError **)outError
+{
+    if (freeSpace >= 0) //BXDefaultFreespace is -1
+    {
+        NSUInteger bytesPerCluster = (geometry.bytesPerSector * geometry.sectorsPerCluster);
+        geometry.freeClusters = (NSUInteger)freeSpace / bytesPerCluster;
+    }
+    
+    const char *drivePath = [[NSFileManager defaultManager] fileSystemRepresentationWithPath: path];
+    const char *shadowPath = [[NSFileManager defaultManager] fileSystemRepresentationWithPath: shadowedPath];
 
+    uint8_t err;
+    auto overlay = new Overlay_Drive(drivePath,
+                                     shadowPath,
+                                     geometry.bytesPerSector,
+                                     geometry.sectorsPerCluster,
+                                     geometry.numClusters,
+                                     geometry.freeClusters,
+                                     mediaID,
+                                     err);
+    if (err != 0) {
+        delete overlay;
+        if (outError) {
+            *outError = [NSError errorWithDomain:@"io.github.dosbox-staging.overlayErrors" code:err userInfo:@{NSFilePathErrorKey: path}];
+        }
+        return NULL;
+    }
+    
+    return overlay;
+}
 
 //Synchronizes Boxer's mounted drive cache with DOSBox's drive array,
 //adding new drives and removing old drives as necessary.

@@ -340,6 +340,24 @@ typedef NS_ERROR_ENUM(BXDOSBoxMountErrorDomain, BXDOSBoxMountErrors) {
 							 mediaID: (NSUInteger)mediaID
                                error: (NSError **)outError;
 
+/// Creates a new DOSBox FAT drive instance from a local folder. This must then be mounted by @c -_addDOSBoxDrive:atIndex:.
+/// @param path             The local filesystem path to the folder to use as the mount point for the drive.
+/// @param shadowedPath The path that shadows stuff.
+/// @param freeSpace        The amount of free space to report for the drive. If 0, the drive will be treated as read-only.
+///                         Pass \c -1 to use an appropriate amount of space based on the drive type.
+///                         This does not actually restrict the storage space of the drive: it is only used
+///                         when reporting the free space, to prevent problems with naive drive space checks.
+/// @param geometry         The physical disk layout to emulate for this drive.
+/// @param mediaID          The media descriptor ID to report for this drive.
+/// @param outError[out]    If drive creation fails, this will be populated with an error giving the reason for failure.
+/// @return A new DOSBox drive instance, or NULL if drive creation failed.
+- (DOS_Drive *) _DOSBoxDriveFromPath: (NSString *)path
+                     overlayedByPath: (NSString *)shadowedPath
+                           freeSpace: (NSInteger)freeSpace
+                            geometry: (BXDriveGeometry)size
+                             mediaID: (NSUInteger)mediaID
+                               error: (NSError **)outError;
+
 /// Synchronizes Boxer's mounted drive cache with DOSBox's drive array,
 /// adding and removing drives as necessary.
 - (void) _syncDriveCache;
