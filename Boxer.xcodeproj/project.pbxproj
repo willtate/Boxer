@@ -1068,6 +1068,7 @@
 		5563E57E239EF7CD007A1600 /* ADBSwiftHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADBSwiftHelpers.swift; sourceTree = "<group>"; };
 		5565757423568DED003489A6 /* risc_x64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = risc_x64.h; sourceTree = "<group>"; };
 		558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BXXBOBluetoothControllerProfile.m; sourceTree = "<group>"; };
+		55998D1725F606F000581095 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		55AEA5CB201F05010000139A /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DocumentationPanel.strings; sourceTree = "<group>"; };
 		55AEA5CC201F05020000139A /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/DocumentationBrowser.strings; sourceTree = "<group>"; };
 		55AEA5CD201F05020000139A /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/PrintStatusPanel.strings; sourceTree = "<group>"; };
@@ -4742,6 +4743,7 @@
 				9F4199B81BD3F08900A2D165 /* Base */,
 				9F7472DC1BE7DA3D00B9C9ED /* cs */,
 				E3300C0723B02F1C000A459D /* pt-BR */,
+				55998D1725F606F000581095 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -5083,7 +5085,6 @@
 		9F2D317015B8233800FAE848 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
@@ -5091,6 +5092,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_SHORT_VERSION_STRING = 1.0;
+				CURRENT_PROJECT_VERSION = 20210308;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -5111,6 +5113,7 @@
 				INFOPLIST_FILE = "Standalone/Boxer Standalone-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = "2.0.0-alpha";
 				OTHER_CFLAGS = "-mstackrealign";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.washboardabs.boxer-standalone";
 				PRODUCT_NAME = "Boxer Standalone";
@@ -5125,7 +5128,6 @@
 		9F2D317115B8233800FAE848 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
@@ -5133,6 +5135,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_SHORT_VERSION_STRING = 1.0;
+				CURRENT_PROJECT_VERSION = 20210308;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
@@ -5149,6 +5152,7 @@
 				INFOPLIST_FILE = "Standalone/Boxer Standalone-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = "2.0.0-alpha";
 				OTHER_CFLAGS = "-mstackrealign";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.washboardabs.boxer-standalone";
 				PRODUCT_NAME = "Boxer Standalone";
@@ -5290,7 +5294,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = "2.0.0-alpha+20191017";
+				CURRENT_PROJECT_VERSION = "2.0.0-alpha+20210308";
 				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5333,7 +5337,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = "2.0.0-alpha+20191017";
+				CURRENT_PROJECT_VERSION = "2.0.0-alpha+20210308";
 				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
