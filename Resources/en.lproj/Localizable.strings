@@ -823,4 +823,4 @@
 /* Localized description for when a requested URL cannot be opened from within DOS. */
 "URL not reachable in DOS" = "URL not reachable in DOS";
 
-"Unable to decode drive, encoding version %ld is higher than supported version %ld." = "Unable to decode drive, encoding version %1$ld is higher than supported version %1$ld.";
+"Unable to decode drive: encoding version %ld is higher than supported version %ld." = "Unable to decode drive: encoding version %1$ld is higher than supported version %2$ld.";

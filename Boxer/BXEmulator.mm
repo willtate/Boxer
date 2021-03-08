@@ -954,7 +954,7 @@ static BOOL _hasStartedEmulator = NO;
 	//TWEAK: it's only safe to break out once initialization is done, since some
 	//of DOSBox's initialization routines rely on running tasks on the run loop
 	//and may crash if they fail to complete.
-	if (self.isCancelled && self.isInitialized)
+	if ((self.isCancelled || exit_requested) && self.isInitialized)
     {
         return NO;
 	}
