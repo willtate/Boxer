@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, BXDriveType) {
 };
 
 /// Setting freeSpace to @c BXDefaultFreeSpace indicates that the drive should use whatever free space DOSBox thinks is best.
-#define BXDefaultFreeSpace -1
+#define BXDefaultFreeSpace -1l
 
 
 #pragma mark -

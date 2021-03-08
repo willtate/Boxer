@@ -224,7 +224,7 @@
 	//ceases to exist. This avoids spurious console errors.
 	[center addObserver: self
 			   selector: @selector(_windowWillClose)
-				   name: @"NSWindowWillCloseNotification"
+				   name: NSWindowWillCloseNotification
 				 object: self.view.window];
 }
 
