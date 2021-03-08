@@ -791,8 +791,8 @@
 		9FF175E711B279F500D0FCDC /* BXVideoHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FF175E611B279F500D0FCDC /* BXVideoHandler.mm */; };
 		9FF2E9BD11E6F4950051E485 /* BXEmulatorConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF2E9BC11E6F4950051E485 /* BXEmulatorConfiguration.m */; };
 		9FF865CF134DAB5A001CE857 /* ADBTaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF865CE134DAB5A001CE857 /* ADBTaskOperation.m */; };
-		9FF86678134DCA16001CE857 /* cdrdao in Resources */ = {isa = PBXBuildFile; fileRef = 9FF86676134DCA16001CE857 /* cdrdao */; };
-		9FF86679134DCA16001CE857 /* toc2cue in Resources */ = {isa = PBXBuildFile; fileRef = 9FF86677134DCA16001CE857 /* toc2cue */; };
+		9FF86678134DCA16001CE857 /* cdrdao in Copy CD Programs */ = {isa = PBXBuildFile; fileRef = 9FF86676134DCA16001CE857 /* cdrdao */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9FF86679134DCA16001CE857 /* toc2cue in Copy CD Programs */ = {isa = PBXBuildFile; fileRef = 9FF86677134DCA16001CE857 /* toc2cue */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9FF91EB616CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF91EB516CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m */; };
 		9FF91EB716CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF91EB516CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m */; };
 		9FF91EB816CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF91EB516CC362700E1D1A8 /* NSWorkspace+ADBIconHelpers.m */; };
@@ -945,6 +945,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		55998D1C25F626E800581095 /* Copy CD Programs */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				9FF86678134DCA16001CE857 /* cdrdao in Copy CD Programs */,
+				9FF86679134DCA16001CE857 /* toc2cue in Copy CD Programs */,
+			);
+			name = "Copy CD Programs";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F2D316515B8233800FAE848 /* Copy Bundled Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3147,13 +3159,13 @@
 		9F77216B12B38C4400072AE8 /* misc */ = {
 			isa = PBXGroup;
 			children = (
-				55F643EF25F41DF5009E1800 /* rwqueue.cpp */,
-				55F643F825F41DF5009E1800 /* soft_limiter.cpp */,
 				9F77216C12B38C4400072AE8 /* cross.cpp */,
 				55540E252545604400B88BE3 /* fs_utils_posix.cpp */,
 				9F77216D12B38C4400072AE8 /* messages.cpp */,
 				9F77216E12B38C4400072AE8 /* programs.cpp */,
+				55F643EF25F41DF5009E1800 /* rwqueue.cpp */,
 				9F77216F12B38C4400072AE8 /* setup.cpp */,
+				55F643F825F41DF5009E1800 /* soft_limiter.cpp */,
 				9F77217012B38C4400072AE8 /* support.cpp */,
 			);
 			path = misc;
@@ -3623,6 +3635,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				9FBC3D5E0F56EA69001811F2 /* Copy Bundled Frameworks */,
+				55998D1C25F626E800581095 /* Copy CD Programs */,
 			);
 			buildRules = (
 			);
@@ -3853,8 +3866,6 @@
 				9F160DE21236952600F8768E /* Sample Games in Resources */,
 				9F70C19C129036C900A3627F /* Boxer.sdef in Resources */,
 				9FFC2AC012A19CCC008C2B3B /* Sample Game Icons in Resources */,
-				9FF86678134DCA16001CE857 /* cdrdao in Resources */,
-				9FF86679134DCA16001CE857 /* toc2cue in Resources */,
 				9FCC303C13670F680013F083 /* KeyboardLayouts.plist in Resources */,
 				9F4199EA1BD416E400A2D165 /* LauncherFavorite.xib in Resources */,
 				9F4199ED1BD416E400A2D165 /* Inspector.xib in Resources */,

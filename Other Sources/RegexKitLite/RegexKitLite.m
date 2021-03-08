@@ -1715,23 +1715,23 @@ static NSDictionary *rkl_userInfoDictionary(RKLUserInfoOptions userInfoOptions, 
   NSString * RKL_GC_VOLATILE errorNameString = [NSString stringWithUTF8String:RKL_ICU_FUNCTION_APPEND(u_errorName)(status)];
   
   addKeyAndObject(objects, keys, count, RKLICURegexRegexErrorKey,        regexString);
-  addKeyAndObject(objects, keys, count, RKLICURegexRegexOptionsErrorKey, [NSNumber numberWithUnsignedInt:options]);
-  addKeyAndObject(objects, keys, count, RKLICURegexErrorCodeErrorKey,    [NSNumber numberWithInt:status]);
+  addKeyAndObject(objects, keys, count, RKLICURegexRegexOptionsErrorKey, @(options));
+  addKeyAndObject(objects, keys, count, RKLICURegexErrorCodeErrorKey,    @(status));
   addKeyAndObject(objects, keys, count, RKLICURegexErrorNameErrorKey,    errorNameString);
 
   if(matchString                                            != NULL) { addKeyAndObject(objects, keys, count, RKLICURegexSubjectStringErrorKey,      matchString);                                             }  
   if((userInfoOptions & RKLUserInfoSubjectRange)            != 0UL)  { addKeyAndObject(objects, keys, count, RKLICURegexSubjectRangeErrorKey,       [NSValue valueWithRange:matchRange]);                     }
   if(replacementString                                      != NULL) { addKeyAndObject(objects, keys, count, RKLICURegexReplacementStringErrorKey,  replacementString);                                       }
   if(replacedString                                         != NULL) { addKeyAndObject(objects, keys, count, RKLICURegexReplacedStringErrorKey,     replacedString);                                          }
-  if((userInfoOptions & RKLUserInfoReplacedCount)           != 0UL)  { addKeyAndObject(objects, keys, count, RKLICURegexReplacedCountErrorKey,      [NSNumber numberWithInteger:replacedCount]);              }
-  if((userInfoOptions & RKLUserInfoRegexEnumerationOptions) != 0UL)  { addKeyAndObject(objects, keys, count, RKLICURegexEnumerationOptionsErrorKey, [NSNumber numberWithUnsignedInteger:enumerationOptions]); }
+  if((userInfoOptions & RKLUserInfoReplacedCount)           != 0UL)  { addKeyAndObject(objects, keys, count, RKLICURegexReplacedCountErrorKey,      @(replacedCount));              }
+  if((userInfoOptions & RKLUserInfoRegexEnumerationOptions) != 0UL)  { addKeyAndObject(objects, keys, count, RKLICURegexEnumerationOptionsErrorKey, @(enumerationOptions)); }
   
   if((parseError != NULL) && (parseError->line != -1)) {
     NSString *preContextString  = [NSString stringWithCharacters:&parseError->preContext[0]  length:(NSUInteger)RKL_ICU_FUNCTION_APPEND(u_strlen)(&parseError->preContext[0])];
     NSString *postContextString = [NSString stringWithCharacters:&parseError->postContext[0] length:(NSUInteger)RKL_ICU_FUNCTION_APPEND(u_strlen)(&parseError->postContext[0])];
     
-    addKeyAndObject(objects, keys, count, RKLICURegexLineErrorKey,        [NSNumber numberWithInt:parseError->line]);
-    addKeyAndObject(objects, keys, count, RKLICURegexOffsetErrorKey,      [NSNumber numberWithInt:parseError->offset]);
+    addKeyAndObject(objects, keys, count, RKLICURegexLineErrorKey,        @(parseError->line));
+    addKeyAndObject(objects, keys, count, RKLICURegexOffsetErrorKey,      @(parseError->offset));
     addKeyAndObject(objects, keys, count, RKLICURegexPreContextErrorKey,  preContextString);
     addKeyAndObject(objects, keys, count, RKLICURegexPostContextErrorKey, postContextString);
     addKeyAndObject(objects, keys, count, @"NSLocalizedFailureReason",    ([NSString stringWithFormat:@"The error %@ occurred at line %d, column %d: %@<<HERE>>%@", errorNameString, parseError->line, parseError->offset, preContextString, postContextString]));
