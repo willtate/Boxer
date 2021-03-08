@@ -317,20 +317,22 @@ static CGEventRef _handleEventFromTap(CGEventTapProxy proxy, CGEventType type, C
             BOOL shouldCapture = NO;
             
             //First try and make this into a cocoa event
-            NSEvent *cocoaEvent = nil;
-            @try
-            {
-                cocoaEvent = [NSEvent eventWithCGEvent: event];
-            }
-            @catch (NSException *exception) 
-            {
-#ifdef BOXER_DEBUG
-                //If the event could not be converted into a cocoa event, give up
-                CFStringRef eventDesc = CFCopyDescription(event);
-                NSLog(@"Could not convert CGEvent: %@", (__bridge NSString *)eventDesc);
-                CFRelease(eventDesc);
-#endif
-            }
+            __block NSEvent *cocoaEvent = nil;
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                @try
+                {
+                    cocoaEvent = [NSEvent eventWithCGEvent: event];
+                }
+                @catch (NSException *exception)
+                {
+    #ifdef BOXER_DEBUG
+                    //If the event could not be converted into a cocoa event, give up
+                    CFStringRef eventDesc = CFCopyDescription(event);
+                    NSLog(@"Could not convert CGEvent: %@", (__bridge NSString *)eventDesc);
+                    CFRelease(eventDesc);
+    #endif
+                }
+            });
             
             if (cocoaEvent)
             {
@@ -346,7 +348,9 @@ static CGEventRef _handleEventFromTap(CGEventTapProxy proxy, CGEventType type, C
             
             if (shouldCapture)
             {
-                [NSApp postEvent: cocoaEvent atStart: YES];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [NSApp postEvent: cocoaEvent atStart: YES];
+                });
                 
                 //This approach ought to be closer to the normal behaviour
                 //of the event dispatch mechanism, but seems to result
