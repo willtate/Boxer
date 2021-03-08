@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 #pragma mark Constants
@@ -45,13 +46,13 @@ typedef NS_ENUM(NSInteger, BXGameIdentifierType) {
 @property (weak) IBOutlet BBIconDropzone *iconDropzone;
 
 @property (strong, nonatomic) NSURL *gameboxURL;
-@property (strong, nonatomic) NSURL *appIconURL;
+@property (strong, nonatomic, nullable) NSURL *appIconURL;
 @property (copy, nonatomic) NSString *appName;
 @property (copy, nonatomic) NSString *appBundleIdentifier;
 @property (copy, nonatomic) NSString *appVersion;
 
-@property (copy, nonatomic) NSString *organizationName;
-@property (copy, nonatomic) NSString *organizationURL;
+@property (copy, nonatomic, nullable) NSString *organizationName;
+@property (copy, nonatomic, nullable) NSString *organizationURL;
 
 @property (nonatomic) BOOL showsLaunchPanelAlways;
 @property (nonatomic) BOOL showsHotkeyWarning;
@@ -81,11 +82,11 @@ typedef NS_ENUM(NSInteger, BXGameIdentifierType) {
 #pragma mark Actions
 
 /// Create a bundle.
-- (IBAction) exportApp: (id)sender;
+- (IBAction) exportApp: (nullable id)sender;
 
-- (IBAction) chooseIconURL: (id)sender;
+- (IBAction) chooseIconURL: (nullable id)sender;
 
-- (IBAction) importSettingsFromExistingApp: (id)sender;
+- (IBAction) importSettingsFromExistingApp: (nullable id)sender;
 
 
 #pragma mark -
@@ -98,3 +99,5 @@ typedef NS_ENUM(NSInteger, BXGameIdentifierType) {
 + (NSArray<NSDictionary<NSString*,id>*> *) launchersForGameboxAtURL: (NSURL *)gameboxURL;
 
 @end
+
+NS_ASSUME_NONNULL_END

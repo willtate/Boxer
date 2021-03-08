@@ -16,7 +16,7 @@
     if (self)
     {
         NSArray *registeredTypes = self.registeredDraggedTypes;
-        [self registerForDraggedTypes: [registeredTypes arrayByAddingObject: NSFilenamesPboardType]];
+        [self registerForDraggedTypes: [registeredTypes arrayByAddingObject: NSPasteboardTypeFileURL]];
     }
     
     return self;
@@ -26,10 +26,10 @@
 {
     NSPasteboard *pboard = [sender draggingPasteboard];
     
-    if ([pboard.types containsObject: NSFilenamesPboardType])
+    if ([pboard.types containsObject: NSPasteboardTypeFileURL])
     {
-        NSArray *filePaths = [pboard propertyListForType: NSFilenamesPboardType];
-        NSString *lastFilePath = filePaths.lastObject;
+        NSArray<NSURL *> *filePaths = [pboard readObjectsForClasses:@[[NSURL class]] options:@{NSPasteboardURLReadingFileURLsOnlyKey: @YES}];
+        NSURL *lastFilePath = filePaths.lastObject;
         
         if (lastFilePath)
         {
@@ -37,7 +37,7 @@
             
             if (dropSucceeded)
             {
-                self.lastDroppedImageURL = [NSURL fileURLWithPath: lastFilePath isDirectory: NO];
+                self.lastDroppedImageURL = lastFilePath;
                 return YES;
             }
         }
