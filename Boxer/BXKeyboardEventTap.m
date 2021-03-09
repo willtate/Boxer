@@ -325,12 +325,11 @@ static CGEventRef _handleEventFromTap(CGEventTapProxy proxy, CGEventType type, C
                 }
                 @catch (NSException *exception)
                 {
-    #ifdef BOXER_DEBUG
+#ifdef BOXER_DEBUG
                     //If the event could not be converted into a cocoa event, give up
-                    CFStringRef eventDesc = CFCopyDescription(event);
-                    NSLog(@"Could not convert CGEvent: %@", (__bridge NSString *)eventDesc);
-                    CFRelease(eventDesc);
-    #endif
+                    NSString *eventDesc = CFBridgingRelease(CFCopyDescription(event));
+                    NSLog(@"Could not convert CGEvent: %@", eventDesc);
+#endif
                 }
             });
             

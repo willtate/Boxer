@@ -15,7 +15,7 @@ extension URL {
         guard let bookmarkDataRef = CFURLCreateBookmarkDataFromAliasRecord(kCFAllocatorDefault, aliasRecord as NSData)?.takeRetainedValue() else {
             throw CocoaError(.fileReadCorruptFile)
         }
-        return bookmarkDataRef as Data
+        return Data(referencing: bookmarkDataRef)
     }
     
     /// Creates a URL resolved from the specified Finder alias record.
