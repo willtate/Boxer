@@ -52,7 +52,7 @@
 
 + (NSDictionary *) _defaultPDFInfo
 {
-    return [NSDictionary dictionary];
+    return @{(__bridge id)kCGPDFContextCreator: @"Boxer"};
 }
 
 - (id) init
@@ -213,7 +213,7 @@
 
 - (NSArray *) pagePreviews
 {
-    return self._mutablePagePreviews;
+    return [self._mutablePagePreviews copy];
 }
 
 //Dynamically create a new preview context the first time we need one,

@@ -143,12 +143,14 @@
 	NSImage *coverArt = [[NSImage alloc] init];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(512, 512) scale: 2]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(512, 512)]];
+	[coverArt addRepresentation:[self representationForSize:NSMakeSize(256, 256) scale:2]];
+	[coverArt addRepresentation:[self representationForSize:NSMakeSize(256, 256) scale:1]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(128, 128) scale: 2]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(128, 128)]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(32, 32) scale: 2]];
-	[coverArt addRepresentation: [self representationForSize: NSMakeSize(32, 32)]];
+	[coverArt addRepresentation: [self representationForSize: NSMakeSize(32, 32) scale: 1]];
 	[coverArt addRepresentation: [self representationForSize: NSMakeSize(16, 16) scale: 2]];
-	[coverArt addRepresentation: [self representationForSize: NSMakeSize(16, 16)]];
+	[coverArt addRepresentation: [self representationForSize: NSMakeSize(16, 16) scale: 1]];
 	return coverArt;
 }
 
