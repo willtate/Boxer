@@ -779,7 +779,7 @@
 "“%1$@” does not contain any suitable MT-32 ROMs." = "“%1$@” does not contain any suitable MT-32 ROMs.";
 
 /* Error message shown after choosing a reserved folder as the location for the DOS Games folder. %1$@ is the display name of the folder. */
-"“%1$@” is a special OS X folder and not suitable for storing your DOS games." = "“%1$@” is a special OS X folder and not suitable for storing your DOS games.";
+"\"%1$@\" is a special OS X folder and not suitable for storing your DOS games." = "“%1$@” is a special macOS folder and not suitable for storing your DOS games.";
 
 /* Bold error message shown when user attempts to add a PCM ROM that doesn't match an already-imported control ROM or vice-versa. %1$@ is the filename of the new ROM, and %2$@ is the proper term for that kind of ROM (control or PCM). */
 "“%1$@” is from a different MT-32 model than the existing %2$@." = "“%1$@” is from a different MT-32 model than the existing %2$@.";
@@ -794,7 +794,7 @@
 "“%@” does not contain any MS-DOS programs." = "“%@” does not contain any MS-DOS programs.";
 
 /* Error message shown when importing a folder that contains a Mac game. %@ is the display filename of the imported path. */
-"“%@” is a Mac OS game. Boxer only supports MS-DOS games." = "“%@” is a Mac OS game. Boxer only supports MS-DOS games.";
+"“%@” is a Mac OS game. Boxer only supports MS-DOS games." = "“%@” is a Classic Mac OS game. Boxer only supports MS-DOS games.";
 
 /* Error message shown when importing a hybrid Mac/PC CD. %@ is the display filename of the imported path. */
 "“%@” is a Mac+PC hybrid disc, which Boxer cannot import." = "“%@” is a Mac+PC hybrid disc, which Boxer cannot import.";

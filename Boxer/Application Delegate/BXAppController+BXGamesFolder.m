@@ -273,6 +273,8 @@ NSString * const BXGamesFolderBookmarkUserDefaultsKey = @"gamesFolderURLBookmark
                 else
                 {
                 }
+                //Don't clog up defaults with old values.
+                [defaults removeObjectForKey: BXGamesFolderAliasUserDefaultsKey];
             }
             else
             {
@@ -383,7 +385,7 @@ NSString * const BXGamesFolderBookmarkUserDefaultsKey = @"gamesFolderURLBookmark
 		if (outError)
 		{
 			NSString *descriptionFormat = NSLocalizedString(
-				@"“%1$@” is a special OS X folder and not suitable for storing your DOS games.",
+                @"\"%1$@\" is a special OS X folder and not suitable for storing your DOS games.",
 				@"Error message shown after choosing a reserved folder as the location for the DOS Games folder. %1$@ is the display name of the folder."
 			);
 			
@@ -403,6 +405,7 @@ NSString * const BXGamesFolderBookmarkUserDefaultsKey = @"gamesFolderURLBookmark
                 NSLocalizedDescriptionKey: description,
                 NSLocalizedRecoverySuggestionErrorKey: explanation,
                 NSURLErrorKey: URL,
+                NSDebugDescriptionErrorKey: [NSString stringWithFormat:@"\"%1$@\" is a special OS X folder and not suitable for storing your DOS games.", displayName]
             };
 			
 			*outError = [NSError errorWithDomain: BXGamesFolderErrorDomain

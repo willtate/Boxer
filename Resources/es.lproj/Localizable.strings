@@ -787,7 +787,7 @@ Por favor arrastre las nuevas ROMs para reemplazarlas.";
 "“%1$@” does not contain any suitable MT-32 ROMs." = "“%1$@” no contiene ROMs MT-32 adecuadas.";
 
 /* Error message shown after choosing a reserved folder as the location for the DOS Games folder. %1$@ is the display name of the folder. */
-"“%1$@” is a special OS X folder and not suitable for storing your DOS games." = "“%1$@” es una carpeta especial de OS X y no es adecuada para almacenar sus juegos DOS.";
+"\"%1$@\" is a special OS X folder and not suitable for storing your DOS games." = "“%1$@” es una carpeta especial de macOS y no es adecuada para almacenar sus juegos DOS.";
 
 /* Bold error message shown when user attempts to add a PCM ROM that doesn't match an already-imported control ROM or vice-versa. %1$@ is the filename of the new ROM, and %2$@ is the proper term for that kind of ROM (control or PCM). */
 "“%1$@” is from a different MT-32 model than the existing %2$@." = "“%1$@” es un modelo MT-32 diferente al actual %2$@.";
