@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +15,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Inspector" allowsToolTipsWhenApplicationIsInactive="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" animationBehavior="utilityWindow" frameAutosaveName="" toolbarStyle="preference" id="47" userLabel="Inspector" customClass="NSPanel">
+        <window title="Inspector" allowsToolTipsWhenApplicationIsInactive="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" animationBehavior="utilityWindow" frameAutosaveName="" toolbarStyle="expanded" id="47" userLabel="Inspector" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" utility="YES" nonactivatingPanel="YES"/>
             <windowCollectionBehavior key="collectionBehavior" ignoresCycle="YES" fullScreenAuxiliary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES"/>
@@ -624,7 +624,7 @@ to add them as DOS drives.</string>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="EY8-QE-ZYf">
                                                                     <rect key="frame" x="0.0" y="0.0" width="296" height="299"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <collectionView selectable="YES" maxNumberOfColumns="1" id="2209" customClass="BXDriveList">
                                                                             <rect key="frame" x="0.0" y="0.0" width="296" height="299"/>

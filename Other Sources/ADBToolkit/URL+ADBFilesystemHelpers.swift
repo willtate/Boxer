@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UniformTypeIdentifiers
 
 extension URL {
     
@@ -69,7 +70,6 @@ extension URL {
             
             return NSString.path(withComponents: relativeComponents)
         }
-
     }
     
     /// Whether this URL has the specified file URL as an ancestor.
@@ -94,7 +94,6 @@ extension URL {
         }
         
         return originalPath.hasPrefix(basePath)
-        
     }
     
     /// Returns an array containing this URL and every parent directory leading back
@@ -152,7 +151,6 @@ extension URL {
     var localizedName: String? {
         resourceValue(forKey: .localizedNameKey) as? String
     }
-
     
     /// Returns whether this URL represents a directory: i.e. the value
     /// of `NSURLIsDirectoryKey`.
@@ -162,13 +160,18 @@ extension URL {
         }
         return hi
     }
-
 }
 
 extension URL {
     /// Returns the recommended file extension to use for files of the specified type.
     /// Analogous to `-[NSWorkspace preferredExtensionForFileType:]`.
     static func preferredExtension(forFileType UTI: String) -> String? {
+        if #available(OSX 11.0, *) {
+            if let theUTI = UTType(UTI), let ext = theUTI.preferredFilenameExtension {
+                return ext
+            }
+        }
+        
         guard let extensionForUTI = UTTypeCopyPreferredTagWithClass(UTI as NSString, kUTTagClassFilenameExtension)?.takeRetainedValue() else {
             return nil
         }
@@ -177,6 +180,12 @@ extension URL {
     
     /// Returns the UTI most applicable to files with the specified extension.
     static func fileType(forExtension ext: String) -> String? {
+        if #available(OSX 11.0, *) {
+            if let ut = UTType(filenameExtension: ext) {
+                return ut.identifier
+            }
+        }
+        
         let UTIForExtension = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
                                                                     ext as NSString,
             nil)?.takeRetainedValue()
@@ -188,6 +197,10 @@ extension URL {
     
     /// Returns all of the UTIs that use the specified extension.
     static func fileTypes(forExtension ext: String) -> [String]? {
+        if #available(OSX 11.0, *) {
+            let types = UTType.types(tag: ext, tagClass: .filenameExtension, conformingTo: nil)
+            return types.map({$0.identifier})
+        }
         guard let toRet = UTTypeCreateAllIdentifiersForTag(kUTTagClassFilenameExtension, ext as NSString, nil)?.takeRetainedValue() else {
             return nil
         }
@@ -213,6 +226,11 @@ extension URL {
     /// equal to or inherits from the specified UTI, or if the URL has a path
     /// extension that would be suitable for the specified UTI.
     func conformsTo(fileType comparisonUTI: String) -> Bool {
+        if #available(OSX 11.0, *) {
+            if let type = UTType(comparisonUTI) {
+                return conformsTo(contentType: type)
+            }
+        }
         let reportedUTI = typeIdentifier
         if let reportedUTI = reportedUTI, UTTypeConformsTo(reportedUTI as CFString, comparisonUTI as CFString) {
             return true
@@ -255,6 +273,101 @@ extension URL {
                 UTIForExtension != reportedUTI {
                 for comparisonUTI in UTIs {
                     if UTTypeConformsTo(UTIForExtension as NSString, comparisonUTI as NSString) {
+                        return comparisonUTI
+                    }
+                }
+            }
+        }
+
+        return nil
+    }
+}
+
+@available(OSX 11.0, *)
+extension URL {
+    /// Returns the `UTType` most applicable to files with the specified extension.
+    ///
+    /// Just call `UTType(filenameExtension:)` instead.
+    @available(OSX, deprecated: 11.0, renamed: "UTType(filenameExtension:)")
+    static func contentType(forExtension ext: String) -> UTType? {
+        return UTType(filenameExtension: ext)
+    }
+
+    /// Returns all of the `UTType` that use the specified extension.
+    static func contentTypes(forExtension ext: String) -> [UTType]? {
+        let types = UTType.types(tag: ext, tagClass: .filenameExtension, conformingTo: nil)
+        if types.count == 0 {
+            return nil
+        }
+        return types
+    }
+
+    /// Returns the `UTType` of the file at this URL, or `nil` if this could not be determined.
+    var contentType: UTType? {
+        guard let res = try? resourceValues(forKeys: [.contentTypeKey]),
+              let theType = res.contentType else {
+            let pe = pathExtension
+            // Attempt to return a UTI based solely on our file extension instead.
+            if pe.count > 0 {
+                return UTType(filenameExtension: pe)
+            } else {
+                return nil
+            }
+        }
+        
+        return theType
+    }
+
+    /// Returns `true` if the `UTType` for the file at this URL is
+    /// equal to or inherits from the specified UTI, or if the URL has a path
+    /// extension that would be suitable for the specified UTI.
+    func conformsTo(contentType comparisonUTI: UTType) -> Bool {
+        let reportedUTI = contentType
+        if let reportedUTI = reportedUTI,
+           reportedUTI.conforms(to: comparisonUTI) {
+            return true
+        }
+        
+        // Also check if the file extension is suitable for the given type, in case
+        // an overly generic UTI definition was returned. This has been observed to
+        // happen with folder-derived UTIs in 10.5-10.8, where `NSURLTypeIdentifierKey`
+        // reports `public.folder` as the UTI when the extension conforms to a more
+        // specific UTI.
+        let ext = pathExtension
+        if ext.count != 0 {
+            let utiForExt = UTType(filenameExtension: ext)
+            if let utiForExt = utiForExt,
+               utiForExt != reportedUTI,
+               utiForExt.conforms(to: comparisonUTI) {
+                return true
+            }
+        }
+        
+        return false
+    }
+
+    
+    /// Given a set of `UTType`s, returns the first one to which this
+    /// URL conforms, or `nil` if it doesn't match any of them.
+    func matchingContentTypes(_ UTIs: Set<UTType>) -> UTType? {
+        let reportedUTI = contentType
+        if let reportedUTI = reportedUTI {
+            for comparisonUTI in UTIs {
+                if reportedUTI.conforms(to: comparisonUTI) {
+                    return comparisonUTI
+                }
+            }
+        }
+        
+        // If we couldn't match against the URL's reported UTI, check again against
+        // the UTI for the URL's path extension. (See note under `conformsToUTI:`
+        // for details on when this is necessary.)
+        let ext = self.pathExtension
+        if ext.count != 0 {
+            if let UTIForExtension = UTType(filenameExtension: ext),
+                UTIForExtension != reportedUTI {
+                for comparisonUTI in UTIs {
+                    if UTIForExtension.conforms(to: comparisonUTI) {
                         return comparisonUTI
                     }
                 }

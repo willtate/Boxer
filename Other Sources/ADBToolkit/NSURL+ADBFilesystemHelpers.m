@@ -26,6 +26,7 @@
 
 #import "NSURL+ADBFilesystemHelpers.h"
 #import "ADBForwardCompatibility.h"
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
 @implementation NSURL (ADBFilePaths)
 
@@ -171,12 +172,31 @@
 
 + (NSString *) preferredExtensionForFileType: (NSString *)UTI
 {
+    if (@available(macOS 11.0, *)) {
+        UTType *type = [UTType typeWithIdentifier:UTI];
+        NSString *ext = type.preferredFilenameExtension;
+        if (ext) {
+            return ext;
+        }
+    }
+    
     CFStringRef extensionForUTI = UTTypeCopyPreferredTagWithClass((__bridge CFStringRef)UTI, kUTTagClassFilenameExtension);
     return CFBridgingRelease(extensionForUTI);
 }
 
 + (NSArray<NSString*> *) fileTypesForExtension: (NSString *)UTI;
 {
+    if (@available(macOS 11.0, *)) {
+        NSArray *theUTIs = [UTType typesWithTag:UTI tagClass:UTTagClassFilenameExtension conformingToType:nil];
+        if (theUTIs) {
+            NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:theUTIs.count];
+            for (UTType *type in theUTIs) {
+                [arr addObject:type.identifier];
+            }
+            return arr;
+        }
+    }
+    
     CFArrayRef extensionsForUTI = UTTypeCreateAllIdentifiersForTag(kUTTagClassFilenameExtension,
                                                                    (__bridge CFStringRef)UTI,
                                                                    NULL);
@@ -185,6 +205,14 @@
 
 + (NSString *) fileTypeForExtension: (NSString *)extension
 {
+    if (@available(macOS 11.0, *)) {
+        UTType *type = [UTType typeWithFilenameExtension:extension];
+        NSString *utiForExt = type.identifier;
+        if (utiForExt) {
+            return utiForExt;
+        }
+    }
+    
     CFStringRef UTIForExtension = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
                                                                         (__bridge CFStringRef)extension,
                                                                         NULL);
