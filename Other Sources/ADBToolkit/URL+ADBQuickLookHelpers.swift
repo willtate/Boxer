@@ -23,7 +23,7 @@ extension URL {
     /// USAGE NOTE: this method is synchronous and can take a while to complete, so
     /// should be performed on a background thread.
     func quickLookThumbnail(maxSize pixelSize: NSSize, useIconStyle: Bool) -> NSImage? {
-        let options = [kQLThumbnailOptionIconModeKey! as String: useIconStyle]
+        let options: [String: Any] = [kQLThumbnailOptionIconModeKey! as String: useIconStyle]
         guard let cgThumbnail = QLThumbnailImageCreate(kCFAllocatorDefault, self as NSURL, pixelSize, options as NSDictionary)?.takeRetainedValue() else {
             return nil
         }

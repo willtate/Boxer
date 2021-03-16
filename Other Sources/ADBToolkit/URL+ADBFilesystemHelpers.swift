@@ -23,7 +23,7 @@ extension URL {
      /// That is, the resulting string can be appended to the base URL with `URLByAppendingPathComponent:` to form an absolute URL to the original resource.
     func pathRelative(to baseURL1: URL) -> String {
         //First, standardize both paths.
-        let baseURL     = baseURL1.standardizedFileURL;
+        let baseURL     = baseURL1.standardizedFileURL
         let originalURL = self.standardizedFileURL
         
         //Optimisation: if the original URL is already inside the base URL,
@@ -42,12 +42,12 @@ extension URL {
         }
         //Otherwise, we need to go more in-depth and look at individual path components.
         else {
-            let components      = originalURL.pathComponents;
-            let baseComponents  = baseURL.pathComponents;
-            let numInOriginal   = components.count;
-            let numInBase       = baseComponents.count;
+            let components      = originalURL.pathComponents
+            let baseComponents  = baseURL.pathComponents
+            let numInOriginal   = components.count
+            let numInBase       = baseComponents.count
             var from1 = 0
-            let upTo = min(numInBase, numInOriginal);
+            let upTo = min(numInBase, numInOriginal)
             
             //Skip over any common prefixes
             for from in 0 ..< upTo {
@@ -75,7 +75,7 @@ extension URL {
     /// Whether this URL has the specified file URL as an ancestor.
     func isBased(in baseURL: URL?) -> Bool {
         guard let baseURL = baseURL else {
-            return false;
+            return false
         }
         
         var basePath = baseURL.standardizedFileURL.path
@@ -225,10 +225,10 @@ extension URL {
     /// Returns `true` if the Uniform Type Identifier for the file at this URL is
     /// equal to or inherits from the specified UTI, or if the URL has a path
     /// extension that would be suitable for the specified UTI.
-    func conformsTo(fileType comparisonUTI: String) -> Bool {
+    func conforms(toFileType comparisonUTI: String) -> Bool {
         if #available(OSX 11.0, *) {
             if let type = UTType(comparisonUTI) {
-                return conformsTo(contentType: type)
+                return conforms(to: type)
             }
         }
         let reportedUTI = typeIdentifier
@@ -321,7 +321,7 @@ extension URL {
     /// Returns `true` if the `UTType` for the file at this URL is
     /// equal to or inherits from the specified UTI, or if the URL has a path
     /// extension that would be suitable for the specified UTI.
-    func conformsTo(contentType comparisonUTI: UTType) -> Bool {
+    func conforms(to comparisonUTI: UTType) -> Bool {
         let reportedUTI = contentType
         if let reportedUTI = reportedUTI,
            reportedUTI.conforms(to: comparisonUTI) {

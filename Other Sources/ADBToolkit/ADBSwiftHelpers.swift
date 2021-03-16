@@ -55,7 +55,12 @@ extension BXFileTypes {
     static func typeOfExecutable(atPath path: String, filesystem: ADBFilesystemPathAccess) throws -> BXExecutableType {
         let handle: ADBReadable & ADBSeekable
         do {
-            handle = (try filesystem.fileHandle(atPath: path, options: .openForReading)) as! (ADBReadable & ADBSeekable)
+            //Should work, but just in case.
+            let preHandle = try filesystem.fileHandle(atPath: path, options: .openForReading)
+            guard let prehandle1 = preHandle as? (ADBReadable & ADBSeekable) else {
+                throw CocoaError(.fileReadUnsupportedScheme)
+            }
+            handle = prehandle1
         } catch {
             throw BXExecutableTypesErrors(.couldNotReadExecutable, userInfo: [ NSUnderlyingErrorKey: error])
         }
