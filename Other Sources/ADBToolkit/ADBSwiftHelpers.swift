@@ -19,7 +19,6 @@ extension ADBBinCueImage {
         }
         return isACue
     }
-
 }
 
 extension BXFileTypes {

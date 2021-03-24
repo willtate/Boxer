@@ -127,7 +127,6 @@ extension URL {
     }
 }
 
-
 extension URL {
     /// Returns the value for the specified resource property.
     ///
@@ -144,21 +143,17 @@ extension URL {
             return nil
         }
     }
-
     
     /// Returns the localized display name of the file: i.e., the value of
     /// `NSURLLocalizedNameKey`.
     var localizedName: String? {
-        resourceValue(forKey: .localizedNameKey) as? String
+        return (try? resourceValues(forKeys: [.localizedNameKey]))?.localizedName
     }
     
     /// Returns whether this URL represents a directory: i.e. the value
     /// of `NSURLIsDirectoryKey`.
     var isDirectory: Bool {
-        guard let hi = resourceValue(forKey: .isDirectoryKey) as? Bool else {
-            return false
-        }
-        return hi
+        return (try? resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory ?? false
     }
 }
 
