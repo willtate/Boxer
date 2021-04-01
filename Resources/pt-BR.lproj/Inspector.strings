@@ -68,7 +68,7 @@
 /* Class = "NSButtonCell"; title = "Use seamless mouse pointer"; ObjectID = "1984"; */
 "1984.title" = "Usar ponteiro do mouse integrado";
 
-/* Class = "NSTextFieldCell"; title = "Lets the OS X mouse pointer interact with the DOS window even when the pointer is unlocked."; ObjectID = "1986"; */
+/* Class = "NSTextFieldCell"; title = "Lets the macOS mouse pointer interact with the DOS window even when the pointer is unlocked."; ObjectID = "1986"; */
 "1986.title" = "Deixar o ponteiro do mouse do macOS interagir com a janela do DOS mesmo quando o ponteiro estiver desbloqueado.";
 
 /* Class = "NSTextFieldCell"; title = "Mouse button shortcuts"; ObjectID = "1991"; */

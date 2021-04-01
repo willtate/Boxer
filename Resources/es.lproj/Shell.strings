@@ -13,8 +13,8 @@ These have the same format and usage restrictions as the strings in DOSBox.strin
 [34;1m[unidad]:[0m           Cambia a la unidad especificada (e.g. C:, D:, Y:)
 [34;1mCD [directorio][0m     Cambia al directorio especificado.
 [34;1mDIR[0m                 Muestra el contenido del directorio actual.
-[34;1mREVEAL[0m              Muestra el directorio actual en Finder de OS X.
-[34;1mREVEAL [directorio][0m Muestra el directorio DOS especificado en Finder de OS X.
+[34;1mREVEAL[0m              Muestra el directorio actual en Finder de macOS.
+[34;1mREVEAL [directorio][0m Muestra el directorio DOS especificado en Finder de macOS.
 
 [33;1mUsando archivos:[0m
 [34;1mLAUNCH [programa][0m   Busca y ejecuta el programa especificado (dondequiera que

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -404,7 +404,7 @@ MT-32 music, as these are not legal to distribute.</string>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Keyboard Preferences" identifier="" id="363" userLabel="Keyboard Preferences">
-                                <view key="view" ambiguous="YES" id="364">
+                                <view key="view" id="364">
                                     <rect key="frame" x="0.0" y="0.0" width="532" height="396"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -426,7 +426,7 @@ MT-32 music, as these are not legal to distribute.</string>
                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="368">
                                                     <rect key="frame" x="114" y="105" width="303" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Prevents OS X system hotkeys from interfering with the keyboard controls in your DOS games." id="369">
+                                                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Prevents macOS system hotkeys from interfering with the keyboard controls in your DOS games." id="369">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

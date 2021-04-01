@@ -99,7 +99,7 @@ Current value:
 Usage:    [34;1mmount [DOS drive letter] [\"Path/to/real/folder\"][0m
 
 Examples: [32;1mmount d \"/Users/yourname/Desktop/\"[0m
-          ...will make your OS X desktop folder accessible to DOS as drive D.
+          ...will make your macOS desktop folder accessible to DOS as drive D.
           [32;1mmount -u d[0m will remove drive D.
 
 By default, the folder will be mounted as an emulated hard drive.

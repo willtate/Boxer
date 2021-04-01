@@ -304,7 +304,7 @@ nil];
 		{
 			localizedFormat = NSLocalizedStringFromTable(@"%1$@: %2$@ from %3$@\n",
 														 @"Shell",
-														 @"Format for listing regular drives via the DRIVES command: %1$@ is the drive letter, %2$@ is the localized drive type, %3$@ is the drive's OS X filesystem path");
+														 @"Format for listing regular drives via the DRIVES command: %1$@ is the drive letter, %2$@ is the localized drive type, %3$@ is the drive's macOS filesystem path");
             NSString *displayPath = [pathTransformer transformedValue: drive.sourceURL.path];
 			description = [NSString stringWithFormat: localizedFormat, drive.letter, drive.localizedTypeDescription, displayPath];
 		}
@@ -378,7 +378,7 @@ nil];
     {
         NSString *errorFormat = NSLocalizedStringFromTable(@"The path \"%1$@\" does not exist in OS X.",
                                                            @"Shell",
-                                                           @"Error message displayed when the REVEAL command cannot reveal a path in OS X because it did not exist. %1$@ is the absolute DOS path, including drive letter.");
+                                                           @"Error message displayed when the REVEAL command cannot reveal a path in macOS because it did not exist. %1$@ is the absolute DOS path, including drive letter.");
         
 		[self displayString: [NSString stringWithFormat: errorFormat, resolvedPath]];
         return;

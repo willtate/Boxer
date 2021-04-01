@@ -68,8 +68,8 @@
 /* Class = "NSButtonCell"; title = "Use seamless mouse pointer"; ObjectID = "1984"; */
 "1984.title" = "Usar puntero de ratón sin problemas";
 
-/* Class = "NSTextFieldCell"; title = "Lets the OS X mouse pointer interact with the DOS window even when the pointer is unlocked."; ObjectID = "1986"; */
-"1986.title" = "Permitir al puntero de ratón de OS X interactuar con la ventana DOS cuando el puntero está desbloqueado.";
+/* Class = "NSTextFieldCell"; title = "Lets the macOS mouse pointer interact with the DOS window even when the pointer is unlocked."; ObjectID = "1986"; */
+"1986.title" = "Permitir al puntero de ratón de macOS interactuar con la ventana DOS cuando el puntero está desbloqueado.";
 
 /* Class = "NSTextFieldCell"; title = "Mouse button shortcuts"; ObjectID = "1991"; */
 "1991.title" = "Atajos de botones de ratón";

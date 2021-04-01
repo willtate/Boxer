@@ -35,7 +35,7 @@
 "%u%% throttle" = "aceleración %u%%";
 
 /* Additional help displayed below hotkey capture toggle on Keyboard Preferences pane. */
-"(If an F1, F2 etc. key still behaves as an OS X hotkey, then hold down Fn while pressing the key.)" = "(Si una tecla F1, F2 etc. se comporta como una tecla de acceso rápido de OS X, mantenga pulsada la tecla Fn mientras pulsa la tecla.)";
+"(If an F1, F2 etc. key still behaves as an OS X hotkey, then hold down Fn while pressing the key.)" = "(Si una tecla F1, F2 etc. se comporta como una tecla de acceso rápido de macOS, mantenga pulsada la tecla Fn mientras pulsa la tecla.)";
 
 /* Status text shown in print status panel when a single page has been prepared. */
 "1 page is ready to print." = "1 página está preparada para imprimir.";
@@ -293,10 +293,10 @@ en ejes separados.";
 "Finish Importing" = "Finalizar importación";
 
 /* Bold text of alert shown if the application is not yet trusted for accessibility access on 10.9 and above. %1$@ is the name of the application; %2$@ is the localized title of the Security & Privacy preferences pane. */
-"For the best experience, %1$@ needs accessibility control in OS X’s %2$@ preferences." = "Para una mejor experiencia, %1$@ necesita control de accesibilidad en preferencias %2$@ de OS X.";
+"For the best experience, %1$@ needs accessibility control in OS X's %2$@ preferences." = "Para una mejor experiencia, %1$@ necesita control de accesibilidad en preferencias %2$@ de macOS.";
 
 /* Bold text of alert shown if the user does not have 'Allow access for assistive devices' enabled in OS X 10.8 and below. %1$@ is the localized name of the Accessibility preferences pane. */
-"For the best experience, turn on “Enable access for assistive devices” in OS X’s %1$@ preferences." = "Para una mejor experiencia, active “Activar acceso para dispositivos de asistencia” en preferencias %1$@ de OS X.";
+"For the best experience, turn on \"Enable access for assistive devices\" in macOS's %1$@ preferences." = "Para una mejor experiencia, active “Activar acceso para dispositivos de asistencia” en preferencias %1$@ de macOS.";
 
 /* Heading for game documentation in help menu for standalone game bundles. */
 "Game Documentation:" = "Documentación de juego:";
@@ -320,7 +320,7 @@ en ejes separados.";
 "If this continues to occur after relaunching, please send us an error report." = "Si esto vuelve a ocurrir después del reinicio, por favor envíenos un informe de error.";
 
 /* Informative text of warning sheet after importing a Mac application. */
-"If you cannot play this game in OS X, you may be able to play it in a Classic Mac OS emulator instead. For more help, click the ? button." = "Si no puede jugar este juego en OS X, puede jugar en su lugar en un emulador de Mac OS clásico. Para más ayuda haga clic en el botón ?.";
+"If you cannot play this game in OS X, you may be able to play it in a Classic Mac OS emulator instead. For more help, click the ? button." = "Si no puede jugar este juego en macOS, puede jugar en su lugar en un emulador de Mac OS clásico. Para más ayuda haga clic en el botón ?.";
 
 /* Informative text of confirmation sheet when closing a session that has active drive import operations. */
 "If you close now, the import will be cancelled." = "Si cierra ahora, la importación se cancelará.";
@@ -396,7 +396,7 @@ en ejes separados.";
 "Included in Gamebox" = "Incluido en gamebox";
 
 /* Recovery suggestion shown when user tries to mount a system folder as a DOS drive. */
-"Instead, choose one of your own folders, or a disc mounted in OS X." = "En cambio, elija una de sus propias carpetas, o un disco montado en OS X.";
+"Instead, choose one of your own folders, or a disc mounted in OS X." = "En cambio, elija una de sus propias carpetas, o un disco montado en macOS.";
 
 /* Explanatory text shown while the printer is idle. %1$@ is the localized name of the port the user should choose in DOS (e.g. “LPT1”.) %2$@ is the localized name of the paper type they should choose in DOS (e.g. “A4”, “Letter”.) */
 "Instruct your DOS program to print to %1$@ using %2$@ paper." = "Configure su programa DOS para imprimir por %1$@ usando %2$@.";
@@ -435,7 +435,7 @@ en ejes separados.";
 "MS-DOS is limited to a maximum of %1$d CD-ROM drives." = "MS-DOS está limitado a un máximo de %1$d unidades de CD-ROM.";
 
 /* Error message shown when user tries to mount a system folder as a DOS drive. %@ is the requested folder path. */
-"MS-DOS is not permitted to access OS X system folders like “%@”." = "MS-DOS no está permitido acceder a la carpetas de sistema OS X como “%@”.";
+"MS-DOS is not permitted to access OS X system folders like “%@”." = "MS-DOS no está permitido acceder a la carpetas de sistema macOS como “%@”.";
 
 /* Menu item title for switching to the selected drive in DOS. */
 "Make Current Drive" = "Hacer unidad actual";
@@ -703,7 +703,7 @@ Por favor arrastre las nuevas ROMs para reemplazarlas.";
 "There is already another drive at the DOS drive letter %1$@." = "Ya hay otra unidad en la letra de unidad DOS %1$@.";
 
 /* Informative text of alert shown if the application is not yet trusted for accessibility access on 10.9 and above. %1$@ is the name of the application. */
-"This ensures that OS X hotkeys won’t interfere with %1$@’s game controls." = "Esto garantiza que las teclas de acceso rápido de OS X no interfieran con los controles de juego.";
+"This ensures that OS X hotkeys won't interfere with %1$@'s game controls." = "Esto garantiza que las teclas de acceso rápido de macOS no interfieran con los controles de juego.";
 
 /* Explanatory message shown in Keyboard Preferences if Boxer is not able to install its hotkey capture event tap on OS X 10.9 and up. %1$@ is the localized name of the Security & Privacy preferences pane. */
 "This feature requires Boxer to be given accessibility control in %1$@ Preferences." = "Esta característica requiere que Boxer reciba control de accesibilidad en preferencias de %1$@.";
@@ -817,7 +817,7 @@ Por favor arrastre las nuevas ROMs para reemplazarlas.";
 "“%@” is not a valid joystick type." = "“%@” no es un tipo de joystick valido.";
 
 /* Explanatory message shown in Keyboard Preferences if Boxer is not able to install its hotkey capture event tap on OS X 10.8 and below. %1$@ is the localized name of the Accessibility preferences pane. */
-"“Enable access for assistive devices” must also\n be enabled in OS X’s %1$@ preferences." = "“Activar acceso para dispositivos de asistencia” debe estar también activado en preferencias %1$@ de OS X.";
+"\"Enable access for assistive devices\" must also\n be enabled in OS X's %1$@ preferences." = "“Activar acceso para dispositivos de asistencia” debe estar también activado en preferencias %1$@ de macOS.";
 
 /* A DOSBox configuration file was provided that defines drives with paths that cannot be found. */
 //"A DOSBox configuration file was provided that defines drives with paths that cannot be found." = "A DOSBox configuration file was provided that defines drives with paths that cannot be found.";

@@ -50,7 +50,7 @@
 - (instancetype) initWithSourceImage: (NSImage *)image;
 
 /// Returns a cover art image rendered from the source image to 512, 256, 128 and 32x32 sizes,
-//suitable for use as an OS X icon.
+/// suitable for use as an OS X icon.
 - (NSImage *) coverArt;
 
 /// Returns a cover art image rendered from the specified image to 512, 256, 128 and 32x32 sizes,

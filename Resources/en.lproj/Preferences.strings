@@ -125,8 +125,8 @@
 /* Class = "NSButtonCell"; title = "Capture function keys and arrow keys for games"; ObjectID = "367"; */
 "367.title" = "Capture function keys and arrow keys for games";
 
-/* Class = "NSTextFieldCell"; title = "Prevents OS X system hotkeys from interfering with the keyboard controls in your DOS games."; ObjectID = "369"; */
-"369.title" = "Prevents OS X system hotkeys from interfering with the keyboard controls in your DOS games.";
+/* Class = "NSTextFieldCell"; title = "Prevents macOS system hotkeys from interfering with the keyboard controls in your DOS games."; ObjectID = "369"; */
+"369.title" = "Prevents macOS system hotkeys from interfering with the keyboard controls in your DOS games.";
 
 /* Class = "NSTextFieldCell"; title = "“Enable access for assistive devices” must also\nbe enabled in the Universal Access preferences."; ObjectID = "373"; */
 "373.title" = "“Enable access for assistive devices” must also\nbe enabled in the Universal Access preferences.";

@@ -68,8 +68,8 @@
 /* Class = "NSButtonCell"; title = "Use seamless mouse pointer"; ObjectID = "1984"; */
 "1984.title" = "Use seamless mouse pointer";
 
-/* Class = "NSTextFieldCell"; title = "Lets the OS X mouse pointer interact with the DOS window even when the pointer is unlocked."; ObjectID = "1986"; */
-"1986.title" = "Lets the OS X mouse pointer interact with the DOS window even when the pointer is unlocked.";
+/* Class = "NSTextFieldCell"; title = "Lets the macOS mouse pointer interact with the DOS window even when the pointer is unlocked."; ObjectID = "1986"; */
+"1986.title" = "Lets the macOS mouse pointer interact with the DOS window even when the pointer is unlocked.";
 
 /* Class = "NSTextFieldCell"; title = "Mouse button shortcuts"; ObjectID = "1991"; */
 "1991.title" = "Mouse button shortcuts";

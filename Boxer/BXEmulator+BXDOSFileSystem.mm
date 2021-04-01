@@ -1407,7 +1407,7 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
 	return [self.delegate emulator: self shouldMountDriveFromURL: fileURL];
 }
 
-//Todo: supplement this by getting entire OS X filepaths out of DOSBox, instead of just filenames
+//TODO: supplement this by getting entire OS X filepaths out of DOSBox, instead of just filenames
 - (BOOL) _shouldShowFileWithName: (NSString *)fileName
 {
     return [self.delegate emulator: self shouldShowFileWithName: fileName];

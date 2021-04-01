@@ -527,7 +527,7 @@ enum {
         }
         else
         {
-            helpFormat = NSLocalizedString(@"“Enable access for assistive devices” must also\n be enabled in OS X’s %1$@ preferences.", @"Explanatory message shown in Keyboard Preferences if Boxer is not able to install its hotkey capture event tap on OS X 10.8 and below. %1$@ is the localized name of the Accessibility preferences pane.");
+            helpFormat = NSLocalizedString(@"\"Enable access for assistive devices\" must also\n be enabled in OS X's %1$@ preferences.", @"Explanatory message shown in Keyboard Preferences if Boxer is not able to install its hotkey capture event tap on OS X 10.8 and below. %1$@ is the localized name of the Accessibility preferences pane.");
         }
         
         self.hotkeyCaptureExtraHelp.font = [NSFont boldSystemFontOfSize: extraHelpSize];

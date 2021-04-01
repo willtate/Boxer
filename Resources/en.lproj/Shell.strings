@@ -13,8 +13,8 @@ These have the same format and usage restrictions as the strings in DOSBox.strin
 [34;1m[drive]:[0m           Change to the specified drive (e.g. C:, D:, Y:)
 [34;1mCD [directory][0m     Change to the specified directory.
 [34;1mDIR[0m                List the contents of the current directory.
-[34;1mREVEAL[0m             Show the current directory in OS X Finder.
-[34;1mREVEAL [directory][0m Show the specified DOS directory in OS X Finder.
+[34;1mREVEAL[0m             Show the current directory in macOS Finder.
+[34;1mREVEAL [directory][0m Show the specified DOS directory in macOS Finder.
 
 [33;1mUsing files:[0m
 [34;1mLAUNCH [program][0m   Find and run the specified program (wherever it may be.)

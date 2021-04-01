@@ -347,20 +347,20 @@
     
     if ([self.class hasPerAppAccessibilityControls])
     {
-        NSString *messageFormat = NSLocalizedString(@"For the best experience, %1$@ needs accessibility control in OS X’s %2$@ preferences.",
+        NSString *messageFormat = NSLocalizedString(@"For the best experience, %1$@ needs accessibility control in OS X's %2$@ preferences.",
                                                     @"Bold text of alert shown if the application is not yet trusted for accessibility access on 10.9 and above. %1$@ is the name of the application; %2$@ is the localized title of the Security & Privacy preferences pane.");
         
         hotkeyWarning.messageText = [NSString stringWithFormat: messageFormat, appName, prefsName];
     }
     else
     {
-        NSString *messageFormat = NSLocalizedString(@"For the best experience, turn on “Enable access for assistive devices” in OS X’s %1$@ preferences.",
+        NSString *messageFormat = NSLocalizedString(@"For the best experience, turn on \"Enable access for assistive devices\" in macOS's %1$@ preferences.",
                                           @"Bold text of alert shown if the user does not have 'Allow access for assistive devices' enabled in OS X 10.8 and below. %1$@ is the localized name of the Accessibility preferences pane.");
         
         hotkeyWarning.messageText = [NSString stringWithFormat: messageFormat, prefsName];
     }
     
-    NSString *informativeTextFormat = NSLocalizedString(@"This ensures that OS X hotkeys won’t interfere with %1$@’s game controls.",
+    NSString *informativeTextFormat = NSLocalizedString(@"This ensures that OS X hotkeys won't interfere with %1$@'s game controls.",
                                                         @"Informative text of alert shown if the application is not yet trusted for accessibility access on 10.9 and above. %1$@ is the name of the application.");
     
     hotkeyWarning.informativeText = [NSString stringWithFormat: informativeTextFormat, appName];

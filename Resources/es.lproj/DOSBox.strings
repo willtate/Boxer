@@ -59,7 +59,7 @@ También puede omitir por completo [34;1mconfig -get [sección][0m:
 Uso:      [34;1mmount [letra de unidad DOS] [\"ruta/a/carpeta/real\"][0m
 
 Ejemplos: [32;1mmount d \"/Users/yourname/Desktop/\"[0m
-          ...hará accesible en DOS su escritorio de OS X como la unidad D.
+          ...hará accesible en DOS su escritorio de macOS como la unidad D.
           [32;1mmount -u d[0m extraerá la unidad D.
 
 Por defecto, la carpeta se montará como un disco duro emulado.
