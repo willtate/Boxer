@@ -325,7 +325,8 @@ a[rel=quicklook]:hover img
 /* Example menu paths, imitating the appearance of the OS X application menu */
 .menu
 {
-	font-family: 12px "Lucida Grande";
+	font-family: system-ui, "Lucida Grande";
+	font-size: 12px;
 	padding: 0.2em 0.5em;
 	margin: 0 0.2em;
 	color: black;
