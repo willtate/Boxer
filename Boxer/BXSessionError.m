@@ -23,7 +23,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 			switch (err.code) {
 				case BXSessionCannotMountSystemFolder:
 					if ([userInfoKey isEqualToString:NSLocalizedDescriptionKey]) {
-						NSString *descriptionFormat = NSLocalizedString(@"MS-DOS is not permitted to access OS X system folders like “%@”.",
+						NSString *descriptionFormat = NSLocalizedString(@"MS-DOS is not permitted to access OS X system folders like \"%@\".",
 																		@"Error message shown when user tries to mount a system folder as a DOS drive. %@ is the requested folder path."
 																		);
 						NSURL *folderURL = err.userInfo[NSURLErrorKey];
@@ -36,7 +36,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 
 				case BXImportNoExecutablesInSource:
 					if ([userInfoKey isEqualToString:NSLocalizedDescriptionKey]) {
-						NSString *descriptionFormat = NSLocalizedString(@"“%@” does not contain any MS-DOS programs.",
+						NSString *descriptionFormat = NSLocalizedString(@"\"%@\" does not contain any MS-DOS programs.",
 																		@"Error message shown when importing a folder with no executables in it. %@ is the display filename of the imported folder.");
 						NSURL *folderURL = err.userInfo[NSURLErrorKey];
 						NSString *description = [NSString stringWithFormat: descriptionFormat, folderURL.localizedName];
@@ -49,7 +49,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 
 				case BXImportSourceIsWindowsOnly:
 					if ([userInfoKey isEqualToString:NSLocalizedDescriptionKey]) {
-						NSString *descriptionFormat = NSLocalizedString(@"“%@” is a Windows game. Boxer only supports MS-DOS games.",
+						NSString *descriptionFormat = NSLocalizedString(@"\"%@\" is a Windows game. Boxer only supports MS-DOS games.",
 																		@"Error message shown when importing a folder that contains a Windows-only game or Windows installer. %@ is the display filename of the imported path.");
 						NSURL *folderURL = err.userInfo[NSURLErrorKey];
 						NSString *description = [NSString stringWithFormat: descriptionFormat, folderURL.localizedName];
@@ -64,7 +64,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 
 				case BXImportSourceIsMacOSApp:
 					if ([userInfoKey isEqualToString:NSLocalizedDescriptionKey]) {
-						NSString *descriptionFormat = NSLocalizedString(@"“%@” is a Mac OS game. Boxer only supports MS-DOS games.",
+						NSString *descriptionFormat = NSLocalizedString(@"\"%@\" is a Mac OS game. Boxer only supports MS-DOS games.",
 																		@"Error message shown when importing a folder that contains a Mac game. %@ is the display filename of the imported path.");
 						NSURL *folderURL = err.userInfo[NSURLErrorKey];
 						NSString *description = [NSString stringWithFormat: descriptionFormat, folderURL.localizedName];
@@ -79,7 +79,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 					
 				case BXImportSourceIsHybridCD:
 					if ([userInfoKey isEqualToString:NSLocalizedDescriptionKey]) {
-						NSString *descriptionFormat = NSLocalizedString(@"“%@” is a Mac+PC hybrid disc, which Boxer cannot import.",
+						NSString *descriptionFormat = NSLocalizedString(@"\"%@\" is a Mac+PC hybrid disc, which Boxer cannot import.",
 																		@"Error message shown when importing a hybrid Mac/PC CD. %@ is the display filename of the imported path.");
 						NSURL *folderURL = err.userInfo[NSURLErrorKey];
 						NSString *description = [NSString stringWithFormat: descriptionFormat, folderURL.localizedName];
@@ -147,7 +147,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 
 + (id) errorWithFolderURL: (NSURL *)folderURL userInfo: (NSDictionary *)userInfo
 {
-    NSString *descriptionFormat = NSLocalizedString(@"MS-DOS is not permitted to access OS X system folders like “%@”.",
+    NSString *descriptionFormat = NSLocalizedString(@"MS-DOS is not permitted to access OS X system folders like \"%@\".",
                                                     @"Error message shown when user tries to mount a system folder as a DOS drive. %@ is the requested folder path."
                                                     );
     
@@ -174,7 +174,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 
 + (id) errorWithSourceURL: (NSURL *)sourceURL userInfo: (NSDictionary *)userInfo
 {
-	NSString *descriptionFormat = NSLocalizedString(@"“%@” does not contain any MS-DOS programs.",
+	NSString *descriptionFormat = NSLocalizedString(@"\"%@\" does not contain any MS-DOS programs.",
 													@"Error message shown when importing a folder with no executables in it. %@ is the display filename of the imported folder.");
 	
 	NSString *suggestion = NSLocalizedString(@"This folder may contain a game for another platform which is not supported by Boxer.",
@@ -205,7 +205,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 + (id) errorWithSourceURL: (NSURL *)sourceURL userInfo: (NSDictionary *)userInfo
 {
 	NSString *descriptionFormat = NSLocalizedString(
-		@"“%@” is a Windows game. Boxer only supports MS-DOS games.",
+		@"\"%@\" is a Windows game. Boxer only supports MS-DOS games.",
 		@"Error message shown when importing a folder that contains a Windows-only game or Windows installer. %@ is the display filename of the imported path."
 	);
 	
@@ -240,7 +240,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 
 + (id) errorWithSourceURL: (NSURL *)sourceURL userInfo: (NSDictionary *)userInfo
 {
-	NSString *descriptionFormat = NSLocalizedString(@"“%@” is a Mac+PC hybrid disc, which Boxer cannot import.",
+	NSString *descriptionFormat = NSLocalizedString(@"\"%@\" is a Mac+PC hybrid disc, which Boxer cannot import.",
                                                     @"Error message shown when importing a hybrid Mac/PC CD. %@ is the display filename of the imported path.");
 	
 	NSString *suggestion = NSLocalizedString(@"You can insert the disc into a Windows PC instead, and copy the DOS version of the game from there to your Mac. For more help, click the ? button.",
@@ -272,7 +272,7 @@ NSString * const BXSessionErrorDomain = @"BXSessionErrorDomain";
 
 + (id) errorWithSourceURL: (NSURL *)sourceURL userInfo: (NSDictionary *)userInfo
 {
-	NSString *descriptionFormat = NSLocalizedString(@"“%@” is a Mac OS game. Boxer only supports MS-DOS games.",
+	NSString *descriptionFormat = NSLocalizedString(@"\"%@\" is a Mac OS game. Boxer only supports MS-DOS games.",
                                                     @"Error message shown when importing a folder that contains a Mac game. %@ is the display filename of the imported path.");
 	
 	NSString *suggestion = NSLocalizedString(@"If you cannot play this game in OS X, you may be able to play it in a Classic Mac OS emulator instead. For more help, click the ? button.",

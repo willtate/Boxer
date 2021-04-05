@@ -433,7 +433,7 @@
 "MS-DOS is limited to a maximum of %1$d CD-ROM drives." = "MS-DOS is limited to a maximum of %1$d CD-ROM drives.";
 
 /* Error message shown when user tries to mount a system folder as a DOS drive. %@ is the requested folder path. */
-"MS-DOS is not permitted to access OS X system folders like “%@”." = "MS-DOS is not permitted to access macOS system folders like “%@”.";
+"MS-DOS is not permitted to access OS X system folders like \"%@\"." = "MS-DOS is not permitted to access macOS system folders like “%@”.";
 
 /* Menu item title for switching to the selected drive in DOS. */
 "Make Current Drive" = "Make Current Drive";
@@ -791,16 +791,16 @@
 "“%1$@” requires extra files that are currently unavailable." = "“%1$@” requires extra files that are currently unavailable.";
 
 /* Error message shown when importing a folder with no executables in it. %@ is the display filename of the imported folder. */
-"“%@” does not contain any MS-DOS programs." = "“%@” does not contain any MS-DOS programs.";
+"\"%@\" does not contain any MS-DOS programs." = "“%@” does not contain any MS-DOS programs.";
 
 /* Error message shown when importing a folder that contains a Mac game. %@ is the display filename of the imported path. */
-"“%@” is a Mac OS game. Boxer only supports MS-DOS games." = "“%@” is a Classic Mac OS game. Boxer only supports MS-DOS games.";
+"\"%@\" is a Mac OS game. Boxer only supports MS-DOS games." = "“%@” is a Classic Mac OS game. Boxer only supports MS-DOS games.";
 
 /* Error message shown when importing a hybrid Mac/PC CD. %@ is the display filename of the imported path. */
-"“%@” is a Mac+PC hybrid disc, which Boxer cannot import." = "“%@” is a Mac+PC hybrid disc, which Boxer cannot import.";
+"\"%@\" is a Mac+PC hybrid disc, which Boxer cannot import." = "“%@” is a Mac+PC hybrid disc, which Boxer cannot import.";
 
 /* Error message shown when importing a folder that contains a Windows-only game or Windows installer. %@ is the display filename of the imported path. */
-"“%@” is a Windows game. Boxer only supports MS-DOS games." = "“%@” is a Windows game. Boxer only supports MS-DOS games.";
+"\"%@\" is a Windows game. Boxer only supports MS-DOS games." = "“%@” is a Windows game. Boxer only supports MS-DOS games.";
 
 /* Title of warning sheet after running a Windows-only executable. %@ is the original filename of the executable. */
 "“%@” is a Windows program. Boxer only supports MS-DOS programs." = "“%@” is a Windows program. Boxer only supports MS-DOS programs.";
