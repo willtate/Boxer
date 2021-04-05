@@ -112,20 +112,20 @@
     
     switch (renderingStyle) {
     case BXRenderingStyleNormal: {
-        NSString *path = [NSBundle.mainBundle pathForResource:@"Pixellate" ofType:@"slangp" inDirectory:@"Shaders/Pixellate"];
-        [_filterChain setShaderFromURL:[NSURL fileURLWithPath:path] error:nil];
+        NSURL *path = [NSBundle.mainBundle URLForResource:@"Pixellate" withExtension:@"slangp" subdirectory:@"Shaders/Pixellate"];
+        [_filterChain setShaderFromURL:path error:nil];
         break;
     }
         
     case BXRenderingStyleCRT: {
-        NSString *path = [NSBundle.mainBundle pathForResource:@"CRT Geom" ofType:@"slangp" inDirectory:@"Shaders/CRT Geom"];
-        [_filterChain setShaderFromURL:[NSURL fileURLWithPath:path] error:nil];
+        NSURL *path = [NSBundle.mainBundle URLForResource:@"CRT Geom" withExtension:@"slangp" subdirectory:@"Shaders/CRT Geom"];
+        [_filterChain setShaderFromURL:path error:nil];
         break;
     }
         
     case BXRenderingStyleSmoothed: {
-        NSString *path = [NSBundle.mainBundle pathForResource:@"Smooth" ofType:@"slangp" inDirectory:@"Shaders/Smooth"];
-        [_filterChain setShaderFromURL:[NSURL fileURLWithPath:path] error:nil];
+        NSURL *path = [NSBundle.mainBundle URLForResource:@"Smooth" withExtension:@"slangp"  subdirectory:@"Shaders/Smooth"];
+        [_filterChain setShaderFromURL:path error:nil];
         break;
     }
     }
