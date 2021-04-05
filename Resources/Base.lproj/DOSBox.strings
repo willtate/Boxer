@@ -462,6 +462,9 @@ in the [1;32mDrives[0m menu.
 //DIR-related strings
 //-------------------
 
+"SHELL_CMD_DIR_VOLUME" = "Volume in drive %c is %s
+";
+
 "SHELL_CMD_DIR_INTRO" = "Contents of folder %s
 ";
 

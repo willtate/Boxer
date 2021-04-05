@@ -428,6 +428,9 @@ o seleccione [1;32mAñadir unidad DOS[0m en el menú [1;32mUnidades[0m.
 //DIR-related strings
 //-------------------
 
+"SHELL_CMD_DIR_VOLUME" = "Volume in drive %c is %s
+";
+
 "SHELL_CMD_DIR_INTRO" = "Contenido de carpeta %s
 ";
 

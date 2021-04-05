@@ -265,7 +265,7 @@
     return NO;
 }
 
-- (NSString *) matchingFileType: (NSSet *)UTIs
+- (NSString *) matchingFileType: (NSSet<NSString*> *)UTIs
 {
     NSString *reportedUTI = self.typeIdentifier;
     if (reportedUTI != nil)

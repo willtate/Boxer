@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Protocols
 
-/// Represents the interface of NSEnumerator as a protocol, for enumeration classes
+/// Represents the interface of @c NSEnumerator as a protocol, for enumeration classes
 /// that don't want to descend directly from NSEnumerator.
 @protocol ADBStepwiseEnumeration <NSFastEnumeration>
 
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-/// Declare that NSEnumerator already conforms to the ADBStepwiseEnumeration protocol.
+/// Declare that @c NSEnumerator already conforms to the @c ADBStepwiseEnumeration protocol.
 @interface NSEnumerator (ADBScanningExtensions) <ADBStepwiseEnumeration>
 @end
 

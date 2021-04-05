@@ -258,7 +258,7 @@ NSString * const BXExecutableTypesErrorDomain = @"BXExecutableTypesErrorDomain";
                                  filesystem: (id <ADBFilesystemPathAccess>)filesystem
                                       error: (out NSError **)outError
 {
-    NSAssert(path != nil, @"No URL specified!");
+    NSAssert(path != nil, @"No path specified!");
     NSAssert(filesystem != nil, @"No filesystem specified!");
     
     NSError *openError = nil;

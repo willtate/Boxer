@@ -26,9 +26,9 @@
 
 #import "ADBUserNotificationDispatcher.h"
 
-NSString * const ADBUserNotificationHandlerKey = @"ADBUserNotificationHandler";
-NSString * const ADBUserNotificationSenderKey = @"ADBUserNotificationSender";
-NSString * const ADBUserNotificationTypeKey = @"ADBUserNotificationType";
+static NSString * const ADBUserNotificationHandlerKey = @"ADBUserNotificationHandler";
+static NSString * const ADBUserNotificationSenderKey = @"ADBUserNotificationSender";
+static NSString * const ADBUserNotificationTypeKey = @"ADBUserNotificationType";
 
 @interface ADBUserNotificationDispatcher ()
 
