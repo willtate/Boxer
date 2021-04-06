@@ -849,3 +849,34 @@ They can be changed in the [33mkeymapper[0m.
 
 [31;1mNOTE[0m: These may be different under Boxer!
 ";
+
+"SHELL_CMD_MOUNT_HELP_LONG" = "Mount a directory from the host OS to a drive letter.
+
+Usage:
+  [32;1mmount[0m [37;1mDRIVE[0m [36;1mDIRECTORY[0m [-t TYPE] [-freesize SIZE] [-label LABEL]
+  [32;1mmount[0m -u [37;1mDRIVE[0m  (unmounts the DRIVE's directory)
+
+Where:
+  [37;1mDRIVE[0m     the drive letter where the directory will be mounted: A, C, D, ...
+  [36;1mDIRECTORY[0m is the directory on the host OS to be mounted
+  TYPE      type of the directory to mount: dir, floppy, cdrom, or overlay
+  SIZE      free space for the virtual drive (KiB for floppies, MiB otherwise)
+  LABEL     drive label name to be used
+
+Notes:
+  - '-t overlay' redirects writes for mounted drive to another directory.
+  - Additional options are described in the manual (README file, chapter 4).
+
+Examples:
+  \033[32;1mmount\033[0m \033[37;1mC\033[0m \033[36;1m~/dosgames\033[0m
+  \033[32;1mmount\033[0m \033[37;1mD\033[0m \033[36;1m\"/Volumes/Game CD\"\033[0m -t cdrom
+  \033[32;1mmount\033[0m \033[37;1mC\033[0m \033[36;1mmy_savegame_files\033[0m -t overlay
+";
+
+"SHELL_CMD_MOUNT_HELP" = "maps physical folders or drives to a virtual drive letter.
+";
+
+
+"PROGRAM_MOUNT_STATUS_DRIVE" = "Drive";
+"PROGRAM_MOUNT_STATUS_TYPE" = "Type";
+"PROGRAM_MOUNT_STATUS_LABEL" = "Label";
