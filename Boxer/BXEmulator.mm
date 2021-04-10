@@ -81,6 +81,10 @@ void CPU_Core_Dynrec_Cache_Init(bool enable_cache);
 #pragma mark - Implementation
 
 @implementation BXEmulator
+{
+    CommandLine *commandLine;
+    Config *configuration;
+}
 @synthesize processName = _processName;
 @synthesize lastProcess = _lastProcess;
 - (NSArray<NSDictionary<NSString *,id> *> *)runningProcesses
@@ -999,15 +1003,13 @@ static BOOL _hasStartedEmulator = NO;
         //before it starts will stay alive until it finishes. To mitigate this we wrap the
         //emulator startup sequence in an autorelease block, so that at least those objects
         //will get released before we begin emulating in earnest.
-        //DON'T PUT THIS IN AN AUTORELEASEPOOL BRACKET: It causes Boxer to crash.
-        //This also means this file can't be programmed to use ARC.
-        NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+        @autoreleasepool {
         
             //Create a new configuration instance and feed it an empty set of parameters.
             char const *argv[0];
-            CommandLine commandLine(0, argv);
-            Config configuration(&commandLine);
-            control=&configuration;
+            commandLine = new CommandLine(0, argv);
+            configuration = new Config(commandLine);
+            control = configuration;
             
             //Sets up the vast swathes of DOSBox configuration file parameters,
             //and registers the shell to start up when we finish initializing.
@@ -1025,8 +1027,7 @@ static BOOL _hasStartedEmulator = NO;
             control->Init();
             
             [self _didInitialize];
-		
-        [pool drain];
+        }
         
 		//Start up the main machine.
 		control->StartUp();
@@ -1057,6 +1058,10 @@ static BOOL _hasStartedEmulator = NO;
 	SDL_Quit();
 	[self.videoHandler shutdown];
     control = NULL;
+    delete configuration;
+    configuration = NULL;
+    delete commandLine;
+    commandLine = NULL;
 }
 
 @end

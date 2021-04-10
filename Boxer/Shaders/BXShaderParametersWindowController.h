@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BXShaderParametersWindowController : NSWindowController
 
-@property (assign) IBOutlet NSOutlineView *outlineView;
+@property (weak) IBOutlet NSOutlineView *outlineView;
 
 @property (nonatomic) BXShaderModel *shader;
 @property (nonatomic) NSArray<OEShaderParamGroup *> *groups;
