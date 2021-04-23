@@ -91,6 +91,23 @@ NSString * const BXActivateOnLaunchParam = @"--activateOnLaunch";
 	return [self.class otherBoxersActive];
 }
 
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
+{
+	if (self.documents == 0) {
+		return NSTerminateNow;
+	}
+	//Tell any remaining documents to close on exit so they can clean up properly and save their state.
+	//(NSDocumentController doesn't always do this itself.)
+	dispatch_async(dispatch_get_main_queue(), ^{
+		for (NSDocument *document in [NSArray arrayWithArray: self.documents]) {
+			[document close];
+		}
+		[NSApp replyToApplicationShouldTerminate:YES];
+	});
+
+	return NSTerminateLater;
+}
+
 - (void) applicationWillFinishLaunching: (NSNotification *)notification
 {
     [super applicationWillFinishLaunching: notification];
