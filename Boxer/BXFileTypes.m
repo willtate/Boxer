@@ -28,6 +28,7 @@ NSString * const BXCDRImageType         = @"com.apple.disk-image-cdr";
 NSString * const BXVirtualPCImageType   = @"com.microsoft.virtualpc-disk-image";
 NSString * const BXRawFloppyImageType   = @"com.winimage.raw-disk-image";
 NSString * const BXNDIFImageType        = @"com.apple.disk-image-ndif";
+NSString * const BXUDIFImageType        = @"com.apple.disk-image-udif";
 
 NSString * const BXDiskBundleType       = @"net.washboardabs.boxer-disk-bundle";
 NSString * const BXCDROMImageBundleType = @"net.washboardabs.boxer-cdrom-bundle";
@@ -77,6 +78,7 @@ NSString * const BXDOCFileType      = @"com.microsoft.word.doc";
                  BXFloppyFolderType,
                  BXRawFloppyImageType,
                  BXNDIFImageType,
+                 BXUDIFImageType,
                  BXVirtualPCImageType,
                  nil];
     });
@@ -117,6 +119,7 @@ NSString * const BXDOCFileType      = @"com.microsoft.word.doc";
                  BXRawFloppyImageType,
                  BXVirtualPCImageType,
                  BXNDIFImageType,
+                 BXUDIFImageType,
                  nil];
     });
     return types;

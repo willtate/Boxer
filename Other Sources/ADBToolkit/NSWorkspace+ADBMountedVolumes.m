@@ -123,6 +123,7 @@ NSString * const ADBMountedVolumesErrorDomain = @"ADBMountedVolumesErrorDomain";
         types = [[NSSet alloc] initWithObjects:
                  @"com.winimage.raw-disk-image",
                  @"com.apple.disk-image-ndif",
+                 @"com.apple.disk-image-udif",
                  @"com.microsoft.virtualpc-disk-image",
                  nil];
     });

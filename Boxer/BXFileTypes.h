@@ -27,6 +27,7 @@ extern NSString * const BXCDRImageType;         //!< .cdr
 extern NSString * const BXVirtualPCImageType;   //!< .vfd
 extern NSString * const BXRawFloppyImageType;   //!< .ima
 extern NSString * const BXNDIFImageType;        //!< .img
+extern NSString * const BXUDIFImageType;        //!< .img as well?
 
 extern NSString * const BXDiskBundleType;       //!< Base UTI for .cdmedia
 extern NSString * const BXCDROMImageBundleType; //!< .cdmedia

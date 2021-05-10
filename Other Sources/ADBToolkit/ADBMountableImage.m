@@ -55,6 +55,7 @@ NSString * const ADBMountableImageErrorDomain = @"ADBMountableImageErrorDomain";
                       @"com.apple.disk-image-cdr",              //.cdr
                       @"com.winimage.raw-disk-image",           //.ima
                       @"com.apple.disk-image-ndif",             //.img
+                      @"com.apple.disk-image-udif",             //.img
                       @"com.microsoft.virtualpc-disk-image",    //.vfd
                       nil];
     });
