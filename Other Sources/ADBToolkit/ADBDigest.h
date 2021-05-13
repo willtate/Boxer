@@ -33,10 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ADBDigest : NSObject
 
 /// Returns an SHA1 digest built from every file in the specified list.
-/// Returns nil and populates outError on failure.
+/// Returns @c nil and populates @c outError on failure.
 + (nullable NSData *) SHA1DigestForURLs: (NSArray<NSURL*> *)fileURLs error: (out NSError **)outError;
 
-/// Returns an SHA1 digest built from the first readLength bytes of every file in the specified list.
+/// Returns an SHA1 digest built from the first @c readLength bytes of every file in the specified list.
 /// If @c readLength is 0, this behaves the same as @c SHA1DigestForURLs:error:
 + (nullable NSData *) SHA1DigestForURLs: (NSArray<NSURL*> *)fileURLs
                              upToLength: (NSUInteger)readLength
