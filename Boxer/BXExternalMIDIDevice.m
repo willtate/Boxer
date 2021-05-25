@@ -131,17 +131,17 @@
         [self pause];
         
         MIDIPortDispose(_port);
-        _port = (MIDIObjectRef)NULL;
+        _port = (MIDIObjectRef)0;
     }
     
     if (_client)
     {
         MIDIClientDispose(_client);
-        _client = (MIDIObjectRef)NULL;
+        _client = (MIDIObjectRef)0;
     }
     
     //This does not need disposing, because we did not create it ourselves
-    _destination = (MIDIObjectRef)NULL;
+    _destination = (MIDIObjectRef)0;
 }
 
 - (BOOL) _connectToDestination: (MIDIEndpointRef)destination
@@ -166,7 +166,7 @@
         if (_client)
         {
             MIDIClientDispose(_client);
-            _client = (MIDIObjectRef)NULL;
+            _client = (MIDIObjectRef)0;
         }
         return NO;
     }
@@ -188,7 +188,7 @@
                                 error: (NSError **)outError
 {
     ItemCount numDestinations = MIDIGetNumberOfDestinations();
-    MIDIEndpointRef destination = (MIDIObjectRef)NULL;
+    MIDIEndpointRef destination = (MIDIObjectRef)0;
     if (destIndex < numDestinations)
         destination = MIDIGetDestination(destIndex);
     

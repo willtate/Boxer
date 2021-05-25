@@ -28,11 +28,11 @@
 #import "ADBAppKitVersionHelpers.h"
 
 
-NSString * const BXNewSessionParam = @"--openNewSession";
-NSString * const BXShowImportPanelParam = @"--showImportPanel";
-NSString * const BXShowPreferencesParam = @"--showPreferences";
-NSString * const BXImportURLParam = @"--importURL ";
-NSString * const BXActivateOnLaunchParam = @"--activateOnLaunch";
+static NSString * const BXNewSessionParam = @"--openNewSession";
+static NSString * const BXShowImportPanelParam = @"--showImportPanel";
+static NSString * const BXShowPreferencesParam = @"--showPreferences";
+static NSString * const BXImportURLParam = @"--importURL ";
+static NSString * const BXActivateOnLaunchParam = @"--activateOnLaunch";
 
 
 @interface BXAppController ()

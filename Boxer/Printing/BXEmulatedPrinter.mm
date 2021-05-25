@@ -799,9 +799,8 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
         
         //Replace certain codepoints in our ASCII->Unicode mapping table with
         //the characters appropriate for the specified international charset.
-        uint8_t charAddresses[12] = { 0x23, 0x24, 0x40, 0x5b, 0x5c, 0x5d, 0x5e, 0x60, 0x7b, 0x7c, 0x7d, 0x7e };
-        NSUInteger i;
-        for (i=0; i<12; i++)
+        const uint8_t charAddresses[12] = { 0x23, 0x24, 0x40, 0x5b, 0x5c, 0x5d, 0x5e, 0x60, 0x7b, 0x7c, 0x7d, 0x7e };
+        for (NSInteger i=0; i<12; i++)
         {
             _charMap[charAddresses[i]] = charsetChars[i];
         }

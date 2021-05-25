@@ -97,12 +97,12 @@ void _didReceiveMIDINotification(const MIDINotification *message, void *context)
     @autoreleasepool {
     
     //Create a MIDI client
-    OSStatus errCode = MIDIClientCreate((CFStringRef)@"Boxer MT-32 Scanner", _didReceiveMIDINotification, (__bridge void *)self, &_client);
+    OSStatus errCode = MIDIClientCreate(CFSTR("Boxer MT-32 Scanner"), _didReceiveMIDINotification, (__bridge void *)self, &_client);
     
     //Create the port we will use for sending out MIDI requests.
     if (errCode == noErr && ![self isCancelled])
     {
-        errCode = MIDIOutputPortCreate(_client, (CFStringRef)@"MT-32 Scanner Out", &_outputPort);
+        errCode = MIDIOutputPortCreate(_client, CFSTR("MT-32 Scanner Out"), &_outputPort);
     }
     
     //Create the port we will use for receiving responses to our MIDI requests.
@@ -127,9 +127,9 @@ void _didReceiveMIDINotification(const MIDINotification *message, void *context)
     
     //Clean up once we're done.
     MIDIClientDispose(_client);
-    _client = (MIDIObjectRef)NULL;
-    _inputPort = (MIDIObjectRef)NULL;
-    _outputPort = (MIDIObjectRef)NULL;
+    _client = (MIDIObjectRef)0;
+    _inputPort = (MIDIObjectRef)0;
+    _outputPort = (MIDIObjectRef)0;
     
     }
 }
@@ -206,7 +206,7 @@ void _didReceiveMIDINotification(const MIDINotification *message, void *context)
             
             for (BXMIDIInputListener *listener in [NSArray arrayWithArray: _listeners])
             {
-                if ((type == kMIDIObjectType_Destination && endpoint == (MIDIEndpointRef)listener.contextInfo) ||
+                if ((type == kMIDIObjectType_Destination && endpoint == (MIDIEndpointRef)(uintptr_t)listener.contextInfo) ||
                     (type == kMIDIObjectType_Source && endpoint == listener.source))
                 {
                     [listener stopListening];
@@ -250,7 +250,7 @@ void _didReceiveMIDINotification(const MIDINotification *message, void *context)
         //We have a winner!
         if ([comparison isEqualToData: expectedHeader])
         {
-            MIDIEndpointRef destination = (MIDIEndpointRef)[listener contextInfo];
+            MIDIEndpointRef destination = (MIDIEndpointRef)(uintptr_t)[listener contextInfo];
             MIDIUniqueID destinationID;
             
             OSErr errCode = MIDIObjectGetIntegerProperty(destination, kMIDIPropertyUniqueID, &destinationID);
@@ -300,7 +300,7 @@ void _didReceiveMIDINotification(const MIDINotification *message, void *context)
 
 - (MIDIEndpointRef) _probableSourceForDestination: (MIDIEndpointRef)destination
 {
-    MIDIEntityRef entity = (MIDIObjectRef)NULL;
+    MIDIEntityRef entity = (MIDIObjectRef)0;
     
     OSStatus errCode = MIDIEndpointGetEntity(destination, &entity);
     
@@ -338,7 +338,7 @@ void _didReceiveMIDINotification(const MIDINotification *message, void *context)
     }
     
     //If we got this far, we couldn't find any suitable source.
-    return (MIDIObjectRef)NULL;
+    return (MIDIObjectRef)0;
 }
 
 - (void) _scanDestination: (MIDIEndpointRef)destination
@@ -426,7 +426,7 @@ static void _didReceiveMIDIInput(const MIDIPacketList *packets, void *portContex
         if (outError) *outError = [NSError errorWithDomain: NSOSStatusErrorDomain
                                                       code: errCode
                                                   userInfo: nil];
-        return (MIDIObjectRef)NULL;
+        return (MIDIObjectRef)0;
     }
 }
 
@@ -497,8 +497,8 @@ static void _didReceiveMIDIInput(const MIDIPacketList *packets, void *portContex
         MIDIPortDisconnectSource(_port, _source);
     }
     _notificationThread = nil;
-    _port = (MIDIObjectRef)NULL;
-    _source = (MIDIObjectRef)NULL;
+    _port = (MIDIObjectRef)0;
+    _source = (MIDIObjectRef)0;
 }
 
 
