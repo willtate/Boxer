@@ -25,6 +25,7 @@
  */
 
 
+#import <Foundation/Foundation.h>
 #import <DDHidLib/DDHidLib.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -164,10 +165,10 @@ typedef NS_ENUM(NSInteger, ADBHIDPOVSwitchDirection) {
 
 @interface NSObject (ADBHIDEventDispatch)
 
-//Returns the appropriate ADBHIDDeviceDelegate selector to handle the specified HID event.
+/// Returns the appropriate ADBHIDDeviceDelegate selector to handle the specified HID event.
 + (nullable SEL) delegateMethodForHIDEvent: (ADBHIDEvent *)event;
 
-//Dispatches the specified event to the appropriate ADBHIDDeviceDelegate method.
+/// Dispatches the specified event to the appropriate ADBHIDDeviceDelegate method.
 - (void) dispatchHIDEvent: (ADBHIDEvent *)event;
 
 @end
