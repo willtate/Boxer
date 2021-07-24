@@ -33,6 +33,7 @@ extern "C" {
 #define GFX_GetRGB boxer_getRGBPaletteEntry
 #define GFX_SetShader boxer_setShader
 #define GFX_GetBestMode boxer_idealOutputMode
+#define GFX_MaybeProcessEvents boxer_MaybeProcessEvents
 #define GFX_ShowMsg boxer_log
 #define MIDI_Available boxer_MIDIAvailable
 #define OpenCaptureFile boxer_openCaptureFile
@@ -146,7 +147,7 @@ extern "C" {
 	void boxer_runLoopDidFinishWithContextInfo(void *contextInfo);
 	bool boxer_runLoopShouldContinue();
 	bool boxer_processEvents();
-	
+    bool boxer_MaybeProcessEvents();
     
 #pragma mark - Input
     

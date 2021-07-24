@@ -103,6 +103,48 @@
 		55E6A0CB1C00C88A00285593 /* BGHUDAppKit.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A09C1C00C7F900285593 /* BGHUDAppKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55EA6CF625D4919E00945236 /* BXMIDIConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55EA6CF425D4919E00945236 /* BXMIDIConfig.cpp */; };
 		55EA6CF725D4919E00945236 /* BXMIDIConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55EA6CF425D4919E00945236 /* BXMIDIConfig.cpp */; };
+		55F0B73226ABFD9C0077E58C /* ps1audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B72926ABFD9B0077E58C /* ps1audio.cpp */; };
+		55F0B73326ABFD9C0077E58C /* ps1audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B72926ABFD9B0077E58C /* ps1audio.cpp */; };
+		55F0B73526ABFDDA0077E58C /* innovation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B73426ABFDDA0077E58C /* innovation.cpp */; };
+		55F0B73626ABFDDA0077E58C /* innovation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B73426ABFDDA0077E58C /* innovation.cpp */; };
+		55F0B73926ABFE450077E58C /* program_help.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B73726ABFE450077E58C /* program_help.cpp */; };
+		55F0B73A26ABFE450077E58C /* program_help.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B73726ABFE450077E58C /* program_help.cpp */; };
+		55F0B76C26ABFEE80077E58C /* OpAmp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B73E26ABFEE80077E58C /* OpAmp.cpp */; };
+		55F0B76D26ABFEE80077E58C /* OpAmp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B73E26ABFEE80077E58C /* OpAmp.cpp */; };
+		55F0B76E26ABFEE80077E58C /* SincResampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74126ABFEE80077E58C /* SincResampler.cpp */; };
+		55F0B76F26ABFEE80077E58C /* SincResampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74126ABFEE80077E58C /* SincResampler.cpp */; };
+		55F0B77426ABFEE80077E58C /* EnvelopeGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74926ABFEE80077E58C /* EnvelopeGenerator.cpp */; };
+		55F0B77526ABFEE80077E58C /* EnvelopeGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74926ABFEE80077E58C /* EnvelopeGenerator.cpp */; };
+		55F0B77626ABFEE80077E58C /* Dac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74A26ABFEE80077E58C /* Dac.cpp */; };
+		55F0B77726ABFEE80077E58C /* Dac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74A26ABFEE80077E58C /* Dac.cpp */; };
+		55F0B77A26ABFEE80077E58C /* WaveformGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74C26ABFEE80077E58C /* WaveformGenerator.cpp */; };
+		55F0B77B26ABFEE80077E58C /* WaveformGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74C26ABFEE80077E58C /* WaveformGenerator.cpp */; };
+		55F0B77C26ABFEE80077E58C /* SID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74E26ABFEE80077E58C /* SID.cpp */; };
+		55F0B77D26ABFEE80077E58C /* SID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B74E26ABFEE80077E58C /* SID.cpp */; };
+		55F0B77E26ABFEE80077E58C /* Filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75126ABFEE80077E58C /* Filter.cpp */; };
+		55F0B77F26ABFEE80077E58C /* Filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75126ABFEE80077E58C /* Filter.cpp */; };
+		55F0B78426ABFEE80077E58C /* Filter6581.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75626ABFEE80077E58C /* Filter6581.cpp */; };
+		55F0B78526ABFEE80077E58C /* Filter6581.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75626ABFEE80077E58C /* Filter6581.cpp */; };
+		55F0B78626ABFEE80077E58C /* FilterModelConfig6581.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75726ABFEE80077E58C /* FilterModelConfig6581.cpp */; };
+		55F0B78726ABFEE80077E58C /* FilterModelConfig6581.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75726ABFEE80077E58C /* FilterModelConfig6581.cpp */; };
+		55F0B78826ABFEE80077E58C /* Integrator6581.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75826ABFEE80077E58C /* Integrator6581.cpp */; };
+		55F0B78926ABFEE80077E58C /* Integrator6581.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75826ABFEE80077E58C /* Integrator6581.cpp */; };
+		55F0B78C26ABFEE80077E58C /* Integrator8580.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75C26ABFEE80077E58C /* Integrator8580.cpp */; };
+		55F0B78D26ABFEE80077E58C /* Integrator8580.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75C26ABFEE80077E58C /* Integrator8580.cpp */; };
+		55F0B78E26ABFEE80077E58C /* ExternalFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75E26ABFEE80077E58C /* ExternalFilter.cpp */; };
+		55F0B78F26ABFEE80077E58C /* ExternalFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75E26ABFEE80077E58C /* ExternalFilter.cpp */; };
+		55F0B79026ABFEE80077E58C /* FilterModelConfig8580.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75F26ABFEE80077E58C /* FilterModelConfig8580.cpp */; };
+		55F0B79126ABFEE80077E58C /* FilterModelConfig8580.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B75F26ABFEE80077E58C /* FilterModelConfig8580.cpp */; };
+		55F0B79226ABFEE80077E58C /* Filter8580.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B76226ABFEE80077E58C /* Filter8580.cpp */; };
+		55F0B79326ABFEE80077E58C /* Filter8580.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B76226ABFEE80077E58C /* Filter8580.cpp */; };
+		55F0B79426ABFEE80077E58C /* WaveformCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B76326ABFEE80077E58C /* WaveformCalculator.cpp */; };
+		55F0B79526ABFEE80077E58C /* WaveformCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B76326ABFEE80077E58C /* WaveformCalculator.cpp */; };
+		55F0B79626ABFEE80077E58C /* Spline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B76826ABFEE80077E58C /* Spline.cpp */; };
+		55F0B79726ABFEE80077E58C /* Spline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B76826ABFEE80077E58C /* Spline.cpp */; };
+		55F0B79826ABFEE80077E58C /* version.cc in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B76B26ABFEE80077E58C /* version.cc */; };
+		55F0B79926ABFEE80077E58C /* version.cc in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B76B26ABFEE80077E58C /* version.cc */; };
+		55F0B79C26ABFF680077E58C /* program_choice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B79B26ABFF680077E58C /* program_choice.cpp */; };
+		55F0B79D26ABFF680077E58C /* program_choice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B79B26ABFF680077E58C /* program_choice.cpp */; };
 		55F4A93D256315FD00410099 /* program_ls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F4A93B256315FD00410099 /* program_ls.cpp */; };
 		55F4A93E256315FD00410099 /* program_ls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F4A93B256315FD00410099 /* program_ls.cpp */; };
 		55F643F925F41DF5009E1800 /* rwqueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F643EF25F41DF5009E1800 /* rwqueue.cpp */; };
@@ -1158,6 +1200,54 @@
 		55EA6D7F25D7A23400945236 /* midi_mt32.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = midi_mt32.cpp; sourceTree = "<group>"; };
 		55EA6D8025D7A23400945236 /* midi_fluidsynth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = midi_fluidsynth.h; sourceTree = "<group>"; };
 		55EA6D8125D7A23400945236 /* midi_mt32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = midi_mt32.h; sourceTree = "<group>"; };
+		55F0B72926ABFD9B0077E58C /* ps1audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ps1audio.cpp; sourceTree = "<group>"; };
+		55F0B73426ABFDDA0077E58C /* innovation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = innovation.cpp; sourceTree = "<group>"; };
+		55F0B73726ABFE450077E58C /* program_help.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = program_help.cpp; sourceTree = "<group>"; };
+		55F0B73826ABFE450077E58C /* program_help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program_help.h; sourceTree = "<group>"; };
+		55F0B73D26ABFEE80077E58C /* Dac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dac.h; sourceTree = "<group>"; };
+		55F0B73E26ABFEE80077E58C /* OpAmp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpAmp.cpp; sourceTree = "<group>"; };
+		55F0B74026ABFEE80077E58C /* TwoPassSincResampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoPassSincResampler.h; sourceTree = "<group>"; };
+		55F0B74126ABFEE80077E58C /* SincResampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SincResampler.cpp; sourceTree = "<group>"; };
+		55F0B74226ABFEE80077E58C /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		55F0B74326ABFEE80077E58C /* ZeroOrderResampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeroOrderResampler.h; sourceTree = "<group>"; };
+		55F0B74426ABFEE80077E58C /* SincResampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SincResampler.h; sourceTree = "<group>"; };
+		55F0B74526ABFEE80077E58C /* Resampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resampler.h; sourceTree = "<group>"; };
+		55F0B74626ABFEE80077E58C /* Spline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spline.h; sourceTree = "<group>"; };
+		55F0B74726ABFEE80077E58C /* WaveformGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveformGenerator.h; sourceTree = "<group>"; };
+		55F0B74826ABFEE80077E58C /* siddefs-fp.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "siddefs-fp.h.in"; sourceTree = "<group>"; };
+		55F0B74926ABFEE80077E58C /* EnvelopeGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnvelopeGenerator.cpp; sourceTree = "<group>"; };
+		55F0B74A26ABFEE80077E58C /* Dac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dac.cpp; sourceTree = "<group>"; };
+		55F0B74C26ABFEE80077E58C /* WaveformGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaveformGenerator.cpp; sourceTree = "<group>"; };
+		55F0B74D26ABFEE80077E58C /* Integrator8580.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integrator8580.h; sourceTree = "<group>"; };
+		55F0B74E26ABFEE80077E58C /* SID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SID.cpp; sourceTree = "<group>"; };
+		55F0B74F26ABFEE80077E58C /* EnvelopeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvelopeGenerator.h; sourceTree = "<group>"; };
+		55F0B75026ABFEE80077E58C /* OpAmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpAmp.h; sourceTree = "<group>"; };
+		55F0B75126ABFEE80077E58C /* Filter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Filter.cpp; sourceTree = "<group>"; };
+		55F0B75226ABFEE80077E58C /* Potentiometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Potentiometer.h; sourceTree = "<group>"; };
+		55F0B75326ABFEE80077E58C /* Integrator6581.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integrator6581.h; sourceTree = "<group>"; };
+		55F0B75626ABFEE80077E58C /* Filter6581.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Filter6581.cpp; sourceTree = "<group>"; };
+		55F0B75726ABFEE80077E58C /* FilterModelConfig6581.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilterModelConfig6581.cpp; sourceTree = "<group>"; };
+		55F0B75826ABFEE80077E58C /* Integrator6581.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Integrator6581.cpp; sourceTree = "<group>"; };
+		55F0B75A26ABFEE80077E58C /* siddefs-fp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "siddefs-fp.h"; sourceTree = "<group>"; };
+		55F0B75B26ABFEE80077E58C /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		55F0B75C26ABFEE80077E58C /* Integrator8580.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Integrator8580.cpp; sourceTree = "<group>"; };
+		55F0B75D26ABFEE80077E58C /* FilterModelConfig6581.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterModelConfig6581.h; sourceTree = "<group>"; };
+		55F0B75E26ABFEE80077E58C /* ExternalFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExternalFilter.cpp; sourceTree = "<group>"; };
+		55F0B75F26ABFEE80077E58C /* FilterModelConfig8580.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilterModelConfig8580.cpp; sourceTree = "<group>"; };
+		55F0B76026ABFEE80077E58C /* FilterModelConfig8580.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterModelConfig8580.h; sourceTree = "<group>"; };
+		55F0B76126ABFEE80077E58C /* WaveformCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveformCalculator.h; sourceTree = "<group>"; };
+		55F0B76226ABFEE80077E58C /* Filter8580.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Filter8580.cpp; sourceTree = "<group>"; };
+		55F0B76326ABFEE80077E58C /* WaveformCalculator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaveformCalculator.cpp; sourceTree = "<group>"; };
+		55F0B76426ABFEE80077E58C /* Voice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice.h; sourceTree = "<group>"; };
+		55F0B76526ABFEE80077E58C /* SID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SID.h; sourceTree = "<group>"; };
+		55F0B76626ABFEE80077E58C /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		55F0B76726ABFEE80077E58C /* Filter6581.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter6581.h; sourceTree = "<group>"; };
+		55F0B76826ABFEE80077E58C /* Spline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Spline.cpp; sourceTree = "<group>"; };
+		55F0B76926ABFEE80077E58C /* Filter8580.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter8580.h; sourceTree = "<group>"; };
+		55F0B76A26ABFEE80077E58C /* ExternalFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExternalFilter.h; sourceTree = "<group>"; };
+		55F0B76B26ABFEE80077E58C /* version.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = version.cc; sourceTree = "<group>"; };
+		55F0B79A26ABFF670077E58C /* program_choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program_choice.h; sourceTree = "<group>"; };
+		55F0B79B26ABFF680077E58C /* program_choice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = program_choice.cpp; sourceTree = "<group>"; };
 		55F4A9302563157300410099 /* gui_msgs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gui_msgs.h; sourceTree = "<group>"; };
 		55F4A93A2563159F00410099 /* string_utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_utils.h; sourceTree = "<group>"; };
 		55F4A93B256315FD00410099 /* program_ls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = program_ls.cpp; sourceTree = "<group>"; };
@@ -2329,6 +2419,70 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		55F0B73B26ABFEB80077E58C /* libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		55F0B73C26ABFEE80077E58C /* residfp */ = {
+			isa = PBXGroup;
+			children = (
+				55F0B75B26ABFEE80077E58C /* array.h */,
+				55F0B74A26ABFEE80077E58C /* Dac.cpp */,
+				55F0B73D26ABFEE80077E58C /* Dac.h */,
+				55F0B74926ABFEE80077E58C /* EnvelopeGenerator.cpp */,
+				55F0B74F26ABFEE80077E58C /* EnvelopeGenerator.h */,
+				55F0B75E26ABFEE80077E58C /* ExternalFilter.cpp */,
+				55F0B76A26ABFEE80077E58C /* ExternalFilter.h */,
+				55F0B75126ABFEE80077E58C /* Filter.cpp */,
+				55F0B76626ABFEE80077E58C /* Filter.h */,
+				55F0B75626ABFEE80077E58C /* Filter6581.cpp */,
+				55F0B76726ABFEE80077E58C /* Filter6581.h */,
+				55F0B76226ABFEE80077E58C /* Filter8580.cpp */,
+				55F0B76926ABFEE80077E58C /* Filter8580.h */,
+				55F0B75726ABFEE80077E58C /* FilterModelConfig6581.cpp */,
+				55F0B75D26ABFEE80077E58C /* FilterModelConfig6581.h */,
+				55F0B75F26ABFEE80077E58C /* FilterModelConfig8580.cpp */,
+				55F0B76026ABFEE80077E58C /* FilterModelConfig8580.h */,
+				55F0B75826ABFEE80077E58C /* Integrator6581.cpp */,
+				55F0B75326ABFEE80077E58C /* Integrator6581.h */,
+				55F0B75C26ABFEE80077E58C /* Integrator8580.cpp */,
+				55F0B74D26ABFEE80077E58C /* Integrator8580.h */,
+				55F0B73E26ABFEE80077E58C /* OpAmp.cpp */,
+				55F0B75026ABFEE80077E58C /* OpAmp.h */,
+				55F0B75226ABFEE80077E58C /* Potentiometer.h */,
+				55F0B73F26ABFEE80077E58C /* resample */,
+				55F0B74E26ABFEE80077E58C /* SID.cpp */,
+				55F0B76526ABFEE80077E58C /* SID.h */,
+				55F0B75A26ABFEE80077E58C /* siddefs-fp.h */,
+				55F0B74826ABFEE80077E58C /* siddefs-fp.h.in */,
+				55F0B76826ABFEE80077E58C /* Spline.cpp */,
+				55F0B74626ABFEE80077E58C /* Spline.h */,
+				55F0B76B26ABFEE80077E58C /* version.cc */,
+				55F0B76426ABFEE80077E58C /* Voice.h */,
+				55F0B76326ABFEE80077E58C /* WaveformCalculator.cpp */,
+				55F0B76126ABFEE80077E58C /* WaveformCalculator.h */,
+				55F0B74C26ABFEE80077E58C /* WaveformGenerator.cpp */,
+				55F0B74726ABFEE80077E58C /* WaveformGenerator.h */,
+			);
+			path = residfp;
+			sourceTree = "<group>";
+		};
+		55F0B73F26ABFEE80077E58C /* resample */ = {
+			isa = PBXGroup;
+			children = (
+				55F0B74526ABFEE80077E58C /* Resampler.h */,
+				55F0B74126ABFEE80077E58C /* SincResampler.cpp */,
+				55F0B74426ABFEE80077E58C /* SincResampler.h */,
+				55F0B74226ABFEE80077E58C /* test.cpp */,
+				55F0B74026ABFEE80077E58C /* TwoPassSincResampler.h */,
+				55F0B74326ABFEE80077E58C /* ZeroOrderResampler.h */,
+			);
+			path = resample;
+			sourceTree = "<group>";
+		};
 		9F010D1616CEC7C800B9CE0A /* Windows */ = {
 			isa = PBXGroup;
 			children = (
@@ -2990,6 +3144,10 @@
 				9F7720FC12B38C4400072AE8 /* drives.cpp */,
 				5514503B24BE8FB90002CE28 /* program_autotype.cpp */,
 				5514503C24BE8FB90002CE28 /* program_autotype.h */,
+				55F0B79B26ABFF680077E58C /* program_choice.cpp */,
+				55F0B79A26ABFF670077E58C /* program_choice.h */,
+				55F0B73726ABFE450077E58C /* program_help.cpp */,
+				55F0B73826ABFE450077E58C /* program_help.h */,
 				55F4A93B256315FD00410099 /* program_ls.cpp */,
 				55F4A93C256315FD00410099 /* program_ls.h */,
 			);
@@ -3039,8 +3197,10 @@
 				9F77211D12B38C4400072AE8 /* adlib.h */,
 				9F77211E12B38C4400072AE8 /* cmos.cpp */,
 				9F77211F12B38C4400072AE8 /* dbopl.cpp */,
+				55F0B73426ABFDDA0077E58C /* innovation.cpp */,
 				9F77212012B38C4400072AE8 /* dbopl.h */,
 				5514503424BE8DB00002CE28 /* dc_silencer.cpp */,
+				55F0B72926ABFD9B0077E58C /* ps1audio.cpp */,
 				5514503524BE8DB00002CE28 /* dc_silencer.h */,
 				9F77212112B38C4400072AE8 /* disney.cpp */,
 				9F77212212B38C4400072AE8 /* dma.cpp */,
@@ -3133,6 +3293,7 @@
 		9F77216412B38C4400072AE8 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				55F0B73C26ABFEE80077E58C /* residfp */,
 				55144FED24BE81E00002CE28 /* decoders */,
 				55144FE924BE81DF0002CE28 /* nuked */,
 				5514500424BE81E00002CE28 /* ppscale */,
@@ -3408,6 +3569,7 @@
 		9FBC3A7A0F56CEA2001811F2 /* DOSBox */ = {
 			isa = PBXGroup;
 			children = (
+				55F0B73B26ABFEB80077E58C /* libs */,
 				9F77207312B38C4400072AE8 /* include */,
 				9F77209D12B38C4400072AE8 /* src */,
 				9FBC3A7F0F56CEA2001811F2 /* config.h */,
@@ -3711,7 +3873,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Alun Bestor and contributors";
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
@@ -3959,10 +4121,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F0B73926ABFE450077E58C /* program_help.cpp in Sources */,
 				9FBC352B0F56C7B7001811F2 /* BXAboutController.m in Sources */,
 				9FBC352C0F56C7B7001811F2 /* BXAppController.m in Sources */,
 				9FBC352F0F56C7B7001811F2 /* BXSession.m in Sources */,
 				9FBC35310F56C7B7001811F2 /* BXEmulator+BXShell.mm in Sources */,
+				55F0B76C26ABFEE80077E58C /* OpAmp.cpp in Sources */,
 				9FBC35320F56C7B7001811F2 /* BXDOSWindow.m in Sources */,
 				9FBC35330F56C7B7001811F2 /* BXDOSWindowController.m in Sources */,
 				9FBC35340F56C7B7001811F2 /* NSWindow+ADBWindowDimensions.m in Sources */,
@@ -3976,9 +4140,12 @@
 				9F573C5A0F8E18B10089D8B7 /* NSWorkspace+ADBMountedVolumes.m in Sources */,
 				9F573D390F8E69AF0089D8B7 /* BXGamebox.m in Sources */,
 				058BC52E24C27CB50078C244 /* BXShaderParametersWindowController.m in Sources */,
+				55F0B73226ABFD9C0077E58C /* ps1audio.cpp in Sources */,
 				9F4971BB108EF02F00282261 /* BXEmulator+BXDOSFileSystem.mm in Sources */,
 				55F4A93D256315FD00410099 /* program_ls.cpp in Sources */,
+				55F0B78C26ABFEE80077E58C /* Integrator8580.cpp in Sources */,
 				9FC8F50C10934F3400AD6307 /* NSString+ADBPaths.m in Sources */,
+				55F0B77A26ABFEE80077E58C /* WaveformGenerator.cpp in Sources */,
 				9F45A424109C867E00593456 /* BXMountPanelController.m in Sources */,
 				9F424207109D03F500111D28 /* BXInspectorController.m in Sources */,
 				5514500A24BE81E00002CE28 /* opl3.c in Sources */,
@@ -4022,11 +4189,13 @@
 				9FADFE5511EC7E1700990E91 /* ADBDigest.m in Sources */,
 				9FADFE9711EC932800990E91 /* NSData+HexStrings.m in Sources */,
 				9FBF66AF11F35ADD00DAAB9A /* ADBSingleFileTransfer.m in Sources */,
+				55F0B78426ABFEE80077E58C /* Filter6581.cpp in Sources */,
 				9F13F9D011F85E6F0069A02E /* NSFileManager+ADBTemporaryFiles.m in Sources */,
 				9F9E27C511F8C003003EE8F3 /* BXThemedSegmentedCell.m in Sources */,
 				9F9E27D611F8C173003EE8F3 /* BXDrivePanelController.m in Sources */,
 				9FE90BF711F8D1DC003CFFFF /* ADBDelegatedView.m in Sources */,
 				9FEAA3EC1204595B0085F008 /* ADBOperation.m in Sources */,
+				55F0B79226ABFEE80077E58C /* Filter8580.cpp in Sources */,
 				9F53411812059E7900BCBF24 /* NSWorkspace+BXExecutableTypes.m in Sources */,
 				9F1CBA58120C796C00C5E926 /* BXImportSession.m in Sources */,
 				9F1CBA97120C7D9000C5E926 /* BXImportWindowController.m in Sources */,
@@ -4043,11 +4212,13 @@
 				5514501E24BE81E00002CE28 /* flac.c in Sources */,
 				9F24D25012243C9A009C1817 /* BXWelcomeView.m in Sources */,
 				9FC74821122A7C8B00E86E6A /* ADBPathEnumerator.m in Sources */,
+				55F0B79426ABFEE80077E58C /* WaveformCalculator.cpp in Sources */,
 				9FFF97951232B718009B5EE5 /* ADBMultiPanelWindowController.m in Sources */,
 				9F61931B1233D8F000F35AB4 /* ADBTabbedWindowController.m in Sources */,
 				9F160E711236B2A600F8768E /* BXAppController+BXGamesFolder.m in Sources */,
 				9F511502129055FE00BEC0B9 /* BXImportCommand.m in Sources */,
 				55DEBB23201E875600F1092F /* pci_bus.cpp in Sources */,
+				55F0B76E26ABFEE80077E58C /* SincResampler.cpp in Sources */,
 				9F1812BF12996340009BC4B2 /* YRKSpinningProgressIndicator.m in Sources */,
 				9F18133B129990D5009BC4B2 /* BXGamesFolderPanelController.m in Sources */,
 				9FD23D55129AE3B600B2100B /* NSWindow+ADBWindowEffects.m in Sources */,
@@ -4121,6 +4292,7 @@
 				9F7D9EFF1444BAA800B6AD50 /* BXExternalMT32+BXMT32Sysexes.m in Sources */,
 				9FF1562914506DBA00545317 /* BXThemedProgressIndicator.m in Sources */,
 				9FF1562D14506E7200545317 /* BXHUDLevelIndicatorCell.m in Sources */,
+				55F0B79C26ABFF680077E58C /* program_choice.cpp in Sources */,
 				9FF1563014506F5C00545317 /* BXKeyboardEventTap.m in Sources */,
 				9F39A43B1452CE9100942D0F /* BXBezelView.m in Sources */,
 				9FD7B6B0145745D800565CEB /* BXThemedPopUpButtonCell.m in Sources */,
@@ -4145,6 +4317,7 @@
 				9FB60E9215C5643200CD0D63 /* NSError+ADBErrorHelpers.mm in Sources */,
 				9FA2C09215C8409000380261 /* BXDOSWindowBackgroundView.m in Sources */,
 				5514501624BE81E00002CE28 /* mp3_seek_table.cpp in Sources */,
+				55F0B77C26ABFEE80077E58C /* SID.cpp in Sources */,
 				55540E262545604500B88BE3 /* fs_utils_posix.cpp in Sources */,
 				9FCA6D9615C85D8500E1650C /* BXLaunchPanelController.m in Sources */,
 				9F57684915DA27A300B50500 /* BXHUDSpinningProgressIndicator.m in Sources */,
@@ -4188,6 +4361,7 @@
 				9F77217D12B38C4400072AE8 /* cpu.cpp in Sources */,
 				9F77217E12B38C4400072AE8 /* flags.cpp in Sources */,
 				9F77217F12B38C4400072AE8 /* modrm.cpp in Sources */,
+				55F0B79626ABFEE80077E58C /* Spline.cpp in Sources */,
 				9F77218012B38C4400072AE8 /* paging.cpp in Sources */,
 				9F77218112B38C4400072AE8 /* debug.cpp in Sources */,
 				9F77218212B38C4400072AE8 /* debug_disasm.cpp in Sources */,
@@ -4197,6 +4371,7 @@
 				9F77218512B38C4400072AE8 /* cdrom.cpp in Sources */,
 				9F77218712B38C4400072AE8 /* cdrom_image.cpp in Sources */,
 				9F77218B12B38C4400072AE8 /* dos.cpp in Sources */,
+				55F0B78626ABFEE80077E58C /* FilterModelConfig6581.cpp in Sources */,
 				9F77218C12B38C4400072AE8 /* dos_classes.cpp in Sources */,
 				9F77218D12B38C4400072AE8 /* dos_devices.cpp in Sources */,
 				9F77218E12B38C4400072AE8 /* dos_execute.cpp in Sources */,
@@ -4217,7 +4392,9 @@
 				9F77219912B38C4400072AE8 /* drive_iso.cpp in Sources */,
 				9F77219A12B38C4400072AE8 /* drive_local.cpp in Sources */,
 				9F77219C12B38C4400072AE8 /* drive_virtual.cpp in Sources */,
+				55F0B79026ABFEE80077E58C /* FilterModelConfig8580.cpp in Sources */,
 				5514500C24BE81E00002CE28 /* vorbis.c in Sources */,
+				55F0B79826ABFEE80077E58C /* version.cc in Sources */,
 				9F77219D12B38C4400072AE8 /* drives.cpp in Sources */,
 				9F77219E12B38C4400072AE8 /* dosbox.cpp in Sources */,
 				55574803208FA8040045E635 /* fmopl.cpp in Sources */,
@@ -4228,6 +4405,7 @@
 				9F7721A712B38C4400072AE8 /* cmos.cpp in Sources */,
 				9F7721A812B38C4400072AE8 /* dbopl.cpp in Sources */,
 				9F7721A912B38C4400072AE8 /* disney.cpp in Sources */,
+				55F0B78826ABFEE80077E58C /* Integrator6581.cpp in Sources */,
 				9F7721AA12B38C4400072AE8 /* dma.cpp in Sources */,
 				9F7721AB12B38C4400072AE8 /* gameblaster.cpp in Sources */,
 				9F7721AC12B38C4400072AE8 /* gus.cpp in Sources */,
@@ -4238,6 +4416,7 @@
 				9F7721B112B38C4400072AE8 /* joystick.cpp in Sources */,
 				9F7721B212B38C4400072AE8 /* keyboard.cpp in Sources */,
 				9F7721B312B38C4400072AE8 /* memory.cpp in Sources */,
+				55F0B78E26ABFEE80077E58C /* ExternalFilter.cpp in Sources */,
 				9F7721B412B38C4400072AE8 /* mixer.cpp in Sources */,
 				9F7721B512B38C4400072AE8 /* mpu401.cpp in Sources */,
 				9F7721B712B38C4400072AE8 /* pcspeaker.cpp in Sources */,
@@ -4261,10 +4440,12 @@
 				9F7721C812B38C4400072AE8 /* vga_gfx.cpp in Sources */,
 				9F7721C912B38C4400072AE8 /* vga_memory.cpp in Sources */,
 				9F7721CA12B38C4400072AE8 /* vga_misc.cpp in Sources */,
+				55F0B77426ABFEE80077E58C /* EnvelopeGenerator.cpp in Sources */,
 				9F7721CB12B38C4400072AE8 /* vga_other.cpp in Sources */,
 				9F7721CC12B38C4400072AE8 /* vga_paradise.cpp in Sources */,
 				9F7721CD12B38C4400072AE8 /* vga_s3.cpp in Sources */,
 				9F7721CE12B38C4400072AE8 /* vga_seq.cpp in Sources */,
+				55F0B77626ABFEE80077E58C /* Dac.cpp in Sources */,
 				9F7721CF12B38C4400072AE8 /* vga_tseng.cpp in Sources */,
 				5514503624BE8DB10002CE28 /* dc_silencer.cpp in Sources */,
 				9F7721D012B38C4400072AE8 /* vga_xga.cpp in Sources */,
@@ -4293,7 +4474,9 @@
 				9F7721E712B38C4400072AE8 /* support.cpp in Sources */,
 				9F7721E812B38C4400072AE8 /* shell.cpp in Sources */,
 				9F7721E912B38C4400072AE8 /* shell_batch.cpp in Sources */,
+				55F0B77E26ABFEE80077E58C /* Filter.cpp in Sources */,
 				9F7721EA12B38C4400072AE8 /* shell_cmds.cpp in Sources */,
+				55F0B73526ABFDDA0077E58C /* innovation.cpp in Sources */,
 				55F643FB25F41DF5009E1800 /* soft_limiter.cpp in Sources */,
 				9F7721EB12B38C4400072AE8 /* shell_misc.cpp in Sources */,
 				9F8B282A1709C4A100B31A14 /* ADBFilesystemBase.m in Sources */,
@@ -4344,6 +4527,7 @@
 				9F2D2FD215B8233800FAE848 /* BXEmulatorConfiguration.m in Sources */,
 				55F643FC25F41DF5009E1800 /* soft_limiter.cpp in Sources */,
 				9F2D2FD315B8233800FAE848 /* NSString+ADBStringFormatting.m in Sources */,
+				55F0B77F26ABFEE80077E58C /* Filter.cpp in Sources */,
 				9F2D2FD415B8233800FAE848 /* ADBLineEnumerator.m in Sources */,
 				9F2D2FD515B8233800FAE848 /* ADBDigest.m in Sources */,
 				9F2D2FD615B8233800FAE848 /* NSData+HexStrings.m in Sources */,
@@ -4405,6 +4589,7 @@
 				5514501724BE81E00002CE28 /* mp3_seek_table.cpp in Sources */,
 				9F2D303115B8233800FAE848 /* dos_classes.cpp in Sources */,
 				9F2D303215B8233800FAE848 /* dos_devices.cpp in Sources */,
+				55F0B79726ABFEE80077E58C /* Spline.cpp in Sources */,
 				9F2D303315B8233800FAE848 /* dos_execute.cpp in Sources */,
 				9F2D303415B8233800FAE848 /* dos_files.cpp in Sources */,
 				9F2D303515B8233800FAE848 /* dos_ioctl.cpp in Sources */,
@@ -4423,6 +4608,7 @@
 				9F2D304215B8233800FAE848 /* drives.cpp in Sources */,
 				9F2D304315B8233800FAE848 /* dosbox.cpp in Sources */,
 				9F2D304415B8233800FAE848 /* fpu.cpp in Sources */,
+				55F0B76D26ABFEE80077E58C /* OpAmp.cpp in Sources */,
 				9F2D304615B8233800FAE848 /* render.cpp in Sources */,
 				9F2D304715B8233800FAE848 /* render_scalers.cpp in Sources */,
 				9F2D304815B8233800FAE848 /* adlib.cpp in Sources */,
@@ -4449,15 +4635,19 @@
 				9F2D305D15B8233800FAE848 /* libserial.cpp in Sources */,
 				9F2D305E15B8233800FAE848 /* misc_util.cpp in Sources */,
 				9F2D305F15B8233800FAE848 /* nullmodem.cpp in Sources */,
+				55F0B78D26ABFEE80077E58C /* Integrator8580.cpp in Sources */,
+				55F0B79D26ABFF680077E58C /* program_choice.cpp in Sources */,
 				9F2D306015B8233800FAE848 /* serialdummy.cpp in Sources */,
 				55F8BC23201F9940004057D2 /* pci_bus.cpp in Sources */,
 				9F2D306115B8233800FAE848 /* serialport.cpp in Sources */,
 				9F2D306215B8233800FAE848 /* softmodem.cpp in Sources */,
+				55F0B78F26ABFEE80077E58C /* ExternalFilter.cpp in Sources */,
 				9F2D306315B8233800FAE848 /* tandy_sound.cpp in Sources */,
 				9F2D306415B8233800FAE848 /* timer.cpp in Sources */,
 				9F2D306515B8233800FAE848 /* vga.cpp in Sources */,
 				9F2D306615B8233800FAE848 /* vga_attr.cpp in Sources */,
 				9F2D306715B8233800FAE848 /* vga_crtc.cpp in Sources */,
+				55F0B73A26ABFE450077E58C /* program_help.cpp in Sources */,
 				9F2D306815B8233800FAE848 /* vga_dac.cpp in Sources */,
 				9F2D306915B8233800FAE848 /* vga_draw.cpp in Sources */,
 				55574802208FA8040045E635 /* ymf262.cpp in Sources */,
@@ -4482,6 +4672,7 @@
 				9F2D307A15B8233800FAE848 /* int10_misc.cpp in Sources */,
 				9F2D307B15B8233800FAE848 /* int10_modes.cpp in Sources */,
 				9F2D307C15B8233800FAE848 /* int10_pal.cpp in Sources */,
+				55F0B73326ABFD9C0077E58C /* ps1audio.cpp in Sources */,
 				9F2D307D15B8233800FAE848 /* int10_put_pixel.cpp in Sources */,
 				9F2D307E15B8233800FAE848 /* int10_vesa.cpp in Sources */,
 				9F2D307F15B8233800FAE848 /* int10_video_state.cpp in Sources */,
@@ -4491,6 +4682,7 @@
 				9F2D308215B8233800FAE848 /* xms.cpp in Sources */,
 				9F2D308315B8233800FAE848 /* cross.cpp in Sources */,
 				9F2D308415B8233800FAE848 /* messages.cpp in Sources */,
+				55F0B77B26ABFEE80077E58C /* WaveformGenerator.cpp in Sources */,
 				9F2D308515B8233800FAE848 /* programs.cpp in Sources */,
 				9F2D308615B8233800FAE848 /* setup.cpp in Sources */,
 				9F2D308715B8233800FAE848 /* support.cpp in Sources */,
@@ -4500,16 +4692,21 @@
 				9F2D308A15B8233800FAE848 /* shell_cmds.cpp in Sources */,
 				9F2D308B15B8233800FAE848 /* shell_misc.cpp in Sources */,
 				9F2D308C15B8233800FAE848 /* BXThrustmasterFCS.mm in Sources */,
+				55F0B79526ABFEE80077E58C /* WaveformCalculator.cpp in Sources */,
 				9F2D308D15B8233800FAE848 /* BXHIDControllerProfile.m in Sources */,
 				9F2D308E15B8233800FAE848 /* BXHIDInputBinding.m in Sources */,
 				9F2D308F15B8233800FAE848 /* BX360ControllerProfile.m in Sources */,
+				55F0B77D26ABFEE80077E58C /* SID.cpp in Sources */,
+				55F0B78926ABFEE80077E58C /* Integrator6581.cpp in Sources */,
 				9F2D309015B8233800FAE848 /* BXSixaxisControllerProfile.m in Sources */,
 				9F2D309115B8233800FAE848 /* BXCollectionItemView.m in Sources */,
 				8F97922924C0E31E0054F84D /* BXMetalRenderingView+BXImageCapture.m in Sources */,
 				9F2D309215B8233800FAE848 /* BXThemedImageCell.m in Sources */,
 				9F2D309B15B8233800FAE848 /* BXG25ControllerProfile.m in Sources */,
+				55F0B77726ABFEE80077E58C /* Dac.cpp in Sources */,
 				55220E3A24CFFF8C00A6736A /* BXShadersModel+OpenEmu.swift in Sources */,
 				9F2D309C15B8233800FAE848 /* DDHidUsage+ADBUsageExtensions.m in Sources */,
+				55F0B78726ABFEE80077E58C /* FilterModelConfig6581.cpp in Sources */,
 				9F2D309D15B8233800FAE848 /* BXDualActionControllerProfile.m in Sources */,
 				9F2D309E15B8233800FAE848 /* BXBezelController.m in Sources */,
 				9F2D309F15B8233800FAE848 /* BXThemedControls.m in Sources */,
@@ -4543,11 +4740,13 @@
 				9F2D30C015B8233800FAE848 /* BXBezelView.m in Sources */,
 				9F2D30C115B8233800FAE848 /* BXThemedPopUpButtonCell.m in Sources */,
 				9F2D30C215B8233800FAE848 /* BXThemedButtonCell.m in Sources */,
+				55F0B76F26ABFEE80077E58C /* SincResampler.cpp in Sources */,
 				9F2D30C315B8233800FAE848 /* BXThemedSliderCell.m in Sources */,
 				9F2D30C415B8233800FAE848 /* ADBContinuousThread.m in Sources */,
 				9F2D30C515B8233800FAE848 /* BXTFlightControllerProfile.m in Sources */,
 				9F2D30C615B8233800FAE848 /* ADBAppKitVersionHelpers.m in Sources */,
 				9F2D30C715B8233800FAE848 /* BXApplication.m in Sources */,
+				55F0B79926ABFEE80077E58C /* version.cc in Sources */,
 				9F2D30C815B8233800FAE848 /* BXBaseAppController+BXHotKeys.m in Sources */,
 				9F2D30C915B8233800FAE848 /* NSObject+ADBPerformExtensions.m in Sources */,
 				5514500D24BE81E00002CE28 /* vorbis.c in Sources */,
@@ -4563,6 +4762,7 @@
 				9FCB7B1515B8570700CC7CC7 /* BXSimpleDriveImport.m in Sources */,
 				9FCB7B1615B8570900CC7CC7 /* BXCDImageImport.m in Sources */,
 				9FCB7B1715B8570C00CC7CC7 /* BXBinCueImageImport.m in Sources */,
+				55F0B73626ABFDDA0077E58C /* innovation.cpp in Sources */,
 				9FCB7B1815B8570E00CC7CC7 /* BXDriveBundleImport.m in Sources */,
 				9FCB7B1A15B8589B00CC7CC7 /* BXDOSWindowController.m in Sources */,
 				9F98410315BEE64400B50CDA /* ADBShadowedFilesystem.m in Sources */,
@@ -4583,11 +4783,13 @@
 				9FD6AA1B16314A5B002B774E /* printer_redir.cpp in Sources */,
 				9FD6AA2116315278002B774E /* BXEmulatedPrinter.mm in Sources */,
 				9F596503163D8D910094FD6B /* BXSession+BXPrinting.m in Sources */,
+				55F0B78526ABFEE80077E58C /* Filter6581.cpp in Sources */,
 				9FF982121646C7640080F763 /* BXPrintSession.m in Sources */,
 				55F4A93E256315FD00410099 /* program_ls.cpp in Sources */,
 				9F67855D1649A6BC007FE89A /* BXPrintStatusPanelController.m in Sources */,
 				9F201E391657DB7F0086F1BB /* ADBUserNotificationDispatcher.m in Sources */,
 				5514503A24BE8DE60002CE28 /* envelope.cpp in Sources */,
+				55F0B77526ABFEE80077E58C /* EnvelopeGenerator.cpp in Sources */,
 				55220E3924CFFF8C00A6736A /* BXShadersModel.swift in Sources */,
 				9F61B94E16625DF700B41546 /* BXInspectorController.m in Sources */,
 				9F6463F816C67415008B65BF /* BXOutputBinding.m in Sources */,
@@ -4600,9 +4802,11 @@
 				9F38B38C16DFB1960050AB15 /* ADBLocalFilesystem.m in Sources */,
 				9F1E8CDB16E16C0400F1C908 /* ADBScanOperation.m in Sources */,
 				9F1E8CDF16E16EB800F1C908 /* ADBMountableImage.m in Sources */,
+				55F0B79326ABFEE80077E58C /* Filter8580.cpp in Sources */,
 				9FCA937D16FF37A000720B81 /* BXDocumentationPanelController.m in Sources */,
 				9FCA937E16FF38E700720B81 /* BXDocumentationBrowser.m in Sources */,
 				9F8B282B1709C4A100B31A14 /* ADBFilesystemBase.m in Sources */,
+				55F0B79126ABFEE80077E58C /* FilterModelConfig8580.cpp in Sources */,
 				5514500B24BE81E00002CE28 /* opl3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

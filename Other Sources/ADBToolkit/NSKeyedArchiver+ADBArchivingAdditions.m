@@ -31,15 +31,14 @@
 + (NSData *) archivedDataWithRootObject: (id)rootObject
                                delegate: (id <NSKeyedArchiverDelegate>)delegate
 {
-    NSMutableData *data = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[self alloc] initForWritingWithMutableData: data];
+    NSKeyedArchiver *archiver = [[self alloc] initRequiringSecureCoding: YES];
     archiver.delegate = delegate;
     
     [archiver encodeRootObject: rootObject];
     
     [archiver finishEncoding];
     
-    return data;
+    return [archiver encodedData];
 }
 
 @end
@@ -49,7 +48,7 @@
 + (id) unarchiveObjectWithData: (NSData *)data
                       delegate: (id <NSKeyedUnarchiverDelegate>)delegate
 {
-    NSKeyedUnarchiver *unarchiver = [[self alloc] initForReadingWithData: data];
+    NSKeyedUnarchiver *unarchiver = [[self alloc] initForReadingFromData: data error: nil];
     unarchiver.delegate = delegate;
     
     id object = [unarchiver decodeObject];
