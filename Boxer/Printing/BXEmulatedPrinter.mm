@@ -2488,7 +2488,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
 - (uint8_t) statusRegister
 {
     //Always report that we're selected and have no errors.
-    uint8_t status = BXEmulatedPrinterStatusMask | BXEmulatedPrinterStatusNoError | BXEmulatedPrinterStatusSelected;
+    BXEmulatedPrinterStatus status = BXEmulatedPrinterStatusMask | BXEmulatedPrinterStatusNoError | BXEmulatedPrinterStatusSelected;
     
     // Return standard: No error, printer online, no ack and not busy
     if (_initialized)
@@ -2534,7 +2534,7 @@ typedef NS_OPTIONS(uint8_t, BXEmulatedPrinterStatus) {
 
 - (uint8_t) controlRegister
 {
-    uint8_t flags = BXEmulatedPrinterControlMask | _controlRegister;
+    BXEmulatedPrinterControl flags = BXEmulatedPrinterControlMask | _controlRegister;
     
     if (_initialized)
     {

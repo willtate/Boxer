@@ -48,9 +48,9 @@
 
 @interface BXPrintPreview : NSView <CALayerDelegate>
 
-/// The preview images for the current page.
+/// The preview image for the current page.
 @property (strong, nonatomic) NSImage *currentPagePreview;
-/// The preview images for the previous page.
+/// The preview image for the previous page.
 @property (strong, nonatomic) NSImage *previousPagePreview;
 
 /// The X offset of the print head, as a percentage of
