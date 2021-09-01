@@ -10,7 +10,7 @@
 //These are used in Boxer's inspector panel and elsewhere.
 
 #import <Cocoa/Cocoa.h>
-#import <BGHUDAppKit/BGHUDAppKit.h>
+#import "BGThemeManager.h"
 
 /// Extends BGTheme with more specific overrides.
 @interface BGTheme (BXThemeExtensions)
@@ -20,28 +20,9 @@
 /// If name is nil, the classname will be used.
 + (void) registerWithName: (NSString *)name;
 
-/// The shadow to draw inside the slider track, on top of the background color.
-/// Defaults to nil.
-- (NSShadow *) sliderTrackInnerShadow;
-
-/// The shadow to draw beneath the slider track. Defaults to nil.
-- (NSShadow *) sliderTrackShadow;
-
-/// The color with which to stroke the slider track. Defaults to strokeColor.
-- (NSColor *) sliderTrackStrokeColor;
-
-/// The color with which to stroke the disabled slider track. Defaults to disabledStrokeColor.
-- (NSColor *) disabledSliderTrackStrokeColor;
-
-/// The shadow to draw beneath slider knobs. Defaults to the value of dropShadow.
-- (NSShadow *) sliderKnobShadow;
-
-/// The color with which to stroke the slider knob. Defaults to strokeColor.
-- (NSColor *) sliderKnobStrokeColor;
-
-/// The color with which to stroke the slider knob. Defaults to disabledStrokeColor.
-- (NSColor *) disabledSliderKnobStrokeColor;
-
+- (NSColor *) textColor;
+- (NSColor *) disabledTextColor;
+- (NSShadow *) textShadow;
 
 - (NSGradient *) imageFill;
 - (NSShadow *) imageInnerShadow;
@@ -68,54 +49,39 @@
 
 
 /// Base class used by all Boxer themes. Currently empty.
-@interface BXBaseTheme : BGGradientTheme
+@interface BXBaseTheme : BGTheme
 @end
 
 /// Adds a soft shadow around text.
 @interface BXBlueprintTheme : BXBaseTheme
-- (NSShadow *) textShadow;
-- (NSColor *) textColor;
 @end
 
 /// Same as above, but paler text.
 @interface BXBlueprintHelpTextTheme : BXBlueprintTheme
-- (NSColor *) textColor;
 @end
 
 /// White text, blue highlights and subtle text shadows
 /// for HUD and bezel panels.
 @interface BXHUDTheme : BXBaseTheme
-- (NSGradient *) highlightGradient;
-- (NSGradient *) pushedGradient;
-- (NSGradient *) highlightComplexGradient;
-- (NSGradient *) pushedComplexGradient;
-- (NSGradient *) highlightKnobColor;
-- (NSShadow *) focusRing;
 @end
 
 /// Lightly indented text for program panels and inspector.
 @interface BXIndentedTheme : BXBaseTheme
 @end
 
-/// Same as above, but paler text.
-@interface BXIndentedHelpTextTheme : BXIndentedTheme
-@end
 
 /// Style used for list items in inspector.
-@interface BXInspectorListTheme : BXIndentedTheme
+@interface BXInspectorListTheme : BXBaseTheme
 @end
 
 /// Style used for selected list items in inspector.
-@interface BXInspectorListSelectionTheme : BXBaseTheme
+@interface BXInspectorListSelectionTheme : BXInspectorListTheme
 @end
 
-@interface BXInspectorListHelpTextTheme : BXIndentedHelpTextTheme
+@interface BXInspectorListControlTheme : BXBaseTheme
 @end
 
-@interface BXInspectorListControlTheme : BXIndentedTheme
-@end
-
-@interface BXInspectorListControlSelectionTheme : BXInspectorListSelectionTheme
+@interface BXInspectorListControlSelectionTheme : BXInspectorListControlTheme
 @end
 
 

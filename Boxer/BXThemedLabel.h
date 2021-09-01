@@ -6,19 +6,30 @@
  */
 
 
-#import <Cocoa/Cocoa.h>
 #import "BXThemes.h"
 
-@class BGTheme;
 
-/// \c BXThemeImageCell renders its image as a template using a fill and shadow effects defined in a theme.
-@interface BXThemedImageCell : NSImageCell <BXThemable>
-
-/// The current theme key.
+@interface BXThemedLabel : NSTextField <BXThemable>
 @property (copy, nonatomic) NSString *themeKey;
-
 @end
 
-/// A subclass of \c BXTemplateImageCell intended for HUD windows, that defaults to white with a soft black shadow.
-@interface BXHUDImageCell : BXThemedImageCell
+
+@interface BXHUDLabel : BXThemedLabel
+@end
+
+
+@interface BXBlueprintLabel : BXThemedLabel
+@end
+
+@interface BXBlueprintHelpTextLabel : BXThemedLabel
+@end
+
+
+@interface BXAboutLabel : BXThemedLabel
+@end
+
+@interface BXAboutDarkLabel : BXThemedLabel
+@end
+
+@interface BXAboutLightLabel : BXThemedLabel
 @end

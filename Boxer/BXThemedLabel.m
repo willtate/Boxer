@@ -5,14 +5,16 @@
  online at [http://www.gnu.org/licenses/gpl-2.0.txt].
  */
 
-#import "BXThemedControls.h"
-
-
-#pragma mark - Base classes
+#import "BXThemedLabel.h"
 
 @implementation BXThemedLabel
 
 #pragma mark - Default theme handling
+
++ (NSString *) defaultThemeKey
+{
+    return nil;
+}
 
 - (id) initWithCoder: (NSCoder *)coder
 {
@@ -24,7 +26,6 @@
     }
     return self;
 }
-
 
 //Fixes a BGHUDLabel/NSTextField bug where toggling enabledness
 //won't cause a redraw.
@@ -38,134 +39,78 @@
 
 - (void) setThemeKey: (NSString *)key
 {
-    [super setThemeKey: key];
-    self.stringValue = self.stringValue;
-}
-
-@end
-
-@implementation BXThemedCheckboxCell
-
-//Fix for setButtonType: no longer getting called for checkboxes in XIBs (jesus christ)
-- (id) initWithCoder: (NSCoder *)aDecoder
-{
-    if ((self = [super initWithCoder: aDecoder]))
+    if (![key isEqual: self.themeKey])
     {
-        [self setButtonType: NSButtonTypeSwitch];
+        _themeKey = [key copy];
+        self.stringValue = self.stringValue;
     }
-    return self;
 }
 
-@end
 
+- (void) drawRect: (NSRect)dirtyRect {
+    
+    BGTheme *theme = [[BGThemeManager keyedManager] themeForKey: self.themeKey];
 
-@implementation BXThemedRadioCell
-
-//See note above for BXThemedCheckboxCell.
-- (id) initWithCoder: (NSCoder *)aDecoder
-{
-    if ((self = [super initWithCoder: aDecoder]))
+    if (self.isEnabled)
     {
-        [self setButtonType: NSButtonTypeRadio];
+        self.textColor = theme.textColor;
     }
-    return self;
+    else
+    {
+        self.textColor = theme.disabledTextColor;
+    }
+    
+    //add text shadow before we draw the text itself
+    NSShadow *textShadow = theme.textShadow;
+    if (textShadow)
+    {
+        NSMutableAttributedString *value;
+        if (self.attributedStringValue)
+        {
+            value = [self.attributedStringValue mutableCopy];
+        }
+        else
+        {
+            value = [[NSMutableAttributedString alloc] initWithString: self.stringValue];
+        }
+    
+        [value addAttribute: NSShadowAttributeName
+                      value: textShadow
+                      range: NSMakeRange(0, [value length])];
+
+        self.attributedStringValue = value;
+    }
+    
+    [super drawRect: dirtyRect];
 }
 
 @end
-
 
 #pragma mark -
 #pragma mark Themed versions
 
 @implementation BXHUDLabel
-
 + (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
-
-@implementation BXHUDButtonCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
-
-@implementation BXHUDCheckboxCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
-
-@implementation BXHUDSliderCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
-
-@implementation BXHUDPopUpButtonCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
-@end
-
-@implementation BXHUDSegmentedCell
-
-+ (NSString *) defaultThemeKey { return @"BXHUDTheme"; }
-
 @end
 
 
 @implementation BXBlueprintLabel
-
 + (NSString *) defaultThemeKey { return @"BXBlueprintTheme"; }
-
 @end
 
 @implementation BXBlueprintHelpTextLabel
-
 + (NSString *) defaultThemeKey { return @"BXBlueprintHelpTextTheme"; }
-
-@end
-
-
-@implementation BXIndentedLabel
-
-+ (NSString *) defaultThemeKey { return @"BXIndentedTheme"; }
-
-@end
-
-@implementation BXIndentedHelpTextLabel
-
-+ (NSString *) defaultThemeKey { return @"BXIndentedHelpTextTheme"; }
-
-@end
-
-@implementation BXIndentedCheckboxCell
-
-+ (NSString *) defaultThemeKey { return @"BXIndentedTheme"; }
-
-@end
-
-@implementation BXIndentedSliderCell
-
-+ (NSString *) defaultThemeKey { return @"BXIndentedTheme"; }
-
 @end
 
 
 @implementation BXAboutLabel
-
 + (NSString *) defaultThemeKey { return @"BXAboutTheme"; }
-
 @end
 
 @implementation BXAboutDarkLabel
-
 + (NSString *) defaultThemeKey { return @"BXAboutDarkTheme"; }
-
 @end
 
 @implementation BXAboutLightLabel
-
 + (NSString *) defaultThemeKey { return @"BXAboutLightTheme"; }
-
 @end

@@ -1,6 +1,3 @@
-[submodule "Vendor/BGHUDAppKit"]
-	path = Vendor/BGHUDAppKit
-	url = https://github.com/MaddTheSane/BGHUDAppKit.git
 [submodule "Vendor/Boxer-DDHidLib"]
 	path = Vendor/DDHidLib
 	url = https://github.com/MaddTheSane/Boxer-DDHidLib.git

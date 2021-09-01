@@ -63,7 +63,7 @@
                                     <slider focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="988">
                                         <rect key="frame" x="21" y="5" width="72" height="15"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <sliderCell key="cell" controlSize="small" continuous="YES" state="on" focusRingType="none" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="989" customClass="BXIndentedSliderCell"/>
+                                        <sliderCell key="cell" controlSize="small" continuous="YES" state="on" focusRingType="none" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="989"/>
                                         <connections>
                                             <binding destination="-3" name="value" keyPath="delegate.effectiveVolume" id="997">
                                                 <dictionary key="options">

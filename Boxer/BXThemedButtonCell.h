@@ -6,17 +6,16 @@
  */
 
 
-#import <BGHUDAppKit/BGHUDAppKit.h>
 #import "BXThemes.h"
 
 /// BXThemedButtonCell is a reimplementation of BGHUDButtonCell to provide more
 /// control over checkbox and radio button rendering.
-@interface BXThemedButtonCell : BGHUDButtonCell <BXThemable>
+@interface BXThemedButtonCell : NSButtonCell <BXThemable>
+
+@property (copy, nonatomic) NSString *themeKey;
 
 /// Given an entire cell frame, returns the rect
 /// in which to draw the checkbox/radio button.
-- (NSRect) checkboxRectForBounds: (NSRect)frame;
-- (NSRect) radioButtonRectForBounds: (NSRect)frame;
 - (NSRect) imageRectForImage: (NSImage *)image forBounds: (NSRect)frame;
 
 /// Returns the rect into which to render a checkbox
@@ -30,15 +29,5 @@
 /// Same as above, but for the specified image rectangle.
 - (NSRect) titleRectForBounds: (NSRect)frame
                 withImageRect: (NSRect)imageFrame;
-
-/// Returns a bezel path to render for the checkbox/radio
-/// button's outer bezel.
-- (NSBezierPath *) checkboxBezelForRect: (NSRect)rect;
-- (NSBezierPath *) radioButtonBezelForRect: (NSRect)rect;
-
-/// Returns a path for the tick mark/dot to render inside
-/// an active checkbox/radio button.
-- (NSBezierPath *) checkboxGlyphForRect: (NSRect)frame;
-- (NSBezierPath *) radioButtonGlyphForRect: (NSRect)frame;
 
 @end
