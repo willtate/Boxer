@@ -25,9 +25,7 @@
  */
 
 #import "NSError+ADBErrorHelpers.h"
-#import "RegexKitLite.h" //FIXME: we shouldn't introduce dependencies on 3rd-party libraries.
 #include <cxxabi.h> //For demangling
-#import "Boxer-Swift.h"
 
 @implementation NSError (ADBErrorHelpers)
 
@@ -51,8 +49,6 @@ NSString * const ADBCallstackFunctionName               = @"ADBCallstackFunction
 NSString * const ADBCallstackHumanReadableFunctionName  = @"ADBCallstackHumanReadableFunctionName";
 NSString * const ADBCallstackSymbolOffset               = @"ADBCallstackSymbolOffset";
 
-static NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]+)\\s+(.+)\\s+\\+\\s+(\\d+)$";
-
 @implementation NSException (ADBExceptionHelpers)
 
 + (NSString *) demangledCPlusPlusFunctionName: (NSString *)functionName
@@ -75,68 +71,4 @@ static NSString * const ADBCallstackSymbolPattern = @"^\\d+\\s+(\\S+)\\s+(0x[a-f
     }
 }
 
-- (NSArray *) callStackDescriptions
-{
-    NSArray *symbols = self.callStackSymbols;
-    NSMutableArray *descriptions = [NSMutableArray arrayWithCapacity: symbols.count];
-    
-    for (NSString *symbol in symbols)
-    {
-        NSDictionary *description;
-        
-        NSArray<NSString*> *captures = [symbol captureComponentsMatchedByRegex: ADBCallstackSymbolPattern];
-        if (captures.count == 5)
-        {
-            //FIXME: reimplement this using NSScanner or NSRegularExpression so that we don't have dependencies on RegexKitLite.
-            NSString *libraryName   = [captures objectAtIndex: 1];
-            NSString *hexAddress    = [captures objectAtIndex: 2];
-            NSString *rawSymbolName = [captures objectAtIndex: 3];
-            NSString *offsetString  = [captures objectAtIndex: 4];
-            
-            unsigned long long address = 0;
-            NSScanner *hexAddressScanner = [NSScanner scannerWithString: hexAddress];
-            [hexAddressScanner scanHexLongLong: &address];
-            
-            long long offset = 0;
-            NSScanner *offsetScanner = [NSScanner scannerWithString: offsetString];
-            [offsetScanner scanLongLong: &offset];
-            
-            ADBExceptionMangledFunctionType symbolType = [self.class possibleMangledTypeFromString:rawSymbolName];
-            NSString *demangledSymbolName;
-            switch (symbolType) {
-                case ADBExceptionMangledFunctionNone:
-                    demangledSymbolName = rawSymbolName;
-                    break;
-                    
-                case ADBExceptionMangledFunctionCPlusPlus:
-                    demangledSymbolName = [self.class demangledCPlusPlusFunctionName: rawSymbolName];
-                    break;
-                    
-                case ADBExceptionMangledFunctionSwift:
-                    demangledSymbolName = [self.class demangledSwiftFunctionName: rawSymbolName];
-                    break;
-            }
-            if (!demangledSymbolName)
-                demangledSymbolName = rawSymbolName;
-            
-            description = @{
-                            ADBCallstackRawSymbol:                    symbol,
-                            ADBCallstackLibraryName:                  libraryName,
-                            ADBCallstackFunctionName:                 rawSymbolName,
-                            ADBCallstackHumanReadableFunctionName:    demangledSymbolName,
-                            ADBCallstackAddress:                      @(address),
-                            ADBCallstackSymbolOffset:                 @(offset),
-                            };
-            
-        }
-        //If the string couldn't be parsed, make an effort to provide *something* back
-        else
-        {
-            description = @{ ADBCallstackRawSymbol: symbol };
-        }
-        [descriptions addObject: description];
-    }
-    
-    return descriptions;
-}
 @end

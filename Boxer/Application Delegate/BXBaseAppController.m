@@ -28,6 +28,7 @@
 #import "NSObject+ADBPerformExtensions.h"
 
 #import "ADBUserNotificationDispatcher.h"
+#import "Boxer-Swift.h"
 #include <tgmath.h>
 
 /// The number of increments from minimum volume to full volume.
@@ -753,7 +754,7 @@
         }
         
         [issueBody appendString: @"**Full stack trace:**\n\n"];
-        for (NSDictionary *description in exception.callStackDescriptions)
+        for (NSDictionary<ADBCallstackKeys, id> *description in exception.callStackDescriptions)
         {
             NSString *libraryName   = [description objectForKey: ADBCallstackLibraryName];
             NSString *funcName      = [description objectForKey: ADBCallstackHumanReadableFunctionName];
