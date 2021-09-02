@@ -31,16 +31,16 @@
 //(In particular, whether DOSBox allows leading whitespace)
 
 //Matches "[section]" with optional leading and interstitial whitespace
-NSString * const BXEmulatorConfigurationSectionFormat   = @"^\\s*\\[\\s*(\\w+)\\s*\\]";
+static NSString * const BXEmulatorConfigurationSectionFormat   = @"^\\s*\\[\\s*(\\w+)\\s*\\]";
 
 //Matches "setting=value" with optional leading and interstitial whitespace
-NSString * const BXEmulatorConfigurationSettingFormat	= @"^\\s*(\\w+)\\s*=\\s*(.+)";
+static NSString * const BXEmulatorConfigurationSettingFormat	= @"^\\s*(\\w+)\\s*=\\s*(.+)";
 
 //Matches "#comment" with optional leading whitespace
-NSString * const BXEmulatorConfigurationCommentFormat	= @"^\\s*#(.*)";
+static NSString * const BXEmulatorConfigurationCommentFormat	= @"^\\s*#(.*)";
 
 //Matches any line that is nothing but whitespace
-NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
+static NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 
 
 #pragma mark -
