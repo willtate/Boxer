@@ -48,18 +48,20 @@ static NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 
 @interface BXEmulatorConfiguration ()
 
-//Our private storage of configuration sections
+//! Our private storage of configuration sections
 @property (strong, nonatomic) NSMutableDictionary<NSString*, id> *sections;
 
-//Parses a DOSBox-formatted configuration string and sets sections and settings from it
+//! Parses a DOSBox-formatted configuration string and sets sections and settings from it
 - (void) _parseSettingsFromString: (NSString *)configuration;
 
-//The inverse of the above: returns a dictionary of sections and settings
-//as a DOSBox-format configuration string.
+//! The inverse of the above: returns a dictionary of sections and settings
+//! as a DOSBox-format configuration string.
 - (NSString *) _formattedStringFromSettings;
 
-//Returns an NSString-formatted comment
+//! Returns an NSString-formatted comment
 + (NSString *) _formatAsComment: (NSString *)comment wrappedAtLineLength: (NSUInteger)wordWrap;
+
+@property (copy, readwrite, nonatomic, nullable) NSArray<NSString*> *startupCommands;
 
 @end
 
@@ -172,7 +174,7 @@ static NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	
 	if (section)
 	{
-		[section setObject: settingValue forKey: settingName];
+		[section setObject: [settingValue copy] forKey: settingName];
 	}
 	else
 	{
@@ -213,7 +215,7 @@ static NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 {
 	if (commands)
 	{
-		NSMutableArray *mutableCommands = [commands mutableCopy];
+		NSMutableArray *mutableCommands = [[NSMutableArray alloc] initWithArray:commands copyItems:YES];
 		[self.sections setObject: mutableCommands forKey: @"autoexec"];
 	}
 	else
@@ -237,7 +239,7 @@ static NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	else
 	{
 		//If we don't have an autoexec section yet, create a new one
-		self.startupCommands = [NSMutableArray arrayWithObject: command];
+		self.startupCommands = @[command];
 	}
 }
 
@@ -273,7 +275,7 @@ static NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 	
 	//Remove the startup commands from our returned dictionary
 	[settings removeObjectForKey: @"autoexec"];
-	return settings;
+	return [[NSDictionary alloc] initWithDictionary: settings copyItems: YES];
 }
 
 - (BOOL) isEmpty
@@ -297,7 +299,7 @@ static NSString * const BXEmulatorConfigurationEmptyFormat     = @"^\\s*$";
 {
 	if (newSettings)
 	{
-		NSMutableDictionary *section = [newSettings mutableCopy];
+		NSMutableDictionary *section = [[NSMutableDictionary alloc] initWithDictionary: newSettings copyItems: YES];
 		[self.sections setObject: section forKey: sectionName];
 	}
 	else

@@ -21,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic, getter=isEmpty) BOOL empty;
 
 /// Returns a dictionary of all settings organised by section (not including startup commands.)
-@property (readonly, nonatomic) NSDictionary<NSString*, id> *settings;
+@property (copy, readonly, nonatomic) NSDictionary<NSString*, NSDictionary<NSString*, NSString*>*> *settings;
 
 /// Returns an array of all startup commands.
-@property (readonly, nonatomic, nullable) NSArray<NSString*> *startupCommands;
+@property (copy, readonly, nonatomic, nullable) NSArray<NSString*> *startupCommands;
 
 /// A string to prepend as a header comment at the start of the configuration file.
 /// Used by description and writeToFile:error:
@@ -55,6 +55,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Returns an autoreleased empty configuration.
 + (instancetype) configuration;
 
+/// Returns an empty configuration.
+- (instancetype) init NS_DESIGNATED_INITIALIZER;
 
 /// Writes the configuration in DOSBox format atomically to the specified location.
 /// Returns \c YES if write was successful, or \c NO and sets error if the write failed.
@@ -108,7 +110,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Setting and getting sections
 
 /// Return a dictionary of all settings for the specified section.
-- (NSDictionary *) settingsForSection: (NSString *)sectionName;
+- (nullable NSDictionary<NSString*,NSString*> *) settingsForSection: (NSString *)sectionName;
 
 /// Replaces the settings for the specified section with the new ones.
 - (void) setSettings: (nullable NSDictionary<NSString*,NSString*> *)newSettings forSection: (NSString *)sectionName;
