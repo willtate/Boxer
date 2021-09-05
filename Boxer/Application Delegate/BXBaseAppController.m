@@ -114,24 +114,18 @@
     pathStyle.lineBreakMode = NSLineBreakByTruncatingMiddle;
     [pathTransformer.textAttributes setObject: pathStyle
                                        forKey: NSParagraphStyleAttributeName];
-    [pathStyle release];
     
     [NSValueTransformer setValueTransformer: isEmpty forName: @"BXArrayIsEmpty"];
     [NSValueTransformer setValueTransformer: isNotEmpty forName: @"BXArrayIsNotEmpty"];	
     [NSValueTransformer setValueTransformer: capitalizer forName: @"BXCapitalizedString"];	
     [NSValueTransformer setValueTransformer: pathTransformer forName: @"BXIconifiedGamesFolderPath"];
-    
-    [isEmpty release];
-    [isNotEmpty release];
-    [capitalizer release];
-    [pathTransformer release];
 }
 
 - (id) init
 {
 	if ((self = [super init]))
 	{
-		self.generalQueue = [[[NSOperationQueue alloc] init] autorelease];
+		self.generalQueue = [[NSOperationQueue alloc] init];
 		[self registerApplicationModeObservers];
 	}
 	return self;
@@ -150,8 +144,6 @@
     
     self.postTerminationHandler = nil;
     self.activeHotkeyAlert = nil;
-	
-	[super dealloc];
 }
 
 
@@ -163,7 +155,7 @@
     [self prepareHotkeyTap];
 
     //Start scanning for MIDI devices now
-    self.MIDIDeviceMonitor = [[[BXMIDIDeviceMonitor alloc] init] autorelease];
+    self.MIDIDeviceMonitor = [[BXMIDIDeviceMonitor alloc] init];
     [self.MIDIDeviceMonitor start];
 }
 
@@ -179,19 +171,19 @@
     
     [super closeAllDocumentsWithDelegate: self
                      didCloseAllSelector: @selector(documentController:didCloseAll:contextInfo:)
-                             contextInfo: closeHandler];
+                             contextInfo: CFBridgingRetain(closeHandler)];
 }
 
 - (void) documentController: (NSDocumentController *)docController
                 didCloseAll: (BOOL)didCloseAll
-                contextInfo: (void (^)(BOOL))handler
+                contextInfo: (void*)ctxInfo
 {
+    void (^handler)(BOOL) = CFBridgingRelease(ctxInfo);
     //If the user refused to close one or more documents, clear any post-termination callback we had lined up.
     if (!didCloseAll)
         self.postTerminationHandler = nil;
     
     handler(didCloseAll);
-    [handler release];
 }
 
 - (void) applicationWillTerminate: (NSNotification *)notification
@@ -491,7 +483,7 @@
     }
     
     //Now that we've grouped all the URLs by the app we want to open them in, go ahead and do the opening
-    for (NSString *appIdentifier in appIdentifiersAndURLs)
+    for (__strong NSString *appIdentifier in appIdentifiersAndURLs)
     {
         NSArray *URLsForApp = [appIdentifiersAndURLs objectForKey: appIdentifier];
         
@@ -508,8 +500,6 @@
         if (succeeded)
             openedAnyFiles = YES;
     }
-    
-    [appIdentifiersAndURLs release];
     
     return openedAnyFiles;
 }

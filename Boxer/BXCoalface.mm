@@ -397,13 +397,12 @@ void *boxer_openLocalDirectory(const char *path, DOS_Drive *drive)
     //The dictionary will be released when the calling context calls boxer_closeLocalDirectory() with the pointer to the dictionary.
     NSDictionary *enumeratorInfo = @{ @"enumerator": enumerator, @"fakeEntries": fakeEntries };
     
-    return (__bridge void *)[enumeratorInfo retain];
+    return (void*)CFBridgingRetain(enumeratorInfo);
 }
 
 void boxer_closeLocalDirectory(void *handle)
 {
-    NSDictionary *enumeratorInfo = (__bridge NSDictionary *)handle;
-    [enumeratorInfo release];
+    CFRelease(handle);
 }
 
 bool boxer_getNextDirectoryEntry(void *handle, char *outName, bool &isDirectory)

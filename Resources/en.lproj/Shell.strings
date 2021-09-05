@@ -35,3 +35,5 @@ These have the same format and usage restrictions as the strings in DOSBox.strin
 "Windows-only game warning" = "[31;1m[32;1m%@[31;1m is a Windows program, which Boxer does not support.
 You may be able to run the program in a Windows emulator instead.[0m
 ";
+
+"The path \"%1$@\" does not exist in OS X." = "The path \"%1$@\" does not exist in OS X.";

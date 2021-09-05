@@ -201,7 +201,7 @@ extern NSStringEncoding BXDirectStringEncoding;
 
 /// The thread on which the emulator was started via the @c -start method.
 /// @warning Currently, threads other than the main thread are unsupported.
-@property (readonly) NSThread *emulationThread;
+@property (retain, readonly) NSThread *emulationThread;
 
 /// Whether the emulator is running on its own thread.
 /// Will be NO if the emulator is running on the main thread.
