@@ -9,7 +9,7 @@
 import Foundation
 import CwlDemangle
 
-enum MangledFunctionType: Int {
+private enum MangledFunctionType: Int {
     /// No detected mangling
     case none
     /// *C++* mangled function name
@@ -24,7 +24,7 @@ private let cxxPrefixes = ["_Z"]
 private let ADBCallstackSymbolPattern = "^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]+)\\s+(.+)\\s+\\+\\s+(\\d+)$"
 
 extension NSException {
-    static func possibleMangledType(from: String) -> MangledFunctionType {
+    private static func possibleMangledType(from: String) -> MangledFunctionType {
         var trimFirst = false
         if from.first == "_" {
             trimFirst = true
@@ -48,7 +48,7 @@ extension NSException {
         return .none
     }
     
-    static func demangledSwiftFunctionName(_ functionName: String) -> String? {
+    private static func demangledSwiftFunctionName(_ functionName: String) -> String? {
         guard let parsed = try? parseMangledSwiftSymbol(functionName, isType: true) else {
             return nil
         }
