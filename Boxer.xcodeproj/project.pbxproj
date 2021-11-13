@@ -82,10 +82,12 @@
 		5585CEB924BB8360008121D9 /* SDL2_net.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 05F9A1FE24BAA64100969496 /* SDL2_net.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		558CE44D20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
 		558CE44E20F6931600319D1C /* BXXBOBluetoothControllerProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 558CE44C20F6931600319D1C /* BXXBOBluetoothControllerProfile.m */; };
+		5591BA2826F2E35A005A8EF0 /* ADBSwiftHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5563E57E239EF7CD007A1600 /* ADBSwiftHelpers.swift */; };
 		55998D2F25F6EDC400581095 /* ne2000.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55998D2625F6EDC300581095 /* ne2000.cpp */; };
 		55998D3025F6EDC400581095 /* ne2000.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55998D2625F6EDC300581095 /* ne2000.cpp */; };
 		55998D3525F6EF5F00581095 /* libpcap.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55998D3425F6EF3F00581095 /* libpcap.tbd */; };
 		55998D3725F6EF7900581095 /* libpcap.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55998D3425F6EF3F00581095 /* libpcap.tbd */; };
+		559E68BA273FBE7C0030C3DB /* URL+ADBAliasHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55419B73255A7FFA00A779B2 /* URL+ADBAliasHelpers.swift */; };
 		55B22BA21A1BD9760007665E /* Bundler.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22BA11A1BD9760007665E /* Bundler.xcassets */; };
 		55BBA4E9235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */; };
 		55BBA4EA235EE141007AE319 /* NSError+ADBErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BBA4E8235EE141007AE319 /* NSError+ADBErrorHelpers.swift */; };
@@ -4368,6 +4370,7 @@
 				55574809208FA8040045E635 /* saa1099.cpp in Sources */,
 				9F7721BC12B38C4400072AE8 /* misc_util.cpp in Sources */,
 				9F7721BD12B38C4400072AE8 /* nullmodem.cpp in Sources */,
+				5591BA2826F2E35A005A8EF0 /* ADBSwiftHelpers.swift in Sources */,
 				9F7721BE12B38C4400072AE8 /* serialdummy.cpp in Sources */,
 				9F7721BF12B38C4400072AE8 /* serialport.cpp in Sources */,
 				9F7721C012B38C4400072AE8 /* softmodem.cpp in Sources */,
@@ -4412,6 +4415,7 @@
 				9F7721E512B38C4400072AE8 /* programs.cpp in Sources */,
 				9F7721E612B38C4400072AE8 /* setup.cpp in Sources */,
 				5514501A24BE81E00002CE28 /* SDL_sound.c in Sources */,
+				559E68BA273FBE7C0030C3DB /* URL+ADBAliasHelpers.swift in Sources */,
 				9F7721E712B38C4400072AE8 /* support.cpp in Sources */,
 				9F7721E812B38C4400072AE8 /* shell.cpp in Sources */,
 				9F7721E912B38C4400072AE8 /* shell_batch.cpp in Sources */,

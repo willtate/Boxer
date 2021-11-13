@@ -54,10 +54,10 @@
     return NO;
 }
 
-- (NSURL*)URLByResolvingWithOptions: (NSURLBookmarkResolutionOptions)options
-                      relativeToURL: (NSURL *)relativeURL
-                bookmarkDataIsStale: (out BOOL *)isStale
-                              error: (out NSError **)outError
+- (NSURL*)URLByResolvingAliasRecordWithOptions: (NSURLBookmarkResolutionOptions)options
+                                 relativeToURL: (NSURL *)relativeURL
+                           bookmarkDataIsStale: (out BOOL *)isStale
+                                         error: (out NSError **)outError
 {
     return [NSURL URLByResolvingAliasRecord: self.aliasData options: options relativeToURL: relativeURL bookmarkDataIsStale: isStale error: outError];
 }
@@ -79,7 +79,7 @@
         NSError *err;
         NSInteger encodingVersion = [aDecoder decodeIntegerForKey: @"encodingVersion"];
         if (encodingVersion > BXCurrentDriveEncodingVersion) {
-            [aDecoder failWithError:[NSError errorWithDomain:NSCocoaErrorDomain code:NSCoderReadCorruptError userInfo:@{NSLocalizedDescriptionKey: [NSString localizedStringWithFormat:@"Unable to decode drive: encoding version %ld is higher than supported version %ld.", (long)encodingVersion, (long)BXCurrentDriveEncodingVersion]}]];
+            [aDecoder failWithError:[NSError errorWithDomain:NSCocoaErrorDomain code:NSCoderReadCorruptError userInfo:@{NSLocalizedDescriptionKey: [NSString localizedStringWithFormat:@"Unable to decode drive: encoding version %ld is higher than supported version %ld.", (long)encodingVersion, (long)BXCurrentDriveEncodingVersion], NSDebugDescriptionErrorKey: [NSString localizedStringWithFormat:@"Unable to decode drive: encoding version %ld is higher than supported version %ld.", (long)encodingVersion, (long)BXCurrentDriveEncodingVersion]}]];
             return nil;
         }
         
@@ -131,7 +131,7 @@
         //Paths were encoded as legacy alias data
         else
         {
-#define URL_FROM_ALIAS(alias) ((NSURL *)[alias URLByResolvingWithOptions: NSURLBookmarkResolutionWithoutUI relativeToURL: nil bookmarkDataIsStale: NULL error: &err])
+#define URL_FROM_ALIAS(alias) ((NSURL *)[alias URLByResolvingAliasRecordWithOptions: NSURLBookmarkResolutionWithoutUI relativeToURL: nil bookmarkDataIsStale: NULL error: &err])
             
             //IMPLEMENTATION NOTE: previous Boxer versions encoded paths as NDAlias instances.
             //We no longer use NDAlias in favour of NSURL bookmarks, but we can still resolve encoded
