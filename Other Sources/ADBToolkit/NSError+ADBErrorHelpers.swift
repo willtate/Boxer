@@ -21,7 +21,7 @@ private enum MangledFunctionType: Int {
 private let swiftPrefixes = ["_T", "$s", "_$S", "_T0"]
 private let cxxPrefixes = ["_Z"]
 
-private let ADBCallstackSymbolPattern = "^\\d+\\s+(\\S+)\\s+(0x[a-fA-F0-9]+)\\s+(.+)\\s+\\+\\s+(\\d+)$"
+private let ADBCallstackSymbolPattern = #"^\d+\s+(\S+)\s+(0x[a-fA-F0-9]+)\s+(.+)\s+\+\s+(\d+)$"#
 
 extension NSException {
     private static func possibleMangledType(from: String) -> MangledFunctionType {
@@ -58,12 +58,8 @@ extension NSException {
     /// Returns the results of `-callstackSymbols` parsed into NSDictionaries with the attributes listed in `ADBCallstackKeys`.
     @objc func callStackDescriptions() -> [[ADBCallstackKeys: Any]] {
         let symbols = callStackSymbols
-        var descriptions = [[ADBCallstackKeys: Any]]()
-        descriptions.reserveCapacity(symbols.count)
         
-        for symbol in symbols {
-            let description: [ADBCallstackKeys: Any]
-            
+        return symbols.map { symbol -> [ADBCallstackKeys: Any] in
             if let captures = (symbol as NSString).captureComponentsMatched(byRegex: ADBCallstackSymbolPattern), captures.count == 5 {
                 // FIXME: reimplement this using NSScanner or NSRegularExpression so that we don't have dependencies on RegexKitLite.
                 let libraryName = captures[1]
@@ -94,7 +90,7 @@ extension NSException {
                 if demangledSymbolName == nil {
                     demangledSymbolName = rawSymbolName
                 }
-                description = [
+                return [
                     .rawSymbol:                    symbol,
                     .libraryName:                  libraryName,
                     .functionName:                 rawSymbolName,
@@ -103,10 +99,8 @@ extension NSException {
                     .symbolOffset:                 offset]
             } else {
                 //If the string couldn't be parsed, make an effort to provide *something* back
-                description = [.rawSymbol: symbol]
+                return [.rawSymbol: symbol]
             }
-            descriptions.append(description)
         }
-        return descriptions
     }
 }

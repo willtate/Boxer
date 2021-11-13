@@ -29,7 +29,7 @@ extension BXFileTypes {
         do {
             handle = try ADBFileHandle(url: URL, options: .openForReading)
         } catch {
-            throw BXExecutableTypesErrors(.couldNotReadExecutable, userInfo: [ NSUnderlyingErrorKey: error])
+            throw BXExecutableTypesErrors(.couldNotReadExecutable, userInfo: [NSUnderlyingErrorKey: error])
         }
         defer {
             handle.close()
@@ -61,7 +61,7 @@ extension BXFileTypes {
             }
             handle = prehandle1
         } catch {
-            throw BXExecutableTypesErrors(.couldNotReadExecutable, userInfo: [ NSUnderlyingErrorKey: error])
+            throw BXExecutableTypesErrors(.couldNotReadExecutable, userInfo: [NSUnderlyingErrorKey: error])
         }
         defer {
             if let hand2 = handle as? ADBFileHandleAccess {
