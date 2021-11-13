@@ -9,7 +9,7 @@
 import Foundation
 import CwlDemangle
 
-private enum MangledFunctionType: Int {
+private enum MangledFunctionType {
     /// No detected mangling
     case none
     /// *C++* mangled function name
@@ -25,6 +25,10 @@ private let ADBCallstackSymbolPattern = #"^\d+\s+(\S+)\s+(0x[a-fA-F0-9]+)\s+(.+)
 
 extension NSException {
     private static func possibleMangledType(from: String) -> MangledFunctionType {
+        //Short-circuit if there's less than two characters.
+        guard from.count > 2 else {
+            return .none
+        }
         var trimFirst = false
         if from.first == "_" {
             trimFirst = true
