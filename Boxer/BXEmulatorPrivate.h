@@ -139,7 +139,7 @@ typedef NS_ERROR_ENUM(BXDOSBoxMountErrorDomain, BXDOSBoxMountErrors) {
 @interface BXEmulator()
 
 //Overridden to add setters for internal use
-@property (readwrite, assign) NSThread *emulationThread;
+@property (readwrite, retain) NSThread *emulationThread;
 @property (readwrite, getter=isExecuting) BOOL executing;
 @property (readwrite, getter=isCancelled) BOOL cancelled;
 @property (readwrite, getter=isInitialized) BOOL initialized;
