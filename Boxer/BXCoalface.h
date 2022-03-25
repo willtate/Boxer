@@ -29,6 +29,7 @@ extern "C" {
 #define GFX_EndUpdate boxer_finishFrame
 #define Mouse_AutoLock boxer_setMouseActive
 #define GFX_SetTitle boxer_handleDOSBoxTitleChange
+#define GFX_GetDisplayRefreshRate boxer_GetDisplayRefreshRate
 #define GFX_SetSize boxer_prepareForFrameSize
 #define GFX_GetRGB boxer_getRGBPaletteEntry
 #define GFX_SetShader boxer_setShader
@@ -61,6 +62,8 @@ extern "C" {
     
     Bit8u boxer_CGAComponentMode(void);
     void boxer_setCGAComponentMode(Bit8u newCGA);
+
+    int boxer_GetDisplayRefreshRate(void);
     
     
 #pragma mark - Shell

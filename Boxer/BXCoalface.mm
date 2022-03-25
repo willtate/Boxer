@@ -21,7 +21,7 @@
 bool boxer_processEvents()
 {
 	[[BXEmulator currentEmulator] _processEvents];
-    return !exit_requested || !boxer_runLoopShouldContinue();
+    return !shutdown_requested || !boxer_runLoopShouldContinue();
 }
 
 /*

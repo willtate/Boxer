@@ -282,7 +282,7 @@ static BOOL _hasStartedEmulator = NO;
         
             //Tells DOSBox to close the current shell at the end of the commandline input loop
             DOS_Shell *shell = self._currentShell;
-            if (shell) exit_requested = YES;
+            if (shell) shutdown_requested = YES;
         }
 
         self.cancelled = YES;
@@ -762,7 +762,7 @@ static BOOL _hasStartedEmulator = NO;
 
 - (void) setMasterVolume: (float)volume
 {
-    volume = MAX(0.0f, volume);
+    volume = std::max(0.0f, volume);
     volume = MIN(volume, 1.0f);
     
     if (self.masterVolume != volume)
@@ -958,7 +958,7 @@ static BOOL _hasStartedEmulator = NO;
 	//TWEAK: it's only safe to break out once initialization is done, since some
 	//of DOSBox's initialization routines rely on running tasks on the run loop
 	//and may crash if they fail to complete.
-	if ((self.isCancelled || exit_requested) && self.isInitialized)
+	if ((self.isCancelled || shutdown_requested) && self.isInitialized)
     {
         return NO;
 	}
@@ -1020,7 +1020,7 @@ static BOOL _hasStartedEmulator = NO;
             for (NSURL *configURL in configURLs)
             {
                 const char *encodedConfigPath = configURL.fileSystemRepresentation;
-                control->ParseConfigFile(encodedConfigPath);
+                control->ParseConfigFile("custom", encodedConfigPath);
             }
 
             //Initialise each DOSBox module based on the loaded configuration.
