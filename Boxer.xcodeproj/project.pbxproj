@@ -102,6 +102,7 @@
 		55E6A0C71C00C88A00285593 /* DDHidLib.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 55E6A0AC1C00C80A00285593 /* DDHidLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55EA6CF625D4919E00945236 /* BXMIDIConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55EA6CF425D4919E00945236 /* BXMIDIConfig.cpp */; };
 		55EA6CF725D4919E00945236 /* BXMIDIConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55EA6CF425D4919E00945236 /* BXMIDIConfig.cpp */; };
+		55EB73E027ED729F00D5F7E0 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 55EB73DF27ED729F00D5F7E0 /* Sparkle */; };
 		55F0B73226ABFD9C0077E58C /* ps1audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B72926ABFD9B0077E58C /* ps1audio.cpp */; };
 		55F0B73326ABFD9C0077E58C /* ps1audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B72926ABFD9B0077E58C /* ps1audio.cpp */; };
 		55F0B73526ABFDDA0077E58C /* innovation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55F0B73426ABFDDA0077E58C /* innovation.cpp */; };
@@ -192,8 +193,6 @@
 		9F201E381657DB7F0086F1BB /* ADBUserNotificationDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F201E371657DB7F0086F1BB /* ADBUserNotificationDispatcher.m */; };
 		9F201E391657DB7F0086F1BB /* ADBUserNotificationDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F201E371657DB7F0086F1BB /* ADBUserNotificationDispatcher.m */; };
 		9F20ADD01702E87B007263C8 /* BXDrive+BXDriveArchiving.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20ADCF1702E87B007263C8 /* BXDrive+BXDriveArchiving.m */; };
-		9F20C28B11E5D848005AF541 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20C28A11E5D848005AF541 /* Sparkle.framework */; };
-		9F20C29711E5DA68005AF541 /* Sparkle.framework in Copy Bundled Frameworks */ = {isa = PBXBuildFile; fileRef = 9F20C28A11E5D848005AF541 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F2120F813015653002AB1B7 /* BXShelfArt.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2120F713015653002AB1B7 /* BXShelfArt.m */; };
 		9F2120FE1301597E002AB1B7 /* NSImage+ADBSaveImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2120FD1301597E002AB1B7 /* NSImage+ADBSaveImages.m */; };
 		9F2122EA1301BDE1002AB1B7 /* BXShelfAppearanceOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2122E91301BDE1002AB1B7 /* BXShelfAppearanceOperation.m */; };
@@ -990,7 +989,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9F20C29711E5DA68005AF541 /* Sparkle.framework in Copy Bundled Frameworks */,
 				55E6A0BB1C00C86200285593 /* DDHidLib.framework in Copy Bundled Frameworks */,
 				55E6A0B71C00C86200285593 /* MT32Emu.framework in Copy Bundled Frameworks */,
 				05E6BA7124B9FC2E00BAAD2D /* OpenEmuShaders.framework in Copy Bundled Frameworks */,
@@ -1288,7 +1286,6 @@
 		9F20ADCE1702E87B007263C8 /* BXDrive+BXDriveArchiving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BXDrive+BXDriveArchiving.h"; sourceTree = "<group>"; };
 		9F20ADCF1702E87B007263C8 /* BXDrive+BXDriveArchiving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BXDrive+BXDriveArchiving.m"; sourceTree = "<group>"; };
 		9F20ADD117030CE0007263C8 /* BXDrivePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXDrivePrivate.h; sourceTree = "<group>"; };
-		9F20C28A11E5D848005AF541 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		9F2120F613015653002AB1B7 /* BXShelfArt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXShelfArt.h; sourceTree = "<group>"; };
 		9F2120F713015653002AB1B7 /* BXShelfArt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXShelfArt.m; sourceTree = "<group>"; };
 		9F2120FC1301597E002AB1B7 /* NSImage+ADBSaveImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+ADBSaveImages.h"; sourceTree = "<group>"; };
@@ -2041,6 +2038,7 @@
 				9FBC32120F56C3E9001811F2 /* Carbon.framework in Frameworks */,
 				9FBC3C780F56E0D7001811F2 /* AudioUnit.framework in Frameworks */,
 				9FBC3C790F56E0D7001811F2 /* CoreMIDI.framework in Frameworks */,
+				55EB73E027ED729F00D5F7E0 /* Sparkle in Frameworks */,
 				55540E632546B87200B88BE3 /* CwlDemangle in Frameworks */,
 				9FB769E3164861D8000644C2 /* Quartz.framework in Frameworks */,
 				05F9A20024BAA7AA00969496 /* SDL2_net.framework in Frameworks */,
@@ -2048,7 +2046,6 @@
 				9F2140FF0F59F28000A5A183 /* QuartzCore.framework in Frameworks */,
 				9F4E042C0F67E72300427D50 /* AudioToolbox.framework in Frameworks */,
 				9F8A976010E7EDDE00A4B72A /* libicucore.tbd in Frameworks */,
-				9F20C28B11E5D848005AF541 /* Sparkle.framework in Frameworks */,
 				05F9A20224BAA7AB00969496 /* SDL2.framework in Frameworks */,
 				9F61942412340F5400F35AB4 /* ScriptingBridge.framework in Frameworks */,
 				55E6A0BA1C00C86200285593 /* DDHidLib.framework in Frameworks */,
@@ -3546,7 +3543,6 @@
 				05E6BA6024B9FA8D00BAAD2D /* OpenEmuShaders.xcodeproj */,
 				55E6A0AD1C00C81D00285593 /* Boxer-MT32Emu.xcodeproj */,
 				55E6A09D1C00C80A00285593 /* DDHidLib.xcodeproj */,
-				9F20C28A11E5D848005AF541 /* Sparkle.framework */,
 				0532FBF624BAA1A4008EAD86 /* SDL2.framework */,
 				05F9A1FE24BAA64100969496 /* SDL2_net.framework */,
 			);
@@ -3763,6 +3759,7 @@
 			);
 			comments = "REGARDING --mstackrealign\nBoxer will crash with a dyld_misaligned_stack_error if dynamic core mode is on when the session starts.\n\ndyld is the dynamic linker, so this may be some peculiar interaction of threading and dynamically-loaded frameworks: the crash also happens in our non-XCode, SDL-framework-using build, and it *doesn't* happen if a sleep() delay is introduced before DOSBox_main is called, which implies a race condition.\n\nAdding -mstackrealign to the C flags for Intel seems to have made the problem go away. Which doesn't explain why it's happening in the first place.";
 			dependencies = (
+				55EB73EA27ED72CA00D5F7E0 /* PBXTargetDependency */,
 				55D431F625044D50008515E1 /* PBXTargetDependency */,
 				55E6A0B91C00C86200285593 /* PBXTargetDependency */,
 				55E6A0BD1C00C86200285593 /* PBXTargetDependency */,
@@ -3770,6 +3767,7 @@
 			name = Boxer;
 			packageProductDependencies = (
 				55540E622546B87200B88BE3 /* CwlDemangle */,
+				55EB73DF27ED729F00D5F7E0 /* Sparkle */,
 			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = Boxer;
@@ -3839,7 +3837,7 @@
 				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Boxer" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -3855,6 +3853,7 @@
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Boxer */;
 			packageReferences = (
 				55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */,
+				55EB73DE27ED729F00D5F7E0 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			projectDirPath = "";
 			projectReferences = (
@@ -4802,6 +4801,10 @@
 			name = DDHidLib;
 			targetProxy = 55E6A0C81C00C88A00285593 /* PBXContainerItemProxy */;
 		};
+		55EB73EA27ED72CA00D5F7E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 55EB73E927ED72CA00D5F7E0 /* Sparkle */;
+		};
 		9FB453B616442DA200BCF63B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9F2D2F9715B8233800FAE848 /* Boxer Standalone */;
@@ -5619,6 +5622,14 @@
 				kind = branch;
 			};
 		};
+		55EB73DE27ED729F00D5F7E0 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.23.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -5631,6 +5642,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 55D432012504BB65008515E1 /* XCRemoteSwiftPackageReference "CwlDemangle" */;
 			productName = CwlDemangle;
+		};
+		55EB73DF27ED729F00D5F7E0 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55EB73DE27ED729F00D5F7E0 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+		55EB73E927ED72CA00D5F7E0 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55EB73DE27ED729F00D5F7E0 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
