@@ -1,12 +1,15 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "Volume33PercentTemplate.pdf"
+      "filename" : "Volume33PercentTemplate.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }
