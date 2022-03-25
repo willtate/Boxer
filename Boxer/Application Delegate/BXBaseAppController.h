@@ -30,13 +30,13 @@
 #pragma mark App-wide controllers
 
 /// Responds to incoming HID controller events from gamepads and joysticks, and dispatches them the current DOS session.
-@property (retain, nonatomic) IBOutlet BXJoystickController *joystickController;
+@property (strong, nonatomic) IBOutlet BXJoystickController *joystickController;
 
 /// Monitors the connected MIDI devices, and scans newly-connected devices to see if they're MT-32 units.
-@property (retain, nonatomic) BXMIDIDeviceMonitor *MIDIDeviceMonitor;
+@property (strong, nonatomic) BXMIDIDeviceMonitor *MIDIDeviceMonitor;
 
 /// A general operation queue for non-session-specific operations.
-@property (retain, readonly) NSOperationQueue *generalQueue;
+@property (strong, readonly) NSOperationQueue *generalQueue;
 
 
 #pragma mark Application volume settings

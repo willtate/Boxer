@@ -31,7 +31,7 @@
 @property (assign, nonatomic) BOOL needsRestartForHotkeyCapture;
 
 //Redeclared to be writable
-@property (readwrite, retain) NSOperationQueue *generalQueue;
+@property (readwrite, strong) NSOperationQueue *generalQueue;
 
 
 #pragma mark - Initialization
