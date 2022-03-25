@@ -3637,7 +3637,7 @@
 			name = DOSBox;
 			path = "DOSBox-Staging";
 			sourceTree = "<group>";
-			usesTabs = 1;
+			usesTabs = 0;
 		};
 		9FBC3C130F56D6E8001811F2 /* Bundled Frameworks */ = {
 			isa = PBXGroup;
