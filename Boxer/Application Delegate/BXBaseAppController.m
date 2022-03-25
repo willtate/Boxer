@@ -553,8 +553,13 @@
         }
     }
     
-    if (safeURLs.count)
-        [ws activateFileViewerSelectingURLs: safeURLs];
+    for (NSURL *url in safeURLs)
+    {
+        NSString *file = (url.isDirectory ? nil : url.path);
+        NSString *path = (url.isDirectory ? url.path : [url URLByDeletingLastPathComponent].path);
+        
+        [ws selectFile: file inFileViewerRootedAtPath: path];
+    }
     
     return revealedAnyFiles;
 }
