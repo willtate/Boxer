@@ -36,4 +36,4 @@ These have the same format and usage restrictions as the strings in DOSBox.strin
 You may be able to run the program in a Windows emulator instead.[0m
 ";
 
-"The path \"%1$@\" does not exist in OS X." = "The path \"%1$@\" does not exist in OS X.";
+"The path \"%1$@\" does not exist in OS X." = "The path \"%1$@\" does not exist in macOS.";
