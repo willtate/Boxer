@@ -1267,7 +1267,26 @@ void MSCDEX_SetCDInterface(int intNr, int forceCD);
     }
     
     const char *drivePath = [[NSFileManager defaultManager] fileSystemRepresentationWithPath: path];
-    const char *shadowPath = [[NSFileManager defaultManager] fileSystemRepresentationWithPath: shadowedPath];
+    //First, make sure we have a directory for our shadowed path!
+    BOOL isPath = NO;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:shadowedPath isDirectory:&isPath]) {
+        if (![[NSFileManager defaultManager] createDirectoryAtPath:shadowedPath withIntermediateDirectories:YES attributes:nil error:outError]) {
+            return nil;
+        }
+        isPath = YES;
+    }
+    if (!isPath) {
+        if (outError) {
+            *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:errFSNotAFolder userInfo:@{NSFilePathErrorKey: shadowedPath}];
+        }
+        return nil;
+    }
+    //If the directory was just created, -fileSystemRepresentationWithPath: can still return a path without a trailing slash.
+    char shadowPath[PATH_MAX];
+    strlcpy(shadowPath, [[NSFileManager defaultManager] fileSystemRepresentationWithPath: shadowedPath], PATH_MAX);
+    if (shadowPath[strlen(shadowPath) - 1] != '/') {
+        strlcat(shadowPath, "/", PATH_MAX);
+    }
 
     uint8_t err;
     auto overlay = new Overlay_Drive(drivePath,
