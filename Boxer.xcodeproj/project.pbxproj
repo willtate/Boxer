@@ -114,8 +114,6 @@
 		55DB151127EDA2C70024AE9E /* program_mount.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DB14F927EDA2C70024AE9E /* program_mount.cpp */; };
 		55DB151227EDA2C70024AE9E /* program_imgmount.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DB14FC27EDA2C70024AE9E /* program_imgmount.cpp */; };
 		55DB151327EDA2C70024AE9E /* program_imgmount.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DB14FC27EDA2C70024AE9E /* program_imgmount.cpp */; };
-		55DB155A27EDA4B10024AE9E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55DB152F27EDA4B10024AE9E /* README.md */; };
-		55DB155B27EDA4B10024AE9E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55DB152F27EDA4B10024AE9E /* README.md */; };
 		55DB156627EDA4B10024AE9E /* loguru.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DB153727EDA4B10024AE9E /* loguru.cpp */; };
 		55DB156727EDA4B10024AE9E /* loguru.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DB153727EDA4B10024AE9E /* loguru.cpp */; };
 		55DEBB23201E875600F1092F /* pci_bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55DEBB21201E875500F1092F /* pci_bus.cpp */; };
@@ -4056,7 +4054,6 @@
 				9FBC31E00F56C383001811F2 /* LockClosing.aiff in Resources */,
 				9FBC31E10F56C383001811F2 /* LockOpening.aiff in Resources */,
 				9FE202480F6D749500B3A38C /* Snapshot.aiff in Resources */,
-				55DB155A27EDA4B10024AE9E /* README.md in Resources */,
 				9FCBB6F310A6DDBD00C28B09 /* DOS Toolkit in Resources */,
 				9F4199E11BD416E400A2D165 /* DocumentationPanel.xib in Resources */,
 				9FFAFE2D10DE33FB00728BAC /* GameProfiles.plist in Resources */,
@@ -4128,7 +4125,6 @@
 				9FCB7B2715B877E500CC7CC7 /* DOS Toolkit in Resources */,
 				9FCB7B2815B8782800CC7CC7 /* Bezel.xib in Resources */,
 				9F1E959A15BD88D700C3C6A0 /* UserDefaults.plist in Resources */,
-				55DB155B27EDA4B10024AE9E /* README.md in Resources */,
 				55220E4624CFFFC900A6736A /* CheckboxCell.xib in Resources */,
 				9F1E959C15BD899500C3C6A0 /* GameDefaults.plist in Resources */,
 				9F7472D61BE7D96E00B9C9ED /* StandaloneAbout.xib in Resources */,
