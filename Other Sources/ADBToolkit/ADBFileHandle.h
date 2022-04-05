@@ -154,7 +154,7 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 @property (readonly) long long offset;
 
 /// Return the maximum addressable offset, i.e. the length of the file.
-/// Return ADBOffsetUnknown if this could not be determined.
+/// Return @c ADBOffsetUnknown if this could not be determined.
 @property (readonly) long long maxOffset;
 
 /// Returns whether the handle's offset is at or beyond the end of the file.
@@ -177,8 +177,8 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 /// Returns an open @c FILE* handle representing this \c ADBFileHandle resource.
 ///
 /// If @c adopt is @c YES, the calling context is expected to take control of the
-/// @c FILE * handle and is responsible for closing the handle when it has finished.
-/// If adopt is @c NO, the @c FILE * handle will only be viable for the lifetime
+/// @c FILE* handle and is responsible for closing the handle when it has finished.
+/// If adopt is @c NO, the @c FILE* handle will only be viable for the lifetime
 /// of the @c ADBFileHandle instance: i.e. it may be closed when the instance
 /// is deallocated.
 ///
@@ -204,8 +204,8 @@ typedef NS_ENUM(int, ADBHandleSeekLocation) {
 @interface ADBAbstractHandle : NSObject <ADBFileHandleAccess>
 {
     /// A @c funopen() handle constructed the first time a @c FILE* handle is requested
-    /// from this instance. The @c funopen() handle wraps the instance's own getBytes:,
-    /// writeBytes:, seekToOffset: and close: methods.
+    /// from this instance. The @c funopen() handle wraps the instance's own @c getBytes: ,
+    /// @c writeBytes: , @c seekToOffset: and @c close: methods.
     FILE * _handle;
     
     /// The cookie resource pointed to by the funopen handle.
