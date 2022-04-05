@@ -19,7 +19,9 @@
 
 #pragma mark - Private constants
 
+/// The type key used in user notifications that pages are ready for printing.
 extern ADBUserNotificationType const BXPagesReadyNotificationType NS_SWIFT_NAME(ADBUserNotificationType.pagesReady);
+
 extern ADBUserNotificationType const BXDriveImportedNotificationType NS_SWIFT_NAME(ADBUserNotificationType.driveImported);
 extern ADBUserNotificationType const BXGameImportedNotificationType NS_SWIFT_NAME(ADBUserNotificationType.gameImported);
 

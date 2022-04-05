@@ -9,9 +9,6 @@
 #import "BXSession.h"
 #import "BXEmulatedPrinter.h"
 
-/// The type key used in user notifications that pages are ready for printing.
-extern NSString * const BXPagesReadyNotificationType;
-
 /// The \c BXPrinting category extends \c BXSession with tools for responding to DOS print requests.
 @interface BXSession (BXPrinting) <BXEmulatedPrinterDelegate>
 
