@@ -54,7 +54,7 @@ typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notifica
 /// the notification for the handler has been removed.
 - (void) scheduleNotification: (NSUserNotification *)notification
                        ofType: (nullable ADBUserNotificationType)typeKey
-                   fromSender: (nullable id)sender
+                   fromSender: (nullable id<NSObject>)sender
                  onActivation: (nullable ADBUserNotificationActivationHandler)activationHandler;
 
 /// Remove the specified notification from the user notification panel.
@@ -63,7 +63,7 @@ typedef void(^ADBUserNotificationActivationHandler)(NSUserNotification *notifica
 /// Remove all scheduled and delivered notifications from the specified sender and/or type.
 /// Pass @c nil as the @c type to remove all notifications from that sender regardless of type.
 /// Pass @c nil as the @c sender to remove all notifications of that type regardless of sender.
-- (void) removeAllNotificationsOfType: (nullable ADBUserNotificationType)typeKey fromSender: (nullable id)sender;
+- (void) removeAllNotificationsOfType: (nullable ADBUserNotificationType)typeKey fromSender: (nullable id<NSObject>)sender;
 
 /// Remove all delivered and scheduled notifications for the entire application.
 - (void) removeAllNotifications;

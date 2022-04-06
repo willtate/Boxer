@@ -186,10 +186,10 @@ typedef NS_ENUM(NSInteger, BXSessionProgramCompletionBehavior) {
 @property (readonly, nonatomic) NSURL *currentURL;
 
 /// A lookup table of all mounted and queued drives, organised by drive letter.
-@property (readonly, retain, nonatomic) NSDictionary<NSString*,NSMutableArray*> *drives;
+@property (readonly, retain, nonatomic) NSDictionary<NSString*, NSMutableArray<BXDrive*>*> *drives;
 
 /// A lookup table of logical URLs to all known executables on mounted drives, organised by drive letter.
-@property (readonly, retain, nonatomic) NSDictionary<NSString*,id> *executableURLs;
+@property (readonly, retain, nonatomic) NSDictionary<NSString*, id> *executableURLs;
 
 /// Whether the emulator is initialized and ready to receive instructions.
 @property (readonly, assign, getter=isEmulating) BOOL emulating;

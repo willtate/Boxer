@@ -33,8 +33,7 @@ extern ADBUserNotificationType const BXGameImportedNotificationType NS_SWIFT_NAM
 
 @interface BXSession ()
 
-#pragma mark -
-#pragma mark Properties
+#pragma mark - Properties
 
 /// These have been overridden to make them internally writeable
 @property (readwrite, retain, nonatomic) NSMutableDictionary *gameSettings;
@@ -47,12 +46,12 @@ extern ADBUserNotificationType const BXGameImportedNotificationType NS_SWIFT_NAM
 @property (readwrite, copy, nonatomic) NSString *launchedProgramArguments;
 
 @property (readwrite, retain, nonatomic) NSDictionary *drives;
-@property (readwrite, retain, nonatomic) NSDictionary *executableURLs;
+@property (readwrite, retain, nonatomic) NSDictionary<NSString*, id> *executableURLs;
 
 @property (retain, nonatomic) NSOperationQueue *importQueue;
 @property (retain, nonatomic) NSOperationQueue *scanQueue;
 
-@property (retain, nonatomic) NSMutableSet *MT32MessagesReceived;
+@property (retain, nonatomic) NSMutableSet<NSString*> *MT32MessagesReceived;
 @property (copy, nonatomic) NSURL *temporaryFolderURL;
 
 /// A cached version of the represented icon for our gamebox. Used by @representedIcon.
@@ -66,8 +65,7 @@ extern ADBUserNotificationType const BXGameImportedNotificationType NS_SWIFT_NAM
 @property (readwrite, nonatomic, assign, getter=isInterrupted)	BOOL interrupted;
 
 
-#pragma mark -
-#pragma mark Protected methods
+#pragma mark - Protected methods
 
 /// Determines what to do after exiting the specified process and returning to the DOS prompt.
 /// Called by emulatorDidReturnToShell: once the last process has been shut down.

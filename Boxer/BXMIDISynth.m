@@ -33,7 +33,7 @@
 #pragma mark -
 #pragma mark Initialization and cleanup
 
-- (id <BXMIDIDevice>) initWithError: (NSError **)outError
+- (instancetype) initWithError: (NSError **)outError
 {
     if ((self = [self init]))
     {

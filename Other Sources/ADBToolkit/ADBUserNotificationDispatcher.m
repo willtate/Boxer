@@ -32,7 +32,7 @@ static NSString * const ADBUserNotificationTypeKey = @"ADBUserNotificationType";
 
 @interface ADBUserNotificationDispatcher ()
 
-@property (strong, nonatomic) NSMutableDictionary<NSNumber*,ADBUserNotificationActivationHandler> *activationHandlers;
+@property (strong, nonatomic) NSMutableDictionary<NSNumber*, ADBUserNotificationActivationHandler> *activationHandlers;
 
 //Called to remove an activation handler for the specified notification, usually because
 //the notification itself is being removed.
@@ -40,7 +40,7 @@ static NSString * const ADBUserNotificationTypeKey = @"ADBUserNotificationType";
 
 //Returns whether the specified notification has the specified sender and/or type.
 //Used by removeAllNotificationsFromSender:ofType:
-- (BOOL) _notification: (NSUserNotification *)notification matchesSender: (id)sender type: (id)type;
+- (BOOL) _notification: (NSUserNotification *)notification matchesSender: (id<NSObject>)sender type: (ADBUserNotificationType)type;
 
 @end
 
@@ -80,7 +80,7 @@ static NSString * const ADBUserNotificationTypeKey = @"ADBUserNotificationType";
 
 - (void) scheduleNotification: (NSUserNotification *)notification
                        ofType: (ADBUserNotificationType)typeKey
-                   fromSender: (id)sender
+                   fromSender: (id<NSObject>)sender
                  onActivation: (ADBUserNotificationActivationHandler)activationHandler;
 {
     NSMutableDictionary<NSString*,id> *userInfo = [NSMutableDictionary dictionary];
@@ -147,7 +147,7 @@ static NSString * const ADBUserNotificationTypeKey = @"ADBUserNotificationType";
         handler(notification);
 }
 
-- (BOOL) _notification: (NSUserNotification *)notification matchesSender: (id)sender type: (id)type
+- (BOOL) _notification: (NSUserNotification *)notification matchesSender: (id<NSObject>)sender type: (ADBUserNotificationType)type
 {
     if (sender != nil)
     {
@@ -167,7 +167,7 @@ static NSString * const ADBUserNotificationTypeKey = @"ADBUserNotificationType";
 }
 
 //Remove all scheduled and delivered notifications with the specified type and/or sender.
-- (void) removeAllNotificationsOfType: (id)typeKey fromSender: (id)sender
+- (void) removeAllNotificationsOfType: (ADBUserNotificationType)typeKey fromSender: (id<NSObject>)sender
 {
     NSUserNotificationCenter *center = [NSUserNotificationCenter defaultUserNotificationCenter];
     @synchronized(center)
