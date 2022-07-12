@@ -10,6 +10,7 @@
 #import "ADBGeometry.h"
 #import "ADBForwardCompatibility.h"
 #import <QuartzCore/QuartzCore.h>
+#import <CoreImage/CIFilter.h>
 
 @implementation BXPrintStatusPanelController
 
