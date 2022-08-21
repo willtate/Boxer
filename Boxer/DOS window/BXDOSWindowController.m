@@ -582,7 +582,7 @@ NSString * const BXDOSWindowFullscreenSizeFormat = @"Fullscreen size for %@";
 
 + (NSSet *) keyPathsForValuesAffectingMinFullscreenViewportSize
 {
-    return [NSSet setWithObject: @"renderingView.currentFrame.scaledResolution"];
+    return [NSSet setWithObject: @"renderingView.currentFrame"];
 }
 
 - (NSSize) minFullscreenViewportSize
