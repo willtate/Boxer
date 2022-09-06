@@ -1,0 +1,6 @@
+
+/* Class = "NSTextFieldCell"; title = "Cmd-click to lock the mouse to the window."; ObjectID = "910"; */
+"910.title" = "Cmd-clic pour verrouiller la souris dans la fenêtre.";
+
+/* Class = "NSButtonCell"; title = "Launch Program"; ObjectID = "1188"; */
+"1188.title" = "Lancer le programme";

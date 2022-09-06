@@ -1,0 +1,96 @@
+
+/* Class = "NSWindow"; title = "Import a Game"; ObjectID = "3"; */
+"3.title" = "Importer un jeu";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "15"; */
+"15.title" = "Fermer";
+
+/* Class = "NSButtonCell"; title = "Launch installer"; ObjectID = "37"; */
+"37.title" = "Lancer l’installation";
+
+/* Class = "NSButtonCell"; title = "Back"; ObjectID = "47"; */
+"47.title" = "Retour";
+
+/* Class = "NSButtonCell"; title = "Skip installer"; ObjectID = "50"; */
+"50.title" = "Ignorer l’installation";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "54"; */
+"54.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Other…"; ObjectID = "57"; */
+"57.title" = "Autre…";
+
+/* Class = "NSMenuItem"; title = "Choose game folder…"; ObjectID = "70"; */
+"70.title" = "Choisir le dossier de jeu…";
+
+/* Class = "NSButtonCell"; title = "Launch game"; ObjectID = "141"; */
+"141.title" = "Lancer le jeu";
+
+/* Class = "NSButtonCell"; title = "[Stop importing]"; ObjectID = "172"; */
+"172.title" = "[Stop importing]";
+
+/* Class = "NSButtonCell"; title = "Show in Finder"; ObjectID = "185"; */
+"185.title" = "Afficher dans le Finder";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "188"; */
+"188.title" = "Fermer";
+
+/* Class = "NSTextFieldCell"; title = "[Gamebox name]"; ObjectID = "229"; */
+"229.title" = "[Gamebox name]";
+
+/* Class = "NSMenuItem"; title = "Show gamebox in Finder"; ObjectID = "249"; */
+"249.title" = "Afficher la gamebox dans le Finder";
+
+/* Class = "NSMenuItem"; title = "Launch game"; ObjectID = "250"; */
+"250.title" = "Lancer le jeu";
+
+/* Class = "NSMenuItem"; title = "Show gamebox in Finder"; ObjectID = "282"; */
+"282.title" = "Afficher la gamebox dans le Finder";
+
+/* Class = "NSMenuItem"; title = "Clear icon"; ObjectID = "284"; */
+"284.title" = "Effacer l’icône";
+
+/* Class = "NSMenuItem"; title = "Paste as icon"; ObjectID = "285"; */
+"285.title" = "Coller comme icône";
+
+/* Class = "NSMenuItem"; title = "Copy icon"; ObjectID = "286"; */
+"286.title" = "Copier l’icône";
+
+/* Class = "NSMenuItem"; title = "Launch game"; ObjectID = "293"; */
+"293.title" = "Lancer le jeu";
+
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "320"; */
+"320.title" = "Fermer";
+
+/* Class = "NSMenuItem"; title = "Search for cover art"; ObjectID = "442"; */
+"442.title" = "Rechercher la jaquette";
+
+/* Class = "NSTextFieldCell"; title = "Please wait while Boxer\nscans your game."; ObjectID = "450"; */
+"450.title" = "Veuillez patienter pendant que\nBoxer analyse votre jeu.";
+
+/* Class = "NSTextFieldCell"; title = "Drop your game here."; ObjectID = "452"; */
+"452.title" = "Déposez ici votre jeu.";
+
+/* Class = "NSTextFieldCell"; title = "Drop a CD-ROM, game folder or disc image\nand Boxer will import it into a new gamebox. "; ObjectID = "454"; */
+"454.title" = "Déposez un CD-ROM, un dossier de jeu ou une image disque\net Boxer l’importera en tant que nouvelle gamebox. ";
+
+/* Class = "NSTextFieldCell"; title = "Boxer will now launch an\ninstaller to set up this game."; ObjectID = "456"; */
+"456.title" = "Boxer va maintenant lancer un\nprogramme d’installation pour configurer ce jeu.";
+
+/* Class = "NSTextFieldCell"; title = "Choose installer:"; ObjectID = "458"; */
+"458.title" = "Choix du programme d’installation :";
+
+/* Class = "NSTextFieldCell"; title = "You can skip the installer if the game is\nalready installed and ready to play."; ObjectID = "460"; */
+"460.title" = "Vous pouvez ignorer le programme d’installation\nsi le jeu est déjà installé et prêt à être lancé.";
+
+/* Class = "NSTextFieldCell"; title = "If your game has more than one CD, you can import the\nothers later from the Drives Inspector while you play."; ObjectID = "462"; */
+"462.title" = "Si le jeu possède plus d’un CD, vous pouvez importer les\nautres plus tard à partir de l’inspecteur de lecteurs.";
+
+/* Class = "NSTextFieldCell"; title = "[Current import stage]"; ObjectID = "467"; */
+"467.title" = "[Current import stage]";
+
+/* Class = "NSTextFieldCell"; title = "Please wait while Boxer\nfinishes importing your game."; ObjectID = "471"; */
+"471.title" = "Veuillez patienter pendant que\nBoxer termine l’importation.";
+
+/* Class = "NSTextFieldCell"; title = "Congratulations! Your new gamebox is ready to play."; ObjectID = "473"; */
+"473.title" = "Félicitations ! Votre nouvelle gamebox est prête.";
