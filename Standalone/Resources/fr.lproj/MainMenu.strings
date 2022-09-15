@@ -99,100 +99,100 @@
 "1542.title" = "Transformations";
 
 /* Class = "NSMenuItem"; title = "Speech"; ObjectID = "1543"; */
-"1543.title" = "Speech";
+"1543.title" = "Parole";
 
 /* Class = "NSMenu"; title = "Speech"; ObjectID = "1544"; */
-"1544.title" = "Speech";
+"1544.title" = "Parole";
 
 /* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "1545"; */
-"1545.title" = "Start Speaking";
+"1545.title" = "Commencer la lecture";
 
 /* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "1546"; */
-"1546.title" = "Stop Speaking";
+"1546.title" = "Arrêter la lecture";
 
 /* Class = "NSMenu"; title = "Transformations"; ObjectID = "1547"; */
 "1547.title" = "Transformations";
 
 /* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "1548"; */
-"1548.title" = "Make Upper Case";
+"1548.title" = "Mettre en majuscules";
 
 /* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "1549"; */
-"1549.title" = "Make Lower Case";
+"1549.title" = "Mettre en minuscules";
 
 /* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "1550"; */
-"1550.title" = "Capitalize";
+"1550.title" = "1re lettre majuscule";
 
 /* Class = "NSMenu"; title = "Substitutions"; ObjectID = "1551"; */
 "1551.title" = "Substitutions";
 
 /* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "1552"; */
-"1552.title" = "Show Substitutions";
+"1552.title" = "Afficher les substitutions";
 
 /* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "1554"; */
-"1554.title" = "Smart Copy/Paste";
+"1554.title" = "Copier-coller intelligent";
 
 /* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "1555"; */
-"1555.title" = "Smart Quotes";
+"1555.title" = "Guillemets courbes";
 
 /* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "1556"; */
-"1556.title" = "Smart Dashes";
+"1556.title" = "Tirets intelligents";
 
 /* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "1557"; */
-"1557.title" = "Smart Links";
+"1557.title" = "Liens intelligents";
 
 /* Class = "NSMenuItem"; title = "Data Detectors"; ObjectID = "1558"; */
-"1558.title" = "Data Detectors";
+"1558.title" = "Détecteurs de données";
 
 /* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "1559"; */
-"1559.title" = "Text Replacement";
+"1559.title" = "Remplacement de texte";
 
 /* Class = "NSMenu"; title = "Spelling"; ObjectID = "1560"; */
-"1560.title" = "Spelling";
+"1560.title" = "Orthographe";
 
 /* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "1561"; */
-"1561.title" = "Show Spelling and Grammar";
+"1561.title" = "Afficher l’orthographe et la grammaire";
 
 /* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "1562"; */
-"1562.title" = "Check Document Now";
+"1562.title" = "Vérifier le document maintenant";
 
 /* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "1564"; */
-"1564.title" = "Check Spelling While Typing";
+"1564.title" = "Vérifier l’orthographe lors de la saisie";
 
 /* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "1565"; */
-"1565.title" = "Check Grammar With Spelling";
+"1565.title" = "Vérifier la grammaire et l’orthographe";
 
 /* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "1566"; */
-"1566.title" = "Correct Spelling Automatically";
+"1566.title" = "Corriger l’orthographe automatiquement";
 
 /* Class = "NSMenu"; title = "Find"; ObjectID = "1567"; */
-"1567.title" = "Find";
+"1567.title" = "Rechercher";
 
 /* Class = "NSMenuItem"; title = "Find…"; ObjectID = "1568"; */
-"1568.title" = "Find…";
+"1568.title" = "Rechercher…";
 
 /* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "1569"; */
-"1569.title" = "Find Next";
+"1569.title" = "Rechercher le suivant";
 
 /* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "1570"; */
-"1570.title" = "Find Previous";
+"1570.title" = "Rechercher le précédent";
 
 /* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "1571"; */
-"1571.title" = "Use Selection for Find";
+"1571.title" = "Recherche la sélection";
 
 /* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "1572"; */
-"1572.title" = "Jump to Selection";
+"1572.title" = "Aller à la sélection";
 
 /* Class = "NSMenu"; title = "View"; ObjectID = "1607"; */
 "1607.title" = "Présentation";
 
 /* Class = "NSMenuItem"; title = "Use 4:3 Aspect Ratio"; ObjectID = "1612"; */
-"1612.title" = "Utiliser le format d'image 4:3";
+"1612.title" = "Utiliser le format d’image 4:3";
 
 /* Class = "NSMenuItem"; title = "Rendering Style"; ObjectID = "1613"; */
 "1613.title" = "Style de rendu";
 
 /* Class = "NSMenuItem"; title = "Show Status Bar"; ObjectID = "1615"; */
-"1615.title" = "Afficher la barre d'état";
+"1615.title" = "Afficher la barre d’état";
 
 /* Class = "NSMenuItem"; title = "Lock Mouse to Window"; ObjectID = "1617"; */
 "1617.title" = "Verrouiller la souris dans la fenêtre";
@@ -201,7 +201,7 @@
 "1618.title" = "Style de rendu";
 
 /* Class = "NSMenuItem"; title = "Smoove"; ObjectID = "1621"; */
-"1621.title" = "Smoove";
+"1621.title" = "Lisse";
 
 /* Class = "NSMenuItem"; title = "Retro"; ObjectID = "1623"; */
 "1623.title" = "Rétro";
@@ -225,7 +225,7 @@
 "1932.title" = "Pause";
 
 /* Class = "NSMenuItem"; title = "Pause While Inactive"; ObjectID = "2027"; */
-"2027.title" = "Pause While Inactive";
+"2027.title" = "Pause en cas d’inactivité";
 
 /* Class = "NSMenuItem"; title = "Send Key"; ObjectID = "2057"; */
 "2057.title" = "Envoyer une touche";
@@ -306,7 +306,7 @@
 "2184.title" = "Simuler un pavé numérique";
 
 /* Class = "NSMenuItem"; title = "Save Screenshot"; ObjectID = "2190"; */
-"2190.title" = "Enregistrer la capture d'écran";
+"2190.title" = "Enregistrer la capture d’écran";
 
 /* Class = "NSMenuItem"; title = "Fast Forward"; ObjectID = "2192"; */
 "2192.title" = "Accélérer";
@@ -339,19 +339,19 @@
 "2243.title" = "-";
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "2489"; */
-"2489.title" = "Bring All to Front";
+"2489.title" = "Tout ramener au premier plan";
 
 /* Class = "NSMenuItem"; title = "Return to Launch Options"; ObjectID = "2514"; */
-"2514.title" = "Return to Launch Options";
+"2514.title" = "Retourner aux options de lancement";
 
 /* Class = "NSMenuItem"; title = "Reset Game Data"; ObjectID = "2517"; */
-"2517.title" = "Reset Game Data";
+"2517.title" = "Réinitialiser données de jeu";
 
 /* Class = "NSMenuItem"; title = "Import Game Data…"; ObjectID = "2535"; */
-"2535.title" = "Import Game Data…";
+"2535.title" = "Importer données de jeu…";
 
 /* Class = "NSMenuItem"; title = "Export Game Data…"; ObjectID = "2536"; */
-"2536.title" = "Export Game Data…";
+"2536.title" = "Exporter données de jeu…";
 
 /* Class = "NSMenuItem"; title = "Next Disc"; ObjectID = "2540"; */
 "2540.title" = "Disque suivant";
@@ -360,19 +360,19 @@
 "2541.title" = "Disque précédent";
 
 /* Class = "NSMenuItem"; title = "Green"; ObjectID = "6Lk-uS-LVK"; */
-"6Lk-uS-LVK.title" = "Vert";
+"6Lk-uS-LVK.title" = "Verte";
 
 /* Class = "NSMenuItem"; title = "White"; ObjectID = "Aew-9d-wIC"; */
-"Aew-9d-wIC.title" = "Blanc";
+"Aew-9d-wIC.title" = "Blanche";
 
 /* Class = "NSMenu"; title = "Hercules Tint"; ObjectID = "M3t-HD-L40"; */
-"M3t-HD-L40.title" = "Hercules Tint";
+"M3t-HD-L40.title" = "Teinte Hercules";
 
 /* Class = "NSMenuItem"; title = "Hercules Tint"; ObjectID = "kgV-Qg-8sc"; */
-"kgV-Qg-8sc.title" = "Hercules Tint";
+"kgV-Qg-8sc.title" = "Teinte Hercules";
 
 /* Class = "NSMenuItem"; title = "Amber"; ObjectID = "nH0-jG-tjN"; */
-"nH0-jG-tjN.title" = "Amber";
+"nH0-jG-tjN.title" = "Ambrée";
 
 /* Class = "NSMenuItem"; title = "Shader Properties…"; ObjectID = "whc-Iq-mgy"; */
-"whc-Iq-mgy.title" = "Shader Properties…";
+"whc-Iq-mgy.title" = "Propriétés du shader…";
