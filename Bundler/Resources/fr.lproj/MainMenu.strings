@@ -369,7 +369,7 @@
 "534.title" = "Rechercher et remplacer…";
 
 /* Class = "NSTextFieldCell"; title = "Organization URL:"; ObjectID = "957"; */
-"957.title" = "URL de la société :";
+"957.title" = "URL de la société :";
 
 /* Class = "NSTableColumn"; headerCell.title = "Help link URL"; ObjectID = "962"; */
 "962.headerCell.title" = "URL lien d’aide";
@@ -381,19 +381,19 @@
 "965.title" = "http://website.com";
 
 /* Class = "NSTextFieldCell"; title = "Gamebox:"; ObjectID = "967"; */
-"967.title" = "Gamebox :";
+"967.title" = "Gamebox :";
 
 /* Class = "NSTextFieldCell"; title = "Bundle identifier:"; ObjectID = "968"; */
-"968.title" = "ID de bundle :";
+"968.title" = "ID de bundle :";
 
 /* Class = "NSTextFieldCell"; title = "Version:"; ObjectID = "970"; */
-"970.title" = "Version :";
+"970.title" = "Version :";
 
 /* Class = "NSTextFieldCell"; title = "Application Icon:"; ObjectID = "973"; */
-"973.title" = "Icône application :";
+"973.title" = "Icône application :";
 
 /* Class = "NSTextFieldCell"; title = "Application name:"; ObjectID = "974"; */
-"974.title" = "Nom application :";
+"974.title" = "Nom application :";
 
 /* Class = "NSTextFieldCell"; placeholderString = "My Game"; ObjectID = "976"; */
 "976.placeholderString" = "Mon jeu";
@@ -402,7 +402,7 @@
 "977.title" = "Enregistrer app autonome";
 
 /* Class = "NSTextFieldCell"; title = "Organization name:"; ObjectID = "979"; */
-"979.title" = "Nom de la société :";
+"979.title" = "Nom de la société :";
 
 /* Class = "NSTextFieldCell"; placeholderString = "com.companyname.my-game"; ObjectID = "980"; */
 "980.placeholderString" = "com.companyname.my-game";
