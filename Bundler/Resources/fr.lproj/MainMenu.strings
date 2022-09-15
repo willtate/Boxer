@@ -39,10 +39,10 @@
 "83.title" = "Fichier";
 
 /* Class = "NSMenuItem"; title = "Open Recent"; ObjectID = "124"; */
-"124.title" = "Ouvrir l'élément récent";
+"124.title" = "Ouvrir l’élément récent";
 
 /* Class = "NSMenu"; title = "Open Recent"; ObjectID = "125"; */
-"125.title" = "Ouvrir l'élément récent";
+"125.title" = "Ouvrir l’élément récent";
 
 /* Class = "NSMenuItem"; title = "Clear Menu"; ObjectID = "126"; */
 "126.title" = "Effacer le menu";
@@ -96,7 +96,7 @@
 "203.title" = "Coller";
 
 /* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "204"; */
-"204.title" = "Afficher l'orthographe et la grammaire";
+"204.title" = "Afficher l’orthographe et la grammaire";
 
 /* Class = "NSMenu"; title = "Edit"; ObjectID = "205"; */
 "205.title" = "Édition";
@@ -135,7 +135,7 @@
 "218.title" = "Rechercher";
 
 /* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "219"; */
-"219.title" = "Vérifier l'orthographe lors de la saisie";
+"219.title" = "Vérifier l’orthographe lors de la saisie";
 
 /* Class = "NSMenu"; title = "Find"; ObjectID = "220"; */
 "220.title" = "Rechercher";
@@ -153,13 +153,13 @@
 "296.title" = "Présentation";
 
 /* Class = "NSMenuItem"; title = "Show Toolbar"; ObjectID = "297"; */
-"297.title" = "Afficher la barre d'outils";
+"297.title" = "Afficher la barre d’outils";
 
 /* Class = "NSMenuItem"; title = "Customize Toolbar…"; ObjectID = "298"; */
-"298.title" = "Personnaliser la barre d'outils…";
+"298.title" = "Personnaliser la barre d’outils…";
 
 /* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "346"; */
-"346.title" = "Vérifier la grammaire et l'orthographe";
+"346.title" = "Vérifier la grammaire et l’orthographe";
 
 /* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "348"; */
 "348.title" = "Substitutions";
@@ -279,7 +279,7 @@
 "452.title" = "Mettre en majuscules";
 
 /* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "454"; */
-"454.title" = "Corriger l'orthographe automatiquement";
+"454.title" = "Corriger l’orthographe automatiquement";
 
 /* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "457"; */
 "457.title" = "Afficher les substitutions";
@@ -327,7 +327,7 @@
 "501.title" = "Aligner à droite";
 
 /* Class = "NSMenuItem"; title = "Writing Direction"; ObjectID = "503"; */
-"503.title" = "Sens de l'écriture";
+"503.title" = "Sens de l’écriture";
 
 /* Class = "NSMenuItem"; title = "Show Ruler"; ObjectID = "505"; */
 "505.title" = "Afficher la règle";
@@ -339,7 +339,7 @@
 "507.title" = "Coller la règle";
 
 /* Class = "NSMenu"; title = "Writing Direction"; ObjectID = "508"; */
-"508.title" = "Sens de l'écriture";
+"508.title" = "Sens de l’écriture";
 
 /* Class = "NSMenuItem"; title = "Paragraph"; ObjectID = "509"; */
 "509.title" = "Paragraphe";
@@ -369,31 +369,31 @@
 "534.title" = "Rechercher et remplacer…";
 
 /* Class = "NSTextFieldCell"; title = "Organization URL:"; ObjectID = "957"; */
-"957.title" = "URL de la société :";
+"957.title" = "URL de la société :";
 
 /* Class = "NSTableColumn"; headerCell.title = "Help link URL"; ObjectID = "962"; */
-"962.headerCell.title" = "URL lien d'aide";
+"962.headerCell.title" = "URL lien d’aide";
 
 /* Class = "NSTableColumn"; headerCell.title = "Help link title"; ObjectID = "963"; */
-"963.headerCell.title" = "Titre lien d'aide";
+"963.headerCell.title" = "Titre lien d’aide";
 
 /* Class = "NSTextFieldCell"; title = "http://website.com"; ObjectID = "965"; */
 "965.title" = "http://website.com";
 
 /* Class = "NSTextFieldCell"; title = "Gamebox:"; ObjectID = "967"; */
-"967.title" = "Gamebox :";
+"967.title" = "Gamebox :";
 
 /* Class = "NSTextFieldCell"; title = "Bundle identifier:"; ObjectID = "968"; */
-"968.title" = "ID de bundle :";
+"968.title" = "ID de bundle :";
 
 /* Class = "NSTextFieldCell"; title = "Version:"; ObjectID = "970"; */
-"970.title" = "Version :";
+"970.title" = "Version :";
 
 /* Class = "NSTextFieldCell"; title = "Application Icon:"; ObjectID = "973"; */
-"973.title" = "Icône application :";
+"973.title" = "Icône application :";
 
 /* Class = "NSTextFieldCell"; title = "Application name:"; ObjectID = "974"; */
-"974.title" = "Nom application :";
+"974.title" = "Nom application :";
 
 /* Class = "NSTextFieldCell"; placeholderString = "My Game"; ObjectID = "976"; */
 "976.placeholderString" = "Mon jeu";
@@ -402,7 +402,7 @@
 "977.title" = "Enregistrer app autonome";
 
 /* Class = "NSTextFieldCell"; title = "Organization name:"; ObjectID = "979"; */
-"979.title" = "Nom de la société :";
+"979.title" = "Nom de la société :";
 
 /* Class = "NSTextFieldCell"; placeholderString = "com.companyname.my-game"; ObjectID = "980"; */
 "980.placeholderString" = "com.companyname.my-game";
@@ -420,13 +420,13 @@
 "1064.title" = "Activer raccourci Ctrl+clic";
 
 /* Class = "NSButtonCell"; title = "Show aspect ratio toggle"; ObjectID = "1097"; */
-"1097.title" = "Show aspect ratio toggle";
+"1097.title" = "Bouton de format d’image";
 
 /* Class = "NSButtonCell"; title = "Enable seamless mouse tracking"; ObjectID = "1104"; */
-"1104.title" = "Enable seamless mouse tracking";
+"1104.title" = "Pointeur de souris transparent";
 
 /* Class = "NSButtonCell"; title = "Always show launch options at startup"; ObjectID = "1109"; */
 "1109.title" = "Options de lancement au démarrage";
 
 /* Class = "NSTextFieldCell"; title = "Leave the name and URL blank to remove all custom branding from the app."; ObjectID = "1114"; */
-"1114.title" = "Laissez vide les champs nom et URL pour supprimer tout lien dans l'app avec des marques commerciales personnalisées.";
+"1114.title" = "Laissez vide les champs nom et URL pour supprimer tout lien dans l’app avec des marques commerciales personnalisées.";
