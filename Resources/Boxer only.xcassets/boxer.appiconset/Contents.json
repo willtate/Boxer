@@ -7,7 +7,7 @@
       "size" : "16x16"
     },
     {
-      "filename" : "boxer32x32.png",
+      "filename" : "boxer16x16@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
@@ -31,6 +31,7 @@
       "size" : "128x128"
     },
     {
+      "filename" : "boxer128x128@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
@@ -42,7 +43,7 @@
       "size" : "256x256"
     },
     {
-      "filename" : "boxer512x512.png",
+      "filename" : "boxer256x256@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
@@ -54,6 +55,7 @@
       "size" : "512x512"
     },
     {
+      "filename" : "boxer512x512@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
