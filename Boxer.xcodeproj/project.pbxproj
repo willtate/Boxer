@@ -5504,6 +5504,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = "2.0.0-alpha";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-mstackrealign";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.washboardabs.boxer-standalone";
 				PRODUCT_NAME = "Boxer Standalone";
@@ -5577,6 +5578,7 @@
 					"$(inherited)",
 				);
 				MARKETING_VERSION = 1.2.4;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.washboardabs.boxer-standalone-bundler";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -5719,6 +5721,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = "2.0.0-alpha";
 				MTL_LANGUAGE_REVISION = UseDeploymentTarget;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-mstackrealign";
 				PRODUCT_BUNDLE_IDENTIFIER = net.washboardabs.boxer;
 				PRODUCT_NAME = Boxer;
